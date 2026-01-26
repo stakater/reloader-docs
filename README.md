@@ -1,6 +1,6 @@
-# Stakater Cloud Orchestrator Documentation
+# Reloader Documentation
 
-This repository contains the source for the documentation for Stakater Cloud Orchestrator. It is built using [MkDocs](https://github.com/mkdocs/mkdocs) which is based on Python. It is also versioned using [mike](https://github.com/jimporter/mike).
+This repository contains the source for the documentation for Reloader. It is built using [MkDocs](https://github.com/mkdocs/mkdocs) which is based on Python. It is also versioned using [mike](https://github.com/jimporter/mike).
 
 ## GitHub Actions
 
