@@ -1,7 +1,7 @@
-site_name: Reloader Enterprise
+site_name: Reloader
 docs_dir: content
-site_url: https://docs.stakater.com/reloader-enterprise/
-repo_url: https://github.com/stakater/reloader-enterprise-package-proxy
+site_url: https://docs.stakater.com/reloader/
+repo_url: https://github.com/stakater/reloader-docs
 edit_uri: blob/main/content/
 use_directory_urls: false
 strict: true
