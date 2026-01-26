@@ -25,7 +25,7 @@ jobs:
     if: ${{ github.base_ref == 'main' }}
     uses: stakater/.github/.github/workflows/pull_request_container_build.yaml@v0.0.137
     with:
-      DOCKER_BUILD_CONTEXTS: content=https://github.com/stakater/sco-docs.git#pull-request-deployments
+      DOCKER_BUILD_CONTEXTS: content=https://github.com/stakater/reloader-docs.git#pull-request-deployments
       DOCKER_FILE_PATH: Dockerfile
       CONTAINER_REGISTRY_URL: ghcr.io/stakater
     secrets:
@@ -52,7 +52,7 @@ jobs:
       
       - name: Run Docker container for the docs
         run: |
-          docker run -d --name sco-docs -p 8080:8080 $IMAGE_PATH
+          docker run -d --name reloader-docs -p 8080:8080 $IMAGE_PATH
       
       - name: Wait for docs site to be ready
         run: |
