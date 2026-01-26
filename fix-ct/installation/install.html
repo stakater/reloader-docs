@@ -3092,7 +3092,15 @@ You must accept the GitHub invitation.</p>
 <p>Reloader Enterprise uses the same image tags as the open-source version,
 but only versions that have passed enterprise-grade validation are published.</p>
 <h3 id="view-versions-in-github-packages">View versions in GitHub Packages<a class="headerlink" href="#view-versions-in-github-packages" title="Permanent link">#</a></h3>
-<p><a href="https://github.com/stakater/reloader-enterprise-package-proxy/pkgs/container/reloader-enterprise">https://github.com/stakater/reloader-enterprise-package-proxy/pkgs/container/reloader-enterprise</a></p>
+<p>Reloader Enterprise images are hosted in a <strong>private GitHub Container Registry (GHCR)</strong> repository.</p>
+<p>Once access is granted, customers can view available versions at:</p>
+<p><code>ghcr.io/stakater/reloader-enterprise-package-proxy</code></p>
+<blockquote>
+<p>⚠️ This repository is private.<br>
+If you are not logged in to GitHub <strong>or</strong> your GitHub account does not have access,
+GitHub will return <strong>404 Not Found</strong>. This is expected behavior.</p>
+</blockquote>
+<p>If you believe you should have access but cannot view the repository, please contact Stakater support.</p>
 <h3 id="or-via-github-api">Or via GitHub API<a class="headerlink" href="#or-via-github-api" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-L<span class="w"> </span><span class="se">\</span>
 <span class="w"> </span>-H<span class="w"> </span><span class="s2">"Accept: application/vnd.github+json"</span><span class="w"> </span><span class="se">\</span>
