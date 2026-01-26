@@ -1,0 +1,25 @@
+site_name: Reloader Enterprise
+docs_dir: content
+site_url: https://docs.stakater.com/reloader-enterprise/
+repo_url: https://github.com/stakater/reloader-enterprise-package-proxy
+edit_uri: blob/main/content/
+use_directory_urls: false
+strict: true
+theme:
+  logo: assets/images/favicon.svg
+  favicon: assets/images/favicon.svg
+nav:
+  - Overview: 
+      - index.md
+      - about/why-reloader-matters.md
+      - about/value-by-role.md
+      - OSS vs Enterprise: about/editions.md
+  - Install & Upgrade:
+      - Reloader Enterprise: installation/install.md
+  - Integrations:
+      - Overview: integrations/index.md
+      - Conjur:
+          - Overview: integrations/conjur/index.md
+  - eula.md
+  - 'Support': help.md
+  - 'Versions': versions.md
