@@ -106,7 +106,17 @@ but only versions that have passed enterprise-grade validation are published.
 
 ### View versions in GitHub Packages
 
-[https://github.com/stakater/reloader-enterprise-package-proxy/pkgs/container/reloader-enterprise](https://github.com/stakater/reloader-enterprise-package-proxy/pkgs/container/reloader-enterprise)
+Reloader Enterprise images are hosted in a **private GitHub Container Registry (GHCR)** repository.
+
+Once access is granted, customers can view available versions at:
+
+`ghcr.io/stakater/reloader-enterprise-package-proxy`
+
+> ⚠️ This repository is private.  
+> If you are not logged in to GitHub **or** your GitHub account does not have access,
+> GitHub will return **404 Not Found**. This is expected behavior.
+
+If you believe you should have access but cannot view the repository, please contact Stakater support.
 
 ### Or via GitHub API
 
