@@ -1,6 +1,6 @@
 # How to Use Reloader with Conjur JWT Sidecar Pattern
 
-This guide explains how to set up CyberArk Conjur with the Secrets Provider sidecar pattern using JWT-based authentication (authn-jwt), combined with Stakater Reloader for automatic pod restarts when secrets change.
+This guide explains how to set up CyberArk Conjur with the Secrets Provider sidecar pattern using JWT-based authentication (`authn-jwt`), combined with Stakater Reloader for automatic pod restarts when secrets change.
 
 ## Overview
 

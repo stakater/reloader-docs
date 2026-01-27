@@ -12,7 +12,7 @@ This guide shows how to automatically restart Kubernetes workloads when CyberArk
 |---------|-------------------|----------|------------------------|-------|
 | **External Secrets Operator** | ESO syncs to K8s Secret | ESO refresh interval | Best fit | [ESO Guide](conjur-eso.md) |
 | **Sidecar** | Sidecar updates K8s Secret | Sidecar refresh interval | Best fit | [Sidecar Guide](conjur-sidecar.md) |
-| **CSI Driver** | CSI mounts files + syncs to K8s Secret | CSI rotation interval | Works with secretObjects | [CSI Guide](conjur-csi.md) |
+| **CSI Driver** | CSI mounts files + syncs to K8s Secret | CSI rotation interval | Works with `secretObjects` | [CSI Guide](conjur-csi.md) |
 
 ## Architecture Overview
 

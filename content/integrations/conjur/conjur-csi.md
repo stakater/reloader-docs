@@ -1,6 +1,6 @@
 # How to Use Reloader with Conjur CSI Driver Pattern
 
-This guide explains how to set up CyberArk Conjur with the Secrets Store CSI Driver using JWT-based authentication (authn-jwt), combined with Stakater Reloader for automatic pod restarts when secrets change.
+This guide explains how to set up CyberArk Conjur with the Secrets Store CSI Driver using JWT-based authentication (`authn-jwt`), combined with Stakater Reloader for automatic pod restarts when secrets change.
 
 ## Overview
 
@@ -395,7 +395,7 @@ annotations:
     - password.txt: secrets/password
 ```
 
-### secretObjects Configuration
+### `secretObjects` Configuration
 
 The `secretObjects` field syncs mounted secrets to a Kubernetes Secret:
 
@@ -426,11 +426,11 @@ helm install csi-secrets-store ... \
 | Resource | Annotation |
 |----------|------------|
 | Deployment | `reloader.stakater.com/search: "true"` |
-| Secret | `reloader.stakater.com/match: "true"` (via secretObjects) |
+| Secret | `reloader.stakater.com/match: "true"` (via `secretObjects`) |
 
 ### Why CSI Volume Mount is Required
 
 Even if your app only uses environment variables from the K8s Secret, the CSI volume must be mounted because:
 
 1. The CSI driver only syncs secrets when a pod mounts the volume
-1. Without the mount, the K8s Secret (secretObjects) won't be created
+1. Without the mount, the K8s Secret (`secretObjects`) won't be created

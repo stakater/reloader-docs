@@ -594,4 +594,3 @@ kubectl logs -n <NAMESPACE> -l app=eso-test-app --tail=5
 | **Setup Complexity** | Simpler | Requires JWT authenticator configuration |
 | **Conjur Policy** | Host with API key | Host with JWT claim annotations |
 | **Best For** | Development, simple setups | Production, security-conscious environments |
-
