@@ -20,6 +20,9 @@ nav:
       - Overview: integrations/index.md
       - Conjur:
           - Overview: integrations/conjur/index.md
+          - External Secrets Operator: integrations/conjur/conjur-eso.md
+          - Sidecar: integrations/conjur/conjur-sidecar.md
+          - CSI Driver: integrations/conjur/conjur-csi.md
   - eula.md
   - 'Support': help.md
   - 'Versions': versions.md
