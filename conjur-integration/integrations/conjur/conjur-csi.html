@@ -3283,7 +3283,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 
 
 <h1 id="how-to-use-reloader-with-conjur-csi-driver-pattern">How to Use Reloader with Conjur CSI Driver Pattern<a class="headerlink" href="#how-to-use-reloader-with-conjur-csi-driver-pattern" title="Permanent link">#</a></h1>
-<p>This guide explains how to set up CyberArk Conjur with the Secrets Store CSI Driver using JWT-based authentication (authn-jwt), combined with Stakater Reloader for automatic pod restarts when secrets change.</p>
+<p>This guide explains how to set up CyberArk Conjur with the Secrets Store CSI Driver using JWT-based authentication (<code>authn-jwt</code>), combined with Stakater Reloader for automatic pod restarts when secrets change.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────────────────────────────┐
 │                           Kubernetes Cluster                                 │
@@ -3624,7 +3624,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> <
 <span class="w">    </span><span class="no">- username.txt: secrets/username</span>
 <span class="w">    </span><span class="no">- password.txt: secrets/password</span>
 </code></pre></div>
-<h3 id="secretobjects-configuration">secretObjects Configuration<a class="headerlink" href="#secretobjects-configuration" title="Permanent link">#</a></h3>
+<h3 id="secretobjects-configuration"><code>secretObjects</code> Configuration<a class="headerlink" href="#secretobjects-configuration" title="Permanent link">#</a></h3>
 <p>The <code>secretObjects</code> field syncs mounted secrets to a Kubernetes Secret:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">secretObjects</span><span class="p">:</span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">secretName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
@@ -3657,7 +3657,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> <
 </tr>
 <tr>
 <td>Secret</td>
-<td><code>reloader.stakater.com/match: "true"</code> (via secretObjects)</td>
+<td><code>reloader.stakater.com/match: "true"</code> (via <code>secretObjects</code>)</td>
 </tr>
 </tbody>
 </table>
@@ -3665,7 +3665,7 @@ kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> <
 <p>Even if your app only uses environment variables from the K8s Secret, the CSI volume must be mounted because:</p>
 <ol>
 <li>The CSI driver only syncs secrets when a pod mounts the volume</li>
-<li>Without the mount, the K8s Secret (secretObjects) won't be created</li>
+<li>Without the mount, the K8s Secret (<code>secretObjects</code>) won't be created</li>
 </ol>
 
 
