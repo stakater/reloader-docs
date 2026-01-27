@@ -5,31 +5,31 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/main/installation/install.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/main/integrations/conjur/conjur-csi.html">
       
       
-        <link rel="prev" href="../about/editions.html">
+        <link rel="prev" href="conjur-sidecar.html">
       
       
-        <link rel="next" href="../integrations/index.html">
+        <link rel="next" href="../../eula.html">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/favicon.svg">
+      <link rel="icon" href="../../assets/images/favicon.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Reloader Enterprise - Reloader</title>
+        <title>CSI Driver - Reloader</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -48,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -66,7 +66,7 @@
 
     
     
-  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reloader-enterprise-re-installation" class="md-skip">
+        <a href="#how-to-use-reloader-with-conjur-csi-driver-pattern" class="md-skip">
           Skip to content
         </a>
       
@@ -323,9 +323,9 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
 
     <!-- Link to home -->
-    <a href=".." title="Reloader" class="md-header__button md-logo" aria-label="Reloader" data-md-component="logo">
+    <a href="../.." title="Reloader" class="md-header__button md-logo" aria-label="Reloader" data-md-component="logo">
       <!-- 
-  <img src="../assets/images/favicon.svg" alt="logo">
+  <img src="../../assets/images/favicon.svg" alt="logo">
  -->
     </a>
 
@@ -343,10 +343,10 @@
         <!-- Logo -->
         <div class="md-header__topic">
           
-          <img class="md-header__logo_light" src="../assets/images/logo-light.png#only-light" alt="logo">
+          <img class="md-header__logo_light" src="../../assets/images/logo-light.png#only-light" alt="logo">
           
           
-          <img class="md-header__logo_dark" src="../assets/images/logo-dark.png#only-dark" alt="logo">
+          <img class="md-header__logo_dark" src="../../assets/images/logo-dark.png#only-dark" alt="logo">
           
           
           <div class="header-site-name">
@@ -1970,9 +1970,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Reloader" class="md-nav__button md-logo" aria-label="Reloader" data-md-component="logo">
+    <a href="../.." title="Reloader" class="md-nav__button md-logo" aria-label="Reloader" data-md-component="logo">
       
-  <img src="../assets/images/favicon.svg" alt="logo">
+  <img src="../../assets/images/favicon.svg" alt="logo">
 
     </a>
     Reloader
@@ -2046,7 +2046,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="../../index.html" class="md-nav__link">
         
   
   
@@ -2074,7 +2074,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about/why-reloader-matters.html" class="md-nav__link">
+      <a href="../../about/why-reloader-matters.html" class="md-nav__link">
         
   
   
@@ -2102,7 +2102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about/value-by-role.html" class="md-nav__link">
+      <a href="../../about/value-by-role.html" class="md-nav__link">
         
   
   
@@ -2130,7 +2130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about/editions.html" class="md-nav__link">
+      <a href="../../about/editions.html" class="md-nav__link">
         
   
   
@@ -2138,6 +2138,88 @@
     
   
     OSS vs Enterprise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install &amp; Upgrade
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Install &amp; Upgrade
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/install.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reloader Enterprise
   
 
     
@@ -2175,349 +2257,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Install &amp; Upgrade
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Install &amp; Upgrade
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reloader Enterprise
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="install.html" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reloader Enterprise
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#how-access-to-reloader-enterprise-is-granted" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How Access to Reloader Enterprise Is Granted?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installation-overview" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Installation Overview
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Installation Overview">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#option-a-use-your-github-user" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Option A — Use Your GitHub User
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#option-b-use-a-token-provided-by-stakater" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Option B — Use a Token Provided by Stakater
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installation-method-a-using-your-github-user" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Installation Method A — Using Your GitHub User
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Installation Method A — Using Your GitHub User">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-become-a-collaborator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1 — Become a collaborator
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-create-a-github-personal-access-token-pat" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2 — Create a GitHub Personal Access Token (PAT)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-store-the-pat-in-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3 — Store the PAT in Kubernetes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-install-reloader-enterprise-via-helm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4 — Install Reloader Enterprise via Helm
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#installation-method-b-using-a-token-provided-by-stakater" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Installation Method B — Using a Token Provided by Stakater
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Installation Method B — Using a Token Provided by Stakater">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-request-a-stakater-issued-token" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1 — Request a Stakater-issued token
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-store-the-token-in-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2 — Store the token in Kubernetes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-install-the-enterprise-image-via-helm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3 — Install the enterprise image via Helm
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#checking-available-versions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Checking Available Versions
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Checking Available Versions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#view-versions-in-github-packages" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        View versions in GitHub Packages
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#or-via-github-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Or via GitHub API
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#access-requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Access Requirements
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -2538,7 +2278,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2556,7 +2296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../integrations/index.html" class="md-nav__link">
+      <a href="../index.html" class="md-nav__link">
         
   
   
@@ -2581,18 +2321,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -2613,7 +2355,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2631,7 +2373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../integrations/conjur/index.html" class="md-nav__link">
+      <a href="index.html" class="md-nav__link">
         
   
   
@@ -2659,7 +2401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../integrations/conjur/conjur-eso.html" class="md-nav__link">
+      <a href="conjur-eso.html" class="md-nav__link">
         
   
   
@@ -2687,7 +2429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../integrations/conjur/conjur-sidecar.html" class="md-nav__link">
+      <a href="conjur-sidecar.html" class="md-nav__link">
         
   
   
@@ -2712,10 +2454,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../integrations/conjur/conjur-csi.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSI Driver
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="conjur-csi.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2731,6 +2500,327 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-secrets-store-csi-driver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install Secrets Store CSI Driver
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-conjur-csi-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install Conjur CSI Provider
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-load-conjur-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1: Load Conjur Policies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-configure-jwt-authenticator-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Configure JWT Authenticator Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-set-application-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Set Application Secrets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-create-application-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Create Application Namespace
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-install-namespace-prep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Install Namespace Prep
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-create-secretproviderclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Create SecretProviderClass
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-deploy-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Deploy Application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-8-verify-the-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8: Verify the Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 8: Verify the Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-pod-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Pod Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-secretproviderclasspodstatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check SecretProviderClassPodStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-secrets-are-populated" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verify Secrets are Populated
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-9-test-secret-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 9: Test Secret Rotation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 9: Test Secret Rotation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-secret-in-conjur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Update Secret in Conjur
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wait-and-verify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wait and Verify
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-configuration-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Configuration Points
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Configuration Points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#secretproviderclass-configuration-v020" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SecretProviderClass Configuration (v0.2.0)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pod-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pod Annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secretobjects-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        secretObjects Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csi-driver-token-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSI Driver Token Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reloader-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reloader Annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-csi-volume-mount-is-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why CSI Volume Mount is Required
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2758,7 +2848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../eula.html" class="md-nav__link">
+      <a href="../../eula.html" class="md-nav__link">
         
   
   
@@ -2785,7 +2875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../help.html" class="md-nav__link">
+      <a href="../../help.html" class="md-nav__link">
         
   
   
@@ -2812,7 +2902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../versions.html" class="md-nav__link">
+      <a href="../../versions.html" class="md-nav__link">
         
   
   
@@ -2861,10 +2951,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-access-to-reloader-enterprise-is-granted" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How Access to Reloader Enterprise Is Granted?
+        Overview
       
     </span>
   </a>
@@ -2872,22 +2962,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation-overview" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation Overview
+        Prerequisites
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Installation Overview">
+    <nav class="md-nav" aria-label="Prerequisites">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#option-a-use-your-github-user" class="md-nav__link">
+  <a href="#install-secrets-store-csi-driver" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option A — Use Your GitHub User
+        Install Secrets Store CSI Driver
       
     </span>
   </a>
@@ -2895,10 +2985,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#option-b-use-a-token-provided-by-stakater" class="md-nav__link">
+  <a href="#install-conjur-csi-provider" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option B — Use a Token Provided by Stakater
+        Install Conjur CSI Provider
       
     </span>
   </a>
@@ -2911,22 +3001,99 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation-method-a-using-your-github-user" class="md-nav__link">
+  <a href="#step-1-load-conjur-policies" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation Method A — Using Your GitHub User
+        Step 1: Load Conjur Policies
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Installation Method A — Using Your GitHub User">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-configure-jwt-authenticator-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2: Configure JWT Authenticator Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-set-application-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3: Set Application Secrets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-create-application-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4: Create Application Namespace
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-install-namespace-prep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5: Install Namespace Prep
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-create-secretproviderclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6: Create SecretProviderClass
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-deploy-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7: Deploy Application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-8-verify-the-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8: Verify the Setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 8: Verify the Setup">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-become-a-collaborator" class="md-nav__link">
+  <a href="#check-pod-status" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1 — Become a collaborator
+        Check Pod Status
       
     </span>
   </a>
@@ -2934,10 +3101,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-create-a-github-personal-access-token-pat" class="md-nav__link">
+  <a href="#check-secretproviderclasspodstatus" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2 — Create a GitHub Personal Access Token (PAT)
+        Check SecretProviderClassPodStatus
       
     </span>
   </a>
@@ -2945,21 +3112,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-store-the-pat-in-kubernetes" class="md-nav__link">
+  <a href="#verify-secrets-are-populated" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3 — Store the PAT in Kubernetes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-install-reloader-enterprise-via-helm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4 — Install Reloader Enterprise via Helm
+        Verify Secrets are Populated
       
     </span>
   </a>
@@ -2972,22 +3128,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation-method-b-using-a-token-provided-by-stakater" class="md-nav__link">
+  <a href="#step-9-test-secret-rotation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation Method B — Using a Token Provided by Stakater
+        Step 9: Test Secret Rotation
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Installation Method B — Using a Token Provided by Stakater">
+    <nav class="md-nav" aria-label="Step 9: Test Secret Rotation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-request-a-stakater-issued-token" class="md-nav__link">
+  <a href="#update-secret-in-conjur" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1 — Request a Stakater-issued token
+        Update Secret in Conjur
       
     </span>
   </a>
@@ -2995,21 +3151,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-store-the-token-in-kubernetes" class="md-nav__link">
+  <a href="#wait-and-verify" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2 — Store the token in Kubernetes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-install-the-enterprise-image-via-helm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3 — Install the enterprise image via Helm
+        Wait and Verify
       
     </span>
   </a>
@@ -3022,22 +3167,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#checking-available-versions" class="md-nav__link">
+  <a href="#key-configuration-points" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Checking Available Versions
+        Key Configuration Points
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Checking Available Versions">
+    <nav class="md-nav" aria-label="Key Configuration Points">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#view-versions-in-github-packages" class="md-nav__link">
+  <a href="#secretproviderclass-configuration-v020" class="md-nav__link">
     <span class="md-ellipsis">
       
-        View versions in GitHub Packages
+        SecretProviderClass Configuration (v0.2.0)
       
     </span>
   </a>
@@ -3045,10 +3190,54 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#or-via-github-api" class="md-nav__link">
+  <a href="#pod-annotations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Or via GitHub API
+        Pod Annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secretobjects-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        secretObjects Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csi-driver-token-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSI Driver Token Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reloader-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reloader Annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-csi-volume-mount-is-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why CSI Volume Mount is Required
       
     </span>
   </a>
@@ -3057,17 +3246,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#access-requirements" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Access Requirements
-      
-    </span>
-  </a>
   
 </li>
       
@@ -3091,97 +3269,391 @@
   
 
 
-<h1 id="reloader-enterprise-re-installation">Reloader Enterprise (RE) Installation<a class="headerlink" href="#reloader-enterprise-re-installation" title="Permanent link">#</a></h1>
-<p>Reloader Enterprise (RE) is distributed through <strong>GitHub Container Registry (<code>GHCR</code>)</strong>. Access to enterprise images is granted <strong>through GitHub</strong>, using a private package-proxy repository.</p>
-<p>To install Reloader Enterprise, customers must:</p>
-<ol>
-<li>Have an active Reloader Enterprise subscription  </li>
-<li>Receive access to the private package registry  </li>
-<li>Authenticate their Kubernetes cluster to pull the enterprise image  </li>
-<li>Install using the OSS Helm chart with enterprise overrides  </li>
-</ol>
-<p>This section explains how access is granted and how to perform the installation.</p>
-<h2 id="how-access-to-reloader-enterprise-is-granted">How Access to Reloader Enterprise Is Granted?<a class="headerlink" href="#how-access-to-reloader-enterprise-is-granted" title="Permanent link">#</a></h2>
-<p>Stakater provides access to Reloader Enterprise through a <strong>private GitHub package proxy repository</strong>.</p>
-<p>When you are added as a customer:</p>
+<h1 id="how-to-use-reloader-with-conjur-csi-driver-pattern">How to Use Reloader with Conjur CSI Driver Pattern<a class="headerlink" href="#how-to-use-reloader-with-conjur-csi-driver-pattern" title="Permanent link">#</a></h1>
+<p>This guide explains how to set up CyberArk Conjur with the Secrets Store CSI Driver using JWT-based authentication (<code>authn-jwt</code>), combined with Stakater Reloader for automatic pod restarts when secrets change.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────────────────────────────┐
+│                           Kubernetes Cluster                                 │
+│                                                                              │
+│  ┌────────────────────────────────────────────────────────────────────────┐ │
+│  │                         Application Pod                                 │ │
+│  │  ┌─────────────────────────────────────────────────────────────────┐   │ │
+│  │  │  App Container                                                   │   │ │
+│  │  │                                                                  │   │ │
+│  │  │  - Reads secrets from env vars (K8s Secret)                     │   │ │
+│  │  │  - Optionally reads secrets from mounted files                  │   │ │
+│  │  │                                                                  │   │ │
+│  │  └─────────────────────────────────────────────────────────────────┘   │ │
+│  │                              │                                          │ │
+│  │                              ▼                                          │ │
+│  │  ┌─────────────────────────────────────────────────────────────────┐   │ │
+│  │  │  CSI Volume Mount (/mnt/secrets)                                │   │ │
+│  │  │  - username.txt                                                  │   │ │
+│  │  │  - password.txt                                                  │   │ │
+│  │  └─────────────────────────────────────────────────────────────────┘   │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                      │                                       │
+│            ┌─────────────────────────┼─────────────────────────┐            │
+│            ▼                         ▼                         ▼            │
+│  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐      │
+│  │  Conjur CSI      │    │   K8s Secret     │    │  Stakater        │      │
+│  │  Provider        │───►│   (app-secrets)  │───►│  Reloader        │      │
+│  │                  │    │                  │    │                  │      │
+│  │  - Authenticates │    │  annotation:     │    │  Watches secret  │      │
+│  │    via JWT       │    │  reloader.../    │    │  changes and     │      │
+│  │  - Fetches from  │    │  match: "true"   │    │  restarts pods   │      │
+│  │    Conjur        │    │                  │    │                  │      │
+│  │  - Syncs via     │    │  (secretObjects) │    │                  │      │
+│  │    secretObjects │    │                  │    │                  │      │
+│  └──────────────────┘    └──────────────────┘    └──────────────────┘      │
+│            │                                                                 │
+│            ▼                                                                 │
+│  ┌──────────────────┐                                                       │
+│  │    Conjur        │                                                       │
+│  │    Server        │                                                       │
+│  │                  │                                                       │
+│  │  Stores secrets  │                                                       │
+│  │  Validates JWT   │                                                       │
+│  └──────────────────┘                                                       │
+└─────────────────────────────────────────────────────────────────────────────┘
+</code></pre></div>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
+<p>Complete the common setup steps from the <a href="index.html">Overview</a>:</p>
 <ul>
-<li>You receive the <strong><code>read</code></strong> role  </li>
-<li>You can <strong>pull</strong> Reloader Enterprise images  </li>
-<li>You can view contributors  </li>
-<li>You <strong>cannot</strong> create branches, modify the code, or view other collaborators  </li>
+<li>Conjur OSS installed</li>
+<li>Conjur CLI configured</li>
+<li>Golden ConfigMap (cluster-prep) installed</li>
 </ul>
-<p>The repository acts as a <strong>proxy</strong> to private build sources.<br>
-It does <strong>not</strong> build artifacts itself.</p>
-<p>Access is available only to active Reloader Enterprise customers.</p>
-<h2 id="installation-overview">Installation Overview<a class="headerlink" href="#installation-overview" title="Permanent link">#</a></h2>
-<p>After access is granted, you may install Reloader Enterprise in one of two ways:</p>
-<h3 id="option-a-use-your-github-user"><strong>Option A — Use Your GitHub User</strong><a class="headerlink" href="#option-a-use-your-github-user" title="Permanent link">#</a></h3>
-<p>You provide Stakater with your GitHub username.<br>
-This user is added as a collaborator to the enterprise package repository.</p>
-<h3 id="option-b-use-a-token-provided-by-stakater"><strong>Option B — Use a Token Provided by Stakater</strong><a class="headerlink" href="#option-b-use-a-token-provided-by-stakater" title="Permanent link">#</a></h3>
-<p>Stakater issues a dedicated <code>reloader-enterprise</code> access token.</p>
-<p>Both methods require creating a Kubernetes registry secret and running a Helm install.</p>
-<h2 id="installation-method-a-using-your-github-user">Installation Method A — Using Your GitHub User<a class="headerlink" href="#installation-method-a-using-your-github-user" title="Permanent link">#</a></h2>
-<h3 id="step-1-become-a-collaborator">Step 1 — Become a collaborator<a class="headerlink" href="#step-1-become-a-collaborator" title="Permanent link">#</a></h3>
-<p>Stakater adds your GitHub user to the private enterprise package proxy.<br>
-You must accept the GitHub invitation.</p>
-<h3 id="step-2-create-a-github-personal-access-token-pat">Step 2 — Create a GitHub Personal Access Token (PAT)<a class="headerlink" href="#step-2-create-a-github-personal-access-token-pat" title="Permanent link">#</a></h3>
-<p>Create a token with the following scope:</p>
+<p>Additionally required:</p>
 <ul>
-<li><code>read:packages</code></li>
+<li>Secrets Store CSI Driver installed with <code>syncSecret.enabled=true</code></li>
+<li>CyberArk Conjur CSI Provider installed</li>
 </ul>
-<h3 id="step-3-store-the-pat-in-kubernetes">Step 3 — Store the PAT in Kubernetes<a class="headerlink" href="#step-3-store-the-pat-in-kubernetes" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>docker-registry<span class="w"> </span>regcred<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--docker-server<span class="o">=</span>ghcr.io<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--docker-username<span class="o">=</span>&lt;github-username&gt;<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--docker-password<span class="o">=</span>&lt;github-token&gt;
+<h3 id="install-secrets-store-csi-driver">Install Secrets Store CSI Driver<a class="headerlink" href="#install-secrets-store-csi-driver" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>secrets-store-csi-driver<span class="w"> </span>https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts
+helm<span class="w"> </span>install<span class="w"> </span>csi-secrets-store<span class="w"> </span>secrets-store-csi-driver/secrets-store-csi-driver<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>kube-system<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>syncSecret.enabled<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span><span class="nv">enableSecretRotation</span><span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span><span class="nv">rotationPollInterval</span><span class="o">=</span>30s<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>tokenRequests<span class="o">[</span><span class="m">0</span><span class="o">]</span>.audience<span class="o">=</span><span class="s2">"conjur"</span>
 </code></pre></div>
-<h3 id="step-4-install-reloader-enterprise-via-helm">Step 4 — Install Reloader Enterprise via Helm<a class="headerlink" href="#step-4-install-reloader-enterprise-via-helm" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--set<span class="w"> </span>image.repository<span class="o">=</span>ghcr.io/stakater/reloader-enterprise<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--set<span class="w"> </span>image.tag<span class="o">=</span>&lt;version&gt;<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--set<span class="w"> </span><span class="s2">"global.imagePullSecrets[0].name=regcred"</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--generate-name
+<p><strong>Important:</strong> The <code>tokenRequests[0].audience="conjur"</code> is required for JWT authentication with Conjur CSI Provider.</p>
+<h3 id="install-conjur-csi-provider">Install Conjur CSI Provider<a class="headerlink" href="#install-conjur-csi-provider" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>cyberark<span class="w"> </span>https://cyberark.github.io/helm-charts
+helm<span class="w"> </span>install<span class="w"> </span>conjur-csi-provider<span class="w"> </span>cyberark/conjur-k8s-csi-provider<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>kube-system
 </code></pre></div>
-<h2 id="installation-method-b-using-a-token-provided-by-stakater">Installation Method B — Using a Token Provided by Stakater<a class="headerlink" href="#installation-method-b-using-a-token-provided-by-stakater" title="Permanent link">#</a></h2>
-<h3 id="step-1-request-a-stakater-issued-token">Step 1 — Request a Stakater-issued token<a class="headerlink" href="#step-1-request-a-stakater-issued-token" title="Permanent link">#</a></h3>
-<p>This token is tied to the <code>reloader-enterprise</code> GitHub service account.</p>
-<h3 id="step-2-store-the-token-in-kubernetes">Step 2 — Store the token in Kubernetes<a class="headerlink" href="#step-2-store-the-token-in-kubernetes" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>docker-registry<span class="w"> </span>regcred<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--docker-server<span class="o">=</span>ghcr.io<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--docker-username<span class="o">=</span>reloader-enterprise<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--docker-password<span class="o">=</span>&lt;token-from-stakater&gt;
+<h2 id="step-1-load-conjur-policies">Step 1: Load Conjur Policies<a class="headerlink" href="#step-1-load-conjur-policies" title="Permanent link">#</a></h2>
+<p>Create <code>conjur-policy.yaml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># JWT Authenticator Configuration</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!policy</span>
+<span class="w">  </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conjur/authn-jwt/dev</span>
+<span class="w">  </span><span class="nt">body</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!webservice</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!group</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!permit</span>
+<span class="w">      </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="kt">!group</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps</span>
+<span class="w">      </span><span class="nt">privilege</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">read</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">authenticate</span><span class="w"> </span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">resource</span><span class="p">:</span><span class="w"> </span><span class="kt">!webservice</span>
+<span class="w">    </span><span class="c1"># Use public-keys instead of jwks-uri</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!variable</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">public-keys</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!variable</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">issuer</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!variable</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">token-app-property</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!variable</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">identity-path</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!variable</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">audience</span>
+
+<span class="c1"># Application Secrets</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!policy</span>
+<span class="w">  </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets</span>
+<span class="w">  </span><span class="nt">body</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!group</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">consumers</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nl">&amp;variables</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!variable</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">username</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!variable</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!permit</span>
+<span class="w">      </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="kt">!group</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">consumers</span>
+<span class="w">      </span><span class="nt">privilege</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">read</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">execute</span><span class="w"> </span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">resource</span><span class="p">:</span><span class="w"> </span><span class="nv">*variables</span>
+
+<span class="c1"># Host Identity for CSI test app</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!policy</span>
+<span class="w">  </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jwt-apps</span>
+<span class="w">  </span><span class="nt">body</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!host</span>
+<span class="w">      </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">system:serviceaccount:csi-test-app:csi-test-app-sa</span>
+<span class="w">      </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">authn-jwt/dev/sub</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">system:serviceaccount:csi-test-app:csi-test-app-sa</span>
+
+<span class="c1"># Grant Host to JWT Authenticator Group</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!grant</span>
+<span class="w">  </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="kt">!group</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conjur/authn-jwt/dev/apps</span>
+<span class="w">  </span><span class="nt">member</span><span class="p">:</span><span class="w"> </span><span class="kt">!host</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jwt-apps/system:serviceaccount:csi-test-app:csi-test-app-sa</span>
+
+<span class="c1"># Grant Host Access to Secrets</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!grant</span>
+<span class="w">  </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="kt">!group</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets/consumers</span>
+<span class="w">  </span><span class="nt">member</span><span class="p">:</span><span class="w"> </span><span class="kt">!host</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jwt-apps/system:serviceaccount:csi-test-app:csi-test-app-sa</span>
 </code></pre></div>
-<h3 id="step-3-install-the-enterprise-image-via-helm">Step 3 — Install the enterprise image via Helm<a class="headerlink" href="#step-3-install-the-enterprise-image-via-helm" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--set<span class="w"> </span>image.repository<span class="o">=</span>ghcr.io/stakater/reloader-enterprise<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--set<span class="w"> </span>image.tag<span class="o">=</span>&lt;version&gt;<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--set<span class="w"> </span><span class="s2">"global.imagePullSecrets[0].name=regcred"</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--generate-name
+<p>Load the policy:</p>
+<div class="highlight"><pre><span></span><code>conjur<span class="w"> </span>policy<span class="w"> </span>load<span class="w"> </span>-b<span class="w"> </span>root<span class="w"> </span>-f<span class="w"> </span>conjur-policy.yaml
 </code></pre></div>
-<h2 id="checking-available-versions">Checking Available Versions<a class="headerlink" href="#checking-available-versions" title="Permanent link">#</a></h2>
-<p>Reloader Enterprise uses the same image tags as the open-source version,
-but only versions that have passed enterprise-grade validation are published.</p>
-<h3 id="view-versions-in-github-packages">View versions in GitHub Packages<a class="headerlink" href="#view-versions-in-github-packages" title="Permanent link">#</a></h3>
-<p>Reloader Enterprise images are hosted in a <strong>private GitHub Container Registry (GHCR)</strong> repository.</p>
-<p>Once access is granted, customers can view available versions at:</p>
-<p><code>ghcr.io/stakater/reloader-enterprise-package-proxy</code></p>
+<h2 id="step-2-configure-jwt-authenticator-variables">Step 2: Configure JWT Authenticator Variables<a class="headerlink" href="#step-2-configure-jwt-authenticator-variables" title="Permanent link">#</a></h2>
+<p><strong>Important:</strong> Use <code>public-keys</code> instead of <code>jwks-uri</code>. The <code>jwks-uri</code> approach fails because Conjur cannot reach the Kubernetes API server due to SSL certificate issues.</p>
+<p><strong>Important:</strong> For CSI Provider, the audience must be <code>"conjur"</code> (not the Conjur URL).</p>
 <blockquote>
-<p>⚠️ This repository is private.<br>
-If you are not logged in to GitHub <strong>or</strong> your GitHub account does not have access,
-GitHub will return <strong>404 Not Found</strong>. This is expected behavior.</p>
+<p><strong>Note:</strong> Using <code>jq</code> to format the public-keys JSON ensures proper quoting. Malformed JSON (missing quotes around keys) will cause JWT authentication to fail with 401 errors.</p>
 </blockquote>
-<p>If you believe you should have access but cannot view the repository, please contact Stakater support.</p>
-<h3 id="or-via-github-api">Or via GitHub API<a class="headerlink" href="#or-via-github-api" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-L<span class="w"> </span><span class="se">\</span>
-<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Accept: application/vnd.github+json"</span><span class="w"> </span><span class="se">\</span>
-<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Authorization: Bearer &lt;token&gt;"</span><span class="w"> </span><span class="se">\</span>
-<span class="w"> </span>-H<span class="w"> </span><span class="s2">"X-GitHub-Api-Version: 2022-11-28"</span><span class="w"> </span><span class="se">\</span>
-<span class="w"> </span>https://api.github.com/orgs/stakater/packages/container/reloader-enterprise/versions
+<div class="highlight"><pre><span></span><code><span class="c1"># Get Kubernetes JWKS public keys and format as proper JSON</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>--raw<span class="w"> </span>/openid/v1/jwks<span class="w"> </span>&gt;<span class="w"> </span>/tmp/jwks.json
+jq<span class="w"> </span>-n<span class="w"> </span>--slurpfile<span class="w"> </span>jwks<span class="w"> </span>/tmp/jwks.json<span class="w"> </span><span class="s1">'{"type":"jwks","value":$jwks[0]}'</span><span class="w"> </span>&gt;<span class="w"> </span>/tmp/public-keys.json
+
+<span class="c1"># Set public-keys from file (ensures proper JSON formatting)</span>
+conjur<span class="w"> </span>variable<span class="w"> </span><span class="nb">set</span><span class="w"> </span>-i<span class="w"> </span>conjur/authn-jwt/dev/public-keys<span class="w"> </span>-v<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>cat<span class="w"> </span>/tmp/public-keys.json<span class="k">)</span><span class="s2">"</span>
+
+<span class="c1"># Set issuer</span>
+conjur<span class="w"> </span>variable<span class="w"> </span><span class="nb">set</span><span class="w"> </span>-i<span class="w"> </span>conjur/authn-jwt/dev/issuer<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-v<span class="w"> </span><span class="s2">"https://kubernetes.default.svc.cluster.local"</span>
+
+<span class="c1"># Set token-app-property</span>
+conjur<span class="w"> </span>variable<span class="w"> </span><span class="nb">set</span><span class="w"> </span>-i<span class="w"> </span>conjur/authn-jwt/dev/token-app-property<span class="w"> </span>-v<span class="w"> </span><span class="s2">"sub"</span>
+
+<span class="c1"># Set identity-path</span>
+conjur<span class="w"> </span>variable<span class="w"> </span><span class="nb">set</span><span class="w"> </span>-i<span class="w"> </span>conjur/authn-jwt/dev/identity-path<span class="w"> </span>-v<span class="w"> </span><span class="s2">"jwt-apps"</span>
+
+<span class="c1"># Set audience - MUST be "conjur" for CSI Provider</span>
+conjur<span class="w"> </span>variable<span class="w"> </span><span class="nb">set</span><span class="w"> </span>-i<span class="w"> </span>conjur/authn-jwt/dev/audience<span class="w"> </span>-v<span class="w"> </span><span class="s2">"conjur"</span>
 </code></pre></div>
-<h2 id="access-requirements">Access Requirements<a class="headerlink" href="#access-requirements" title="Permanent link">#</a></h2>
-<p>Access to the enterprise package repository is granted <strong>only</strong> to organizations with an active Reloader Enterprise subscription.
-If the subscription expires, access is automatically revoked.</p>
+<h2 id="step-3-set-application-secrets">Step 3: Set Application Secrets<a class="headerlink" href="#step-3-set-application-secrets" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>conjur<span class="w"> </span>variable<span class="w"> </span><span class="nb">set</span><span class="w"> </span>-i<span class="w"> </span>secrets/username<span class="w"> </span>-v<span class="w"> </span><span class="s2">"admin-user"</span>
+
+conjur<span class="w"> </span>variable<span class="w"> </span><span class="nb">set</span><span class="w"> </span>-i<span class="w"> </span>secrets/password<span class="w"> </span>-v<span class="w"> </span><span class="s2">"super-secret-password"</span>
+</code></pre></div>
+<h2 id="step-4-create-application-namespace">Step 4: Create Application Namespace<a class="headerlink" href="#step-4-create-application-namespace" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>csi-test-app
+kubectl<span class="w"> </span>create<span class="w"> </span>serviceaccount<span class="w"> </span>csi-test-app-sa<span class="w"> </span>-n<span class="w"> </span>csi-test-app
+</code></pre></div>
+<h2 id="step-5-install-namespace-prep">Step 5: Install Namespace Prep<a class="headerlink" href="#step-5-install-namespace-prep" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>conjur-config-namespace-prep<span class="w"> </span>cyberark/conjur-config-namespace-prep<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>csi-test-app<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>authnK8s.goldenConfigMap<span class="o">=</span><span class="s2">"conjur-configmap"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>authnK8s.namespace<span class="o">=</span><span class="s2">"conjur"</span>
+</code></pre></div>
+<h2 id="step-6-create-secretproviderclass">Step 6: Create SecretProviderClass<a class="headerlink" href="#step-6-create-secretproviderclass" title="Permanent link">#</a></h2>
+<p>Create <code>secret-provider-class.yaml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets-store.csi.x-k8s.io/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SecretProviderClass</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conjur-secrets</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">csi-test-app</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conjur</span>
+<span class="w">  </span><span class="c1"># Sync to Kubernetes Secret - Required for Reloader integration</span>
+<span class="w">  </span><span class="nt">secretObjects</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">secretName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Opaque</span>
+<span class="w">      </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">reloader.stakater.com/match</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">      </span><span class="nt">data</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">username</span>
+<span class="w">          </span><span class="nt">objectName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">username.txt</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
+<span class="w">          </span><span class="nt">objectName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password.txt</span>
+<span class="w">  </span><span class="nt">parameters</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># IMPORTANT: Use version 0.2.0 - secrets mapping is done via pod annotations</span>
+<span class="w">    </span><span class="nt">conjur.org/configurationVersion</span><span class="p">:</span><span class="w"> </span><span class="s">"0.2.0"</span>
+<span class="w">    </span><span class="nt">account</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myaccount</span>
+<span class="w">    </span><span class="nt">applianceUrl</span><span class="p">:</span><span class="w"> </span><span class="s">"https://conjur-conjur-oss.conjur.svc.cluster.local"</span>
+<span class="w">    </span><span class="nt">authnId</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">authn-jwt/dev</span>
+<span class="w">    </span><span class="c1"># Get SSL certificate from conjur-connect configmap</span>
+<span class="w">    </span><span class="nt">sslCertificate</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">      </span><span class="no">-----BEGIN CERTIFICATE-----</span>
+<span class="w">      </span><span class="no">&lt;your-conjur-ssl-certificate-here&gt;</span>
+<span class="w">      </span><span class="no">-----END CERTIFICATE-----</span>
+</code></pre></div>
+<p><strong>Note:</strong> Get the SSL certificate from:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>configmap<span class="w"> </span>conjur-connect<span class="w"> </span>-n<span class="w"> </span>csi-test-app<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.CONJUR_SSL_CERTIFICATE}'</span>
+</code></pre></div>
+<p>Apply:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>secret-provider-class.yaml
+</code></pre></div>
+<h2 id="step-7-deploy-application">Step 7: Deploy Application<a class="headerlink" href="#step-7-deploy-application" title="Permanent link">#</a></h2>
+<p>Create <code>deployment.yaml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">csi-test-app</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">csi-test-app</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">reloader.stakater.com/search</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">csi-test-app</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">csi-test-app</span>
+<span class="w">      </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">        </span><span class="c1"># REQUIRED: Map Conjur secrets to files in the CSI volume</span>
+<span class="w">        </span><span class="c1"># Format: - &lt;filename&gt;: &lt;conjur-variable-path&gt;</span>
+<span class="w">        </span><span class="nt">conjur.org/secrets</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">          </span><span class="no">- username.txt: secrets/username</span>
+<span class="w">          </span><span class="no">- password.txt: secrets/password</span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">serviceAccountName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">csi-test-app-sa</span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">busybox:latest</span>
+<span class="w">          </span><span class="nt">command</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"sh"</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"-c"</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">              </span><span class="no">while true; do</span>
+<span class="w">                </span><span class="no">echo "Username: $APP_USERNAME"</span>
+<span class="w">                </span><span class="no">echo "Password: $APP_PASSWORD"</span>
+<span class="w">                </span><span class="no">sleep 30</span>
+<span class="w">              </span><span class="no">done</span>
+<span class="w">          </span><span class="c1"># Reference secrets from K8s Secret (required for Reloader)</span>
+<span class="w">          </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">APP_USERNAME</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">username</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">APP_PASSWORD</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
+<span class="w">          </span><span class="c1"># CSI volume mount required to trigger secret sync</span>
+<span class="w">          </span><span class="nt">volumeMounts</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conjur-secrets</span>
+<span class="w">              </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/mnt/secrets</span>
+<span class="w">              </span><span class="nt">readOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conjur-secrets</span>
+<span class="w">          </span><span class="nt">csi</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets-store.csi.k8s.io</span>
+<span class="w">            </span><span class="nt">readOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">            </span><span class="nt">volumeAttributes</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">secretProviderClass</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conjur-secrets</span>
+</code></pre></div>
+<p>Apply:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>deployment.yaml
+</code></pre></div>
+<h2 id="step-8-verify-the-setup">Step 8: Verify the Setup<a class="headerlink" href="#step-8-verify-the-setup" title="Permanent link">#</a></h2>
+<h3 id="check-pod-status">Check Pod Status<a class="headerlink" href="#check-pod-status" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>csi-test-app
+</code></pre></div>
+<p>Pod should be Running.</p>
+<h3 id="check-secretproviderclasspodstatus">Check SecretProviderClassPodStatus<a class="headerlink" href="#check-secretproviderclasspodstatus" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>secretproviderclasspodstatuses<span class="w"> </span>-n<span class="w"> </span>csi-test-app
+</code></pre></div>
+<p>Verify <code>mounted: true</code> in the status.</p>
+<h3 id="verify-secrets-are-populated">Verify Secrets are Populated<a class="headerlink" href="#verify-secrets-are-populated" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check K8s Secret was created</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>csi-test-app<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.password}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
+
+<span class="c1"># Check app logs</span>
+kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>csi-test-app<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>csi-test-app
+</code></pre></div>
+<h2 id="step-9-test-secret-rotation">Step 9: Test Secret Rotation<a class="headerlink" href="#step-9-test-secret-rotation" title="Permanent link">#</a></h2>
+<h3 id="update-secret-in-conjur">Update Secret in Conjur<a class="headerlink" href="#update-secret-in-conjur" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>conjur<span class="w"> </span>variable<span class="w"> </span><span class="nb">set</span><span class="w"> </span>-i<span class="w"> </span>secrets/password<span class="w"> </span>-v<span class="w"> </span><span class="s2">"new-rotated-password"</span>
+</code></pre></div>
+<h3 id="wait-and-verify">Wait and Verify<a class="headerlink" href="#wait-and-verify" title="Permanent link">#</a></h3>
+<p>Wait 30-60 seconds for CSI rotation and Reloader restart:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check secret was updated</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>csi-test-app<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.password}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
+
+<span class="c1"># Check pod was restarted (new pod name)</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>csi-test-app<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>csi-test-app
+</code></pre></div>
+<h2 id="key-configuration-points">Key Configuration Points<a class="headerlink" href="#key-configuration-points" title="Permanent link">#</a></h2>
+<h3 id="secretproviderclass-configuration-v020">SecretProviderClass Configuration (v0.2.0)<a class="headerlink" href="#secretproviderclass-configuration-v020" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>conjur.org/configurationVersion</code></td>
+<td>Must be <code>"0.2.0"</code> for pod annotation-based secrets mapping</td>
+</tr>
+<tr>
+<td><code>account</code></td>
+<td>Conjur account name</td>
+</tr>
+<tr>
+<td><code>applianceUrl</code></td>
+<td>Conjur server URL</td>
+</tr>
+<tr>
+<td><code>authnId</code></td>
+<td>JWT authenticator ID (e.g., <code>authn-jwt/dev</code>)</td>
+</tr>
+<tr>
+<td><code>sslCertificate</code></td>
+<td>Conjur SSL certificate (PEM format)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note:</strong> In v0.2.0, the <code>identity</code> field is NOT used. Identity is derived from the JWT token automatically.</p>
+<h3 id="pod-annotations">Pod Annotations<a class="headerlink" href="#pod-annotations" title="Permanent link">#</a></h3>
+<p>The pod <strong>must</strong> have the <code>conjur.org/secrets</code> annotation to map Conjur variables to files:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">conjur.org/secrets</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">    </span><span class="no">- username.txt: secrets/username</span>
+<span class="w">    </span><span class="no">- password.txt: secrets/password</span>
+</code></pre></div>
+<h3 id="secretobjects-configuration"><code>secretObjects</code> Configuration<a class="headerlink" href="#secretobjects-configuration" title="Permanent link">#</a></h3>
+<p>The <code>secretObjects</code> field syncs mounted secrets to a Kubernetes Secret:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">secretObjects</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">secretName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Opaque</span>
+<span class="w">    </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">reloader.stakater.com/match</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">    </span><span class="nt">data</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">username</span>
+<span class="w">        </span><span class="nt">objectName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">username.txt</span><span class="w">  </span><span class="c1"># Must match filename in conjur.org/secrets</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
+<span class="w">        </span><span class="nt">objectName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password.txt</span>
+</code></pre></div>
+<h3 id="csi-driver-token-configuration">CSI Driver Token Configuration<a class="headerlink" href="#csi-driver-token-configuration" title="Permanent link">#</a></h3>
+<p>The CSI Driver must be installed with <code>tokenRequests</code> for JWT authentication:</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>csi-secrets-store<span class="w"> </span>...<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>tokenRequests<span class="o">[</span><span class="m">0</span><span class="o">]</span>.audience<span class="o">=</span><span class="s2">"conjur"</span>
+</code></pre></div>
+<h3 id="reloader-annotations">Reloader Annotations<a class="headerlink" href="#reloader-annotations" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Annotation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deployment</td>
+<td><code>reloader.stakater.com/search: "true"</code></td>
+</tr>
+<tr>
+<td>Secret</td>
+<td><code>reloader.stakater.com/match: "true"</code> (via <code>secretObjects</code>)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="why-csi-volume-mount-is-required">Why CSI Volume Mount is Required<a class="headerlink" href="#why-csi-volume-mount-is-required" title="Permanent link">#</a></h3>
+<p>Even if your app only uses environment variables from the K8s Secret, the CSI volume must be mounted because:</p>
+<ol>
+<li>The CSI driver only syncs secrets when a pod mounts the volume</li>
+<li>Without the mount, the K8s Secret (<code>secretObjects</code>) won't be created</li>
+</ol>
 
 
 
@@ -3475,27 +3947,27 @@ If the subscription expires, access is automatically revoked.</p>
                 <div class="flex-2">
                     <div class="logo-footer-container">
                         
-                        <img class="md-header__logo_light" src="../assets/images/footer-logo-light.png#only-light" alt="logo">
+                        <img class="md-header__logo_light" src="../../assets/images/footer-logo-light.png#only-light" alt="logo">
                         
                         
-                        <img src="../assets/images/footer-logo-dark.png#only-dark" alt="logo">
+                        <img src="../../assets/images/footer-logo-dark.png#only-dark" alt="logo">
                         
                     </div>
 
                     <div class="collaborations-img-container">
                         <div class="display-flex">
                             
-                            <img class="csa-logo-dark" src="../assets/images/CSA_dark.png#only-dark" alt="CSA">
+                            <img class="csa-logo-dark" src="../../assets/images/CSA_dark.png#only-dark" alt="CSA">
                             
                             
-                            <img class="csa-logo-light" src="../assets/images/CSA_light.png#only-light" alt="CSA">
+                            <img class="csa-logo-light" src="../../assets/images/CSA_light.png#only-light" alt="CSA">
                             
 
                             
-                            <img class="hc-logo-dark" src="../assets/images/HC_dark.png#only-dark" alt="HC">
+                            <img class="hc-logo-dark" src="../../assets/images/HC_dark.png#only-dark" alt="HC">
                             
                             
-                            <img class="hc-logo-light" src="../assets/images/HC_light.png#only-light" alt="HC">
+                            <img class="hc-logo-light" src="../../assets/images/HC_light.png#only-light" alt="HC">
                             
                         </div>
                     </div>
@@ -3887,10 +4359,10 @@ If the subscription expires, access is automatically revoked.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.tracking", "toc.follow", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.tracking", "toc.follow", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   

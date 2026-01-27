@@ -5,31 +5,31 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/main/installation/install.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/main/integrations/conjur/conjur-eso.html">
       
       
-        <link rel="prev" href="../about/editions.html">
+        <link rel="prev" href="index.html">
       
       
-        <link rel="next" href="../integrations/index.html">
+        <link rel="next" href="conjur-sidecar.html">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/favicon.svg">
+      <link rel="icon" href="../../assets/images/favicon.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Reloader Enterprise - Reloader</title>
+        <title>External Secrets Operator - Reloader</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -48,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -66,7 +66,7 @@
 
     
     
-  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reloader-enterprise-re-installation" class="md-skip">
+        <a href="#how-to-use-reloader-with-conjur-external-secrets-operator-pattern" class="md-skip">
           Skip to content
         </a>
       
@@ -323,9 +323,9 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
 
     <!-- Link to home -->
-    <a href=".." title="Reloader" class="md-header__button md-logo" aria-label="Reloader" data-md-component="logo">
+    <a href="../.." title="Reloader" class="md-header__button md-logo" aria-label="Reloader" data-md-component="logo">
       <!-- 
-  <img src="../assets/images/favicon.svg" alt="logo">
+  <img src="../../assets/images/favicon.svg" alt="logo">
  -->
     </a>
 
@@ -343,10 +343,10 @@
         <!-- Logo -->
         <div class="md-header__topic">
           
-          <img class="md-header__logo_light" src="../assets/images/logo-light.png#only-light" alt="logo">
+          <img class="md-header__logo_light" src="../../assets/images/logo-light.png#only-light" alt="logo">
           
           
-          <img class="md-header__logo_dark" src="../assets/images/logo-dark.png#only-dark" alt="logo">
+          <img class="md-header__logo_dark" src="../../assets/images/logo-dark.png#only-dark" alt="logo">
           
           
           <div class="header-site-name">
@@ -1970,9 +1970,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Reloader" class="md-nav__button md-logo" aria-label="Reloader" data-md-component="logo">
+    <a href="../.." title="Reloader" class="md-nav__button md-logo" aria-label="Reloader" data-md-component="logo">
       
-  <img src="../assets/images/favicon.svg" alt="logo">
+  <img src="../../assets/images/favicon.svg" alt="logo">
 
     </a>
     Reloader
@@ -2046,7 +2046,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="../../index.html" class="md-nav__link">
         
   
   
@@ -2074,7 +2074,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about/why-reloader-matters.html" class="md-nav__link">
+      <a href="../../about/why-reloader-matters.html" class="md-nav__link">
         
   
   
@@ -2102,7 +2102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about/value-by-role.html" class="md-nav__link">
+      <a href="../../about/value-by-role.html" class="md-nav__link">
         
   
   
@@ -2130,7 +2130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about/editions.html" class="md-nav__link">
+      <a href="../../about/editions.html" class="md-nav__link">
         
   
   
@@ -2138,6 +2138,88 @@
     
   
     OSS vs Enterprise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Install &amp; Upgrade
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Install &amp; Upgrade
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/install.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reloader Enterprise
   
 
     
@@ -2175,17 +2257,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
     
   
-    Install &amp; Upgrade
+    Integrations
   
 
     
@@ -2196,16 +2278,121 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
   
-    Install &amp; Upgrade
+    Integrations
   
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conjur
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Conjur
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2230,7 +2417,7 @@
   <span class="md-ellipsis">
     
   
-    Reloader Enterprise
+    External Secrets Operator
   
 
     
@@ -2241,14 +2428,14 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="install.html" class="md-nav__link md-nav__link--active">
+      <a href="conjur-eso.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    Reloader Enterprise
+    External Secrets Operator
   
 
     
@@ -2276,10 +2463,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-access-to-reloader-enterprise-is-granted" class="md-nav__link">
+  <a href="#authentication-options" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How Access to Reloader Enterprise Is Granted?
+        Authentication Options
       
     </span>
   </a>
@@ -2287,33 +2474,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation-overview" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation Overview
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Installation Overview">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#option-a-use-your-github-user" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Option A — Use Your GitHub User
+        Overview
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#option-b-use-a-token-provided-by-stakater" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option B — Use a Token Provided by Stakater
+        Prerequisites
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-external-secrets-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install External Secrets Operator
       
     </span>
   </a>
@@ -2326,22 +2513,209 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation-method-a-using-your-github-user" class="md-nav__link">
+  <a href="#option-1-api-key-authentication" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation Method A — Using Your GitHub User
+        Option 1: API Key Authentication
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Installation Method A — Using Your GitHub User">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-key-step-1-load-conjur-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Key: Step 1 - Load Conjur Policy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-key-step-2-set-application-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Key: Step 2 - Set Application Secrets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-key-step-3-create-application-namespace-and-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Key: Step 3 - Create Application Namespace and Credentials
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-key-step-4-get-conjur-ca-certificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Key: Step 4 - Get Conjur CA Certificate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-key-step-5-create-secretstore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Key: Step 5 - Create SecretStore
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-2-jwt-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 2: JWT Authentication
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jwt-step-1-configure-jwt-authenticator-in-conjur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JWT: Step 1 - Configure JWT Authenticator in Conjur
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jwt-step-2-configure-jwt-authenticator-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JWT: Step 2 - Configure JWT Authenticator Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jwt-step-3-set-application-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JWT: Step 3 - Set Application Secrets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jwt-step-4-create-application-namespace-and-serviceaccount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JWT: Step 4 - Create Application Namespace and ServiceAccount
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jwt-step-5-get-conjur-ca-certificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JWT: Step 5 - Get Conjur CA Certificate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jwt-step-6-create-secretstore-with-jwt-auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JWT: Step 6 - Create SecretStore with JWT Auth
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-externalsecret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create ExternalSecret
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploy Application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-the-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verify the Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-secret-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Secret Rotation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Secret Rotation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-become-a-collaborator" class="md-nav__link">
+  <a href="#update-secret-in-conjur" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1 — Become a collaborator
+        Update Secret in Conjur
       
     </span>
   </a>
@@ -2349,32 +2723,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-create-a-github-personal-access-token-pat" class="md-nav__link">
+  <a href="#wait-and-verify" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2 — Create a GitHub Personal Access Token (PAT)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-store-the-pat-in-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3 — Store the PAT in Kubernetes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-install-reloader-enterprise-via-helm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4 — Install Reloader Enterprise via Helm
+        Wait and Verify
       
     </span>
   </a>
@@ -2387,22 +2739,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation-method-b-using-a-token-provided-by-stakater" class="md-nav__link">
+  <a href="#configuration-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation Method B — Using a Token Provided by Stakater
+        Configuration Reference
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Installation Method B — Using a Token Provided by Stakater">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secretstore-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SecretStore Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SecretStore Configuration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-request-a-stakater-issued-token" class="md-nav__link">
+  <a href="#api-key-authentication" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1 — Request a Stakater-issued token
+        API Key Authentication
       
     </span>
   </a>
@@ -2410,21 +2773,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-store-the-token-in-kubernetes" class="md-nav__link">
+  <a href="#jwt-authentication" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2 — Store the token in Kubernetes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-install-the-enterprise-image-via-helm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3 — Install the enterprise image via Helm
+        JWT Authentication
       
     </span>
   </a>
@@ -2437,49 +2789,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#checking-available-versions" class="md-nav__link">
+  <a href="#jwt-authenticator-variables" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Checking Available Versions
+        JWT Authenticator Variables
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Checking Available Versions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#view-versions-in-github-packages" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        View versions in GitHub Packages
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#or-via-github-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Or via GitHub API
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#access-requirements" class="md-nav__link">
+  <a href="#externalsecret-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Access Requirements
+        ExternalSecret Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reloader-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reloader Annotations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-api-key-vs-jwt-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison: API Key vs JWT Authentication
       
     </span>
   </a>
@@ -2495,60 +2841,6 @@
 
               
             
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Integrations
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Integrations
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
                 
   
@@ -2556,138 +2848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../integrations/index.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2">
-        
-          
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Conjur
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Conjur
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../integrations/conjur/index.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../integrations/conjur/conjur-eso.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    External Secrets Operator
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../integrations/conjur/conjur-sidecar.html" class="md-nav__link">
+      <a href="conjur-sidecar.html" class="md-nav__link">
         
   
   
@@ -2715,7 +2876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../integrations/conjur/conjur-csi.html" class="md-nav__link">
+      <a href="conjur-csi.html" class="md-nav__link">
         
   
   
@@ -2758,7 +2919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../eula.html" class="md-nav__link">
+      <a href="../../eula.html" class="md-nav__link">
         
   
   
@@ -2785,7 +2946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../help.html" class="md-nav__link">
+      <a href="../../help.html" class="md-nav__link">
         
   
   
@@ -2812,7 +2973,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../versions.html" class="md-nav__link">
+      <a href="../../versions.html" class="md-nav__link">
         
   
   
@@ -2861,10 +3022,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-access-to-reloader-enterprise-is-granted" class="md-nav__link">
+  <a href="#authentication-options" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How Access to Reloader Enterprise Is Granted?
+        Authentication Options
       
     </span>
   </a>
@@ -2872,33 +3033,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation-overview" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation Overview
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Installation Overview">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#option-a-use-your-github-user" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Option A — Use Your GitHub User
+        Overview
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#option-b-use-a-token-provided-by-stakater" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option B — Use a Token Provided by Stakater
+        Prerequisites
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install-external-secrets-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install External Secrets Operator
       
     </span>
   </a>
@@ -2911,22 +3072,209 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation-method-a-using-your-github-user" class="md-nav__link">
+  <a href="#option-1-api-key-authentication" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation Method A — Using Your GitHub User
+        Option 1: API Key Authentication
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Installation Method A — Using Your GitHub User">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-key-step-1-load-conjur-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Key: Step 1 - Load Conjur Policy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-key-step-2-set-application-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Key: Step 2 - Set Application Secrets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-key-step-3-create-application-namespace-and-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Key: Step 3 - Create Application Namespace and Credentials
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-key-step-4-get-conjur-ca-certificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Key: Step 4 - Get Conjur CA Certificate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-key-step-5-create-secretstore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Key: Step 5 - Create SecretStore
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-2-jwt-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 2: JWT Authentication
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jwt-step-1-configure-jwt-authenticator-in-conjur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JWT: Step 1 - Configure JWT Authenticator in Conjur
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jwt-step-2-configure-jwt-authenticator-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JWT: Step 2 - Configure JWT Authenticator Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jwt-step-3-set-application-secrets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JWT: Step 3 - Set Application Secrets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jwt-step-4-create-application-namespace-and-serviceaccount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JWT: Step 4 - Create Application Namespace and ServiceAccount
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jwt-step-5-get-conjur-ca-certificate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JWT: Step 5 - Get Conjur CA Certificate
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jwt-step-6-create-secretstore-with-jwt-auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JWT: Step 6 - Create SecretStore with JWT Auth
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-externalsecret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create ExternalSecret
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploy Application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-the-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verify the Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-secret-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Secret Rotation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Secret Rotation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-become-a-collaborator" class="md-nav__link">
+  <a href="#update-secret-in-conjur" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1 — Become a collaborator
+        Update Secret in Conjur
       
     </span>
   </a>
@@ -2934,32 +3282,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-create-a-github-personal-access-token-pat" class="md-nav__link">
+  <a href="#wait-and-verify" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2 — Create a GitHub Personal Access Token (PAT)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-store-the-pat-in-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3 — Store the PAT in Kubernetes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-install-reloader-enterprise-via-helm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4 — Install Reloader Enterprise via Helm
+        Wait and Verify
       
     </span>
   </a>
@@ -2972,22 +3298,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#installation-method-b-using-a-token-provided-by-stakater" class="md-nav__link">
+  <a href="#configuration-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Installation Method B — Using a Token Provided by Stakater
+        Configuration Reference
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Installation Method B — Using a Token Provided by Stakater">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secretstore-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SecretStore Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SecretStore Configuration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-request-a-stakater-issued-token" class="md-nav__link">
+  <a href="#api-key-authentication" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1 — Request a Stakater-issued token
+        API Key Authentication
       
     </span>
   </a>
@@ -2995,21 +3332,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-store-the-token-in-kubernetes" class="md-nav__link">
+  <a href="#jwt-authentication" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2 — Store the token in Kubernetes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-install-the-enterprise-image-via-helm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3 — Install the enterprise image via Helm
+        JWT Authentication
       
     </span>
   </a>
@@ -3022,49 +3348,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#checking-available-versions" class="md-nav__link">
+  <a href="#jwt-authenticator-variables" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Checking Available Versions
+        JWT Authenticator Variables
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Checking Available Versions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#view-versions-in-github-packages" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        View versions in GitHub Packages
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#or-via-github-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Or via GitHub API
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#access-requirements" class="md-nav__link">
+  <a href="#externalsecret-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Access Requirements
+        ExternalSecret Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reloader-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reloader Annotations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-api-key-vs-jwt-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison: API Key vs JWT Authentication
       
     </span>
   </a>
@@ -3091,97 +3411,643 @@
   
 
 
-<h1 id="reloader-enterprise-re-installation">Reloader Enterprise (RE) Installation<a class="headerlink" href="#reloader-enterprise-re-installation" title="Permanent link">#</a></h1>
-<p>Reloader Enterprise (RE) is distributed through <strong>GitHub Container Registry (<code>GHCR</code>)</strong>. Access to enterprise images is granted <strong>through GitHub</strong>, using a private package-proxy repository.</p>
-<p>To install Reloader Enterprise, customers must:</p>
-<ol>
-<li>Have an active Reloader Enterprise subscription  </li>
-<li>Receive access to the private package registry  </li>
-<li>Authenticate their Kubernetes cluster to pull the enterprise image  </li>
-<li>Install using the OSS Helm chart with enterprise overrides  </li>
-</ol>
-<p>This section explains how access is granted and how to perform the installation.</p>
-<h2 id="how-access-to-reloader-enterprise-is-granted">How Access to Reloader Enterprise Is Granted?<a class="headerlink" href="#how-access-to-reloader-enterprise-is-granted" title="Permanent link">#</a></h2>
-<p>Stakater provides access to Reloader Enterprise through a <strong>private GitHub package proxy repository</strong>.</p>
-<p>When you are added as a customer:</p>
+<h1 id="how-to-use-reloader-with-conjur-external-secrets-operator-pattern">How to Use Reloader with Conjur External Secrets Operator Pattern<a class="headerlink" href="#how-to-use-reloader-with-conjur-external-secrets-operator-pattern" title="Permanent link">#</a></h1>
+<p>This guide explains how to set up CyberArk Conjur with the External Secrets Operator (ESO), combined with Stakater Reloader for automatic pod restarts when secrets change.</p>
+<h2 id="authentication-options">Authentication Options<a class="headerlink" href="#authentication-options" title="Permanent link">#</a></h2>
+<p>ESO supports two authentication methods with Conjur:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+<th>Use Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#option-1-api-key-authentication"><strong>API Key</strong></a></td>
+<td>Uses a Conjur host ID and API key stored in a K8s Secret</td>
+<td>Simpler setup, good for development</td>
+</tr>
+<tr>
+<td><a href="#option-2-jwt-authentication"><strong>JWT</strong></a></td>
+<td>Uses Kubernetes ServiceAccount tokens for authentication</td>
+<td>More secure, no static credentials, recommended for production</td>
+</tr>
+</tbody>
+</table>
+<p>Choose the authentication method that best fits your security requirements and proceed to the corresponding section.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────────────────────────────┐
+│                           Kubernetes Cluster                                 │
+│                                                                              │
+│  ┌────────────────────────────────────────────────────────────────────────┐ │
+│  │                    External Secrets Operator                            │ │
+│  │                                                                         │ │
+│  │  ┌─────────────────┐         ┌──────────────────────────────────────┐  │ │
+│  │  │  SecretStore    │         │  ExternalSecret                      │  │ │
+│  │  │                 │         │                                      │  │ │
+│  │  │  - Conjur URL   │         │  - refreshInterval: 30s              │  │ │
+│  │  │  - Auth Method  │────────►│  - Maps Conjur vars to K8s Secret    │  │ │
+│  │  │  - CA Bundle    │         │  - Adds Reloader annotation          │  │ │
+│  │  │                 │         │                                      │  │ │
+│  │  └─────────────────┘         └──────────────────────────────────────┘  │ │
+│  └────────────────────────────────────────────────────────────────────────┘ │
+│                                      │                                       │
+│                                      ▼                                       │
+│  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐       │
+│  │   K8s Secret     │    │  Stakater        │    │  Application     │       │
+│  │   (app-secrets)  │───►│  Reloader        │───►│  Pod             │       │
+│  │                  │    │                  │    │                  │       │
+│  │  annotation:     │    │  Watches secret  │    │  Reads secrets   │       │
+│  │  reloader.../    │    │  changes and     │    │  from env vars   │       │
+│  │  match: "true"   │    │  restarts pods   │    │                  │       │
+│  └──────────────────┘    └──────────────────┘    └──────────────────┘       │
+│            ▲                                                                 │
+│            │                                                                 │
+│  ┌──────────────────┐                                                       │
+│  │    Conjur        │                                                       │
+│  │    Server        │                                                       │
+│  │                  │                                                       │
+│  │  Stores secrets  │                                                       │
+│  └──────────────────┘                                                       │
+└─────────────────────────────────────────────────────────────────────────────┘
+</code></pre></div>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
+<p>Complete the common setup steps from the <a href="index.html">Overview</a>:</p>
 <ul>
-<li>You receive the <strong><code>read</code></strong> role  </li>
-<li>You can <strong>pull</strong> Reloader Enterprise images  </li>
-<li>You can view contributors  </li>
-<li>You <strong>cannot</strong> create branches, modify the code, or view other collaborators  </li>
+<li>Conjur OSS installed</li>
+<li>Conjur CLI configured</li>
+<li>Stakater Reloader installed</li>
 </ul>
-<p>The repository acts as a <strong>proxy</strong> to private build sources.<br>
-It does <strong>not</strong> build artifacts itself.</p>
-<p>Access is available only to active Reloader Enterprise customers.</p>
-<h2 id="installation-overview">Installation Overview<a class="headerlink" href="#installation-overview" title="Permanent link">#</a></h2>
-<p>After access is granted, you may install Reloader Enterprise in one of two ways:</p>
-<h3 id="option-a-use-your-github-user"><strong>Option A — Use Your GitHub User</strong><a class="headerlink" href="#option-a-use-your-github-user" title="Permanent link">#</a></h3>
-<p>You provide Stakater with your GitHub username.<br>
-This user is added as a collaborator to the enterprise package repository.</p>
-<h3 id="option-b-use-a-token-provided-by-stakater"><strong>Option B — Use a Token Provided by Stakater</strong><a class="headerlink" href="#option-b-use-a-token-provided-by-stakater" title="Permanent link">#</a></h3>
-<p>Stakater issues a dedicated <code>reloader-enterprise</code> access token.</p>
-<p>Both methods require creating a Kubernetes registry secret and running a Helm install.</p>
-<h2 id="installation-method-a-using-your-github-user">Installation Method A — Using Your GitHub User<a class="headerlink" href="#installation-method-a-using-your-github-user" title="Permanent link">#</a></h2>
-<h3 id="step-1-become-a-collaborator">Step 1 — Become a collaborator<a class="headerlink" href="#step-1-become-a-collaborator" title="Permanent link">#</a></h3>
-<p>Stakater adds your GitHub user to the private enterprise package proxy.<br>
-You must accept the GitHub invitation.</p>
-<h3 id="step-2-create-a-github-personal-access-token-pat">Step 2 — Create a GitHub Personal Access Token (PAT)<a class="headerlink" href="#step-2-create-a-github-personal-access-token-pat" title="Permanent link">#</a></h3>
-<p>Create a token with the following scope:</p>
+<p>Additionally required:</p>
 <ul>
-<li><code>read:packages</code></li>
+<li>External Secrets Operator installed</li>
 </ul>
-<h3 id="step-3-store-the-pat-in-kubernetes">Step 3 — Store the PAT in Kubernetes<a class="headerlink" href="#step-3-store-the-pat-in-kubernetes" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>docker-registry<span class="w"> </span>regcred<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--docker-server<span class="o">=</span>ghcr.io<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--docker-username<span class="o">=</span>&lt;github-username&gt;<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--docker-password<span class="o">=</span>&lt;github-token&gt;
+<h3 id="install-external-secrets-operator">Install External Secrets Operator<a class="headerlink" href="#install-external-secrets-operator" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>external-secrets<span class="w"> </span>https://charts.external-secrets.io
+helm<span class="w"> </span>repo<span class="w"> </span>update
+helm<span class="w"> </span>install<span class="w"> </span>external-secrets<span class="w"> </span>external-secrets/external-secrets<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>external-secrets<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--create-namespace<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--wait
 </code></pre></div>
-<h3 id="step-4-install-reloader-enterprise-via-helm">Step 4 — Install Reloader Enterprise via Helm<a class="headerlink" href="#step-4-install-reloader-enterprise-via-helm" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--set<span class="w"> </span>image.repository<span class="o">=</span>ghcr.io/stakater/reloader-enterprise<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--set<span class="w"> </span>image.tag<span class="o">=</span>&lt;version&gt;<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--set<span class="w"> </span><span class="s2">"global.imagePullSecrets[0].name=regcred"</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--generate-name
+<p>Verify installation:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>external-secrets
 </code></pre></div>
-<h2 id="installation-method-b-using-a-token-provided-by-stakater">Installation Method B — Using a Token Provided by Stakater<a class="headerlink" href="#installation-method-b-using-a-token-provided-by-stakater" title="Permanent link">#</a></h2>
-<h3 id="step-1-request-a-stakater-issued-token">Step 1 — Request a Stakater-issued token<a class="headerlink" href="#step-1-request-a-stakater-issued-token" title="Permanent link">#</a></h3>
-<p>This token is tied to the <code>reloader-enterprise</code> GitHub service account.</p>
-<h3 id="step-2-store-the-token-in-kubernetes">Step 2 — Store the token in Kubernetes<a class="headerlink" href="#step-2-store-the-token-in-kubernetes" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>docker-registry<span class="w"> </span>regcred<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--docker-server<span class="o">=</span>ghcr.io<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--docker-username<span class="o">=</span>reloader-enterprise<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--docker-password<span class="o">=</span>&lt;token-from-stakater&gt;
+<hr>
+<h2 id="option-1-api-key-authentication">Option 1: API Key Authentication<a class="headerlink" href="#option-1-api-key-authentication" title="Permanent link">#</a></h2>
+<p>This section covers setting up ESO with API key authentication. This method stores a Conjur host ID and API key in a Kubernetes Secret.</p>
+<h2 id="api-key-step-1-load-conjur-policy">API Key: Step 1 - Load Conjur Policy<a class="headerlink" href="#api-key-step-1-load-conjur-policy" title="Permanent link">#</a></h2>
+<p>Create <code>conjur-policy.yaml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Conjur Policy for External Secrets Operator (API Key Authentication)</span>
+
+<span class="c1"># Application Secrets</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!policy</span>
+<span class="w">  </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets</span>
+<span class="w">  </span><span class="nt">body</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!group</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">consumers</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nl">&amp;variables</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!variable</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">username</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!variable</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!permit</span>
+<span class="w">      </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="kt">!group</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">consumers</span>
+<span class="w">      </span><span class="nt">privilege</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">read</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">execute</span><span class="w"> </span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">resource</span><span class="p">:</span><span class="w"> </span><span class="nv">*variables</span>
+
+<span class="c1"># Host Identity for External Secrets Operator</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!policy</span>
+<span class="w">  </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps</span>
+<span class="w">  </span><span class="nt">body</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!host</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets</span>
+
+<span class="c1"># Grant Host Access to Secrets</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!grant</span>
+<span class="w">  </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="kt">!group</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets/consumers</span>
+<span class="w">  </span><span class="nt">member</span><span class="p">:</span><span class="w"> </span><span class="kt">!host</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/external-secrets</span>
 </code></pre></div>
-<h3 id="step-3-install-the-enterprise-image-via-helm">Step 3 — Install the enterprise image via Helm<a class="headerlink" href="#step-3-install-the-enterprise-image-via-helm" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--set<span class="w"> </span>image.repository<span class="o">=</span>ghcr.io/stakater/reloader-enterprise<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--set<span class="w"> </span>image.tag<span class="o">=</span>&lt;version&gt;<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--set<span class="w"> </span><span class="s2">"global.imagePullSecrets[0].name=regcred"</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--generate-name
+<p>Load the policy and capture the API key:</p>
+<div class="highlight"><pre><span></span><code>conjur<span class="w"> </span>policy<span class="w"> </span>load<span class="w"> </span>-b<span class="w"> </span>root<span class="w"> </span>-f<span class="w"> </span>conjur-policy.yaml
 </code></pre></div>
-<h2 id="checking-available-versions">Checking Available Versions<a class="headerlink" href="#checking-available-versions" title="Permanent link">#</a></h2>
-<p>Reloader Enterprise uses the same image tags as the open-source version,
-but only versions that have passed enterprise-grade validation are published.</p>
-<h3 id="view-versions-in-github-packages">View versions in GitHub Packages<a class="headerlink" href="#view-versions-in-github-packages" title="Permanent link">#</a></h3>
-<p>Reloader Enterprise images are hosted in a <strong>private GitHub Container Registry (GHCR)</strong> repository.</p>
-<p>Once access is granted, customers can view available versions at:</p>
-<p><code>ghcr.io/stakater/reloader-enterprise-package-proxy</code></p>
+<p><strong>Important:</strong> Save the <code>api_key</code> from the output. You'll need it later.</p>
+<p>Example output:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">"created_roles"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">"myaccount:host:apps/external-secrets"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"myaccount:host:apps/external-secrets"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"api_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3d37q6ph0h2ah3wssa983b1n0gsk8v1hv3b2b74vk7ztmg2b9c992"</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="api-key-step-2-set-application-secrets">API Key: Step 2 - Set Application Secrets<a class="headerlink" href="#api-key-step-2-set-application-secrets" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>conjur<span class="w"> </span>variable<span class="w"> </span><span class="nb">set</span><span class="w"> </span>-i<span class="w"> </span>secrets/username<span class="w"> </span>-v<span class="w"> </span><span class="s2">"admin-user"</span>
+
+conjur<span class="w"> </span>variable<span class="w"> </span><span class="nb">set</span><span class="w"> </span>-i<span class="w"> </span>secrets/password<span class="w"> </span>-v<span class="w"> </span><span class="s2">"super-secret-password"</span>
+</code></pre></div>
+<h2 id="api-key-step-3-create-application-namespace-and-credentials">API Key: Step 3 - Create Application Namespace and Credentials<a class="headerlink" href="#api-key-step-3-create-application-namespace-and-credentials" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create namespace</span>
+kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>eso-test-app
+
+<span class="c1"># Create Conjur credentials secret for ESO</span>
+<span class="c1"># Replace &lt;API_KEY&gt; with the API key from Step 1</span>
+kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>generic<span class="w"> </span>conjur-credentials<span class="w"> </span>-n<span class="w"> </span>eso-test-app<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--from-literal<span class="o">=</span><span class="nv">hostId</span><span class="o">=</span><span class="s2">"host/apps/external-secrets"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--from-literal<span class="o">=</span><span class="nv">apikey</span><span class="o">=</span><span class="s2">"&lt;API_KEY&gt;"</span>
+</code></pre></div>
+<h2 id="api-key-step-4-get-conjur-ca-certificate">API Key: Step 4 - Get Conjur CA Certificate<a class="headerlink" href="#api-key-step-4-get-conjur-ca-certificate" title="Permanent link">#</a></h2>
 <blockquote>
-<p>⚠️ This repository is private.<br>
-If you are not logged in to GitHub <strong>or</strong> your GitHub account does not have access,
-GitHub will return <strong>404 Not Found</strong>. This is expected behavior.</p>
+<p><strong>Note:</strong> The <code>caBundle</code> field is only required if Conjur uses a self-signed or private SSL certificate. If Conjur uses a publicly trusted SSL certificate, you can omit the <code>caBundle</code> field from the SecretStore configuration.</p>
 </blockquote>
-<p>If you believe you should have access but cannot view the repository, please contact Stakater support.</p>
-<h3 id="or-via-github-api">Or via GitHub API<a class="headerlink" href="#or-via-github-api" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-L<span class="w"> </span><span class="se">\</span>
-<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Accept: application/vnd.github+json"</span><span class="w"> </span><span class="se">\</span>
-<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Authorization: Bearer &lt;token&gt;"</span><span class="w"> </span><span class="se">\</span>
-<span class="w"> </span>-H<span class="w"> </span><span class="s2">"X-GitHub-Api-Version: 2022-11-28"</span><span class="w"> </span><span class="se">\</span>
-<span class="w"> </span>https://api.github.com/orgs/stakater/packages/container/reloader-enterprise/versions
+<div class="highlight"><pre><span></span><code><span class="c1"># Get base64-encoded CA certificate (only needed for self-signed/private certificates)</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>conjur-conjur-ssl-cert<span class="w"> </span>-n<span class="w"> </span>conjur<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.tls\.crt}'</span>
 </code></pre></div>
-<h2 id="access-requirements">Access Requirements<a class="headerlink" href="#access-requirements" title="Permanent link">#</a></h2>
-<p>Access to the enterprise package repository is granted <strong>only</strong> to organizations with an active Reloader Enterprise subscription.
-If the subscription expires, access is automatically revoked.</p>
+<p>Save this value for the SecretStore configuration.</p>
+<h2 id="api-key-step-5-create-secretstore">API Key: Step 5 - Create SecretStore<a class="headerlink" href="#api-key-step-5-create-secretstore" title="Permanent link">#</a></h2>
+<p>Create <code>secret-store.yaml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SecretStore</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conjur-secret-store</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eso-test-app</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">provider</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">conjur</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://conjur-conjur-oss.conjur.svc.cluster.local</span>
+<span class="w">      </span><span class="c1"># Paste the base64-encoded CA certificate from Step 4</span>
+<span class="w">      </span><span class="nt">caBundle</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;BASE64_ENCODED_CA_CERTIFICATE&gt;</span>
+<span class="w">      </span><span class="nt">auth</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">apikey</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">account</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myaccount</span>
+<span class="w">          </span><span class="nt">userRef</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conjur-credentials</span>
+<span class="w">            </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hostId</span>
+<span class="w">          </span><span class="nt">apiKeyRef</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conjur-credentials</span>
+<span class="w">            </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apikey</span>
+</code></pre></div>
+<p>Apply and verify:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>secret-store.yaml
+kubectl<span class="w"> </span>get<span class="w"> </span>secretstore<span class="w"> </span>-n<span class="w"> </span>eso-test-app
+</code></pre></div>
+<p>Should show <code>STATUS: Valid</code> and <code>READY: True</code>.</p>
+<p>Now proceed to <a href="#create-externalsecret">Create ExternalSecret</a> section.</p>
+<hr>
+<h2 id="option-2-jwt-authentication">Option 2: JWT Authentication<a class="headerlink" href="#option-2-jwt-authentication" title="Permanent link">#</a></h2>
+<p>This section covers setting up ESO with JWT authentication. This method uses Kubernetes ServiceAccount tokens to authenticate with Conjur - no static credentials required.</p>
+<h2 id="jwt-step-1-configure-jwt-authenticator-in-conjur">JWT: Step 1 - Configure JWT Authenticator in Conjur<a class="headerlink" href="#jwt-step-1-configure-jwt-authenticator-in-conjur" title="Permanent link">#</a></h2>
+<p>First, load the Conjur policy that configures the JWT authenticator and creates a host identity.</p>
+<p>Create <code>conjur-policy.yaml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Conjur Policy for External Secrets Operator (JWT Authentication)</span>
+
+<span class="c1"># Application Secrets</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!policy</span>
+<span class="w">  </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets</span>
+<span class="w">  </span><span class="nt">body</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!group</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">consumers</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nl">&amp;variables</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!variable</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">username</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!variable</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!permit</span>
+<span class="w">      </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="kt">!group</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">consumers</span>
+<span class="w">      </span><span class="nt">privilege</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">read</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">execute</span><span class="w"> </span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">resource</span><span class="p">:</span><span class="w"> </span><span class="nv">*variables</span>
+
+<span class="c1"># JWT Authenticator Configuration for authn-jwt/dev</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!policy</span>
+<span class="w">  </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conjur/authn-jwt/dev</span>
+<span class="w">  </span><span class="nt">body</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!webservice</span>
+
+<span class="w">    </span><span class="c1"># JWT validation variables</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!variable</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">public-keys</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!variable</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">issuer</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!variable</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">token-app-property</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!variable</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">identity-path</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!variable</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">audience</span>
+
+<span class="w">    </span><span class="c1"># Group for apps that can authenticate</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!group</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!permit</span>
+<span class="w">      </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="kt">!group</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps</span>
+<span class="w">      </span><span class="nt">privilege</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">authenticate</span><span class="w"> </span><span class="p p-Indicator">]</span>
+<span class="w">      </span><span class="nt">resource</span><span class="p">:</span><span class="w"> </span><span class="kt">!webservice</span>
+
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!webservice</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">status</span>
+
+<span class="c1"># Host identities for JWT authentication</span>
+<span class="c1"># Identity path is 'jwt-apps', so hosts are defined under this policy</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!policy</span>
+<span class="w">  </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jwt-apps</span>
+<span class="w">  </span><span class="nt">body</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># Host for ESO service account</span>
+<span class="w">    </span><span class="c1"># Format: system:serviceaccount:&lt;namespace&gt;:&lt;serviceaccount-name&gt;</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!host</span>
+<span class="w">      </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">system:serviceaccount:eso-jwt-test:eso-jwt-sa</span>
+<span class="w">      </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">authn-jwt/dev/sub</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">system:serviceaccount:eso-jwt-test:eso-jwt-sa</span>
+
+<span class="c1"># Grant host to authenticator group</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!grant</span>
+<span class="w">  </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="kt">!group</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conjur/authn-jwt/dev/apps</span>
+<span class="w">  </span><span class="nt">member</span><span class="p">:</span><span class="w"> </span><span class="kt">!host</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jwt-apps/system:serviceaccount:eso-jwt-test:eso-jwt-sa</span>
+
+<span class="c1"># Grant access to secrets</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="kt">!grant</span>
+<span class="w">  </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="kt">!group</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets/consumers</span>
+<span class="w">  </span><span class="nt">member</span><span class="p">:</span><span class="w"> </span><span class="kt">!host</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">jwt-apps/system:serviceaccount:eso-jwt-test:eso-jwt-sa</span>
+</code></pre></div>
+<p>Load the policy:</p>
+<div class="highlight"><pre><span></span><code>conjur<span class="w"> </span>policy<span class="w"> </span>load<span class="w"> </span>-b<span class="w"> </span>root<span class="w"> </span>-f<span class="w"> </span>conjur-policy.yaml<span class="w">  </span>
+</code></pre></div>
+<h2 id="jwt-step-2-configure-jwt-authenticator-variables">JWT: Step 2 - Configure JWT Authenticator Variables<a class="headerlink" href="#jwt-step-2-configure-jwt-authenticator-variables" title="Permanent link">#</a></h2>
+<p>Set the JWT authenticator variables:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Get Kubernetes JWKS public keys and format as proper JSON</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>--raw<span class="w"> </span>/openid/v1/jwks<span class="w"> </span>&gt;<span class="w"> </span>/tmp/jwks.json
+jq<span class="w"> </span>-n<span class="w"> </span>--slurpfile<span class="w"> </span>jwks<span class="w"> </span>/tmp/jwks.json<span class="w"> </span><span class="s1">'{"type":"jwks","value":$jwks[0]}'</span><span class="w"> </span>&gt;<span class="w"> </span>/tmp/public-keys.json
+
+<span class="c1"># Set public-keys from file (ensures proper JSON formatting)</span>
+conjur<span class="w"> </span>variable<span class="w"> </span><span class="nb">set</span><span class="w"> </span>-i<span class="w"> </span>conjur/authn-jwt/dev/public-keys<span class="w"> </span>-v<span class="w"> </span><span class="s2">"</span><span class="k">$(</span>cat<span class="w"> </span>/tmp/public-keys.json<span class="k">)</span><span class="s2">"</span>
+
+conjur<span class="w"> </span>variable<span class="w"> </span><span class="nb">set</span><span class="w"> </span>-i<span class="w"> </span>conjur/authn-jwt/dev/issuer<span class="w"> </span>-v<span class="w"> </span><span class="s2">"https://kubernetes.default.svc.cluster.local"</span>
+
+conjur<span class="w"> </span>variable<span class="w"> </span><span class="nb">set</span><span class="w"> </span>-i<span class="w"> </span>conjur/authn-jwt/dev/token-app-property<span class="w"> </span>-v<span class="w"> </span><span class="s2">"sub"</span>
+
+conjur<span class="w"> </span>variable<span class="w"> </span><span class="nb">set</span><span class="w"> </span>-i<span class="w"> </span>conjur/authn-jwt/dev/identity-path<span class="w"> </span>-v<span class="w"> </span><span class="s2">"jwt-apps"</span>
+
+conjur<span class="w"> </span>variable<span class="w"> </span><span class="nb">set</span><span class="w"> </span>-i<span class="w"> </span>conjur/authn-jwt/dev/audience<span class="w"> </span>-v<span class="w"> </span><span class="s2">"https://conjur-conjur-oss.conjur.svc.cluster.local"</span>
+</code></pre></div>
+<blockquote>
+<p><strong>Note:</strong> Using <code>jq</code> to format the public-keys JSON ensures proper quoting. Malformed JSON (missing quotes around keys) will cause JWT authentication to fail with 401 errors.</p>
+</blockquote>
+<h2 id="jwt-step-3-set-application-secrets">JWT: Step 3 - Set Application Secrets<a class="headerlink" href="#jwt-step-3-set-application-secrets" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>conjur<span class="w"> </span>variable<span class="w"> </span><span class="nb">set</span><span class="w"> </span>-i<span class="w"> </span>secrets/username<span class="w"> </span>-v<span class="w"> </span><span class="s2">"admin-user"</span>
+
+conjur<span class="w"> </span>variable<span class="w"> </span><span class="nb">set</span><span class="w"> </span>-i<span class="w"> </span>secrets/password<span class="w"> </span>-v<span class="w"> </span><span class="s2">"super-secret-password"</span>
+</code></pre></div>
+<h2 id="jwt-step-4-create-application-namespace-and-serviceaccount">JWT: Step 4 - Create Application Namespace and ServiceAccount<a class="headerlink" href="#jwt-step-4-create-application-namespace-and-serviceaccount" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create namespace</span>
+kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>eso-jwt-test
+
+<span class="c1"># Create service account for ESO to use</span>
+kubectl<span class="w"> </span>create<span class="w"> </span>serviceaccount<span class="w"> </span>eso-jwt-sa<span class="w"> </span>-n<span class="w"> </span>eso-jwt-test
+</code></pre></div>
+<h2 id="jwt-step-5-get-conjur-ca-certificate">JWT: Step 5 - Get Conjur CA Certificate<a class="headerlink" href="#jwt-step-5-get-conjur-ca-certificate" title="Permanent link">#</a></h2>
+<blockquote>
+<p><strong>Note:</strong> The <code>caBundle</code> field is only required if Conjur uses a self-signed or private SSL certificate. If Conjur uses a publicly trusted SSL certificate, you can omit the <code>caBundle</code> field from the SecretStore configuration.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><span class="c1"># Get base64-encoded CA certificate (only needed for self-signed/private certificates)</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>conjur-conjur-ssl-cert<span class="w"> </span>-n<span class="w"> </span>conjur<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.tls\.crt}'</span>
+</code></pre></div>
+<p>Save this value for the SecretStore configuration.</p>
+<h2 id="jwt-step-6-create-secretstore-with-jwt-auth">JWT: Step 6 - Create SecretStore with JWT Auth<a class="headerlink" href="#jwt-step-6-create-secretstore-with-jwt-auth" title="Permanent link">#</a></h2>
+<p>Create <code>secret-store.yaml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SecretStore</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">conjur-jwt-secret-store</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eso-jwt-test</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">provider</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">conjur</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://conjur-conjur-oss.conjur.svc.cluster.local</span>
+<span class="w">      </span><span class="c1"># Paste the base64-encoded CA certificate from Step 5</span>
+<span class="w">      </span><span class="nt">caBundle</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;BASE64_ENCODED_CA_CERTIFICATE&gt;</span>
+<span class="w">      </span><span class="nt">auth</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">jwt</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">account</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myaccount</span>
+<span class="w">          </span><span class="nt">serviceID</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev</span>
+<span class="w">          </span><span class="nt">serviceAccountRef</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eso-jwt-sa</span>
+<span class="w">            </span><span class="nt">audiences</span><span class="p">:</span>
+<span class="w">              </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://conjur-conjur-oss.conjur.svc.cluster.local</span>
+</code></pre></div>
+<p>Apply and verify:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>secret-store.yaml
+kubectl<span class="w"> </span>get<span class="w"> </span>secretstore<span class="w"> </span>-n<span class="w"> </span>eso-jwt-test
+</code></pre></div>
+<p>Should show <code>STATUS: Valid</code> and <code>READY: True</code>.</p>
+<p>Now proceed to <a href="#create-externalsecret">Create ExternalSecret</a> section.</p>
+<hr>
+<h2 id="common-configuration">Common Configuration<a class="headerlink" href="#common-configuration" title="Permanent link">#</a></h2>
+<p>The following sections apply to both authentication methods. Adjust the namespace name based on your chosen method:</p>
+<ul>
+<li>API Key: <code>eso-test-app</code></li>
+<li>JWT: <code>eso-jwt-test</code></li>
+</ul>
+<h2 id="create-externalsecret">Create ExternalSecret<a class="headerlink" href="#create-externalsecret" title="Permanent link">#</a></h2>
+<p>Create <code>external-secret.yaml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExternalSecret</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;NAMESPACE&gt;</span><span class="w">  </span><span class="c1"># eso-test-app or eso-jwt-test</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">refreshInterval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30s</span>
+<span class="w">  </span><span class="nt">secretStoreRef</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;SECRET_STORE_NAME&gt;</span><span class="w">  </span><span class="c1"># conjur-secret-store or conjur-jwt-secret-store</span>
+<span class="w">    </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SecretStore</span>
+<span class="w">  </span><span class="nt">target</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">    </span><span class="nt">creationPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Owner</span>
+<span class="w">    </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">          </span><span class="c1"># Reloader annotation - triggers restart on workloads with search: "true"</span>
+<span class="w">          </span><span class="nt">reloader.stakater.com/match</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">  </span><span class="nt">data</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">secretKey</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">username</span>
+<span class="w">      </span><span class="nt">remoteRef</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets/username</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">secretKey</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
+<span class="w">      </span><span class="nt">remoteRef</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets/password</span>
+</code></pre></div>
+<p>Apply and verify:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>external-secret.yaml
+kubectl<span class="w"> </span>get<span class="w"> </span>externalsecret<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;
+</code></pre></div>
+<p>Should show <code>STATUS: SecretSynced</code> and <code>READY: True</code>.</p>
+<h2 id="deploy-application">Deploy Application<a class="headerlink" href="#deploy-application" title="Permanent link">#</a></h2>
+<p>Create <code>deployment.yaml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eso-test-app</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;NAMESPACE&gt;</span><span class="w">  </span><span class="c1"># eso-test-app or eso-jwt-test</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">reloader.stakater.com/search</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eso-test-app</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eso-test-app</span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">busybox:latest</span>
+<span class="w">          </span><span class="nt">command</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"sh"</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"-c"</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">              </span><span class="no">while true; do</span>
+<span class="w">                </span><span class="no">echo "Username: $APP_USERNAME"</span>
+<span class="w">                </span><span class="no">echo "Password: $APP_PASSWORD"</span>
+<span class="w">                </span><span class="no">sleep 30</span>
+<span class="w">              </span><span class="no">done</span>
+<span class="w">          </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">APP_USERNAME</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">username</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">APP_PASSWORD</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
+</code></pre></div>
+<p>Apply:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>deployment.yaml
+</code></pre></div>
+<h2 id="verify-the-setup">Verify the Setup<a class="headerlink" href="#verify-the-setup" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># SecretStore</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>secretstore<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;
+
+<span class="c1"># ExternalSecret</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>externalsecret<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;
+
+<span class="c1"># Secret (created by ESO)</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;
+
+<span class="c1"># Pod</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;
+
+<span class="c1"># Verify secret contents</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.password}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
+
+<span class="c1"># Check app logs</span>
+kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>eso-test-app
+</code></pre></div>
+<h2 id="test-secret-rotation">Test Secret Rotation<a class="headerlink" href="#test-secret-rotation" title="Permanent link">#</a></h2>
+<h3 id="update-secret-in-conjur">Update Secret in Conjur<a class="headerlink" href="#update-secret-in-conjur" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>conjur<span class="w"> </span>variable<span class="w"> </span><span class="nb">set</span><span class="w"> </span>-i<span class="w"> </span>secrets/password<span class="w"> </span>-v<span class="w"> </span><span class="s2">"new-rotated-password"</span>
+</code></pre></div>
+<h3 id="wait-and-verify">Wait and Verify<a class="headerlink" href="#wait-and-verify" title="Permanent link">#</a></h3>
+<p>Wait 30-60 seconds for ESO refresh and Reloader restart:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check secret was updated</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.password}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
+
+<span class="c1"># Check pod was restarted (new pod name)</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>eso-test-app
+
+<span class="c1"># Check app logs show new password</span>
+kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>&lt;NAMESPACE&gt;<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>eso-test-app<span class="w"> </span>--tail<span class="o">=</span><span class="m">5</span>
+</code></pre></div>
+<hr>
+<h2 id="configuration-reference">Configuration Reference<a class="headerlink" href="#configuration-reference" title="Permanent link">#</a></h2>
+<h2 id="secretstore-configuration">SecretStore Configuration<a class="headerlink" href="#secretstore-configuration" title="Permanent link">#</a></h2>
+<h3 id="api-key-authentication">API Key Authentication<a class="headerlink" href="#api-key-authentication" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>url</code></td>
+<td>Conjur server URL</td>
+</tr>
+<tr>
+<td><code>caBundle</code></td>
+<td>Base64-encoded CA certificate for SSL (optional if using publicly trusted certificate)</td>
+</tr>
+<tr>
+<td><code>auth.apikey.account</code></td>
+<td>Conjur account name</td>
+</tr>
+<tr>
+<td><code>auth.apikey.userRef</code></td>
+<td>Reference to K8s secret containing host ID</td>
+</tr>
+<tr>
+<td><code>auth.apikey.apiKeyRef</code></td>
+<td>Reference to K8s secret containing API key</td>
+</tr>
+</tbody>
+</table>
+<h3 id="jwt-authentication">JWT Authentication<a class="headerlink" href="#jwt-authentication" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>url</code></td>
+<td>Conjur server URL</td>
+</tr>
+<tr>
+<td><code>caBundle</code></td>
+<td>Base64-encoded CA certificate for SSL (optional if using publicly trusted certificate)</td>
+</tr>
+<tr>
+<td><code>auth.jwt.account</code></td>
+<td>Conjur account name</td>
+</tr>
+<tr>
+<td><code>auth.jwt.serviceID</code></td>
+<td>JWT authenticator service ID (e.g., <code>dev</code> for <code>authn-jwt/dev</code>)</td>
+</tr>
+<tr>
+<td><code>auth.jwt.serviceAccountRef.name</code></td>
+<td>Kubernetes ServiceAccount name</td>
+</tr>
+<tr>
+<td><code>auth.jwt.serviceAccountRef.audiences</code></td>
+<td>JWT audience values (should match Conjur's audience variable)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="jwt-authenticator-variables">JWT Authenticator Variables<a class="headerlink" href="#jwt-authenticator-variables" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+<th>Example Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>public-keys</code></td>
+<td>JWKS for token validation</td>
+<td><code>{"type":"jwks","value":{...}}</code></td>
+</tr>
+<tr>
+<td><code>issuer</code></td>
+<td>Expected JWT issuer claim</td>
+<td><code>https://kubernetes.default.svc.cluster.local</code></td>
+</tr>
+<tr>
+<td><code>token-app-property</code></td>
+<td>JWT claim for identity</td>
+<td><code>sub</code></td>
+</tr>
+<tr>
+<td><code>identity-path</code></td>
+<td>Conjur policy path for hosts</td>
+<td><code>jwt-apps</code></td>
+</tr>
+<tr>
+<td><code>audience</code></td>
+<td>Expected JWT audience claim</td>
+<td>Conjur URL</td>
+</tr>
+</tbody>
+</table>
+<h2 id="externalsecret-configuration">ExternalSecret Configuration<a class="headerlink" href="#externalsecret-configuration" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>refreshInterval</code></td>
+<td>How often ESO syncs secrets from Conjur (e.g., <code>30s</code>)</td>
+</tr>
+<tr>
+<td><code>secretStoreRef</code></td>
+<td>Reference to the SecretStore</td>
+</tr>
+<tr>
+<td><code>target.name</code></td>
+<td>Name of the K8s Secret to create</td>
+</tr>
+<tr>
+<td><code>target.template.metadata.annotations</code></td>
+<td>Annotations to add to the created Secret</td>
+</tr>
+<tr>
+<td><code>data[].secretKey</code></td>
+<td>Key name in the K8s Secret</td>
+</tr>
+<tr>
+<td><code>data[].remoteRef.key</code></td>
+<td>Variable path in Conjur</td>
+</tr>
+</tbody>
+</table>
+<h2 id="reloader-annotations">Reloader Annotations<a class="headerlink" href="#reloader-annotations" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Annotation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deployment</td>
+<td><code>reloader.stakater.com/search: "true"</code></td>
+</tr>
+<tr>
+<td>Secret (via ExternalSecret template)</td>
+<td><code>reloader.stakater.com/match: "true"</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="comparison-api-key-vs-jwt-authentication">Comparison: API Key vs JWT Authentication<a class="headerlink" href="#comparison-api-key-vs-jwt-authentication" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>API Key</th>
+<th>JWT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Credentials</strong></td>
+<td>Static API key stored in K8s Secret</td>
+<td>Dynamic tokens from ServiceAccount</td>
+</tr>
+<tr>
+<td><strong>Security</strong></td>
+<td>Key rotation requires manual update</td>
+<td>No static secrets, tokens auto-rotate</td>
+</tr>
+<tr>
+<td><strong>Setup Complexity</strong></td>
+<td>Simpler</td>
+<td>Requires JWT authenticator configuration</td>
+</tr>
+<tr>
+<td><strong>Conjur Policy</strong></td>
+<td>Host with API key</td>
+<td>Host with JWT claim annotations</td>
+</tr>
+<tr>
+<td><strong>Best For</strong></td>
+<td>Development, simple setups</td>
+<td>Production, security-conscious environments</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -3475,27 +4341,27 @@ If the subscription expires, access is automatically revoked.</p>
                 <div class="flex-2">
                     <div class="logo-footer-container">
                         
-                        <img class="md-header__logo_light" src="../assets/images/footer-logo-light.png#only-light" alt="logo">
+                        <img class="md-header__logo_light" src="../../assets/images/footer-logo-light.png#only-light" alt="logo">
                         
                         
-                        <img src="../assets/images/footer-logo-dark.png#only-dark" alt="logo">
+                        <img src="../../assets/images/footer-logo-dark.png#only-dark" alt="logo">
                         
                     </div>
 
                     <div class="collaborations-img-container">
                         <div class="display-flex">
                             
-                            <img class="csa-logo-dark" src="../assets/images/CSA_dark.png#only-dark" alt="CSA">
+                            <img class="csa-logo-dark" src="../../assets/images/CSA_dark.png#only-dark" alt="CSA">
                             
                             
-                            <img class="csa-logo-light" src="../assets/images/CSA_light.png#only-light" alt="CSA">
+                            <img class="csa-logo-light" src="../../assets/images/CSA_light.png#only-light" alt="CSA">
                             
 
                             
-                            <img class="hc-logo-dark" src="../assets/images/HC_dark.png#only-dark" alt="HC">
+                            <img class="hc-logo-dark" src="../../assets/images/HC_dark.png#only-dark" alt="HC">
                             
                             
-                            <img class="hc-logo-light" src="../assets/images/HC_light.png#only-light" alt="HC">
+                            <img class="hc-logo-light" src="../../assets/images/HC_light.png#only-light" alt="HC">
                             
                         </div>
                     </div>
@@ -3887,10 +4753,10 @@ If the subscription expires, access is automatically revoked.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.tracking", "toc.follow", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.tracking", "toc.follow", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   
