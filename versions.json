@@ -2,6 +2,8 @@
   {
     "version": "fix-reloader-docs",
     "title": "fix-reloader-docs",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   }
 ]
