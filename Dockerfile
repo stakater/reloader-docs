@@ -10,11 +10,11 @@ COPY default.conf /etc/nginx/conf.d/
 # set non-root user
 USER 1001
 
-LABEL name="Stakater Cloud Orchestrator Documentation" \
+LABEL name="Stakater Reloader Documentation" \
       maintainer="Stakater <hello@stakater.com>" \
       vendor="Stakater" \
       release="1" \
-      summary="Documentation for Stakater Cloud Orchestrator"
+      summary="Documentation for Stakater Reloader"
 
 EXPOSE 8080:8080/tcp
 
