@@ -35,7 +35,7 @@ This repository is fully automated via GitHub Actions:
     * Builds Docker image
     * Publishes preview docs at:
 
-    ```
+    ```bash
     https://stakater.github.io/reloader-docs/<branch-name>/
     ```
 
@@ -46,7 +46,7 @@ This repository is fully automated via GitHub Actions:
     * Update the GitOps repository
     * Publishes docs to:
 
-    ```
+    ```bash
     https://docs.stakater.com
     ```
 
@@ -96,7 +96,7 @@ docker run --rm -p 8080:8080 reloader-docs-local
 
 Open your browser:
 
-```
+```bash
 http://localhost:8080
 ```
 
@@ -156,11 +156,11 @@ http://localhost:8000
 ## Making Documentation Changes
 
 1. Fork the repository
-2. Create a feature branch
-3. Make changes in `content/` or `theme_override/`
-4. Open a Pull Request
-5. Ensure all CI checks pass
-6. Request review
+1. Create a feature branch
+1. Make changes in `content/` or `theme_override/`
+1. Open a Pull Request
+1. Ensure all CI checks pass
+1. Request review
 
 Once merged, the docs are automatically published.
 
@@ -192,7 +192,7 @@ These checks also run automatically in CI.
 If local builds fail:
 
 1. Verify `theme_common/requirements.txt` exists
-2. Ensure submodules are initialized
-3. Try the Docker-based build
+1. Ensure submodules are initialized
+1. Try the Docker-based build
 
 This will catch 99% of issues.
