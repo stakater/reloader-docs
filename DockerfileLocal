@@ -1,0 +1,70 @@
+# syntax=docker/dockerfile:1
+
+FROM python:3.12-alpine AS builder
+
+ENV HOME=/home/1001
+ENV APP_DIR=${HOME}/application
+WORKDIR ${APP_DIR}
+
+# Needed for some python wheels + for cloning theme_common if missing
+RUN apk add --no-cache \
+      git \
+      build-base \
+      libffi-dev \
+      openssl-dev
+
+# Copy the whole repo into the image
+COPY --chown=1001:root . .
+
+# --- Ensure theme_common exists (handles zip checkout or missing submodule) ---
+# If theme_common/requirements.txt is missing, we clone the theme repo into theme_common/.
+ARG THEME_REPO=https://github.com/stakater/stakater-docs-mkdocs-theme.git
+ARG THEME_REF=main
+
+RUN if [ ! -f theme_common/requirements.txt ]; then \
+      echo "theme_common missing -> cloning ${THEME_REPO} (${THEME_REF})"; \
+      rm -rf theme_common; \
+      git clone --depth 1 --branch "${THEME_REF}" "${THEME_REPO}" theme_common; \
+    else \
+      echo "theme_common present -> using local copy"; \
+    fi
+
+# Install common dependencies
+RUN python -m pip install --upgrade pip \
+ && pip install -r theme_common/requirements.txt
+
+# (Optional) If your repo has its own requirements.txt, enable this:
+# RUN if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+# Pre-mkdocs steps: merge theme resources + mkdocs configs
+RUN python theme_common/scripts/combine_theme_resources.py \
+      -s theme_common/resources \
+      -ov theme_override/resources \
+      -o dist/_theme
+
+RUN python theme_common/scripts/combine_mkdocs_config_yaml.py \
+      theme_common/mkdocs.yml \
+      theme_override/mkdocs.yml \
+      mkdocs.yml
+
+# Build the docs
+RUN mkdocs build
+
+# (Optional cleanup to reduce builder size; harmless even if folders don't exist)
+RUN rm -f prepare_theme.sh || true \
+ && rm -rf theme_global theme_common dist || true
+
+# --- Runtime image ---
+FROM nginxinc/nginx-unprivileged:1.28-alpine AS deploy
+
+# Copy built site
+COPY --from=builder /home/1001/application/site/ /usr/share/nginx/html/
+
+# Nginx config
+COPY default.conf /etc/nginx/conf.d/default.conf
+
+USER 1001
+
+EXPOSE 8080
+
+CMD ["nginx", "-g", "daemon off;"]
