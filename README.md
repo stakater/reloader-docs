@@ -21,7 +21,7 @@ You will mostly work in **two directories only**:
 >
 > * Do **not** edit files in `dist/` – it is generated
 > * Do **not** edit `theme_common/` directly unless you know what you are doing
-> * Only edit `theme_override/mkdocs.yml` (there are multiple mkdocs files)
+> * Only edit `theme_override/mkdocs.yml` (there are multiple `mkdocs` files)
 
 ---
 
@@ -31,9 +31,9 @@ This repository is fully automated via GitHub Actions:
 
 * **Pull Requests**
 
-  * Runs documentation QA checks
-  * Builds Docker image
-  * Publishes preview docs at:
+    * Runs documentation QA checks
+    * Builds Docker image
+    * Publishes preview docs at:
 
     ```
     https://stakater.github.io/reloader-docs/<branch-name>/
@@ -41,10 +41,10 @@ This repository is fully automated via GitHub Actions:
 
 * **Merge to `main`**
 
-  * Creates a GitHub release
-  * Builds & pushes documentation image
-  * Update the gitops repository
-  * Publishes docs to:
+    * Creates a GitHub release
+    * Builds & pushes documentation image
+    * Update the GitOps repository
+    * Publishes docs to:
 
     ```
     https://docs.stakater.com
