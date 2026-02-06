@@ -1,76 +1,134 @@
 # Reloader Documentation
 
-This repository contains the source for the documentation for Reloader. It is built using [MkDocs](https://github.com/mkdocs/mkdocs) which is based on Python. It is also versioned using [mike](https://github.com/jimporter/mike).
+This repository contains the source code for **Reloader documentation**, built with **MkDocs** and versioned using **mike**.
 
-## GitHub Actions
+The goal of this README is to help you:
 
-This repository has [GitHub action workflow](./.github/workflows/) which checks the quality of the documentation and builds the [`Dockerfile`](./Dockerfile) image on Pull Requests. On a push to the `main` branch, it will create a GitHub release and push the built image to an image repository.
+* Make documentation changes safely
+* Preview docs locally with minimal friction
+* Understand how CI/CD publishes the docs
 
-## How to make changes
+---
 
-1. Fork the repository
-1. Make a pull request
-1. Workflow will run QA checks, make sure all jobs have succeeded before requesting a review
-1. Pull requests builds are published for review on `https://stakater.github.io/template-operator-docs/<branch-name>/`
-1. On merge of a pull request, the documentation is published on [`docs.stakater.com`](https://docs.stakater.com)
+## Repository Structure (What to Touch)
 
-> [!NOTE]
-> For MkDocs overrides, it is important to know that you should only make changes in the [`theme_override`](./theme_override/) and the [`content`](./content/) directory.
+You will mostly work in **two directories only**:
+
+* `content/` – documentation pages (Markdown)
+* `theme_override/` – local theme customizations
+
+> ⚠️ **Important**
 >
-> Be mindful of only changing the [`theme_override/mkdocs.yml`](./theme_override/mkdocs.yml) file since there are more than one such file.
->
-> Before deploying or deleting a version, make sure to specify the correct latest version in the workflow files.
->
-> Make sure the latest doc version is also specified in the versioned branches.
+> * Do **not** edit files in `dist/` – it is generated
+> * Do **not** edit `theme_common/` directly unless you know what you are doing
+> * Only edit `theme_override/mkdocs.yml` (there are multiple mkdocs files)
 
-### Update git submodule
+---
 
-This project contains a git submodule and if you need to update it, use this command:
+## GitHub Actions & Publishing Flow
+
+This repository is fully automated via GitHub Actions:
+
+* **Pull Requests**
+
+  * Runs documentation QA checks
+  * Builds Docker image
+  * Publishes preview docs at:
+
+    ```
+    https://stakater.github.io/reloader-docs/<branch-name>/
+    ```
+
+* **Merge to `main`**
+
+  * Creates a GitHub release
+  * Builds & pushes documentation image
+  * Update the gitops repository
+  * Publishes docs to:
+
+    ```
+    https://docs.stakater.com
+    ```
+
+---
+
+## Git Submodule (Very Important)
+
+This repository depends on a shared MkDocs theme via a **git submodule**:
+
+```bash
+git submodule update --init --recursive
+```
+
+If you forget this step, **local builds and Docker builds will fail**.
+
+To update the submodule to the latest version:
 
 ```bash
 git submodule update --init --recursive --remote
 ```
 
-View the [`.gitmodules`](./.gitmodules) file to see linked git submodules.
+You can inspect linked submodules in `.gitmodules`.
 
-## Build locally
+---
 
-There are at least two options to get fast continuous feedback during local development:
+## Local Development (Choose One)
 
-1. Build and run the docs using the Dockerfile image
-1. Run the commands locally
+You have **two supported ways** to preview docs locally.
 
-### Build Dockerfile image and run container
+---
 
-Build Dockerfile test image:
+## Option 1: Docker (Recommended, Zero Setup)
 
-```bash
-docker build . -t test -f Dockerfilelocal
-```
+This is the **most reliable** method and matches CI behavior.
 
-Run test container:
+### Build the docs image
 
 ```bash
-docker run -p 8080:8080 test
+docker build -f DockerfileLocal.fixed -t reloader-docs-local .
 ```
 
-Then access the docs on [`localhost:8080`](localhost:8080).
+### Run the container
 
-### Run commands locally
+```bash
+docker run --rm -p 8080:8080 reloader-docs-local
+```
 
-Use [`virtualenvwrapper`](https://virtualenvwrapper.readthedocs.io/en/latest/install.html) to set up Python virtual environment.
+Open your browser:
 
-Install [Python 3](https://www.python.org/downloads/).
+```
+http://localhost:8080
+```
 
-Install python environment dependencies if you are using any other than what is defined in `theme_common`.
+---
 
-Then run below script to prepare theme from local and common theme resources. It will output to `dist/_theme` directory and create `mkdocs.yml` file in root directory. We are also installing the python dependencies coming from `theme_common` here.
+## Option 2: Run Locally (Python)
+
+### Prerequisites
+
+* Python 3.x
+* `virtualenv` or `virtualenvwrapper`
+
+### Setup virtual environment
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### Prepare theme & install dependencies
+
+This script:
+
+* Installs Python dependencies from `theme_common`
+* Merges shared + local theme overrides
+* Generates `mkdocs.yml`
 
 ```bash
 ./prepare_theme.sh
 ```
 
-Finally, serve the docs using the built-in web server which is based on Python http server - note that the production build will use `nginx` instead:
+### Serve docs locally
 
 ```bash
 mike serve
@@ -82,23 +140,59 @@ or
 python3 -m mike serve
 ```
 
-Then, you can make changes in `content` or `dist/_theme` folder. Please note that `dist/_theme` is a build folder and any changes made here will be lost if you do not move them to the `theme_common` or the `theme_override` folder.
+Docs will be available at:
 
-### QA Checks
+```
+http://localhost:8000
+```
 
-You can run QA checks locally. They are also run as part of pull request builds.
+> 💡 Any changes to `dist/_theme` will be lost. Always move permanent changes to:
+>
+> * `theme_override/`
+> * or `content/`
 
-To run markdown linting:
+---
+
+## Making Documentation Changes
+
+1. Fork the repository
+2. Create a feature branch
+3. Make changes in `content/` or `theme_override/`
+4. Open a Pull Request
+5. Ensure all CI checks pass
+6. Request review
+
+Once merged, the docs are automatically published.
+
+---
+
+## QA Checks (Optional, but Recommended)
+
+### Markdown linting
 
 ```bash
 brew install markdownlint-cli
 markdownlint -c .markdownlint.yaml content
 ```
 
-To run spell checking:
+### Spell checking
 
 ```bash
 brew install vale
 vale sync
 vale content
 ```
+
+These checks also run automatically in CI.
+
+---
+
+## Need Help?
+
+If local builds fail:
+
+1. Verify `theme_common/requirements.txt` exists
+2. Ensure submodules are initialized
+3. Try the Docker-based build
+
+This will catch 99% of issues.
