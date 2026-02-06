@@ -142,7 +142,7 @@ python3 -m mike serve
 
 Docs will be available at:
 
-```
+```bash
 http://localhost:8000
 ```
 
