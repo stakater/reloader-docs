@@ -3695,7 +3695,7 @@ bao<span class="w"> </span>write<span class="w"> </span>auth/kubernetes/config<s
 <li><strong>Pod restart triggered</strong> - Rolling restart of pods referencing the changed Secret</li>
 </ol>
 <h3 id="reloader-annotations">Reloader Annotations<a class="headerlink" href="#reloader-annotations" title="Permanent link">#</a></h3>
-<p><strong>On Deployment (for K8s Secret-based patterns: ESO, BSO, CSI with secretObjects):</strong></p>
+<p><strong>On Deployment (for K8s Secret-based patterns: ESO, BSO, CSI with <code>secretObjects</code>):</strong></p>
 <div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">reloader.stakater.com/search</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>

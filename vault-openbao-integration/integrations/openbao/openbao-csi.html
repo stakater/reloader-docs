@@ -3704,14 +3704,14 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </ul>
 <p>Additionally required:</p>
 <ul>
-<li>Secrets Store CSI Driver installed with syncSecret and rotation enabled</li>
+<li>Secrets Store CSI Driver installed with <code>syncSecret</code> and rotation enabled</li>
 <li>OpenBao CSI Provider installed (included in OpenBao Helm chart)</li>
 </ul>
 <blockquote>
 <p><strong>Note:</strong> All <code>bao</code> commands below assume <code>BAO_ADDR</code> and <code>BAO_TOKEN</code> are set from <a href="index.html#step-3-configure-openbao-cli">Overview Step 3</a>.</p>
 </blockquote>
 <h2 id="step-1-install-secrets-store-csi-driver">Step 1: Install Secrets Store CSI Driver<a class="headerlink" href="#step-1-install-secrets-store-csi-driver" title="Permanent link">#</a></h2>
-<p>Install with syncSecret and rotation enabled:</p>
+<p>Install with <code>syncSecret</code> and rotation enabled:</p>
 <div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>secrets-store-csi-driver<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts
 helm<span class="w"> </span>repo<span class="w"> </span>update
@@ -3800,7 +3800,7 @@ bao<span class="w"> </span>write<span class="w"> </span>auth/kubernetes/config<s
 </code></pre></div>
 <p><strong>Key Configuration:</strong></p>
 <ul>
-<li><code>provider: openbao</code> - Uses OpenBao CSI provider (not "vault")</li>
+<li><code>provider: openbao</code> - Uses OpenBao CSI provider (not "Vault")</li>
 <li><code>secretObjects</code> - Syncs mounted secrets to Kubernetes Secret</li>
 <li><code>annotations</code> - Reloader annotation for automatic restarts</li>
 <li><code>parameters.vaultAddress</code> - Points to OpenBao service</li>
@@ -3899,7 +3899,7 @@ kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </
 <h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h2>
 <ol>
 <li><strong>CSI Driver mounts secrets</strong> - When the pod starts, the CSI driver authenticates to OpenBao using Kubernetes auth and mounts secrets as files</li>
-<li><strong>secretObjects sync</strong> - The CSI driver creates/updates the Kubernetes Secret with the Reloader annotation</li>
+<li><strong><code>secretObjects</code> sync</strong> - The CSI driver creates/updates the Kubernetes Secret with the Reloader annotation</li>
 <li><strong>Rotation polling</strong> - CSI driver periodically polls OpenBao for changes (based on rotationPollInterval)</li>
 <li><strong>Secret update</strong> - When secrets change, CSI driver updates the Kubernetes Secret</li>
 <li><strong>Reloader triggers restart</strong> - Reloader detects the Secret change and performs a rolling restart of the Deployment</li>
@@ -3928,9 +3928,9 @@ kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </
 </code></pre></div>
 <h3 id="secret-not-syncing">Secret Not Syncing<a class="headerlink" href="#secret-not-syncing" title="Permanent link">#</a></h3>
 <ol>
-<li>Check CSI driver has syncSecret enabled</li>
+<li>Check CSI driver has <code>syncSecret</code> enabled</li>
 <li>Verify pod is running with the CSI volume mounted</li>
-<li>Check secretObjects configuration matches parameters.objects</li>
+<li>Check <code>secretObjects</code> configuration matches parameters.objects</li>
 </ol>
 <h3 id="authentication-errors">Authentication Errors<a class="headerlink" href="#authentication-errors" title="Permanent link">#</a></h3>
 <ol>
