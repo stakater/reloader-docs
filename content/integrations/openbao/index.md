@@ -208,7 +208,7 @@ bao auth enable approle
 
 ### Reloader Annotations
 
-**On Deployment (for K8s Secret-based patterns: ESO, BSO, CSI with secretObjects):**
+**On Deployment (for K8s Secret-based patterns: ESO, BSO, CSI with `secretObjects`):**
 
 ```yaml
 metadata:

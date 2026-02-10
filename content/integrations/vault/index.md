@@ -196,7 +196,7 @@ vault auth enable approle
 
 ### Reloader Annotations
 
-**On Deployment (for K8s Secret-based patterns: ESO, VSO, CSI with secretObjects):**
+**On Deployment (for K8s Secret-based patterns: ESO, VSO, CSI with `secretObjects`):**
 
 ```yaml
 metadata:

@@ -71,14 +71,14 @@ Complete the common setup steps from the [Overview](index.md):
 
 Additionally required:
 
-- Secrets Store CSI Driver installed with syncSecret and rotation enabled
+- Secrets Store CSI Driver installed with `syncSecret` and rotation enabled
 - OpenBao CSI Provider installed (included in OpenBao Helm chart)
 
 > **Note:** All `bao` commands below assume `BAO_ADDR` and `BAO_TOKEN` are set from [Overview Step 3](index.md#step-3-configure-openbao-cli).
 
 ## Step 1: Install Secrets Store CSI Driver
 
-Install with syncSecret and rotation enabled:
+Install with `syncSecret` and rotation enabled:
 
 ```bash
 helm repo add secrets-store-csi-driver \
@@ -199,7 +199,7 @@ spec:
 
 **Key Configuration:**
 
-- `provider: openbao` - Uses OpenBao CSI provider (not "vault")
+- `provider: openbao` - Uses OpenBao CSI provider (not "Vault")
 - `secretObjects` - Syncs mounted secrets to Kubernetes Secret
 - `annotations` - Reloader annotation for automatic restarts
 - `parameters.vaultAddress` - Points to OpenBao service
@@ -325,7 +325,7 @@ The pod should show a new name and the updated password.
 ## How It Works
 
 1. **CSI Driver mounts secrets** - When the pod starts, the CSI driver authenticates to OpenBao using Kubernetes auth and mounts secrets as files
-1. **secretObjects sync** - The CSI driver creates/updates the Kubernetes Secret with the Reloader annotation
+1. **`secretObjects` sync** - The CSI driver creates/updates the Kubernetes Secret with the Reloader annotation
 1. **Rotation polling** - CSI driver periodically polls OpenBao for changes (based on rotationPollInterval)
 1. **Secret update** - When secrets change, CSI driver updates the Kubernetes Secret
 1. **Reloader triggers restart** - Reloader detects the Secret change and performs a rolling restart of the Deployment
@@ -374,9 +374,9 @@ kubectl get pods -n openbao -l app.kubernetes.io/name=openbao-csi-provider
 
 ### Secret Not Syncing
 
-1. Check CSI driver has syncSecret enabled
+1. Check CSI driver has `syncSecret` enabled
 1. Verify pod is running with the CSI volume mounted
-1. Check secretObjects configuration matches parameters.objects
+1. Check `secretObjects` configuration matches parameters.objects
 
 ### Authentication Errors
 

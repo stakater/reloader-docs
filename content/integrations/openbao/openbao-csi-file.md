@@ -374,7 +374,7 @@ This is different from the standard Secret/ConfigMap annotations. Reloader watch
 | Secret storage | Mounted files only | Files + K8s Secret |
 | Reloader annotation | `secretproviderclass...reload` | `reloader...match` on Secret |
 | Security | Secrets never in etcd | Secrets stored in etcd |
-| Env var support | Read from file | Native secretKeyRef |
+| env var support | Read from file | Native secretKeyRef |
 | Complexity | Simpler | More configuration |
 
 ## Important Notes
