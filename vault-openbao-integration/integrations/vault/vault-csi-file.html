@@ -3791,7 +3791,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <li>Read policy (<code>myapp-read</code>) created</li>
 <li>Stakater Reloader installed <strong>with <code>--enable-csi-integration=true</code></strong></li>
 </ul>
-<p>Additionally required:</p>
+<p>Additional requirements:</p>
 <ul>
 <li>Secrets Store CSI Driver installed with <code>enableSecretRotation=true</code></li>
 <li>Vault CSI Provider installed</li>
@@ -3969,7 +3969,7 @@ kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </
 <span class="w">  </span><span class="nv">password</span><span class="o">=</span><span class="s2">"new-rotated-password"</span>
 </code></pre></div>
 <h3 id="wait-and-verify">Wait and Verify<a class="headerlink" href="#wait-and-verify" title="Permanent link">#</a></h3>
-<p>Wait 30-60 seconds for CSI rotation and Reloader restart:</p>
+<p>Wait 30–60 seconds for CSI rotation and Reloader restart:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Check SecretProviderClassPodStatus - version hashes should change</span>
 kubectl<span class="w"> </span>get<span class="w"> </span>secretproviderclasspodstatuses<span class="w"> </span>-n<span class="w"> </span>vault-csi-file-test<span class="w"> </span>-o<span class="w"> </span>yaml
 

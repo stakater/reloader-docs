@@ -3702,7 +3702,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <li>Test secrets written to <code>secret/myapp</code></li>
 <li>Stakater Reloader installed with search mode enabled</li>
 </ul>
-<p>Additionally required:</p>
+<p>Additional requirements:</p>
 <ul>
 <li>Secrets Store CSI Driver installed with <code>syncSecret</code> and rotation enabled</li>
 <li>OpenBao CSI Provider installed (included in OpenBao Helm chart)</li>
@@ -3891,7 +3891,7 @@ kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> <
 <div class="highlight"><pre><span></span><code>bao<span class="w"> </span>kv<span class="w"> </span>put<span class="w"> </span>secret/myapp<span class="w"> </span><span class="nv">username</span><span class="o">=</span>myuser<span class="w"> </span><span class="nv">password</span><span class="o">=</span>rotated-password
 </code></pre></div>
 <p>Wait for CSI rotation (based on rotationPollInterval) and Reloader:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># After ~30-60 seconds</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># After ~30–60 seconds</span>
 kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>openbao-csi-test<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>openbao-csi-test-app
 kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>openbao-csi-test<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>openbao-csi-test-app<span class="w"> </span>--tail<span class="o">=</span><span class="m">5</span>
 </code></pre></div>
@@ -3930,7 +3930,7 @@ kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </
 <ol>
 <li>Check CSI driver has <code>syncSecret</code> enabled</li>
 <li>Verify pod is running with the CSI volume mounted</li>
-<li>Check <code>secretObjects</code> configuration matches parameters.objects</li>
+<li>Check <code>secretObjects</code> configuration matches <code>parameters.objects</code></li>
 </ol>
 <h3 id="authentication-errors">Authentication Errors<a class="headerlink" href="#authentication-errors" title="Permanent link">#</a></h3>
 <ol>

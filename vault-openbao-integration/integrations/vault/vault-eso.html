@@ -3864,7 +3864,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <li>Read policy (<code>myapp-read</code>) created</li>
 <li>Stakater Reloader installed</li>
 </ul>
-<p>Additionally required:</p>
+<p>Additional requirements:</p>
 <ul>
 <li>External Secrets Operator installed</li>
 </ul>
@@ -4123,7 +4123,7 @@ kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </
 <span class="w">  </span><span class="nv">password</span><span class="o">=</span><span class="s2">"new-rotated-password"</span>
 </code></pre></div>
 <h3 id="wait-and-verify">Wait and Verify<a class="headerlink" href="#wait-and-verify" title="Permanent link">#</a></h3>
-<p>Wait 30-60 seconds for ESO refresh and Reloader restart:</p>
+<p>Wait 30–60 seconds for ESO refresh and Reloader restart:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Check secret was updated</span>
 kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>vault-eso-test<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.password}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
 

@@ -3698,7 +3698,7 @@ Community usage is possible, but without continuous validation or SLA</p>
 │  │  ┌──────────────────┐    ┌──────────────────┐                         │ │
 │  │  │  Operator CRDs   │───►│  K8s Secret      │                         │ │
 │  │  │  (SecretStore,   │    │  (app-secrets)   │                         │ │
-│  │  │   VaultAuth, etc)│    │  match: "true"   │                         │ │
+│  │  │  VaultAuth, etc.)│    │  match: "true"   │                         │ │
 │  │  └──────────────────┘    └──────────────────┘                         │ │
 │  │                                   │                                    │ │
 │  │                                   ▼                                    │ │
@@ -3838,7 +3838,7 @@ vault<span class="w"> </span>write<span class="w"> </span>auth/kubernetes/config
 <ol>
 <li><strong>Network connectivity</strong> - Pods must be able to reach the external Vault URL</li>
 <li><strong>TLS certificates</strong> - Production Vault should use TLS; clusters need the CA certificate</li>
-<li><strong>Per-cluster Kubernetes auth configuration</strong> - Each cluster's JWT tokens are unique</li>
+<li><strong>Per-cluster Kubernetes authentication configuration</strong> - Each cluster's JWT tokens are unique</li>
 </ol>
 <h3 id="authentication-methods-with-external-vault">Authentication Methods with External Vault<a class="headerlink" href="#authentication-methods-with-external-vault" title="Permanent link">#</a></h3>
 <table>
