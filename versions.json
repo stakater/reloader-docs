@@ -2,13 +2,13 @@
   {
     "version": "vault-openbao-integration",
     "title": "vault-openbao-integration",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "fix-df",
     "title": "fix-df",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   }
 ]
