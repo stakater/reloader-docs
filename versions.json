@@ -1,12 +1,5 @@
 [
   {
-    "version": "vault-openbao-integration",
-    "title": "vault-openbao-integration",
-    "aliases": [
-      "latest"
-    ]
-  },
-  {
     "version": "fix-df",
     "title": "fix-df",
     "aliases": []
