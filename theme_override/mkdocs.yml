@@ -23,6 +23,18 @@ nav:
           - External Secrets Operator: integrations/conjur/conjur-eso.md
           - Sidecar: integrations/conjur/conjur-sidecar.md
           - CSI Driver: integrations/conjur/conjur-csi.md
+      - Vault:
+          - Overview: integrations/vault/index.md
+          - External Secrets Operator: integrations/vault/vault-eso.md
+          - Vault Secrets Operator: integrations/vault/vault-vso.md
+          - CSI Driver: integrations/vault/vault-csi.md
+          - CSI Driver (File-Based): integrations/vault/vault-csi-file.md
+      - OpenBao:
+          - Overview: integrations/openbao/index.md
+          - External Secrets Operator: integrations/openbao/openbao-eso.md
+          - OpenBao Secrets Operator: integrations/openbao/openbao-bso.md
+          - CSI Driver: integrations/openbao/openbao-csi.md
+          - CSI Driver (File-Based): integrations/openbao/openbao-csi-file.md
   - eula.md
   - 'Support': help.md
   - 'Versions': versions.md
