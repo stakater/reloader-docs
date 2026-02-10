@@ -42,7 +42,7 @@ OpenBao is an open-source, community-driven fork of HashiCorp Vault, managed by 
 │  │  ┌──────────────────┐    ┌──────────────────┐                         │ │
 │  │  │  Operator CRDs   │───►│  K8s Secret      │                         │ │
 │  │  │  (SecretStore,   │    │  (app-secrets)   │                         │ │
-│  │  │   VaultAuth, etc)│    │  match: "true"   │                         │ │
+│  │  │  VaultAuth, etc.)│    │  match: "true"   │                         │ │
 │  │  └──────────────────┘    └──────────────────┘                         │ │
 │  │                                   │                                    │ │
 │  │                                   ▼                                    │ │

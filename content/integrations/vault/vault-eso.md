@@ -63,7 +63,7 @@ Complete the common setup steps from the [Overview](index.md):
 - Read policy (`myapp-read`) created
 - Stakater Reloader installed
 
-Additionally required:
+Additional requirements:
 
 - External Secrets Operator installed
 
@@ -410,7 +410,7 @@ vault kv put secret/myapp \
 
 ### Wait and Verify
 
-Wait 30-60 seconds for ESO refresh and Reloader restart:
+Wait 30–60 seconds for ESO refresh and Reloader restart:
 
 ```bash
 # Check secret was updated

@@ -65,7 +65,7 @@ Complete the common setup steps from the [Overview](index.md):
 - Read policy (`myapp-read`) created
 - Stakater Reloader installed
 
-Additionally required:
+Additional requirements:
 
 - OpenBao Secrets Operator installed
 
@@ -457,7 +457,7 @@ bao kv put secret/myapp username='admin-user' password='new-rotated-password'
 
 ### Wait and Verify
 
-Wait 30-60 seconds for BSO refresh and Reloader restart:
+Wait 30–60 seconds for BSO refresh and Reloader restart:
 
 ```bash
 # Check secret was updated

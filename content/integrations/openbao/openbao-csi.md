@@ -69,7 +69,7 @@ Complete the common setup steps from the [Overview](index.md):
 - Test secrets written to `secret/myapp`
 - Stakater Reloader installed with search mode enabled
 
-Additionally required:
+Additional requirements:
 
 - Secrets Store CSI Driver installed with `syncSecret` and rotation enabled
 - OpenBao CSI Provider installed (included in OpenBao Helm chart)
@@ -315,7 +315,7 @@ bao kv put secret/myapp username=myuser password=rotated-password
 Wait for CSI rotation (based on rotationPollInterval) and Reloader:
 
 ```bash
-# After ~30-60 seconds
+# After ~30–60 seconds
 kubectl get pods -n openbao-csi-test -l app=openbao-csi-test-app
 kubectl logs -n openbao-csi-test -l app=openbao-csi-test-app --tail=5
 ```
@@ -376,7 +376,7 @@ kubectl get pods -n openbao -l app.kubernetes.io/name=openbao-csi-provider
 
 1. Check CSI driver has `syncSecret` enabled
 1. Verify pod is running with the CSI volume mounted
-1. Check `secretObjects` configuration matches parameters.objects
+1. Check `secretObjects` configuration matches `parameters.objects`
 
 ### Authentication Errors
 

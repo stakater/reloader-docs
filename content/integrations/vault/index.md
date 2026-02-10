@@ -38,7 +38,7 @@ This guide shows how to automatically restart Kubernetes workloads when HashiCor
 │  │  ┌──────────────────┐    ┌──────────────────┐                         │ │
 │  │  │  Operator CRDs   │───►│  K8s Secret      │                         │ │
 │  │  │  (SecretStore,   │    │  (app-secrets)   │                         │ │
-│  │  │   VaultAuth, etc)│    │  match: "true"   │                         │ │
+│  │  │  VaultAuth, etc.)│    │  match: "true"   │                         │ │
 │  │  └──────────────────┘    └──────────────────┘                         │ │
 │  │                                   │                                    │ │
 │  │                                   ▼                                    │ │
@@ -235,7 +235,7 @@ Vault does not need to run inside Kubernetes. A single external Vault instance c
 
 1. **Network connectivity** - Pods must be able to reach the external Vault URL
 1. **TLS certificates** - Production Vault should use TLS; clusters need the CA certificate
-1. **Per-cluster Kubernetes auth configuration** - Each cluster's JWT tokens are unique
+1. **Per-cluster Kubernetes authentication configuration** - Each cluster's JWT tokens are unique
 
 ### Authentication Methods with External Vault
 

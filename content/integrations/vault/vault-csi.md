@@ -63,7 +63,7 @@ Complete the common setup steps from the [Overview](index.md):
 - Read policy (`myapp-read`) created
 - Stakater Reloader installed
 
-Additionally required:
+Additional requirements:
 
 - Secrets Store CSI Driver installed with `syncSecret.enabled=true`
 - Vault CSI Provider installed
@@ -288,7 +288,7 @@ vault kv put secret/myapp \
 
 ### Wait and Verify
 
-Wait 30-60 seconds for CSI rotation and Reloader restart:
+Wait 30–60 seconds for CSI rotation and Reloader restart:
 
 ```bash
 # Check secret was updated

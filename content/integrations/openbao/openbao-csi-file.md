@@ -93,7 +93,7 @@ Complete the common setup steps from the [Overview](index.md):
 - Test secrets written to `secret/myapp`
 - Stakater Reloader installed
 
-Additionally required:
+Additional requirements:
 
 - Secrets Store CSI Driver installed with rotation enabled
 - OpenBao CSI Provider installed

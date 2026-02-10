@@ -64,7 +64,7 @@ Complete the common setup steps from the [Overview](index.md):
 - Test secrets written to `secret/myapp`
 - Stakater Reloader installed
 
-Additionally required:
+Additional requirements:
 
 - Vault Secrets Operator installed
 
@@ -465,7 +465,7 @@ vault kv put secret/myapp \
 
 ### Wait and Verify
 
-Wait 30-60 seconds for VSO refresh and Reloader restart:
+Wait 30–60 seconds for VSO refresh and Reloader restart:
 
 ```bash
 # Check secret was updated
