@@ -10,5 +10,10 @@
     "aliases": [
       "latest"
     ]
+  },
+  {
+    "version": "renovate-main-playwright-monorepo",
+    "title": "renovate-main-playwright-monorepo",
+    "aliases": []
   }
 ]
