@@ -20,5 +20,10 @@
     "aliases": [
       "latest"
     ]
+  },
+  {
+    "version": "renovate-main-dotenv-17.x-lockfile",
+    "title": "renovate-main-dotenv-17.x-lockfile",
+    "aliases": []
   }
 ]
