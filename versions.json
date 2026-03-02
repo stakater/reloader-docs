@@ -17,13 +17,13 @@
   {
     "version": "renovate-main-node-24.x-lockfile",
     "title": "renovate-main-node-24.x-lockfile",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-main-dotenv-17.x-lockfile",
     "title": "renovate-main-dotenv-17.x-lockfile",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   }
 ]
