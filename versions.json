@@ -12,9 +12,7 @@
   {
     "version": "renovate-main-python-3.x",
     "title": "renovate-main-python-3.x",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-main-playwright-monorepo",
@@ -44,6 +42,8 @@
   {
     "version": "fix-mike-version-selector",
     "title": "fix-mike-version-selector",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   }
 ]
