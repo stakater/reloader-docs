@@ -12,13 +12,13 @@
   {
     "version": "renovate-main-playwright-monorepo",
     "title": "renovate-main-playwright-monorepo",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-main-node-24.x-lockfile",
     "title": "renovate-main-node-24.x-lockfile",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   }
 ]
