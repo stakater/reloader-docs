@@ -15,5 +15,10 @@
     "aliases": [
       "latest"
     ]
+  },
+  {
+    "version": "renovate-main-node-24.x-lockfile",
+    "title": "renovate-main-node-24.x-lockfile",
+    "aliases": []
   }
 ]
