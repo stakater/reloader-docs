@@ -7,13 +7,13 @@
   {
     "version": "renovate-main-stakater-.github-0.x",
     "title": "renovate-main-stakater-.github-0.x",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-main-playwright-monorepo",
     "title": "renovate-main-playwright-monorepo",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   }
 ]
