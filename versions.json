@@ -30,5 +30,10 @@
     "version": "renovate-main-dotenv-17.x-lockfile",
     "title": "renovate-main-dotenv-17.x-lockfile",
     "aliases": []
+  },
+  {
+    "version": "fix-mike-version-selector",
+    "title": "fix-mike-version-selector",
+    "aliases": []
   }
 ]
