@@ -38,3 +38,7 @@ nav:
   - eula.md
   - 'Support': help.md
   - 'Versions': versions.md
+extra:
+  version:
+    provider: mike
+    default: latest
