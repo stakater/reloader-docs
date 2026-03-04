@@ -5,7 +5,7 @@
 
 set -euo pipefail
 
-REF=${1:-update-docs-workflow}
+REF=${1:-version-log-workflow}
 VERSION=${2:-v1.2.3}
 IMAGE_PATH=${3:-ghcr.io/stakater/reloader-enterprise}
 SBOM_FILE=${4:-content/sbom.json}
@@ -29,8 +29,8 @@ fi
 
 echo "Triggering workflow dispatch on ref=$REF with version=$VERSION"
 
-gh workflow run dispatch.yaml \
-  --repo stakater/reloader-enterprise-package-proxy \
+gh workflow run workflow_dispatch.yaml \
+  --repo stakater/reloader-docs \
   --ref "$REF" \
   --field version="$VERSION" \
   --field path="$IMAGE_PATH" \
