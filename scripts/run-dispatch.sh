@@ -5,7 +5,7 @@
 
 set -euo pipefail
 
-REF=${1:-version-log-workflow}
+REF=${1:-HEAD}
 VERSION=${2:-v1.2.3}
 IMAGE_PATH=${3:-ghcr.io/stakater/reloader-enterprise}
 SBOM_FILE=${4:-content/sbom.json}
@@ -36,4 +36,4 @@ gh workflow run workflow_dispatch.yaml \
   --field path="$IMAGE_PATH" \
   --field sbom_64="$SBOM_B64"
 
-echo "Dispatched. Use 'gh run list --repo stakater/reloader-enterprise-package-proxy' to follow the run." 
+echo "Dispatched. Use 'gh run list --repo stakater/reloader-docs' to follow the run." 
