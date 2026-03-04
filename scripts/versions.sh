@@ -11,7 +11,7 @@ Usage: $0 --tag <tag> [--image <image>] [--sbom <sbom>] [--sbom-base64 <base64>]
 
 Defaults:
   image: ghcr.io/stakater/reloader-enterprise
-  template: templates/version.md.tmpl
+  template: scripts/templates/version.md.tmpl
   out: content/versions.md
 
 The script decodes base64 SBOM when provided and prefers it over raw --sbom.
@@ -23,7 +23,7 @@ IMAGE="ghcr.io/stakater/reloader-enterprise"
 IMAGE_UBI=""
 SBOM=""
 SBOM_BASE64=""
-TEMPLATE="templates/version.md.tmpl"
+TEMPLATE="scripts/templates/version.md.tmpl"
 OUT="content/versions.md"
 RELEASE_BASE="https://github.com/stakater/Reloader/releases/tag"
 

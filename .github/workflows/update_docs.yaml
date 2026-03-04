@@ -69,7 +69,6 @@ jobs:
           --sbom "${{ inputs.RELOADER_SBOM }}" \
           --sbom-base64 "${{ inputs.RELOADER_SBOM_BASE64 }}" \
           --release-base "${{ inputs.RELOADER_RELEASE_BASE }}" \
-          --template templates/version.md.tmpl \
           --out content/versions.md
 
         echo "new<<EOF" >> $GITHUB_OUTPUT
