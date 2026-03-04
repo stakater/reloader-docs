@@ -107,8 +107,21 @@ jobs:
         committer: stakter-user <stakater@gmail.com>
         author: stakter-user <stakater@gmail.com>
 
-    - name: Enable Pull Request Automerge
-      run: gh pr merge --merge --auto "${{ steps.create_pr.outputs.pull-request-number }}"
+    - name: Wait for PR approval and merge
+      if: steps.check_changes.outputs.changed == 'true'
+      run: |
+        PR_NUMBER="${{ steps.create_pr.outputs.pull-request-number }}"
+        echo "Waiting for PR #${PR_NUMBER} to be approved..."
+        while true; do
+          REVIEW_DECISION=$(gh pr view "$PR_NUMBER" --json reviewDecision --jq '.reviewDecision')
+          if [ "$REVIEW_DECISION" = "APPROVED" ]; then
+            echo "PR approved. Merging..."
+            gh pr merge "$PR_NUMBER" --merge
+            break
+          fi
+          echo "Not yet approved (status: ${REVIEW_DECISION:-PENDING}). Checking again in 30s..."
+          sleep 30
+        done
       env:
         GH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
 
