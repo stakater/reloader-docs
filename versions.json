@@ -2,7 +2,9 @@
   {
     "version": "version-log-workflow",
     "title": "version-log-workflow",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "update-docs-22656175595-84f724f6966ba97eb58552b07edfbeafc2a66c1e",
