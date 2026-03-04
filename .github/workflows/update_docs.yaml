@@ -1,0 +1,117 @@
+name: Update Docs
+
+on:
+  workflow_call:
+    inputs:
+      RELOADER_GIT_TAG:
+        description: 'Reloader git tag to use as source for Reloader Enterprise'
+        required: true
+        type: string
+      RELOADER_IMAGE_PATH:
+        description: 'Container image path for Reloader Enterprise'
+        required: false
+        type: string
+        default: 'ghcr.io/stakater/reloader-enterprise'
+      RELOADER_SBOM:
+        description: 'SBOM (Software Bill of Materials) content or hashes for the image'
+        required: false
+        type: string
+        default: ''
+      RELOADER_SBOM_BASE64:
+        description: 'Base64-encoded SBOM; if provided it will be decoded and used instead of RELOADER_SBOM'
+        required: false
+        type: string
+        default: ''
+      RELOADER_RELEASE_BASE:
+        description: 'Base URL for the upstream Reloader release tags (without trailing slash)'
+        required: false
+        type: string
+        default: 'https://github.com/stakater/Reloader/releases/tag'
+      RELOADER_IMAGE_UBI:
+        description: 'Optional UBI container image base (without tag). If empty, `-ubi` will be appended to RELOADER_IMAGE_PATH.'
+        required: false
+        type: string
+        default: ''
+
+jobs:
+  update-tag-in-docs:
+    name: Update Reloader Enterprise Tag in Docs
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v5
+      with:
+        fetch-depth: 0
+      
+    - name: Read current versions file
+      id: read_version
+      run: |
+        if [ -f content/versions.md ]; then
+          echo "current<<EOF" >> $GITHUB_OUTPUT
+          cat content/versions.md >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+        else
+          echo "current<<EOF" >> $GITHUB_OUTPUT
+          echo "" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Generate versions file
+      id: prepare
+      run: |
+        ./scripts/versions.sh \
+          --tag "${{ inputs.RELOADER_GIT_TAG }}" \
+          --image "${{ inputs.RELOADER_IMAGE_PATH }}" \
+          --image-ubi "${{ inputs.RELOADER_IMAGE_UBI }}" \
+          --sbom "${{ inputs.RELOADER_SBOM }}" \
+          --sbom-base64 "${{ inputs.RELOADER_SBOM_BASE64 }}" \
+          --release-base "${{ inputs.RELOADER_RELEASE_BASE }}" \
+          --out content/versions.md
+
+        echo "new<<EOF" >> $GITHUB_OUTPUT
+        cat content/versions.md >> $GITHUB_OUTPUT
+        echo "EOF" >> $GITHUB_OUTPUT
+
+    - name: Check for changes
+      id: check_changes
+      run: |
+        # Exit code 0 means no differences; non-zero means changes detected.
+        if git diff --quiet -- content/versions.md; then
+          echo "changed=false" >> $GITHUB_OUTPUT
+        else
+          echo "changed=true" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Configure Git
+      if: steps.check_changes.outputs.changed == 'true'
+      run: |
+        git config --local user.name "stakater-user"
+        git config --local user.email "stakater@gmail.com"
+
+    - name: Create Pull Request
+      id: create_pr
+      if: steps.check_changes.outputs.changed == 'true'
+      uses: peter-evans/create-pull-request@v4
+      with:
+        token: ${{ secrets.PUBLISH_TOKEN }}
+        commit-message: "chore(docs): update reloader version to ${{ inputs.RELOADER_GIT_TAG }}"
+        branch: update-docs-${{ github.run_id }}-${{ github.sha }}
+        title: "Update Reloader versions to ${{ inputs.RELOADER_GIT_TAG }}"
+        body: |
+          This PR updates the Reloader versions document with `${{ inputs.RELOADER_GIT_TAG }}`.
+        labels: docs, automation, version-bump
+        base: main
+        committer: stakter-user <stakater@gmail.com>
+        author: stakter-user <stakater@gmail.com>
+
+    - name: Enable Pull Request Automerge
+      run: gh pr merge --merge --auto "${{ steps.create_pr.outputs.pull-request-number }}"
+      env:
+        GH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
+
+    - name: No changes detected
+      if: steps.check_changes.outputs.changed == 'false'
+      run: echo "No version change detected; nothing to do."

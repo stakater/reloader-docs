@@ -1,0 +1,30 @@
+name: Reloader Enterprise published dispatch
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Reloader git tag to use as source for Reloader Enterprise'
+        type: string
+        required: true
+      
+      path:
+        description: 'Path to the reloader enterprise image'
+        type: string
+        required: false
+        default: 'ghcr.io/stakater/reloader-enterprise'
+
+      sbom_64:
+        description: 'Base64-encoded SBOM (Software Bill of Materials) content or hashes for the image'
+        type: string
+        required: false
+        default: ''
+
+jobs:
+  published-workflow-dispatch:
+    uses: stakater/reloader-enterprise-package-proxy/.github/workflows/update_docs.yaml@main
+    secrets: inherit
+    with:
+      RELOADER_GIT_TAG: ${{ github.event.inputs.version }}
+      RELOADER_IMAGE_PATH: ${{ github.event.inputs.path }}
+      RELOADER_SBOM_BASE64: ${{ github.event.inputs.sbom_64 }}
