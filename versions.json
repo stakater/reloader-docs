@@ -2,7 +2,9 @@
   {
     "version": "version-log-workflow",
     "title": "version-log-workflow",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "renovate-main-stakater-vale-package-0.x",
@@ -32,9 +34,7 @@
   {
     "version": "renovate-main-node-24.x",
     "title": "renovate-main-node-24.x",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-main-nginxinc-nginx-unprivileged-1.x",
