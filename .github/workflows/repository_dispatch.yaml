@@ -6,7 +6,7 @@ on:
 
 jobs:
   published-workflow-dispatch:
-    uses: stakater/reloader-docs/.github/workflows/update_docs.yaml@main
+    uses: stakater/reloader-docs/.github/workflows/update_docs.yaml@version-log-workflow
     secrets: inherit
     with:
       RELOADER_GIT_TAG: ${{ github.event.client_payload.version }}
