@@ -85,7 +85,7 @@ This is the **most reliable** method and matches CI behavior.
 ### Build the docs image
 
 ```bash
-docker build -f DockerfileLocal.fixed -t reloader-docs-local .
+docker build -f DockerfileLocal -t reloader-docs-local .
 ```
 
 ### Run the container

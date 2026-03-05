@@ -76,9 +76,9 @@ The table below summarizes the current status of supported integrations.
 
 | Integration | Support level |
 |------------|---------------|
-| HashiCorp Vault | 🟢 Validated (Reloader Enterprise) |
-| OpenBao | 🟢 Validated (Reloader Enterprise) |
-| Conjur | 🟢 Validated (Reloader Enterprise) |
+| [HashiCorp Vault](./vault/index.md) | 🟢 Validated (Reloader Enterprise) |
+| [OpenBao](./openbao/index.md) | 🟢 Validated (Reloader Enterprise) |
+| [Conjur](./conjur/index.md) | 🟢 Validated (Reloader Enterprise) |
 | External Secrets Operator | 🟡 Community |
 | Cert-Manager | 🟡 Community |
 | Sealed Secrets | 🟡 Community |
