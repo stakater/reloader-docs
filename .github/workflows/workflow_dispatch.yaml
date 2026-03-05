@@ -22,7 +22,7 @@ on:
 
 jobs:
   published-workflow-dispatch:
-    uses: stakater/reloader-docs/.github/workflows/update_docs.yaml@version-log-workflow
+    uses: stakater/reloader-docs/.github/workflows/update_docs.yaml@main
     secrets: inherit
     with:
       RELOADER_GIT_TAG: ${{ github.event.inputs.version }}
