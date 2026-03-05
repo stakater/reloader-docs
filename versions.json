@@ -2,9 +2,7 @@
   {
     "version": "version-log-workflow",
     "title": "version-log-workflow",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-main-stakater-vale-package-0.x",
@@ -54,6 +52,8 @@
   {
     "version": "mu",
     "title": "mu",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   }
 ]
