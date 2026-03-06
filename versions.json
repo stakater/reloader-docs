@@ -2,7 +2,9 @@
   {
     "version": "update-docs-22745310746-49409f0e6011afab8f6457b7cd4c4e4f87d6a0e9",
     "title": "update-docs-22745310746-49409f0e6011afab8f6457b7cd4c4e4f87d6a0e9",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "renovate-main-stakater-vale-package-0.x",
@@ -32,9 +34,7 @@
   {
     "version": "renovate-main-node-24.x",
     "title": "renovate-main-node-24.x",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-main-nginxinc-nginx-unprivileged-1.x",
