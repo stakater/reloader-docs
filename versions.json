@@ -7,9 +7,7 @@
   {
     "version": "update-docs-22745310746-49409f0e6011afab8f6457b7cd4c4e4f87d6a0e9",
     "title": "update-docs-22745310746-49409f0e6011afab8f6457b7cd4c4e4f87d6a0e9",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-main-stakater-vale-package-0.x",
@@ -34,7 +32,9 @@
   {
     "version": "renovate-main-node-24.x-lockfile",
     "title": "renovate-main-node-24.x-lockfile",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "renovate-main-node-24.x",
