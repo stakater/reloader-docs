@@ -44,6 +44,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v5
       with:
+        ref: main
         fetch-depth: 0
       
     - name: Read current versions file
@@ -106,20 +107,24 @@ jobs:
         base: main
         committer: stakter-user <stakater@gmail.com>
         author: stakter-user <stakater@gmail.com>
-
+    
     - name: Wait for PR approval and merge
       if: steps.check_changes.outputs.changed == 'true'
       run: |
         PR_NUMBER="${{ steps.create_pr.outputs.pull-request-number }}"
-        echo "Waiting for PR #${PR_NUMBER} to be approved..."
+        echo "Waiting for PR #${PR_NUMBER} to be approved and checks to pass..."
         while true; do
           REVIEW_DECISION=$(gh pr view "$PR_NUMBER" --json reviewDecision --jq '.reviewDecision')
-          if [ "$REVIEW_DECISION" = "APPROVED" ]; then
-            echo "PR approved. Merging..."
-            gh pr merge "$PR_NUMBER" --merge
+          MERGE_STATE=$(gh pr view "$PR_NUMBER" --json mergeStateStatus --jq '.mergeStateStatus')
+    
+          echo "Review: ${REVIEW_DECISION:-PENDING}, Merge state: ${MERGE_STATE:-UNKNOWN}"
+    
+          if [ "$REVIEW_DECISION" = "APPROVED" ] && [ "$MERGE_STATE" = "CLEAN" ]; then
+            echo "PR approved and checks passed. Merging..."
+            gh pr merge "$PR_NUMBER" --merge --admin
             break
           fi
-          echo "Not yet approved (status: ${REVIEW_DECISION:-PENDING}). Checking again in 30s..."
+    
           sleep 30
         done
       env:
