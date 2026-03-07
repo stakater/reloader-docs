@@ -16,6 +16,9 @@ nav:
       - about/why-reloader-matters.md
       - about/value-by-role.md
       - OSS vs Enterprise: about/editions.md
+  - Overview:
+      - why-configuration-reloading-matters.md
+      - secret-propagation-problem-kubernetes.md      
   - Install & Upgrade:
       - Reloader Enterprise: installation/install.md
   - Integrations:
