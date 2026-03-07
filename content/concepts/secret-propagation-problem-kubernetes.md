@@ -145,11 +145,11 @@ With Reloader in place:
 
 Using Reloader provides several operational advantages:
 
-- **Immediate configuration propagation**: Applications always run with the latest secrets and configuration.
-- **Improved security posture**: Rotated credentials are enforced without delay.
-- **Simplified operations**: Teams no longer need manual restart procedures or pipeline scripts.
-- **Better GitOps workflows**: Configuration changes can remain independent of deployment manifests.
-- **Reduced operational risk**: Automated restarts eliminate human error during secret rotation.
+* **Immediate configuration propagation**: Applications always run with the latest secrets and configuration.
+* **Improved security posture**: Rotated credentials are enforced without delay.
+* **Simplified operations**: Teams no longer need manual restart procedures or pipeline scripts.
+* **Better GitOps workflows**: Configuration changes can remain independent of deployment manifests.
+* **Reduced operational risk**: Automated restarts eliminate human error during secret rotation.
 
 ---
 
