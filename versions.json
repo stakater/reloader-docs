@@ -45,5 +45,10 @@
     "version": "renovate-main-actions-checkout-6.x",
     "title": "renovate-main-actions-checkout-6.x",
     "aliases": []
+  },
+  {
+    "version": "mu2",
+    "title": "mu2",
+    "aliases": []
   }
 ]
