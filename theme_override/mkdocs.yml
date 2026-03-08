@@ -18,7 +18,11 @@ nav:
       - OSS vs Enterprise: about/editions.md
   - Concepts:
       - concepts/why-configuration-reloading-matters.md
-      - concepts/secret-propagation-problem-kubernetes.md      
+      - concepts/secret-propagation-problem-kubernetes.md
+      - Comparison:
+          - concepts/comparisons/reloader-vs-helm.md
+          - concepts/comparisons/reloader-vs-checksum-annotations.md
+          - concepts/comparisons/reloader-vs-kyverno.md                  
   - Install & Upgrade:
       - Reloader Enterprise: installation/install.md
   - Integrations:
