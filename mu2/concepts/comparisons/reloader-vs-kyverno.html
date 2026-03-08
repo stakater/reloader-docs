@@ -3688,7 +3688,7 @@ Pods<span class="w"> </span>restart
 <ul>
 <li>secret synchronization operators</li>
 <li>certificate automation systems</li>
-<li>vault integrations</li>
+<li>Vault integrations</li>
 </ul>
 <p>When these systems update Kubernetes Secret resources, both Kyverno and Reloader can react to those updates.</p>
 <p>However, neither tool can detect changes that occur <strong>outside the Kubernetes API</strong>. For example, if an application reads secrets directly from an external system without updating a Kubernetes Secret object, neither Kyverno nor Reloader will detect that change.</p>
