@@ -2564,45 +2564,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#checking-available-versions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Checking Available Versions
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Checking Available Versions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#view-versions-in-github-packages" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        View versions in GitHub Packages
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#or-via-github-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Or via GitHub API
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#access-requirements" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3539,45 +3500,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#checking-available-versions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Checking Available Versions
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Checking Available Versions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#view-versions-in-github-packages" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        View versions in GitHub Packages
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#or-via-github-api" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Or via GitHub API
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#access-requirements" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3624,20 +3546,17 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <ul>
 <li>You receive the <strong><code>read</code></strong> role  </li>
 <li>You can <strong>pull</strong> Reloader Enterprise images  </li>
-<li>You can view contributors  </li>
 <li>You <strong>cannot</strong> create branches, modify the code, or view other collaborators  </li>
 </ul>
-<p>The repository acts as a <strong>proxy</strong> to private build sources.<br>
-It does <strong>not</strong> build artifacts itself.</p>
+<p>The repository acts as a <strong>proxy</strong> to private build sources. It does <strong>not</strong> build artifacts itself.</p>
 <p>Access is available only to active Reloader Enterprise customers.</p>
 <h2 id="installation-overview">Installation Overview<a class="headerlink" href="#installation-overview" title="Permanent link">#</a></h2>
-<p>After access is granted, you may install Reloader Enterprise in one of two ways:</p>
+<p>Once access is granted, Reloader Enterprise can be installed using one of the following two methods. In both cases, you will first need to create a Kubernetes registry secret and then run a Helm installation.</p>
 <h3 id="option-a-use-your-github-user"><strong>Option A — Use Your GitHub User</strong><a class="headerlink" href="#option-a-use-your-github-user" title="Permanent link">#</a></h3>
 <p>You provide Stakater with your GitHub username.<br>
 This user is added as a collaborator to the enterprise package repository.</p>
 <h3 id="option-b-use-a-token-provided-by-stakater"><strong>Option B — Use a Token Provided by Stakater</strong><a class="headerlink" href="#option-b-use-a-token-provided-by-stakater" title="Permanent link">#</a></h3>
 <p>Stakater issues a dedicated <code>reloader-enterprise</code> access token.</p>
-<p>Both methods require creating a Kubernetes registry secret and running a Helm install.</p>
 <h2 id="installation-method-a-using-your-github-user">Installation Method A — Using Your GitHub User<a class="headerlink" href="#installation-method-a-using-your-github-user" title="Permanent link">#</a></h2>
 <h3 id="step-1-become-a-collaborator">Step 1 — Become a collaborator<a class="headerlink" href="#step-1-become-a-collaborator" title="Permanent link">#</a></h3>
 <p>Stakater adds your GitHub user to the private enterprise package proxy.<br>
@@ -3675,26 +3594,6 @@ You must accept the GitHub invitation.</p>
 <span class="w">  </span>--set<span class="w"> </span>image.tag<span class="o">=</span>&lt;version&gt;<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--set<span class="w"> </span><span class="s2">"global.imagePullSecrets[0].name=regcred"</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--generate-name
-</code></pre></div>
-<h2 id="checking-available-versions">Checking Available Versions<a class="headerlink" href="#checking-available-versions" title="Permanent link">#</a></h2>
-<p>Reloader Enterprise uses the same image tags as the open-source version,
-but only versions that have passed enterprise-grade validation are published.</p>
-<h3 id="view-versions-in-github-packages">View versions in GitHub Packages<a class="headerlink" href="#view-versions-in-github-packages" title="Permanent link">#</a></h3>
-<p>Reloader Enterprise images are hosted in a <strong>private GitHub Container Registry (GHCR)</strong> repository.</p>
-<p>Once access is granted, customers can view available versions at:</p>
-<p><code>ghcr.io/stakater/reloader-enterprise-package-proxy</code></p>
-<blockquote>
-<p>⚠️ This repository is private.<br>
-If you are not logged in to GitHub <strong>or</strong> your GitHub account does not have access,
-GitHub will return <strong>404 Not Found</strong>. This is expected behavior.</p>
-</blockquote>
-<p>If you believe you should have access but cannot view the repository, please contact Stakater support.</p>
-<h3 id="or-via-github-api">Or via GitHub API<a class="headerlink" href="#or-via-github-api" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-L<span class="w"> </span><span class="se">\</span>
-<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Accept: application/vnd.github+json"</span><span class="w"> </span><span class="se">\</span>
-<span class="w"> </span>-H<span class="w"> </span><span class="s2">"Authorization: Bearer &lt;token&gt;"</span><span class="w"> </span><span class="se">\</span>
-<span class="w"> </span>-H<span class="w"> </span><span class="s2">"X-GitHub-Api-Version: 2022-11-28"</span><span class="w"> </span><span class="se">\</span>
-<span class="w"> </span>https://api.github.com/orgs/stakater/packages/container/reloader-enterprise/versions
 </code></pre></div>
 <h2 id="access-requirements">Access Requirements<a class="headerlink" href="#access-requirements" title="Permanent link">#</a></h2>
 <p>Access to the enterprise package repository is granted <strong>only</strong> to organizations with an active Reloader Enterprise subscription.

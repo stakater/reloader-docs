@@ -2,102 +2,102 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.stakater.com/reloader/mu2/index.html</loc>
-         <lastmod>2026-03-07</lastmod>
+         <lastmod>2026-03-08</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/mu2/eula.html</loc>
-         <lastmod>2026-03-07</lastmod>
+         <lastmod>2026-03-08</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/mu2/help.html</loc>
-         <lastmod>2026-03-07</lastmod>
+         <lastmod>2026-03-08</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/mu2/versions.html</loc>
-         <lastmod>2026-03-07</lastmod>
+         <lastmod>2026-03-08</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/mu2/about/editions.html</loc>
-         <lastmod>2026-03-07</lastmod>
+         <lastmod>2026-03-08</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/mu2/about/value-by-role.html</loc>
-         <lastmod>2026-03-07</lastmod>
+         <lastmod>2026-03-08</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/mu2/about/why-reloader-matters.html</loc>
-         <lastmod>2026-03-07</lastmod>
+         <lastmod>2026-03-08</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/mu2/concepts/secret-propagation-problem-kubernetes.html</loc>
-         <lastmod>2026-03-07</lastmod>
+         <lastmod>2026-03-08</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/mu2/concepts/why-configuration-reloading-matters.html</loc>
-         <lastmod>2026-03-07</lastmod>
+         <lastmod>2026-03-08</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/mu2/installation/install.html</loc>
-         <lastmod>2026-03-07</lastmod>
+         <lastmod>2026-03-08</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/mu2/integrations/index.html</loc>
-         <lastmod>2026-03-07</lastmod>
+         <lastmod>2026-03-08</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/mu2/integrations/conjur/index.html</loc>
-         <lastmod>2026-03-07</lastmod>
+         <lastmod>2026-03-08</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/mu2/integrations/conjur/conjur-csi.html</loc>
-         <lastmod>2026-03-07</lastmod>
+         <lastmod>2026-03-08</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/mu2/integrations/conjur/conjur-eso.html</loc>
-         <lastmod>2026-03-07</lastmod>
+         <lastmod>2026-03-08</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/mu2/integrations/conjur/conjur-sidecar.html</loc>
-         <lastmod>2026-03-07</lastmod>
+         <lastmod>2026-03-08</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/mu2/integrations/openbao/index.html</loc>
-         <lastmod>2026-03-07</lastmod>
+         <lastmod>2026-03-08</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/mu2/integrations/openbao/openbao-bso.html</loc>
-         <lastmod>2026-03-07</lastmod>
+         <lastmod>2026-03-08</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/mu2/integrations/openbao/openbao-csi-file.html</loc>
-         <lastmod>2026-03-07</lastmod>
+         <lastmod>2026-03-08</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/mu2/integrations/openbao/openbao-csi.html</loc>
-         <lastmod>2026-03-07</lastmod>
+         <lastmod>2026-03-08</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/mu2/integrations/openbao/openbao-eso.html</loc>
-         <lastmod>2026-03-07</lastmod>
+         <lastmod>2026-03-08</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/mu2/integrations/vault/index.html</loc>
-         <lastmod>2026-03-07</lastmod>
+         <lastmod>2026-03-08</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/mu2/integrations/vault/vault-csi-file.html</loc>
-         <lastmod>2026-03-07</lastmod>
+         <lastmod>2026-03-08</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/mu2/integrations/vault/vault-csi.html</loc>
-         <lastmod>2026-03-07</lastmod>
+         <lastmod>2026-03-08</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/mu2/integrations/vault/vault-eso.html</loc>
-         <lastmod>2026-03-07</lastmod>
+         <lastmod>2026-03-08</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/mu2/integrations/vault/vault-vso.html</loc>
-         <lastmod>2026-03-07</lastmod>
+         <lastmod>2026-03-08</lastmod>
     </url>
 </urlset>
