@@ -88,7 +88,7 @@ Examples include:
 
 * secret synchronization operators
 * certificate automation systems
-* vault integrations
+* Vault integrations
 
 When these systems update Kubernetes Secret resources, both Kyverno and Reloader can react to those updates.
 

@@ -166,7 +166,7 @@ Examples include:
 
 * external secret operators
 * certificate automation systems
-* vault integrations
+* Vault integrations
 
 Reloader ensures workloads pick up these changes automatically.
 
