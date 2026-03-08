@@ -11,7 +11,7 @@ Pods continue running with **stale configuration** even though the underlying Co
 Two common approaches are used to address this problem:
 
 1. Checksum annotations in Helm charts
-2. Automated reload controllers such as Reloader
+1. Automated reload controllers such as Reloader
 
 Understanding the difference helps teams choose the right solution for their platform.
 

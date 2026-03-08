@@ -102,10 +102,10 @@ While Kyverno can be used to trigger restarts, it is primarily designed for poli
 
 | Aspect | Reloader | Kyverno |
 |------|------|------|
-Primary purpose | Configuration reload automation | Policy enforcement and governance |
-Architecture | Dedicated controller watching Secrets and ConfigMaps | Policy engine evaluating resources |
-Typical scope | Configuration management | Security, compliance, governance |
-Operational complexity | Simple install and configuration | Requires policy design and maintenance |
+|Primary purpose | Configuration reload automation | Policy enforcement and governance |
+|Architecture | Dedicated controller watching Secrets and ConfigMaps | Policy engine evaluating resources |
+|Typical scope | Configuration management | Security, compliance, governance |
+|Operational complexity | Simple install and configuration | Requires policy design and maintenance |
 
 Reloader focuses specifically on ensuring applications reload configuration when it changes.
 
