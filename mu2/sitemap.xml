@@ -37,6 +37,18 @@
          <lastmod>2026-03-08</lastmod>
     </url>
     <url>
+         <loc>https://docs.stakater.com/reloader/mu2/concepts/comparisons/reloader-vs-checksum-annotations.html</loc>
+         <lastmod>2026-03-08</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.stakater.com/reloader/mu2/concepts/comparisons/reloader-vs-helm.html</loc>
+         <lastmod>2026-03-08</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.stakater.com/reloader/mu2/concepts/comparisons/reloader-vs-kyverno.html</loc>
+         <lastmod>2026-03-08</lastmod>
+    </url>
+    <url>
          <loc>https://docs.stakater.com/reloader/mu2/installation/install.html</loc>
          <lastmod>2026-03-08</lastmod>
     </url>

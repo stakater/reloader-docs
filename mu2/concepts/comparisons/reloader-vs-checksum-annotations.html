@@ -5,31 +5,31 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/mu2/about/why-reloader-matters.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/mu2/concepts/comparisons/reloader-vs-checksum-annotations.html">
       
       
-        <link rel="prev" href="../index.html">
+        <link rel="prev" href="reloader-vs-helm.html">
       
       
-        <link rel="next" href="value-by-role.html">
+        <link rel="next" href="reloader-vs-kyverno.html">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
-        <title>Why Reloader Matters - Reloader</title>
+        <title>Reloader vs Checksum Annotations - Reloader</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -48,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -66,7 +66,7 @@
 
     
     
-  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#why-reloader-matters" class="md-skip">
+        <a href="#reloader-vs-checksum-annotations" class="md-skip">
           Skip to content
         </a>
       
@@ -340,9 +340,9 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   <nav class="md-header__inner md-grid" aria-label="Header">
 
     <!-- Link to home -->
-    <a href=".." title="Reloader" class="md-header__button md-logo" aria-label="Reloader" data-md-component="logo">
+    <a href="../.." title="Reloader" class="md-header__button md-logo" aria-label="Reloader" data-md-component="logo">
       <!-- 
-  <img src="../assets/images/favicon.png" alt="logo">
+  <img src="../../assets/images/favicon.png" alt="logo">
  -->
     </a>
 
@@ -360,10 +360,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
         <!-- Logo -->
         <div class="md-header__topic">
           
-          <img class="md-header__logo_light" src="../assets/images/logo-light.png#only-light" alt="logo">
+          <img class="md-header__logo_light" src="../../assets/images/logo-light.png#only-light" alt="logo">
           
           
-          <img class="md-header__logo_dark" src="../assets/images/logo-dark.png#only-dark" alt="logo">
+          <img class="md-header__logo_dark" src="../../assets/images/logo-dark.png#only-dark" alt="logo">
           
           
           <div class="header-site-name">
@@ -1987,9 +1987,9 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Reloader" class="md-nav__button md-logo" aria-label="Reloader" data-md-component="logo">
+    <a href="../.." title="Reloader" class="md-nav__button md-logo" aria-label="Reloader" data-md-component="logo">
       
-  <img src="../assets/images/favicon.png" alt="logo">
+  <img src="../../assets/images/favicon.png" alt="logo">
 
     </a>
     Reloader
@@ -2013,20 +2013,18 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1">
         
           
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
@@ -2047,7 +2045,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2065,7 +2063,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="../../index.html" class="md-nav__link">
         
   
   
@@ -2073,6 +2071,279 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     
   
     What is Reloader?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/why-reloader-matters.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Reloader Matters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/value-by-role.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Value by Role
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/editions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OSS vs Enterprise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../why-configuration-reloading-matters.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Configuration Reloading Matters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../secret-propagation-problem-kubernetes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The Secret Propagation Problem in Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Comparison
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Comparison
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reloader-vs-helm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reloader vs Helm
   
 
     
@@ -2109,7 +2380,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   <span class="md-ellipsis">
     
   
-    Why Reloader Matters
+    Reloader vs Checksum Annotations
   
 
     
@@ -2120,14 +2391,14 @@ This documentation is for a pull request deployment and is unreleased, it is onl
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="why-reloader-matters.html" class="md-nav__link md-nav__link--active">
+      <a href="reloader-vs-checksum-annotations.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    Why Reloader Matters
+    Reloader vs Checksum Annotations
   
 
     
@@ -2155,10 +2426,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#1-operational-reliability" class="md-nav__link">
+  <a href="#the-configuration-reload-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Operational Reliability
+        The Configuration Reload Problem
       
     </span>
   </a>
@@ -2166,10 +2437,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-change-safety" class="md-nav__link">
+  <a href="#the-checksum-annotation-strategy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Change Safety
+        The Checksum Annotation Strategy
       
     </span>
   </a>
@@ -2177,10 +2448,71 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-operational-transparency" class="md-nav__link">
+  <a href="#limitations-of-checksum-annotations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Operational Transparency
+        Limitations of Checksum Annotations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Limitations of Checksum Annotations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-requires-helm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Requires Helm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-only-works-during-helm-upgrades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Only Works During Helm Upgrades
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-requires-chart-modifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Requires Chart Modifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-difficult-to-standardize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Difficult to Standardize
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-reloader-solves-the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Reloader Solves the Problem
       
     </span>
   </a>
@@ -2188,10 +2520,71 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-compliance-efficiency" class="md-nav__link">
+  <a href="#key-advantages-of-reloader" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Compliance Efficiency
+        Key Advantages of Reloader
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Advantages of Reloader">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#works-with-any-deployment-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Works with Any Deployment Method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reacts-to-external-secret-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reacts to External Secret Rotation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform-level-standardization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform-Level Standardization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reduces-template-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reduces Template Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-checksum-annotations-make-sense" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When Checksum Annotations Make Sense
       
     </span>
   </a>
@@ -2199,10 +2592,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-clear-separation-of-responsibilities" class="md-nav__link">
+  <a href="#when-reloader-is-the-better-choice" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Clear Separation of Responsibilities
+        When Reloader Is the Better Choice
       
     </span>
   </a>
@@ -2210,13 +2603,74 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-platform-scale" class="md-nav__link">
+  <a href="#comparison-summary" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Platform Scale
+        Comparison Summary
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FAQ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#do-configmap-changes-automatically-restart-pods-in-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do ConfigMap changes automatically restart pods in Kubernetes?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-can-pods-restart-when-a-secret-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How can pods restart when a Secret changes?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#are-checksum-annotations-enough-for-production-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Are checksum annotations enough for production platforms?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2236,276 +2690,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="value-by-role.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Value by Role
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="editions.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    OSS vs Enterprise
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Concepts
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Concepts
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix="">
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../concepts/why-configuration-reloading-matters.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Why Configuration Reloading Matters
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../concepts/secret-propagation-problem-kubernetes.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    The Secret Propagation Problem in Kubernetes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3">
-        
-          
-          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Comparison
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Comparison
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix="">
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-helm.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reloader vs Helm
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-checksum-annotations.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reloader vs Checksum Annotations
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-kyverno.html" class="md-nav__link">
+      <a href="reloader-vs-kyverno.html" class="md-nav__link">
         
   
   
@@ -2595,7 +2780,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../installation/install.html" class="md-nav__link">
+      <a href="../../installation/install.html" class="md-nav__link">
         
   
   
@@ -2677,7 +2862,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/index.html" class="md-nav__link">
+      <a href="../../integrations/index.html" class="md-nav__link">
         
   
   
@@ -2752,7 +2937,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/conjur/index.html" class="md-nav__link">
+      <a href="../../integrations/conjur/index.html" class="md-nav__link">
         
   
   
@@ -2780,7 +2965,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/conjur/conjur-eso.html" class="md-nav__link">
+      <a href="../../integrations/conjur/conjur-eso.html" class="md-nav__link">
         
   
   
@@ -2808,7 +2993,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/conjur/conjur-sidecar.html" class="md-nav__link">
+      <a href="../../integrations/conjur/conjur-sidecar.html" class="md-nav__link">
         
   
   
@@ -2836,7 +3021,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/conjur/conjur-csi.html" class="md-nav__link">
+      <a href="../../integrations/conjur/conjur-csi.html" class="md-nav__link">
         
   
   
@@ -2919,7 +3104,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/vault/index.html" class="md-nav__link">
+      <a href="../../integrations/vault/index.html" class="md-nav__link">
         
   
   
@@ -2947,7 +3132,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/vault/vault-eso.html" class="md-nav__link">
+      <a href="../../integrations/vault/vault-eso.html" class="md-nav__link">
         
   
   
@@ -2975,7 +3160,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/vault/vault-vso.html" class="md-nav__link">
+      <a href="../../integrations/vault/vault-vso.html" class="md-nav__link">
         
   
   
@@ -3003,7 +3188,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/vault/vault-csi.html" class="md-nav__link">
+      <a href="../../integrations/vault/vault-csi.html" class="md-nav__link">
         
   
   
@@ -3031,7 +3216,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/vault/vault-csi-file.html" class="md-nav__link">
+      <a href="../../integrations/vault/vault-csi-file.html" class="md-nav__link">
         
   
   
@@ -3114,7 +3299,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/openbao/index.html" class="md-nav__link">
+      <a href="../../integrations/openbao/index.html" class="md-nav__link">
         
   
   
@@ -3142,7 +3327,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/openbao/openbao-eso.html" class="md-nav__link">
+      <a href="../../integrations/openbao/openbao-eso.html" class="md-nav__link">
         
   
   
@@ -3170,7 +3355,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/openbao/openbao-bso.html" class="md-nav__link">
+      <a href="../../integrations/openbao/openbao-bso.html" class="md-nav__link">
         
   
   
@@ -3198,7 +3383,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/openbao/openbao-csi.html" class="md-nav__link">
+      <a href="../../integrations/openbao/openbao-csi.html" class="md-nav__link">
         
   
   
@@ -3226,7 +3411,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/openbao/openbao-csi-file.html" class="md-nav__link">
+      <a href="../../integrations/openbao/openbao-csi-file.html" class="md-nav__link">
         
   
   
@@ -3269,7 +3454,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../eula.html" class="md-nav__link">
+      <a href="../../eula.html" class="md-nav__link">
         
   
   
@@ -3296,7 +3481,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../help.html" class="md-nav__link">
+      <a href="../../help.html" class="md-nav__link">
         
   
   
@@ -3323,7 +3508,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../versions.html" class="md-nav__link">
+      <a href="../../versions.html" class="md-nav__link">
         
   
   
@@ -3372,10 +3557,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#1-operational-reliability" class="md-nav__link">
+  <a href="#the-configuration-reload-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Operational Reliability
+        The Configuration Reload Problem
       
     </span>
   </a>
@@ -3383,10 +3568,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-change-safety" class="md-nav__link">
+  <a href="#the-checksum-annotation-strategy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Change Safety
+        The Checksum Annotation Strategy
       
     </span>
   </a>
@@ -3394,10 +3579,71 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-operational-transparency" class="md-nav__link">
+  <a href="#limitations-of-checksum-annotations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Operational Transparency
+        Limitations of Checksum Annotations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Limitations of Checksum Annotations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-requires-helm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Requires Helm
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-only-works-during-helm-upgrades" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Only Works During Helm Upgrades
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-requires-chart-modifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Requires Chart Modifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-difficult-to-standardize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Difficult to Standardize
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-reloader-solves-the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Reloader Solves the Problem
       
     </span>
   </a>
@@ -3405,10 +3651,71 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-compliance-efficiency" class="md-nav__link">
+  <a href="#key-advantages-of-reloader" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Compliance Efficiency
+        Key Advantages of Reloader
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Advantages of Reloader">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#works-with-any-deployment-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Works with Any Deployment Method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reacts-to-external-secret-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reacts to External Secret Rotation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform-level-standardization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform-Level Standardization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reduces-template-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reduces Template Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-checksum-annotations-make-sense" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When Checksum Annotations Make Sense
       
     </span>
   </a>
@@ -3416,10 +3723,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-clear-separation-of-responsibilities" class="md-nav__link">
+  <a href="#when-reloader-is-the-better-choice" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Clear Separation of Responsibilities
+        When Reloader Is the Better Choice
       
     </span>
   </a>
@@ -3427,13 +3734,74 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-platform-scale" class="md-nav__link">
+  <a href="#comparison-summary" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Platform Scale
+        Comparison Summary
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Best Practice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FAQ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#do-configmap-changes-automatically-restart-pods-in-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do ConfigMap changes automatically restart pods in Kubernetes?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-can-pods-restart-when-a-secret-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How can pods restart when a Secret changes?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#are-checksum-annotations-enough-for-production-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Are checksum annotations enough for production platforms?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3457,63 +3825,186 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="why-reloader-matters">Why Reloader Matters<a class="headerlink" href="#why-reloader-matters" title="Permanent link">#</a></h1>
-<p>Reloader addresses a class of operational problems that emerge when configuration changes are not consistently applied to running workloads.</p>
-<p>This page describes the key outcomes Reloader provides when used as part of a Kubernetes platform.</p>
+<h1 id="reloader-vs-checksum-annotations">Reloader vs Checksum Annotations<a class="headerlink" href="#reloader-vs-checksum-annotations" title="Permanent link">#</a></h1>
+<p>In Kubernetes, applications often rely on configuration stored in <strong>ConfigMaps</strong> and <strong>Secrets</strong>.</p>
+<p>When those resources change, running pods do <strong>not automatically reload the new values</strong>.</p>
+<p>This creates a common problem:</p>
+<p>Pods continue running with <strong>stale configuration</strong> even though the underlying ConfigMap or Secret has been updated.</p>
+<p>Two common approaches are used to address this problem:</p>
+<ol>
+<li>Checksum annotations in Helm charts</li>
+<li>Automated reload controllers such as Reloader</li>
+</ol>
+<p>Understanding the difference helps teams choose the right solution for their platform.</p>
 <hr>
-<h2 id="1-operational-reliability">1. Operational Reliability<a class="headerlink" href="#1-operational-reliability" title="Permanent link">#</a></h2>
-<p>Reloader ensures that configuration and secret changes are not silently ignored by running workloads.</p>
-<p>This helps prevent:</p>
-<ul>
-<li>Workloads running with stale configuration</li>
-<li>Configuration updates being forgotten or partially applied</li>
-<li>Incidents caused by configuration drift between desired and runtime state</li>
-</ul>
+<h2 id="the-configuration-reload-problem">The Configuration Reload Problem<a class="headerlink" href="#the-configuration-reload-problem" title="Permanent link">#</a></h2>
+<p>In Kubernetes, updating a ConfigMap or Secret does <strong>not automatically restart pods</strong>.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>ConfigMap<span class="w"> </span>updated
+↓
+Pods<span class="w"> </span><span class="k">continue</span><span class="w"> </span>running
+↓
+Application<span class="w"> </span>still<span class="w"> </span>uses<span class="w"> </span>old<span class="w"> </span>configuration
+</code></pre></div>
+<p>This behavior is intentional in Kubernetes.</p>
+<p>Pods only restart when the <strong>PodSpec changes</strong>, not when referenced resources change.</p>
+<p>Because of this, platforms need a strategy to ensure configuration updates reach running workloads.</p>
 <hr>
-<h2 id="2-change-safety">2. Change Safety<a class="headerlink" href="#2-change-safety" title="Permanent link">#</a></h2>
-<p>Uncontrolled restarts can introduce instability and unintended side effects.</p>
-<p>Reloader introduces a controlled mechanism for applying configuration changes which enables:</p>
-<ul>
-<li>Scoped and predictable workload updates</li>
-<li>Reduced blast radius during configuration changes</li>
-<li>Clean integration with GitOps-based workflows</li>
-</ul>
+<h2 id="the-checksum-annotation-strategy">The Checksum Annotation Strategy<a class="headerlink" href="#the-checksum-annotation-strategy" title="Permanent link">#</a></h2>
+<p>Many Helm charts implement a technique known as <strong>checksum annotations</strong>.</p>
+<p>The idea is to calculate a hash of a ConfigMap or Secret and store it in the Deployment metadata.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>checksum/config:<span class="w"> </span><span class="o">{{</span><span class="w"> </span>include<span class="w"> </span><span class="o">(</span>print<span class="w"> </span>$.Template.BasePath<span class="w"> </span><span class="s2">"/configmap.yaml"</span><span class="o">)</span><span class="w"> </span>.<span class="w"> </span><span class="p">|</span><span class="w"> </span>sha256sum<span class="w"> </span><span class="o">}}</span>
+</code></pre></div>
+<p>When the ConfigMap content changes, the checksum changes as well.</p>
+<p>During a Helm upgrade, the Deployment annotation changes, which triggers a rolling restart.</p>
+<p>Typical workflow:</p>
+<div class="highlight"><pre><span></span><code>ConfigMap<span class="w"> </span>updated<span class="w"> </span><span class="k">in</span><span class="w"> </span>Helm<span class="w"> </span>chart
+↓
+Helm<span class="w"> </span>upgrade<span class="w"> </span>runs
+↓
+Checksum<span class="w"> </span>changes
+↓
+Deployment<span class="w"> </span>updated
+↓
+Pods<span class="w"> </span>restart
+</code></pre></div>
+<p>This technique is widely used in Helm charts.</p>
 <hr>
-<h2 id="3-operational-transparency">3. Operational Transparency<a class="headerlink" href="#3-operational-transparency" title="Permanent link">#</a></h2>
-<p>Understanding when and why configuration changes are applied is critical for day-to-day operations and incident analysis.</p>
-<p>Reloader provides clear and observable behavior around configuration-driven workload updates, making it easier to:</p>
+<h2 id="limitations-of-checksum-annotations">Limitations of Checksum Annotations<a class="headerlink" href="#limitations-of-checksum-annotations" title="Permanent link">#</a></h2>
+<p>While checksum annotations work in certain scenarios, they have important limitations.</p>
+<h3 id="1-requires-helm">1. Requires Helm<a class="headerlink" href="#1-requires-helm" title="Permanent link">#</a></h3>
+<p>Checksum annotations rely on Helm templating.</p>
+<p>If applications are not deployed using Helm, this strategy cannot be used.</p>
+<h3 id="2-only-works-during-helm-upgrades">2. Only Works During Helm Upgrades<a class="headerlink" href="#2-only-works-during-helm-upgrades" title="Permanent link">#</a></h3>
+<p>The checksum changes only when Helm renders templates again.</p>
+<p>If a Secret or ConfigMap changes <strong>outside Helm</strong>, the checksum does not update.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>External<span class="w"> </span>system<span class="w"> </span>updates<span class="w"> </span>Secret
+↓
+Helm<span class="w"> </span>not<span class="w"> </span>involved
+↓
+Checksum<span class="w"> </span>unchanged
+↓
+Pods<span class="w"> </span><span class="k">do</span><span class="w"> </span>not<span class="w"> </span>restart
+</code></pre></div>
+<p>This is a common situation when using external secret management tools.</p>
+<h3 id="3-requires-chart-modifications">3. Requires Chart Modifications<a class="headerlink" href="#3-requires-chart-modifications" title="Permanent link">#</a></h3>
+<p>Every Helm chart must implement checksum annotations manually.</p>
+<p>This creates operational challenges:</p>
 <ul>
-<li>Understand what triggered a workload update</li>
-<li>Correlate configuration changes with runtime behavior</li>
-<li>Diagnose issues related to configuration propagation</li>
+<li>inconsistent implementation across teams</li>
+<li>chart maintenance overhead</li>
+<li>template complexity</li>
 </ul>
+<h3 id="4-difficult-to-standardize">4. Difficult to Standardize<a class="headerlink" href="#4-difficult-to-standardize" title="Permanent link">#</a></h3>
+<p>In large Kubernetes platforms with many teams, enforcing checksum patterns across all charts becomes difficult.</p>
+<p>Each chart may implement the pattern differently.</p>
 <hr>
-<h2 id="4-compliance-efficiency">4. Compliance Efficiency<a class="headerlink" href="#4-compliance-efficiency" title="Permanent link">#</a></h2>
-<p>In regulated environments, it is important that approved configuration changes are consistently enforced in runtime systems.</p>
-<p>Reloader supports this by:</p>
+<h2 id="how-reloader-solves-the-problem">How Reloader Solves the Problem<a class="headerlink" href="#how-reloader-solves-the-problem" title="Permanent link">#</a></h2>
+<p>Reloader is a Kubernetes controller that watches for changes in:</p>
 <ul>
-<li>Reducing reliance on manual operational procedures</li>
-<li>Creating a clearer link between approved configuration and runtime behavior</li>
-<li>Lowering operational and audit risk caused by human error</li>
+<li>ConfigMaps</li>
+<li>Secrets</li>
 </ul>
-<p>Additional governance and audit capabilities are available in <strong>Reloader Enterprise</strong>.</p>
+<p>When a change is detected, it automatically triggers a rolling restart of workloads referencing those resources.</p>
+<p>Example workflow:</p>
+<div class="highlight"><pre><span></span><code>Secret<span class="w"> </span>updated
+↓
+Reloader<span class="w"> </span>detects<span class="w"> </span>change
+↓
+Deployment<span class="w"> </span>patched
+↓
+Kubernetes<span class="w"> </span>rolling<span class="w"> </span>restart<span class="w"> </span>triggered
+</code></pre></div>
+<p>This works <strong>without modifying application manifests or Helm charts</strong>.</p>
 <hr>
-<h2 id="5-clear-separation-of-responsibilities">5. Clear Separation of Responsibilities<a class="headerlink" href="#5-clear-separation-of-responsibilities" title="Permanent link">#</a></h2>
-<p>Reloader helps enforce a clean separation of responsibilities between platform teams and application teams.</p>
+<h2 id="key-advantages-of-reloader">Key Advantages of Reloader<a class="headerlink" href="#key-advantages-of-reloader" title="Permanent link">#</a></h2>
+<h3 id="works-with-any-deployment-method">Works with Any Deployment Method<a class="headerlink" href="#works-with-any-deployment-method" title="Permanent link">#</a></h3>
+<p>Reloader works regardless of how applications are deployed:</p>
 <ul>
-<li>Platform teams define how configuration changes are propagated</li>
-<li>Application teams consume configuration without implementing reload logic</li>
+<li>Helm</li>
+<li>GitOps</li>
+<li>Kustomize</li>
+<li>Raw manifests</li>
+<li>Platform automation</li>
 </ul>
-<p>This reduces coupling between application code and platform operations, leading to more maintainable systems over time.</p>
+<h3 id="reacts-to-external-secret-rotation">Reacts to External Secret Rotation<a class="headerlink" href="#reacts-to-external-secret-rotation" title="Permanent link">#</a></h3>
+<p>Many modern platforms use secret management systems that update Kubernetes secrets automatically.</p>
+<p>Examples include:</p>
+<ul>
+<li>external secret operators</li>
+<li>certificate automation systems</li>
+<li>vault integrations</li>
+</ul>
+<p>Reloader ensures workloads pick up these changes automatically.</p>
+<h3 id="platform-level-standardization">Platform-Level Standardization<a class="headerlink" href="#platform-level-standardization" title="Permanent link">#</a></h3>
+<p>Reloader operates at the <strong>cluster level</strong>.</p>
+<p>This allows platform teams to provide configuration reload capabilities <strong>without requiring changes to application charts</strong>.</p>
+<h3 id="reduces-template-complexity">Reduces Template Complexity<a class="headerlink" href="#reduces-template-complexity" title="Permanent link">#</a></h3>
+<p>Applications do not need special Helm logic to support configuration reloads.</p>
+<p>This simplifies chart design and reduces maintenance overhead.</p>
 <hr>
-<h2 id="6-platform-scale">6. Platform Scale<a class="headerlink" href="#6-platform-scale" title="Permanent link">#</a></h2>
-<p>As Kubernetes environments grow, ad-hoc configuration handling does not scale.</p>
-<p>Reloader enables platform teams to:</p>
+<h2 id="when-checksum-annotations-make-sense">When Checksum Annotations Make Sense<a class="headerlink" href="#when-checksum-annotations-make-sense" title="Permanent link">#</a></h2>
+<p>Checksum annotations can still be useful in simple environments where:</p>
 <ul>
-<li>Apply a single, consistent pattern for configuration changes</li>
-<li>Reduce custom logic across teams and applications</li>
-<li>Enable safe self-service for application teams without increasing risk</li>
+<li>Helm is the only deployment tool</li>
+<li>ConfigMaps are managed exclusively through Helm</li>
+<li>external secret rotation is not used</li>
 </ul>
+<p>In these cases, checksum annotations may be sufficient.</p>
+<hr>
+<h2 id="when-reloader-is-the-better-choice">When Reloader Is the Better Choice<a class="headerlink" href="#when-reloader-is-the-better-choice" title="Permanent link">#</a></h2>
+<p>Reloader becomes the preferred solution when:</p>
+<ul>
+<li>secrets rotate automatically</li>
+<li>configuration is updated by external systems</li>
+<li>multiple deployment methods are used</li>
+<li>platform teams want standardized behavior</li>
+<li>large multi-team clusters require consistency</li>
+</ul>
+<p>These environments are common in modern Kubernetes platforms.</p>
+<hr>
+<h2 id="comparison-summary">Comparison Summary<a class="headerlink" href="#comparison-summary" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Approach</th>
+<th>Pros</th>
+<th>Limitations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Checksum Annotations</td>
+<td>Simple Helm-based workaround</td>
+<td>Only works during Helm upgrades</td>
+</tr>
+<tr>
+<td>Reloader</td>
+<td>Automatic cluster-wide configuration reload</td>
+<td>Requires installing a controller</td>
+</tr>
+</tbody>
+</table>
+<p>Checksum annotations solve the problem <strong>inside Helm charts</strong>.</p>
+<p>Reloader solves the problem <strong>at the Kubernetes platform level</strong>.</p>
+<hr>
+<h2 id="best-practice">Best Practice<a class="headerlink" href="#best-practice" title="Permanent link">#</a></h2>
+<p>Many platforms combine the strengths of both approaches:</p>
+<ul>
+<li>Helm manages application deployment</li>
+<li>Reloader ensures configuration changes propagate to running workloads</li>
+</ul>
+<p>This provides reliable configuration management across Kubernetes environments.</p>
+<hr>
+<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">#</a></h2>
+<h3 id="do-configmap-changes-automatically-restart-pods-in-kubernetes">Do ConfigMap changes automatically restart pods in Kubernetes?<a class="headerlink" href="#do-configmap-changes-automatically-restart-pods-in-kubernetes" title="Permanent link">#</a></h3>
+<p>No. Kubernetes does not automatically restart pods when ConfigMaps change.</p>
+<h3 id="how-can-pods-restart-when-a-secret-changes">How can pods restart when a Secret changes?<a class="headerlink" href="#how-can-pods-restart-when-a-secret-changes" title="Permanent link">#</a></h3>
+<p>A controller such as Reloader can watch Secrets and trigger rolling restarts automatically.</p>
+<h3 id="are-checksum-annotations-enough-for-production-platforms">Are checksum annotations enough for production platforms?<a class="headerlink" href="#are-checksum-annotations-enough-for-production-platforms" title="Permanent link">#</a></h3>
+<p>Checksum annotations can work in simple Helm-based setups, but they do not handle external secret rotation or platform-wide standardization.</p>
 
 
 
@@ -3807,27 +4298,27 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 <div class="flex-2">
                     <div class="logo-footer-container">
                         
-                        <img class="md-header__logo_light" src="../assets/images/footer-logo-light.png#only-light" alt="logo">
+                        <img class="md-header__logo_light" src="../../assets/images/footer-logo-light.png#only-light" alt="logo">
                         
                         
-                        <img src="../assets/images/footer-logo-dark.png#only-dark" alt="logo">
+                        <img src="../../assets/images/footer-logo-dark.png#only-dark" alt="logo">
                         
                     </div>
 
                     <div class="collaborations-img-container">
                         <div class="display-flex">
                             
-                            <img class="csa-logo-dark" src="../assets/images/CSA_dark.png#only-dark" alt="CSA">
+                            <img class="csa-logo-dark" src="../../assets/images/CSA_dark.png#only-dark" alt="CSA">
                             
                             
-                            <img class="csa-logo-light" src="../assets/images/CSA_light.png#only-light" alt="CSA">
+                            <img class="csa-logo-light" src="../../assets/images/CSA_light.png#only-light" alt="CSA">
                             
 
                             
-                            <img class="hc-logo-dark" src="../assets/images/HC_dark.png#only-dark" alt="HC">
+                            <img class="hc-logo-dark" src="../../assets/images/HC_dark.png#only-dark" alt="HC">
                             
                             
-                            <img class="hc-logo-light" src="../assets/images/HC_light.png#only-light" alt="HC">
+                            <img class="hc-logo-light" src="../../assets/images/HC_light.png#only-light" alt="HC">
                             
                         </div>
                     </div>
@@ -4219,10 +4710,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.tracking", "toc.follow", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.tracking", "toc.follow", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   
