@@ -2,9 +2,7 @@
   {
     "version": "sync-main-to-1.4",
     "title": "sync-main-to-1.4",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-main-stakater-vale-package-0.x",
@@ -54,6 +52,8 @@
   {
     "version": "mu2",
     "title": "mu2",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   }
 ]
