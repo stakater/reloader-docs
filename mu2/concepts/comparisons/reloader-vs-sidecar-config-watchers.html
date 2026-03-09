@@ -8,6 +8,10 @@
         <link rel="canonical" href="https://docs.stakater.com/reloader/mu2/concepts/comparisons/reloader-vs-sidecar-config-watchers.html">
       
       
+        <link rel="prev" href="reloader-vs-kyverno.html">
+      
+      
+        <link rel="next" href="reloader-vs-init-containers.html">
       
       
         
@@ -2175,18 +2179,20 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked="">
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -2207,7 +2213,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2278,18 +2284,20 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked="">
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -2310,7 +2318,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2392,6 +2400,377 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     
   
     Reloader vs Kyverno
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reloader vs Sidecar Config Watchers
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="reloader-vs-sidecar-config-watchers.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reloader vs Sidecar Config Watchers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#the-configuration-reload-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Configuration Reload Problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-sidecar-config-watchers-are" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Sidecar Config Watchers Are
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advantages-of-sidecar-config-watchers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advantages of Sidecar Config Watchers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advantages of Sidecar Config Watchers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#works-without-restarting-pods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Works Without Restarting Pods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-specific-reload-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application-Specific Reload Logic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-cluster-level-controller-required" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No Cluster-Level Controller Required
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations-of-sidecar-config-watchers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations of Sidecar Config Watchers
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Limitations of Sidecar Config Watchers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requires-changes-to-application-manifests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requires Changes to Application Manifests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-containers-per-pod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional Containers Per Pod
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inconsistent-implementation-across-teams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inconsistent Implementation Across Teams
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#not-all-applications-support-live-reload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Not All Applications Support Live Reload
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-reloader-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Reloader Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-differences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Differences
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-sidecar-config-watchers-make-sense" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When Sidecar Config Watchers Make Sense
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-reloader-is-a-better-fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When Reloader Is a Better Fit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FAQ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#do-configmap-changes-automatically-restart-pods-in-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do ConfigMap changes automatically restart pods in Kubernetes?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-applications-reload-configuration-without-restarting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Can applications reload configuration without restarting?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-reloader-and-sidecar-config-watchers-be-used-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Can Reloader and sidecar config watchers be used together?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reloader-vs-init-containers.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reloader vs Init Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="reloader-vs-manual-rollouts.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reloader vs Manual Rollouts
   
 
     
