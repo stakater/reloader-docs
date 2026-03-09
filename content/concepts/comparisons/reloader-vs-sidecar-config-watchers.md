@@ -54,7 +54,7 @@ Sidecar signals application to reload configuration
 Some applications support configuration reload through signals such as:
 
 * SIGHUP
-* HTTP reload endpoints
+* http reload endpoints
 * custom reload commands
 
 Sidecar config watchers are commonly used with applications that support **live configuration reload**.
