@@ -22,7 +22,10 @@ nav:
       - Comparison:
           - concepts/comparisons/reloader-vs-helm.md
           - concepts/comparisons/reloader-vs-checksum-annotations.md
-          - concepts/comparisons/reloader-vs-kyverno.md                  
+          - concepts/comparisons/reloader-vs-kyverno.md
+          - concepts/comparisons/reloader-vs-sidecar-config-watchers.md
+          - concepts/comparisons/reloader-vs-init-containers.md
+          - concepts/comparisons/reloader-vs-manual-rollouts.md      
   - Install & Upgrade:
       - Reloader Enterprise: installation/install.md
   - Integrations:
