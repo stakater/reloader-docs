@@ -18,7 +18,7 @@
     
     
       
-        <title>Reloader vs Sidecar Reloaders - Reloader</title>
+        <title>Reloader vs Sidecar Reloader's - Reloader</title>
       
     
     
@@ -3476,7 +3476,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   <a href="#can-reloader-and-sidecar-reloaders-be-used-together" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Can Reloader and sidecar reloaders be used together?
+        Can Reloader and sidecar reloader's be used together?
       
     </span>
   </a>
@@ -3508,12 +3508,12 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="reloader-vs-sidecar-reloaders">Reloader vs Sidecar Reloaders<a class="headerlink" href="#reloader-vs-sidecar-reloaders" title="Permanent link">#</a></h1>
+<h1 id="reloader-vs-sidecar-reloaders">Reloader vs Sidecar Reloader's<a class="headerlink" href="#reloader-vs-sidecar-reloaders" title="Permanent link">#</a></h1>
 <p>In Kubernetes, applications often rely on configuration stored in <strong>ConfigMaps</strong> and <strong>Secrets</strong>.</p>
 <p>When those resources change, running pods do not automatically reload the updated values. This creates a common challenge for platform teams: ensuring applications pick up configuration updates without requiring manual restarts.</p>
 <p>Two common approaches are used to address this problem:</p>
 <ol>
-<li>Sidecar reloaders</li>
+<li>Sidecar reloader's</li>
 <li>A cluster-level controller such as Reloader</li>
 </ol>
 <p>Both approaches can work, but they operate at different levels of the Kubernetes platform.</p>
@@ -3531,7 +3531,7 @@ Application<span class="w"> </span>still<span class="w"> </span>uses<span class=
 <p>Because of this, platforms need mechanisms to ensure applications pick up configuration updates.</p>
 <hr>
 <h2 id="what-sidecar-reloaders-are">What Sidecar Reloaders Are<a class="headerlink" href="#what-sidecar-reloaders-are" title="Permanent link">#</a></h2>
-<p>Sidecar reloaders are additional containers that run inside the same pod as the application.</p>
+<p>Sidecar reloader's are additional containers that run inside the same pod as the application.</p>
 <p>Their job is to monitor configuration files mounted from ConfigMaps or Secrets and notify the application when those files change.</p>
 <p>Typical workflow:</p>
 <div class="highlight"><pre><span></span><code>ConfigMap<span class="w"> </span>updated
@@ -3548,20 +3548,20 @@ Sidecar<span class="w"> </span>signals<span class="w"> </span>application<span c
 <li>HTTP reload endpoints</li>
 <li>custom reload commands</li>
 </ul>
-<p>Sidecar reloaders are commonly used with applications that support <strong>live configuration reload</strong>.</p>
+<p>Sidecar reloader's are commonly used with applications that support <strong>live configuration reload</strong>.</p>
 <hr>
 <h2 id="advantages-of-sidecar-reloaders">Advantages of Sidecar Reloaders<a class="headerlink" href="#advantages-of-sidecar-reloaders" title="Permanent link">#</a></h2>
-<p>Sidecar reloaders can be useful in several scenarios.</p>
+<p>Sidecar reloader's can be useful in several scenarios.</p>
 <h3 id="works-without-restarting-pods">Works Without Restarting Pods<a class="headerlink" href="#works-without-restarting-pods" title="Permanent link">#</a></h3>
 <p>Some applications can reload configuration dynamically without restarting.</p>
 <p>Sidecars allow these applications to pick up changes without triggering a rolling restart.</p>
 <h3 id="application-specific-reload-logic">Application-Specific Reload Logic<a class="headerlink" href="#application-specific-reload-logic" title="Permanent link">#</a></h3>
 <p>Sidecars can trigger custom reload mechanisms supported by the application, such as sending signals or calling reload endpoints.</p>
 <h3 id="no-cluster-level-controller-required">No Cluster-Level Controller Required<a class="headerlink" href="#no-cluster-level-controller-required" title="Permanent link">#</a></h3>
-<p>Sidecar reloaders operate entirely within the pod and do not require additional controllers installed in the cluster.</p>
+<p>Sidecar reloader's operate entirely within the pod and do not require additional controllers installed in the cluster.</p>
 <hr>
 <h2 id="limitations-of-sidecar-reloaders">Limitations of Sidecar Reloaders<a class="headerlink" href="#limitations-of-sidecar-reloaders" title="Permanent link">#</a></h2>
-<p>Sidecar reloaders also introduce some operational trade-offs.</p>
+<p>Sidecar reloader's also introduce some operational trade-offs.</p>
 <h3 id="requires-changes-to-application-manifests">Requires Changes to Application Manifests<a class="headerlink" href="#requires-changes-to-application-manifests" title="Permanent link">#</a></h3>
 <p>Every workload must include the sidecar container.</p>
 <p>This increases configuration overhead and requires application manifests to be modified.</p>
@@ -3578,7 +3578,7 @@ Sidecar<span class="w"> </span>signals<span class="w"> </span>application<span c
 <p>This can make it difficult for platform teams to standardize configuration reload behavior across the cluster.</p>
 <h3 id="not-all-applications-support-live-reload">Not All Applications Support Live Reload<a class="headerlink" href="#not-all-applications-support-live-reload" title="Permanent link">#</a></h3>
 <p>Many applications cannot reload configuration dynamically and still require a restart.</p>
-<p>In these cases, sidecar reloaders provide limited value.</p>
+<p>In these cases, sidecar reloader's provide limited value.</p>
 <hr>
 <h2 id="how-reloader-works">How Reloader Works<a class="headerlink" href="#how-reloader-works" title="Permanent link">#</a></h2>
 <p>Reloader is a Kubernetes controller that watches for changes in:</p>
@@ -3635,10 +3635,10 @@ Kubernetes<span class="w"> </span>rolling<span class="w"> </span>restart<span cl
 </tr>
 </tbody>
 </table>
-<p>Sidecar reloaders focus on <strong>application-level reload behavior</strong>, while Reloader provides <strong>cluster-wide configuration change handling</strong>.</p>
+<p>Sidecar reloader's focus on <strong>application-level reload behavior</strong>, while Reloader provides <strong>cluster-wide configuration change handling</strong>.</p>
 <hr>
 <h2 id="when-sidecar-reloaders-make-sense">When Sidecar Reloaders Make Sense<a class="headerlink" href="#when-sidecar-reloaders-make-sense" title="Permanent link">#</a></h2>
-<p>Sidecar reloaders may be appropriate when:</p>
+<p>Sidecar reloader's may be appropriate when:</p>
 <ul>
 <li>applications support dynamic configuration reload</li>
 <li>restarting pods would disrupt workloads</li>
@@ -3657,8 +3657,8 @@ Kubernetes<span class="w"> </span>rolling<span class="w"> </span>restart<span cl
 <p>These environments are common in modern Kubernetes platforms.</p>
 <hr>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
-<p>Sidecar reloaders and Reloader address the same underlying problem: ensuring applications pick up configuration updates.</p>
-<p>Sidecar reloaders operate <strong>inside individual pods</strong> and can support applications capable of dynamic configuration reload.</p>
+<p>Sidecar reloader's and Reloader address the same underlying problem: ensuring applications pick up configuration updates.</p>
+<p>Sidecar reloader's operate <strong>inside individual pods</strong> and can support applications capable of dynamic configuration reload.</p>
 <p>Reloader operates <strong>at the cluster level</strong>, triggering rolling restarts when configuration resources change.</p>
 <p>Both approaches can be useful depending on the architecture and operational requirements of the platform.</p>
 <hr>
@@ -3666,9 +3666,9 @@ Kubernetes<span class="w"> </span>rolling<span class="w"> </span>restart<span cl
 <h3 id="do-configmap-changes-automatically-restart-pods-in-kubernetes">Do ConfigMap changes automatically restart pods in Kubernetes?<a class="headerlink" href="#do-configmap-changes-automatically-restart-pods-in-kubernetes" title="Permanent link">#</a></h3>
 <p>No. Kubernetes does not automatically restart pods when ConfigMaps change.</p>
 <h3 id="can-applications-reload-configuration-without-restarting">Can applications reload configuration without restarting?<a class="headerlink" href="#can-applications-reload-configuration-without-restarting" title="Permanent link">#</a></h3>
-<p>Some applications support dynamic configuration reload using signals or reload endpoints. In these cases, sidecar reloaders may be used.</p>
-<h3 id="can-reloader-and-sidecar-reloaders-be-used-together">Can Reloader and sidecar reloaders be used together?<a class="headerlink" href="#can-reloader-and-sidecar-reloaders-be-used-together" title="Permanent link">#</a></h3>
-<p>Yes. Some platforms use Reloader for workloads that require restarts and sidecar reloaders for applications that support dynamic reload.</p>
+<p>Some applications support dynamic configuration reload using signals or reload endpoints. In these cases, sidecar reloader's may be used.</p>
+<h3 id="can-reloader-and-sidecar-reloaders-be-used-together">Can Reloader and sidecar reloader's be used together?<a class="headerlink" href="#can-reloader-and-sidecar-reloaders-be-used-together" title="Permanent link">#</a></h3>
+<p>Yes. Some platforms use Reloader for workloads that require restarts and sidecar reloader's for applications that support dynamic reload.</p>
 
 
 
