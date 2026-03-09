@@ -50,10 +50,5 @@
     "aliases": [
       "latest"
     ]
-  },
-  {
-    "version": "cherry-pick-pr34-to-1.4",
-    "title": "cherry-pick-pr34-to-1.4",
-    "aliases": []
   }
 ]
