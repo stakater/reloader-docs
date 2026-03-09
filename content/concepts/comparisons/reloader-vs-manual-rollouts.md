@@ -62,7 +62,7 @@ Manual rollouts are simple and require no additional tooling.
 
 ### Built Into Kubernetes
 
-The rollout command is part of standard Kubernetes tooling and works with Deployments, StatefulSets, and DaemonSets.
+The rollout command is part of standard Kubernetes tooling and works with Deployments, StatefulSets, and Daemonsets.
 
 ### Useful for Occasional Changes
 
