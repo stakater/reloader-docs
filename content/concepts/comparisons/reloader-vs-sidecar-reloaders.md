@@ -1,4 +1,4 @@
-# Reloader vs Sidecar Reloaders
+# Reloader vs Sidecar Reloader's
 
 In Kubernetes, applications often rely on configuration stored in **ConfigMaps** and **Secrets**.
 
@@ -6,7 +6,7 @@ When those resources change, running pods do not automatically reload the update
 
 Two common approaches are used to address this problem:
 
-1. Sidecar reloaders
+1. Sidecar reloader's
 1. A cluster-level controller such as Reloader
 
 Both approaches can work, but they operate at different levels of the Kubernetes platform.
@@ -35,7 +35,7 @@ Because of this, platforms need mechanisms to ensure applications pick up config
 
 ## What Sidecar Reloaders Are
 
-Sidecar reloaders are additional containers that run inside the same pod as the application.
+Sidecar reloader's are additional containers that run inside the same pod as the application.
 
 Their job is to monitor configuration files mounted from ConfigMaps or Secrets and notify the application when those files change.
 
@@ -57,13 +57,13 @@ Some applications support configuration reload through signals such as:
 * HTTP reload endpoints
 * custom reload commands
 
-Sidecar reloaders are commonly used with applications that support **live configuration reload**.
+Sidecar reloader's are commonly used with applications that support **live configuration reload**.
 
 ---
 
 ## Advantages of Sidecar Reloaders
 
-Sidecar reloaders can be useful in several scenarios.
+Sidecar reloader's can be useful in several scenarios.
 
 ### Works Without Restarting Pods
 
@@ -77,13 +77,13 @@ Sidecars can trigger custom reload mechanisms supported by the application, such
 
 ### No Cluster-Level Controller Required
 
-Sidecar reloaders operate entirely within the pod and do not require additional controllers installed in the cluster.
+Sidecar reloader's operate entirely within the pod and do not require additional controllers installed in the cluster.
 
 ---
 
 ## Limitations of Sidecar Reloaders
 
-Sidecar reloaders also introduce some operational trade-offs.
+Sidecar reloader's also introduce some operational trade-offs.
 
 ### Requires Changes to Application Manifests
 
@@ -111,7 +111,7 @@ This can make it difficult for platform teams to standardize configuration reloa
 
 Many applications cannot reload configuration dynamically and still require a restart.
 
-In these cases, sidecar reloaders provide limited value.
+In these cases, sidecar reloader's provide limited value.
 
 ---
 
@@ -150,13 +150,13 @@ This ensures applications restart and load the updated configuration.
 |Operational complexity | Centralized | Distributed across applications |
 |Resource overhead | Minimal | Additional container per pod |
 
-Sidecar reloaders focus on **application-level reload behavior**, while Reloader provides **cluster-wide configuration change handling**.
+Sidecar reloader's focus on **application-level reload behavior**, while Reloader provides **cluster-wide configuration change handling**.
 
 ---
 
 ## When Sidecar Reloaders Make Sense
 
-Sidecar reloaders may be appropriate when:
+Sidecar reloader's may be appropriate when:
 
 * applications support dynamic configuration reload
 * restarting pods would disrupt workloads
@@ -181,9 +181,9 @@ These environments are common in modern Kubernetes platforms.
 
 ## Summary
 
-Sidecar reloaders and Reloader address the same underlying problem: ensuring applications pick up configuration updates.
+Sidecar reloader's and Reloader address the same underlying problem: ensuring applications pick up configuration updates.
 
-Sidecar reloaders operate **inside individual pods** and can support applications capable of dynamic configuration reload.
+Sidecar reloader's operate **inside individual pods** and can support applications capable of dynamic configuration reload.
 
 Reloader operates **at the cluster level**, triggering rolling restarts when configuration resources change.
 
@@ -199,8 +199,8 @@ No. Kubernetes does not automatically restart pods when ConfigMaps change.
 
 ### Can applications reload configuration without restarting?
 
-Some applications support dynamic configuration reload using signals or reload endpoints. In these cases, sidecar reloaders may be used.
+Some applications support dynamic configuration reload using signals or reload endpoints. In these cases, sidecar reloader's may be used.
 
-### Can Reloader and sidecar reloaders be used together?
+### Can Reloader and sidecar reloader's be used together?
 
-Yes. Some platforms use Reloader for workloads that require restarts and sidecar reloaders for applications that support dynamic reload.
+Yes. Some platforms use Reloader for workloads that require restarts and sidecar reloader's for applications that support dynamic reload.
