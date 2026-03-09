@@ -26,7 +26,8 @@ nav:
           - concepts/comparisons/reloader-vs-sidecar-config-watchers.md
           - concepts/comparisons/reloader-vs-init-containers.md
           - concepts/comparisons/reloader-vs-manual-rollouts.md
-          - concepts/comparisons/reloader-vs-gitops-tools.md  
+          - concepts/comparisons/reloader-vs-gitops-tools.md
+          - concepts/comparisons/reloader-vs-secret-operators.md
   - Install & Upgrade:
       - Reloader Enterprise: installation/install.md
   - Integrations:
