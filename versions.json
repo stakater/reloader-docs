@@ -47,13 +47,13 @@
   {
     "version": "mu2",
     "title": "mu2",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "cherry-pick-pr34-to-1.4",
     "title": "cherry-pick-pr34-to-1.4",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   }
 ]
