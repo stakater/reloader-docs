@@ -4202,13 +4202,13 @@ Application<span class="w"> </span>continues<span class="w"> </span>using<span c
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>restart<span class="w"> </span>deployment<span class="w"> </span>my-app
 </code></pre></div>
 <p>Result:</p>
-<div class="highlight"><pre><span></span><code>TLS Secret updated
+<div class="highlight"><pre><span></span><code>TLS<span class="w"> </span>Secret<span class="w"> </span>updated
 ↓
-Operator restarts deployment
+Operator<span class="w"> </span>restarts<span class="w"> </span>deployment
 ↓
-New pods start
+New<span class="w"> </span>pods<span class="w"> </span>start
 ↓
-Application loads new certificate
+Application<span class="w"> </span>loads<span class="w"> </span>new<span class="w"> </span>certificate
 </code></pre></div>
 <h4 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">#</a></h4>
 <ul>
@@ -4225,11 +4225,11 @@ Application loads new certificate
 <li>exposing reload endpoints</li>
 </ul>
 <p>Example flow:</p>
-<div class="highlight"><pre><span></span><code>TLS Secret updated
+<div class="highlight"><pre><span></span><code>TLS<span class="w"> </span>Secret<span class="w"> </span>updated
 ↓
-Certificate file updated
+Certificate<span class="w"> </span>file<span class="w"> </span>updated
 ↓
-Application reloads certificate
+Application<span class="w"> </span>reloads<span class="w"> </span>certificate
 </code></pre></div>
 <h4 id="limitations_1">Limitations<a class="headerlink" href="#limitations_1" title="Permanent link">#</a></h4>
 <ul>
@@ -4242,17 +4242,17 @@ Application reloads certificate
 <p>A more reliable approach is to use <strong>Reloader</strong>, which watches for changes in Kubernetes Secrets.</p>
 <p>When a TLS Secret changes, Reloader automatically triggers a rolling restart of workloads that reference it.</p>
 <p>Workflow:</p>
-<div class="highlight"><pre><span></span><code>Certificate renewed
+<div class="highlight"><pre><span></span><code>Certificate<span class="w"> </span>renewed
 ↓
-TLS Secret updated
+TLS<span class="w"> </span>Secret<span class="w"> </span>updated
 ↓
-Reloader detects change
+Reloader<span class="w"> </span>detects<span class="w"> </span>change
 ↓
-Deployment patched
+Deployment<span class="w"> </span>patched
 ↓
-Pods restart
+Pods<span class="w"> </span>restart
 ↓
-Application loads new certificate
+Application<span class="w"> </span>loads<span class="w"> </span>new<span class="w"> </span>certificate
 </code></pre></div>
 <p>This ensures that applications always run with the latest TLS certificates.</p>
 <hr>
@@ -4314,15 +4314,15 @@ Application loads new certificate
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>tls-secret.yaml
 </code></pre></div>
 <p>Result:</p>
-<div class="highlight"><pre><span></span><code>TLS Secret updated
+<div class="highlight"><pre><span></span><code>TLS<span class="w"> </span>Secret<span class="w"> </span>updated
 ↓
-Reloader detects change
+Reloader<span class="w"> </span>detects<span class="w"> </span>change
 ↓
-Deployment patched
+Deployment<span class="w"> </span>patched
 ↓
-New pods created
+New<span class="w"> </span>pods<span class="w"> </span>created
 ↓
-Application loads new certificate
+Application<span class="w"> </span>loads<span class="w"> </span>new<span class="w"> </span>certificate
 </code></pre></div>
 <hr>
 <h2 id="verifying-the-restart">Verifying the Restart<a class="headerlink" href="#verifying-the-restart" title="Permanent link">#</a></h2>
