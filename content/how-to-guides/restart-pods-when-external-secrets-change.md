@@ -46,7 +46,7 @@ Application consumes the Secret
 
 Examples of external secret sources include:
 
-* vault systems
+* Vault systems
 * cloud secret managers
 * centralized credential stores
 * automation pipelines
