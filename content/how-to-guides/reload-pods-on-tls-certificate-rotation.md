@@ -73,7 +73,7 @@ New pods start
 Application loads new certificate
 ```
 
-**Limitations**
+#### Limitations
 
 * Requires manual intervention
 * Easy to forget
@@ -99,7 +99,7 @@ Certificate file updated
 Application reloads certificate
 ```
 
-**Limitations**
+#### Limitations
 
 * Not all applications support this
 * Requires application-specific configuration

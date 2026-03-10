@@ -69,7 +69,7 @@ New pods created
 Application loads new secret
 ```
 
-**Limitations**
+#### Limitations
 
 * Requires manual intervention
 * Easy to forget
@@ -91,7 +91,7 @@ metadata:
 
 When the secret changes and Helm runs again, the checksum changes and the deployment rolls out.
 
-**Limitations**
+#### Limitations
 
 * Requires modifying Helm charts
 * Only works when Helm upgrades occur

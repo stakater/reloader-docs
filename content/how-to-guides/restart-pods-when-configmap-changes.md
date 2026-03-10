@@ -45,7 +45,7 @@ kubectl rollout restart deployment my-app
 
 This forces Kubernetes to create new pods that read the updated ConfigMap.
 
-**Limitations**
+#### Limitations
 
 * Requires manual intervention
 * Easy to forget in busy environments
@@ -67,7 +67,7 @@ metadata:
 
 When the ConfigMap content changes, the checksum changes as well, causing the Deployment to restart.
 
-**Limitations**
+#### Limitations
 
 * Requires modifying Helm charts
 * Only works when Helm performs an upgrade
