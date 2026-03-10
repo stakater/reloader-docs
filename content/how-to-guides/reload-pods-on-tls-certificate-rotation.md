@@ -63,7 +63,7 @@ kubectl rollout restart deployment my-app
 
 Result:
 
-```text
+```bash
 TLS Secret updated
 ↓
 Operator restarts deployment
@@ -91,7 +91,7 @@ Some applications support dynamic certificate reload by:
 
 Example flow:
 
-```text
+```bash
 TLS Secret updated
 ↓
 Certificate file updated
@@ -115,7 +115,7 @@ When a TLS Secret changes, Reloader automatically triggers a rolling restart of 
 
 Workflow:
 
-```text
+```bash
 Certificate renewed
 ↓
 TLS Secret updated
@@ -216,7 +216,7 @@ kubectl apply -f tls-secret.yaml
 
 Result:
 
-```text
+```bash
 TLS Secret updated
 ↓
 Reloader detects change
