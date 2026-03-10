@@ -79,9 +79,15 @@ The table below summarizes the current status of supported integrations.
 | [HashiCorp Vault](./vault/index.md) | 🟢 Validated (Reloader Enterprise) |
 | [OpenBao](./openbao/index.md) | 🟢 Validated (Reloader Enterprise) |
 | [Conjur](./conjur/index.md) | 🟢 Validated (Reloader Enterprise) |
-| External Secrets Operator | 🟡 Community |
+| AWS Secret Manager | 🟡 Community |
+| GCP Secret Manager | 🟡 Community |
+| Azure Key Vault | 🟡 Community |
+| Infisical | 🟡 Community |
+| Bitwarden | 🟡 Community |
+| Doppler | 🟡 Community |
 | Cert-Manager | 🟡 Community |
 | Sealed Secrets | 🟡 Community |
+| External Secrets Operator | 🟡 Community |
 | Secrets Store CSI Driver | 🟡 Community |
 
 > Community usage is possible for most integrations, but **only integrations marked as “Validated” are continuously tested and supported**.
