@@ -1,5 +1,10 @@
 [
   {
+    "version": "sync-pr-36-to-1.4",
+    "title": "sync-pr-36-to-1.4",
+    "aliases": []
+  },
+  {
     "version": "renovate-main-stakater-vale-package-0.x",
     "title": "renovate-main-stakater-vale-package-0.x",
     "aliases": []
