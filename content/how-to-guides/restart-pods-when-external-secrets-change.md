@@ -119,7 +119,7 @@ metadata:
 type: Opaque
 stringData:
   API_TOKEN: initial-token
-````
+```
 
 Apply the Secret:
 
