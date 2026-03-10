@@ -81,6 +81,10 @@
          <lastmod>2026-03-10</lastmod>
     </url>
     <url>
+         <loc>https://docs.stakater.com/reloader/mu2/how-to-guides/restart-pods-when-external-secrets-change.html</loc>
+         <lastmod>2026-03-10</lastmod>
+    </url>
+    <url>
          <loc>https://docs.stakater.com/reloader/mu2/how-to-guides/restart-pods-when-secret-changes.html</loc>
          <lastmod>2026-03-10</lastmod>
     </url>
