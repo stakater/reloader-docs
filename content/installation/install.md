@@ -19,17 +19,15 @@ When you are added as a customer:
 
 - You receive the **`read`** role  
 - You can **pull** Reloader Enterprise images  
-- You can view contributors  
 - You **cannot** create branches, modify the code, or view other collaborators  
 
-The repository acts as a **proxy** to private build sources.  
-It does **not** build artifacts itself.
+The repository acts as a **proxy** to private build sources. It does **not** build artifacts itself.
 
 Access is available only to active Reloader Enterprise customers.
 
 ## Installation Overview
 
-After access is granted, you may install Reloader Enterprise in one of two ways:
+Once access is granted, Reloader Enterprise can be installed using one of the following two methods. In both cases, you will first need to create a Kubernetes registry secret and then run a Helm installation.
 
 ### **Option A — Use Your GitHub User**
 
@@ -39,8 +37,6 @@ This user is added as a collaborator to the enterprise package repository.
 ### **Option B — Use a Token Provided by Stakater**
 
 Stakater issues a dedicated `reloader-enterprise` access token.
-
-Both methods require creating a Kubernetes registry secret and running a Helm install.
 
 ## Installation Method A — Using Your GitHub User
 
@@ -97,35 +93,6 @@ helm install stakater/reloader \
   --set image.tag=<version> \
   --set "global.imagePullSecrets[0].name=regcred" \
   --generate-name
-```
-
-## Checking Available Versions
-
-Reloader Enterprise uses the same image tags as the open-source version,
-but only versions that have passed enterprise-grade validation are published.
-
-### View versions in GitHub Packages
-
-Reloader Enterprise images are hosted in a **private GitHub Container Registry (GHCR)** repository.
-
-Once access is granted, customers can view available versions at:
-
-`ghcr.io/stakater/reloader-enterprise-package-proxy`
-
-> ⚠️ This repository is private.  
-> If you are not logged in to GitHub **or** your GitHub account does not have access,
-> GitHub will return **404 Not Found**. This is expected behavior.
-
-If you believe you should have access but cannot view the repository, please contact Stakater support.
-
-### Or via GitHub API
-
-```bash
-curl -L \
- -H "Accept: application/vnd.github+json" \
- -H "Authorization: Bearer <token>" \
- -H "X-GitHub-Api-Version: 2022-11-28" \
- https://api.github.com/orgs/stakater/packages/container/reloader-enterprise/versions
 ```
 
 ## Access Requirements
