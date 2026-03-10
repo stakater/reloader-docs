@@ -35,6 +35,7 @@ nav:
       - how-to-guides/restart-pods-when-configmap-changes.md
       - how-to-guides/restart-pods-when-secret-changes.md
       - how-to-guides/reload-pods-on-tls-certificate-rotation.md
+      - how-to-guides/restart-pods-when-external-secrets-change.md
   - Integrations:
       - Overview: integrations/index.md
       - Conjur:
