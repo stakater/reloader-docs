@@ -16,8 +16,26 @@ nav:
       - about/why-reloader-matters.md
       - about/value-by-role.md
       - OSS vs Enterprise: about/editions.md
+  - Concepts:
+      - concepts/why-configuration-reloading-matters.md
+      - concepts/secret-propagation-problem-kubernetes.md
+      - Comparison:
+          - concepts/comparisons/reloader-vs-helm.md
+          - concepts/comparisons/reloader-vs-checksum-annotations.md
+          - concepts/comparisons/reloader-vs-kyverno.md
+          - concepts/comparisons/reloader-vs-sidecar-config-watchers.md
+          - concepts/comparisons/reloader-vs-init-containers.md
+          - concepts/comparisons/reloader-vs-manual-rollouts.md
+          - concepts/comparisons/reloader-vs-gitops-tools.md
+          - concepts/comparisons/reloader-vs-secret-operators.md
+          - concepts/comparisons/reloader-vs-cert-manager.md
   - Install & Upgrade:
       - Reloader Enterprise: installation/install.md
+  - How-To Guides:
+      - how-to-guides/restart-pods-when-configmap-changes.md
+      - how-to-guides/restart-pods-when-secret-changes.md
+      - how-to-guides/reload-pods-on-tls-certificate-rotation.md
+      - how-to-guides/restart-pods-when-external-secrets-change.md
   - Integrations:
       - Overview: integrations/index.md
       - Conjur:
