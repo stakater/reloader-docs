@@ -5,31 +5,31 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/mu2/concepts/comparisons/reloader-vs-kyverno.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/mu2/how-to-guides/restart-pods-when-configmap-changes.html">
       
       
-        <link rel="prev" href="reloader-vs-checksum-annotations.html">
+        <link rel="prev" href="../installation/install.html">
       
       
-        <link rel="next" href="reloader-vs-sidecar-config-watchers.html">
+        <link rel="next" href="../integrations/index.html">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
-        <title>Reloader vs Kyverno - Reloader</title>
+        <title>Restart Pods When ConfigMap Changes in Kubernetes - Reloader</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -48,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -66,7 +66,7 @@
 
     
     
-  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reloader-vs-kyverno" class="md-skip">
+        <a href="#restart-pods-when-configmap-changes-in-kubernetes" class="md-skip">
           Skip to content
         </a>
       
@@ -340,9 +340,9 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   <nav class="md-header__inner md-grid" aria-label="Header">
 
     <!-- Link to home -->
-    <a href="../.." title="Reloader" class="md-header__button md-logo" aria-label="Reloader" data-md-component="logo">
+    <a href=".." title="Reloader" class="md-header__button md-logo" aria-label="Reloader" data-md-component="logo">
       <!-- 
-  <img src="../../assets/images/favicon.png" alt="logo">
+  <img src="../assets/images/favicon.png" alt="logo">
  -->
     </a>
 
@@ -360,10 +360,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
         <!-- Logo -->
         <div class="md-header__topic">
           
-          <img class="md-header__logo_light" src="../../assets/images/logo-light.png#only-light" alt="logo">
+          <img class="md-header__logo_light" src="../assets/images/logo-light.png#only-light" alt="logo">
           
           
-          <img class="md-header__logo_dark" src="../../assets/images/logo-dark.png#only-dark" alt="logo">
+          <img class="md-header__logo_dark" src="../assets/images/logo-dark.png#only-dark" alt="logo">
           
           
           <div class="header-site-name">
@@ -1987,9 +1987,9 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Reloader" class="md-nav__button md-logo" aria-label="Reloader" data-md-component="logo">
+    <a href=".." title="Reloader" class="md-nav__button md-logo" aria-label="Reloader" data-md-component="logo">
       
-  <img src="../../assets/images/favicon.png" alt="logo">
+  <img src="../assets/images/favicon.png" alt="logo">
 
     </a>
     Reloader
@@ -2063,7 +2063,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../index.html" class="md-nav__link">
+      <a href="../index.html" class="md-nav__link">
         
   
   
@@ -2091,7 +2091,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../about/why-reloader-matters.html" class="md-nav__link">
+      <a href="../about/why-reloader-matters.html" class="md-nav__link">
         
   
   
@@ -2119,7 +2119,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../about/value-by-role.html" class="md-nav__link">
+      <a href="../about/value-by-role.html" class="md-nav__link">
         
   
   
@@ -2147,7 +2147,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../about/editions.html" class="md-nav__link">
+      <a href="../about/editions.html" class="md-nav__link">
         
   
   
@@ -2179,20 +2179,18 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -2213,7 +2211,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2231,7 +2229,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../why-configuration-reloading-matters.html" class="md-nav__link">
+      <a href="../concepts/why-configuration-reloading-matters.html" class="md-nav__link">
         
   
   
@@ -2259,7 +2257,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../secret-propagation-problem-kubernetes.html" class="md-nav__link">
+      <a href="../concepts/secret-propagation-problem-kubernetes.html" class="md-nav__link">
         
   
   
@@ -2284,20 +2282,18 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3">
         
           
           <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
@@ -2318,7 +2314,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2336,7 +2332,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-helm.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-helm.html" class="md-nav__link">
         
   
   
@@ -2364,7 +2360,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-checksum-annotations.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-checksum-annotations.html" class="md-nav__link">
         
   
   
@@ -2389,37 +2385,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reloader vs Kyverno
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="reloader-vs-kyverno.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../concepts/comparisons/reloader-vs-kyverno.html" class="md-nav__link">
         
   
   
@@ -2435,177 +2404,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#what-kyverno-is" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What Kyverno Is
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-reloader-is" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What Reloader Is
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#can-kyverno-trigger-pod-restarts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Can Kyverno Trigger Pod Restarts?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#external-secret-management" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        External Secret Management
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-differences" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key Differences
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operational-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Operational Considerations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-kyverno-may-be-enough" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When Kyverno May Be Enough
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-reloader-is-a-better-fit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When Reloader Is a Better Fit
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FAQ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="FAQ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#can-kyverno-restart-pods-when-a-configmap-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Can Kyverno restart pods when a ConfigMap changes?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#is-kyverno-a-replacement-for-reloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Is Kyverno a replacement for Reloader?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#can-kyverno-and-reloader-be-used-together" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Can Kyverno and Reloader be used together?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2618,7 +2416,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-sidecar-config-watchers.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-sidecar-config-watchers.html" class="md-nav__link">
         
   
   
@@ -2646,7 +2444,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-init-containers.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-init-containers.html" class="md-nav__link">
         
   
   
@@ -2674,7 +2472,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-manual-rollouts.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-manual-rollouts.html" class="md-nav__link">
         
   
   
@@ -2702,7 +2500,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-gitops-tools.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-gitops-tools.html" class="md-nav__link">
         
   
   
@@ -2730,7 +2528,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-secret-operators.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-secret-operators.html" class="md-nav__link">
         
   
   
@@ -2758,7 +2556,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-cert-manager.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-cert-manager.html" class="md-nav__link">
         
   
   
@@ -2848,7 +2646,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../installation/install.html" class="md-nav__link">
+      <a href="../installation/install.html" class="md-nav__link">
         
   
   
@@ -2880,18 +2678,20 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked="">
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -2912,7 +2712,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2927,10 +2727,37 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../how-to-guides/restart-pods-when-configmap-changes.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Restart Pods When ConfigMap Changes in Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="restart-pods-when-configmap-changes.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2946,6 +2773,233 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Approaches
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Approaches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-manual-rollout-restart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Manual Rollout Restart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-checksum-annotations-helm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Checksum Annotations (Helm)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-restart-with-reloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatic Restart with Reloader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-by-step-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step-by-Step Example
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-Step Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-create-a-configmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Create a ConfigMap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-create-a-deployment-using-the-configmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Create a Deployment Using the ConfigMap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-enable-reloader-for-the-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Enable Reloader for the Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-update-the-configmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Update the ConfigMap
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifying-the-restart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verifying the Restart
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-this-pattern-is-useful" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When This Pattern Is Useful
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FAQ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#do-configmap-changes-automatically-restart-pods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Do ConfigMap changes automatically restart pods?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-does-kubernetes-behave-this-way" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why does Kubernetes behave this way?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-can-i-automate-restarts-when-configuration-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How can I automate restarts when configuration changes?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3012,7 +3066,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/index.html" class="md-nav__link">
+      <a href="../integrations/index.html" class="md-nav__link">
         
   
   
@@ -3087,7 +3141,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/conjur/index.html" class="md-nav__link">
+      <a href="../integrations/conjur/index.html" class="md-nav__link">
         
   
   
@@ -3115,7 +3169,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/conjur/conjur-eso.html" class="md-nav__link">
+      <a href="../integrations/conjur/conjur-eso.html" class="md-nav__link">
         
   
   
@@ -3143,7 +3197,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/conjur/conjur-sidecar.html" class="md-nav__link">
+      <a href="../integrations/conjur/conjur-sidecar.html" class="md-nav__link">
         
   
   
@@ -3171,7 +3225,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/conjur/conjur-csi.html" class="md-nav__link">
+      <a href="../integrations/conjur/conjur-csi.html" class="md-nav__link">
         
   
   
@@ -3254,7 +3308,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/index.html" class="md-nav__link">
+      <a href="../integrations/vault/index.html" class="md-nav__link">
         
   
   
@@ -3282,7 +3336,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/vault-eso.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-eso.html" class="md-nav__link">
         
   
   
@@ -3310,7 +3364,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/vault-vso.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-vso.html" class="md-nav__link">
         
   
   
@@ -3338,7 +3392,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/vault-csi.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-csi.html" class="md-nav__link">
         
   
   
@@ -3366,7 +3420,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/vault-csi-file.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-csi-file.html" class="md-nav__link">
         
   
   
@@ -3449,7 +3503,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/index.html" class="md-nav__link">
+      <a href="../integrations/openbao/index.html" class="md-nav__link">
         
   
   
@@ -3477,7 +3531,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/openbao-eso.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-eso.html" class="md-nav__link">
         
   
   
@@ -3505,7 +3559,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/openbao-bso.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-bso.html" class="md-nav__link">
         
   
   
@@ -3533,7 +3587,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/openbao-csi.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-csi.html" class="md-nav__link">
         
   
   
@@ -3561,7 +3615,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/openbao-csi-file.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-csi-file.html" class="md-nav__link">
         
   
   
@@ -3604,7 +3658,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../eula.html" class="md-nav__link">
+      <a href="../eula.html" class="md-nav__link">
         
   
   
@@ -3631,7 +3685,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../help.html" class="md-nav__link">
+      <a href="../help.html" class="md-nav__link">
         
   
   
@@ -3658,7 +3712,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../versions.html" class="md-nav__link">
+      <a href="../versions.html" class="md-nav__link">
         
   
   
@@ -3707,10 +3761,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#what-kyverno-is" class="md-nav__link">
+  <a href="#the-problem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What Kyverno Is
+        The Problem
       
     </span>
   </a>
@@ -3718,10 +3772,49 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-reloader-is" class="md-nav__link">
+  <a href="#common-approaches" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What Reloader Is
+        Common Approaches
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Approaches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-manual-rollout-restart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Manual Rollout Restart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-checksum-annotations-helm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Checksum Annotations (Helm)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automatic-restart-with-reloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automatic Restart with Reloader
       
     </span>
   </a>
@@ -3729,10 +3822,71 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#can-kyverno-trigger-pod-restarts" class="md-nav__link">
+  <a href="#step-by-step-example" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Can Kyverno Trigger Pod Restarts?
+        Step-by-Step Example
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-by-Step Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-create-a-configmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Create a ConfigMap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-create-a-deployment-using-the-configmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Create a Deployment Using the ConfigMap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-enable-reloader-for-the-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Enable Reloader for the Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-update-the-configmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Update the ConfigMap
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifying-the-restart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verifying the Restart
       
     </span>
   </a>
@@ -3740,54 +3894,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#external-secret-management" class="md-nav__link">
+  <a href="#when-this-pattern-is-useful" class="md-nav__link">
     <span class="md-ellipsis">
       
-        External Secret Management
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-differences" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key Differences
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#operational-considerations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Operational Considerations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-kyverno-may-be-enough" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When Kyverno May Be Enough
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-reloader-is-a-better-fit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When Reloader Is a Better Fit
+        When This Pattern Is Useful
       
     </span>
   </a>
@@ -3818,10 +3928,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#can-kyverno-restart-pods-when-a-configmap-changes" class="md-nav__link">
+  <a href="#do-configmap-changes-automatically-restart-pods" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Can Kyverno restart pods when a ConfigMap changes?
+        Do ConfigMap changes automatically restart pods?
       
     </span>
   </a>
@@ -3829,10 +3939,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#is-kyverno-a-replacement-for-reloader" class="md-nav__link">
+  <a href="#why-does-kubernetes-behave-this-way" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Is Kyverno a replacement for Reloader?
+        Why does Kubernetes behave this way?
       
     </span>
   </a>
@@ -3840,10 +3950,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#can-kyverno-and-reloader-be-used-together" class="md-nav__link">
+  <a href="#how-can-i-automate-restarts-when-configuration-changes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Can Kyverno and Reloader be used together?
+        How can I automate restarts when configuration changes?
       
     </span>
   </a>
@@ -3875,39 +3985,59 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="reloader-vs-kyverno">Reloader vs Kyverno<a class="headerlink" href="#reloader-vs-kyverno" title="Permanent link">#</a></h1>
-<p>Both Reloader and Kyverno can be involved in restarting Kubernetes workloads when configuration changes.</p>
-<p>However, they are designed for <strong>different primary purposes</strong> within a Kubernetes platform.</p>
-<p>Understanding how they differ helps platform teams choose the right tool for configuration management and policy enforcement.</p>
+<h1 id="restart-pods-when-configmap-changes-in-kubernetes">Restart Pods When ConfigMap Changes in Kubernetes<a class="headerlink" href="#restart-pods-when-configmap-changes-in-kubernetes" title="Permanent link">#</a></h1>
+<p>Applications in Kubernetes often load configuration from <strong>ConfigMaps</strong>.<br>
+However, when a ConfigMap is updated, running pods <strong>do not automatically reload the new configuration</strong>.</p>
+<p>This guide explains why this happens and how to ensure pods restart automatically when configuration changes.</p>
 <hr>
-<h2 id="what-kyverno-is">What Kyverno Is<a class="headerlink" href="#what-kyverno-is" title="Permanent link">#</a></h2>
-<p>Kyverno is a Kubernetes-native policy engine that allows platform teams to define and enforce policies across their clusters.</p>
-<p>Kyverno policies can:</p>
-<ul>
-<li>validate Kubernetes resources</li>
-<li>mutate resources during admission</li>
-<li>generate additional resources automatically</li>
-<li>enforce security and compliance standards</li>
-</ul>
-<p>Typical Kyverno use cases include:</p>
-<ul>
-<li>enforcing security policies</li>
-<li>requiring labels and annotations</li>
-<li>blocking privileged containers</li>
-<li>enforcing resource limits</li>
-<li>generating default configurations</li>
-</ul>
-<p>Kyverno operates primarily during <strong>admission time</strong>, when resources are created or updated.</p>
+<h2 id="the-problem">The Problem<a class="headerlink" href="#the-problem" title="Permanent link">#</a></h2>
+<p>Updating a ConfigMap does not trigger a rollout of workloads that use it.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>configmap.yaml
+</code></pre></div>
+<p>Result:</p>
+<div class="highlight"><pre><span></span><code>ConfigMap<span class="w"> </span>updated
+↓
+Pods<span class="w"> </span><span class="k">continue</span><span class="w"> </span>running
+↓
+Application<span class="w"> </span>still<span class="w"> </span>uses<span class="w"> </span>old<span class="w"> </span>configuration
+</code></pre></div>
+<p>This happens because Kubernetes only performs a rollout when the <strong>PodSpec changes</strong>, not when referenced resources such as ConfigMaps change.</p>
 <hr>
-<h2 id="what-reloader-is">What Reloader Is<a class="headerlink" href="#what-reloader-is" title="Permanent link">#</a></h2>
-<p>Reloader is a Kubernetes controller designed to ensure applications pick up configuration changes stored in:</p>
+<h2 id="common-approaches">Common Approaches<a class="headerlink" href="#common-approaches" title="Permanent link">#</a></h2>
+<p>There are several ways to handle configuration updates in Kubernetes.</p>
+<h3 id="1-manual-rollout-restart">1. Manual Rollout Restart<a class="headerlink" href="#1-manual-rollout-restart" title="Permanent link">#</a></h3>
+<p>A simple solution is to manually restart the workload.</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>restart<span class="w"> </span>deployment<span class="w"> </span>my-app
+</code></pre></div>
+<p>This forces Kubernetes to create new pods that read the updated ConfigMap.</p>
+<p><strong>Limitations</strong></p>
 <ul>
-<li>ConfigMaps</li>
-<li>Secrets</li>
+<li>Requires manual intervention</li>
+<li>Easy to forget in busy environments</li>
+<li>Difficult to scale when many workloads depend on the same ConfigMap</li>
 </ul>
-<p>When these resources change, Reloader automatically triggers rolling restarts of workloads that reference them.</p>
-<p>Typical workflow:</p>
-<div class="highlight"><pre><span></span><code>Secret<span class="w"> </span>updated
+<hr>
+<h3 id="2-checksum-annotations-helm">2. Checksum Annotations (Helm)<a class="headerlink" href="#2-checksum-annotations-helm" title="Permanent link">#</a></h3>
+<p>Some Helm charts implement checksum annotations that trigger a rollout when configuration changes.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">checksum/config</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">include (print $.Template.BasePath "/configmap.yaml") . | sha256sum</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+</code></pre></div>
+<p>When the ConfigMap content changes, the checksum changes as well, causing the Deployment to restart.</p>
+<p><strong>Limitations</strong></p>
+<ul>
+<li>Requires modifying Helm charts</li>
+<li>Only works when Helm performs an upgrade</li>
+<li>Does not react to runtime updates outside Helm</li>
+</ul>
+<hr>
+<h2 id="automatic-restart-with-reloader">Automatic Restart with Reloader<a class="headerlink" href="#automatic-restart-with-reloader" title="Permanent link">#</a></h2>
+<p>A more automated solution is to use <strong>Reloader</strong>, a Kubernetes controller that watches for changes in ConfigMaps and Secrets.</p>
+<p>When a watched resource changes, Reloader triggers a rolling restart of workloads that reference it.</p>
+<p>Workflow:</p>
+<div class="highlight"><pre><span></span><code>ConfigMap<span class="w"> </span>updated
 ↓
 Reloader<span class="w"> </span>detects<span class="w"> </span>change
 ↓
@@ -3915,112 +4045,104 @@ Deployment<span class="w"> </span>patched
 ↓
 Kubernetes<span class="w"> </span>rolling<span class="w"> </span>restart<span class="w"> </span>triggered
 </code></pre></div>
-<p>This ensures running applications reload updated configuration or credentials without requiring manual intervention.</p>
+<p>This ensures applications automatically reload updated configuration.</p>
 <hr>
-<h2 id="can-kyverno-trigger-pod-restarts">Can Kyverno Trigger Pod Restarts?<a class="headerlink" href="#can-kyverno-trigger-pod-restarts" title="Permanent link">#</a></h2>
-<p>Yes.</p>
-<p>Kyverno can be configured to trigger restarts using mutation policies. For example, when a ConfigMap or Secret changes, Kyverno can update an annotation on a Deployment. Since the Deployment specification changes, Kubernetes performs a rolling restart.</p>
-<p>Conceptual example:</p>
+<h2 id="step-by-step-example">Step-by-Step Example<a class="headerlink" href="#step-by-step-example" title="Permanent link">#</a></h2>
+<h3 id="1-create-a-configmap">1. Create a ConfigMap<a class="headerlink" href="#1-create-a-configmap" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConfigMap</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-config</span>
+<span class="nt">data</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">APP_MESSAGE</span><span class="p">:</span><span class="w"> </span><span class="s">"Hello</span><span class="nv"> </span><span class="s">world"</span>
+</code></pre></div>
+<p>Apply it:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>configmap.yaml
+</code></pre></div>
+<hr>
+<h3 id="2-create-a-deployment-using-the-configmap">2. Create a Deployment Using the ConfigMap<a class="headerlink" href="#2-create-a-deployment-using-the-configmap" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo-app</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
+<span class="w">        </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">APP_MESSAGE</span>
+<span class="w">          </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">configMapKeyRef</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-config</span>
+<span class="w">              </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">APP_MESSAGE</span>
+</code></pre></div>
+<hr>
+<h3 id="3-enable-reloader-for-the-deployment">3. Enable Reloader for the Deployment<a class="headerlink" href="#3-enable-reloader-for-the-deployment" title="Permanent link">#</a></h3>
+<p>Add the following annotation to the Deployment:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">reloader.stakater.com/auto</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+</code></pre></div>
+<p>This tells Reloader to watch configuration resources referenced by this workload.</p>
+<hr>
+<h3 id="4-update-the-configmap">4. Update the ConfigMap<a class="headerlink" href="#4-update-the-configmap" title="Permanent link">#</a></h3>
+<p>Modify the value:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">APP_MESSAGE</span><span class="p">:</span><span class="w"> </span><span class="s">"Hello</span><span class="nv"> </span><span class="s">Kubernetes"</span>
+</code></pre></div>
+<p>Apply the change:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>configmap.yaml
+</code></pre></div>
+<p>Result:</p>
 <div class="highlight"><pre><span></span><code>ConfigMap<span class="w"> </span>updated
 ↓
-Kyverno<span class="w"> </span>mutation<span class="w"> </span>policy<span class="w"> </span>updates<span class="w"> </span>Deployment<span class="w"> </span>annotation
+Reloader<span class="w"> </span>detects<span class="w"> </span>change
 ↓
-Deployment<span class="w"> </span>spec<span class="w"> </span>changes
+Deployment<span class="w"> </span>patched
 ↓
-Pods<span class="w"> </span>restart
+New<span class="w"> </span>pod<span class="w"> </span>created
+↓
+Application<span class="w"> </span>loads<span class="w"> </span>updated<span class="w"> </span>configuration
 </code></pre></div>
-<p>This means Kyverno can technically be used to implement configuration reload patterns.</p>
-<p>However, this typically requires writing and maintaining custom policies.</p>
 <hr>
-<h2 id="external-secret-management">External Secret Management<a class="headerlink" href="#external-secret-management" title="Permanent link">#</a></h2>
-<p>Many Kubernetes platforms use external secret management systems.</p>
-<p>Examples include:</p>
+<h2 id="verifying-the-restart">Verifying the Restart<a class="headerlink" href="#verifying-the-restart" title="Permanent link">#</a></h2>
+<p>You can observe the rollout with:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deployment<span class="w"> </span>demo-app
+</code></pre></div>
+<p>Or watch the pods:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-w
+</code></pre></div>
+<p>A new pod will be created automatically after the ConfigMap changes.</p>
+<hr>
+<h2 id="when-this-pattern-is-useful">When This Pattern Is Useful<a class="headerlink" href="#when-this-pattern-is-useful" title="Permanent link">#</a></h2>
+<p>Automatically restarting pods when ConfigMaps change is useful when:</p>
 <ul>
-<li>secret synchronization operators</li>
-<li>certificate automation systems</li>
-<li>Vault integrations</li>
+<li>applications load configuration at startup</li>
+<li>configuration updates occur frequently</li>
+<li>multiple workloads share the same ConfigMap</li>
+<li>teams want reliable automation</li>
 </ul>
-<p>When these systems update Kubernetes Secret resources, both Kyverno and Reloader can react to those updates.</p>
-<p>However, neither tool can detect changes that occur <strong>outside the Kubernetes API</strong>. For example, if an application reads secrets directly from an external system without updating a Kubernetes Secret object, neither Kyverno nor Reloader will detect that change.</p>
-<hr>
-<h2 id="key-differences">Key Differences<a class="headerlink" href="#key-differences" title="Permanent link">#</a></h2>
-<p>While Kyverno can be used to trigger restarts, it is primarily designed for policy enforcement rather than configuration reload automation.</p>
-<table>
-<thead>
-<tr>
-<th>Aspect</th>
-<th>Reloader</th>
-<th>Kyverno</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Primary purpose</td>
-<td>Configuration reload automation</td>
-<td>Policy enforcement and governance</td>
-</tr>
-<tr>
-<td>Architecture</td>
-<td>Dedicated controller watching Secrets and ConfigMaps</td>
-<td>Policy engine evaluating resources</td>
-</tr>
-<tr>
-<td>Typical scope</td>
-<td>Configuration management</td>
-<td>Security, compliance, governance</td>
-</tr>
-<tr>
-<td>Operational complexity</td>
-<td>Simple install and configuration</td>
-<td>Requires policy design and maintenance</td>
-</tr>
-</tbody>
-</table>
-<p>Reloader focuses specifically on ensuring applications reload configuration when it changes.</p>
-<p>Kyverno focuses on enforcing governance and compliance policies across Kubernetes clusters.</p>
-<hr>
-<h2 id="operational-considerations">Operational Considerations<a class="headerlink" href="#operational-considerations" title="Permanent link">#</a></h2>
-<p>Using Kyverno for reload automation often requires writing custom policies that:</p>
-<ul>
-<li>detect configuration changes</li>
-<li>update workloads safely</li>
-<li>avoid unintended restart loops</li>
-</ul>
-<p>This approach can work well for teams already heavily using Kyverno for platform governance.</p>
-<p>For teams that only need reliable configuration reload behavior, a dedicated controller may be simpler to operate.</p>
-<hr>
-<h2 id="when-kyverno-may-be-enough">When Kyverno May Be Enough<a class="headerlink" href="#when-kyverno-may-be-enough" title="Permanent link">#</a></h2>
-<p>Using Kyverno to trigger restarts may make sense when:</p>
-<ul>
-<li>Kyverno is already deeply integrated into the platform</li>
-<li>teams want to manage all cluster behavior through policies</li>
-<li>configuration reload logic is relatively simple</li>
-</ul>
-<p>In these environments, Kyverno policies can be extended to perform restart automation.</p>
-<hr>
-<h2 id="when-reloader-is-a-better-fit">When Reloader Is a Better Fit<a class="headerlink" href="#when-reloader-is-a-better-fit" title="Permanent link">#</a></h2>
-<p>Reloader may be a better option when:</p>
-<ul>
-<li>automatic reload behavior is required across many applications</li>
-<li>platform teams want a dedicated solution for configuration changes</li>
-<li>operational simplicity is important</li>
-<li>configuration changes frequently occur through external systems</li>
-</ul>
-<p>These environments are common in modern Kubernetes platforms using secret rotation or automated certificate management.</p>
 <hr>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
-<p>Kyverno and Reloader solve different platform problems.</p>
-<p>Kyverno provides powerful policy enforcement capabilities for Kubernetes clusters.</p>
-<p>Reloader focuses specifically on ensuring that applications pick up configuration changes stored in Secrets and ConfigMaps.</p>
-<p>Both tools can coexist in the same platform and serve complementary roles.</p>
+<p>Updating a ConfigMap does not automatically restart pods in Kubernetes.</p>
+<p>Manual restarts and checksum annotations can help, but they often require extra operational steps.</p>
+<p>Using Reloader allows Kubernetes workloads to <strong>automatically restart when configuration changes</strong>, ensuring applications always run with the latest configuration.</p>
 <hr>
 <h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">#</a></h2>
-<h3 id="can-kyverno-restart-pods-when-a-configmap-changes">Can Kyverno restart pods when a ConfigMap changes?<a class="headerlink" href="#can-kyverno-restart-pods-when-a-configmap-changes" title="Permanent link">#</a></h3>
-<p>Yes. Kyverno can use mutation policies to update workloads when configuration resources change, which can trigger rolling restarts.</p>
-<h3 id="is-kyverno-a-replacement-for-reloader">Is Kyverno a replacement for Reloader?<a class="headerlink" href="#is-kyverno-a-replacement-for-reloader" title="Permanent link">#</a></h3>
-<p>Not directly. Kyverno is designed as a policy engine, while Reloader focuses specifically on configuration reload automation.</p>
-<h3 id="can-kyverno-and-reloader-be-used-together">Can Kyverno and Reloader be used together?<a class="headerlink" href="#can-kyverno-and-reloader-be-used-together" title="Permanent link">#</a></h3>
-<p>Yes. Many Kubernetes platforms use Kyverno for governance and Reloader for configuration management.</p>
+<h3 id="do-configmap-changes-automatically-restart-pods">Do ConfigMap changes automatically restart pods?<a class="headerlink" href="#do-configmap-changes-automatically-restart-pods" title="Permanent link">#</a></h3>
+<p>No. Kubernetes does not restart pods when ConfigMaps change.</p>
+<h3 id="why-does-kubernetes-behave-this-way">Why does Kubernetes behave this way?<a class="headerlink" href="#why-does-kubernetes-behave-this-way" title="Permanent link">#</a></h3>
+<p>Kubernetes only triggers rollouts when the Pod specification changes, not when referenced configuration resources change.</p>
+<h3 id="how-can-i-automate-restarts-when-configuration-changes">How can I automate restarts when configuration changes?<a class="headerlink" href="#how-can-i-automate-restarts-when-configuration-changes" title="Permanent link">#</a></h3>
+<p>You can use a controller such as Reloader to detect ConfigMap updates and trigger rolling restarts automatically.</p>
 
 
 
@@ -4314,27 +4436,27 @@ Pods<span class="w"> </span>restart
                 <div class="flex-2">
                     <div class="logo-footer-container">
                         
-                        <img class="md-header__logo_light" src="../../assets/images/footer-logo-light.png#only-light" alt="logo">
+                        <img class="md-header__logo_light" src="../assets/images/footer-logo-light.png#only-light" alt="logo">
                         
                         
-                        <img src="../../assets/images/footer-logo-dark.png#only-dark" alt="logo">
+                        <img src="../assets/images/footer-logo-dark.png#only-dark" alt="logo">
                         
                     </div>
 
                     <div class="collaborations-img-container">
                         <div class="display-flex">
                             
-                            <img class="csa-logo-dark" src="../../assets/images/CSA_dark.png#only-dark" alt="CSA">
+                            <img class="csa-logo-dark" src="../assets/images/CSA_dark.png#only-dark" alt="CSA">
                             
                             
-                            <img class="csa-logo-light" src="../../assets/images/CSA_light.png#only-light" alt="CSA">
+                            <img class="csa-logo-light" src="../assets/images/CSA_light.png#only-light" alt="CSA">
                             
 
                             
-                            <img class="hc-logo-dark" src="../../assets/images/HC_dark.png#only-dark" alt="HC">
+                            <img class="hc-logo-dark" src="../assets/images/HC_dark.png#only-dark" alt="HC">
                             
                             
-                            <img class="hc-logo-light" src="../../assets/images/HC_light.png#only-light" alt="HC">
+                            <img class="hc-logo-light" src="../assets/images/HC_light.png#only-light" alt="HC">
                             
                         </div>
                     </div>
@@ -4726,10 +4848,10 @@ Pods<span class="w"> </span>restart
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.tracking", "toc.follow", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.tracking", "toc.follow", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   
