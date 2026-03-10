@@ -5,29 +5,31 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-stakater-.github-0.x/versions.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-stakater-.github-0.x/concepts/why-configuration-reloading-matters.html">
       
       
-        <link rel="prev" href="help.html">
+        <link rel="prev" href="../about/editions.html">
       
+      
+        <link rel="next" href="secret-propagation-problem-kubernetes.html">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.4">
     
     
       
-        <title>Versions - Reloader</title>
+        <title>Why Configuration Reloading Matters - Reloader</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -46,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -64,7 +66,7 @@
 
     
     
-  <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -93,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reloader-enterprise-release-history" class="md-skip">
+        <a href="#why-configuration-reloading-matters" class="md-skip">
           Skip to content
         </a>
       
@@ -338,9 +340,9 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   <nav class="md-header__inner md-grid" aria-label="Header">
 
     <!-- Link to home -->
-    <a href="." title="Reloader" class="md-header__button md-logo" aria-label="Reloader" data-md-component="logo">
+    <a href=".." title="Reloader" class="md-header__button md-logo" aria-label="Reloader" data-md-component="logo">
       <!-- 
-  <img src="assets/images/favicon.png" alt="logo">
+  <img src="../assets/images/favicon.png" alt="logo">
  -->
     </a>
 
@@ -358,10 +360,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
         <!-- Logo -->
         <div class="md-header__topic">
           
-          <img class="md-header__logo_light" src="assets/images/logo-light.png#only-light" alt="logo">
+          <img class="md-header__logo_light" src="../assets/images/logo-light.png#only-light" alt="logo">
           
           
-          <img class="md-header__logo_dark" src="assets/images/logo-dark.png#only-dark" alt="logo">
+          <img class="md-header__logo_dark" src="../assets/images/logo-dark.png#only-dark" alt="logo">
           
           
           <div class="header-site-name">
@@ -1985,9 +1987,9 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Reloader" class="md-nav__button md-logo" aria-label="Reloader" data-md-component="logo">
+    <a href=".." title="Reloader" class="md-nav__button md-logo" aria-label="Reloader" data-md-component="logo">
       
-  <img src="assets/images/favicon.png" alt="logo">
+  <img src="../assets/images/favicon.png" alt="logo">
 
     </a>
     Reloader
@@ -2061,7 +2063,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="index.html" class="md-nav__link">
+      <a href="../index.html" class="md-nav__link">
         
   
   
@@ -2089,7 +2091,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="about/why-reloader-matters.html" class="md-nav__link">
+      <a href="../about/why-reloader-matters.html" class="md-nav__link">
         
   
   
@@ -2117,7 +2119,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="about/value-by-role.html" class="md-nav__link">
+      <a href="../about/value-by-role.html" class="md-nav__link">
         
   
   
@@ -2145,7 +2147,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="about/editions.html" class="md-nav__link">
+      <a href="../about/editions.html" class="md-nav__link">
         
   
   
@@ -2177,18 +2179,20 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked="">
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -2209,7 +2213,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2224,10 +2228,37 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="concepts/why-configuration-reloading-matters.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Configuration Reloading Matters
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="why-configuration-reloading-matters.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2243,6 +2274,194 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#configuration-changes-are-part-of-normal-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Changes Are Part of Normal Operations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-challenge-of-applying-configuration-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Challenge of Applying Configuration Changes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operational-risks-of-manual-reloading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operational Risks of Manual Reloading
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operational Risks of Manual Reloading">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#human-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Human error
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inconsistent-operational-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Inconsistent operational practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delayed-application-of-security-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delayed application of security updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#increased-operational-overhead" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Increased operational overhead
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-reloading-in-modern-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Reloading in Modern Platforms
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automated-configuration-reloading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Configuration Reloading
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Automated Configuration Reloading">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#operational-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operational consistency
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improved-security" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Improved security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reduced-operational-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reduced operational complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#better-platform-reliability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Better platform reliability
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2255,7 +2474,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/secret-propagation-problem-kubernetes.html" class="md-nav__link">
+      <a href="secret-propagation-problem-kubernetes.html" class="md-nav__link">
         
   
   
@@ -2330,7 +2549,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/comparisons/reloader-vs-helm.html" class="md-nav__link">
+      <a href="comparisons/reloader-vs-helm.html" class="md-nav__link">
         
   
   
@@ -2358,7 +2577,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/comparisons/reloader-vs-checksum-annotations.html" class="md-nav__link">
+      <a href="comparisons/reloader-vs-checksum-annotations.html" class="md-nav__link">
         
   
   
@@ -2386,7 +2605,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/comparisons/reloader-vs-kyverno.html" class="md-nav__link">
+      <a href="comparisons/reloader-vs-kyverno.html" class="md-nav__link">
         
   
   
@@ -2414,7 +2633,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/comparisons/reloader-vs-sidecar-config-watchers.html" class="md-nav__link">
+      <a href="comparisons/reloader-vs-sidecar-config-watchers.html" class="md-nav__link">
         
   
   
@@ -2442,7 +2661,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/comparisons/reloader-vs-init-containers.html" class="md-nav__link">
+      <a href="comparisons/reloader-vs-init-containers.html" class="md-nav__link">
         
   
   
@@ -2470,7 +2689,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/comparisons/reloader-vs-manual-rollouts.html" class="md-nav__link">
+      <a href="comparisons/reloader-vs-manual-rollouts.html" class="md-nav__link">
         
   
   
@@ -2498,7 +2717,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/comparisons/reloader-vs-gitops-tools.html" class="md-nav__link">
+      <a href="comparisons/reloader-vs-gitops-tools.html" class="md-nav__link">
         
   
   
@@ -2526,7 +2745,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/comparisons/reloader-vs-secret-operators.html" class="md-nav__link">
+      <a href="comparisons/reloader-vs-secret-operators.html" class="md-nav__link">
         
   
   
@@ -2554,7 +2773,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/comparisons/reloader-vs-cert-manager.html" class="md-nav__link">
+      <a href="comparisons/reloader-vs-cert-manager.html" class="md-nav__link">
         
   
   
@@ -2644,7 +2863,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="installation/install.html" class="md-nav__link">
+      <a href="../installation/install.html" class="md-nav__link">
         
   
   
@@ -2726,7 +2945,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="how-to-guides/restart-pods-when-configmap-changes.html" class="md-nav__link">
+      <a href="../how-to-guides/restart-pods-when-configmap-changes.html" class="md-nav__link">
         
   
   
@@ -2754,7 +2973,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="how-to-guides/restart-pods-when-secret-changes.html" class="md-nav__link">
+      <a href="../how-to-guides/restart-pods-when-secret-changes.html" class="md-nav__link">
         
   
   
@@ -2782,7 +3001,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="how-to-guides/reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
+      <a href="../how-to-guides/reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
         
   
   
@@ -2810,7 +3029,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="how-to-guides/restart-pods-when-external-secrets-change.html" class="md-nav__link">
+      <a href="../how-to-guides/restart-pods-when-external-secrets-change.html" class="md-nav__link">
         
   
   
@@ -2892,7 +3111,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/index.html" class="md-nav__link">
+      <a href="../integrations/index.html" class="md-nav__link">
         
   
   
@@ -2967,7 +3186,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/conjur/index.html" class="md-nav__link">
+      <a href="../integrations/conjur/index.html" class="md-nav__link">
         
   
   
@@ -2995,7 +3214,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/conjur/conjur-eso.html" class="md-nav__link">
+      <a href="../integrations/conjur/conjur-eso.html" class="md-nav__link">
         
   
   
@@ -3023,7 +3242,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/conjur/conjur-sidecar.html" class="md-nav__link">
+      <a href="../integrations/conjur/conjur-sidecar.html" class="md-nav__link">
         
   
   
@@ -3051,7 +3270,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/conjur/conjur-csi.html" class="md-nav__link">
+      <a href="../integrations/conjur/conjur-csi.html" class="md-nav__link">
         
   
   
@@ -3134,7 +3353,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/vault/index.html" class="md-nav__link">
+      <a href="../integrations/vault/index.html" class="md-nav__link">
         
   
   
@@ -3162,7 +3381,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/vault/vault-eso.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-eso.html" class="md-nav__link">
         
   
   
@@ -3190,7 +3409,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/vault/vault-vso.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-vso.html" class="md-nav__link">
         
   
   
@@ -3218,7 +3437,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/vault/vault-csi.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-csi.html" class="md-nav__link">
         
   
   
@@ -3246,7 +3465,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/vault/vault-csi-file.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-csi-file.html" class="md-nav__link">
         
   
   
@@ -3329,7 +3548,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/openbao/index.html" class="md-nav__link">
+      <a href="../integrations/openbao/index.html" class="md-nav__link">
         
   
   
@@ -3357,7 +3576,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/openbao/openbao-eso.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-eso.html" class="md-nav__link">
         
   
   
@@ -3385,7 +3604,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/openbao/openbao-bso.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-bso.html" class="md-nav__link">
         
   
   
@@ -3413,7 +3632,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/openbao/openbao-csi.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-csi.html" class="md-nav__link">
         
   
   
@@ -3441,7 +3660,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/openbao/openbao-csi-file.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-csi-file.html" class="md-nav__link">
         
   
   
@@ -3484,7 +3703,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="eula.html" class="md-nav__link">
+      <a href="../eula.html" class="md-nav__link">
         
   
   
@@ -3511,7 +3730,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="help.html" class="md-nav__link">
+      <a href="../help.html" class="md-nav__link">
         
   
   
@@ -3535,37 +3754,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Versions
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="versions.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../versions.html" class="md-nav__link">
         
   
   
@@ -3581,262 +3773,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#v1414" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        v1.4.14
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="v1.4.14">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#release-metadata" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Release Metadata
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sbom" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SBOM
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#v1413" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        v1.4.13
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="v1.4.13">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#release-metadata_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Release Metadata
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sbom_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SBOM
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#v1412" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        v1.4.12
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="v1.4.12">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#release-metadata_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Release Metadata
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sbom_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SBOM
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#v1411" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        v1.4.11
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="v1.4.11">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#release-metadata_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Release Metadata
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sbom_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SBOM
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#v1410" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        v1.4.10
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="v1.4.10">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#release-metadata_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Release Metadata
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sbom_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SBOM
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#v149" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        v1.4.9
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="v1.4.9">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#release-metadata_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Release Metadata
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sbom_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SBOM
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3870,22 +3806,44 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#v1414" class="md-nav__link">
+  <a href="#configuration-changes-are-part-of-normal-operations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        v1.4.14
+        Configuration Changes Are Part of Normal Operations
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="v1.4.14">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-challenge-of-applying-configuration-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Challenge of Applying Configuration Changes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operational-risks-of-manual-reloading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operational Risks of Manual Reloading
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operational Risks of Manual Reloading">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#release-metadata" class="md-nav__link">
+  <a href="#human-error" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Release Metadata
+        Human error
       
     </span>
   </a>
@@ -3893,10 +3851,32 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#sbom" class="md-nav__link">
+  <a href="#inconsistent-operational-practices" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SBOM
+        Inconsistent operational practices
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delayed-application-of-security-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Delayed application of security updates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#increased-operational-overhead" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Increased operational overhead
       
     </span>
   </a>
@@ -3909,22 +3889,33 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#v1413" class="md-nav__link">
+  <a href="#configuration-reloading-in-modern-platforms" class="md-nav__link">
     <span class="md-ellipsis">
       
-        v1.4.13
+        Configuration Reloading in Modern Platforms
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="v1.4.13">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automated-configuration-reloading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Configuration Reloading
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Automated Configuration Reloading">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#release-metadata_1" class="md-nav__link">
+  <a href="#operational-consistency" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Release Metadata
+        Operational consistency
       
     </span>
   </a>
@@ -3932,10 +3923,32 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#sbom_1" class="md-nav__link">
+  <a href="#improved-security" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SBOM
+        Improved security
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reduced-operational-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reduced operational complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#better-platform-reliability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Better platform reliability
       
     </span>
   </a>
@@ -3948,158 +3961,13 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#v1412" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
       
-        v1.4.12
+        Summary
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="v1.4.12">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#release-metadata_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Release Metadata
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sbom_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SBOM
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#v1411" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        v1.4.11
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="v1.4.11">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#release-metadata_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Release Metadata
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sbom_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SBOM
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#v1410" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        v1.4.10
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="v1.4.10">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#release-metadata_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Release Metadata
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sbom_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SBOM
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#v149" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        v1.4.9
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="v1.4.9">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#release-metadata_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Release Metadata
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#sbom_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SBOM
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4123,189 +3991,75 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="reloader-enterprise-release-history">Reloader Enterprise – Release History<a class="headerlink" href="#reloader-enterprise-release-history" title="Permanent link">#</a></h1>
-<h2 id="v1414">v1.4.14<a class="headerlink" href="#v1414" title="Permanent link">#</a></h2>
-<h3 id="release-metadata"><strong>Release Metadata</strong><a class="headerlink" href="#release-metadata" title="Permanent link">#</a></h3>
-<table>
-  <tbody><tr><td><strong>Version</strong></td><td><code>v1.4.14</code></td></tr>
-  <tr><td><strong>Container Image</strong></td><td><code>ghcr.io/stakater/reloader-enterprise:v1.4.14</code></td></tr>
-  <tr><td><strong>Container Image UBI</strong></td><td><code>ghcr.io/stakater/reloader-enterprise:v1.4.14-ubi</code></td></tr>
-  <tr><td><strong>Reloader OSS Release Notes</strong></td><td><a href="https://github.com/stakater/Reloader/releases/tag/v1.4.14">Release Notes</a></td></tr>
-</tbody></table>
-
+<h1 id="why-configuration-reloading-matters">Why Configuration Reloading Matters<a class="headerlink" href="#why-configuration-reloading-matters" title="Permanent link">#</a></h1>
+<p>Modern applications rely heavily on external configuration. Instead of embedding configuration directly in application code, cloud-native systems typically store configuration in external sources such as environment variables, configuration files, or secret management systems.</p>
+<p>This approach makes applications more flexible and easier to operate, but it also introduces an important operational requirement:</p>
+<p><strong>Applications must be able to apply configuration changes reliably and safely.</strong></p>
 <hr>
-<h3 id="sbom"><strong>SBOM</strong><a class="headerlink" href="#sbom" title="Permanent link">#</a></h3>
-<details>
-<summary>Click to expand SBOM JSON</summary>
-
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">"artifacts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ghcr.io/stakater/reloader-enterprise:v1.4.14"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"digest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sha256:9366a3cac054a312f442e51038b17f305d8eb556b4dde6c69618c9c2ca054bb8"</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ghcr.io/stakater/reloader-enterprise:v1.4.14-ubi"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"digest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sha256:e4c38877a9160bfab47777c01c68ba9d2c6cb50f6ae760d22102def30a7fa88a"</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
-
-</details>
-
-<h2 id="v1413">v1.4.13<a class="headerlink" href="#v1413" title="Permanent link">#</a></h2>
-<h3 id="release-metadata_1"><strong>Release Metadata</strong><a class="headerlink" href="#release-metadata_1" title="Permanent link">#</a></h3>
-<table>
-  <tbody><tr><td><strong>Version</strong></td><td><code>v1.4.13</code></td></tr>
-  <tr><td><strong>Container Image</strong></td><td><code>ghcr.io/stakater/reloader-enterprise:v1.4.13</code></td></tr>
-  <tr><td><strong>Container Image UBI</strong></td><td><code>ghcr.io/stakater/reloader-enterprise:v1.4.13-ubi</code></td></tr>
-  <tr><td><strong>Reloader OSS Release Notes</strong></td><td><a href="https://github.com/stakater/Reloader/releases/tag/v1.4.13">Release Notes</a></td></tr>
-</tbody></table>
-
+<h2 id="configuration-changes-are-part-of-normal-operations">Configuration Changes Are Part of Normal Operations<a class="headerlink" href="#configuration-changes-are-part-of-normal-operations" title="Permanent link">#</a></h2>
+<p>In modern platforms, configuration changes happen frequently. These changes are part of normal operations and are required to keep systems secure, reliable, and adaptable.</p>
+<p>Common examples include:</p>
+<ul>
+<li>rotating database credentials</li>
+<li>updating API keys</li>
+<li>renewing TLS certificates</li>
+<li>modifying feature flags</li>
+<li>updating service endpoints</li>
+<li>adjusting application log levels</li>
+<li>updating authentication providers</li>
+<li>changing integration settings</li>
+</ul>
+<p>These changes must be applied to running services so that the application reflects the latest configuration.</p>
 <hr>
-<h3 id="sbom_1"><strong>SBOM</strong><a class="headerlink" href="#sbom_1" title="Permanent link">#</a></h3>
-<details>
-<summary>Click to expand SBOM JSON</summary>
-
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">"artifacts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ghcr.io/stakater/reloader-enterprise:v1.4.13"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"digest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sha256:b7b3625ed3b3c2348f74b38d61af466b5e34aba0714db734a99cecc8727a4d13"</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ghcr.io/stakater/reloader-enterprise:v1.4.13-ubi"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"digest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sha256:4915351fcb9e63595baa77805684eb50404408157ae57ccdfbbb205afea1c545"</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
-
-</details>
-
-<h2 id="v1412">v1.4.12<a class="headerlink" href="#v1412" title="Permanent link">#</a></h2>
-<h3 id="release-metadata_2"><strong>Release Metadata</strong><a class="headerlink" href="#release-metadata_2" title="Permanent link">#</a></h3>
-<table>
-  <tbody><tr><td><strong>Version</strong></td><td><code>v1.4.12</code></td></tr>
-  <tr><td><strong>Container Image</strong></td><td><code>ghcr.io/stakater/reloader-enterprise:v1.4.12</code></td></tr>
-  <tr><td><strong>Container Image UBI</strong></td><td><code>ghcr.io/stakater/reloader-enterprise:v1.4.12-ubi</code></td></tr>
-  <tr><td><strong>Reloader OSS Release Notes</strong></td><td><a href="https://github.com/stakater/Reloader/releases/tag/v1.4.12">Release Notes</a></td></tr>
-</tbody></table>
-
+<h2 id="the-challenge-of-applying-configuration-changes">The Challenge of Applying Configuration Changes<a class="headerlink" href="#the-challenge-of-applying-configuration-changes" title="Permanent link">#</a></h2>
+<p>While updating configuration values is straightforward, ensuring that running workloads <strong>actually apply those updates</strong> is more complex.</p>
+<p>Without an automated mechanism for applying configuration changes, teams often rely on operational workarounds such as:</p>
+<ul>
+<li>manually restarting deployments</li>
+<li>triggering redeployments through CI/CD pipelines</li>
+<li>writing custom scripts to force application restarts</li>
+<li>embedding reload logic inside individual applications</li>
+</ul>
+<p>These approaches introduce operational complexity and can lead to inconsistent behavior across environments.</p>
 <hr>
-<h3 id="sbom_2"><strong>SBOM</strong><a class="headerlink" href="#sbom_2" title="Permanent link">#</a></h3>
-<details>
-<summary>Click to expand SBOM JSON</summary>
-
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">"artifacts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ghcr.io/stakater/reloader-enterprise:v1.4.12"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"digest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sha256:beab96b6962e4ec0b72286033937359a808d3d91dc71d7d2e664a85f71269d69"</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ghcr.io/stakater/reloader-enterprise:v1.4.12-ubi"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"digest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sha256:656c439c4a23f7e7224d21a29fbbadb4325535023f71e278bc56c680b4ff1bb2"</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
-
-</details>
-
-<h2 id="v1411">v1.4.11<a class="headerlink" href="#v1411" title="Permanent link">#</a></h2>
-<h3 id="release-metadata_3"><strong>Release Metadata</strong><a class="headerlink" href="#release-metadata_3" title="Permanent link">#</a></h3>
-<table>
-  <tbody><tr><td><strong>Version</strong></td><td><code>v1.4.11</code></td></tr>
-  <tr><td><strong>Container Image</strong></td><td><code>ghcr.io/stakater/reloader-enterprise:v1.4.11</code></td></tr>
-  <tr><td><strong>Container Image UBI</strong></td><td><code>ghcr.io/stakater/reloader-enterprise:v1.4.11-ubi</code></td></tr>
-  <tr><td><strong>Reloader OSS Release Notes</strong></td><td><a href="https://github.com/stakater/Reloader/releases/tag/v1.4.11">Release Notes</a></td></tr>
-</tbody></table>
-
+<h2 id="operational-risks-of-manual-reloading">Operational Risks of Manual Reloading<a class="headerlink" href="#operational-risks-of-manual-reloading" title="Permanent link">#</a></h2>
+<p>Manual or ad-hoc approaches to configuration reloading can create several challenges.</p>
+<h3 id="human-error">Human error<a class="headerlink" href="#human-error" title="Permanent link">#</a></h3>
+<p>Configuration changes may be applied without restarting the workloads that depend on them.</p>
+<h3 id="inconsistent-operational-practices">Inconsistent operational practices<a class="headerlink" href="#inconsistent-operational-practices" title="Permanent link">#</a></h3>
+<p>Different teams may use different methods to apply configuration changes, making systems harder to operate.</p>
+<h3 id="delayed-application-of-security-updates">Delayed application of security updates<a class="headerlink" href="#delayed-application-of-security-updates" title="Permanent link">#</a></h3>
+<p>When credentials or certificates change, delays in applying those changes can create security risks.</p>
+<h3 id="increased-operational-overhead">Increased operational overhead<a class="headerlink" href="#increased-operational-overhead" title="Permanent link">#</a></h3>
+<p>Engineers must remember to trigger restarts whenever configuration changes occur.</p>
 <hr>
-<h3 id="sbom_3"><strong>SBOM</strong><a class="headerlink" href="#sbom_3" title="Permanent link">#</a></h3>
-<details>
-<summary>Click to expand SBOM JSON</summary>
-
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">"artifacts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ghcr.io/stakater/reloader-enterprise:v1.4.11"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"digest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sha256:a140a56de49df36ce6e5b813c4dedcd94feacc9aa4c03f50368bc6a5435e4605"</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ghcr.io/stakater/reloader-enterprise:v1.4.11-ubi"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"digest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sha256:070aa6636a101e31d2d0e2f70dc7e1694fe3360de83115c22831c4c011dc3c2d"</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
-
-</details>
-
-<h2 id="v1410">v1.4.10<a class="headerlink" href="#v1410" title="Permanent link">#</a></h2>
-<h3 id="release-metadata_4"><strong>Release Metadata</strong><a class="headerlink" href="#release-metadata_4" title="Permanent link">#</a></h3>
-<table>
-  <tbody><tr><td><strong>Version</strong></td><td><code>v1.4.10</code></td></tr>
-  <tr><td><strong>Container Image</strong></td><td><code>ghcr.io/stakater/reloader-enterprise:v1.4.10</code></td></tr>
-  <tr><td><strong>Container Image UBI</strong></td><td><code>ghcr.io/stakater/reloader-enterprise:v1.4.10-ubi</code></td></tr>
-  <tr><td><strong>Reloader OSS Release Notes</strong></td><td><a href="https://github.com/stakater/Reloader/releases/tag/v1.4.10">Release Notes</a></td></tr>
-</tbody></table>
-
+<h2 id="configuration-reloading-in-modern-platforms">Configuration Reloading in Modern Platforms<a class="headerlink" href="#configuration-reloading-in-modern-platforms" title="Permanent link">#</a></h2>
+<p>In mature platform environments, configuration propagation should be handled automatically rather than manually.</p>
+<p>An effective configuration reloading mechanism should:</p>
+<ul>
+<li>detect when configuration changes occur</li>
+<li>identify the workloads affected by those changes</li>
+<li>safely restart workloads when necessary</li>
+<li>ensure that applications start with the updated configuration</li>
+</ul>
+<p>Automating this process ensures consistent behavior across environments and reduces operational burden on platform teams.</p>
 <hr>
-<h3 id="sbom_4"><strong>SBOM</strong><a class="headerlink" href="#sbom_4" title="Permanent link">#</a></h3>
-<details>
-<summary>Click to expand SBOM JSON</summary>
-
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">"artifacts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ghcr.io/stakater/reloader-enterprise:v1.4.10"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"digest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sha256:b20e65ed59211bb03c8873767c45ca491385d6956913ebd8b31030e29f734b08"</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ghcr.io/stakater/reloader-enterprise:v1.4.10-ubi"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"digest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sha256:7717317a0aff163e22c572f0a9644fe5f41128c1f525d2a95e4f91d994193fb6"</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
-
-</details>
-
-<p><br></p>
-<h2 id="v149">v1.4.9<a class="headerlink" href="#v149" title="Permanent link">#</a></h2>
-<h3 id="release-metadata_5"><strong>Release Metadata</strong><a class="headerlink" href="#release-metadata_5" title="Permanent link">#</a></h3>
-<table>
-  <tbody><tr><td><strong>Version</strong></td><td><code>v1.4.9</code></td></tr>
-  <tr><td><strong>Container Image</strong></td><td><code>ghcr.io/stakater/reloader-enterprise:v1.4.9</code></td></tr>
-  <tr><td><strong>Container Image UBI</strong></td><td><code>ghcr.io/stakater/reloader-enterprise:v1.4.9-ubi</code></td></tr>
-  <tr><td><strong>Reloader OSS Release Notes</strong></td><td><a href="https://github.com/stakater/Reloader/releases/tag/v1.4.9">Release Notes</a></td></tr>
-</tbody></table>
-
+<h2 id="automated-configuration-reloading">Automated Configuration Reloading<a class="headerlink" href="#automated-configuration-reloading" title="Permanent link">#</a></h2>
+<p>Automated configuration reloading ensures that configuration changes are consistently applied to running workloads without requiring manual intervention.</p>
+<p>This provides several benefits:</p>
+<h3 id="operational-consistency">Operational consistency<a class="headerlink" href="#operational-consistency" title="Permanent link">#</a></h3>
+<p>Configuration changes are applied in a predictable and repeatable way.</p>
+<h3 id="improved-security">Improved security<a class="headerlink" href="#improved-security" title="Permanent link">#</a></h3>
+<p>Credential rotations and certificate renewals take effect immediately.</p>
+<h3 id="reduced-operational-complexity">Reduced operational complexity<a class="headerlink" href="#reduced-operational-complexity" title="Permanent link">#</a></h3>
+<p>Teams do not need to manually coordinate configuration updates and application restarts.</p>
+<h3 id="better-platform-reliability">Better platform reliability<a class="headerlink" href="#better-platform-reliability" title="Permanent link">#</a></h3>
+<p>Workloads always run with the intended configuration.</p>
 <hr>
-<h3 id="sbom_5"><strong>SBOM</strong><a class="headerlink" href="#sbom_5" title="Permanent link">#</a></h3>
-<details>
-<summary>Click to expand SBOM JSON</summary>
-
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">"artifacts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ghcr.io/stakater/reloader-enterprise:v1.4.9"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"digest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sha256:60a7c16e00d6df071161235e9b949283e206faa77b061247b87d54d7ca81bad0"</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ghcr.io/stakater/reloader-enterprise:v1.4.9-ubi"</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">"digest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sha256:2cc7f1b206b78d3530050406feed4a5acf2ae3b0bd59e8eb9f3d1c9120c8c6d4"</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="w">  </span><span class="p">]</span>
-<span class="p">}</span>
-</code></pre></div>
-
-</details>
-
-<p><small><i>Generated by automation</i></small></p>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
+<p>External configuration is a fundamental part of modern cloud-native applications. As systems evolve and configuration changes occur, platforms must ensure that those changes are reliably applied to running workloads.</p>
+<p>Automated configuration reloading helps ensure that configuration updates are propagated safely and consistently, reducing operational complexity and improving system reliability.</p>
+<p>The following section explains how configuration updates behave within Kubernetes and why additional mechanisms are often required to propagate configuration changes to running workloads.</p>
 
 
 
@@ -4599,27 +4353,27 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 <div class="flex-2">
                     <div class="logo-footer-container">
                         
-                        <img class="md-header__logo_light" src="assets/images/footer-logo-light.png#only-light" alt="logo">
+                        <img class="md-header__logo_light" src="../assets/images/footer-logo-light.png#only-light" alt="logo">
                         
                         
-                        <img src="assets/images/footer-logo-dark.png#only-dark" alt="logo">
+                        <img src="../assets/images/footer-logo-dark.png#only-dark" alt="logo">
                         
                     </div>
 
                     <div class="collaborations-img-container">
                         <div class="display-flex">
                             
-                            <img class="csa-logo-dark" src="assets/images/CSA_dark.png#only-dark" alt="CSA">
+                            <img class="csa-logo-dark" src="../assets/images/CSA_dark.png#only-dark" alt="CSA">
                             
                             
-                            <img class="csa-logo-light" src="assets/images/CSA_light.png#only-light" alt="CSA">
+                            <img class="csa-logo-light" src="../assets/images/CSA_light.png#only-light" alt="CSA">
                             
 
                             
-                            <img class="hc-logo-dark" src="assets/images/HC_dark.png#only-dark" alt="HC">
+                            <img class="hc-logo-dark" src="../assets/images/HC_dark.png#only-dark" alt="HC">
                             
                             
-                            <img class="hc-logo-light" src="assets/images/HC_light.png#only-light" alt="HC">
+                            <img class="hc-logo-light" src="../assets/images/HC_light.png#only-light" alt="HC">
                             
                         </div>
                     </div>
@@ -5011,10 +4765,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["content.code.copy", "navigation.tracking", "toc.follow", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.tracking", "toc.follow", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   
