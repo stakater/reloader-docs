@@ -2823,6 +2823,23 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="1. Manual Rollout Restart">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -2833,6 +2850,23 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="2. Checksum Annotations (Helm)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#limitations_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -3848,6 +3882,23 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="1. Manual Rollout Restart">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -3858,6 +3909,23 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="2. Checksum Annotations (Helm)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#limitations_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -4067,7 +4135,7 @@ Application<span class="w"> </span>still<span class="w"> </span>uses<span class=
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>restart<span class="w"> </span>deployment<span class="w"> </span>my-app
 </code></pre></div>
 <p>This forces Kubernetes to create new pods that read the updated ConfigMap.</p>
-<p><strong>Limitations</strong></p>
+<h4 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">#</a></h4>
 <ul>
 <li>Requires manual intervention</li>
 <li>Easy to forget in busy environments</li>
@@ -4082,7 +4150,7 @@ Application<span class="w"> </span>still<span class="w"> </span>uses<span class=
 <span class="w">    </span><span class="nt">checksum/config</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">include (print $.Template.BasePath "/configmap.yaml") . | sha256sum</span><span class="w"> </span><span class="p p-Indicator">}}</span>
 </code></pre></div>
 <p>When the ConfigMap content changes, the checksum changes as well, causing the Deployment to restart.</p>
-<p><strong>Limitations</strong></p>
+<h4 id="limitations_1">Limitations<a class="headerlink" href="#limitations_1" title="Permanent link">#</a></h4>
 <ul>
 <li>Requires modifying Helm charts</li>
 <li>Only works when Helm performs an upgrade</li>
