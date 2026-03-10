@@ -31,6 +31,8 @@ nav:
           - concepts/comparisons/reloader-vs-cert-manager.md
   - Install & Upgrade:
       - Reloader Enterprise: installation/install.md
+  - How-To Guides:
+      - how-to-guides/restart-pods-when-configmap-changes.md
   - Integrations:
       - Overview: integrations/index.md
       - Conjur:
