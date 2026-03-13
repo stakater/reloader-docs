@@ -2,7 +2,9 @@
   {
     "version": "update-docs-23035029300-8e459ad0e726b032934c3acd10d9886b10901917",
     "title": "update-docs-23035029300-8e459ad0e726b032934c3acd10d9886b10901917",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "renovate-main-stakater-vale-package-0.x",
@@ -47,9 +49,7 @@
   {
     "version": "renovate-main-docker-login-action-4.x",
     "title": "renovate-main-docker-login-action-4.x",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-main-actions-checkout-6.x",
