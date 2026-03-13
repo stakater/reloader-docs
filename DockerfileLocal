@@ -55,7 +55,7 @@ RUN rm -f prepare_theme.sh || true \
  && rm -rf theme_global theme_common dist || true
 
 # --- Runtime image ---
-FROM nginxinc/nginx-unprivileged:1.28-alpine AS deploy
+FROM nginxinc/nginx-unprivileged:1.29-alpine AS deploy
 
 # Copy built site
 COPY --from=builder /home/1001/application/site/ /usr/share/nginx/html/
