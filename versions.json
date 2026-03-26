@@ -42,9 +42,7 @@
   {
     "version": "renovate-main-docker-login-action-4.x",
     "title": "renovate-main-docker-login-action-4.x",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-main-actions-checkout-6.x",
@@ -54,6 +52,8 @@
   {
     "version": "abaziz-patch-1",
     "title": "abaziz-patch-1",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   }
 ]
