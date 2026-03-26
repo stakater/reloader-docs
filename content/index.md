@@ -8,8 +8,6 @@ In Kubernetes, updating a ConfigMap or Secret does not automatically update runn
 
 Reloader closes this gap by observing configuration changes and triggering workload updates based on explicit and predictable rules.
 
----
-
 ## ❤️ Support Reloader
 
 Reloader is used by teams running Kubernetes in production across the world.
@@ -53,18 +51,3 @@ Reloader ensures that configuration changes are not silently ignored. Once a cha
 ### Reduced Operational Risk
 
 By removing ad-hoc restarts and manual procedures, Reloader reduces human error and improves platform reliability.
-
----
-
-## 🚀 Running Reloader in Production?
-
-Reloader is often used in environments where reliability and consistency matter.
-
-If you're deploying it at scale:
-
-- Get guidance from the team behind it  
-- Explore enterprise-grade support  
-- Or run it as part of a managed Kubernetes platform  
-
-👉 [Talk to Stakater](https://www.stakater.com/contact-us)  
-👉 [Explore Stakater Cloud](https://www.stakater.cloud)  
