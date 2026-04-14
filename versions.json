@@ -52,13 +52,13 @@
   {
     "version": "msafwankarim-patch-1",
     "title": "msafwankarim-patch-1",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "abaziz-patch-1",
     "title": "abaziz-patch-1",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   }
 ]
