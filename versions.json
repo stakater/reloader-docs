@@ -17,7 +17,9 @@
   {
     "version": "renovate-main-playwright-monorepo",
     "title": "renovate-main-playwright-monorepo",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "renovate-main-node-24.x-lockfile",
@@ -52,9 +54,7 @@
   {
     "version": "msafwankarim-patch-1",
     "title": "msafwankarim-patch-1",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "abaziz-patch-1",
