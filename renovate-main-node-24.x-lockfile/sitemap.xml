@@ -2,154 +2,154 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/index.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/eula.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/help.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/versions.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/about/editions.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/about/value-by-role.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/about/why-reloader-matters.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/concepts/secret-propagation-problem-kubernetes.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/concepts/why-configuration-reloading-matters.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/concepts/comparisons/reloader-vs-cert-manager.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/concepts/comparisons/reloader-vs-checksum-annotations.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/concepts/comparisons/reloader-vs-gitops-tools.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/concepts/comparisons/reloader-vs-helm.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/concepts/comparisons/reloader-vs-init-containers.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/concepts/comparisons/reloader-vs-kyverno.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/concepts/comparisons/reloader-vs-manual-rollouts.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/concepts/comparisons/reloader-vs-secret-operators.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/concepts/comparisons/reloader-vs-sidecar-config-watchers.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/how-to-guides/reload-pods-on-tls-certificate-rotation.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/how-to-guides/restart-pods-when-configmap-changes.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/how-to-guides/restart-pods-when-external-secrets-change.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/how-to-guides/restart-pods-when-secret-changes.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/installation/install.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/integrations/index.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/integrations/conjur/index.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/integrations/conjur/conjur-csi.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/integrations/conjur/conjur-eso.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/integrations/conjur/conjur-sidecar.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/integrations/openbao/index.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/integrations/openbao/openbao-bso.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/integrations/openbao/openbao-csi-file.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/integrations/openbao/openbao-csi.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/integrations/openbao/openbao-eso.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/integrations/vault/index.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/integrations/vault/vault-csi-file.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/integrations/vault/vault-csi.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/integrations/vault/vault-eso.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/integrations/vault/vault-vso.html</loc>
-         <lastmod>2026-03-13</lastmod>
+         <lastmod>2026-04-15</lastmod>
     </url>
 </urlset>
