@@ -1,0 +1,14 @@
+name: Reloader Enterprise published dispatch
+
+on:
+  repository_dispatch:
+    types: [update-docs-workflow]
+
+jobs:
+  published-workflow-dispatch:
+    uses: stakater/reloader-docs/.github/workflows/update_docs.yaml@main
+    secrets: inherit
+    with:
+      RELOADER_GIT_TAG: ${{ github.event.client_payload.version }}
+      RELOADER_IMAGE_PATH: ${{ github.event.client_payload.path }}
+      RELOADER_SBOM_BASE64: ${{ github.event.client_payload.sbom_64 }}
