@@ -130,6 +130,44 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
 
+    - name: Sync to release branch
+      if: steps.check_changes.outputs.changed == 'true'
+      continue-on-error: true
+      env:
+        PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
+        TAG: ${{ inputs.RELOADER_GIT_TAG }}
+      run: |
+        set +e
+        VERSION="${TAG#v}"
+        BRANCH=$(printf '%s' "$VERSION" | grep -oE '^[0-9]+\.[0-9]+' | head -n1)
+        if [ -z "$BRANCH" ]; then
+          echo "::warning::Could not derive release branch from tag '$TAG'; skipping sync."
+          exit 0
+        fi
+        echo "Derived release branch: $BRANCH"
+
+        git fetch origin main "$BRANCH" 2>/dev/null
+        if ! git rev-parse --verify "refs/remotes/origin/$BRANCH" >/dev/null 2>&1; then
+          echo "::warning::Release branch '$BRANCH' does not exist on origin; skipping sync."
+          exit 0
+        fi
+
+        git remote set-url origin "https://x-access-token:${PUBLISH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+
+        git checkout -B "$BRANCH" "origin/$BRANCH"
+        if ! git merge --no-edit origin/main; then
+          echo "::warning::Merge conflict while syncing main into '$BRANCH'; aborting merge."
+          git merge --abort 2>/dev/null
+          exit 0
+        fi
+
+        if ! git push origin "$BRANCH"; then
+          echo "::warning::Failed to push updates to release branch '$BRANCH'."
+          exit 0
+        fi
+
+        echo "Successfully synced main into release branch '$BRANCH'."
+
     - name: No changes detected
       if: steps.check_changes.outputs.changed == 'false'
       run: echo "No version change detected; nothing to do."
