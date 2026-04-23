@@ -50,13 +50,6 @@
     "aliases": []
   },
   {
-    "version": "feat-push-to-release-channel-branch",
-    "title": "feat-push-to-release-channel-branch",
-    "aliases": [
-      "latest"
-    ]
-  },
-  {
     "version": "abaziz-patch-1",
     "title": "abaziz-patch-1",
     "aliases": []
