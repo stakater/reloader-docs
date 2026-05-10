@@ -19,7 +19,7 @@ Alerts are sent to a configured webhook endpoint with details about what changed
 
 ## Configuration
 
-Alerting is configured through environment variables on the Reloader deployment. The recommended way to set these is through the `reloader.deployment.env.secret` section of the Helm values, so that the webhook URL is stored as a Kubernetes Secret rather than in plaintext.
+Alerting is configured through environment variables on the Reloader deployment. The recommended way to set these is through the `reloader.deployment.env.secret` section of the Helm values, so that the webhook URL is stored as a Kubernetes Secret rather than in plain text.
 
 ```yaml
 reloader:

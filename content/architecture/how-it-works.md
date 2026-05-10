@@ -75,7 +75,7 @@ Reloader injects or updates an environment variable on each container in the pod
 | ConfigMap named `my-config` | `STAKATER_MY_CONFIG_CONFIGMAP` |
 | Secret named `db-credentials` | `STAKATER_DB_CREDENTIALS_SECRET` |
 
-The name is uppercased and any character that is not `A–Z` or `0–9` (including hyphens and dots) is replaced with `_`.
+The name is converted to uppercase and any character that is not `A–Z` or `0–9` (including hyphens and dots) is replaced with `_`.
 
 The variable value is the SHA1 hash of the resource's data. When the data changes, the hash changes, the environment variable is updated, and Kubernetes detects the pod template diff and initiates a rolling restart.
 

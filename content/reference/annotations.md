@@ -8,7 +8,7 @@ This page is the complete reference for every annotation Reloader supports, what
 
 ## Workload annotations
 
-These annotations are placed on workload resources: `Deployment`, `StatefulSet`, `DaemonSet`, `Argo Rollout`, `CronJob`, or `Job`.
+These annotations are placed on workload resources: `Deployment`, `StatefulSet`, `Daemonset`, `Argo Rollout`, `CronJob`, or `Job`.
 
 ### `reloader.stakater.com/auto`
 
@@ -16,7 +16,7 @@ Watches all `ConfigMaps` and `Secrets` that the workload references. When any of
 
 | Field | Value |
 |---|---|
-| **Applies to** | Deployment, StatefulSet, DaemonSet, Rollout, CronJob, Job |
+| **Applies to** | Deployment, StatefulSet, Daemonset, Rollout, CronJob, Job |
 | **Accepted values** | `"true"`, `"false"` |
 | **Default** | Not set (no-op) |
 
@@ -36,7 +36,7 @@ Like `reloader.stakater.com/auto` but restricted to `Secrets` only. ConfigMap ch
 
 | Field | Value |
 |---|---|
-| **Applies to** | Deployment, StatefulSet, DaemonSet, Rollout, CronJob, Job |
+| **Applies to** | Deployment, StatefulSet, Daemonset, Rollout, CronJob, Job |
 | **Accepted values** | `"true"` |
 
 ```yaml
@@ -53,7 +53,7 @@ Like `reloader.stakater.com/auto` but restricted to `ConfigMaps` only. Secret ch
 
 | Field | Value |
 |---|---|
-| **Applies to** | Deployment, StatefulSet, DaemonSet, Rollout, CronJob, Job |
+| **Applies to** | Deployment, StatefulSet, Daemonset, Rollout, CronJob, Job |
 | **Accepted values** | `"true"` |
 
 ```yaml
@@ -70,7 +70,7 @@ Triggers a reload when a `SecretProviderClass` resource changes. Used with the S
 
 | Field | Value |
 |---|---|
-| **Applies to** | Deployment, StatefulSet, DaemonSet, Rollout, CronJob, Job |
+| **Applies to** | Deployment, StatefulSet, Daemonset, Rollout, CronJob, Job |
 | **Accepted values** | `"true"` |
 
 ```yaml
@@ -87,7 +87,7 @@ Watches one or more named `Secrets` explicitly. The Secret does not need to be r
 
 | Field | Value |
 |---|---|
-| **Applies to** | Deployment, StatefulSet, DaemonSet, Rollout, CronJob, Job |
+| **Applies to** | Deployment, StatefulSet, Daemonset, Rollout, CronJob, Job |
 | **Accepted values** | Comma-separated Secret names |
 
 ```yaml
@@ -104,7 +104,7 @@ Watches one or more named `ConfigMaps` explicitly. The ConfigMap does not need t
 
 | Field | Value |
 |---|---|
-| **Applies to** | Deployment, StatefulSet, DaemonSet, Rollout, CronJob, Job |
+| **Applies to** | Deployment, StatefulSet, Daemonset, Rollout, CronJob, Job |
 | **Accepted values** | Comma-separated ConfigMap names |
 
 ```yaml
@@ -121,7 +121,7 @@ Watches one or more named `SecretProviderClass` resources explicitly.
 
 | Field | Value |
 |---|---|
-| **Applies to** | Deployment, StatefulSet, DaemonSet, Rollout, CronJob, Job |
+| **Applies to** | Deployment, StatefulSet, Daemonset, Rollout, CronJob, Job |
 | **Accepted values** | Comma-separated SecretProviderClass names |
 
 ```yaml
@@ -138,7 +138,7 @@ Enables search mode. Reloader only triggers a restart when a referenced `ConfigM
 
 | Field | Value |
 |---|---|
-| **Applies to** | Deployment, StatefulSet, DaemonSet, Rollout, CronJob, Job |
+| **Applies to** | Deployment, StatefulSet, Daemonset, Rollout, CronJob, Job |
 | **Accepted values** | `"true"` |
 
 ```yaml
@@ -157,7 +157,7 @@ Excludes specific `Secrets` from triggering a reload for this workload, even if 
 
 | Field | Value |
 |---|---|
-| **Applies to** | Deployment, StatefulSet, DaemonSet, Rollout, CronJob, Job |
+| **Applies to** | Deployment, StatefulSet, Daemonset, Rollout, CronJob, Job |
 | **Accepted values** | Comma-separated Secret names |
 
 ```yaml
@@ -175,7 +175,7 @@ Excludes specific `ConfigMaps` from triggering a reload for this workload.
 
 | Field | Value |
 |---|---|
-| **Applies to** | Deployment, StatefulSet, DaemonSet, Rollout, CronJob, Job |
+| **Applies to** | Deployment, StatefulSet, Daemonset, Rollout, CronJob, Job |
 | **Accepted values** | Comma-separated ConfigMap names |
 
 ```yaml
@@ -193,7 +193,7 @@ Excludes specific `SecretProviderClass` resources from triggering a reload.
 
 | Field | Value |
 |---|---|
-| **Applies to** | Deployment, StatefulSet, DaemonSet, Rollout, CronJob, Job |
+| **Applies to** | Deployment, StatefulSet, Daemonset, Rollout, CronJob, Job |
 | **Accepted values** | Comma-separated SecretProviderClass names |
 
 ---

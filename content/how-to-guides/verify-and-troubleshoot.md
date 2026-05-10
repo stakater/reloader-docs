@@ -14,7 +14,7 @@ kubectl get pods -n reloader -l app=reloader
 
 Expected output:
 
-```
+```text
 NAME                        READY   STATUS    RESTARTS   AGE
 reloader-6d8f9b7c4d-xk9zp   1/1     Running   0          5m
 ```
@@ -33,7 +33,7 @@ kubectl logs -n reloader -l app=reloader --tail=50
 
 A successful reload produces log lines like:
 
-```
+```text
 Changes detected in 'database-secret' of type 'SECRET' in namespace: production
 Updated 'my-app' of type 'Deployment' in namespace: production
 ```
@@ -72,7 +72,7 @@ Reloader exposes a Prometheus metrics endpoint at `/metrics` on port `9090`.
 
 ### Reload counters
 
-```
+```text
 reloader_reload_executed_total{success="true"}   # number of successful reloads
 reloader_reload_executed_total{success="false"}  # number of failed reloads
 ```
@@ -97,7 +97,7 @@ Or via the environment variable `METRICS_COUNT_BY_NAMESPACE=enabled` on the Relo
 
 When enabled:
 
-```
+```text
 reloader_reload_executed_total_by_namespace{success="true", namespace="production"}   1
 reloader_reload_executed_total_by_namespace{success="false", namespace="staging"}     2
 ```
@@ -196,7 +196,7 @@ spec:
 A single ConfigMap or Secret update should produce exactly one restart per matching workload. If you are seeing repeated restarts, check:
 
 - Whether the ConfigMap or Secret is being updated multiple times in quick succession (for example by an external sync controller with a short refresh interval)
-- Use `deployment.reloader.stakater.com/pause-period` to debounce rapid changes:
+- Use `deployment.reloader.stakater.com/pause-period` to rate-limit rapid changes:
 
 ```yaml
 metadata:
