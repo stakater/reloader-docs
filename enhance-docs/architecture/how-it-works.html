@@ -4228,7 +4228,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </tr>
 </tbody>
 </table>
-<p>The name is uppercased and any character that is not <code>A–Z</code> or <code>0–9</code> (including hyphens and dots) is replaced with <code>_</code>.</p>
+<p>The name is converted to uppercase and any character that is not <code>A–Z</code> or <code>0–9</code> (including hyphens and dots) is replaced with <code>_</code>.</p>
 <p>The variable value is the SHA1 hash of the resource's data. When the data changes, the hash changes, the environment variable is updated, and Kubernetes detects the pod template diff and initiates a rolling restart.</p>
 <p>If the environment variable already exists with the same hash value, no update is performed and no restart is triggered.</p>
 <h3 id="annotations"><code>annotations</code><a class="headerlink" href="#annotations" title="Permanent link">#</a></h3>

@@ -4128,7 +4128,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </table>
 <hr>
 <h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h2>
-<p>Alerting is configured through environment variables on the Reloader deployment. The recommended way to set these is through the <code>reloader.deployment.env.secret</code> section of the Helm values, so that the webhook URL is stored as a Kubernetes Secret rather than in plaintext.</p>
+<p>Alerting is configured through environment variables on the Reloader deployment. The recommended way to set these is through the <code>reloader.deployment.env.secret</code> section of the Helm values, so that the webhook URL is stored as a Kubernetes Secret rather than in plain text.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">env</span><span class="p">:</span>

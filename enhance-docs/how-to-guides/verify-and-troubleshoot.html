@@ -4388,7 +4388,7 @@ reloader_reload_executed_total_by_namespace{success="false", namespace="staging"
 <p>A single ConfigMap or Secret update should produce exactly one restart per matching workload. If you are seeing repeated restarts, check:</p>
 <ul>
 <li>Whether the ConfigMap or Secret is being updated multiple times in quick succession (for example by an external sync controller with a short refresh interval)</li>
-<li>Use <code>deployment.reloader.stakater.com/pause-period</code> to debounce rapid changes:</li>
+<li>Use <code>deployment.reloader.stakater.com/pause-period</code> to rate-limit rapid changes:</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
