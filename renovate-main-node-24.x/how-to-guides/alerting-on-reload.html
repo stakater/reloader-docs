@@ -5,29 +5,31 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-node-24.x/index.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-node-24.x/how-to-guides/alerting-on-reload.html">
       
       
+        <link rel="prev" href="restart-pods-when-external-secrets-change.html">
       
-        <link rel="next" href="about/why-reloader-matters.html">
+      
+        <link rel="next" href="verify-and-troubleshoot.html">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>What is Reloader? - Reloader</title>
+        <title>Alert When Reloader Triggers a Restart - Reloader</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -46,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -64,7 +66,7 @@
 
     
     
-  <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -93,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#what-is-reloader" class="md-skip">
+        <a href="#alert-when-reloader-triggers-a-restart" class="md-skip">
           Skip to content
         </a>
       
@@ -338,9 +340,9 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   <nav class="md-header__inner md-grid" aria-label="Header">
 
     <!-- Link to home -->
-    <a href="." title="Reloader" class="md-header__button md-logo" aria-label="Reloader" data-md-component="logo">
+    <a href=".." title="Reloader" class="md-header__button md-logo" aria-label="Reloader" data-md-component="logo">
       <!-- 
-  <img src="assets/images/logo.svg" alt="logo">
+  <img src="../assets/images/logo.svg" alt="logo">
  -->
     </a>
 
@@ -358,10 +360,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
         <!-- Logo -->
         <div class="md-header__topic">
           
-          <img class="md-header__logo_light" src="assets/images/logo.svg#only-light" alt="logo">
+          <img class="md-header__logo_light" src="../assets/images/logo.svg#only-light" alt="logo">
           
           
-          <img class="md-header__logo_dark" src="assets/images/logo.svg#only-dark" alt="logo">
+          <img class="md-header__logo_dark" src="../assets/images/logo.svg#only-dark" alt="logo">
           
           
           <div class="header-site-name">
@@ -1985,9 +1987,9 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Reloader" class="md-nav__button md-logo" aria-label="Reloader" data-md-component="logo">
+    <a href=".." title="Reloader" class="md-nav__button md-logo" aria-label="Reloader" data-md-component="logo">
       
-  <img src="assets/images/logo.svg" alt="logo">
+  <img src="../assets/images/logo.svg" alt="logo">
 
     </a>
     Reloader
@@ -2011,20 +2013,18 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1">
         
           
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
@@ -2045,7 +2045,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2060,37 +2060,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    What is Reloader?
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
         
   
   
@@ -2106,78 +2079,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#why-reloader-exists" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why Reloader Exists
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reloaders-operational-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reloader’s Operational Model
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Reloader’s Operational Model">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#deterministic-change-propagation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deterministic Change Propagation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reduced-operational-risk" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reduced Operational Risk
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2190,7 +2091,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="about/why-reloader-matters.html" class="md-nav__link">
+      <a href="../about/why-reloader-matters.html" class="md-nav__link">
         
   
   
@@ -2218,7 +2119,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="about/value-by-role.html" class="md-nav__link">
+      <a href="../about/value-by-role.html" class="md-nav__link">
         
   
   
@@ -2246,7 +2147,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="about/editions.html" class="md-nav__link">
+      <a href="../about/editions.html" class="md-nav__link">
         
   
   
@@ -2328,7 +2229,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="architecture/how-it-works.html" class="md-nav__link">
+      <a href="../architecture/how-it-works.html" class="md-nav__link">
         
   
   
@@ -2410,7 +2311,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/why-configuration-reloading-matters.html" class="md-nav__link">
+      <a href="../concepts/why-configuration-reloading-matters.html" class="md-nav__link">
         
   
   
@@ -2438,7 +2339,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/secret-propagation-problem-kubernetes.html" class="md-nav__link">
+      <a href="../concepts/secret-propagation-problem-kubernetes.html" class="md-nav__link">
         
   
   
@@ -2513,7 +2414,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/comparisons/reloader-vs-helm.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-helm.html" class="md-nav__link">
         
   
   
@@ -2541,7 +2442,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/comparisons/reloader-vs-checksum-annotations.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-checksum-annotations.html" class="md-nav__link">
         
   
   
@@ -2569,7 +2470,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/comparisons/reloader-vs-kyverno.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-kyverno.html" class="md-nav__link">
         
   
   
@@ -2597,7 +2498,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/comparisons/reloader-vs-sidecar-config-watchers.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-sidecar-config-watchers.html" class="md-nav__link">
         
   
   
@@ -2625,7 +2526,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/comparisons/reloader-vs-init-containers.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-init-containers.html" class="md-nav__link">
         
   
   
@@ -2653,7 +2554,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/comparisons/reloader-vs-manual-rollouts.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-manual-rollouts.html" class="md-nav__link">
         
   
   
@@ -2681,7 +2582,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/comparisons/reloader-vs-gitops-tools.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-gitops-tools.html" class="md-nav__link">
         
   
   
@@ -2709,7 +2610,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/comparisons/reloader-vs-secret-operators.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-secret-operators.html" class="md-nav__link">
         
   
   
@@ -2737,7 +2638,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/comparisons/reloader-vs-cert-manager.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-cert-manager.html" class="md-nav__link">
         
   
   
@@ -2827,7 +2728,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="installation/install-oss.html" class="md-nav__link">
+      <a href="../installation/install-oss.html" class="md-nav__link">
         
   
   
@@ -2855,7 +2756,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="installation/install.html" class="md-nav__link">
+      <a href="../installation/install.html" class="md-nav__link">
         
   
   
@@ -2887,18 +2788,20 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -2919,7 +2822,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2937,7 +2840,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="how-to-guides/restart-pods-when-configmap-changes.html" class="md-nav__link">
+      <a href="restart-pods-when-configmap-changes.html" class="md-nav__link">
         
   
   
@@ -2965,7 +2868,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="how-to-guides/restart-pods-when-secret-changes.html" class="md-nav__link">
+      <a href="restart-pods-when-secret-changes.html" class="md-nav__link">
         
   
   
@@ -2993,7 +2896,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="how-to-guides/reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
+      <a href="reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
         
   
   
@@ -3021,7 +2924,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="how-to-guides/restart-pods-when-external-secrets-change.html" class="md-nav__link">
+      <a href="restart-pods-when-external-secrets-change.html" class="md-nav__link">
         
   
   
@@ -3046,10 +2949,37 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="how-to-guides/alerting-on-reload.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alert When Reloader Triggers a Restart
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="alerting-on-reload.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3065,6 +2995,122 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#supported-sinks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported sinks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-teams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microsoft Teams
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-chat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google Chat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raw-webhook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raw webhook
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-an-existing-kubernetes-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using an existing Kubernetes Secret
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3077,7 +3123,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="how-to-guides/verify-and-troubleshoot.html" class="md-nav__link">
+      <a href="verify-and-troubleshoot.html" class="md-nav__link">
         
   
   
@@ -3159,7 +3205,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/index.html" class="md-nav__link">
+      <a href="../integrations/index.html" class="md-nav__link">
         
   
   
@@ -3234,7 +3280,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/conjur/index.html" class="md-nav__link">
+      <a href="../integrations/conjur/index.html" class="md-nav__link">
         
   
   
@@ -3262,7 +3308,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/conjur/conjur-eso.html" class="md-nav__link">
+      <a href="../integrations/conjur/conjur-eso.html" class="md-nav__link">
         
   
   
@@ -3290,7 +3336,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/conjur/conjur-sidecar.html" class="md-nav__link">
+      <a href="../integrations/conjur/conjur-sidecar.html" class="md-nav__link">
         
   
   
@@ -3318,7 +3364,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/conjur/conjur-csi.html" class="md-nav__link">
+      <a href="../integrations/conjur/conjur-csi.html" class="md-nav__link">
         
   
   
@@ -3401,7 +3447,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/vault/index.html" class="md-nav__link">
+      <a href="../integrations/vault/index.html" class="md-nav__link">
         
   
   
@@ -3429,7 +3475,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/vault/vault-eso.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-eso.html" class="md-nav__link">
         
   
   
@@ -3457,7 +3503,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/vault/vault-vso.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-vso.html" class="md-nav__link">
         
   
   
@@ -3485,7 +3531,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/vault/vault-csi.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-csi.html" class="md-nav__link">
         
   
   
@@ -3513,7 +3559,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/vault/vault-csi-file.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-csi-file.html" class="md-nav__link">
         
   
   
@@ -3596,7 +3642,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/openbao/index.html" class="md-nav__link">
+      <a href="../integrations/openbao/index.html" class="md-nav__link">
         
   
   
@@ -3624,7 +3670,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/openbao/openbao-eso.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-eso.html" class="md-nav__link">
         
   
   
@@ -3652,7 +3698,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/openbao/openbao-bso.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-bso.html" class="md-nav__link">
         
   
   
@@ -3680,7 +3726,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/openbao/openbao-csi.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-csi.html" class="md-nav__link">
         
   
   
@@ -3708,7 +3754,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/openbao/openbao-csi-file.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-csi-file.html" class="md-nav__link">
         
   
   
@@ -3798,7 +3844,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reference/annotations.html" class="md-nav__link">
+      <a href="../reference/annotations.html" class="md-nav__link">
         
   
   
@@ -3833,7 +3879,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="eula.html" class="md-nav__link">
+      <a href="../eula.html" class="md-nav__link">
         
   
   
@@ -3860,7 +3906,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="help.html" class="md-nav__link">
+      <a href="../help.html" class="md-nav__link">
         
   
   
@@ -3887,7 +3933,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="versions.html" class="md-nav__link">
+      <a href="../versions.html" class="md-nav__link">
         
   
   
@@ -3936,10 +3982,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#why-reloader-exists" class="md-nav__link">
+  <a href="#supported-sinks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why Reloader Exists
+        Supported sinks
       
     </span>
   </a>
@@ -3947,22 +3993,33 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#reloaders-operational-model" class="md-nav__link">
+  <a href="#configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reloader’s Operational Model
+        Configuration
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Reloader’s Operational Model">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#deterministic-change-propagation" class="md-nav__link">
+  <a href="#slack" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Deterministic Change Propagation
+        Slack
       
     </span>
   </a>
@@ -3970,10 +4027,32 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#reduced-operational-risk" class="md-nav__link">
+  <a href="#microsoft-teams" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reduced Operational Risk
+        Microsoft Teams
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-chat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google Chat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raw-webhook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raw webhook
       
     </span>
   </a>
@@ -3982,6 +4061,17 @@ This documentation is for a pull request deployment and is unreleased, it is onl
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-an-existing-kubernetes-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using an existing Kubernetes Secret
+      
+    </span>
+  </a>
   
 </li>
       
@@ -4005,37 +4095,136 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="what-is-reloader">What is Reloader?<a class="headerlink" href="#what-is-reloader" title="Permanent link">#</a></h1>
-<blockquote>
-<p>Configuration changes, applied safely — every time.</p>
-</blockquote>
-<p>Reloader ensures that configuration and secret changes in Kubernetes are applied to running workloads in a <strong>safe, automatic, and consistent</strong> way.</p>
-<p>In Kubernetes, updating a ConfigMap or Secret does not automatically update running Pods. Without additional controls, this often leads to manual restarts, stale configuration, and operational risk.</p>
-<p>Reloader closes this gap by observing configuration changes and triggering workload updates based on explicit and predictable rules.</p>
-<h2 id="why-reloader-exists">Why Reloader Exists<a class="headerlink" href="#why-reloader-exists" title="Permanent link">#</a></h2>
-<p>In many Kubernetes environments, configuration changes rely on manual intervention or best-effort operational practices.</p>
-<p>Common challenges include:</p>
-<ul>
-<li>Workloads running with outdated configuration or secrets</li>
-<li>Manual restarts causing downtime or errors</li>
-<li>Inconsistent behavior across environments</li>
-<li>Platform teams becoming operational bottlenecks</li>
-</ul>
-<p>Reloader was created to make configuration changes <strong>deterministic operational events</strong>, rather than ad-hoc procedures.</p>
-<h2 id="reloaders-operational-model">Reloader’s Operational Model<a class="headerlink" href="#reloaders-operational-model" title="Permanent link">#</a></h2>
-<p>Reloader introduces a consistent operational model for handling configuration and secret changes in Kubernetes.</p>
-<p>At a high level:</p>
-<ol>
-<li>Configuration or secrets are updated</li>
-<li>Reloader detects the change</li>
-<li>A controlled workload update is triggered</li>
-<li>The updated configuration is applied at runtime</li>
-</ol>
-<p>This model ensures that approved configuration changes are actually reflected in running workloads, without requiring application changes or manual intervention.</p>
-<h3 id="deterministic-change-propagation">Deterministic Change Propagation<a class="headerlink" href="#deterministic-change-propagation" title="Permanent link">#</a></h3>
-<p>Reloader ensures that configuration changes are not silently ignored. Once a change is detected, the corresponding workload update follows a predictable and observable path.</p>
-<h3 id="reduced-operational-risk">Reduced Operational Risk<a class="headerlink" href="#reduced-operational-risk" title="Permanent link">#</a></h3>
-<p>By removing ad-hoc restarts and manual procedures, Reloader reduces human error and improves platform reliability.</p>
+<h1 id="alert-when-reloader-triggers-a-restart">Alert When Reloader Triggers a Restart<a class="headerlink" href="#alert-when-reloader-triggers-a-restart" title="Permanent link">#</a></h1>
+<p>Reloader can send a webhook notification whenever it triggers a rolling restart. This is useful for audit trails, operational visibility, and integrating with incident management workflows.</p>
+<p>Alerts are sent to a configured webhook endpoint with details about what changed and which workload was restarted.</p>
+<hr>
+<h2 id="supported-sinks">Supported sinks<a class="headerlink" href="#supported-sinks" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sink</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Raw webhook (default)</td>
+<td><code>webhook</code></td>
+</tr>
+<tr>
+<td>Slack</td>
+<td><code>slack</code></td>
+</tr>
+<tr>
+<td>Microsoft Teams</td>
+<td><code>teams</code></td>
+</tr>
+<tr>
+<td>Google Chat</td>
+<td><code>gchat</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h2>
+<p>Alerting is configured through environment variables on the Reloader deployment. The recommended way to set these is through the <code>reloader.deployment.env.secret</code> section of the Helm values, so that the webhook URL is stored as a Kubernetes Secret rather than in plain text.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">secret</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">ALERT_ON_RELOAD</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">        </span><span class="nt">ALERT_SINK</span><span class="p">:</span><span class="w"> </span><span class="s">"slack"</span>
+<span class="w">        </span><span class="nt">ALERT_WEBHOOK_URL</span><span class="p">:</span><span class="w"> </span><span class="s">"https://hooks.slack.com/services/..."</span>
+<span class="w">        </span><span class="nt">ALERT_ADDITIONAL_INFO</span><span class="p">:</span><span class="w"> </span><span class="s">"Cluster:</span><span class="nv"> </span><span class="s">production-eu"</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ALERT_ON_RELOAD</code></td>
+<td>Yes</td>
+<td>Set to <code>"true"</code> to enable alerting. Default: <code>false</code></td>
+</tr>
+<tr>
+<td><code>ALERT_SINK</code></td>
+<td>No</td>
+<td>Sink type: <code>slack</code>, <code>teams</code>, <code>gchat</code>, or <code>webhook</code>. Default: <code>webhook</code></td>
+</tr>
+<tr>
+<td><code>ALERT_WEBHOOK_URL</code></td>
+<td>Yes (when alerting enabled)</td>
+<td>The webhook URL to send notifications to</td>
+</tr>
+<tr>
+<td><code>ALERT_ADDITIONAL_INFO</code></td>
+<td>No</td>
+<td>Free-text string appended to the alert payload. Useful for adding context such as cluster name or environment</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
+<h3 id="slack">Slack<a class="headerlink" href="#slack" title="Permanent link">#</a></h3>
+<p>Create a Slack Incoming Webhook by following the <a href="https://api.slack.com/messaging/webhooks">Slack documentation</a>, then configure:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">secret</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">ALERT_ON_RELOAD</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">        </span><span class="nt">ALERT_SINK</span><span class="p">:</span><span class="w"> </span><span class="s">"slack"</span>
+<span class="w">        </span><span class="nt">ALERT_WEBHOOK_URL</span><span class="p">:</span><span class="w"> </span><span class="s">"https://hooks.slack.com/services/&lt;workspace-id&gt;/&lt;channel-id&gt;/&lt;token&gt;"</span>
+<span class="w">        </span><span class="nt">ALERT_ADDITIONAL_INFO</span><span class="p">:</span><span class="w"> </span><span class="s">"Cluster:</span><span class="nv"> </span><span class="s">production"</span>
+</code></pre></div>
+<h3 id="microsoft-teams">Microsoft Teams<a class="headerlink" href="#microsoft-teams" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">secret</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">ALERT_ON_RELOAD</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">        </span><span class="nt">ALERT_SINK</span><span class="p">:</span><span class="w"> </span><span class="s">"teams"</span>
+<span class="w">        </span><span class="nt">ALERT_WEBHOOK_URL</span><span class="p">:</span><span class="w"> </span><span class="s">"https://outlook.office.com/webhook/..."</span>
+</code></pre></div>
+<h3 id="google-chat">Google Chat<a class="headerlink" href="#google-chat" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">secret</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">ALERT_ON_RELOAD</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">        </span><span class="nt">ALERT_SINK</span><span class="p">:</span><span class="w"> </span><span class="s">"gchat"</span>
+<span class="w">        </span><span class="nt">ALERT_WEBHOOK_URL</span><span class="p">:</span><span class="w"> </span><span class="s">"https://chat.googleapis.com/v1/spaces/..."</span>
+</code></pre></div>
+<h3 id="raw-webhook">Raw webhook<a class="headerlink" href="#raw-webhook" title="Permanent link">#</a></h3>
+<p>When <code>ALERT_SINK</code> is set to <code>webhook</code> (or left unset), Reloader sends a plain JSON POST to the URL.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">secret</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">ALERT_ON_RELOAD</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">        </span><span class="nt">ALERT_SINK</span><span class="p">:</span><span class="w"> </span><span class="s">"webhook"</span>
+<span class="w">        </span><span class="nt">ALERT_WEBHOOK_URL</span><span class="p">:</span><span class="w"> </span><span class="s">"https://your-internal-service/reloader-events"</span>
+<span class="w">        </span><span class="nt">ALERT_ADDITIONAL_INFO</span><span class="p">:</span><span class="w"> </span><span class="s">"env=staging"</span>
+</code></pre></div>
+<hr>
+<h2 id="using-an-existing-kubernetes-secret">Using an existing Kubernetes Secret<a class="headerlink" href="#using-an-existing-kubernetes-secret" title="Permanent link">#</a></h2>
+<p>If you already manage secrets externally (for example via External Secrets Operator), you can reference an existing Kubernetes Secret instead:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">existing</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">my-alert-secret</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">ALERT_ON_RELOAD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alert_on_reload</span>
+<span class="w">          </span><span class="nt">ALERT_SINK</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alert_sink</span>
+<span class="w">          </span><span class="nt">ALERT_WEBHOOK_URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alert_webhook_url</span>
+<span class="w">          </span><span class="nt">ALERT_ADDITIONAL_INFO</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alert_additional_info</span>
+</code></pre></div>
+<p>This maps each environment variable to a key in the existing Secret named <code>my-alert-secret</code>.</p>
 
 
 
@@ -4329,27 +4518,27 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 <div class="flex-2">
                     <div class="logo-footer-container">
                         
-                        <img class="md-header__logo_light" src="assets/images/footer-logo-light.png#only-light" alt="logo">
+                        <img class="md-header__logo_light" src="../assets/images/footer-logo-light.png#only-light" alt="logo">
                         
                         
-                        <img src="assets/images/footer-logo-dark.png#only-dark" alt="logo">
+                        <img src="../assets/images/footer-logo-dark.png#only-dark" alt="logo">
                         
                     </div>
 
                     <div class="collaborations-img-container">
                         <div class="display-flex">
                             
-                            <img class="csa-logo-dark" src="assets/images/CSA_dark.png#only-dark" alt="CSA">
+                            <img class="csa-logo-dark" src="../assets/images/CSA_dark.png#only-dark" alt="CSA">
                             
                             
-                            <img class="csa-logo-light" src="assets/images/CSA_light.png#only-light" alt="CSA">
+                            <img class="csa-logo-light" src="../assets/images/CSA_light.png#only-light" alt="CSA">
                             
 
                             
-                            <img class="hc-logo-dark" src="assets/images/HC_dark.png#only-dark" alt="HC">
+                            <img class="hc-logo-dark" src="../assets/images/HC_dark.png#only-dark" alt="HC">
                             
                             
-                            <img class="hc-logo-light" src="assets/images/HC_light.png#only-light" alt="HC">
+                            <img class="hc-logo-light" src="../assets/images/HC_light.png#only-light" alt="HC">
                             
                         </div>
                     </div>
@@ -4741,10 +4930,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["content.code.copy", "navigation.tracking", "toc.follow", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.tracking", "toc.follow", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   

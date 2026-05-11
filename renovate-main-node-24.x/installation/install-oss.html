@@ -5,29 +5,31 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-node-24.x/index.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-node-24.x/installation/install-oss.html">
       
       
+        <link rel="prev" href="../concepts/comparisons/reloader-vs-cert-manager.html">
       
-        <link rel="next" href="about/why-reloader-matters.html">
+      
+        <link rel="next" href="install.html">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>What is Reloader? - Reloader</title>
+        <title>Reloader OSS - Reloader</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -46,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -64,7 +66,7 @@
 
     
     
-  <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -93,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#what-is-reloader" class="md-skip">
+        <a href="#reloader-oss-installation" class="md-skip">
           Skip to content
         </a>
       
@@ -338,9 +340,9 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   <nav class="md-header__inner md-grid" aria-label="Header">
 
     <!-- Link to home -->
-    <a href="." title="Reloader" class="md-header__button md-logo" aria-label="Reloader" data-md-component="logo">
+    <a href=".." title="Reloader" class="md-header__button md-logo" aria-label="Reloader" data-md-component="logo">
       <!-- 
-  <img src="assets/images/logo.svg" alt="logo">
+  <img src="../assets/images/logo.svg" alt="logo">
  -->
     </a>
 
@@ -358,10 +360,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
         <!-- Logo -->
         <div class="md-header__topic">
           
-          <img class="md-header__logo_light" src="assets/images/logo.svg#only-light" alt="logo">
+          <img class="md-header__logo_light" src="../assets/images/logo.svg#only-light" alt="logo">
           
           
-          <img class="md-header__logo_dark" src="assets/images/logo.svg#only-dark" alt="logo">
+          <img class="md-header__logo_dark" src="../assets/images/logo.svg#only-dark" alt="logo">
           
           
           <div class="header-site-name">
@@ -1985,9 +1987,9 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Reloader" class="md-nav__button md-logo" aria-label="Reloader" data-md-component="logo">
+    <a href=".." title="Reloader" class="md-nav__button md-logo" aria-label="Reloader" data-md-component="logo">
       
-  <img src="assets/images/logo.svg" alt="logo">
+  <img src="../assets/images/logo.svg" alt="logo">
 
     </a>
     Reloader
@@ -2011,20 +2013,18 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1">
         
           
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
@@ -2045,7 +2045,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2060,37 +2060,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    What is Reloader?
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
         
   
   
@@ -2106,78 +2079,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#why-reloader-exists" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why Reloader Exists
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reloaders-operational-model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reloader’s Operational Model
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Reloader’s Operational Model">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#deterministic-change-propagation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deterministic Change Propagation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reduced-operational-risk" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reduced Operational Risk
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2190,7 +2091,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="about/why-reloader-matters.html" class="md-nav__link">
+      <a href="../about/why-reloader-matters.html" class="md-nav__link">
         
   
   
@@ -2218,7 +2119,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="about/value-by-role.html" class="md-nav__link">
+      <a href="../about/value-by-role.html" class="md-nav__link">
         
   
   
@@ -2246,7 +2147,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="about/editions.html" class="md-nav__link">
+      <a href="../about/editions.html" class="md-nav__link">
         
   
   
@@ -2328,7 +2229,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="architecture/how-it-works.html" class="md-nav__link">
+      <a href="../architecture/how-it-works.html" class="md-nav__link">
         
   
   
@@ -2410,7 +2311,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/why-configuration-reloading-matters.html" class="md-nav__link">
+      <a href="../concepts/why-configuration-reloading-matters.html" class="md-nav__link">
         
   
   
@@ -2438,7 +2339,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/secret-propagation-problem-kubernetes.html" class="md-nav__link">
+      <a href="../concepts/secret-propagation-problem-kubernetes.html" class="md-nav__link">
         
   
   
@@ -2513,7 +2414,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/comparisons/reloader-vs-helm.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-helm.html" class="md-nav__link">
         
   
   
@@ -2541,7 +2442,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/comparisons/reloader-vs-checksum-annotations.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-checksum-annotations.html" class="md-nav__link">
         
   
   
@@ -2569,7 +2470,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/comparisons/reloader-vs-kyverno.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-kyverno.html" class="md-nav__link">
         
   
   
@@ -2597,7 +2498,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/comparisons/reloader-vs-sidecar-config-watchers.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-sidecar-config-watchers.html" class="md-nav__link">
         
   
   
@@ -2625,7 +2526,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/comparisons/reloader-vs-init-containers.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-init-containers.html" class="md-nav__link">
         
   
   
@@ -2653,7 +2554,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/comparisons/reloader-vs-manual-rollouts.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-manual-rollouts.html" class="md-nav__link">
         
   
   
@@ -2681,7 +2582,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/comparisons/reloader-vs-gitops-tools.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-gitops-tools.html" class="md-nav__link">
         
   
   
@@ -2709,7 +2610,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/comparisons/reloader-vs-secret-operators.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-secret-operators.html" class="md-nav__link">
         
   
   
@@ -2737,7 +2638,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="concepts/comparisons/reloader-vs-cert-manager.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-cert-manager.html" class="md-nav__link">
         
   
   
@@ -2777,18 +2678,20 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked="">
         
           
           <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -2809,7 +2712,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2824,10 +2727,37 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="installation/install-oss.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reloader OSS
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="install-oss.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2843,6 +2773,299 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#helm-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Helm (recommended)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Helm (recommended)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-add-the-stakater-helm-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Add the Stakater Helm repository
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-install-reloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Install Reloader
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-verify-the-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Verify the installation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes-manifests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kubernetes manifests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kustomize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kustomize
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common configurations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common configurations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#watch-a-single-namespace-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Watch a single namespace only
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#watch-only-specific-namespaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Watch only specific namespaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#watch-only-resources-with-specific-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Watch only resources with specific labels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-argo-rollouts-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable Argo Rollouts support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-openshift-deploymentconfig-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable OpenShift DeploymentConfig support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-csi-driver-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable CSI Driver integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reload-on-resource-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reload on resource creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-high-availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable High Availability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-reload-all-workloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto-reload all workloads
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignore-jobs-and-cronjobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ignore Jobs and CronJobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-the-reload-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change the reload strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#helm-values-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Helm values reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Helm values reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resource-requests-and-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource requests and limits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openshift-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenShift notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uninstall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uninstall
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2855,7 +3078,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="installation/install.html" class="md-nav__link">
+      <a href="install.html" class="md-nav__link">
         
   
   
@@ -2937,7 +3160,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="how-to-guides/restart-pods-when-configmap-changes.html" class="md-nav__link">
+      <a href="../how-to-guides/restart-pods-when-configmap-changes.html" class="md-nav__link">
         
   
   
@@ -2965,7 +3188,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="how-to-guides/restart-pods-when-secret-changes.html" class="md-nav__link">
+      <a href="../how-to-guides/restart-pods-when-secret-changes.html" class="md-nav__link">
         
   
   
@@ -2993,7 +3216,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="how-to-guides/reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
+      <a href="../how-to-guides/reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
         
   
   
@@ -3021,7 +3244,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="how-to-guides/restart-pods-when-external-secrets-change.html" class="md-nav__link">
+      <a href="../how-to-guides/restart-pods-when-external-secrets-change.html" class="md-nav__link">
         
   
   
@@ -3049,7 +3272,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="how-to-guides/alerting-on-reload.html" class="md-nav__link">
+      <a href="../how-to-guides/alerting-on-reload.html" class="md-nav__link">
         
   
   
@@ -3077,7 +3300,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="how-to-guides/verify-and-troubleshoot.html" class="md-nav__link">
+      <a href="../how-to-guides/verify-and-troubleshoot.html" class="md-nav__link">
         
   
   
@@ -3159,7 +3382,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/index.html" class="md-nav__link">
+      <a href="../integrations/index.html" class="md-nav__link">
         
   
   
@@ -3234,7 +3457,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/conjur/index.html" class="md-nav__link">
+      <a href="../integrations/conjur/index.html" class="md-nav__link">
         
   
   
@@ -3262,7 +3485,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/conjur/conjur-eso.html" class="md-nav__link">
+      <a href="../integrations/conjur/conjur-eso.html" class="md-nav__link">
         
   
   
@@ -3290,7 +3513,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/conjur/conjur-sidecar.html" class="md-nav__link">
+      <a href="../integrations/conjur/conjur-sidecar.html" class="md-nav__link">
         
   
   
@@ -3318,7 +3541,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/conjur/conjur-csi.html" class="md-nav__link">
+      <a href="../integrations/conjur/conjur-csi.html" class="md-nav__link">
         
   
   
@@ -3401,7 +3624,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/vault/index.html" class="md-nav__link">
+      <a href="../integrations/vault/index.html" class="md-nav__link">
         
   
   
@@ -3429,7 +3652,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/vault/vault-eso.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-eso.html" class="md-nav__link">
         
   
   
@@ -3457,7 +3680,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/vault/vault-vso.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-vso.html" class="md-nav__link">
         
   
   
@@ -3485,7 +3708,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/vault/vault-csi.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-csi.html" class="md-nav__link">
         
   
   
@@ -3513,7 +3736,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/vault/vault-csi-file.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-csi-file.html" class="md-nav__link">
         
   
   
@@ -3596,7 +3819,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/openbao/index.html" class="md-nav__link">
+      <a href="../integrations/openbao/index.html" class="md-nav__link">
         
   
   
@@ -3624,7 +3847,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/openbao/openbao-eso.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-eso.html" class="md-nav__link">
         
   
   
@@ -3652,7 +3875,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/openbao/openbao-bso.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-bso.html" class="md-nav__link">
         
   
   
@@ -3680,7 +3903,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/openbao/openbao-csi.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-csi.html" class="md-nav__link">
         
   
   
@@ -3708,7 +3931,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="integrations/openbao/openbao-csi-file.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-csi-file.html" class="md-nav__link">
         
   
   
@@ -3798,7 +4021,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reference/annotations.html" class="md-nav__link">
+      <a href="../reference/annotations.html" class="md-nav__link">
         
   
   
@@ -3833,7 +4056,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="eula.html" class="md-nav__link">
+      <a href="../eula.html" class="md-nav__link">
         
   
   
@@ -3860,7 +4083,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="help.html" class="md-nav__link">
+      <a href="../help.html" class="md-nav__link">
         
   
   
@@ -3887,7 +4110,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="versions.html" class="md-nav__link">
+      <a href="../versions.html" class="md-nav__link">
         
   
   
@@ -3936,10 +4159,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#why-reloader-exists" class="md-nav__link">
+  <a href="#requirements" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why Reloader Exists
+        Requirements
       
     </span>
   </a>
@@ -3947,22 +4170,22 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#reloaders-operational-model" class="md-nav__link">
+  <a href="#helm-recommended" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reloader’s Operational Model
+        Helm (recommended)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Reloader’s Operational Model">
+    <nav class="md-nav" aria-label="Helm (recommended)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#deterministic-change-propagation" class="md-nav__link">
+  <a href="#step-1-add-the-stakater-helm-repository" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Deterministic Change Propagation
+        Step 1 — Add the Stakater Helm repository
       
     </span>
   </a>
@@ -3970,10 +4193,21 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#reduced-operational-risk" class="md-nav__link">
+  <a href="#step-2-install-reloader" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reduced Operational Risk
+        Step 2 — Install Reloader
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-verify-the-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Verify the installation
       
     </span>
   </a>
@@ -3982,6 +4216,216 @@ This documentation is for a pull request deployment and is unreleased, it is onl
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kubernetes-manifests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kubernetes manifests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kustomize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Kustomize
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common configurations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common configurations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#watch-a-single-namespace-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Watch a single namespace only
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#watch-only-specific-namespaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Watch only specific namespaces
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#watch-only-resources-with-specific-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Watch only resources with specific labels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-argo-rollouts-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable Argo Rollouts support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-openshift-deploymentconfig-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable OpenShift DeploymentConfig support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-csi-driver-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable CSI Driver integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reload-on-resource-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reload on resource creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-high-availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable High Availability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-reload-all-workloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto-reload all workloads
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ignore-jobs-and-cronjobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ignore Jobs and CronJobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#change-the-reload-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Change the reload strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#helm-values-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Helm values reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Helm values reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resource-requests-and-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resource requests and limits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openshift-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenShift notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uninstall" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Uninstall
+      
+    </span>
+  </a>
   
 </li>
       
@@ -4005,37 +4449,319 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="what-is-reloader">What is Reloader?<a class="headerlink" href="#what-is-reloader" title="Permanent link">#</a></h1>
-<blockquote>
-<p>Configuration changes, applied safely — every time.</p>
-</blockquote>
-<p>Reloader ensures that configuration and secret changes in Kubernetes are applied to running workloads in a <strong>safe, automatic, and consistent</strong> way.</p>
-<p>In Kubernetes, updating a ConfigMap or Secret does not automatically update running Pods. Without additional controls, this often leads to manual restarts, stale configuration, and operational risk.</p>
-<p>Reloader closes this gap by observing configuration changes and triggering workload updates based on explicit and predictable rules.</p>
-<h2 id="why-reloader-exists">Why Reloader Exists<a class="headerlink" href="#why-reloader-exists" title="Permanent link">#</a></h2>
-<p>In many Kubernetes environments, configuration changes rely on manual intervention or best-effort operational practices.</p>
-<p>Common challenges include:</p>
+<h1 id="reloader-oss-installation">Reloader OSS Installation<a class="headerlink" href="#reloader-oss-installation" title="Permanent link">#</a></h1>
+<p>Reloader OSS is free and open source. It is distributed via:</p>
 <ul>
-<li>Workloads running with outdated configuration or secrets</li>
-<li>Manual restarts causing downtime or errors</li>
-<li>Inconsistent behavior across environments</li>
-<li>Platform teams becoming operational bottlenecks</li>
+<li><a href="#helm-recommended">Helm chart</a> — recommended for production</li>
+<li><a href="#kubernetes-manifests">Kubernetes manifests</a> — single <code>kubectl apply</code></li>
+<li><a href="#kustomize">Kustomize</a></li>
 </ul>
-<p>Reloader was created to make configuration changes <strong>deterministic operational events</strong>, rather than ad-hoc procedures.</p>
-<h2 id="reloaders-operational-model">Reloader’s Operational Model<a class="headerlink" href="#reloaders-operational-model" title="Permanent link">#</a></h2>
-<p>Reloader introduces a consistent operational model for handling configuration and secret changes in Kubernetes.</p>
-<p>At a high level:</p>
-<ol>
-<li>Configuration or secrets are updated</li>
-<li>Reloader detects the change</li>
-<li>A controlled workload update is triggered</li>
-<li>The updated configuration is applied at runtime</li>
-</ol>
-<p>This model ensures that approved configuration changes are actually reflected in running workloads, without requiring application changes or manual intervention.</p>
-<h3 id="deterministic-change-propagation">Deterministic Change Propagation<a class="headerlink" href="#deterministic-change-propagation" title="Permanent link">#</a></h3>
-<p>Reloader ensures that configuration changes are not silently ignored. Once a change is detected, the corresponding workload update follows a predictable and observable path.</p>
-<h3 id="reduced-operational-risk">Reduced Operational Risk<a class="headerlink" href="#reduced-operational-risk" title="Permanent link">#</a></h3>
-<p>By removing ad-hoc restarts and manual procedures, Reloader reduces human error and improves platform reliability.</p>
+<hr>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">#</a></h2>
+<ul>
+<li>Kubernetes &gt;= 1.19</li>
+<li>Helm v3+ (if using Helm)</li>
+</ul>
+<hr>
+<h2 id="helm-recommended">Helm (recommended)<a class="headerlink" href="#helm-recommended" title="Permanent link">#</a></h2>
+<h3 id="step-1-add-the-stakater-helm-repository">Step 1 — Add the Stakater Helm repository<a class="headerlink" href="#step-1-add-the-stakater-helm-repository" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>stakater<span class="w"> </span>https://stakater.github.io/stakater-charts
+helm<span class="w"> </span>repo<span class="w"> </span>update
+</code></pre></div>
+<h3 id="step-2-install-reloader">Step 2 — Install Reloader<a class="headerlink" href="#step-2-install-reloader" title="Permanent link">#</a></h3>
+<p>Install with a generated release name, watching all namespaces:</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span>--generate-name
+</code></pre></div>
+<p>Or install into a dedicated namespace:</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--create-namespace
+</code></pre></div>
+<h3 id="step-3-verify-the-installation">Step 3 — Verify the installation<a class="headerlink" href="#step-3-verify-the-installation" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>reloader
+kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader
+</code></pre></div>
+<p>You should see a running pod and log output confirming Reloader has started.</p>
+<hr>
+<h2 id="kubernetes-manifests">Kubernetes manifests<a class="headerlink" href="#kubernetes-manifests" title="Permanent link">#</a></h2>
+<p>Apply the latest manifest directly from the repository:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/stakater/Reloader/master/deployments/kubernetes/reloader.yaml
+</code></pre></div>
+<p>This deploys Reloader with default settings into the <code>default</code> namespace.</p>
+<hr>
+<h2 id="kustomize">Kustomize<a class="headerlink" href="#kustomize" title="Permanent link">#</a></h2>
+<p>Apply using the built-in Kustomize support in <code>kubectl</code>:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-k<span class="w"> </span>https://github.com/stakater/Reloader/deployments/kubernetes
+</code></pre></div>
+<p>To manage namespace or other overrides, create a local <code>kustomization.yaml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kustomize.config.k8s.io/v1beta1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kustomization</span>
+
+<span class="nt">resources</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://github.com/stakater/Reloader/deployments/kubernetes</span>
+
+<span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reloader</span>
+</code></pre></div>
+<p>Then apply:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-k<span class="w"> </span>.
+</code></pre></div>
+<hr>
+<h2 id="common-configurations">Common configurations<a class="headerlink" href="#common-configurations" title="Permanent link">#</a></h2>
+<h3 id="watch-a-single-namespace-only">Watch a single namespace only<a class="headerlink" href="#watch-a-single-namespace-only" title="Permanent link">#</a></h3>
+<p>By default Reloader watches all namespaces. To restrict it to the namespace it is deployed in:</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>my-app<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.watchGlobally<span class="o">=</span><span class="nb">false</span>
+</code></pre></div>
+<h3 id="watch-only-specific-namespaces">Watch only specific namespaces<a class="headerlink" href="#watch-only-specific-namespaces" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.namespaceSelector<span class="o">=</span><span class="s2">"environment=production"</span>
+</code></pre></div>
+<h3 id="watch-only-resources-with-specific-labels">Watch only resources with specific labels<a class="headerlink" href="#watch-only-resources-with-specific-labels" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.resourceLabelSelector<span class="o">=</span><span class="s2">"reloader-enabled=true"</span>
+</code></pre></div>
+<p>When both <code>namespaceSelector</code> and <code>resourceLabelSelector</code> are set, both conditions must be satisfied for a resource to be watched.</p>
+<h3 id="enable-argo-rollouts-support">Enable Argo Rollouts support<a class="headerlink" href="#enable-argo-rollouts-support" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.isArgoRollouts<span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+<h3 id="enable-openshift-deploymentconfig-support">Enable OpenShift DeploymentConfig support<a class="headerlink" href="#enable-openshift-deploymentconfig-support" title="Permanent link">#</a></h3>
+<p>Reloader auto-detects whether it is running on OpenShift by probing the cluster API at startup. No manual configuration is required in most cases.</p>
+<p>If auto-detection does not work in your environment, you can force it on:</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.isOpenshift<span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+<h3 id="enable-csi-driver-integration">Enable CSI Driver integration<a class="headerlink" href="#enable-csi-driver-integration" title="Permanent link">#</a></h3>
+<p>Required when using the Secrets Store CSI Driver with file-based secrets (no Kubernetes <code>Secret</code> object created).</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.enableCSIIntegration<span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+<h3 id="reload-on-resource-creation">Reload on resource creation<a class="headerlink" href="#reload-on-resource-creation" title="Permanent link">#</a></h3>
+<p>By default Reloader only reacts to changes (updates). To also trigger reloads when a ConfigMap or Secret is created:</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.reloadOnCreate<span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+<h3 id="enable-high-availability">Enable High Availability<a class="headerlink" href="#enable-high-availability" title="Permanent link">#</a></h3>
+<p>HA mode enables leader election so multiple replicas can run safely. Requires <code>reloadOnCreate: true</code> for <code>syncAfterRestart</code> to work.</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.enableHA<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.deployment.replicas<span class="o">=</span><span class="m">2</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.reloadOnCreate<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.syncAfterRestart<span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+<h3 id="auto-reload-all-workloads">Auto-reload all workloads<a class="headerlink" href="#auto-reload-all-workloads" title="Permanent link">#</a></h3>
+<p>Treat every workload in the cluster as if it has <code>reloader.stakater.com/auto: "true"</code>. Individual workloads can still opt out by setting the annotation to <code>"false"</code>.</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.autoReloadAll<span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+<h3 id="ignore-jobs-and-cronjobs">Ignore Jobs and CronJobs<a class="headerlink" href="#ignore-jobs-and-cronjobs" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.ignoreJobs<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.ignoreCronJobs<span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+<h3 id="change-the-reload-strategy">Change the reload strategy<a class="headerlink" href="#change-the-reload-strategy" title="Permanent link">#</a></h3>
+<p>By default Reloader patches a dummy environment variable on the pod template to force a rolling update. To use annotation-based patching instead (preferred when using GitOps tools such as Argo CD):</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.reloadStrategy<span class="o">=</span>annotations
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>Behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>default</code></td>
+<td>Patches a dummy environment variable on the pod template</td>
+</tr>
+<tr>
+<td><code>env-vars</code></td>
+<td>Same as <code>default</code></td>
+</tr>
+<tr>
+<td><code>annotations</code></td>
+<td>Adds <code>reloader.stakater.com/last-reloaded-from</code> to the pod template — produces less GitOps drift</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="helm-values-reference">Helm values reference<a class="headerlink" href="#helm-values-reference" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>reloader.watchGlobally</code></td>
+<td>Watch all namespaces (<code>true</code>) or only the deployment namespace (<code>false</code>)</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>reloader.autoReloadAll</code></td>
+<td>Treat all workloads as if they have <code>auto: "true"</code></td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>reloader.isArgoRollouts</code></td>
+<td>Enable Argo Rollouts support</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>reloader.isOpenshift</code></td>
+<td>Enable OpenShift DeploymentConfig support</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>reloader.enableCSIIntegration</code></td>
+<td>Enable Secrets Store CSI Driver integration</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>reloader.ignoreSecrets</code></td>
+<td>Ignore all Secrets</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>reloader.ignoreConfigMaps</code></td>
+<td>Ignore all ConfigMaps</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>reloader.ignoreJobs</code></td>
+<td>Ignore Jobs</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>reloader.ignoreCronJobs</code></td>
+<td>Ignore CronJobs</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>reloader.reloadOnCreate</code></td>
+<td>Trigger reload when a resource is created (not just updated)</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>reloader.reloadOnDelete</code></td>
+<td>Trigger reload when a resource is deleted</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>reloader.reloadStrategy</code></td>
+<td>Reload strategy: <code>default</code>, <code>env-vars</code>, or <code>annotations</code></td>
+<td><code>default</code></td>
+</tr>
+<tr>
+<td><code>reloader.namespaceSelector</code></td>
+<td>Label selector to restrict which namespaces are watched</td>
+<td><code>""</code></td>
+</tr>
+<tr>
+<td><code>reloader.ignoreNamespaces</code></td>
+<td>Comma-separated list of namespaces to exclude</td>
+<td><code>""</code></td>
+</tr>
+<tr>
+<td><code>reloader.resourceLabelSelector</code></td>
+<td>Label selector to restrict which ConfigMaps/Secrets are watched</td>
+<td><code>""</code></td>
+</tr>
+<tr>
+<td><code>reloader.enableHA</code></td>
+<td>Enable leader election for multi-replica deployments</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>reloader.syncAfterRestart</code></td>
+<td>On leader election, new leader reloads all tracked workloads</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>reloader.logFormat</code></td>
+<td>Log format: <code>json</code> or empty (text)</td>
+<td><code>""</code></td>
+</tr>
+<tr>
+<td><code>reloader.logLevel</code></td>
+<td>Log level: <code>trace</code>, <code>debug</code>, <code>info</code>, <code>warning</code>, <code>error</code>, <code>fatal</code>, <code>panic</code></td>
+<td><code>info</code></td>
+</tr>
+<tr>
+<td><code>reloader.deployment.replicas</code></td>
+<td>Number of replicas (keep at 1 unless HA is enabled)</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>reloader.enableHA</code></td>
+<td>Enable HA mode with leader election</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>reloader.rbac.enabled</code></td>
+<td>Create RBAC ClusterRole and ClusterRoleBinding</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>reloader.serviceAccount.create</code></td>
+<td>Create a ServiceAccount for Reloader</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>reloader.podMonitor.enabled</code></td>
+<td>Create a Prometheus PodMonitor for metrics scraping</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>reloader.webhookUrl</code></td>
+<td>Send a webhook notification instead of triggering a restart</td>
+<td><code>""</code></td>
+</tr>
+<tr>
+<td><code>reloader.readOnlyRootFileSystem</code></td>
+<td>Enforce read-only root filesystem on the container</td>
+<td><code>false</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="resource-requests-and-limits">Resource requests and limits<a class="headerlink" href="#resource-requests-and-limits" title="Permanent link">#</a></h3>
+<p>No resource requests or limits are set by default (<code>resources: {}</code>). Set them explicitly for production:</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.deployment.resources.requests.cpu<span class="o">=</span>10m<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.deployment.resources.requests.memory<span class="o">=</span>128Mi<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.deployment.resources.limits.cpu<span class="o">=</span>150m<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.deployment.resources.limits.memory<span class="o">=</span>512Mi
+</code></pre></div>
+<p>Or via values file:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">resources</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">requests</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10m</span>
+<span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">128Mi</span>
+<span class="w">      </span><span class="nt">limits</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">150m</span>
+<span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">512Mi</span>
+</code></pre></div>
+<hr>
+<h2 id="openshift-notes">OpenShift notes<a class="headerlink" href="#openshift-notes" title="Permanent link">#</a></h2>
+<p>On OpenShift 4.13.3 and later, users must run within dynamically assigned UID ranges. To allow OpenShift to assign the UID automatically:</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.deployment.securityContext.runAsUser<span class="o">=</span>null
+</code></pre></div>
+<hr>
+<h2 id="uninstall">Uninstall<a class="headerlink" href="#uninstall" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>uninstall<span class="w"> </span>reloader<span class="w"> </span>-n<span class="w"> </span>reloader
+</code></pre></div>
+<p>To also remove the namespace:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>delete<span class="w"> </span>namespace<span class="w"> </span>reloader
+</code></pre></div>
 
 
 
@@ -4329,27 +5055,27 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 <div class="flex-2">
                     <div class="logo-footer-container">
                         
-                        <img class="md-header__logo_light" src="assets/images/footer-logo-light.png#only-light" alt="logo">
+                        <img class="md-header__logo_light" src="../assets/images/footer-logo-light.png#only-light" alt="logo">
                         
                         
-                        <img src="assets/images/footer-logo-dark.png#only-dark" alt="logo">
+                        <img src="../assets/images/footer-logo-dark.png#only-dark" alt="logo">
                         
                     </div>
 
                     <div class="collaborations-img-container">
                         <div class="display-flex">
                             
-                            <img class="csa-logo-dark" src="assets/images/CSA_dark.png#only-dark" alt="CSA">
+                            <img class="csa-logo-dark" src="../assets/images/CSA_dark.png#only-dark" alt="CSA">
                             
                             
-                            <img class="csa-logo-light" src="assets/images/CSA_light.png#only-light" alt="CSA">
+                            <img class="csa-logo-light" src="../assets/images/CSA_light.png#only-light" alt="CSA">
                             
 
                             
-                            <img class="hc-logo-dark" src="assets/images/HC_dark.png#only-dark" alt="HC">
+                            <img class="hc-logo-dark" src="../assets/images/HC_dark.png#only-dark" alt="HC">
                             
                             
-                            <img class="hc-logo-light" src="assets/images/HC_light.png#only-light" alt="HC">
+                            <img class="hc-logo-light" src="../assets/images/HC_light.png#only-light" alt="HC">
                             
                         </div>
                     </div>
@@ -4741,10 +5467,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["content.code.copy", "navigation.tracking", "toc.follow", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.tracking", "toc.follow", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   
