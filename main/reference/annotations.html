@@ -5,13 +5,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/main/how-to-guides/restart-pods-when-external-secrets-change.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/main/reference/annotations.html">
       
       
-        <link rel="prev" href="reload-pods-on-tls-certificate-rotation.html">
+        <link rel="prev" href="../integrations/openbao/openbao-csi-file.html">
       
       
-        <link rel="next" href="alerting-on-reload.html">
+        <link rel="next" href="../eula.html">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>Restart Pods When External Secrets Change in Kubernetes - Reloader</title>
+        <title>Annotations - Reloader</title>
       
     
     
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#restart-pods-when-external-secrets-change-in-kubernetes" class="md-skip">
+        <a href="#annotation-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -2787,20 +2787,18 @@ This documentation is either for an old version, or for the unreleased 'main' ve
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -2821,7 +2819,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2839,7 +2837,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="restart-pods-when-configmap-changes.html" class="md-nav__link">
+      <a href="../how-to-guides/restart-pods-when-configmap-changes.html" class="md-nav__link">
         
   
   
@@ -2867,7 +2865,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="restart-pods-when-secret-changes.html" class="md-nav__link">
+      <a href="../how-to-guides/restart-pods-when-secret-changes.html" class="md-nav__link">
         
   
   
@@ -2895,7 +2893,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
+      <a href="../how-to-guides/reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
         
   
   
@@ -2920,37 +2918,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Restart Pods When External Secrets Change in Kubernetes
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="restart-pods-when-external-secrets-change.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../how-to-guides/restart-pods-when-external-secrets-change.html" class="md-nav__link">
         
   
   
@@ -2966,216 +2937,6 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#the-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-external-secret-workflows" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Common External Secret Workflows
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-this-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why This Matters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#automatic-restart-with-reloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Automatic Restart with Reloader
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-by-step-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step-by-Step Example
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step-by-Step Example">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-create-a-secret-simulating-external-sync" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Create a Secret (Simulating External Sync)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-create-a-deployment-using-the-secret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Create a Deployment Using the Secret
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-enable-automatic-restart" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Enable Automatic Restart
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-simulate-an-external-secret-update" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Simulate an External Secret Update
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verifying-the-restart" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verifying the Restart
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-this-pattern-is-useful" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When This Pattern Is Useful
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FAQ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="FAQ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#do-external-secret-controllers-restart-pods-when-secrets-change" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Do external secret controllers restart pods when secrets change?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-dont-pods-automatically-pick-up-new-secrets" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why don't pods automatically pick up new secrets?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-can-i-automate-pod-restarts-when-external-secrets-update" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How can I automate pod restarts when external secrets update?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3188,7 +2949,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="alerting-on-reload.html" class="md-nav__link">
+      <a href="../how-to-guides/alerting-on-reload.html" class="md-nav__link">
         
   
   
@@ -3216,7 +2977,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="verify-and-troubleshoot.html" class="md-nav__link">
+      <a href="../how-to-guides/verify-and-troubleshoot.html" class="md-nav__link">
         
   
   
@@ -3887,18 +3648,20 @@ This documentation is either for an old version, or for the unreleased 'main' ve
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked="">
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -3919,7 +3682,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3934,10 +3697,37 @@ This documentation is either for an old version, or for the unreleased 'main' ve
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../reference/annotations.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Annotations
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="annotations.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3953,6 +3743,349 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#workload-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workload annotations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Workload annotations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reloaderstakatercomauto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reloader.stakater.com/auto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secretreloaderstakatercomauto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        secret.reloader.stakater.com/auto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configmapreloaderstakatercomauto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        configmap.reloader.stakater.com/auto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secretproviderclassreloaderstakatercomauto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        secretproviderclass.reloader.stakater.com/auto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secretreloaderstakatercomreload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        secret.reloader.stakater.com/reload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configmapreloaderstakatercomreload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        configmap.reloader.stakater.com/reload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secretproviderclassreloaderstakatercomreload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        secretproviderclass.reloader.stakater.com/reload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reloaderstakatercomsearch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reloader.stakater.com/search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secretsexcludereloaderstakatercomreload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        secrets.exclude.reloader.stakater.com/reload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configmapsexcludereloaderstakatercomreload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        configmaps.exclude.reloader.stakater.com/reload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secretproviderclassesexcludereloaderstakatercomreload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        secretproviderclasses.exclude.reloader.stakater.com/reload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reloaderstakatercomrollout-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reloader.stakater.com/rollout-strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploymentreloaderstakatercompause-period" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        deployment.reloader.stakater.com/pause-period
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configmap-and-secret-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ConfigMap and Secret annotations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ConfigMap and Secret annotations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reloaderstakatercommatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reloader.stakater.com/match
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reloaderstakatercomignore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reloader.stakater.com/ignore
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-managed-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System-managed annotations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System-managed annotations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reloaderstakatercomlast-reloaded-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reloader.stakater.com/last-reloaded-from
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploymentreloaderstakatercompaused-at" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        deployment.reloader.stakater.com/paused-at
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auto-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#named-resource-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Named resource pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-and-match-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search and match pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csi-file-based-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSI file-based pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#behaviour-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Behaviour rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-annotation-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom annotation keys
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4075,66 +4208,22 @@ This documentation is either for an old version, or for the unreleased 'main' ve
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#the-problem" class="md-nav__link">
+  <a href="#workload-annotations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Problem
+        Workload annotations
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-external-secret-workflows" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Common External Secret Workflows
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-this-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why This Matters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#automatic-restart-with-reloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Automatic Restart with Reloader
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-by-step-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step-by-Step Example
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step-by-Step Example">
+    <nav class="md-nav" aria-label="Workload annotations">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-create-a-secret-simulating-external-sync" class="md-nav__link">
+  <a href="#reloaderstakatercomauto" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Create a Secret (Simulating External Sync)
+        reloader.stakater.com/auto
       
     </span>
   </a>
@@ -4142,10 +4231,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-create-a-deployment-using-the-secret" class="md-nav__link">
+  <a href="#secretreloaderstakatercomauto" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Create a Deployment Using the Secret
+        secret.reloader.stakater.com/auto
       
     </span>
   </a>
@@ -4153,10 +4242,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-enable-automatic-restart" class="md-nav__link">
+  <a href="#configmapreloaderstakatercomauto" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Enable Automatic Restart
+        configmap.reloader.stakater.com/auto
       
     </span>
   </a>
@@ -4164,10 +4253,109 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-simulate-an-external-secret-update" class="md-nav__link">
+  <a href="#secretproviderclassreloaderstakatercomauto" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Simulate an External Secret Update
+        secretproviderclass.reloader.stakater.com/auto
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secretreloaderstakatercomreload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        secret.reloader.stakater.com/reload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configmapreloaderstakatercomreload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        configmap.reloader.stakater.com/reload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secretproviderclassreloaderstakatercomreload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        secretproviderclass.reloader.stakater.com/reload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reloaderstakatercomsearch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reloader.stakater.com/search
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secretsexcludereloaderstakatercomreload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        secrets.exclude.reloader.stakater.com/reload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configmapsexcludereloaderstakatercomreload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        configmaps.exclude.reloader.stakater.com/reload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secretproviderclassesexcludereloaderstakatercomreload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        secretproviderclasses.exclude.reloader.stakater.com/reload
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reloaderstakatercomrollout-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reloader.stakater.com/rollout-strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploymentreloaderstakatercompause-period" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        deployment.reloader.stakater.com/pause-period
       
     </span>
   </a>
@@ -4180,55 +4368,22 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#verifying-the-restart" class="md-nav__link">
+  <a href="#configmap-and-secret-annotations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Verifying the Restart
+        ConfigMap and Secret annotations
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-this-pattern-is-useful" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When This Pattern Is Useful
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FAQ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="FAQ">
+    <nav class="md-nav" aria-label="ConfigMap and Secret annotations">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#do-external-secret-controllers-restart-pods-when-secrets-change" class="md-nav__link">
+  <a href="#reloaderstakatercommatch" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Do external secret controllers restart pods when secrets change?
+        reloader.stakater.com/match
       
     </span>
   </a>
@@ -4236,21 +4391,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
         
           <li class="md-nav__item">
-  <a href="#why-dont-pods-automatically-pick-up-new-secrets" class="md-nav__link">
+  <a href="#reloaderstakatercomignore" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why don't pods automatically pick up new secrets?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-can-i-automate-pod-restarts-when-external-secrets-update" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How can I automate pod restarts when external secrets update?
+        reloader.stakater.com/ignore
       
     </span>
   </a>
@@ -4259,6 +4403,128 @@ This documentation is either for an old version, or for the unreleased 'main' ve
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-managed-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System-managed annotations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="System-managed annotations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reloaderstakatercomlast-reloaded-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reloader.stakater.com/last-reloaded-from
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploymentreloaderstakatercompaused-at" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        deployment.reloader.stakater.com/paused-at
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auto-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#named-resource-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Named resource pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#search-and-match-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Search and match pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csi-file-based-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSI file-based pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#behaviour-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Behaviour rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-annotation-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom annotation keys
+      
+    </span>
+  </a>
   
 </li>
       
@@ -4282,182 +4548,521 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
 
 
-<h1 id="restart-pods-when-external-secrets-change-in-kubernetes">Restart Pods When External Secrets Change in Kubernetes<a class="headerlink" href="#restart-pods-when-external-secrets-change-in-kubernetes" title="Permanent link">#</a></h1>
-<p>Many Kubernetes platforms use external secret management systems to store sensitive data such as API keys, database credentials, and tokens.</p>
-<p>These systems typically synchronize secrets into Kubernetes using a controller. When the external secret changes, the controller updates the corresponding <strong>Kubernetes Secret</strong>.</p>
-<p>However, even after the Secret is updated, <strong>running pods usually continue using the old values</strong>.</p>
-<p>This guide explains how to automatically restart pods when externally managed secrets change.</p>
+<h1 id="annotation-reference">Annotation Reference<a class="headerlink" href="#annotation-reference" title="Permanent link">#</a></h1>
+<p>Reloader is controlled entirely through Kubernetes annotations. No application changes are required.</p>
+<p>This page is the complete reference for every annotation Reloader supports, what values they accept, which resource types they apply to, and how they interact with each other.</p>
 <hr>
-<h2 id="the-problem">The Problem<a class="headerlink" href="#the-problem" title="Permanent link">#</a></h2>
-<p>In Kubernetes, updating a Secret does <strong>not automatically restart pods</strong> that reference it.</p>
-<p>Example workflow:</p>
-<div class="highlight"><pre><span></span><code>External<span class="w"> </span>secret<span class="w"> </span>updated
-↓
-Secret<span class="w"> </span>synchronization<span class="w"> </span>controller<span class="w"> </span>updates<span class="w"> </span>Kubernetes<span class="w"> </span>Secret
-↓
-Pods<span class="w"> </span>still<span class="w"> </span>running
-↓
-Application<span class="w"> </span>continues<span class="w"> </span>using<span class="w"> </span>old<span class="w"> </span>credentials
-</code></pre></div>
-<p>Unless the application supports dynamic secret reload, the new value will not be used until the pod restarts.</p>
-<hr>
-<h2 id="common-external-secret-workflows">Common External Secret Workflows<a class="headerlink" href="#common-external-secret-workflows" title="Permanent link">#</a></h2>
-<p>External secret systems typically follow a pattern like this:</p>
-<div class="highlight"><pre><span></span><code>Secret<span class="w"> </span>stored<span class="w"> </span><span class="k">in</span><span class="w"> </span>external<span class="w"> </span>system
-↓
-Secret<span class="w"> </span>synchronization<span class="w"> </span>controller<span class="w"> </span>runs
-↓
-Kubernetes<span class="w"> </span>Secret<span class="w"> </span>created<span class="w"> </span>or<span class="w"> </span>updated
-↓
-Application<span class="w"> </span>consumes<span class="w"> </span>the<span class="w"> </span>Secret
-</code></pre></div>
-<p>Examples of external secret sources include:</p>
-<ul>
-<li>Vault systems</li>
-<li>cloud secret managers</li>
-<li>centralized credential stores</li>
-<li>automation pipelines</li>
-</ul>
-<p>These systems ensure that Kubernetes Secrets remain up to date with external sources.</p>
-<p>However, they usually <strong>do not restart workloads when secrets change</strong>.</p>
-<hr>
-<h2 id="why-this-matters">Why This Matters<a class="headerlink" href="#why-this-matters" title="Permanent link">#</a></h2>
-<p>Secrets often change due to:</p>
-<ul>
-<li>credential rotation</li>
-<li>security policies</li>
-<li>automation pipelines</li>
-<li>short-lived credentials</li>
-</ul>
-<p>If applications continue running with outdated credentials, this can cause:</p>
-<ul>
-<li>authentication failures</li>
-<li>service disruptions</li>
-<li>expired credential errors</li>
-</ul>
-<p>Automating workload restarts helps ensure applications always use the latest credentials.</p>
-<hr>
-<h2 id="automatic-restart-with-reloader">Automatic Restart with Reloader<a class="headerlink" href="#automatic-restart-with-reloader" title="Permanent link">#</a></h2>
-<p>Reloader is a Kubernetes controller that watches for changes in:</p>
-<ul>
-<li>Secrets</li>
-<li>ConfigMaps</li>
-</ul>
-<p>When a Secret changes, Reloader automatically triggers a rolling restart of workloads that reference it.</p>
-<p>Example workflow:</p>
-<div class="highlight"><pre><span></span><code>External<span class="w"> </span>secret<span class="w"> </span>updated
-↓
-Secret<span class="w"> </span>synchronization<span class="w"> </span>controller<span class="w"> </span>updates<span class="w"> </span>Kubernetes<span class="w"> </span>Secret
-↓
-Reloader<span class="w"> </span>detects<span class="w"> </span>change
-↓
-Deployment<span class="w"> </span>patched
-↓
-Pods<span class="w"> </span>restart<span class="w"> </span>automatically
-</code></pre></div>
-<p>This ensures applications restart and load the updated credentials.</p>
-<hr>
-<h2 id="step-by-step-example">Step-by-Step Example<a class="headerlink" href="#step-by-step-example" title="Permanent link">#</a></h2>
-<h3 id="1-create-a-secret-simulating-external-sync">1. Create a Secret (Simulating External Sync)<a class="headerlink" href="#1-create-a-secret-simulating-external-sync" title="Permanent link">#</a></h3>
-<p>In a real environment, this Secret would usually be created by an external secret controller.</p>
-<p>Example Secret:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Secret</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api-secret</span>
-<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Opaque</span>
-<span class="nt">stringData</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">API_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">initial-token</span>
-</code></pre></div>
-<p>Apply the Secret:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>secret.yaml
-</code></pre></div>
-<hr>
-<h3 id="2-create-a-deployment-using-the-secret">2. Create a Deployment Using the Secret<a class="headerlink" href="#2-create-a-deployment-using-the-secret" title="Permanent link">#</a></h3>
-<p>Example Deployment consuming the Secret as an environment variable:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo-app</span>
-<span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
-<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span>
-<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span>
-<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
-<span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
-<span class="w">        </span><span class="nt">env</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API_TOKEN</span>
-<span class="w">          </span><span class="nt">valueFrom</span><span class="p">:</span>
-<span class="w">            </span><span class="nt">secretKeyRef</span><span class="p">:</span>
-<span class="w">              </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api-secret</span>
-<span class="w">              </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API_TOKEN</span>
-</code></pre></div>
-<hr>
-<h3 id="3-enable-automatic-restart">3. Enable Automatic Restart<a class="headerlink" href="#3-enable-automatic-restart" title="Permanent link">#</a></h3>
-<p>Add the Reloader annotation to the Deployment:</p>
+<h2 id="workload-annotations">Workload annotations<a class="headerlink" href="#workload-annotations" title="Permanent link">#</a></h2>
+<p>These annotations are placed on workload resources: <code>Deployment</code>, <code>StatefulSet</code>, <code>Daemonset</code>, <code>Argo Rollout</code>, <code>CronJob</code>, or <code>Job</code>.</p>
+<h3 id="reloaderstakatercomauto"><code>reloader.stakater.com/auto</code><a class="headerlink" href="#reloaderstakatercomauto" title="Permanent link">#</a></h3>
+<p>Watches all <code>ConfigMaps</code> and <code>Secrets</code> that the workload references. When any of them changes, Reloader triggers a rolling restart.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Applies to</strong></td>
+<td>Deployment, StatefulSet, Daemonset, Rollout, CronJob, Job</td>
+</tr>
+<tr>
+<td><strong>Accepted values</strong></td>
+<td><code>"true"</code>, <code>"false"</code></td>
+</tr>
+<tr>
+<td><strong>Default</strong></td>
+<td>Not set (no-op)</td>
+</tr>
+</tbody>
+</table>
 <div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">reloader.stakater.com/auto</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
 </code></pre></div>
-<p>This tells Reloader to watch configuration resources used by this workload.</p>
+<p>Setting <code>"false"</code> explicitly disables reloading for that workload even when <code>--auto-reload-all</code> is enabled globally.</p>
 <hr>
-<h3 id="4-simulate-an-external-secret-update">4. Simulate an External Secret Update<a class="headerlink" href="#4-simulate-an-external-secret-update" title="Permanent link">#</a></h3>
-<p>Update the Secret value:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">stringData</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">API_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rotated-token</span>
-</code></pre></div>
-<p>Apply the change:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>secret.yaml
-</code></pre></div>
-<p>Result:</p>
-<div class="highlight"><pre><span></span><code>Secret<span class="w"> </span>updated
-↓
-Reloader<span class="w"> </span>detects<span class="w"> </span>change
-↓
-Deployment<span class="w"> </span>patched
-↓
-New<span class="w"> </span>pod<span class="w"> </span>created
-↓
-Application<span class="w"> </span>loads<span class="w"> </span>updated<span class="w"> </span>credentials
+<h3 id="secretreloaderstakatercomauto"><code>secret.reloader.stakater.com/auto</code><a class="headerlink" href="#secretreloaderstakatercomauto" title="Permanent link">#</a></h3>
+<p>Like <code>reloader.stakater.com/auto</code> but restricted to <code>Secrets</code> only. ConfigMap changes are ignored.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Applies to</strong></td>
+<td>Deployment, StatefulSet, Daemonset, Rollout, CronJob, Job</td>
+</tr>
+<tr>
+<td><strong>Accepted values</strong></td>
+<td><code>"true"</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">secret.reloader.stakater.com/auto</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
 </code></pre></div>
 <hr>
-<h2 id="verifying-the-restart">Verifying the Restart<a class="headerlink" href="#verifying-the-restart" title="Permanent link">#</a></h2>
-<p>You can observe the rollout using:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deployment<span class="w"> </span>demo-app
+<h3 id="configmapreloaderstakatercomauto"><code>configmap.reloader.stakater.com/auto</code><a class="headerlink" href="#configmapreloaderstakatercomauto" title="Permanent link">#</a></h3>
+<p>Like <code>reloader.stakater.com/auto</code> but restricted to <code>ConfigMaps</code> only. Secret changes are ignored.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Applies to</strong></td>
+<td>Deployment, StatefulSet, Daemonset, Rollout, CronJob, Job</td>
+</tr>
+<tr>
+<td><strong>Accepted values</strong></td>
+<td><code>"true"</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">configmap.reloader.stakater.com/auto</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
 </code></pre></div>
-<p>Or watch pods restart:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-w
+<hr>
+<h3 id="secretproviderclassreloaderstakatercomauto"><code>secretproviderclass.reloader.stakater.com/auto</code><a class="headerlink" href="#secretproviderclassreloaderstakatercomauto" title="Permanent link">#</a></h3>
+<p>Triggers a reload when a <code>SecretProviderClass</code> resource changes. Used with the Secrets Store CSI Driver when secrets are mounted as files and no Kubernetes <code>Secret</code> object is created.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Applies to</strong></td>
+<td>Deployment, StatefulSet, Daemonset, Rollout, CronJob, Job</td>
+</tr>
+<tr>
+<td><strong>Accepted values</strong></td>
+<td><code>"true"</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">secretproviderclass.reloader.stakater.com/auto</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
 </code></pre></div>
-<p>A new pod will be created automatically after the Secret changes.</p>
 <hr>
-<h2 id="when-this-pattern-is-useful">When This Pattern Is Useful<a class="headerlink" href="#when-this-pattern-is-useful" title="Permanent link">#</a></h2>
-<p>Automatically restarting pods when external secrets change is useful when:</p>
-<ul>
-<li>credentials rotate regularly</li>
-<li>external secret systems synchronize values into Kubernetes</li>
-<li>applications require restart to pick up updated credentials</li>
-<li>multiple workloads depend on the same Secret</li>
-</ul>
+<h3 id="secretreloaderstakatercomreload"><code>secret.reloader.stakater.com/reload</code><a class="headerlink" href="#secretreloaderstakatercomreload" title="Permanent link">#</a></h3>
+<p>Watches one or more named <code>Secrets</code> explicitly. The Secret does not need to be referenced in the pod spec — Reloader will watch it regardless.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Applies to</strong></td>
+<td>Deployment, StatefulSet, Daemonset, Rollout, CronJob, Job</td>
+</tr>
+<tr>
+<td><strong>Accepted values</strong></td>
+<td>Comma-separated Secret names</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">secret.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"database-secret,api-keys"</span>
+</code></pre></div>
 <hr>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
-<p>External secret systems keep Kubernetes Secrets synchronized with external sources.</p>
-<p>However, updating a Secret does not automatically restart pods that use it.</p>
-<p>Using Reloader allows workloads to <strong>automatically restart when externally managed secrets change</strong>, ensuring applications always run with the latest credentials.</p>
+<h3 id="configmapreloaderstakatercomreload"><code>configmap.reloader.stakater.com/reload</code><a class="headerlink" href="#configmapreloaderstakatercomreload" title="Permanent link">#</a></h3>
+<p>Watches one or more named <code>ConfigMaps</code> explicitly. The ConfigMap does not need to be referenced in the pod spec.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Applies to</strong></td>
+<td>Deployment, StatefulSet, Daemonset, Rollout, CronJob, Job</td>
+</tr>
+<tr>
+<td><strong>Accepted values</strong></td>
+<td>Comma-separated ConfigMap names</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">configmap.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"app-config,feature-flags"</span>
+</code></pre></div>
 <hr>
-<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">#</a></h2>
-<h3 id="do-external-secret-controllers-restart-pods-when-secrets-change">Do external secret controllers restart pods when secrets change?<a class="headerlink" href="#do-external-secret-controllers-restart-pods-when-secrets-change" title="Permanent link">#</a></h3>
-<p>Usually not. Most controllers only update the Kubernetes Secret but do not restart workloads.</p>
-<h3 id="why-dont-pods-automatically-pick-up-new-secrets">Why don't pods automatically pick up new secrets?<a class="headerlink" href="#why-dont-pods-automatically-pick-up-new-secrets" title="Permanent link">#</a></h3>
-<p>Most applications load secrets at startup and do not watch for changes.</p>
-<h3 id="how-can-i-automate-pod-restarts-when-external-secrets-update">How can I automate pod restarts when external secrets update?<a class="headerlink" href="#how-can-i-automate-pod-restarts-when-external-secrets-update" title="Permanent link">#</a></h3>
-<p>You can use a controller such as Reloader to detect Secret updates and trigger rolling restarts automatically.</p>
+<h3 id="secretproviderclassreloaderstakatercomreload"><code>secretproviderclass.reloader.stakater.com/reload</code><a class="headerlink" href="#secretproviderclassreloaderstakatercomreload" title="Permanent link">#</a></h3>
+<p>Watches one or more named <code>SecretProviderClass</code> resources explicitly.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Applies to</strong></td>
+<td>Deployment, StatefulSet, Daemonset, Rollout, CronJob, Job</td>
+</tr>
+<tr>
+<td><strong>Accepted values</strong></td>
+<td>Comma-separated SecretProviderClass names</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">secretproviderclass.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"vault-csi-provider"</span>
+</code></pre></div>
+<hr>
+<h3 id="reloaderstakatercomsearch"><code>reloader.stakater.com/search</code><a class="headerlink" href="#reloaderstakatercomsearch" title="Permanent link">#</a></h3>
+<p>Enables search mode. Reloader only triggers a restart when a referenced <code>ConfigMap</code> or <code>Secret</code> also has the <code>reloader.stakater.com/match: "true"</code> annotation. Used together with <code>match</code> to give Secret/ConfigMap owners control over which resources trigger reloads.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Applies to</strong></td>
+<td>Deployment, StatefulSet, Daemonset, Rollout, CronJob, Job</td>
+</tr>
+<tr>
+<td><strong>Accepted values</strong></td>
+<td><code>"true"</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">reloader.stakater.com/search</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+</code></pre></div>
+<p>See <a href="#search-and-match-pattern">search and match pattern</a> for a full example.</p>
+<hr>
+<h3 id="secretsexcludereloaderstakatercomreload"><code>secrets.exclude.reloader.stakater.com/reload</code><a class="headerlink" href="#secretsexcludereloaderstakatercomreload" title="Permanent link">#</a></h3>
+<p>Excludes specific <code>Secrets</code> from triggering a reload for this workload, even if <code>auto: "true"</code> is set.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Applies to</strong></td>
+<td>Deployment, StatefulSet, Daemonset, Rollout, CronJob, Job</td>
+</tr>
+<tr>
+<td><strong>Accepted values</strong></td>
+<td>Comma-separated Secret names</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">reloader.stakater.com/auto</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">    </span><span class="nt">secrets.exclude.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"audit-log-secret"</span>
+</code></pre></div>
+<hr>
+<h3 id="configmapsexcludereloaderstakatercomreload"><code>configmaps.exclude.reloader.stakater.com/reload</code><a class="headerlink" href="#configmapsexcludereloaderstakatercomreload" title="Permanent link">#</a></h3>
+<p>Excludes specific <code>ConfigMaps</code> from triggering a reload for this workload.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Applies to</strong></td>
+<td>Deployment, StatefulSet, Daemonset, Rollout, CronJob, Job</td>
+</tr>
+<tr>
+<td><strong>Accepted values</strong></td>
+<td>Comma-separated ConfigMap names</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">reloader.stakater.com/auto</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">    </span><span class="nt">configmaps.exclude.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"shared-readonly-config"</span>
+</code></pre></div>
+<hr>
+<h3 id="secretproviderclassesexcludereloaderstakatercomreload"><code>secretproviderclasses.exclude.reloader.stakater.com/reload</code><a class="headerlink" href="#secretproviderclassesexcludereloaderstakatercomreload" title="Permanent link">#</a></h3>
+<p>Excludes specific <code>SecretProviderClass</code> resources from triggering a reload.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Applies to</strong></td>
+<td>Deployment, StatefulSet, Daemonset, Rollout, CronJob, Job</td>
+</tr>
+<tr>
+<td><strong>Accepted values</strong></td>
+<td>Comma-separated SecretProviderClass names</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="reloaderstakatercomrollout-strategy"><code>reloader.stakater.com/rollout-strategy</code><a class="headerlink" href="#reloaderstakatercomrollout-strategy" title="Permanent link">#</a></h3>
+<p>Controls how Reloader triggers a reload for Argo <code>Rollout</code> resources specifically.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Applies to</strong></td>
+<td>Argo Rollout only</td>
+</tr>
+<tr>
+<td><strong>Accepted values</strong></td>
+<td><code>"rollout"</code> (default), <code>"restart"</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Strategy</th>
+<th>Behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>"rollout"</code></td>
+<td>Patches the pod template to trigger a new rollout. GitOps tools may detect this as drift.</td>
+</tr>
+<tr>
+<td><code>"restart"</code></td>
+<td>Deletes pods directly without patching the template. Avoids GitOps drift but is more disruptive.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">reloader.stakater.com/rollout-strategy</span><span class="p">:</span><span class="w"> </span><span class="s">"restart"</span>
+</code></pre></div>
+<hr>
+<h3 id="deploymentreloaderstakatercompause-period"><code>deployment.reloader.stakater.com/pause-period</code><a class="headerlink" href="#deploymentreloaderstakatercompause-period" title="Permanent link">#</a></h3>
+<p>Pauses reload triggering for a Deployment for the specified duration after a reload. Prevents a burst of rapid configuration changes from causing repeated restarts.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Applies to</strong></td>
+<td>Deployment</td>
+</tr>
+<tr>
+<td><strong>Accepted values</strong></td>
+<td>Go duration string — must be positive (e.g. <code>"30s"</code>, <code>"5m"</code>, <code>"1h"</code>)</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">deployment.reloader.stakater.com/pause-period</span><span class="p">:</span><span class="w"> </span><span class="s">"5m"</span>
+</code></pre></div>
+<hr>
+<h2 id="configmap-and-secret-annotations">ConfigMap and Secret annotations<a class="headerlink" href="#configmap-and-secret-annotations" title="Permanent link">#</a></h2>
+<p>These annotations are placed on <code>ConfigMap</code> or <code>Secret</code> resources.</p>
+<h3 id="reloaderstakatercommatch"><code>reloader.stakater.com/match</code><a class="headerlink" href="#reloaderstakatercommatch" title="Permanent link">#</a></h3>
+<p>Marks a <code>ConfigMap</code> or <code>Secret</code> as eligible for the <a href="#search-and-match-pattern">search and match pattern</a>. Only has effect when the consuming workload has <code>reloader.stakater.com/search: "true"</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Applies to</strong></td>
+<td>ConfigMap, Secret</td>
+</tr>
+<tr>
+<td><strong>Accepted values</strong></td>
+<td><code>"true"</code>, <code>"false"</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">reloader.stakater.com/match</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+</code></pre></div>
+<hr>
+<h3 id="reloaderstakatercomignore"><code>reloader.stakater.com/ignore</code><a class="headerlink" href="#reloaderstakatercomignore" title="Permanent link">#</a></h3>
+<p>Instructs Reloader to skip this resource entirely. Changes to it will never trigger a reload, regardless of what workloads reference it or what annotations those workloads have.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Applies to</strong></td>
+<td>ConfigMap, Secret, SecretProviderClass</td>
+</tr>
+<tr>
+<td><strong>Accepted values</strong></td>
+<td><code>"true"</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">reloader.stakater.com/ignore</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+</code></pre></div>
+<hr>
+<h2 id="system-managed-annotations">System-managed annotations<a class="headerlink" href="#system-managed-annotations" title="Permanent link">#</a></h2>
+<p>These annotations are written by Reloader itself. Do not set them manually.</p>
+<h3 id="reloaderstakatercomlast-reloaded-from"><code>reloader.stakater.com/last-reloaded-from</code><a class="headerlink" href="#reloaderstakatercomlast-reloaded-from" title="Permanent link">#</a></h3>
+<p>Added to the workload's pod template metadata to record which resource triggered the last reload. Only present when <code>--reload-strategy=annotations</code> is configured.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Managed by</strong></td>
+<td>Reloader (read-only)</td>
+</tr>
+<tr>
+<td><strong>Applies to</strong></td>
+<td>Pod template metadata of any supported workload</td>
+</tr>
+</tbody>
+</table>
+<h3 id="deploymentreloaderstakatercompaused-at"><code>deployment.reloader.stakater.com/paused-at</code><a class="headerlink" href="#deploymentreloaderstakatercompaused-at" title="Permanent link">#</a></h3>
+<p>Records the timestamp when a pause period started. Set by Reloader when <code>pause-period</code> is in effect.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Managed by</strong></td>
+<td>Reloader (read-only)</td>
+</tr>
+<tr>
+<td><strong>Applies to</strong></td>
+<td>Deployment</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="patterns">Patterns<a class="headerlink" href="#patterns" title="Permanent link">#</a></h2>
+<h3 id="auto-pattern">Auto pattern<a class="headerlink" href="#auto-pattern" title="Permanent link">#</a></h3>
+<p>The simplest pattern. Reloader watches all <code>ConfigMaps</code> and <code>Secrets</code> referenced anywhere in the pod spec (environment variables, volume mounts, <code>envFrom</code>).</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># deployment.yaml</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">reloader.stakater.com/auto</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+</code></pre></div>
+<p>When any referenced ConfigMap or Secret changes, Reloader restarts the workload.</p>
+<hr>
+<h3 id="named-resource-pattern">Named resource pattern<a class="headerlink" href="#named-resource-pattern" title="Permanent link">#</a></h3>
+<p>Explicitly name the resources to watch. Useful when the ConfigMap or Secret is not directly referenced in the pod spec (for example, read by the application at runtime from a mounted path).</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># deployment.yaml</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">secret.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"database-credentials"</span>
+<span class="w">    </span><span class="nt">configmap.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"app-config"</span>
+</code></pre></div>
+<hr>
+<h3 id="search-and-match-pattern">Search and match pattern<a class="headerlink" href="#search-and-match-pattern" title="Permanent link">#</a></h3>
+<p>Separates concerns: the workload opts in to "search mode", and individual Secrets or ConfigMaps opt in to being "matchable". This lets Secret owners control reload behaviour independently of the workload owner.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># deployment.yaml</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">reloader.stakater.com/search</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># secret.yaml</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">reloader.stakater.com/match</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+</code></pre></div>
+<p>The workload will only restart when a ConfigMap or Secret it references has <code>match: "true"</code>. Resources without <code>match: "true"</code> are ignored even if they change.</p>
+<hr>
+<h3 id="csi-file-based-pattern">CSI file-based pattern<a class="headerlink" href="#csi-file-based-pattern" title="Permanent link">#</a></h3>
+<p>When using the Secrets Store CSI Driver without <code>secretObjects</code> (no Kubernetes Secret is created), use <code>SecretProviderClass</code>-based annotations instead.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># deployment.yaml</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">secretproviderclass.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"vault-csi-provider"</span>
+</code></pre></div>
+<p>This requires <code>reloader.enableCSIIntegration: true</code> in the Helm values.</p>
+<hr>
+<h2 id="behaviour-rules">Behaviour rules<a class="headerlink" href="#behaviour-rules" title="Permanent link">#</a></h2>
+<p><strong><code>auto</code> takes precedence over <code>search</code></strong>
+If both <code>reloader.stakater.com/auto: "true"</code> and <code>reloader.stakater.com/search: "true"</code> are set on the same workload, <code>auto</code> wins and <code>search</code> is ignored.</p>
+<p><strong>Global auto-reload mode</strong>
+If Reloader is started with <code>--auto-reload-all=true</code> (or <code>reloader.autoReloadAll: true</code> in Helm), all workloads behave as if they have <code>auto: "true"</code>. Setting <code>reloader.stakater.com/auto: "false"</code> explicitly on a workload opts it out.</p>
+<p><strong>Typed annotations vs generic</strong>
+<code>secret.reloader.stakater.com/auto</code> and <code>configmap.reloader.stakater.com/auto</code> can be combined. Either one being <code>"true"</code> enables reloading for that resource type independently.</p>
+<p><strong>Exclude annotations work alongside auto</strong>
+<code>secrets.exclude.reloader.stakater.com/reload</code> and <code>configmaps.exclude.reloader.stakater.com/reload</code> can be combined with <code>auto: "true"</code> to watch everything except specific named resources.</p>
+<hr>
+<h2 id="custom-annotation-keys">Custom annotation keys<a class="headerlink" href="#custom-annotation-keys" title="Permanent link">#</a></h2>
+<p>All annotation keys can be overridden cluster-wide via Helm values. This is useful when the default annotation names conflict with another tool or when your organisation enforces a custom annotation domain.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">custom_annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">auto</span><span class="p">:</span><span class="w"> </span><span class="s">"myorg.com/reload"</span>
+<span class="w">    </span><span class="nt">secret</span><span class="p">:</span><span class="w"> </span><span class="s">"myorg.com/reload-secret"</span>
+<span class="w">    </span><span class="nt">configmap</span><span class="p">:</span><span class="w"> </span><span class="s">"myorg.com/reload-configmap"</span>
+<span class="w">    </span><span class="nt">search</span><span class="p">:</span><span class="w"> </span><span class="s">"myorg.com/reload-search"</span>
+<span class="w">    </span><span class="nt">match</span><span class="p">:</span><span class="w"> </span><span class="s">"myorg.com/reload-match"</span>
+<span class="w">    </span><span class="nt">secret_auto</span><span class="p">:</span><span class="w"> </span><span class="s">"myorg.com/reload-secret-auto"</span>
+<span class="w">    </span><span class="nt">configmap_auto</span><span class="p">:</span><span class="w"> </span><span class="s">"myorg.com/reload-configmap-auto"</span>
+<span class="w">    </span><span class="nt">pausePeriod</span><span class="p">:</span><span class="w"> </span><span class="s">"myorg.com/reload-pause-period"</span>
+<span class="w">    </span><span class="nt">pauseTime</span><span class="p">:</span><span class="w"> </span><span class="s">"myorg.com/reload-paused-at"</span>
+</code></pre></div>
+<p>When custom annotation keys are configured, only those keys are recognised. The default <code>reloader.stakater.com/*</code> keys are no longer active.</p>
 
 
 

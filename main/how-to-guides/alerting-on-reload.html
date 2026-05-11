@@ -5,13 +5,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/main/how-to-guides/restart-pods-when-external-secrets-change.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/main/how-to-guides/alerting-on-reload.html">
       
       
-        <link rel="prev" href="reload-pods-on-tls-certificate-rotation.html">
+        <link rel="prev" href="restart-pods-when-external-secrets-change.html">
       
       
-        <link rel="next" href="alerting-on-reload.html">
+        <link rel="next" href="verify-and-troubleshoot.html">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>Restart Pods When External Secrets Change in Kubernetes - Reloader</title>
+        <title>Alert When Reloader Triggers a Restart - Reloader</title>
       
     
     
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#restart-pods-when-external-secrets-change-in-kubernetes" class="md-skip">
+        <a href="#alert-when-reloader-triggers-a-restart" class="md-skip">
           Skip to content
         </a>
       
@@ -2920,6 +2920,34 @@ This documentation is either for an old version, or for the unreleased 'main' ve
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="restart-pods-when-external-secrets-change.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Restart Pods When External Secrets Change in Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -2939,7 +2967,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   <span class="md-ellipsis">
     
   
-    Restart Pods When External Secrets Change in Kubernetes
+    Alert When Reloader Triggers a Restart
   
 
     
@@ -2950,14 +2978,14 @@ This documentation is either for an old version, or for the unreleased 'main' ve
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="restart-pods-when-external-secrets-change.html" class="md-nav__link md-nav__link--active">
+      <a href="alerting-on-reload.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    Restart Pods When External Secrets Change in Kubernetes
+    Alert When Reloader Triggers a Restart
   
 
     
@@ -2985,10 +3013,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#the-problem" class="md-nav__link">
+  <a href="#supported-sinks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Problem
+        Supported sinks
       
     </span>
   </a>
@@ -2996,10 +3024,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-external-secret-workflows" class="md-nav__link">
+  <a href="#configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common External Secret Workflows
+        Configuration
       
     </span>
   </a>
@@ -3007,44 +3035,22 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-this-matters" class="md-nav__link">
+  <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why This Matters
+        Examples
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#automatic-restart-with-reloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Automatic Restart with Reloader
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-by-step-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step-by-Step Example
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step-by-Step Example">
+    <nav class="md-nav" aria-label="Examples">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-create-a-secret-simulating-external-sync" class="md-nav__link">
+  <a href="#slack" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Create a Secret (Simulating External Sync)
+        Slack
       
     </span>
   </a>
@@ -3052,10 +3058,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-create-a-deployment-using-the-secret" class="md-nav__link">
+  <a href="#microsoft-teams" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Create a Deployment Using the Secret
+        Microsoft Teams
       
     </span>
   </a>
@@ -3063,10 +3069,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-enable-automatic-restart" class="md-nav__link">
+  <a href="#google-chat" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Enable Automatic Restart
+        Google Chat
       
     </span>
   </a>
@@ -3074,10 +3080,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-simulate-an-external-secret-update" class="md-nav__link">
+  <a href="#raw-webhook" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Simulate an External Secret Update
+        Raw webhook
       
     </span>
   </a>
@@ -3090,85 +3096,13 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#verifying-the-restart" class="md-nav__link">
+  <a href="#using-an-existing-kubernetes-secret" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Verifying the Restart
+        Using an existing Kubernetes Secret
       
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-this-pattern-is-useful" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When This Pattern Is Useful
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FAQ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="FAQ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#do-external-secret-controllers-restart-pods-when-secrets-change" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Do external secret controllers restart pods when secrets change?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-dont-pods-automatically-pick-up-new-secrets" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why don't pods automatically pick up new secrets?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-can-i-automate-pod-restarts-when-external-secrets-update" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How can I automate pod restarts when external secrets update?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3176,34 +3110,6 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="alerting-on-reload.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Alert When Reloader Triggers a Restart
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -4075,10 +3981,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#the-problem" class="md-nav__link">
+  <a href="#supported-sinks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Problem
+        Supported sinks
       
     </span>
   </a>
@@ -4086,10 +3992,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-external-secret-workflows" class="md-nav__link">
+  <a href="#configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common External Secret Workflows
+        Configuration
       
     </span>
   </a>
@@ -4097,44 +4003,22 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-this-matters" class="md-nav__link">
+  <a href="#examples" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why This Matters
+        Examples
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#automatic-restart-with-reloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Automatic Restart with Reloader
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-by-step-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step-by-Step Example
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step-by-Step Example">
+    <nav class="md-nav" aria-label="Examples">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-create-a-secret-simulating-external-sync" class="md-nav__link">
+  <a href="#slack" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Create a Secret (Simulating External Sync)
+        Slack
       
     </span>
   </a>
@@ -4142,10 +4026,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-create-a-deployment-using-the-secret" class="md-nav__link">
+  <a href="#microsoft-teams" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Create a Deployment Using the Secret
+        Microsoft Teams
       
     </span>
   </a>
@@ -4153,10 +4037,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-enable-automatic-restart" class="md-nav__link">
+  <a href="#google-chat" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Enable Automatic Restart
+        Google Chat
       
     </span>
   </a>
@@ -4164,10 +4048,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-simulate-an-external-secret-update" class="md-nav__link">
+  <a href="#raw-webhook" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Simulate an External Secret Update
+        Raw webhook
       
     </span>
   </a>
@@ -4180,85 +4064,13 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#verifying-the-restart" class="md-nav__link">
+  <a href="#using-an-existing-kubernetes-secret" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Verifying the Restart
+        Using an existing Kubernetes Secret
       
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-this-pattern-is-useful" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When This Pattern Is Useful
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FAQ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="FAQ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#do-external-secret-controllers-restart-pods-when-secrets-change" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Do external secret controllers restart pods when secrets change?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-dont-pods-automatically-pick-up-new-secrets" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why don't pods automatically pick up new secrets?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-can-i-automate-pod-restarts-when-external-secrets-update" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How can I automate pod restarts when external secrets update?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4282,182 +4094,136 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
 
 
-<h1 id="restart-pods-when-external-secrets-change-in-kubernetes">Restart Pods When External Secrets Change in Kubernetes<a class="headerlink" href="#restart-pods-when-external-secrets-change-in-kubernetes" title="Permanent link">#</a></h1>
-<p>Many Kubernetes platforms use external secret management systems to store sensitive data such as API keys, database credentials, and tokens.</p>
-<p>These systems typically synchronize secrets into Kubernetes using a controller. When the external secret changes, the controller updates the corresponding <strong>Kubernetes Secret</strong>.</p>
-<p>However, even after the Secret is updated, <strong>running pods usually continue using the old values</strong>.</p>
-<p>This guide explains how to automatically restart pods when externally managed secrets change.</p>
+<h1 id="alert-when-reloader-triggers-a-restart">Alert When Reloader Triggers a Restart<a class="headerlink" href="#alert-when-reloader-triggers-a-restart" title="Permanent link">#</a></h1>
+<p>Reloader can send a webhook notification whenever it triggers a rolling restart. This is useful for audit trails, operational visibility, and integrating with incident management workflows.</p>
+<p>Alerts are sent to a configured webhook endpoint with details about what changed and which workload was restarted.</p>
 <hr>
-<h2 id="the-problem">The Problem<a class="headerlink" href="#the-problem" title="Permanent link">#</a></h2>
-<p>In Kubernetes, updating a Secret does <strong>not automatically restart pods</strong> that reference it.</p>
-<p>Example workflow:</p>
-<div class="highlight"><pre><span></span><code>External<span class="w"> </span>secret<span class="w"> </span>updated
-↓
-Secret<span class="w"> </span>synchronization<span class="w"> </span>controller<span class="w"> </span>updates<span class="w"> </span>Kubernetes<span class="w"> </span>Secret
-↓
-Pods<span class="w"> </span>still<span class="w"> </span>running
-↓
-Application<span class="w"> </span>continues<span class="w"> </span>using<span class="w"> </span>old<span class="w"> </span>credentials
-</code></pre></div>
-<p>Unless the application supports dynamic secret reload, the new value will not be used until the pod restarts.</p>
+<h2 id="supported-sinks">Supported sinks<a class="headerlink" href="#supported-sinks" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Sink</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Raw webhook (default)</td>
+<td><code>webhook</code></td>
+</tr>
+<tr>
+<td>Slack</td>
+<td><code>slack</code></td>
+</tr>
+<tr>
+<td>Microsoft Teams</td>
+<td><code>teams</code></td>
+</tr>
+<tr>
+<td>Google Chat</td>
+<td><code>gchat</code></td>
+</tr>
+</tbody>
+</table>
 <hr>
-<h2 id="common-external-secret-workflows">Common External Secret Workflows<a class="headerlink" href="#common-external-secret-workflows" title="Permanent link">#</a></h2>
-<p>External secret systems typically follow a pattern like this:</p>
-<div class="highlight"><pre><span></span><code>Secret<span class="w"> </span>stored<span class="w"> </span><span class="k">in</span><span class="w"> </span>external<span class="w"> </span>system
-↓
-Secret<span class="w"> </span>synchronization<span class="w"> </span>controller<span class="w"> </span>runs
-↓
-Kubernetes<span class="w"> </span>Secret<span class="w"> </span>created<span class="w"> </span>or<span class="w"> </span>updated
-↓
-Application<span class="w"> </span>consumes<span class="w"> </span>the<span class="w"> </span>Secret
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h2>
+<p>Alerting is configured through environment variables on the Reloader deployment. The recommended way to set these is through the <code>reloader.deployment.env.secret</code> section of the Helm values, so that the webhook URL is stored as a Kubernetes Secret rather than in plain text.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">secret</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">ALERT_ON_RELOAD</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">        </span><span class="nt">ALERT_SINK</span><span class="p">:</span><span class="w"> </span><span class="s">"slack"</span>
+<span class="w">        </span><span class="nt">ALERT_WEBHOOK_URL</span><span class="p">:</span><span class="w"> </span><span class="s">"https://hooks.slack.com/services/..."</span>
+<span class="w">        </span><span class="nt">ALERT_ADDITIONAL_INFO</span><span class="p">:</span><span class="w"> </span><span class="s">"Cluster:</span><span class="nv"> </span><span class="s">production-eu"</span>
 </code></pre></div>
-<p>Examples of external secret sources include:</p>
-<ul>
-<li>Vault systems</li>
-<li>cloud secret managers</li>
-<li>centralized credential stores</li>
-<li>automation pipelines</li>
-</ul>
-<p>These systems ensure that Kubernetes Secrets remain up to date with external sources.</p>
-<p>However, they usually <strong>do not restart workloads when secrets change</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ALERT_ON_RELOAD</code></td>
+<td>Yes</td>
+<td>Set to <code>"true"</code> to enable alerting. Default: <code>false</code></td>
+</tr>
+<tr>
+<td><code>ALERT_SINK</code></td>
+<td>No</td>
+<td>Sink type: <code>slack</code>, <code>teams</code>, <code>gchat</code>, or <code>webhook</code>. Default: <code>webhook</code></td>
+</tr>
+<tr>
+<td><code>ALERT_WEBHOOK_URL</code></td>
+<td>Yes (when alerting enabled)</td>
+<td>The webhook URL to send notifications to</td>
+</tr>
+<tr>
+<td><code>ALERT_ADDITIONAL_INFO</code></td>
+<td>No</td>
+<td>Free-text string appended to the alert payload. Useful for adding context such as cluster name or environment</td>
+</tr>
+</tbody>
+</table>
 <hr>
-<h2 id="why-this-matters">Why This Matters<a class="headerlink" href="#why-this-matters" title="Permanent link">#</a></h2>
-<p>Secrets often change due to:</p>
-<ul>
-<li>credential rotation</li>
-<li>security policies</li>
-<li>automation pipelines</li>
-<li>short-lived credentials</li>
-</ul>
-<p>If applications continue running with outdated credentials, this can cause:</p>
-<ul>
-<li>authentication failures</li>
-<li>service disruptions</li>
-<li>expired credential errors</li>
-</ul>
-<p>Automating workload restarts helps ensure applications always use the latest credentials.</p>
-<hr>
-<h2 id="automatic-restart-with-reloader">Automatic Restart with Reloader<a class="headerlink" href="#automatic-restart-with-reloader" title="Permanent link">#</a></h2>
-<p>Reloader is a Kubernetes controller that watches for changes in:</p>
-<ul>
-<li>Secrets</li>
-<li>ConfigMaps</li>
-</ul>
-<p>When a Secret changes, Reloader automatically triggers a rolling restart of workloads that reference it.</p>
-<p>Example workflow:</p>
-<div class="highlight"><pre><span></span><code>External<span class="w"> </span>secret<span class="w"> </span>updated
-↓
-Secret<span class="w"> </span>synchronization<span class="w"> </span>controller<span class="w"> </span>updates<span class="w"> </span>Kubernetes<span class="w"> </span>Secret
-↓
-Reloader<span class="w"> </span>detects<span class="w"> </span>change
-↓
-Deployment<span class="w"> </span>patched
-↓
-Pods<span class="w"> </span>restart<span class="w"> </span>automatically
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
+<h3 id="slack">Slack<a class="headerlink" href="#slack" title="Permanent link">#</a></h3>
+<p>Create a Slack Incoming Webhook by following the <a href="https://api.slack.com/messaging/webhooks">Slack documentation</a>, then configure:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">secret</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">ALERT_ON_RELOAD</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">        </span><span class="nt">ALERT_SINK</span><span class="p">:</span><span class="w"> </span><span class="s">"slack"</span>
+<span class="w">        </span><span class="nt">ALERT_WEBHOOK_URL</span><span class="p">:</span><span class="w"> </span><span class="s">"https://hooks.slack.com/services/&lt;workspace-id&gt;/&lt;channel-id&gt;/&lt;token&gt;"</span>
+<span class="w">        </span><span class="nt">ALERT_ADDITIONAL_INFO</span><span class="p">:</span><span class="w"> </span><span class="s">"Cluster:</span><span class="nv"> </span><span class="s">production"</span>
 </code></pre></div>
-<p>This ensures applications restart and load the updated credentials.</p>
-<hr>
-<h2 id="step-by-step-example">Step-by-Step Example<a class="headerlink" href="#step-by-step-example" title="Permanent link">#</a></h2>
-<h3 id="1-create-a-secret-simulating-external-sync">1. Create a Secret (Simulating External Sync)<a class="headerlink" href="#1-create-a-secret-simulating-external-sync" title="Permanent link">#</a></h3>
-<p>In a real environment, this Secret would usually be created by an external secret controller.</p>
-<p>Example Secret:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Secret</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api-secret</span>
-<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Opaque</span>
-<span class="nt">stringData</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">API_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">initial-token</span>
+<h3 id="microsoft-teams">Microsoft Teams<a class="headerlink" href="#microsoft-teams" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">secret</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">ALERT_ON_RELOAD</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">        </span><span class="nt">ALERT_SINK</span><span class="p">:</span><span class="w"> </span><span class="s">"teams"</span>
+<span class="w">        </span><span class="nt">ALERT_WEBHOOK_URL</span><span class="p">:</span><span class="w"> </span><span class="s">"https://outlook.office.com/webhook/..."</span>
 </code></pre></div>
-<p>Apply the Secret:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>secret.yaml
+<h3 id="google-chat">Google Chat<a class="headerlink" href="#google-chat" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">secret</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">ALERT_ON_RELOAD</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">        </span><span class="nt">ALERT_SINK</span><span class="p">:</span><span class="w"> </span><span class="s">"gchat"</span>
+<span class="w">        </span><span class="nt">ALERT_WEBHOOK_URL</span><span class="p">:</span><span class="w"> </span><span class="s">"https://chat.googleapis.com/v1/spaces/..."</span>
 </code></pre></div>
-<hr>
-<h3 id="2-create-a-deployment-using-the-secret">2. Create a Deployment Using the Secret<a class="headerlink" href="#2-create-a-deployment-using-the-secret" title="Permanent link">#</a></h3>
-<p>Example Deployment consuming the Secret as an environment variable:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo-app</span>
-<span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
-<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span>
-<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span>
-<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
-<span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
-<span class="w">        </span><span class="nt">env</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API_TOKEN</span>
-<span class="w">          </span><span class="nt">valueFrom</span><span class="p">:</span>
-<span class="w">            </span><span class="nt">secretKeyRef</span><span class="p">:</span>
-<span class="w">              </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api-secret</span>
-<span class="w">              </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API_TOKEN</span>
-</code></pre></div>
-<hr>
-<h3 id="3-enable-automatic-restart">3. Enable Automatic Restart<a class="headerlink" href="#3-enable-automatic-restart" title="Permanent link">#</a></h3>
-<p>Add the Reloader annotation to the Deployment:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">reloader.stakater.com/auto</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
-</code></pre></div>
-<p>This tells Reloader to watch configuration resources used by this workload.</p>
-<hr>
-<h3 id="4-simulate-an-external-secret-update">4. Simulate an External Secret Update<a class="headerlink" href="#4-simulate-an-external-secret-update" title="Permanent link">#</a></h3>
-<p>Update the Secret value:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">stringData</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">API_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rotated-token</span>
-</code></pre></div>
-<p>Apply the change:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>secret.yaml
-</code></pre></div>
-<p>Result:</p>
-<div class="highlight"><pre><span></span><code>Secret<span class="w"> </span>updated
-↓
-Reloader<span class="w"> </span>detects<span class="w"> </span>change
-↓
-Deployment<span class="w"> </span>patched
-↓
-New<span class="w"> </span>pod<span class="w"> </span>created
-↓
-Application<span class="w"> </span>loads<span class="w"> </span>updated<span class="w"> </span>credentials
+<h3 id="raw-webhook">Raw webhook<a class="headerlink" href="#raw-webhook" title="Permanent link">#</a></h3>
+<p>When <code>ALERT_SINK</code> is set to <code>webhook</code> (or left unset), Reloader sends a plain JSON POST to the URL.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">secret</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">ALERT_ON_RELOAD</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">        </span><span class="nt">ALERT_SINK</span><span class="p">:</span><span class="w"> </span><span class="s">"webhook"</span>
+<span class="w">        </span><span class="nt">ALERT_WEBHOOK_URL</span><span class="p">:</span><span class="w"> </span><span class="s">"https://your-internal-service/reloader-events"</span>
+<span class="w">        </span><span class="nt">ALERT_ADDITIONAL_INFO</span><span class="p">:</span><span class="w"> </span><span class="s">"env=staging"</span>
 </code></pre></div>
 <hr>
-<h2 id="verifying-the-restart">Verifying the Restart<a class="headerlink" href="#verifying-the-restart" title="Permanent link">#</a></h2>
-<p>You can observe the rollout using:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deployment<span class="w"> </span>demo-app
+<h2 id="using-an-existing-kubernetes-secret">Using an existing Kubernetes Secret<a class="headerlink" href="#using-an-existing-kubernetes-secret" title="Permanent link">#</a></h2>
+<p>If you already manage secrets externally (for example via External Secrets Operator), you can reference an existing Kubernetes Secret instead:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">existing</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">my-alert-secret</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">ALERT_ON_RELOAD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alert_on_reload</span>
+<span class="w">          </span><span class="nt">ALERT_SINK</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alert_sink</span>
+<span class="w">          </span><span class="nt">ALERT_WEBHOOK_URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alert_webhook_url</span>
+<span class="w">          </span><span class="nt">ALERT_ADDITIONAL_INFO</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alert_additional_info</span>
 </code></pre></div>
-<p>Or watch pods restart:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-w
-</code></pre></div>
-<p>A new pod will be created automatically after the Secret changes.</p>
-<hr>
-<h2 id="when-this-pattern-is-useful">When This Pattern Is Useful<a class="headerlink" href="#when-this-pattern-is-useful" title="Permanent link">#</a></h2>
-<p>Automatically restarting pods when external secrets change is useful when:</p>
-<ul>
-<li>credentials rotate regularly</li>
-<li>external secret systems synchronize values into Kubernetes</li>
-<li>applications require restart to pick up updated credentials</li>
-<li>multiple workloads depend on the same Secret</li>
-</ul>
-<hr>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
-<p>External secret systems keep Kubernetes Secrets synchronized with external sources.</p>
-<p>However, updating a Secret does not automatically restart pods that use it.</p>
-<p>Using Reloader allows workloads to <strong>automatically restart when externally managed secrets change</strong>, ensuring applications always run with the latest credentials.</p>
-<hr>
-<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">#</a></h2>
-<h3 id="do-external-secret-controllers-restart-pods-when-secrets-change">Do external secret controllers restart pods when secrets change?<a class="headerlink" href="#do-external-secret-controllers-restart-pods-when-secrets-change" title="Permanent link">#</a></h3>
-<p>Usually not. Most controllers only update the Kubernetes Secret but do not restart workloads.</p>
-<h3 id="why-dont-pods-automatically-pick-up-new-secrets">Why don't pods automatically pick up new secrets?<a class="headerlink" href="#why-dont-pods-automatically-pick-up-new-secrets" title="Permanent link">#</a></h3>
-<p>Most applications load secrets at startup and do not watch for changes.</p>
-<h3 id="how-can-i-automate-pod-restarts-when-external-secrets-update">How can I automate pod restarts when external secrets update?<a class="headerlink" href="#how-can-i-automate-pod-restarts-when-external-secrets-update" title="Permanent link">#</a></h3>
-<p>You can use a controller such as Reloader to detect Secret updates and trigger rolling restarts automatically.</p>
+<p>This maps each environment variable to a key in the existing Secret named <code>my-alert-secret</code>.</p>
 
 
 

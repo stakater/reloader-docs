@@ -5,13 +5,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/main/how-to-guides/restart-pods-when-external-secrets-change.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/main/architecture/how-it-works.html">
       
       
-        <link rel="prev" href="reload-pods-on-tls-certificate-rotation.html">
+        <link rel="prev" href="../about/editions.html">
       
       
-        <link rel="next" href="alerting-on-reload.html">
+        <link rel="next" href="../concepts/why-configuration-reloading-matters.html">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>Restart Pods When External Secrets Change in Kubernetes - Reloader</title>
+        <title>How Reloader Works - Reloader</title>
       
     
     
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#restart-pods-when-external-secrets-change-in-kubernetes" class="md-skip">
+        <a href="#how-reloader-works" class="md-skip">
           Skip to content
         </a>
       
@@ -2178,18 +2178,20 @@ This documentation is either for an old version, or for the unreleased 'main' ve
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked="">
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -2210,7 +2212,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2225,10 +2227,37 @@ This documentation is either for an old version, or for the unreleased 'main' ve
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../architecture/how-it-works.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Reloader Works
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="how-it-works.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2244,6 +2273,155 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-change-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Change detection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-hash-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Hash computation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-workload-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Workload matching
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-workload-restart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Workload restart
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reload-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reload strategies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reload strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#env-vars-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        env-vars (default)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-workload-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported workload types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#helm-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Helm compatibility
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#namespace-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Namespace scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2787,20 +2965,18 @@ This documentation is either for an old version, or for the unreleased 'main' ve
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -2821,7 +2997,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2839,7 +3015,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="restart-pods-when-configmap-changes.html" class="md-nav__link">
+      <a href="../how-to-guides/restart-pods-when-configmap-changes.html" class="md-nav__link">
         
   
   
@@ -2867,7 +3043,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="restart-pods-when-secret-changes.html" class="md-nav__link">
+      <a href="../how-to-guides/restart-pods-when-secret-changes.html" class="md-nav__link">
         
   
   
@@ -2895,7 +3071,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
+      <a href="../how-to-guides/reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
         
   
   
@@ -2920,37 +3096,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Restart Pods When External Secrets Change in Kubernetes
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="restart-pods-when-external-secrets-change.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../how-to-guides/restart-pods-when-external-secrets-change.html" class="md-nav__link">
         
   
   
@@ -2966,216 +3115,6 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#the-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-external-secret-workflows" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Common External Secret Workflows
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-this-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why This Matters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#automatic-restart-with-reloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Automatic Restart with Reloader
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-by-step-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step-by-Step Example
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step-by-Step Example">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-create-a-secret-simulating-external-sync" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Create a Secret (Simulating External Sync)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-create-a-deployment-using-the-secret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Create a Deployment Using the Secret
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-enable-automatic-restart" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Enable Automatic Restart
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-simulate-an-external-secret-update" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Simulate an External Secret Update
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verifying-the-restart" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verifying the Restart
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-this-pattern-is-useful" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When This Pattern Is Useful
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FAQ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="FAQ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#do-external-secret-controllers-restart-pods-when-secrets-change" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Do external secret controllers restart pods when secrets change?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-dont-pods-automatically-pick-up-new-secrets" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why don't pods automatically pick up new secrets?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-can-i-automate-pod-restarts-when-external-secrets-update" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How can I automate pod restarts when external secrets update?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3188,7 +3127,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="alerting-on-reload.html" class="md-nav__link">
+      <a href="../how-to-guides/alerting-on-reload.html" class="md-nav__link">
         
   
   
@@ -3216,7 +3155,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="verify-and-troubleshoot.html" class="md-nav__link">
+      <a href="../how-to-guides/verify-and-troubleshoot.html" class="md-nav__link">
         
   
   
@@ -4075,10 +4014,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#the-problem" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Problem
+        Overview
       
     </span>
   </a>
@@ -4086,10 +4025,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-external-secret-workflows" class="md-nav__link">
+  <a href="#step-1-change-detection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common External Secret Workflows
+        Step 1 — Change detection
       
     </span>
   </a>
@@ -4097,10 +4036,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-this-matters" class="md-nav__link">
+  <a href="#step-2-hash-computation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why This Matters
+        Step 2 — Hash computation
       
     </span>
   </a>
@@ -4108,10 +4047,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#automatic-restart-with-reloader" class="md-nav__link">
+  <a href="#step-3-workload-matching" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Automatic Restart with Reloader
+        Step 3 — Workload matching
       
     </span>
   </a>
@@ -4119,22 +4058,33 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-by-step-example" class="md-nav__link">
+  <a href="#step-4-workload-restart" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step-by-Step Example
+        Step 4 — Workload restart
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step-by-Step Example">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reload-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reload strategies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reload strategies">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-create-a-secret-simulating-external-sync" class="md-nav__link">
+  <a href="#env-vars-default" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Create a Secret (Simulating External Sync)
+        env-vars (default)
       
     </span>
   </a>
@@ -4142,32 +4092,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-create-a-deployment-using-the-secret" class="md-nav__link">
+  <a href="#annotations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Create a Deployment Using the Secret
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-enable-automatic-restart" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Enable Automatic Restart
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-simulate-an-external-secret-update" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Simulate an External Secret Update
+        annotations
       
     </span>
   </a>
@@ -4180,10 +4108,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#verifying-the-restart" class="md-nav__link">
+  <a href="#supported-workload-types" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Verifying the Restart
+        Supported workload types
       
     </span>
   </a>
@@ -4191,10 +4119,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#when-this-pattern-is-useful" class="md-nav__link">
+  <a href="#helm-compatibility" class="md-nav__link">
     <span class="md-ellipsis">
       
-        When This Pattern Is Useful
+        Helm compatibility
       
     </span>
   </a>
@@ -4202,63 +4130,13 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#namespace-scope" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Summary
+        Namespace scope
       
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FAQ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="FAQ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#do-external-secret-controllers-restart-pods-when-secrets-change" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Do external secret controllers restart pods when secrets change?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-dont-pods-automatically-pick-up-new-secrets" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why don't pods automatically pick up new secrets?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-can-i-automate-pod-restarts-when-external-secrets-update" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How can I automate pod restarts when external secrets update?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -4282,182 +4160,137 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
 
 
-<h1 id="restart-pods-when-external-secrets-change-in-kubernetes">Restart Pods When External Secrets Change in Kubernetes<a class="headerlink" href="#restart-pods-when-external-secrets-change-in-kubernetes" title="Permanent link">#</a></h1>
-<p>Many Kubernetes platforms use external secret management systems to store sensitive data such as API keys, database credentials, and tokens.</p>
-<p>These systems typically synchronize secrets into Kubernetes using a controller. When the external secret changes, the controller updates the corresponding <strong>Kubernetes Secret</strong>.</p>
-<p>However, even after the Secret is updated, <strong>running pods usually continue using the old values</strong>.</p>
-<p>This guide explains how to automatically restart pods when externally managed secrets change.</p>
+<h1 id="how-reloader-works">How Reloader Works<a class="headerlink" href="#how-reloader-works" title="Permanent link">#</a></h1>
+<p>Reloader is a Kubernetes controller that watches <code>ConfigMaps</code> and <code>Secrets</code> for data changes and triggers rolling restarts of workloads that depend on them.</p>
+<p>This page explains the internal mechanics: how changes are detected, how workloads are identified, and how restarts are triggered.</p>
 <hr>
-<h2 id="the-problem">The Problem<a class="headerlink" href="#the-problem" title="Permanent link">#</a></h2>
-<p>In Kubernetes, updating a Secret does <strong>not automatically restart pods</strong> that reference it.</p>
-<p>Example workflow:</p>
-<div class="highlight"><pre><span></span><code>External<span class="w"> </span>secret<span class="w"> </span>updated
-↓
-Secret<span class="w"> </span>synchronization<span class="w"> </span>controller<span class="w"> </span>updates<span class="w"> </span>Kubernetes<span class="w"> </span>Secret
-↓
-Pods<span class="w"> </span>still<span class="w"> </span>running
-↓
-Application<span class="w"> </span>continues<span class="w"> </span>using<span class="w"> </span>old<span class="w"> </span>credentials
-</code></pre></div>
-<p>Unless the application supports dynamic secret reload, the new value will not be used until the pod restarts.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
+<pre class="mermaid"><code>flowchart LR
+    A[ConfigMap or Secret updated]
+    B[Reloader detects data change\nvia Kubernetes watch API]
+    C[Computes SHA1 hash\nof new data]
+    D[Finds workloads with\nReloader annotations]
+    E[Patches workload pod template]
+    F[Kubernetes rolling restart]
+
+    A --&gt; B --&gt; C --&gt; D --&gt; E --&gt; F</code></pre>
 <hr>
-<h2 id="common-external-secret-workflows">Common External Secret Workflows<a class="headerlink" href="#common-external-secret-workflows" title="Permanent link">#</a></h2>
-<p>External secret systems typically follow a pattern like this:</p>
-<div class="highlight"><pre><span></span><code>Secret<span class="w"> </span>stored<span class="w"> </span><span class="k">in</span><span class="w"> </span>external<span class="w"> </span>system
-↓
-Secret<span class="w"> </span>synchronization<span class="w"> </span>controller<span class="w"> </span>runs
-↓
-Kubernetes<span class="w"> </span>Secret<span class="w"> </span>created<span class="w"> </span>or<span class="w"> </span>updated
-↓
-Application<span class="w"> </span>consumes<span class="w"> </span>the<span class="w"> </span>Secret
-</code></pre></div>
-<p>Examples of external secret sources include:</p>
+<h2 id="step-1-change-detection">Step 1 — Change detection<a class="headerlink" href="#step-1-change-detection" title="Permanent link">#</a></h2>
+<p>Reloader uses the Kubernetes watch API to receive real-time events for <code>ConfigMap</code> and <code>Secret</code> resources.</p>
+<p>When an update event arrives, Reloader compares the <strong>old</strong> and <strong>new</strong> versions of the object. It only proceeds if the <strong>data</strong> actually changed — metadata-only changes (labels, annotations) do not trigger a restart.</p>
+<p>This prevents unnecessary restarts from administrative operations.</p>
+<hr>
+<h2 id="step-2-hash-computation">Step 2 — Hash computation<a class="headerlink" href="#step-2-hash-computation" title="Permanent link">#</a></h2>
+<p>When a data change is confirmed, Reloader computes a <strong>SHA1 hash</strong> of the updated resource's data. SHA1 is used because it produces a compact 40-character value and is efficient for this use case.</p>
+<p>The hash represents the state of the resource at the time of the change.</p>
+<hr>
+<h2 id="step-3-workload-matching">Step 3 — Workload matching<a class="headerlink" href="#step-3-workload-matching" title="Permanent link">#</a></h2>
+<p>Reloader scans all workloads across watched namespaces and identifies those that should be restarted based on their annotations. See the <a href="../reference/annotations.html">Annotation Reference</a> for the full set of supported annotations.</p>
+<p>A workload matches if:</p>
 <ul>
-<li>Vault systems</li>
-<li>cloud secret managers</li>
-<li>centralized credential stores</li>
-<li>automation pipelines</li>
-</ul>
-<p>These systems ensure that Kubernetes Secrets remain up to date with external sources.</p>
-<p>However, they usually <strong>do not restart workloads when secrets change</strong>.</p>
-<hr>
-<h2 id="why-this-matters">Why This Matters<a class="headerlink" href="#why-this-matters" title="Permanent link">#</a></h2>
-<p>Secrets often change due to:</p>
-<ul>
-<li>credential rotation</li>
-<li>security policies</li>
-<li>automation pipelines</li>
-<li>short-lived credentials</li>
-</ul>
-<p>If applications continue running with outdated credentials, this can cause:</p>
-<ul>
-<li>authentication failures</li>
-<li>service disruptions</li>
-<li>expired credential errors</li>
-</ul>
-<p>Automating workload restarts helps ensure applications always use the latest credentials.</p>
-<hr>
-<h2 id="automatic-restart-with-reloader">Automatic Restart with Reloader<a class="headerlink" href="#automatic-restart-with-reloader" title="Permanent link">#</a></h2>
-<p>Reloader is a Kubernetes controller that watches for changes in:</p>
-<ul>
-<li>Secrets</li>
-<li>ConfigMaps</li>
-</ul>
-<p>When a Secret changes, Reloader automatically triggers a rolling restart of workloads that reference it.</p>
-<p>Example workflow:</p>
-<div class="highlight"><pre><span></span><code>External<span class="w"> </span>secret<span class="w"> </span>updated
-↓
-Secret<span class="w"> </span>synchronization<span class="w"> </span>controller<span class="w"> </span>updates<span class="w"> </span>Kubernetes<span class="w"> </span>Secret
-↓
-Reloader<span class="w"> </span>detects<span class="w"> </span>change
-↓
-Deployment<span class="w"> </span>patched
-↓
-Pods<span class="w"> </span>restart<span class="w"> </span>automatically
-</code></pre></div>
-<p>This ensures applications restart and load the updated credentials.</p>
-<hr>
-<h2 id="step-by-step-example">Step-by-Step Example<a class="headerlink" href="#step-by-step-example" title="Permanent link">#</a></h2>
-<h3 id="1-create-a-secret-simulating-external-sync">1. Create a Secret (Simulating External Sync)<a class="headerlink" href="#1-create-a-secret-simulating-external-sync" title="Permanent link">#</a></h3>
-<p>In a real environment, this Secret would usually be created by an external secret controller.</p>
-<p>Example Secret:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Secret</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api-secret</span>
-<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Opaque</span>
-<span class="nt">stringData</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">API_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">initial-token</span>
-</code></pre></div>
-<p>Apply the Secret:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>secret.yaml
-</code></pre></div>
-<hr>
-<h3 id="2-create-a-deployment-using-the-secret">2. Create a Deployment Using the Secret<a class="headerlink" href="#2-create-a-deployment-using-the-secret" title="Permanent link">#</a></h3>
-<p>Example Deployment consuming the Secret as an environment variable:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo-app</span>
-<span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
-<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span>
-<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span>
-<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
-<span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
-<span class="w">        </span><span class="nt">env</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API_TOKEN</span>
-<span class="w">          </span><span class="nt">valueFrom</span><span class="p">:</span>
-<span class="w">            </span><span class="nt">secretKeyRef</span><span class="p">:</span>
-<span class="w">              </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api-secret</span>
-<span class="w">              </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API_TOKEN</span>
-</code></pre></div>
-<hr>
-<h3 id="3-enable-automatic-restart">3. Enable Automatic Restart<a class="headerlink" href="#3-enable-automatic-restart" title="Permanent link">#</a></h3>
-<p>Add the Reloader annotation to the Deployment:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">reloader.stakater.com/auto</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
-</code></pre></div>
-<p>This tells Reloader to watch configuration resources used by this workload.</p>
-<hr>
-<h3 id="4-simulate-an-external-secret-update">4. Simulate an External Secret Update<a class="headerlink" href="#4-simulate-an-external-secret-update" title="Permanent link">#</a></h3>
-<p>Update the Secret value:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">stringData</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">API_TOKEN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rotated-token</span>
-</code></pre></div>
-<p>Apply the change:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>secret.yaml
-</code></pre></div>
-<p>Result:</p>
-<div class="highlight"><pre><span></span><code>Secret<span class="w"> </span>updated
-↓
-Reloader<span class="w"> </span>detects<span class="w"> </span>change
-↓
-Deployment<span class="w"> </span>patched
-↓
-New<span class="w"> </span>pod<span class="w"> </span>created
-↓
-Application<span class="w"> </span>loads<span class="w"> </span>updated<span class="w"> </span>credentials
-</code></pre></div>
-<hr>
-<h2 id="verifying-the-restart">Verifying the Restart<a class="headerlink" href="#verifying-the-restart" title="Permanent link">#</a></h2>
-<p>You can observe the rollout using:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deployment<span class="w"> </span>demo-app
-</code></pre></div>
-<p>Or watch pods restart:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-w
-</code></pre></div>
-<p>A new pod will be created automatically after the Secret changes.</p>
-<hr>
-<h2 id="when-this-pattern-is-useful">When This Pattern Is Useful<a class="headerlink" href="#when-this-pattern-is-useful" title="Permanent link">#</a></h2>
-<p>Automatically restarting pods when external secrets change is useful when:</p>
-<ul>
-<li>credentials rotate regularly</li>
-<li>external secret systems synchronize values into Kubernetes</li>
-<li>applications require restart to pick up updated credentials</li>
-<li>multiple workloads depend on the same Secret</li>
+<li>It has <code>reloader.stakater.com/auto: "true"</code> and references the changed resource in its pod spec</li>
+<li>It has <code>secret.reloader.stakater.com/reload</code> or <code>configmap.reloader.stakater.com/reload</code> naming the changed resource explicitly</li>
+<li>It has <code>reloader.stakater.com/search: "true"</code> and the changed resource has <code>reloader.stakater.com/match: "true"</code></li>
 </ul>
 <hr>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
-<p>External secret systems keep Kubernetes Secrets synchronized with external sources.</p>
-<p>However, updating a Secret does not automatically restart pods that use it.</p>
-<p>Using Reloader allows workloads to <strong>automatically restart when externally managed secrets change</strong>, ensuring applications always run with the latest credentials.</p>
+<h2 id="step-4-workload-restart">Step 4 — Workload restart<a class="headerlink" href="#step-4-workload-restart" title="Permanent link">#</a></h2>
+<p>Reloader patches the pod template of the matching workload. The patch method depends on the configured <a href="#reload-strategies">reload strategy</a>.</p>
+<p>Once the pod template is patched, Kubernetes detects the spec change and initiates a rolling update according to the workload's own <code>RollingUpdate</code> strategy. Reloader does not restart pods directly — it delegates the actual rollout to Kubernetes.</p>
 <hr>
-<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">#</a></h2>
-<h3 id="do-external-secret-controllers-restart-pods-when-secrets-change">Do external secret controllers restart pods when secrets change?<a class="headerlink" href="#do-external-secret-controllers-restart-pods-when-secrets-change" title="Permanent link">#</a></h3>
-<p>Usually not. Most controllers only update the Kubernetes Secret but do not restart workloads.</p>
-<h3 id="why-dont-pods-automatically-pick-up-new-secrets">Why don't pods automatically pick up new secrets?<a class="headerlink" href="#why-dont-pods-automatically-pick-up-new-secrets" title="Permanent link">#</a></h3>
-<p>Most applications load secrets at startup and do not watch for changes.</p>
-<h3 id="how-can-i-automate-pod-restarts-when-external-secrets-update">How can I automate pod restarts when external secrets update?<a class="headerlink" href="#how-can-i-automate-pod-restarts-when-external-secrets-update" title="Permanent link">#</a></h3>
-<p>You can use a controller such as Reloader to detect Secret updates and trigger rolling restarts automatically.</p>
+<h2 id="reload-strategies">Reload strategies<a class="headerlink" href="#reload-strategies" title="Permanent link">#</a></h2>
+<p>Reloader supports two strategies for patching the pod template.</p>
+<h3 id="env-vars-default"><code>env-vars</code> (default)<a class="headerlink" href="#env-vars-default" title="Permanent link">#</a></h3>
+<p>Reloader injects or updates an environment variable on each container in the pod template. The variable name is derived from the changed resource:</p>
+<table>
+<thead>
+<tr>
+<th>Resource type</th>
+<th>Environment variable name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ConfigMap named <code>foo</code></td>
+<td><code>STAKATER_FOO_CONFIGMAP</code></td>
+</tr>
+<tr>
+<td>Secret named <code>bar</code></td>
+<td><code>STAKATER_BAR_SECRET</code></td>
+</tr>
+<tr>
+<td>ConfigMap named <code>my-config</code></td>
+<td><code>STAKATER_MY_CONFIG_CONFIGMAP</code></td>
+</tr>
+<tr>
+<td>Secret named <code>db-credentials</code></td>
+<td><code>STAKATER_DB_CREDENTIALS_SECRET</code></td>
+</tr>
+</tbody>
+</table>
+<p>The name is converted to uppercase and any character that is not <code>A–Z</code> or <code>0–9</code> (including hyphens and dots) is replaced with <code>_</code>.</p>
+<p>The variable value is the SHA1 hash of the resource's data. When the data changes, the hash changes, the environment variable is updated, and Kubernetes detects the pod template diff and initiates a rolling restart.</p>
+<p>If the environment variable already exists with the same hash value, no update is performed and no restart is triggered.</p>
+<h3 id="annotations"><code>annotations</code><a class="headerlink" href="#annotations" title="Permanent link">#</a></h3>
+<p>Instead of injecting an environment variable, Reloader adds the annotation <code>reloader.stakater.com/last-reloaded-from</code> to the pod template metadata. The annotation value is the name of the resource that triggered the reload.</p>
+<p>This strategy is preferred when using GitOps tools such as Argo CD, because environment variable injection can cause Argo CD to detect drift between the live state and the desired state in Git.</p>
+<p>Configure via Helm:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">reloadStrategy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">annotations</span>
+</code></pre></div>
+<hr>
+<h2 id="supported-workload-types">Supported workload types<a class="headerlink" href="#supported-workload-types" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Workload type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Deployment</code></td>
+<td>Fully supported</td>
+</tr>
+<tr>
+<td><code>StatefulSet</code></td>
+<td>Fully supported</td>
+</tr>
+<tr>
+<td><code>DaemonSet</code></td>
+<td>Fully supported</td>
+</tr>
+<tr>
+<td><code>Argo Rollout</code></td>
+<td>Requires <code>reloader.isArgoRollouts: true</code></td>
+</tr>
+<tr>
+<td><code>CronJob</code></td>
+<td>Supported; can be disabled with <code>reloader.ignoreCronJobs: true</code></td>
+</tr>
+<tr>
+<td><code>Job</code></td>
+<td>Supported; can be disabled with <code>reloader.ignoreJobs: true</code></td>
+</tr>
+<tr>
+<td><code>DeploymentConfig</code></td>
+<td>OpenShift only; auto-detected when running on OpenShift</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="helm-compatibility">Helm compatibility<a class="headerlink" href="#helm-compatibility" title="Permanent link">#</a></h2>
+<p>Reloader is fully compatible with Helm-managed workloads. When Reloader patches a workload, it only modifies the environment variable or annotation it controls. The next <code>helm upgrade</code> will not undo Reloader's changes — Helm will simply see the Reloader-injected value as part of the live state and continue managing everything else normally.</p>
+<hr>
+<h2 id="namespace-scope">Namespace scope<a class="headerlink" href="#namespace-scope" title="Permanent link">#</a></h2>
+<p>By default Reloader watches all namespaces in the cluster (<code>reloader.watchGlobally: true</code>).</p>
+<p>To restrict Reloader to the namespace it is deployed in:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">watchGlobally</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</code></pre></div>
+<p>To watch only namespaces matching a label selector:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">namespaceSelector</span><span class="p">:</span><span class="w"> </span><span class="s">"environment=production"</span>
+</code></pre></div>
 
 
 
