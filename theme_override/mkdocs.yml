@@ -65,9 +65,6 @@ nav:
   - eula.md
   - 'Support': help.md
   - 'Versions': versions.md
-extra_css:
-  - stylesheets/extra.css
-
 extra:
   version:
     provider: mike
