@@ -50,13 +50,6 @@
     "aliases": []
   },
   {
-    "version": "enhance-docs",
-    "title": "enhance-docs",
-    "aliases": [
-      "latest"
-    ]
-  },
-  {
     "version": "abaziz-patch-1",
     "title": "abaziz-patch-1",
     "aliases": []
