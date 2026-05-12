@@ -6,9 +6,9 @@ edit_uri: blob/main/content/
 use_directory_urls: false
 strict: true
 theme:
-  logo: assets/images/favicon.png
-  logo_light: assets/images/logo-light.png
-  logo_dark: assets/images/logo-dark.png
+  logo: assets/images/logo.svg
+  logo_light: assets/images/logo.svg
+  logo_dark: assets/images/logo.svg
   favicon: assets/images/favicon.png
 nav:
   - Overview: 
@@ -16,6 +16,8 @@ nav:
       - about/why-reloader-matters.md
       - about/value-by-role.md
       - OSS vs Enterprise: about/editions.md
+  - Architecture:
+      - architecture/how-it-works.md
   - Concepts:
       - concepts/why-configuration-reloading-matters.md
       - concepts/secret-propagation-problem-kubernetes.md
@@ -30,12 +32,15 @@ nav:
           - concepts/comparisons/reloader-vs-secret-operators.md
           - concepts/comparisons/reloader-vs-cert-manager.md
   - Install & Upgrade:
+      - Reloader OSS: installation/install-oss.md
       - Reloader Enterprise: installation/install.md
   - How-To Guides:
       - how-to-guides/restart-pods-when-configmap-changes.md
       - how-to-guides/restart-pods-when-secret-changes.md
       - how-to-guides/reload-pods-on-tls-certificate-rotation.md
       - how-to-guides/restart-pods-when-external-secrets-change.md
+      - how-to-guides/alerting-on-reload.md
+      - how-to-guides/verify-and-troubleshoot.md
   - Integrations:
       - Overview: integrations/index.md
       - Conjur:
@@ -55,6 +60,8 @@ nav:
           - OpenBao Secrets Operator: integrations/openbao/openbao-bso.md
           - CSI Driver: integrations/openbao/openbao-csi.md
           - CSI Driver (File-Based): integrations/openbao/openbao-csi-file.md
+  - Reference:
+      - Annotations: reference/annotations.md
   - eula.md
   - 'Support': help.md
   - 'Versions': versions.md
