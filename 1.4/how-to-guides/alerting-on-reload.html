@@ -5,13 +5,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/1.4/integrations/index.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/1.4/how-to-guides/alerting-on-reload.html">
       
       
-        <link rel="prev" href="../how-to-guides/verify-and-troubleshoot.html">
+        <link rel="prev" href="restart-pods-when-external-secrets-change.html">
       
       
-        <link rel="next" href="conjur/index.html">
+        <link rel="next" href="verify-and-troubleshoot.html">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>Overview - Reloader</title>
+        <title>Alert When Reloader Triggers a Restart - Reloader</title>
       
     
     
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#integrations-overview" class="md-skip">
+        <a href="#alert-when-reloader-triggers-a-restart" class="md-skip">
           Skip to content
         </a>
       
@@ -2787,18 +2787,20 @@ This documentation is either for an old version, or for the unreleased 'main' ve
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -2819,7 +2821,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2837,7 +2839,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="../how-to-guides/restart-pods-when-configmap-changes.html" class="md-nav__link">
+      <a href="restart-pods-when-configmap-changes.html" class="md-nav__link">
         
   
   
@@ -2865,7 +2867,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="../how-to-guides/restart-pods-when-secret-changes.html" class="md-nav__link">
+      <a href="restart-pods-when-secret-changes.html" class="md-nav__link">
         
   
   
@@ -2893,7 +2895,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="../how-to-guides/reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
+      <a href="reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
         
   
   
@@ -2921,7 +2923,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="../how-to-guides/restart-pods-when-external-secrets-change.html" class="md-nav__link">
+      <a href="restart-pods-when-external-secrets-change.html" class="md-nav__link">
         
   
   
@@ -2946,10 +2948,37 @@ This documentation is either for an old version, or for the unreleased 'main' ve
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../how-to-guides/alerting-on-reload.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alert When Reloader Triggers a Restart
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="alerting-on-reload.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2965,6 +2994,122 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#supported-sinks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported sinks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#slack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Slack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microsoft-teams" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microsoft Teams
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-chat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google Chat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raw-webhook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raw webhook
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-an-existing-kubernetes-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using an existing Kubernetes Secret
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2977,7 +3122,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="../how-to-guides/verify-and-troubleshoot.html" class="md-nav__link">
+      <a href="verify-and-troubleshoot.html" class="md-nav__link">
         
   
   
@@ -3009,20 +3154,18 @@ This documentation is either for an old version, or for the unreleased 'main' ve
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -3043,7 +3186,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3058,37 +3201,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../integrations/index.html" class="md-nav__link">
         
   
   
@@ -3104,111 +3220,6 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#how-integrations-work-with-reloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How integrations work with Reloader
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#support-validation-levels" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Support &amp; validation levels
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Support &amp; validation levels">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#validated-reloader-enterprise" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🟢 Validated (Reloader Enterprise)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#community" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🟡 Community
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#experimental" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔵 Experimental
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integrations-support-matrix" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integrations support matrix
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-validated-means-in-practice" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What “validated” means in practice
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3268,7 +3279,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="conjur/index.html" class="md-nav__link">
+      <a href="../integrations/conjur/index.html" class="md-nav__link">
         
   
   
@@ -3296,7 +3307,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="conjur/conjur-eso.html" class="md-nav__link">
+      <a href="../integrations/conjur/conjur-eso.html" class="md-nav__link">
         
   
   
@@ -3324,7 +3335,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="conjur/conjur-sidecar.html" class="md-nav__link">
+      <a href="../integrations/conjur/conjur-sidecar.html" class="md-nav__link">
         
   
   
@@ -3352,7 +3363,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="conjur/conjur-csi.html" class="md-nav__link">
+      <a href="../integrations/conjur/conjur-csi.html" class="md-nav__link">
         
   
   
@@ -3435,7 +3446,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="vault/index.html" class="md-nav__link">
+      <a href="../integrations/vault/index.html" class="md-nav__link">
         
   
   
@@ -3463,7 +3474,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="vault/vault-eso.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-eso.html" class="md-nav__link">
         
   
   
@@ -3491,7 +3502,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="vault/vault-vso.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-vso.html" class="md-nav__link">
         
   
   
@@ -3519,7 +3530,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="vault/vault-csi.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-csi.html" class="md-nav__link">
         
   
   
@@ -3547,7 +3558,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="vault/vault-csi-file.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-csi-file.html" class="md-nav__link">
         
   
   
@@ -3630,7 +3641,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="openbao/index.html" class="md-nav__link">
+      <a href="../integrations/openbao/index.html" class="md-nav__link">
         
   
   
@@ -3658,7 +3669,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="openbao/openbao-eso.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-eso.html" class="md-nav__link">
         
   
   
@@ -3686,7 +3697,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="openbao/openbao-bso.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-bso.html" class="md-nav__link">
         
   
   
@@ -3714,7 +3725,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="openbao/openbao-csi.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-csi.html" class="md-nav__link">
         
   
   
@@ -3742,7 +3753,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="openbao/openbao-csi-file.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-csi-file.html" class="md-nav__link">
         
   
   
@@ -3970,10 +3981,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#how-integrations-work-with-reloader" class="md-nav__link">
+  <a href="#supported-sinks" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How integrations work with Reloader
+        Supported sinks
       
     </span>
   </a>
@@ -3981,22 +3992,33 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#support-validation-levels" class="md-nav__link">
+  <a href="#configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Support &amp; validation levels
+        Configuration
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Support &amp; validation levels">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Examples">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#validated-reloader-enterprise" class="md-nav__link">
+  <a href="#slack" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🟢 Validated (Reloader Enterprise)
+        Slack
       
     </span>
   </a>
@@ -4004,10 +4026,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
         
           <li class="md-nav__item">
-  <a href="#community" class="md-nav__link">
+  <a href="#microsoft-teams" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🟡 Community
+        Microsoft Teams
       
     </span>
   </a>
@@ -4015,10 +4037,21 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
         
           <li class="md-nav__item">
-  <a href="#experimental" class="md-nav__link">
+  <a href="#google-chat" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🔵 Experimental
+        Google Chat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raw-webhook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raw webhook
       
     </span>
   </a>
@@ -4031,21 +4064,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#integrations-support-matrix" class="md-nav__link">
+  <a href="#using-an-existing-kubernetes-secret" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Integrations support matrix
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-validated-means-in-practice" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What “validated” means in practice
+        Using an existing Kubernetes Secret
       
     </span>
   </a>
@@ -4072,140 +4094,136 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
 
 
-<h1 id="integrations-overview">Integrations Overview<a class="headerlink" href="#integrations-overview" title="Permanent link">#</a></h1>
-<p>Reloader integrates with a wide range of Kubernetes-native tools for secrets management, certificate automation, and configuration delivery.</p>
-<p>This section provides an overview of:</p>
-<ul>
-<li>How integrations work with Reloader</li>
-<li>The different <strong>support and validation levels</strong></li>
-<li>Which integrations are <strong>validated and supported in Reloader Enterprise</strong></li>
-<li>What community users can expect</li>
-</ul>
-<p>Each integration has its own dedicated section with architecture notes, step-by-step examples, and operational considerations.</p>
+<h1 id="alert-when-reloader-triggers-a-restart">Alert When Reloader Triggers a Restart<a class="headerlink" href="#alert-when-reloader-triggers-a-restart" title="Permanent link">#</a></h1>
+<p>Reloader can send a webhook notification whenever it triggers a rolling restart. This is useful for audit trails, operational visibility, and integrating with incident management workflows.</p>
+<p>Alerts are sent to a configured webhook endpoint with details about what changed and which workload was restarted.</p>
 <hr>
-<h2 id="how-integrations-work-with-reloader">How integrations work with Reloader<a class="headerlink" href="#how-integrations-work-with-reloader" title="Permanent link">#</a></h2>
-<p>Reloader itself is <strong>tool-agnostic</strong>.</p>
-<p>It watches Kubernetes resources such as:</p>
-<ul>
-<li><code>Secrets</code></li>
-<li><code>ConfigMaps</code></li>
-</ul>
-<p>When these change, Reloader can trigger safe rollouts of supported workloads (e.g. Deployments, StatefulSets, Rollouts), regardless of <strong>how</strong> those resources were created or updated.</p>
-<p>Integrations typically follow this flow:</p>
-<div class="highlight"><pre><span></span><code>External<span class="w"> </span>system
-↓
-Kubernetes<span class="w"> </span>Secret<span class="w"> </span>/<span class="w"> </span>ConfigMap
-↓
-Reloader<span class="w"> </span>detects<span class="w"> </span>change
-↓
-Controlled<span class="w"> </span>workload<span class="w"> </span>rollout
-</code></pre></div>
-<p>Because the integration point is Kubernetes-native, many tools <em>can</em> work with Reloader. The difference lies in <strong>validation, guarantees, and support</strong>.</p>
-<hr>
-<h2 id="support-validation-levels">Support &amp; validation levels<a class="headerlink" href="#support-validation-levels" title="Permanent link">#</a></h2>
-<p>Not all integrations are equal in terms of testing, guarantees, and support.</p>
-<p>To set clear expectations, Reloader uses the following support levels.</p>
-<h3 id="validated-reloader-enterprise">🟢 Validated (Reloader Enterprise)<a class="headerlink" href="#validated-reloader-enterprise" title="Permanent link">#</a></h3>
-<ul>
-<li>Continuously tested in CI</li>
-<li>Documented end-to-end workflows</li>
-<li>Validated across upgrades</li>
-<li>Known edge cases handled</li>
-<li>Covered by commercial support and SLA</li>
-</ul>
-<h3 id="community">🟡 Community<a class="headerlink" href="#community" title="Permanent link">#</a></h3>
-<ul>
-<li>Known to work in practice</li>
-<li>Community-contributed or best-effort docs</li>
-<li>No continuous validation or SLA</li>
-</ul>
-<h3 id="experimental">🔵 Experimental<a class="headerlink" href="#experimental" title="Permanent link">#</a></h3>
-<ul>
-<li>Early-stage or limited validation</li>
-<li>Suitable for testing and experimentation</li>
-<li>Behavior may change between releases</li>
-</ul>
-<p>These labels are shown clearly on each integration page.</p>
-<hr>
-<h2 id="integrations-support-matrix">Integrations support matrix<a class="headerlink" href="#integrations-support-matrix" title="Permanent link">#</a></h2>
-<p>The table below summarizes the current status of supported integrations.</p>
+<h2 id="supported-sinks">Supported sinks<a class="headerlink" href="#supported-sinks" title="Permanent link">#</a></h2>
 <table>
 <thead>
 <tr>
-<th>Integration</th>
-<th>Support level</th>
+<th>Sink</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="vault/index.html">HashiCorp Vault</a></td>
-<td>🟢 Validated (Reloader Enterprise)</td>
+<td>Raw webhook (default)</td>
+<td><code>webhook</code></td>
 </tr>
 <tr>
-<td><a href="openbao/index.html">OpenBao</a></td>
-<td>🟢 Validated (Reloader Enterprise)</td>
+<td>Slack</td>
+<td><code>slack</code></td>
 </tr>
 <tr>
-<td><a href="conjur/index.html">Conjur</a></td>
-<td>🟢 Validated (Reloader Enterprise)</td>
+<td>Microsoft Teams</td>
+<td><code>teams</code></td>
 </tr>
 <tr>
-<td>AWS Secret Manager</td>
-<td>🟡 Community</td>
-</tr>
-<tr>
-<td>GCP Secret Manager</td>
-<td>🟡 Community</td>
-</tr>
-<tr>
-<td>Azure Key Vault</td>
-<td>🟡 Community</td>
-</tr>
-<tr>
-<td>Infisical</td>
-<td>🟡 Community</td>
-</tr>
-<tr>
-<td>Bitwarden</td>
-<td>🟡 Community</td>
-</tr>
-<tr>
-<td>Doppler</td>
-<td>🟡 Community</td>
-</tr>
-<tr>
-<td>Cert-Manager</td>
-<td>🟡 Community</td>
-</tr>
-<tr>
-<td>Sealed Secrets</td>
-<td>🟡 Community</td>
-</tr>
-<tr>
-<td>External Secrets Operator</td>
-<td>🟡 Community</td>
-</tr>
-<tr>
-<td>Secrets Store CSI Driver</td>
-<td>🟡 Community</td>
+<td>Google Chat</td>
+<td><code>gchat</code></td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>Community usage is possible for most integrations, but <strong>only integrations marked as “Validated” are continuously tested and supported</strong>.</p>
-</blockquote>
 <hr>
-<h2 id="what-validated-means-in-practice">What “validated” means in practice<a class="headerlink" href="#what-validated-means-in-practice" title="Permanent link">#</a></h2>
-<p>For integrations marked as <strong>Validated (Reloader Enterprise)</strong>, Stakater continuously verifies:</p>
-<ul>
-<li>Reload behavior under frequent secret rotation</li>
-<li>Compatibility with supported Kubernetes versions</li>
-<li>Interaction with GitOps workflows (e.g. Argo CD)</li>
-<li>Rollout safety and failure handling</li>
-<li>RBAC and security boundaries</li>
-<li>Upgrade and rollback scenarios</li>
-</ul>
-<p>This reduces operational risk for platform teams running Reloader in production-critical environments.</p>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">#</a></h2>
+<p>Alerting is configured through environment variables on the Reloader deployment. The recommended way to set these is through the <code>reloader.deployment.env.secret</code> section of the Helm values, so that the webhook URL is stored as a Kubernetes Secret rather than in plain text.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">secret</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">ALERT_ON_RELOAD</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">        </span><span class="nt">ALERT_SINK</span><span class="p">:</span><span class="w"> </span><span class="s">"slack"</span>
+<span class="w">        </span><span class="nt">ALERT_WEBHOOK_URL</span><span class="p">:</span><span class="w"> </span><span class="s">"https://hooks.slack.com/services/..."</span>
+<span class="w">        </span><span class="nt">ALERT_ADDITIONAL_INFO</span><span class="p">:</span><span class="w"> </span><span class="s">"Cluster:</span><span class="nv"> </span><span class="s">production-eu"</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ALERT_ON_RELOAD</code></td>
+<td>Yes</td>
+<td>Set to <code>"true"</code> to enable alerting. Default: <code>false</code></td>
+</tr>
+<tr>
+<td><code>ALERT_SINK</code></td>
+<td>No</td>
+<td>Sink type: <code>slack</code>, <code>teams</code>, <code>gchat</code>, or <code>webhook</code>. Default: <code>webhook</code></td>
+</tr>
+<tr>
+<td><code>ALERT_WEBHOOK_URL</code></td>
+<td>Yes (when alerting enabled)</td>
+<td>The webhook URL to send notifications to</td>
+</tr>
+<tr>
+<td><code>ALERT_ADDITIONAL_INFO</code></td>
+<td>No</td>
+<td>Free-text string appended to the alert payload. Useful for adding context such as cluster name or environment</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">#</a></h2>
+<h3 id="slack">Slack<a class="headerlink" href="#slack" title="Permanent link">#</a></h3>
+<p>Create a Slack Incoming Webhook by following the <a href="https://api.slack.com/messaging/webhooks">Slack documentation</a>, then configure:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">secret</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">ALERT_ON_RELOAD</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">        </span><span class="nt">ALERT_SINK</span><span class="p">:</span><span class="w"> </span><span class="s">"slack"</span>
+<span class="w">        </span><span class="nt">ALERT_WEBHOOK_URL</span><span class="p">:</span><span class="w"> </span><span class="s">"https://hooks.slack.com/services/&lt;workspace-id&gt;/&lt;channel-id&gt;/&lt;token&gt;"</span>
+<span class="w">        </span><span class="nt">ALERT_ADDITIONAL_INFO</span><span class="p">:</span><span class="w"> </span><span class="s">"Cluster:</span><span class="nv"> </span><span class="s">production"</span>
+</code></pre></div>
+<h3 id="microsoft-teams">Microsoft Teams<a class="headerlink" href="#microsoft-teams" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">secret</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">ALERT_ON_RELOAD</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">        </span><span class="nt">ALERT_SINK</span><span class="p">:</span><span class="w"> </span><span class="s">"teams"</span>
+<span class="w">        </span><span class="nt">ALERT_WEBHOOK_URL</span><span class="p">:</span><span class="w"> </span><span class="s">"https://outlook.office.com/webhook/..."</span>
+</code></pre></div>
+<h3 id="google-chat">Google Chat<a class="headerlink" href="#google-chat" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">secret</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">ALERT_ON_RELOAD</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">        </span><span class="nt">ALERT_SINK</span><span class="p">:</span><span class="w"> </span><span class="s">"gchat"</span>
+<span class="w">        </span><span class="nt">ALERT_WEBHOOK_URL</span><span class="p">:</span><span class="w"> </span><span class="s">"https://chat.googleapis.com/v1/spaces/..."</span>
+</code></pre></div>
+<h3 id="raw-webhook">Raw webhook<a class="headerlink" href="#raw-webhook" title="Permanent link">#</a></h3>
+<p>When <code>ALERT_SINK</code> is set to <code>webhook</code> (or left unset), Reloader sends a plain JSON POST to the URL.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">secret</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">ALERT_ON_RELOAD</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">        </span><span class="nt">ALERT_SINK</span><span class="p">:</span><span class="w"> </span><span class="s">"webhook"</span>
+<span class="w">        </span><span class="nt">ALERT_WEBHOOK_URL</span><span class="p">:</span><span class="w"> </span><span class="s">"https://your-internal-service/reloader-events"</span>
+<span class="w">        </span><span class="nt">ALERT_ADDITIONAL_INFO</span><span class="p">:</span><span class="w"> </span><span class="s">"env=staging"</span>
+</code></pre></div>
+<hr>
+<h2 id="using-an-existing-kubernetes-secret">Using an existing Kubernetes Secret<a class="headerlink" href="#using-an-existing-kubernetes-secret" title="Permanent link">#</a></h2>
+<p>If you already manage secrets externally (for example via External Secrets Operator), you can reference an existing Kubernetes Secret instead:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">existing</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">my-alert-secret</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">ALERT_ON_RELOAD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alert_on_reload</span>
+<span class="w">          </span><span class="nt">ALERT_SINK</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alert_sink</span>
+<span class="w">          </span><span class="nt">ALERT_WEBHOOK_URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alert_webhook_url</span>
+<span class="w">          </span><span class="nt">ALERT_ADDITIONAL_INFO</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alert_additional_info</span>
+</code></pre></div>
+<p>This maps each environment variable to a key in the existing Secret named <code>my-alert-secret</code>.</p>
 
 
 

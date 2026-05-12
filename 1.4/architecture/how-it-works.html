@@ -5,13 +5,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/1.4/integrations/index.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/1.4/architecture/how-it-works.html">
       
       
-        <link rel="prev" href="../how-to-guides/verify-and-troubleshoot.html">
+        <link rel="prev" href="../about/editions.html">
       
       
-        <link rel="next" href="conjur/index.html">
+        <link rel="next" href="../concepts/why-configuration-reloading-matters.html">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>Overview - Reloader</title>
+        <title>How Reloader Works - Reloader</title>
       
     
     
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#integrations-overview" class="md-skip">
+        <a href="#how-reloader-works" class="md-skip">
           Skip to content
         </a>
       
@@ -2178,18 +2178,20 @@ This documentation is either for an old version, or for the unreleased 'main' ve
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked="">
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
@@ -2210,7 +2212,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2225,10 +2227,37 @@ This documentation is either for an old version, or for the unreleased 'main' ve
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../architecture/how-it-works.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How Reloader Works
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="how-it-works.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2244,6 +2273,155 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-change-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Change detection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-hash-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Hash computation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-workload-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Workload matching
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-workload-restart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Workload restart
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reload-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reload strategies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reload strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#env-vars-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        env-vars (default)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-workload-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported workload types
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#helm-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Helm compatibility
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#namespace-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Namespace scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3009,20 +3187,18 @@ This documentation is either for an old version, or for the unreleased 'main' ve
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -3043,7 +3219,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3058,37 +3234,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../integrations/index.html" class="md-nav__link">
         
   
   
@@ -3104,111 +3253,6 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#how-integrations-work-with-reloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How integrations work with Reloader
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#support-validation-levels" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Support &amp; validation levels
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Support &amp; validation levels">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#validated-reloader-enterprise" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🟢 Validated (Reloader Enterprise)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#community" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🟡 Community
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#experimental" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔵 Experimental
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integrations-support-matrix" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integrations support matrix
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-validated-means-in-practice" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What “validated” means in practice
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3268,7 +3312,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="conjur/index.html" class="md-nav__link">
+      <a href="../integrations/conjur/index.html" class="md-nav__link">
         
   
   
@@ -3296,7 +3340,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="conjur/conjur-eso.html" class="md-nav__link">
+      <a href="../integrations/conjur/conjur-eso.html" class="md-nav__link">
         
   
   
@@ -3324,7 +3368,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="conjur/conjur-sidecar.html" class="md-nav__link">
+      <a href="../integrations/conjur/conjur-sidecar.html" class="md-nav__link">
         
   
   
@@ -3352,7 +3396,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="conjur/conjur-csi.html" class="md-nav__link">
+      <a href="../integrations/conjur/conjur-csi.html" class="md-nav__link">
         
   
   
@@ -3435,7 +3479,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="vault/index.html" class="md-nav__link">
+      <a href="../integrations/vault/index.html" class="md-nav__link">
         
   
   
@@ -3463,7 +3507,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="vault/vault-eso.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-eso.html" class="md-nav__link">
         
   
   
@@ -3491,7 +3535,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="vault/vault-vso.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-vso.html" class="md-nav__link">
         
   
   
@@ -3519,7 +3563,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="vault/vault-csi.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-csi.html" class="md-nav__link">
         
   
   
@@ -3547,7 +3591,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="vault/vault-csi-file.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-csi-file.html" class="md-nav__link">
         
   
   
@@ -3630,7 +3674,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="openbao/index.html" class="md-nav__link">
+      <a href="../integrations/openbao/index.html" class="md-nav__link">
         
   
   
@@ -3658,7 +3702,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="openbao/openbao-eso.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-eso.html" class="md-nav__link">
         
   
   
@@ -3686,7 +3730,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="openbao/openbao-bso.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-bso.html" class="md-nav__link">
         
   
   
@@ -3714,7 +3758,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="openbao/openbao-csi.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-csi.html" class="md-nav__link">
         
   
   
@@ -3742,7 +3786,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="openbao/openbao-csi-file.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-csi-file.html" class="md-nav__link">
         
   
   
@@ -3970,10 +4014,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#how-integrations-work-with-reloader" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How integrations work with Reloader
+        Overview
       
     </span>
   </a>
@@ -3981,22 +4025,66 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#support-validation-levels" class="md-nav__link">
+  <a href="#step-1-change-detection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Support &amp; validation levels
+        Step 1 — Change detection
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Support &amp; validation levels">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-hash-computation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Hash computation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-workload-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Workload matching
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-workload-restart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Workload restart
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reload-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reload strategies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reload strategies">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#validated-reloader-enterprise" class="md-nav__link">
+  <a href="#env-vars-default" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🟢 Validated (Reloader Enterprise)
+        env-vars (default)
       
     </span>
   </a>
@@ -4004,21 +4092,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
         
           <li class="md-nav__item">
-  <a href="#community" class="md-nav__link">
+  <a href="#annotations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🟡 Community
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#experimental" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔵 Experimental
+        annotations
       
     </span>
   </a>
@@ -4031,10 +4108,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#integrations-support-matrix" class="md-nav__link">
+  <a href="#supported-workload-types" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Integrations support matrix
+        Supported workload types
       
     </span>
   </a>
@@ -4042,10 +4119,21 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-validated-means-in-practice" class="md-nav__link">
+  <a href="#helm-compatibility" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What “validated” means in practice
+        Helm compatibility
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#namespace-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Namespace scope
       
     </span>
   </a>
@@ -4072,140 +4160,137 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
 
 
-<h1 id="integrations-overview">Integrations Overview<a class="headerlink" href="#integrations-overview" title="Permanent link">#</a></h1>
-<p>Reloader integrates with a wide range of Kubernetes-native tools for secrets management, certificate automation, and configuration delivery.</p>
-<p>This section provides an overview of:</p>
-<ul>
-<li>How integrations work with Reloader</li>
-<li>The different <strong>support and validation levels</strong></li>
-<li>Which integrations are <strong>validated and supported in Reloader Enterprise</strong></li>
-<li>What community users can expect</li>
-</ul>
-<p>Each integration has its own dedicated section with architecture notes, step-by-step examples, and operational considerations.</p>
+<h1 id="how-reloader-works">How Reloader Works<a class="headerlink" href="#how-reloader-works" title="Permanent link">#</a></h1>
+<p>Reloader is a Kubernetes controller that watches <code>ConfigMaps</code> and <code>Secrets</code> for data changes and triggers rolling restarts of workloads that depend on them.</p>
+<p>This page explains the internal mechanics: how changes are detected, how workloads are identified, and how restarts are triggered.</p>
 <hr>
-<h2 id="how-integrations-work-with-reloader">How integrations work with Reloader<a class="headerlink" href="#how-integrations-work-with-reloader" title="Permanent link">#</a></h2>
-<p>Reloader itself is <strong>tool-agnostic</strong>.</p>
-<p>It watches Kubernetes resources such as:</p>
-<ul>
-<li><code>Secrets</code></li>
-<li><code>ConfigMaps</code></li>
-</ul>
-<p>When these change, Reloader can trigger safe rollouts of supported workloads (e.g. Deployments, StatefulSets, Rollouts), regardless of <strong>how</strong> those resources were created or updated.</p>
-<p>Integrations typically follow this flow:</p>
-<div class="highlight"><pre><span></span><code>External<span class="w"> </span>system
-↓
-Kubernetes<span class="w"> </span>Secret<span class="w"> </span>/<span class="w"> </span>ConfigMap
-↓
-Reloader<span class="w"> </span>detects<span class="w"> </span>change
-↓
-Controlled<span class="w"> </span>workload<span class="w"> </span>rollout
-</code></pre></div>
-<p>Because the integration point is Kubernetes-native, many tools <em>can</em> work with Reloader. The difference lies in <strong>validation, guarantees, and support</strong>.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
+<pre class="mermaid"><code>flowchart LR
+    A[ConfigMap or Secret updated]
+    B[Reloader detects data change\nvia Kubernetes watch API]
+    C[Computes SHA1 hash\nof new data]
+    D[Finds workloads with\nReloader annotations]
+    E[Patches workload pod template]
+    F[Kubernetes rolling restart]
+
+    A --&gt; B --&gt; C --&gt; D --&gt; E --&gt; F</code></pre>
 <hr>
-<h2 id="support-validation-levels">Support &amp; validation levels<a class="headerlink" href="#support-validation-levels" title="Permanent link">#</a></h2>
-<p>Not all integrations are equal in terms of testing, guarantees, and support.</p>
-<p>To set clear expectations, Reloader uses the following support levels.</p>
-<h3 id="validated-reloader-enterprise">🟢 Validated (Reloader Enterprise)<a class="headerlink" href="#validated-reloader-enterprise" title="Permanent link">#</a></h3>
-<ul>
-<li>Continuously tested in CI</li>
-<li>Documented end-to-end workflows</li>
-<li>Validated across upgrades</li>
-<li>Known edge cases handled</li>
-<li>Covered by commercial support and SLA</li>
-</ul>
-<h3 id="community">🟡 Community<a class="headerlink" href="#community" title="Permanent link">#</a></h3>
-<ul>
-<li>Known to work in practice</li>
-<li>Community-contributed or best-effort docs</li>
-<li>No continuous validation or SLA</li>
-</ul>
-<h3 id="experimental">🔵 Experimental<a class="headerlink" href="#experimental" title="Permanent link">#</a></h3>
-<ul>
-<li>Early-stage or limited validation</li>
-<li>Suitable for testing and experimentation</li>
-<li>Behavior may change between releases</li>
-</ul>
-<p>These labels are shown clearly on each integration page.</p>
+<h2 id="step-1-change-detection">Step 1 — Change detection<a class="headerlink" href="#step-1-change-detection" title="Permanent link">#</a></h2>
+<p>Reloader uses the Kubernetes watch API to receive real-time events for <code>ConfigMap</code> and <code>Secret</code> resources.</p>
+<p>When an update event arrives, Reloader compares the <strong>old</strong> and <strong>new</strong> versions of the object. It only proceeds if the <strong>data</strong> actually changed — metadata-only changes (labels, annotations) do not trigger a restart.</p>
+<p>This prevents unnecessary restarts from administrative operations.</p>
 <hr>
-<h2 id="integrations-support-matrix">Integrations support matrix<a class="headerlink" href="#integrations-support-matrix" title="Permanent link">#</a></h2>
-<p>The table below summarizes the current status of supported integrations.</p>
+<h2 id="step-2-hash-computation">Step 2 — Hash computation<a class="headerlink" href="#step-2-hash-computation" title="Permanent link">#</a></h2>
+<p>When a data change is confirmed, Reloader computes a <strong>SHA1 hash</strong> of the updated resource's data. SHA1 is used because it produces a compact 40-character value and is efficient for this use case.</p>
+<p>The hash represents the state of the resource at the time of the change.</p>
+<hr>
+<h2 id="step-3-workload-matching">Step 3 — Workload matching<a class="headerlink" href="#step-3-workload-matching" title="Permanent link">#</a></h2>
+<p>Reloader scans all workloads across watched namespaces and identifies those that should be restarted based on their annotations. See the <a href="../reference/annotations.html">Annotation Reference</a> for the full set of supported annotations.</p>
+<p>A workload matches if:</p>
+<ul>
+<li>It has <code>reloader.stakater.com/auto: "true"</code> and references the changed resource in its pod spec</li>
+<li>It has <code>secret.reloader.stakater.com/reload</code> or <code>configmap.reloader.stakater.com/reload</code> naming the changed resource explicitly</li>
+<li>It has <code>reloader.stakater.com/search: "true"</code> and the changed resource has <code>reloader.stakater.com/match: "true"</code></li>
+</ul>
+<hr>
+<h2 id="step-4-workload-restart">Step 4 — Workload restart<a class="headerlink" href="#step-4-workload-restart" title="Permanent link">#</a></h2>
+<p>Reloader patches the pod template of the matching workload. The patch method depends on the configured <a href="#reload-strategies">reload strategy</a>.</p>
+<p>Once the pod template is patched, Kubernetes detects the spec change and initiates a rolling update according to the workload's own <code>RollingUpdate</code> strategy. Reloader does not restart pods directly — it delegates the actual rollout to Kubernetes.</p>
+<hr>
+<h2 id="reload-strategies">Reload strategies<a class="headerlink" href="#reload-strategies" title="Permanent link">#</a></h2>
+<p>Reloader supports two strategies for patching the pod template.</p>
+<h3 id="env-vars-default"><code>env-vars</code> (default)<a class="headerlink" href="#env-vars-default" title="Permanent link">#</a></h3>
+<p>Reloader injects or updates an environment variable on each container in the pod template. The variable name is derived from the changed resource:</p>
 <table>
 <thead>
 <tr>
-<th>Integration</th>
-<th>Support level</th>
+<th>Resource type</th>
+<th>Environment variable name</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="vault/index.html">HashiCorp Vault</a></td>
-<td>🟢 Validated (Reloader Enterprise)</td>
+<td>ConfigMap named <code>foo</code></td>
+<td><code>STAKATER_FOO_CONFIGMAP</code></td>
 </tr>
 <tr>
-<td><a href="openbao/index.html">OpenBao</a></td>
-<td>🟢 Validated (Reloader Enterprise)</td>
+<td>Secret named <code>bar</code></td>
+<td><code>STAKATER_BAR_SECRET</code></td>
 </tr>
 <tr>
-<td><a href="conjur/index.html">Conjur</a></td>
-<td>🟢 Validated (Reloader Enterprise)</td>
+<td>ConfigMap named <code>my-config</code></td>
+<td><code>STAKATER_MY_CONFIG_CONFIGMAP</code></td>
 </tr>
 <tr>
-<td>AWS Secret Manager</td>
-<td>🟡 Community</td>
-</tr>
-<tr>
-<td>GCP Secret Manager</td>
-<td>🟡 Community</td>
-</tr>
-<tr>
-<td>Azure Key Vault</td>
-<td>🟡 Community</td>
-</tr>
-<tr>
-<td>Infisical</td>
-<td>🟡 Community</td>
-</tr>
-<tr>
-<td>Bitwarden</td>
-<td>🟡 Community</td>
-</tr>
-<tr>
-<td>Doppler</td>
-<td>🟡 Community</td>
-</tr>
-<tr>
-<td>Cert-Manager</td>
-<td>🟡 Community</td>
-</tr>
-<tr>
-<td>Sealed Secrets</td>
-<td>🟡 Community</td>
-</tr>
-<tr>
-<td>External Secrets Operator</td>
-<td>🟡 Community</td>
-</tr>
-<tr>
-<td>Secrets Store CSI Driver</td>
-<td>🟡 Community</td>
+<td>Secret named <code>db-credentials</code></td>
+<td><code>STAKATER_DB_CREDENTIALS_SECRET</code></td>
 </tr>
 </tbody>
 </table>
-<blockquote>
-<p>Community usage is possible for most integrations, but <strong>only integrations marked as “Validated” are continuously tested and supported</strong>.</p>
-</blockquote>
+<p>The name is converted to uppercase and any character that is not <code>A–Z</code> or <code>0–9</code> (including hyphens and dots) is replaced with <code>_</code>.</p>
+<p>The variable value is the SHA1 hash of the resource's data. When the data changes, the hash changes, the environment variable is updated, and Kubernetes detects the pod template diff and initiates a rolling restart.</p>
+<p>If the environment variable already exists with the same hash value, no update is performed and no restart is triggered.</p>
+<h3 id="annotations"><code>annotations</code><a class="headerlink" href="#annotations" title="Permanent link">#</a></h3>
+<p>Instead of injecting an environment variable, Reloader adds the annotation <code>reloader.stakater.com/last-reloaded-from</code> to the pod template metadata. The annotation value is the name of the resource that triggered the reload.</p>
+<p>This strategy is preferred when using GitOps tools such as Argo CD, because environment variable injection can cause Argo CD to detect drift between the live state and the desired state in Git.</p>
+<p>Configure via Helm:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">reloadStrategy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">annotations</span>
+</code></pre></div>
 <hr>
-<h2 id="what-validated-means-in-practice">What “validated” means in practice<a class="headerlink" href="#what-validated-means-in-practice" title="Permanent link">#</a></h2>
-<p>For integrations marked as <strong>Validated (Reloader Enterprise)</strong>, Stakater continuously verifies:</p>
-<ul>
-<li>Reload behavior under frequent secret rotation</li>
-<li>Compatibility with supported Kubernetes versions</li>
-<li>Interaction with GitOps workflows (e.g. Argo CD)</li>
-<li>Rollout safety and failure handling</li>
-<li>RBAC and security boundaries</li>
-<li>Upgrade and rollback scenarios</li>
-</ul>
-<p>This reduces operational risk for platform teams running Reloader in production-critical environments.</p>
+<h2 id="supported-workload-types">Supported workload types<a class="headerlink" href="#supported-workload-types" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Workload type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Deployment</code></td>
+<td>Fully supported</td>
+</tr>
+<tr>
+<td><code>StatefulSet</code></td>
+<td>Fully supported</td>
+</tr>
+<tr>
+<td><code>DaemonSet</code></td>
+<td>Fully supported</td>
+</tr>
+<tr>
+<td><code>Argo Rollout</code></td>
+<td>Requires <code>reloader.isArgoRollouts: true</code></td>
+</tr>
+<tr>
+<td><code>CronJob</code></td>
+<td>Supported; can be disabled with <code>reloader.ignoreCronJobs: true</code></td>
+</tr>
+<tr>
+<td><code>Job</code></td>
+<td>Supported; can be disabled with <code>reloader.ignoreJobs: true</code></td>
+</tr>
+<tr>
+<td><code>DeploymentConfig</code></td>
+<td>OpenShift only; auto-detected when running on OpenShift</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="helm-compatibility">Helm compatibility<a class="headerlink" href="#helm-compatibility" title="Permanent link">#</a></h2>
+<p>Reloader is fully compatible with Helm-managed workloads. When Reloader patches a workload, it only modifies the environment variable or annotation it controls. The next <code>helm upgrade</code> will not undo Reloader's changes — Helm will simply see the Reloader-injected value as part of the live state and continue managing everything else normally.</p>
+<hr>
+<h2 id="namespace-scope">Namespace scope<a class="headerlink" href="#namespace-scope" title="Permanent link">#</a></h2>
+<p>By default Reloader watches all namespaces in the cluster (<code>reloader.watchGlobally: true</code>).</p>
+<p>To restrict Reloader to the namespace it is deployed in:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">watchGlobally</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</code></pre></div>
+<p>To watch only namespaces matching a label selector:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">namespaceSelector</span><span class="p">:</span><span class="w"> </span><span class="s">"environment=production"</span>
+</code></pre></div>
 
 
 
