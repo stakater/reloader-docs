@@ -11,40 +11,26 @@ This guide shows how to automatically restart Kubernetes workloads when HashiCor
 | **CSI Driver** | CSI mounts files + syncs to K8s Secret | CSI rotation interval | Works with `secretObjects` | [CSI Guide](vault-csi.md) |
 | **CSI Driver (File-Based)** | CSI mounts secrets as files only | CSI rotation interval | Watches SecretProviderClassPodStatus | [CSI File Guide](vault-csi-file.md) |
 
-## Architecture Overview
+## How It Works
 
-```text
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                     Vault + Reloader Architecture                            │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
-│  Vault Server (vault namespace):                                             │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │  HashiCorp Vault                                                       │ │
-│  │  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐    │ │
-│  │  │ KV v2 Engine     │  │ Kubernetes Auth  │  │ AppRole Auth     │    │ │
-│  │  │ secret/myapp     │  │ (k8s SA tokens)  │  │ (RoleID/SecretID)│    │ │
-│  │  └──────────────────┘  └──────────────────┘  └──────────────────┘    │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-│                              │                                               │
-│                              ▼                                               │
-│  Application Namespace:                                                      │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │  Secret Sync (ESO / VSO / CSI)                                         │ │
-│  │  ┌──────────────────┐    ┌──────────────────┐                         │ │
-│  │  │  Operator CRDs   │───►│  K8s Secret      │                         │ │
-│  │  │  (SecretStore,   │    │  (app-secrets)   │                         │ │
-│  │  │  VaultAuth, etc.)│    │  match: "true"   │                         │ │
-│  │  └──────────────────┘    └──────────────────┘                         │ │
-│  │                                   │                                    │ │
-│  │                                   ▼                                    │ │
-│  │  ┌──────────────────┐    ┌──────────────────┐                         │ │
-│  │  │ Stakater Reloader│───►│  Application Pod │                         │ │
-│  │  │ Detects change   │    │  Rolling restart  │                         │ │
-│  │  └──────────────────┘    └──────────────────┘                         │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-│                                                                              │
-└─────────────────────────────────────────────────────────────────────────────┘
+```mermaid
+sequenceDiagram
+    actor Ops as Operator
+    participant V as HashiCorp Vault
+    participant Sync as Secret Sync<br/>(ESO / VSO / CSI)
+    participant K8s as Kubernetes Secret
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Ops->>V: Rotate secret (kv put)
+    loop Poll / sync interval
+        Sync->>V: Fetch latest secret value
+        V-->>Sync: Updated value
+    end
+    Sync->>K8s: Update Secret data
+    K8s-->>RL: Watch event (Secret changed)
+    RL->>Pod: Trigger rolling restart
+    Note over Pod: New pod starts with updated secret
 ```
 
 ## Prerequisites

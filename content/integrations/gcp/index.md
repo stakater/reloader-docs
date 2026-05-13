@@ -8,39 +8,26 @@ This guide shows how to automatically restart Kubernetes workloads when GCP Secr
 |---------|-------------------|----------|------------------------|-------|
 | **External Secrets Operator** | ESO syncs to K8s Secret | ESO refresh interval | Best fit | [ESO Guide](gcp-eso.md) |
 
-## Architecture Overview
+## How It Works
 
-```text
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                    GCP Secret Manager + Reloader Architecture                 │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
-│  Google Cloud:                                                               │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │  GCP Secret Manager                                                    │ │
-│  │  ┌──────────────────┐  ┌──────────────────────────────────────────┐   │ │
-│  │  │  myapp-database  │  │  IAM Binding                             │   │ │
-│  │  │  (JSON secret)   │  │  Workload Identity or Service Account Key│   │ │
-│  │  └──────────────────┘  └──────────────────────────────────────────┘   │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-│                              │                                               │
-│                              ▼                                               │
-│  Kubernetes Cluster (GKE or any):                                            │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │  External Secrets Operator                                              │ │
-│  │  ┌──────────────────┐    ┌──────────────────┐                         │ │
-│  │  │  SecretStore     │───►│  ExternalSecret  │                         │ │
-│  │  │  (GCP provider)  │    │  refreshInterval │                         │ │
-│  │  └──────────────────┘    └──────────────────┘                         │ │
-│  │                                   │                                    │ │
-│  │                                   ▼                                    │ │
-│  │  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐ │ │
-│  │  │   K8s Secret     │    │  Stakater        │    │  Application     │ │ │
-│  │  │   (app-secrets)  │───►│  Reloader        │───►│  Pod             │ │ │
-│  │  │   match: "true"  │    │  detects change  │    │  rolling restart │ │ │
-│  │  └──────────────────┘    └──────────────────┘    └──────────────────┘ │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────────────────────┘
+```mermaid
+sequenceDiagram
+    actor Ops as Operator / Cloud Function
+    participant GSM as GCP Secret Manager
+    participant ESO as External Secrets Operator
+    participant K8s as Kubernetes Secret
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Ops->>GSM: Add new secret version
+    loop Every refreshInterval
+        ESO->>GSM: Access secret (latest version)
+        GSM-->>ESO: Updated secret value
+    end
+    ESO->>K8s: Update Secret data
+    K8s-->>RL: Watch event (Secret changed)
+    RL->>Pod: Trigger rolling restart
+    Note over Pod: New pod starts with updated secret
 ```
 
 ## Prerequisites

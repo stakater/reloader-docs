@@ -11,36 +11,32 @@ ESO supports two authentication methods for GCP Secret Manager:
 | [**Workload Identity**](#option-1-workload-identity) | GCP IAM bound to a Kubernetes ServiceAccount via GKE OIDC | Recommended for GKE — no static credentials |
 | [**Service Account Key**](#option-2-service-account-key) | GCP service account JSON key stored in a K8s Secret | Any cluster — simpler but requires key rotation |
 
-## Overview
+## How It Works
 
-```text
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                           Kubernetes Cluster                                 │
-│                                                                              │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │                    External Secrets Operator                            │ │
-│  │                                                                         │ │
-│  │  ┌─────────────────┐         ┌──────────────────────────────────────┐  │ │
-│  │  │  SecretStore    │         │  ExternalSecret                      │  │ │
-│  │  │                 │         │                                      │  │ │
-│  │  │  - GCP project  │         │  - refreshInterval: 1h               │  │ │
-│  │  │  - Auth method  │────────►│  - Maps GCP secret to K8s Secret     │  │ │
-│  │  │                 │         │  - Adds Reloader annotation          │  │ │
-│  │  └─────────────────┘         └──────────────────────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-│                                      │                                       │
-│                                      ▼                                       │
-│  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐       │
-│  │   K8s Secret     │    │  Stakater        │    │  Application     │       │
-│  │   (app-secrets)  │───►│  Reloader        │───►│  Pod             │       │
-│  │   match: "true"  │    │  watches secret  │    │  rolling restart │       │
-│  └──────────────────┘    └──────────────────┘    └──────────────────┘       │
-│            ▲                                                                 │
-│   ┌─────────────────┐                                                       │
-│   │  GCP Secret     │                                                       │
-│   │  Manager        │                                                       │
-│   └─────────────────┘                                                       │
-└─────────────────────────────────────────────────────────────────────────────┘
+```mermaid
+sequenceDiagram
+    actor Ops as Operator / Cloud Function
+    participant GSM as GCP Secret Manager
+    participant Meta as GKE Metadata Server
+    participant ESO as External Secrets Operator
+    participant K8s as Kubernetes Secret
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Note over ESO: Authenticates via Workload Identity or SA Key
+    ESO->>Meta: Request access token (Workload Identity)
+    Meta-->>ESO: Short-lived access token
+
+    Ops->>GSM: Add new secret version
+    loop Every refreshInterval
+        ESO->>GSM: Access secret (latest version)
+        GSM-->>ESO: Updated secret value
+    end
+    ESO->>K8s: Update Secret data
+    Note over K8s: annotation: reloader.stakater.com/match: "true"
+    K8s-->>RL: Watch event (Secret changed)
+    RL->>Pod: Trigger rolling restart
+    Note over Pod: New pod starts with updated secret
 ```
 
 ## Prerequisites

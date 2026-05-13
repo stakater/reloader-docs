@@ -8,39 +8,26 @@ This guide shows how to automatically restart Kubernetes workloads when Azure Ke
 |---------|-------------------|----------|------------------------|-------|
 | **External Secrets Operator** | ESO syncs to K8s Secret | ESO refresh interval | Best fit | [ESO Guide](azure-eso.md) |
 
-## Architecture Overview
+## How It Works
 
-```text
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                    Azure Key Vault + Reloader Architecture                    │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
-│  Azure Cloud:                                                                │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │  Azure Key Vault                                                       │ │
-│  │  ┌──────────────────┐  ┌──────────────────────────────────────────┐   │ │
-│  │  │  myapp-database  │  │  Azure RBAC / Access Policy              │   │ │
-│  │  │  (secret)        │  │  Workload Identity or Client Secret      │   │ │
-│  │  └──────────────────┘  └──────────────────────────────────────────┘   │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-│                              │                                               │
-│                              ▼                                               │
-│  Kubernetes Cluster (AKS or any):                                            │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │  External Secrets Operator                                              │ │
-│  │  ┌──────────────────┐    ┌──────────────────┐                         │ │
-│  │  │  SecretStore     │───►│  ExternalSecret  │                         │ │
-│  │  │  (Azure provider)│    │  refreshInterval │                         │ │
-│  │  └──────────────────┘    └──────────────────┘                         │ │
-│  │                                   │                                    │ │
-│  │                                   ▼                                    │ │
-│  │  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐ │ │
-│  │  │   K8s Secret     │    │  Stakater        │    │  Application     │ │ │
-│  │  │   (app-secrets)  │───►│  Reloader        │───►│  Pod             │ │ │
-│  │  │   match: "true"  │    │  detects change  │    │  rolling restart │ │ │
-│  │  └──────────────────┘    └──────────────────┘    └──────────────────┘ │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────────────────────┘
+```mermaid
+sequenceDiagram
+    actor Ops as Operator / Azure Function
+    participant AKV as Azure Key Vault
+    participant ESO as External Secrets Operator
+    participant K8s as Kubernetes Secret
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Ops->>AKV: Update secret
+    loop Every refreshInterval
+        ESO->>AKV: Get secret (latest version)
+        AKV-->>ESO: Updated secret value
+    end
+    ESO->>K8s: Update Secret data
+    K8s-->>RL: Watch event (Secret changed)
+    RL->>Pod: Trigger rolling restart
+    Note over Pod: New pod starts with updated secret
 ```
 
 ## Prerequisites

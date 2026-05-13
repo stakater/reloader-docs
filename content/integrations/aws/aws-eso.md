@@ -11,36 +11,32 @@ ESO supports two authentication methods for AWS Secrets Manager:
 | [**IRSA**](#option-1-irsa-iam-roles-for-service-accounts) | IAM role bound to a Kubernetes ServiceAccount via OIDC | Recommended for EKS — no static credentials |
 | [**Static Credentials**](#option-2-static-credentials) | AWS access key and secret stored in a K8s Secret | Any cluster — simpler but requires credential rotation |
 
-## Overview
+## How It Works
 
-```text
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                           Kubernetes Cluster                                 │
-│                                                                              │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │                    External Secrets Operator                            │ │
-│  │                                                                         │ │
-│  │  ┌─────────────────┐         ┌──────────────────────────────────────┐  │ │
-│  │  │  SecretStore    │         │  ExternalSecret                      │  │ │
-│  │  │                 │         │                                      │  │ │
-│  │  │  - AWS region   │         │  - refreshInterval: 1h               │  │ │
-│  │  │  - Auth method  │────────►│  - Maps AWS secret to K8s Secret     │  │ │
-│  │  │                 │         │  - Adds Reloader annotation          │  │ │
-│  │  └─────────────────┘         └──────────────────────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-│                                      │                                       │
-│                                      ▼                                       │
-│  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐       │
-│  │   K8s Secret     │    │  Stakater        │    │  Application     │       │
-│  │   (app-secrets)  │───►│  Reloader        │───►│  Pod             │       │
-│  │   match: "true"  │    │  watches secret  │    │  rolling restart │       │
-│  └──────────────────┘    └──────────────────┘    └──────────────────┘       │
-│            ▲                                                                 │
-│   ┌────────────────┐                                                        │
-│   │  AWS Secrets   │                                                        │
-│   │  Manager       │                                                        │
-│   └────────────────┘                                                        │
-└─────────────────────────────────────────────────────────────────────────────┘
+```mermaid
+sequenceDiagram
+    actor Ops as Operator / Rotation Job
+    participant SM as AWS Secrets Manager
+    participant STS as AWS STS
+    participant ESO as External Secrets Operator
+    participant K8s as Kubernetes Secret
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Note over ESO: Authenticates via IRSA or static credentials
+    ESO->>STS: AssumeRoleWithWebIdentity (IRSA)
+    STS-->>ESO: Temporary credentials
+
+    Ops->>SM: Rotate secret
+    loop Every refreshInterval
+        ESO->>SM: GetSecretValue
+        SM-->>ESO: Updated secret value
+    end
+    ESO->>K8s: Update Secret data
+    Note over K8s: annotation: reloader.stakater.com/match: "true"
+    K8s-->>RL: Watch event (Secret changed)
+    RL->>Pod: Trigger rolling restart
+    Note over Pod: New pod starts with updated secret
 ```
 
 ## Prerequisites

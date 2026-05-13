@@ -8,40 +8,26 @@ This guide shows how to automatically restart Kubernetes workloads when AWS Secr
 |---------|-------------------|----------|------------------------|-------|
 | **External Secrets Operator** | ESO syncs to K8s Secret | ESO refresh interval | Best fit | [ESO Guide](aws-eso.md) |
 
-## Architecture Overview
+## How It Works
 
-```text
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                    AWS Secrets Manager + Reloader Architecture                │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
-│  AWS Cloud:                                                                  │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │  AWS Secrets Manager                                                   │ │
-│  │  ┌──────────────────┐  ┌──────────────────┐                           │ │
-│  │  │  myapp/database  │  │  IAM Role (IRSA) │                           │ │
-│  │  │  username        │  │  or              │                           │ │
-│  │  │  password        │  │  Access Keys     │                           │ │
-│  │  └──────────────────┘  └──────────────────┘                           │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-│                              │                                               │
-│                              ▼                                               │
-│  Kubernetes Cluster (EKS or any):                                            │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │  External Secrets Operator                                              │ │
-│  │  ┌──────────────────┐    ┌──────────────────┐                         │ │
-│  │  │  SecretStore     │───►│  ExternalSecret  │                         │ │
-│  │  │  (AWS provider)  │    │  refreshInterval │                         │ │
-│  │  └──────────────────┘    └──────────────────┘                         │ │
-│  │                                   │                                    │ │
-│  │                                   ▼                                    │ │
-│  │  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐ │ │
-│  │  │   K8s Secret     │    │  Stakater        │    │  Application     │ │ │
-│  │  │   (app-secrets)  │───►│  Reloader        │───►│  Pod             │ │ │
-│  │  │   match: "true"  │    │  detects change  │    │  rolling restart │ │ │
-│  │  └──────────────────┘    └──────────────────┘    └──────────────────┘ │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────────────────────┘
+```mermaid
+sequenceDiagram
+    actor Ops as Operator / Rotation Job
+    participant SM as AWS Secrets Manager
+    participant ESO as External Secrets Operator
+    participant K8s as Kubernetes Secret
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Ops->>SM: Rotate secret
+    loop Every refreshInterval
+        ESO->>SM: GetSecretValue
+        SM-->>ESO: Updated secret value
+    end
+    ESO->>K8s: Update Secret data
+    K8s-->>RL: Watch event (Secret changed)
+    RL->>Pod: Trigger rolling restart
+    Note over Pod: New pod starts with updated secret
 ```
 
 ## Prerequisites

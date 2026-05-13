@@ -11,35 +11,32 @@ ESO supports two authentication methods for Azure Key Vault:
 | [**Workload Identity**](#option-1-workload-identity) | Azure managed identity bound to a Kubernetes ServiceAccount | Recommended for AKS — no static credentials |
 | [**Client Secret**](#option-2-client-secret) | Azure App Registration client ID and secret stored in a K8s Secret | Any cluster — simpler but requires secret rotation |
 
-## Overview
+## How It Works
 
-```text
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                           Kubernetes Cluster                                 │
-│                                                                              │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │                    External Secrets Operator                            │ │
-│  │                                                                         │ │
-│  │  ┌─────────────────┐         ┌──────────────────────────────────────┐  │ │
-│  │  │  SecretStore    │         │  ExternalSecret                      │  │ │
-│  │  │                 │         │                                      │  │ │
-│  │  │  - Vault URL    │         │  - refreshInterval: 1h               │  │ │
-│  │  │  - Auth method  │────────►│  - Maps AKV secret to K8s Secret     │  │ │
-│  │  │  - Tenant ID    │         │  - Adds Reloader annotation          │  │ │
-│  │  └─────────────────┘         └──────────────────────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-│                                      │                                       │
-│                                      ▼                                       │
-│  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐       │
-│  │   K8s Secret     │    │  Stakater        │    │  Application     │       │
-│  │   (app-secrets)  │───►│  Reloader        │───►│  Pod             │       │
-│  │   match: "true"  │    │  watches secret  │    │  rolling restart │       │
-│  └──────────────────┘    └──────────────────┘    └──────────────────┘       │
-│            ▲                                                                 │
-│   ┌─────────────────┐                                                       │
-│   │  Azure Key Vault│                                                       │
-│   └─────────────────┘                                                       │
-└─────────────────────────────────────────────────────────────────────────────┘
+```mermaid
+sequenceDiagram
+    actor Ops as Operator / Azure Function
+    participant AKV as Azure Key Vault
+    participant AAD as Azure AD
+    participant ESO as External Secrets Operator
+    participant K8s as Kubernetes Secret
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Note over ESO: Authenticates via Workload Identity or Client Secret
+    ESO->>AAD: Exchange federated token (Workload Identity)
+    AAD-->>ESO: Access token
+
+    Ops->>AKV: Update secret
+    loop Every refreshInterval
+        ESO->>AKV: Get secret (latest version)
+        AKV-->>ESO: Updated secret value
+    end
+    ESO->>K8s: Update Secret data
+    Note over K8s: annotation: reloader.stakater.com/match: "true"
+    K8s-->>RL: Watch event (Secret changed)
+    RL->>Pod: Trigger rolling restart
+    Note over Pod: New pod starts with updated secret
 ```
 
 ## Prerequisites
