@@ -4938,72 +4938,29 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <p>This guide demonstrates integrating OpenBao with Stakater Reloader using the Secrets Store CSI Driver in file-based mode, where secrets are delivered directly as mounted files without syncing to Kubernetes Secrets.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
 <p>In the file-based CSI pattern, secrets from OpenBao are mounted directly into pods as files. Reloader monitors the <code>SecretProviderClassPodStatus</code> resource for version changes and triggers pod restarts when secrets are rotated.</p>
-<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────────────────────┐
-│                         Kubernetes Cluster                          │
-│  ┌───────────────────────────────────────────────────────────────┐  │
-│  │                    Application Namespace                       │  │
-│  │                                                                │  │
-│  │  ┌─────────────────┐    ┌──────────────────────────────────┐  │  │
-│  │  │ SecretProvider  │    │         Application Pod          │  │  │
-│  │  │     Class       │    │  ┌────────────────────────────┐  │  │  │
-│  │  │                 │    │  │  CSI Volume Mount          │  │  │  │
-│  │  │ - provider:     │    │  │  /mnt/secrets/             │  │  │  │
-│  │  │   openbao       │    │  │    ├── username            │  │  │  │
-│  │  │ - parameters    │    │  │    └── password            │  │  │  │
-│  │  │   (no secret-   │    │  └────────────────────────────┘  │  │  │
-│  │  │    Objects)     │    └──────────────────────────────────┘  │  │
-│  │  └────────┬────────┘                     ▲                    │  │
-│  │           │                              │                    │  │
-│  │           │              ┌───────────────┴───────────────┐    │  │
-│  │           │              │     Secrets Store CSI         │    │  │
-│  │           │              │         Driver                │    │  │
-│  │           │              │                               │    │  │
-│  │           │              │  - Mounts secrets as files    │    │  │
-│  │           │              │  - Updates version in status  │    │  │
-│  │           │              └───────────────┬───────────────┘    │  │
-│  │           │                              │                    │  │
-│  │           ▼                              ▼                    │  │
-│  │  ┌─────────────────────────────────────────────────────────┐  │  │
-│  │  │          SecretProviderClassPodStatus                   │  │  │
-│  │  │                                                         │  │  │
-│  │  │  status:                                                │  │  │
-│  │  │    objects:                                             │  │  │
-│  │  │    - id: username                                       │  │  │
-│  │  │      version: "abc123..."  ◄── Version hash changes     │  │  │
-│  │  │    - id: password               when secret rotates     │  │  │
-│  │  │      version: "def456..."                               │  │  │
-│  │  └──────────────────────┬──────────────────────────────────┘  │  │
-│  │                         │                                     │  │
-│  └─────────────────────────┼─────────────────────────────────────┘  │
-│                            │                                        │
-│                            ▼                                        │
-│             ┌─────────────────────────┐                            │
-│             │    Stakater Reloader    │                            │
-│             │                         │                            │
-│             │  Watches SPCPS for      │                            │
-│             │  version changes        │                            │
-│             │                         │                            │
-│             │  Triggers pod restart   │                            │
-│             │  on version change      │                            │
-│             └─────────────────────────┘                            │
-│                                                                     │
-│             ┌─────────────────────────┐                            │
-│             │    OpenBao CSI          │                            │
-│             │      Provider           │                            │
-│             └───────────┬─────────────┘                            │
-│                         │                                           │
-└─────────────────────────┼───────────────────────────────────────────┘
-                          │
-                          ▼
-               ┌─────────────────────┐
-               │      OpenBao        │
-               │                     │
-               │  KV v2 Secrets      │
-               │  secret/myapp       │
-               │                     │
-               │  Kubernetes Auth    │
-               └─────────────────────┘
-</code></pre></div>
+<pre class="mermaid"><code>sequenceDiagram
+    actor Ops as Operator
+    participant OB as OpenBao
+    participant CSI as CSI Driver +&lt;br/&gt;OpenBao Provider
+    participant SPCPS as SecretProviderClass&lt;br/&gt;PodStatus
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Note over CSI: Authenticates via Kubernetes Auth
+    CSI-&gt;&gt;OB: Authenticate (K8s SA JWT)
+    OB--&gt;&gt;CSI: Auth token
+
+    Note over Pod: Pod has CSI volume mounted (file-based, no K8s Secret)
+    Ops-&gt;&gt;OB: Rotate secret (bao kv put)
+    loop CSI rotation interval
+        CSI-&gt;&gt;OB: Fetch secrets
+        OB--&gt;&gt;CSI: Updated values
+        CSI-&gt;&gt;Pod: Refresh mounted files
+        CSI-&gt;&gt;SPCPS: Update version hash
+    end
+    SPCPS--&gt;&gt;RL: Watch event (version hash changed)
+    RL-&gt;&gt;Pod: Trigger rolling restart
+    Note over Pod: New pod reads updated files</code></pre>
 <h2 id="when-to-use-this-pattern">When to Use This Pattern<a class="headerlink" href="#when-to-use-this-pattern" title="Permanent link">#</a></h2>
 <p>Use the file-based CSI pattern when:</p>
 <ul>

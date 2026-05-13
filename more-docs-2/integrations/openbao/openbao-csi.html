@@ -4894,57 +4894,29 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <p>This guide demonstrates integrating OpenBao with Stakater Reloader using the Secrets Store CSI Driver with the OpenBao CSI Provider.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
 <p>The CSI (Container Storage Interface) pattern mounts secrets from OpenBao directly into pods as volume files. Using the <code>secretObjects</code> feature, secrets are also synced to Kubernetes Secrets, enabling Reloader integration.</p>
-<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────────────────────┐
-│                         Kubernetes Cluster                          │
-│  ┌───────────────────────────────────────────────────────────────┐  │
-│  │                    Application Namespace                       │  │
-│  │                                                                │  │
-│  │  ┌─────────────────┐    ┌──────────────────────────────────┐  │  │
-│  │  │ SecretProvider  │    │         Application Pod          │  │  │
-│  │  │     Class       │    │  ┌────────────────────────────┐  │  │  │
-│  │  │                 │    │  │  CSI Volume Mount          │  │  │  │
-│  │  │ - provider:     │    │  │  /mnt/secrets/             │  │  │  │
-│  │  │   openbao       │    │  │    ├── username            │  │  │  │
-│  │  │ - secretObjects │    │  │    └── password            │  │  │  │
-│  │  │ - parameters    │    │  └────────────────────────────┘  │  │  │
-│  │  └────────┬────────┘    └──────────────────────────────────┘  │  │
-│  │           │                              ▲                     │  │
-│  │           │                              │                     │  │
-│  │           │              ┌───────────────┴───────────────┐    │  │
-│  │           │              │                               │    │  │
-│  │           ▼              │     Secrets Store CSI         │    │  │
-│  │  ┌────────────────┐      │         Driver                │    │  │
-│  │  │ K8s Secret     │◄─────┤  (syncs to K8s Secret via     │    │  │
-│  │  │ (app-secrets)  │      │   secretObjects)              │    │  │
-│  │  │                │      │                               │    │  │
-│  │  │ annotations:   │      └───────────────┬───────────────┘    │  │
-│  │  │  reloader...   │                      │                    │  │
-│  │  │  match: true   │                      │                    │  │
-│  │  └───────┬────────┘                      │                    │  │
-│  │          │                               │                    │  │
-│  └──────────┼───────────────────────────────┼────────────────────┘  │
-│             │                               │                       │
-│             ▼                               ▼                       │
-│  ┌─────────────────────┐         ┌─────────────────────┐           │
-│  │  Stakater Reloader  │         │  OpenBao CSI        │           │
-│  │                     │         │    Provider         │           │
-│  │  Watches secrets    │         │                     │           │
-│  │  with match: true   │         │  Fetches secrets    │           │
-│  │                     │         │  from OpenBao       │           │
-│  └─────────────────────┘         └──────────┬──────────┘           │
-│                                             │                       │
-└─────────────────────────────────────────────┼───────────────────────┘
-                                              │
-                                              ▼
-                                   ┌─────────────────────┐
-                                   │      OpenBao        │
-                                   │                     │
-                                   │  KV v2 Secrets      │
-                                   │  secret/myapp       │
-                                   │                     │
-                                   │  Kubernetes Auth    │
-                                   └─────────────────────┘
-</code></pre></div>
+<pre class="mermaid"><code>sequenceDiagram
+    actor Ops as Operator
+    participant OB as OpenBao
+    participant CSI as CSI Driver +&lt;br/&gt;OpenBao Provider
+    participant K8s as Kubernetes Secret
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Note over CSI: Authenticates via Kubernetes Auth
+    CSI-&gt;&gt;OB: Authenticate (K8s SA JWT)
+    OB--&gt;&gt;CSI: Auth token
+
+    Note over Pod: Pod has CSI volume mounted
+    Ops-&gt;&gt;OB: Rotate secret (bao kv put)
+    loop CSI rotation interval
+        CSI-&gt;&gt;OB: Fetch secrets
+        OB--&gt;&gt;CSI: Updated values
+        CSI-&gt;&gt;Pod: Refresh mounted files
+        CSI-&gt;&gt;K8s: Sync to Secret via secretObjects
+    end
+    K8s--&gt;&gt;RL: Watch event (Secret changed)
+    RL-&gt;&gt;Pod: Trigger rolling restart
+    Note over Pod: New pod starts with updated secret</code></pre>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <p>Complete the common setup steps from the <a href="index.html">Overview</a>:</p>
 <ul>

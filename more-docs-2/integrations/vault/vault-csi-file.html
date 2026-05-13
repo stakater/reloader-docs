@@ -4949,50 +4949,29 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <h1 id="how-to-use-reloader-with-vault-csi-driver-file-based-pattern">How to Use Reloader with Vault CSI Driver (File-Based) Pattern<a class="headerlink" href="#how-to-use-reloader-with-vault-csi-driver-file-based-pattern" title="Permanent link">#</a></h1>
 <p>This guide explains how to set up HashiCorp Vault with the Secrets Store CSI Driver using file-based secrets (no Kubernetes Secret), combined with Stakater Reloader's CSI integration for automatic pod restarts when secrets change.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────────────────────────────┐
-│                           Kubernetes Cluster                                 │
-│                                                                              │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │                         Application Pod                                 │ │
-│  │  ┌─────────────────────────────────────────────────────────────────┐   │ │
-│  │  │  App Container                                                   │   │ │
-│  │  │                                                                  │   │ │
-│  │  │  - Reads secrets directly from mounted files                    │   │ │
-│  │  │  - No K8s Secret or env vars needed                            │   │ │
-│  │  │                                                                  │   │ │
-│  │  └─────────────────────────────────────────────────────────────────┘   │ │
-│  │                              │                                          │ │
-│  │                              ▼                                          │ │
-│  │  ┌─────────────────────────────────────────────────────────────────┐   │ │
-│  │  │  CSI Volume Mount (/mnt/secrets)                                │   │ │
-│  │  │  - username (file)                                              │   │ │
-│  │  │  - password (file)                                              │   │ │
-│  │  └─────────────────────────────────────────────────────────────────┘   │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-│                                      │                                       │
-│            ┌─────────────────────────┴─────────────────────────┐            │
-│            ▼                                                   ▼            │
-│  ┌──────────────────┐    ┌─────────────────────────────────────────────┐   │
-│  │  Vault CSI       │    │  Stakater Reloader                          │   │
-│  │  Provider        │    │                                              │   │
-│  │                  │    │  Watches SecretProviderClassPodStatus        │   │
-│  │  - Authenticates │    │  for version hash changes, then             │   │
-│  │    via K8s auth  │    │  triggers rolling restart                   │   │
-│  │  - Fetches from  │    │                                              │   │
-│  │    Vault KV v2   │    │  Requires: --enable-csi-integration=true    │   │
-│  │  - Updates files │    │                                              │   │
-│  │    on rotation   │    └─────────────────────────────────────────────┘   │
-│  └──────────────────┘                                                       │
-│            │                                                                 │
-│            ▼                                                                 │
-│  ┌──────────────────┐                                                       │
-│  │    Vault         │                                                       │
-│  │    Server        │                                                       │
-│  │                  │                                                       │
-│  │  KV v2 engine   │                                                       │
-│  └──────────────────┘                                                       │
-└─────────────────────────────────────────────────────────────────────────────┘
-</code></pre></div>
+<pre class="mermaid"><code>sequenceDiagram
+    actor Ops as Operator
+    participant V as HashiCorp Vault
+    participant CSI as CSI Driver +&lt;br/&gt;Vault Provider
+    participant SPCPS as SecretProviderClass&lt;br/&gt;PodStatus
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Note over CSI: Authenticates via Kubernetes Auth
+    CSI-&gt;&gt;V: Authenticate (K8s SA JWT)
+    V--&gt;&gt;CSI: Auth token
+
+    Note over Pod: Pod has CSI volume mounted (file-based, no K8s Secret)
+    Ops-&gt;&gt;V: Rotate secret (vault kv put)
+    loop CSI rotation interval
+        CSI-&gt;&gt;V: Fetch secrets
+        V--&gt;&gt;CSI: Updated values
+        CSI-&gt;&gt;Pod: Refresh mounted files
+        CSI-&gt;&gt;SPCPS: Update version hash
+    end
+    SPCPS--&gt;&gt;RL: Watch event (version hash changed)
+    RL-&gt;&gt;Pod: Trigger rolling restart
+    Note over Pod: New pod reads updated files</code></pre>
 <h2 id="how-this-differs-from-the-k8s-secret-csi-pattern">How This Differs from the K8s Secret CSI Pattern<a class="headerlink" href="#how-this-differs-from-the-k8s-secret-csi-pattern" title="Permanent link">#</a></h2>
 <table>
 <thead>

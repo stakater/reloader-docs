@@ -4927,51 +4927,29 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <h1 id="how-to-use-reloader-with-conjur-csi-driver-pattern">How to Use Reloader with Conjur CSI Driver Pattern<a class="headerlink" href="#how-to-use-reloader-with-conjur-csi-driver-pattern" title="Permanent link">#</a></h1>
 <p>This guide explains how to set up CyberArk Conjur with the Secrets Store CSI Driver using JWT-based authentication (<code>authn-jwt</code>), combined with Stakater Reloader for automatic pod restarts when secrets change.</p>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────────────────────────────┐
-│                           Kubernetes Cluster                                 │
-│                                                                              │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │                         Application Pod                                 │ │
-│  │  ┌─────────────────────────────────────────────────────────────────┐   │ │
-│  │  │  App Container                                                   │   │ │
-│  │  │                                                                  │   │ │
-│  │  │  - Reads secrets from env vars (K8s Secret)                     │   │ │
-│  │  │  - Optionally reads secrets from mounted files                  │   │ │
-│  │  │                                                                  │   │ │
-│  │  └─────────────────────────────────────────────────────────────────┘   │ │
-│  │                              │                                          │ │
-│  │                              ▼                                          │ │
-│  │  ┌─────────────────────────────────────────────────────────────────┐   │ │
-│  │  │  CSI Volume Mount (/mnt/secrets)                                │   │ │
-│  │  │  - username.txt                                                  │   │ │
-│  │  │  - password.txt                                                  │   │ │
-│  │  └─────────────────────────────────────────────────────────────────┘   │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-│                                      │                                       │
-│            ┌─────────────────────────┼─────────────────────────┐            │
-│            ▼                         ▼                         ▼            │
-│  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐      │
-│  │  Conjur CSI      │    │   K8s Secret     │    │  Stakater        │      │
-│  │  Provider        │───►│   (app-secrets)  │───►│  Reloader        │      │
-│  │                  │    │                  │    │                  │      │
-│  │  - Authenticates │    │  annotation:     │    │  Watches secret  │      │
-│  │    via JWT       │    │  reloader.../    │    │  changes and     │      │
-│  │  - Fetches from  │    │  match: "true"   │    │  restarts pods   │      │
-│  │    Conjur        │    │                  │    │                  │      │
-│  │  - Syncs via     │    │  (secretObjects) │    │                  │      │
-│  │    secretObjects │    │                  │    │                  │      │
-│  └──────────────────┘    └──────────────────┘    └──────────────────┘      │
-│            │                                                                 │
-│            ▼                                                                 │
-│  ┌──────────────────┐                                                       │
-│  │    Conjur        │                                                       │
-│  │    Server        │                                                       │
-│  │                  │                                                       │
-│  │  Stores secrets  │                                                       │
-│  │  Validates JWT   │                                                       │
-│  └──────────────────┘                                                       │
-└─────────────────────────────────────────────────────────────────────────────┘
-</code></pre></div>
+<pre class="mermaid"><code>sequenceDiagram
+    actor Ops as Operator
+    participant C as Conjur Server
+    participant CSI as CSI Driver +&lt;br/&gt;Conjur Provider
+    participant K8s as Kubernetes Secret
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Note over CSI: Authenticates via JWT (authn-jwt)
+    CSI-&gt;&gt;C: Authenticate (K8s SA JWT, audience: "conjur")
+    C--&gt;&gt;CSI: Auth token
+
+    Note over Pod: Pod has CSI volume mounted
+    Ops-&gt;&gt;C: Update variable (conjur variable set)
+    loop CSI rotation interval
+        CSI-&gt;&gt;C: Fetch secrets
+        C--&gt;&gt;CSI: Updated values
+        CSI-&gt;&gt;Pod: Refresh mounted files
+        CSI-&gt;&gt;K8s: Sync to Secret via secretObjects
+    end
+    K8s--&gt;&gt;RL: Watch event (Secret changed)
+    RL-&gt;&gt;Pod: Trigger rolling restart
+    Note over Pod: New pod starts with updated secret</code></pre>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <p>Complete the common setup steps from the <a href="index.html">Overview</a>:</p>
 <ul>
