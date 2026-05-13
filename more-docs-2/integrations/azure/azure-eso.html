@@ -5206,12 +5206,12 @@ az<span class="w"> </span>role<span class="w"> </span>assignment<span class="w">
 <span class="w">  </span>--scope<span class="w"> </span><span class="nv">$VAULT_ID</span>
 </code></pre></div>
 <blockquote>
-<p>If your Key Vault still uses the legacy access policy model instead of Azure RBAC, use:
-</p><div class="highlight"><pre><span></span><code>az<span class="w"> </span>keyvault<span class="w"> </span>set-policy<span class="w"> </span><span class="se">\</span>
+<p>If your Key Vault still uses the legacy access policy model instead of Azure RBAC, use:</p>
+<div class="highlight"><pre><span></span><code>az<span class="w"> </span>keyvault<span class="w"> </span>set-policy<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--name<span class="w"> </span><span class="nv">$VAULT_NAME</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--object-id<span class="w"> </span><span class="nv">$IDENTITY_OBJECT_ID</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--secret-permissions<span class="w"> </span>get<span class="w"> </span>list
-</code></pre></div><p></p>
+</code></pre></div>
 </blockquote>
 <h3 id="workload-identity-step-4-create-namespace-and-kubernetes-serviceaccount">Workload Identity: Step 4 — Create namespace and Kubernetes ServiceAccount<a class="headerlink" href="#workload-identity-step-4-create-namespace-and-kubernetes-serviceaccount" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>azure-eso-test
@@ -5293,12 +5293,12 @@ az<span class="w"> </span>role<span class="w"> </span>assignment<span class="w">
 <span class="w">  </span>--scope<span class="w"> </span><span class="nv">$VAULT_ID</span>
 </code></pre></div>
 <blockquote>
-<p>For Key Vaults using access policies:
-</p><div class="highlight"><pre><span></span><code>az<span class="w"> </span>keyvault<span class="w"> </span>set-policy<span class="w"> </span><span class="se">\</span>
+<p>For Key Vaults using access policies:</p>
+<div class="highlight"><pre><span></span><code>az<span class="w"> </span>keyvault<span class="w"> </span>set-policy<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--name<span class="w"> </span><span class="nv">$VAULT_NAME</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--spn<span class="w"> </span><span class="nv">$APP_ID</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--secret-permissions<span class="w"> </span>get<span class="w"> </span>list
-</code></pre></div><p></p>
+</code></pre></div>
 </blockquote>
 <h3 id="client-secret-step-3-store-credentials-in-a-kubernetes-secret">Client Secret: Step 3 — Store credentials in a Kubernetes Secret<a class="headerlink" href="#client-secret-step-3-store-credentials-in-a-kubernetes-secret" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>azure-eso-test
