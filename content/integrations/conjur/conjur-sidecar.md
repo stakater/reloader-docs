@@ -4,33 +4,30 @@ This guide explains how to set up CyberArk Conjur with the Secrets Provider side
 
 ## Overview
 
-```text
-┌─────────────────────────────────────────────────────────────────────────┐
-│                           Kubernetes Cluster                             │
-│                                                                          │
-│  ┌────────────────────────────────────────────────────────────────────┐ │
-│  │                         Application Pod                             │ │
-│  │  ┌─────────────────┐         ┌──────────────────────────────────┐  │ │
-│  │  │  App Container  │         │  Secrets Provider Sidecar        │  │ │
-│  │  │                 │         │                                  │  │ │
-│  │  │  Reads secrets  │         │  1. Gets projected SA JWT token  │  │ │
-│  │  │  from K8s       │         │  2. Authenticates via authn-jwt  │  │ │
-│  │  │  Secret         │         │  3. Fetches secrets from Conjur  │  │ │
-│  │  │                 │         │  4. Updates K8s Secret           │  │ │
-│  │  │                 │         │  5. Refreshes every 30s          │  │ │
-│  │  └─────────────────┘         └──────────────────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────────────┘ │
-│                                      │                                   │
-│                                      ▼                                   │
-│  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐   │
-│  │   K8s Secret     │    │  Stakater        │    │    Conjur        │   │
-│  │   (app-secrets)  │◄───│  Reloader        │    │    Server        │   │
-│  │                  │    │                  │    │                  │   │
-│  │  annotation:     │    │  Watches secret  │    │  Stores secrets  │   │
-│  │  reloader.../    │    │  changes and     │    │  Validates JWT   │   │
-│  │  match: "true"   │    │  restarts pods   │    │  tokens          │   │
-│  └──────────────────┘    └──────────────────┘    └──────────────────┘   │
-└─────────────────────────────────────────────────────────────────────────┘
+```mermaid
+sequenceDiagram
+    actor Ops as Operator
+    participant C as Conjur Server
+    participant SP as Secrets Provider<br/>Sidecar
+    participant K8s as Kubernetes Secret
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Note over SP: Runs as sidecar in the application pod
+    SP->>C: Authenticate via authn-jwt (K8s SA JWT)
+    C-->>SP: Auth token
+
+    Note over K8s: Secret pre-created with conjur-map annotation
+    Ops->>C: Update variable (conjur variable set)
+    loop Every secrets-refresh-interval
+        SP->>C: Fetch secrets
+        C-->>SP: Updated secret values
+        SP->>K8s: Update Secret data
+    end
+    Note over K8s: annotation: reloader.stakater.com/match: "true"
+    K8s-->>RL: Watch event (Secret changed)
+    RL->>Pod: Trigger rolling restart
+    Note over Pod: New pod starts with updated secret
 ```
 
 ## Prerequisites

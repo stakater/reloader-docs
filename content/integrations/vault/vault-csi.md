@@ -6,50 +6,30 @@ This guide explains how to set up HashiCorp Vault with the Secrets Store CSI Dri
 
 ## Overview
 
-```text
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                           Kubernetes Cluster                                 │
-│                                                                              │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │                         Application Pod                                 │ │
-│  │  ┌─────────────────────────────────────────────────────────────────┐   │ │
-│  │  │  App Container                                                   │   │ │
-│  │  │                                                                  │   │ │
-│  │  │  - Reads secrets from env vars (K8s Secret)                     │   │ │
-│  │  │  - Optionally reads secrets from mounted files                  │   │ │
-│  │  │                                                                  │   │ │
-│  │  └─────────────────────────────────────────────────────────────────┘   │ │
-│  │                              │                                          │ │
-│  │                              ▼                                          │ │
-│  │  ┌─────────────────────────────────────────────────────────────────┐   │ │
-│  │  │  CSI Volume Mount (/mnt/secrets)                                │   │ │
-│  │  │  - username                                                      │   │ │
-│  │  │  - password                                                      │   │ │
-│  │  └─────────────────────────────────────────────────────────────────┘   │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-│                                      │                                       │
-│            ┌─────────────────────────┼─────────────────────────┐            │
-│            ▼                         ▼                         ▼            │
-│  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐      │
-│  │  Vault CSI       │    │   K8s Secret     │    │  Stakater        │      │
-│  │  Provider        │───►│   (app-secrets)  │───►│  Reloader        │      │
-│  │                  │    │                  │    │                  │      │
-│  │  - Authenticates │    │  annotation:     │    │  Watches secret  │      │
-│  │    via K8s auth  │    │  reloader.../    │    │  changes and     │      │
-│  │  - Fetches from  │    │  match: "true"   │    │  restarts pods   │      │
-│  │    Vault KV v2   │    │                  │    │                  │      │
-│  │  - Syncs via     │    │  (secretObjects) │    │                  │      │
-│  │    secretObjects │    │                  │    │                  │      │
-│  └──────────────────┘    └──────────────────┘    └──────────────────┘      │
-│            │                                                                 │
-│            ▼                                                                 │
-│  ┌──────────────────┐                                                       │
-│  │    Vault         │                                                       │
-│  │    Server        │                                                       │
-│  │                  │                                                       │
-│  │  KV v2 engine   │                                                       │
-│  └──────────────────┘                                                       │
-└─────────────────────────────────────────────────────────────────────────────┘
+```mermaid
+sequenceDiagram
+    actor Ops as Operator
+    participant V as HashiCorp Vault
+    participant CSI as CSI Driver +<br/>Vault Provider
+    participant K8s as Kubernetes Secret
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Note over CSI: Authenticates via Kubernetes Auth
+    CSI->>V: Authenticate (K8s SA JWT)
+    V-->>CSI: Auth token
+
+    Note over Pod: Pod has CSI volume mounted
+    Ops->>V: Rotate secret (vault kv put)
+    loop CSI rotation interval
+        CSI->>V: Fetch secrets
+        V-->>CSI: Updated values
+        CSI->>Pod: Refresh mounted files
+        CSI->>K8s: Sync to Secret via secretObjects
+    end
+    K8s-->>RL: Watch event (Secret changed)
+    RL->>Pod: Trigger rolling restart
+    Note over Pod: New pod starts with updated secret
 ```
 
 ## Prerequisites
