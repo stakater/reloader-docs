@@ -86,7 +86,7 @@ aws secretsmanager create-secret \
 
 ## Option 1: IRSA (IAM Roles for Service Accounts)
 
-IRSA lets a Kubernetes ServiceAccount assume an IAM role without static credentials. It uses EKS's OIDC provider to exchange ServiceAccount tokens for temporary AWS credentials.
+IRSA lets a Kubernetes ServiceAccount assume an IAM role without static credentials. It uses the EKS OIDC provider to exchange ServiceAccount tokens for temporary AWS credentials.
 
 ### IRSA: Step 1 — Enable the OIDC provider for your EKS cluster
 

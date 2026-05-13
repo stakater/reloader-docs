@@ -37,7 +37,7 @@ helm install reloader stakater/reloader \
 | `reloader.reloadOnCreate` | `--reload-on-create` | bool | `false` | Also trigger reloads when a ConfigMap or Secret is **created**, not just updated. |
 | `reloader.reloadOnDelete` | `--reload-on-delete` | bool | `false` | Also trigger reloads when a ConfigMap or Secret is **deleted**. |
 | `reloader.reloadStrategy` | `--reload-strategy` | string | `env-vars` | How Reloader forces a rolling update. See [Reload strategies](#reload-strategies). |
-| `reloader.webhookUrl` | `--webhook-url` | string | `""` | Send an HTTP request to this URL on change instead of restarting workloads. When set, no workloads are restarted. |
+| `reloader.webhookUrl` | `--webhook-url` | string | `""` | Send an http request to this URL on change instead of restarting workloads. When set, no workloads are restarted. |
 | `reloader.isArgoRollouts` | `--is-Argo-Rollouts` | bool | `false` | Enable support for Argo `Rollout` resources. |
 | `reloader.isOpenshift` | *(Helm only)* | bool | `false` | Enable OpenShift `DeploymentConfig` support. Reloader auto-detects OpenShift at startup; only set this if auto-detection fails. |
 | `reloader.enableCSIIntegration` | `--enable-csi-integration` | bool | `false` | Enable watching `SecretProviderClass` resources via the Secrets Store CSI Driver. Required for file-based CSI secret mounts. |
@@ -299,5 +299,5 @@ reloader:
 
 | Helm value | CLI flag | Type | Default | Description |
 |---|---|---|---|---|
-| `reloader.enablePProf` | `--enable-pprof` | bool | `false` | Start a pprof HTTP server for Go runtime profiling. |
+| `reloader.enablePProf` | `--enable-pprof` | bool | `false` | Start a pprof http server for Go runtime profiling. |
 | `reloader.pprofAddr` | `--pprof-addr` | string | `:6060` | Address for the pprof server. |

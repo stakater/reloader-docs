@@ -111,7 +111,7 @@ spec:
 
 The `~1` in the JSON Pointer is the escaped form of `/`, representing the annotation key `reloader.stakater.com/last-reloaded-from`.
 
-### Option B: Cluster-wide (argocd-cm)
+### Option B: Cluster-wide (ArgoCD ConfigMap)
 
 To apply the ignore rule to all applications globally, add a resource customization to the `argocd-cm` ConfigMap:
 
