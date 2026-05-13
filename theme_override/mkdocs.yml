@@ -41,6 +41,8 @@ nav:
       - how-to-guides/restart-pods-when-external-secrets-change.md
       - how-to-guides/alerting-on-reload.md
       - how-to-guides/verify-and-troubleshoot.md
+      - how-to-guides/use-reloader-with-argocd.md
+      - how-to-guides/use-reloader-with-flux.md
   - Integrations:
       - Overview: integrations/index.md
       - Conjur:
@@ -60,8 +62,18 @@ nav:
           - OpenBao Secrets Operator: integrations/openbao/openbao-bso.md
           - CSI Driver: integrations/openbao/openbao-csi.md
           - CSI Driver (File-Based): integrations/openbao/openbao-csi-file.md
+      - AWS Secrets Manager:
+          - Overview: integrations/aws/index.md
+          - External Secrets Operator: integrations/aws/aws-eso.md
+      - GCP Secret Manager:
+          - Overview: integrations/gcp/index.md
+          - External Secrets Operator: integrations/gcp/gcp-eso.md
+      - Azure Key Vault:
+          - Overview: integrations/azure/index.md
+          - External Secrets Operator: integrations/azure/azure-eso.md
   - Reference:
       - Annotations: reference/annotations.md
+      - Helm Values & CLI Flags: reference/helm-values.md
   - eula.md
   - 'Support': help.md
   - 'Versions': versions.md

@@ -11,6 +11,8 @@ This section provides an overview of:
 
 Each integration has its own dedicated section with architecture notes, step-by-step examples, and operational considerations.
 
+All integrations work with both **Reloader OSS** and **Reloader Enterprise**. Enterprise customers receive commercial support and SLA coverage.
+
 ---
 
 ## How integrations work with Reloader
@@ -40,69 +42,13 @@ Because the integration point is Kubernetes-native, many tools *can* work with R
 
 ---
 
-## Support & validation levels
+## Integrations
 
-Not all integrations are equal in terms of testing, guarantees, and support.
-
-To set clear expectations, Reloader uses the following support levels.
-
-### 🟢 Validated (Reloader Enterprise)
-
-- Continuously tested in CI
-- Documented end-to-end workflows
-- Validated across upgrades
-- Known edge cases handled
-- Covered by commercial support and SLA
-
-### 🟡 Community
-
-- Known to work in practice
-- Community-contributed or best-effort docs
-- No continuous validation or SLA
-
-### 🔵 Experimental
-
-- Early-stage or limited validation
-- Suitable for testing and experimentation
-- Behavior may change between releases
-
-These labels are shown clearly on each integration page.
-
----
-
-## Integrations support matrix
-
-The table below summarizes the current status of supported integrations.
-
-| Integration | Support level |
-|------------|---------------|
-| [HashiCorp Vault](./vault/index.md) | 🟢 Validated (Reloader Enterprise) |
-| [OpenBao](./openbao/index.md) | 🟢 Validated (Reloader Enterprise) |
-| [Conjur](./conjur/index.md) | 🟢 Validated (Reloader Enterprise) |
-| AWS Secret Manager | 🟡 Community |
-| GCP Secret Manager | 🟡 Community |
-| Azure Key Vault | 🟡 Community |
-| Infisical | 🟡 Community |
-| Bitwarden | 🟡 Community |
-| Doppler | 🟡 Community |
-| Cert-Manager | 🟡 Community |
-| Sealed Secrets | 🟡 Community |
-| External Secrets Operator | 🟡 Community |
-| Secrets Store CSI Driver | 🟡 Community |
-
-> Community usage is possible for most integrations, but **only integrations marked as “Validated” are continuously tested and supported**.
-
----
-
-## What “validated” means in practice
-
-For integrations marked as **Validated (Reloader Enterprise)**, Stakater continuously verifies:
-
-- Reload behavior under frequent secret rotation
-- Compatibility with supported Kubernetes versions
-- Interaction with GitOps workflows (e.g. Argo CD)
-- Rollout safety and failure handling
-- RBAC and security boundaries
-- Upgrade and rollback scenarios
-
-This reduces operational risk for platform teams running Reloader in production-critical environments.
+| Integration | Guides |
+|------------|--------|
+| [HashiCorp Vault](./vault/index.md) | [ESO](./vault/vault-eso.md), [VSO](./vault/vault-vso.md), [CSI Driver](./vault/vault-csi.md), [CSI Driver (File-Based)](./vault/vault-csi-file.md) |
+| [OpenBao](./openbao/index.md) | [ESO](./openbao/openbao-eso.md), [BSO](./openbao/openbao-bso.md), [CSI Driver](./openbao/openbao-csi.md), [CSI Driver (File-Based)](./openbao/openbao-csi-file.md) |
+| [Conjur](./conjur/index.md) | [ESO](./conjur/conjur-eso.md), [Sidecar](./conjur/conjur-sidecar.md), [CSI Driver](./conjur/conjur-csi.md) |
+| [AWS Secrets Manager](./aws/index.md) | [ESO](./aws/aws-eso.md) |
+| [GCP Secret Manager](./gcp/index.md) | [ESO](./gcp/gcp-eso.md) |
+| [Azure Key Vault](./azure/index.md) | [ESO](./azure/azure-eso.md) |

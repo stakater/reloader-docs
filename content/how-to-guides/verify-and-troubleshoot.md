@@ -170,24 +170,7 @@ metadata:
 
 Reloader's default `env-vars` reload strategy injects an environment variable into the pod template. Argo CD compares the live state against Git and flags this as drift.
 
-Switch to the `annotations` strategy instead:
-
-```yaml
-reloader:
-  reloadStrategy: annotations
-```
-
-Then configure Argo CD to ignore the annotation Reloader manages:
-
-```yaml
-# Application spec
-spec:
-  ignoreDifferences:
-    - group: apps
-      kind: Deployment
-      jsonPointers:
-        - /spec/template/metadata/annotations/reloader.stakater.com~1last-reloaded-from
-```
+See the full guide: [Use Reloader with Argo CD](use-reloader-with-argocd.md)
 
 ---
 

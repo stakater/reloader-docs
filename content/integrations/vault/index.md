@@ -1,9 +1,5 @@
 # Vault Integration
 
-> :green_circle: **Support level**
-> This integration is **validated and supported in Reloader Enterprise**.
-> Community usage is possible, but without continuous validation or SLA
-
 This guide shows how to automatically restart Kubernetes workloads when HashiCorp Vault secrets change using Stakater Reloader.
 
 ## Integration Patterns
