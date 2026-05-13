@@ -3126,10 +3126,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#option-b-cluster-wide-argocd-cm" class="md-nav__link">
+  <a href="#option-b-cluster-wide-argocd-configmap" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option B: Cluster-wide (argocd-cm)
+        Option B: Cluster-wide (ArgoCD ConfigMap)
       
     </span>
   </a>
@@ -4527,10 +4527,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#option-b-cluster-wide-argocd-cm" class="md-nav__link">
+  <a href="#option-b-cluster-wide-argocd-configmap" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option B: Cluster-wide (argocd-cm)
+        Option B: Cluster-wide (ArgoCD ConfigMap)
       
     </span>
   </a>
@@ -4737,7 +4737,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/spec/template/metadata/annotations/reloader.stakater.com~1last-reloaded-from</span>
 </code></pre></div>
 <p>The <code>~1</code> in the JSON Pointer is the escaped form of <code>/</code>, representing the annotation key <code>reloader.stakater.com/last-reloaded-from</code>.</p>
-<h3 id="option-b-cluster-wide-argocd-cm">Option B: Cluster-wide (argocd-cm)<a class="headerlink" href="#option-b-cluster-wide-argocd-cm" title="Permanent link">#</a></h3>
+<h3 id="option-b-cluster-wide-argocd-configmap">Option B: Cluster-wide (ArgoCD ConfigMap)<a class="headerlink" href="#option-b-cluster-wide-argocd-configmap" title="Permanent link">#</a></h3>
 <p>To apply the ignore rule to all applications globally, add a resource customization to the <code>argocd-cm</code> ConfigMap:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConfigMap</span>

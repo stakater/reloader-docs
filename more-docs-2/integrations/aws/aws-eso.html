@@ -5128,7 +5128,7 @@ helm<span class="w"> </span>install<span class="w"> </span>external-secrets<span
 </code></pre></div>
 <hr>
 <h2 id="option-1-irsa-iam-roles-for-service-accounts">Option 1: IRSA (IAM Roles for Service Accounts)<a class="headerlink" href="#option-1-irsa-iam-roles-for-service-accounts" title="Permanent link">#</a></h2>
-<p>IRSA lets a Kubernetes ServiceAccount assume an IAM role without static credentials. It uses EKS's OIDC provider to exchange ServiceAccount tokens for temporary AWS credentials.</p>
+<p>IRSA lets a Kubernetes ServiceAccount assume an IAM role without static credentials. It uses the EKS OIDC provider to exchange ServiceAccount tokens for temporary AWS credentials.</p>
 <h3 id="irsa-step-1-enable-the-oidc-provider-for-your-eks-cluster">IRSA: Step 1 — Enable the OIDC provider for your EKS cluster<a class="headerlink" href="#irsa-step-1-enable-the-oidc-provider-for-your-eks-cluster" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>eksctl<span class="w"> </span>utils<span class="w"> </span>associate-iam-oidc-provider<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--cluster<span class="w"> </span>my-cluster<span class="w"> </span><span class="se">\</span>
