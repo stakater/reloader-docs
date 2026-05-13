@@ -3435,10 +3435,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#architecture-overview" class="md-nav__link">
+  <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Architecture Overview
+        How It Works
       
     </span>
   </a>
@@ -4595,10 +4595,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#architecture-overview" class="md-nav__link">
+  <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Architecture Overview
+        How It Works
       
     </span>
   </a>
@@ -4924,39 +4924,24 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </tr>
 </tbody>
 </table>
-<h2 id="architecture-overview">Architecture Overview<a class="headerlink" href="#architecture-overview" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────────────────────────────┐
-│                     Vault + Reloader Architecture                            │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
-│  Vault Server (vault namespace):                                             │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │  HashiCorp Vault                                                       │ │
-│  │  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐    │ │
-│  │  │ KV v2 Engine     │  │ Kubernetes Auth  │  │ AppRole Auth     │    │ │
-│  │  │ secret/myapp     │  │ (k8s SA tokens)  │  │ (RoleID/SecretID)│    │ │
-│  │  └──────────────────┘  └──────────────────┘  └──────────────────┘    │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-│                              │                                               │
-│                              ▼                                               │
-│  Application Namespace:                                                      │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │  Secret Sync (ESO / VSO / CSI)                                         │ │
-│  │  ┌──────────────────┐    ┌──────────────────┐                         │ │
-│  │  │  Operator CRDs   │───►│  K8s Secret      │                         │ │
-│  │  │  (SecretStore,   │    │  (app-secrets)   │                         │ │
-│  │  │  VaultAuth, etc.)│    │  match: "true"   │                         │ │
-│  │  └──────────────────┘    └──────────────────┘                         │ │
-│  │                                   │                                    │ │
-│  │                                   ▼                                    │ │
-│  │  ┌──────────────────┐    ┌──────────────────┐                         │ │
-│  │  │ Stakater Reloader│───►│  Application Pod │                         │ │
-│  │  │ Detects change   │    │  Rolling restart  │                         │ │
-│  │  └──────────────────┘    └──────────────────┘                         │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-│                                                                              │
-└─────────────────────────────────────────────────────────────────────────────┘
-</code></pre></div>
+<h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h2>
+<pre class="mermaid"><code>sequenceDiagram
+    actor Ops as Operator
+    participant V as HashiCorp Vault
+    participant Sync as Secret Sync&lt;br/&gt;(ESO / VSO / CSI)
+    participant K8s as Kubernetes Secret
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Ops-&gt;&gt;V: Rotate secret (kv put)
+    loop Poll / sync interval
+        Sync-&gt;&gt;V: Fetch latest secret value
+        V--&gt;&gt;Sync: Updated value
+    end
+    Sync-&gt;&gt;K8s: Update Secret data
+    K8s--&gt;&gt;RL: Watch event (Secret changed)
+    RL-&gt;&gt;Pod: Trigger rolling restart
+    Note over Pod: New pod starts with updated secret</code></pre>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
 <li>Kubernetes cluster (v1.19+)</li>

@@ -3853,10 +3853,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        How It Works
       
     </span>
   </a>
@@ -4678,10 +4678,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        How It Works
       
     </span>
   </a>
@@ -5071,35 +5071,30 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </tr>
 </tbody>
 </table>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────────────────────────────┐
-│                           Kubernetes Cluster                                 │
-│                                                                              │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │                    External Secrets Operator                            │ │
-│  │                                                                         │ │
-│  │  ┌─────────────────┐         ┌──────────────────────────────────────┐  │ │
-│  │  │  SecretStore    │         │  ExternalSecret                      │  │ │
-│  │  │                 │         │                                      │  │ │
-│  │  │  - AWS region   │         │  - refreshInterval: 1h               │  │ │
-│  │  │  - Auth method  │────────►│  - Maps AWS secret to K8s Secret     │  │ │
-│  │  │                 │         │  - Adds Reloader annotation          │  │ │
-│  │  └─────────────────┘         └──────────────────────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-│                                      │                                       │
-│                                      ▼                                       │
-│  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐       │
-│  │   K8s Secret     │    │  Stakater        │    │  Application     │       │
-│  │   (app-secrets)  │───►│  Reloader        │───►│  Pod             │       │
-│  │   match: "true"  │    │  watches secret  │    │  rolling restart │       │
-│  └──────────────────┘    └──────────────────┘    └──────────────────┘       │
-│            ▲                                                                 │
-│   ┌────────────────┐                                                        │
-│   │  AWS Secrets   │                                                        │
-│   │  Manager       │                                                        │
-│   └────────────────┘                                                        │
-└─────────────────────────────────────────────────────────────────────────────┘
-</code></pre></div>
+<h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h2>
+<pre class="mermaid"><code>sequenceDiagram
+    actor Ops as Operator / Rotation Job
+    participant SM as AWS Secrets Manager
+    participant STS as AWS STS
+    participant ESO as External Secrets Operator
+    participant K8s as Kubernetes Secret
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Note over ESO: Authenticates via IRSA or static credentials
+    ESO-&gt;&gt;STS: AssumeRoleWithWebIdentity (IRSA)
+    STS--&gt;&gt;ESO: Temporary credentials
+
+    Ops-&gt;&gt;SM: Rotate secret
+    loop Every refreshInterval
+        ESO-&gt;&gt;SM: GetSecretValue
+        SM--&gt;&gt;ESO: Updated secret value
+    end
+    ESO-&gt;&gt;K8s: Update Secret data
+    Note over K8s: annotation: reloader.stakater.com/match: "true"
+    K8s--&gt;&gt;RL: Watch event (Secret changed)
+    RL-&gt;&gt;Pod: Trigger rolling restart
+    Note over Pod: New pod starts with updated secret</code></pre>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
 <li>Kubernetes cluster (v1.19+)</li>

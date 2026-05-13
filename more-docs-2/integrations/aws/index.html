@@ -3825,10 +3825,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#architecture-overview" class="md-nav__link">
+  <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Architecture Overview
+        How It Works
       
     </span>
   </a>
@@ -4390,10 +4390,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#architecture-overview" class="md-nav__link">
+  <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Architecture Overview
+        How It Works
       
     </span>
   </a>
@@ -4493,39 +4493,24 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </tr>
 </tbody>
 </table>
-<h2 id="architecture-overview">Architecture Overview<a class="headerlink" href="#architecture-overview" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code>┌─────────────────────────────────────────────────────────────────────────────┐
-│                    AWS Secrets Manager + Reloader Architecture                │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
-│  AWS Cloud:                                                                  │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │  AWS Secrets Manager                                                   │ │
-│  │  ┌──────────────────┐  ┌──────────────────┐                           │ │
-│  │  │  myapp/database  │  │  IAM Role (IRSA) │                           │ │
-│  │  │  username        │  │  or              │                           │ │
-│  │  │  password        │  │  Access Keys     │                           │ │
-│  │  └──────────────────┘  └──────────────────┘                           │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-│                              │                                               │
-│                              ▼                                               │
-│  Kubernetes Cluster (EKS or any):                                            │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │  External Secrets Operator                                              │ │
-│  │  ┌──────────────────┐    ┌──────────────────┐                         │ │
-│  │  │  SecretStore     │───►│  ExternalSecret  │                         │ │
-│  │  │  (AWS provider)  │    │  refreshInterval │                         │ │
-│  │  └──────────────────┘    └──────────────────┘                         │ │
-│  │                                   │                                    │ │
-│  │                                   ▼                                    │ │
-│  │  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐ │ │
-│  │  │   K8s Secret     │    │  Stakater        │    │  Application     │ │ │
-│  │  │   (app-secrets)  │───►│  Reloader        │───►│  Pod             │ │ │
-│  │  │   match: "true"  │    │  detects change  │    │  rolling restart │ │ │
-│  │  └──────────────────┘    └──────────────────┘    └──────────────────┘ │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-└─────────────────────────────────────────────────────────────────────────────┘
-</code></pre></div>
+<h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h2>
+<pre class="mermaid"><code>sequenceDiagram
+    actor Ops as Operator / Rotation Job
+    participant SM as AWS Secrets Manager
+    participant ESO as External Secrets Operator
+    participant K8s as Kubernetes Secret
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Ops-&gt;&gt;SM: Rotate secret
+    loop Every refreshInterval
+        ESO-&gt;&gt;SM: GetSecretValue
+        SM--&gt;&gt;ESO: Updated secret value
+    end
+    ESO-&gt;&gt;K8s: Update Secret data
+    K8s--&gt;&gt;RL: Watch event (Secret changed)
+    RL-&gt;&gt;Pod: Trigger rolling restart
+    Note over Pod: New pod starts with updated secret</code></pre>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
 <li>Kubernetes cluster (v1.19+) — EKS recommended for IRSA, but any cluster works with static credentials</li>
