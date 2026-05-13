@@ -35,7 +35,7 @@ If Argo CD is configured with **auto-sync**, it will revert the change — undoi
 Two changes are needed:
 
 1. **Switch Reloader to the `annotations` reload strategy** — instead of injecting an env var, Reloader adds a single annotation to the pod template metadata
-2. **Configure Argo CD to ignore that annotation** — so it never flags it as drift
+1. **Configure Argo CD to ignore that annotation** — so it never flags it as drift
 
 ---
 

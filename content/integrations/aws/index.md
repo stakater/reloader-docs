@@ -42,8 +42,8 @@ sequenceDiagram
 ## How Reloader Works
 
 1. A secret rotates in AWS Secrets Manager (manually, via Lambda, or by automatic rotation)
-2. ESO detects the change on its next refresh cycle and updates the Kubernetes Secret
-3. Reloader detects the Kubernetes Secret update and triggers a rolling restart of annotated workloads
+1. ESO detects the change on its next refresh cycle and updates the Kubernetes Secret
+1. Reloader detects the Kubernetes Secret update and triggers a rolling restart of annotated workloads
 
 ### Reloader Annotations
 

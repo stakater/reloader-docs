@@ -155,6 +155,7 @@ az role assignment create \
 ```
 
 > If your Key Vault still uses the legacy access policy model instead of Azure RBAC, use:
+>
 > ```bash
 > az keyvault set-policy \
 >   --name $VAULT_NAME \
@@ -269,6 +270,7 @@ az role assignment create \
 ```
 
 > For Key Vaults using access policies:
+>
 > ```bash
 > az keyvault set-policy \
 >   --name $VAULT_NAME \
