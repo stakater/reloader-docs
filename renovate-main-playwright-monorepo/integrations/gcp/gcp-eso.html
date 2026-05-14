@@ -5,31 +5,31 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-playwright-monorepo/how-to-guides/verify-and-troubleshoot.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-playwright-monorepo/integrations/gcp/gcp-eso.html">
       
       
-        <link rel="prev" href="alerting-on-reload.html">
+        <link rel="prev" href="index.html">
       
       
-        <link rel="next" href="use-reloader-with-argocd.html">
+        <link rel="next" href="../azure/index.html">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Verify and Troubleshoot Reloader - Reloader</title>
+        <title>External Secrets Operator - Reloader</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -48,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -66,7 +66,7 @@
 
     
     
-  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#verify-and-troubleshoot-reloader" class="md-skip">
+        <a href="#how-to-use-reloader-with-gcp-secret-manager-and-external-secrets-operator" class="md-skip">
           Skip to content
         </a>
       
@@ -340,9 +340,9 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   <nav class="md-header__inner md-grid" aria-label="Header">
 
     <!-- Link to home -->
-    <a href=".." title="Reloader" class="md-header__button md-logo" aria-label="Reloader" data-md-component="logo">
+    <a href="../.." title="Reloader" class="md-header__button md-logo" aria-label="Reloader" data-md-component="logo">
       <!-- 
-  <img src="../assets/images/logo.svg" alt="logo">
+  <img src="../../assets/images/logo.svg" alt="logo">
  -->
     </a>
 
@@ -360,10 +360,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
         <!-- Logo -->
         <div class="md-header__topic">
           
-          <img class="md-header__logo_light" src="../assets/images/logo.svg#only-light" alt="logo">
+          <img class="md-header__logo_light" src="../../assets/images/logo.svg#only-light" alt="logo">
           
           
-          <img class="md-header__logo_dark" src="../assets/images/logo.svg#only-dark" alt="logo">
+          <img class="md-header__logo_dark" src="../../assets/images/logo.svg#only-dark" alt="logo">
           
           
           <div class="header-site-name">
@@ -1987,9 +1987,9 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Reloader" class="md-nav__button md-logo" aria-label="Reloader" data-md-component="logo">
+    <a href="../.." title="Reloader" class="md-nav__button md-logo" aria-label="Reloader" data-md-component="logo">
       
-  <img src="../assets/images/logo.svg" alt="logo">
+  <img src="../../assets/images/logo.svg" alt="logo">
 
     </a>
     Reloader
@@ -2063,7 +2063,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="../../index.html" class="md-nav__link">
         
   
   
@@ -2091,7 +2091,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../about/why-reloader-matters.html" class="md-nav__link">
+      <a href="../../about/why-reloader-matters.html" class="md-nav__link">
         
   
   
@@ -2119,7 +2119,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../about/value-by-role.html" class="md-nav__link">
+      <a href="../../about/value-by-role.html" class="md-nav__link">
         
   
   
@@ -2147,7 +2147,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../about/editions.html" class="md-nav__link">
+      <a href="../../about/editions.html" class="md-nav__link">
         
   
   
@@ -2229,7 +2229,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../architecture/how-it-works.html" class="md-nav__link">
+      <a href="../../architecture/how-it-works.html" class="md-nav__link">
         
   
   
@@ -2311,7 +2311,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/why-configuration-reloading-matters.html" class="md-nav__link">
+      <a href="../../concepts/why-configuration-reloading-matters.html" class="md-nav__link">
         
   
   
@@ -2339,7 +2339,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/secret-propagation-problem-kubernetes.html" class="md-nav__link">
+      <a href="../../concepts/secret-propagation-problem-kubernetes.html" class="md-nav__link">
         
   
   
@@ -2414,7 +2414,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-helm.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-helm.html" class="md-nav__link">
         
   
   
@@ -2442,7 +2442,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-checksum-annotations.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-checksum-annotations.html" class="md-nav__link">
         
   
   
@@ -2470,7 +2470,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-kyverno.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-kyverno.html" class="md-nav__link">
         
   
   
@@ -2498,7 +2498,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-sidecar-config-watchers.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-sidecar-config-watchers.html" class="md-nav__link">
         
   
   
@@ -2526,7 +2526,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-init-containers.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-init-containers.html" class="md-nav__link">
         
   
   
@@ -2554,7 +2554,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-manual-rollouts.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-manual-rollouts.html" class="md-nav__link">
         
   
   
@@ -2582,7 +2582,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-gitops-tools.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-gitops-tools.html" class="md-nav__link">
         
   
   
@@ -2610,7 +2610,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-secret-operators.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-secret-operators.html" class="md-nav__link">
         
   
   
@@ -2638,7 +2638,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-cert-manager.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-cert-manager.html" class="md-nav__link">
         
   
   
@@ -2728,7 +2728,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../installation/install-oss.html" class="md-nav__link">
+      <a href="../../installation/install-oss.html" class="md-nav__link">
         
   
   
@@ -2756,7 +2756,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../installation/install.html" class="md-nav__link">
+      <a href="../../installation/install.html" class="md-nav__link">
         
   
   
@@ -2764,6 +2764,284 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     
   
     Reloader Enterprise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    How-To Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/restart-pods-when-configmap-changes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Restart Pods When ConfigMap Changes in Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/restart-pods-when-secret-changes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Restart Pods When Secret Changes in Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automatically Reload Pods When TLS Certificates Rotate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/restart-pods-when-external-secrets-change.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Restart Pods When External Secrets Change in Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/alerting-on-reload.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alert When Reloader Triggers a Restart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/verify-and-troubleshoot.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verify and Troubleshoot Reloader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/use-reloader-with-argocd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use Reloader with Argo CD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/use-reloader-with-flux.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use Reloader with Flux
   
 
     
@@ -2801,506 +3079,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    How-To Guides
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    How-To Guides
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix="">
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="restart-pods-when-configmap-changes.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Restart Pods When ConfigMap Changes in Kubernetes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="restart-pods-when-secret-changes.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Restart Pods When Secret Changes in Kubernetes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Automatically Reload Pods When TLS Certificates Rotate
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="restart-pods-when-external-secrets-change.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Restart Pods When External Secrets Change in Kubernetes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="alerting-on-reload.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Alert When Reloader Triggers a Restart
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Verify and Troubleshoot Reloader
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="verify-and-troubleshoot.html" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Verify and Troubleshoot Reloader
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#verify-reloader-is-running" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verify Reloader is running
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-a-reload-was-triggered" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verify a reload was triggered
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Verify a reload was triggered">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#check-the-logs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check the logs
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-the-pod-age" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check the pod age
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-the-rollout-status" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check the rollout status
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-via-prometheus-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verify via Prometheus metrics
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Verify via Prometheus metrics">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#reload-counters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reload counters
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reloads-broken-down-by-namespace" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reloads broken down by namespace
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-problems" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Common problems
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Common problems">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#reloader-is-not-reacting-to-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reloader is not reacting to changes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reloader-is-restarting-pods-it-shouldnt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reloader is restarting pods it shouldn't
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#argo-cd-shows-the-app-as-outofsync-after-a-reload" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Argo CD shows the app as OutOfSync after a reload
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pod-restarts-are-happening-multiple-times-for-one-change" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pod restarts are happening multiple times for one change
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reloader-logs-show-errors" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reloader logs show errors
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="use-reloader-with-argocd.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Use Reloader with Argo CD
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="use-reloader-with-flux.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Use Reloader with Flux
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked="">
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -3321,7 +3100,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3339,7 +3118,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/index.html" class="md-nav__link">
+      <a href="../index.html" class="md-nav__link">
         
   
   
@@ -3414,7 +3193,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/conjur/index.html" class="md-nav__link">
+      <a href="../conjur/index.html" class="md-nav__link">
         
   
   
@@ -3442,7 +3221,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/conjur/conjur-eso.html" class="md-nav__link">
+      <a href="../conjur/conjur-eso.html" class="md-nav__link">
         
   
   
@@ -3470,7 +3249,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/conjur/conjur-sidecar.html" class="md-nav__link">
+      <a href="../conjur/conjur-sidecar.html" class="md-nav__link">
         
   
   
@@ -3498,7 +3277,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/conjur/conjur-csi.html" class="md-nav__link">
+      <a href="../conjur/conjur-csi.html" class="md-nav__link">
         
   
   
@@ -3581,7 +3360,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/vault/index.html" class="md-nav__link">
+      <a href="../vault/index.html" class="md-nav__link">
         
   
   
@@ -3609,7 +3388,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/vault/vault-eso.html" class="md-nav__link">
+      <a href="../vault/vault-eso.html" class="md-nav__link">
         
   
   
@@ -3637,7 +3416,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/vault/vault-vso.html" class="md-nav__link">
+      <a href="../vault/vault-vso.html" class="md-nav__link">
         
   
   
@@ -3665,7 +3444,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/vault/vault-csi.html" class="md-nav__link">
+      <a href="../vault/vault-csi.html" class="md-nav__link">
         
   
   
@@ -3693,7 +3472,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/vault/vault-csi-file.html" class="md-nav__link">
+      <a href="../vault/vault-csi-file.html" class="md-nav__link">
         
   
   
@@ -3776,7 +3555,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/openbao/index.html" class="md-nav__link">
+      <a href="../openbao/index.html" class="md-nav__link">
         
   
   
@@ -3804,7 +3583,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/openbao/openbao-eso.html" class="md-nav__link">
+      <a href="../openbao/openbao-eso.html" class="md-nav__link">
         
   
   
@@ -3832,7 +3611,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/openbao/openbao-bso.html" class="md-nav__link">
+      <a href="../openbao/openbao-bso.html" class="md-nav__link">
         
   
   
@@ -3860,7 +3639,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/openbao/openbao-csi.html" class="md-nav__link">
+      <a href="../openbao/openbao-csi.html" class="md-nav__link">
         
   
   
@@ -3888,7 +3667,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/openbao/openbao-csi-file.html" class="md-nav__link">
+      <a href="../openbao/openbao-csi-file.html" class="md-nav__link">
         
   
   
@@ -3971,7 +3750,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/aws/index.html" class="md-nav__link">
+      <a href="../aws/index.html" class="md-nav__link">
         
   
   
@@ -3999,7 +3778,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/aws/aws-eso.html" class="md-nav__link">
+      <a href="../aws/aws-eso.html" class="md-nav__link">
         
   
   
@@ -4032,18 +3811,20 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" checked="">
         
           
           <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
@@ -4064,7 +3845,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -4082,7 +3863,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/gcp/index.html" class="md-nav__link">
+      <a href="index.html" class="md-nav__link">
         
   
   
@@ -4107,10 +3888,37 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../integrations/gcp/gcp-eso.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    External Secrets Operator
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="gcp-eso.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -4126,6 +3934,399 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#authentication-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication Options
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enable-the-secret-manager-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable the Secret Manager API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-stakater-reloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install Stakater Reloader
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-external-secrets-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install External Secrets Operator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-secret-in-gcp-secret-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a secret in GCP Secret Manager
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-1-workload-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 1: Workload Identity
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Option 1: Workload Identity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#workload-identity-step-1-enable-workload-identity-on-your-gke-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workload Identity: Step 1 — Enable Workload Identity on your GKE cluster
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workload-identity-step-2-create-a-gcp-service-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workload Identity: Step 2 — Create a GCP service account
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workload-identity-step-3-grant-secret-manager-access-to-the-gcp-service-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workload Identity: Step 3 — Grant Secret Manager access to the GCP service account
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workload-identity-step-4-create-namespace-and-kubernetes-serviceaccount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workload Identity: Step 4 — Create namespace and Kubernetes ServiceAccount
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workload-identity-step-5-bind-the-kubernetes-serviceaccount-to-the-gcp-service-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workload Identity: Step 5 — Bind the Kubernetes ServiceAccount to the GCP service account
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workload-identity-step-6-create-secretstore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workload Identity: Step 6 — Create SecretStore
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-2-service-account-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 2: Service Account Key
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Option 2: Service Account Key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-step-1-create-a-gcp-service-account-and-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key: Step 1 — Create a GCP service account and key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-step-2-store-the-key-in-a-kubernetes-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key: Step 2 — Store the key in a Kubernetes Secret
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-step-3-create-secretstore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key: Step 3 — Create SecretStore
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-externalsecret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create ExternalSecret
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploy Application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-the-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verify the Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-secret-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Secret Rotation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Secret Rotation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-a-new-version-in-gcp-secret-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a new version in GCP Secret Manager
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wait-and-verify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wait and verify
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#secretstore-workload-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SecretStore — Workload Identity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secretstore-service-account-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SecretStore — Service Account Key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#externalsecret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ExternalSecret
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reloader-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reloader Annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-workload-identity-vs-service-account-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison: Workload Identity vs Service Account Key
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4193,7 +4394,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/azure/index.html" class="md-nav__link">
+      <a href="../azure/index.html" class="md-nav__link">
         
   
   
@@ -4221,7 +4422,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/azure/azure-eso.html" class="md-nav__link">
+      <a href="../azure/azure-eso.html" class="md-nav__link">
         
   
   
@@ -4311,7 +4512,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../reference/annotations.html" class="md-nav__link">
+      <a href="../../reference/annotations.html" class="md-nav__link">
         
   
   
@@ -4339,7 +4540,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../reference/helm-values.html" class="md-nav__link">
+      <a href="../../reference/helm-values.html" class="md-nav__link">
         
   
   
@@ -4374,7 +4575,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../eula.html" class="md-nav__link">
+      <a href="../../eula.html" class="md-nav__link">
         
   
   
@@ -4401,7 +4602,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../help.html" class="md-nav__link">
+      <a href="../../help.html" class="md-nav__link">
         
   
   
@@ -4428,7 +4629,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../versions.html" class="md-nav__link">
+      <a href="../../versions.html" class="md-nav__link">
         
   
   
@@ -4477,10 +4678,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#verify-reloader-is-running" class="md-nav__link">
+  <a href="#authentication-options" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Verify Reloader is running
+        Authentication Options
       
     </span>
   </a>
@@ -4488,22 +4689,33 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#verify-a-reload-was-triggered" class="md-nav__link">
+  <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Verify a reload was triggered
+        How It Works
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Verify a reload was triggered">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#check-the-logs" class="md-nav__link">
+  <a href="#enable-the-secret-manager-api" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Check the logs
+        Enable the Secret Manager API
       
     </span>
   </a>
@@ -4511,10 +4723,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#check-the-pod-age" class="md-nav__link">
+  <a href="#install-stakater-reloader" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Check the pod age
+        Install Stakater Reloader
       
     </span>
   </a>
@@ -4522,10 +4734,21 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#check-the-rollout-status" class="md-nav__link">
+  <a href="#install-external-secrets-operator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Check the rollout status
+        Install External Secrets Operator
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-a-secret-in-gcp-secret-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create a secret in GCP Secret Manager
       
     </span>
   </a>
@@ -4538,22 +4761,22 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#verify-via-prometheus-metrics" class="md-nav__link">
+  <a href="#option-1-workload-identity" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Verify via Prometheus metrics
+        Option 1: Workload Identity
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Verify via Prometheus metrics">
+    <nav class="md-nav" aria-label="Option 1: Workload Identity">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#reload-counters" class="md-nav__link">
+  <a href="#workload-identity-step-1-enable-workload-identity-on-your-gke-cluster" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reload counters
+        Workload Identity: Step 1 — Enable Workload Identity on your GKE cluster
       
     </span>
   </a>
@@ -4561,10 +4784,54 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#reloads-broken-down-by-namespace" class="md-nav__link">
+  <a href="#workload-identity-step-2-create-a-gcp-service-account" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reloads broken down by namespace
+        Workload Identity: Step 2 — Create a GCP service account
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workload-identity-step-3-grant-secret-manager-access-to-the-gcp-service-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workload Identity: Step 3 — Grant Secret Manager access to the GCP service account
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workload-identity-step-4-create-namespace-and-kubernetes-serviceaccount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workload Identity: Step 4 — Create namespace and Kubernetes ServiceAccount
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workload-identity-step-5-bind-the-kubernetes-serviceaccount-to-the-gcp-service-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workload Identity: Step 5 — Bind the Kubernetes ServiceAccount to the GCP service account
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workload-identity-step-6-create-secretstore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workload Identity: Step 6 — Create SecretStore
       
     </span>
   </a>
@@ -4577,22 +4844,22 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-problems" class="md-nav__link">
+  <a href="#option-2-service-account-key" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common problems
+        Option 2: Service Account Key
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Common problems">
+    <nav class="md-nav" aria-label="Option 2: Service Account Key">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#reloader-is-not-reacting-to-changes" class="md-nav__link">
+  <a href="#key-step-1-create-a-gcp-service-account-and-key" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reloader is not reacting to changes
+        Key: Step 1 — Create a GCP service account and key
       
     </span>
   </a>
@@ -4600,10 +4867,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#reloader-is-restarting-pods-it-shouldnt" class="md-nav__link">
+  <a href="#key-step-2-store-the-key-in-a-kubernetes-secret" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reloader is restarting pods it shouldn't
+        Key: Step 2 — Store the key in a Kubernetes Secret
       
     </span>
   </a>
@@ -4611,32 +4878,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#argo-cd-shows-the-app-as-outofsync-after-a-reload" class="md-nav__link">
+  <a href="#key-step-3-create-secretstore" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Argo CD shows the app as OutOfSync after a reload
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pod-restarts-are-happening-multiple-times-for-one-change" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pod restarts are happening multiple times for one change
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reloader-logs-show-errors" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reloader logs show errors
+        Key: Step 3 — Create SecretStore
       
     </span>
   </a>
@@ -4645,6 +4890,161 @@ This documentation is for a pull request deployment and is unreleased, it is onl
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-externalsecret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create ExternalSecret
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deploy Application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-the-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verify the Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-secret-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Secret Rotation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Secret Rotation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-a-new-version-in-gcp-secret-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Add a new version in GCP Secret Manager
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wait-and-verify" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wait and verify
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#secretstore-workload-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SecretStore — Workload Identity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secretstore-service-account-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SecretStore — Service Account Key
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#externalsecret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ExternalSecret
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reloader-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reloader Annotations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison-workload-identity-vs-service-account-key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison: Workload Identity vs Service Account Key
+      
+    </span>
+  </a>
   
 </li>
       
@@ -4668,144 +5068,480 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="verify-and-troubleshoot-reloader">Verify and Troubleshoot Reloader<a class="headerlink" href="#verify-and-troubleshoot-reloader" title="Permanent link">#</a></h1>
-<p>This page explains how to confirm that Reloader is working correctly and how to diagnose common problems.</p>
-<hr>
-<h2 id="verify-reloader-is-running">Verify Reloader is running<a class="headerlink" href="#verify-reloader-is-running" title="Permanent link">#</a></h2>
-<p>Check that the Reloader pod is up:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader
-</code></pre></div>
-<p>Expected output:</p>
-<div class="highlight"><pre><span></span><code>NAME                        READY   STATUS    RESTARTS   AGE
-reloader-6d8f9b7c4d-xk9zp   1/1     Running   0          5m
-</code></pre></div>
-<hr>
-<h2 id="verify-a-reload-was-triggered">Verify a reload was triggered<a class="headerlink" href="#verify-a-reload-was-triggered" title="Permanent link">#</a></h2>
-<h3 id="check-the-logs">Check the logs<a class="headerlink" href="#check-the-logs" title="Permanent link">#</a></h3>
-<p>After updating a ConfigMap or Secret, check Reloader's logs for confirmation:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader<span class="w"> </span>--tail<span class="o">=</span><span class="m">50</span>
-</code></pre></div>
-<p>A successful reload produces log lines like:</p>
-<div class="highlight"><pre><span></span><code>Changes detected in 'database-secret' of type 'SECRET' in namespace: production
-Updated 'my-app' of type 'Deployment' in namespace: production
-</code></pre></div>
+<h1 id="how-to-use-reloader-with-gcp-secret-manager-and-external-secrets-operator">How to Use Reloader with GCP Secret Manager and External Secrets Operator<a class="headerlink" href="#how-to-use-reloader-with-gcp-secret-manager-and-external-secrets-operator" title="Permanent link">#</a></h1>
+<p>This guide explains how to sync secrets from GCP Secret Manager into Kubernetes using External Secrets Operator (ESO), and use Stakater Reloader to automatically restart pods when those secrets change.</p>
+<h2 id="authentication-options">Authentication Options<a class="headerlink" href="#authentication-options" title="Permanent link">#</a></h2>
+<p>ESO supports two authentication methods for GCP Secret Manager:</p>
 <table>
 <thead>
 <tr>
-<th>Log field</th>
-<th>Meaning</th>
+<th>Method</th>
+<th>Description</th>
+<th>Use Case</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>database-secret</code></td>
-<td>Name of the ConfigMap or Secret that changed</td>
+<td><a href="#option-1-workload-identity"><strong>Workload Identity</strong></a></td>
+<td>GCP IAM bound to a Kubernetes ServiceAccount via GKE OIDC</td>
+<td>Recommended for GKE — no static credentials</td>
 </tr>
 <tr>
-<td><code>SECRET</code></td>
-<td>Type of the changed resource (<code>SECRET</code> or <code>CONFIGMAP</code>)</td>
-</tr>
-<tr>
-<td><code>production</code></td>
-<td>Namespace where the change was detected</td>
-</tr>
-<tr>
-<td><code>my-app</code></td>
-<td>Name of the workload that was restarted</td>
-</tr>
-<tr>
-<td><code>Deployment</code></td>
-<td>Workload type (<code>Deployment</code>, <code>StatefulSet</code>, <code>DaemonSet</code>, etc.)</td>
+<td><a href="#option-2-service-account-key"><strong>Service Account Key</strong></a></td>
+<td>GCP service account JSON key stored in a K8s Secret</td>
+<td>Any cluster — simpler but requires key rotation</td>
 </tr>
 </tbody>
 </table>
-<p>If you see no log output after a change, see <a href="#reloader-is-not-reacting-to-changes">Reloader is not reacting to changes</a> below.</p>
-<h3 id="check-the-pod-age">Check the pod age<a class="headerlink" href="#check-the-pod-age" title="Permanent link">#</a></h3>
-<p>After a reload, the workload's pods are replaced. Confirm new pods were created:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>-l<span class="w"> </span>&lt;your-app-label&gt;
-</code></pre></div>
-<p>The <code>AGE</code> column should show the pods were created recently, within seconds or minutes of your ConfigMap or Secret update.</p>
-<h3 id="check-the-rollout-status">Check the rollout status<a class="headerlink" href="#check-the-rollout-status" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deployment/&lt;deployment-name&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;
-</code></pre></div>
-<hr>
-<h2 id="verify-via-prometheus-metrics">Verify via Prometheus metrics<a class="headerlink" href="#verify-via-prometheus-metrics" title="Permanent link">#</a></h2>
-<p>Reloader exposes a Prometheus metrics endpoint at <code>/metrics</code> on port <code>9090</code>.</p>
-<h3 id="reload-counters">Reload counters<a class="headerlink" href="#reload-counters" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>reloader_reload_executed_total{success="true"}   # number of successful reloads
-reloader_reload_executed_total{success="false"}  # number of failed reloads
-</code></pre></div>
-<p>Port-forward to inspect directly:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>port-forward<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>svc/reloader<span class="w"> </span><span class="m">9090</span>:9090
-curl<span class="w"> </span>http://localhost:9090/metrics<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>reloader_reload
-</code></pre></div>
-<h3 id="reloads-broken-down-by-namespace">Reloads broken down by namespace<a class="headerlink" href="#reloads-broken-down-by-namespace" title="Permanent link">#</a></h3>
-<p>This is a <strong>separate metric</strong> (<code>reloader_reload_executed_total_by_namespace</code>) that is disabled by default because it can have high cardinality in large clusters. Enable it with:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">enableMetricsByNamespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</code></pre></div>
-<p>Or via the environment variable <code>METRICS_COUNT_BY_NAMESPACE=enabled</code> on the Reloader container.</p>
-<p>When enabled:</p>
-<div class="highlight"><pre><span></span><code>reloader_reload_executed_total_by_namespace{success="true", namespace="production"}   1
-reloader_reload_executed_total_by_namespace{success="false", namespace="staging"}     2
-</code></pre></div>
-<hr>
-<h2 id="common-problems">Common problems<a class="headerlink" href="#common-problems" title="Permanent link">#</a></h2>
-<h3 id="reloader-is-not-reacting-to-changes">Reloader is not reacting to changes<a class="headerlink" href="#reloader-is-not-reacting-to-changes" title="Permanent link">#</a></h3>
-<p><strong>Check the annotation is present and correct.</strong></p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>deployment<span class="w"> </span>&lt;name&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.metadata.annotations}'</span>
-</code></pre></div>
-<p>The annotation must be on the <code>Deployment</code> (or other workload) itself, not on the pod template. Common mistakes:</p>
+<h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h2>
+<pre class="mermaid"><code>sequenceDiagram
+    actor Ops as Operator / Cloud Function
+    participant GSM as GCP Secret Manager
+    participant Meta as GKE Metadata Server
+    participant ESO as External Secrets Operator
+    participant K8s as Kubernetes Secret
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Note over ESO: Authenticates via Workload Identity or SA Key
+    ESO-&gt;&gt;Meta: Request access token (Workload Identity)
+    Meta--&gt;&gt;ESO: Short-lived access token
+
+    Ops-&gt;&gt;GSM: Add new secret version
+    loop Every refreshInterval
+        ESO-&gt;&gt;GSM: Access secret (latest version)
+        GSM--&gt;&gt;ESO: Updated secret value
+    end
+    ESO-&gt;&gt;K8s: Update Secret data
+    Note over K8s: annotation: reloader.stakater.com/match: "true"
+    K8s--&gt;&gt;RL: Watch event (Secret changed)
+    RL-&gt;&gt;Pod: Trigger rolling restart
+    Note over Pod: New pod starts with updated secret</code></pre>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
-<li>Typo in the annotation key (compare against the <a href="../reference/annotations.html">Annotation Reference</a>)</li>
-<li>Annotation placed under <code>spec.template.metadata.annotations</code> instead of <code>metadata.annotations</code></li>
-<li>Using <code>reloader.stakater.com/search: "true"</code> without <code>reloader.stakater.com/match: "true"</code> on the Secret/ConfigMap</li>
+<li>Kubernetes cluster (v1.19+)</li>
+<li>Helm v3+</li>
+<li>GCP project with Secret Manager API enabled</li>
+<li><code>gcloud</code> CLI configured locally</li>
+<li>Stakater Reloader installed</li>
+<li>External Secrets Operator installed</li>
 </ul>
-<p><strong>Check the ConfigMap or Secret is not ignored.</strong></p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>&lt;name&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.metadata.annotations}'</span>
+<h3 id="enable-the-secret-manager-api">Enable the Secret Manager API<a class="headerlink" href="#enable-the-secret-manager-api" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>gcloud<span class="w"> </span>services<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>secretmanager.googleapis.com<span class="w"> </span>--project<span class="o">=</span>my-project
 </code></pre></div>
-<p>If <code>reloader.stakater.com/ignore: "true"</code> is present, Reloader will skip it entirely.</p>
-<p><strong>Check namespace scope.</strong></p>
-<p>If Reloader is deployed with <code>watchGlobally: false</code>, it only watches its own namespace. Confirm with:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>namespace
+<h3 id="install-stakater-reloader">Install Stakater Reloader<a class="headerlink" href="#install-stakater-reloader" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>stakater<span class="w"> </span>https://stakater.github.io/stakater-charts
+helm<span class="w"> </span>repo<span class="w"> </span>update
+helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span>--namespace<span class="w"> </span>reloader<span class="w"> </span>--create-namespace
 </code></pre></div>
-<p><strong>Check label selectors.</strong></p>
-<p>If <code>namespaceSelector</code> or <code>resourceLabelSelector</code> is configured, the resource or its namespace must match. A resource that matches <code>resourceLabelSelector</code> but not <code>namespaceSelector</code> is silently ignored.</p>
+<h3 id="install-external-secrets-operator">Install External Secrets Operator<a class="headerlink" href="#install-external-secrets-operator" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>external-secrets<span class="w"> </span>https://charts.external-secrets.io
+helm<span class="w"> </span>repo<span class="w"> </span>update
+helm<span class="w"> </span>install<span class="w"> </span>external-secrets<span class="w"> </span>external-secrets/external-secrets<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>external-secrets<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--create-namespace<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--wait
+</code></pre></div>
+<p>Verify:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>external-secrets
+</code></pre></div>
+<h3 id="create-a-secret-in-gcp-secret-manager">Create a secret in GCP Secret Manager<a class="headerlink" href="#create-a-secret-in-gcp-secret-manager" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create the secret</span>
+gcloud<span class="w"> </span>secrets<span class="w"> </span>create<span class="w"> </span>myapp-database<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--project<span class="o">=</span>my-project<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--replication-policy<span class="o">=</span>automatic
+
+<span class="c1"># Add a secret version (JSON value)</span>
+<span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s1">'{"username":"admin-user","password":"super-secret-password"}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>gcloud<span class="w"> </span>secrets<span class="w"> </span>versions<span class="w"> </span>add<span class="w"> </span>myapp-database<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--project<span class="o">=</span>my-project<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--data-file<span class="o">=</span>-
+</code></pre></div>
 <hr>
-<h3 id="reloader-is-restarting-pods-it-shouldnt">Reloader is restarting pods it shouldn't<a class="headerlink" href="#reloader-is-restarting-pods-it-shouldnt" title="Permanent link">#</a></h3>
-<p><strong>Check <code>auto: "true"</code> scope.</strong></p>
-<p><code>reloader.stakater.com/auto: "true"</code> watches all ConfigMaps and Secrets referenced anywhere in the pod spec. If a shared ConfigMap or Secret changes, every workload referencing it will restart. Use the named annotation instead to limit scope:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">configmap.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"only-this-configmap"</span>
+<h2 id="option-1-workload-identity">Option 1: Workload Identity<a class="headerlink" href="#option-1-workload-identity" title="Permanent link">#</a></h2>
+<p>Workload Identity lets a Kubernetes ServiceAccount impersonate a GCP service account without any static key. It is the recommended approach for GKE clusters.</p>
+<h3 id="workload-identity-step-1-enable-workload-identity-on-your-gke-cluster">Workload Identity: Step 1 — Enable Workload Identity on your GKE cluster<a class="headerlink" href="#workload-identity-step-1-enable-workload-identity-on-your-gke-cluster" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>gcloud<span class="w"> </span>container<span class="w"> </span>clusters<span class="w"> </span>update<span class="w"> </span>my-cluster<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--workload-pool<span class="o">=</span>my-project.svc.id.goog<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--region<span class="o">=</span>us-central1
 </code></pre></div>
-<p>Or use the <a href="../reference/annotations.html#search-and-match-pattern">search and match pattern</a> to give resource owners explicit control.</p>
-<p><strong>Check <code>autoReloadAll</code> mode.</strong></p>
-<p>If <code>reloader.autoReloadAll: true</code> is set, all workloads restart on any matching change. To opt a specific workload out:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
+<p>For new clusters:</p>
+<div class="highlight"><pre><span></span><code>gcloud<span class="w"> </span>container<span class="w"> </span>clusters<span class="w"> </span>create<span class="w"> </span>my-cluster<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--workload-pool<span class="o">=</span>my-project.svc.id.goog<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--region<span class="o">=</span>us-central1
+</code></pre></div>
+<h3 id="workload-identity-step-2-create-a-gcp-service-account">Workload Identity: Step 2 — Create a GCP service account<a class="headerlink" href="#workload-identity-step-2-create-a-gcp-service-account" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>gcloud<span class="w"> </span>iam<span class="w"> </span>service-accounts<span class="w"> </span>create<span class="w"> </span>eso-sa<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--project<span class="o">=</span>my-project<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--display-name<span class="o">=</span><span class="s2">"ESO Secret Manager SA"</span>
+</code></pre></div>
+<h3 id="workload-identity-step-3-grant-secret-manager-access-to-the-gcp-service-account">Workload Identity: Step 3 — Grant Secret Manager access to the GCP service account<a class="headerlink" href="#workload-identity-step-3-grant-secret-manager-access-to-the-gcp-service-account" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>gcloud<span class="w"> </span>projects<span class="w"> </span>add-iam-policy-binding<span class="w"> </span>my-project<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--member<span class="o">=</span><span class="s2">"serviceAccount:eso-sa@my-project.iam.gserviceaccount.com"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--role<span class="o">=</span><span class="s2">"roles/secretmanager.secretAccessor"</span>
+</code></pre></div>
+<p>To restrict access to specific secrets rather than all secrets in the project:</p>
+<div class="highlight"><pre><span></span><code>gcloud<span class="w"> </span>secrets<span class="w"> </span>add-iam-policy-binding<span class="w"> </span>myapp-database<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--project<span class="o">=</span>my-project<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--member<span class="o">=</span><span class="s2">"serviceAccount:eso-sa@my-project.iam.gserviceaccount.com"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--role<span class="o">=</span><span class="s2">"roles/secretmanager.secretAccessor"</span>
+</code></pre></div>
+<h3 id="workload-identity-step-4-create-namespace-and-kubernetes-serviceaccount">Workload Identity: Step 4 — Create namespace and Kubernetes ServiceAccount<a class="headerlink" href="#workload-identity-step-4-create-namespace-and-kubernetes-serviceaccount" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>gcp-eso-test
+
+kubectl<span class="w"> </span>create<span class="w"> </span>serviceaccount<span class="w"> </span>eso-ksa<span class="w"> </span>-n<span class="w"> </span>gcp-eso-test
+</code></pre></div>
+<h3 id="workload-identity-step-5-bind-the-kubernetes-serviceaccount-to-the-gcp-service-account">Workload Identity: Step 5 — Bind the Kubernetes ServiceAccount to the GCP service account<a class="headerlink" href="#workload-identity-step-5-bind-the-kubernetes-serviceaccount-to-the-gcp-service-account" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Allow the K8s SA to impersonate the GCP SA</span>
+gcloud<span class="w"> </span>iam<span class="w"> </span>service-accounts<span class="w"> </span>add-iam-policy-binding<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>eso-sa@my-project.iam.gserviceaccount.com<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--project<span class="o">=</span>my-project<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--role<span class="o">=</span>roles/iam.workloadIdentityUser<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--member<span class="o">=</span><span class="s2">"serviceAccount:my-project.svc.id.goog[gcp-eso-test/eso-ksa]"</span>
+
+<span class="c1"># Annotate the K8s ServiceAccount</span>
+kubectl<span class="w"> </span>annotate<span class="w"> </span>serviceaccount<span class="w"> </span>eso-ksa<span class="w"> </span>-n<span class="w"> </span>gcp-eso-test<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>iam.gke.io/gcp-service-account<span class="o">=</span>eso-sa@my-project.iam.gserviceaccount.com
+</code></pre></div>
+<h3 id="workload-identity-step-6-create-secretstore">Workload Identity: Step 6 — Create SecretStore<a class="headerlink" href="#workload-identity-step-6-create-secretstore" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SecretStore</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp-secret-store</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp-eso-test</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">provider</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">gcpsm</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">projectID</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-project</span>
+<span class="w">      </span><span class="nt">auth</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">workloadIdentity</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">clusterLocation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">us-central1</span>
+<span class="w">          </span><span class="nt">clusterName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-cluster</span>
+<span class="w">          </span><span class="nt">serviceAccountRef</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eso-ksa</span>
+</code></pre></div>
+<p>Apply and verify:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>secret-store.yaml
+kubectl<span class="w"> </span>get<span class="w"> </span>secretstore<span class="w"> </span>-n<span class="w"> </span>gcp-eso-test
+</code></pre></div>
+<p>Should show <code>STATUS: Valid</code> and <code>READY: True</code>.</p>
+<p>Now proceed to <a href="#create-externalsecret">Create ExternalSecret</a>.</p>
+<hr>
+<h2 id="option-2-service-account-key">Option 2: Service Account Key<a class="headerlink" href="#option-2-service-account-key" title="Permanent link">#</a></h2>
+<p>Use a GCP service account JSON key stored in a Kubernetes Secret. Works with any Kubernetes cluster, not just GKE.</p>
+<h3 id="key-step-1-create-a-gcp-service-account-and-key">Key: Step 1 — Create a GCP service account and key<a class="headerlink" href="#key-step-1-create-a-gcp-service-account-and-key" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>gcloud<span class="w"> </span>iam<span class="w"> </span>service-accounts<span class="w"> </span>create<span class="w"> </span>eso-sa<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--project<span class="o">=</span>my-project<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--display-name<span class="o">=</span><span class="s2">"ESO Secret Manager SA"</span>
+
+gcloud<span class="w"> </span>projects<span class="w"> </span>add-iam-policy-binding<span class="w"> </span>my-project<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--member<span class="o">=</span><span class="s2">"serviceAccount:eso-sa@my-project.iam.gserviceaccount.com"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--role<span class="o">=</span><span class="s2">"roles/secretmanager.secretAccessor"</span>
+
+gcloud<span class="w"> </span>iam<span class="w"> </span>service-accounts<span class="w"> </span>keys<span class="w"> </span>create<span class="w"> </span>eso-sa-key.json<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--iam-account<span class="o">=</span>eso-sa@my-project.iam.gserviceaccount.com<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--project<span class="o">=</span>my-project
+</code></pre></div>
+<p><strong>Important:</strong> Store <code>eso-sa-key.json</code> securely. Treat it as a long-lived credential that must be rotated if compromised.</p>
+<h3 id="key-step-2-store-the-key-in-a-kubernetes-secret">Key: Step 2 — Store the key in a Kubernetes Secret<a class="headerlink" href="#key-step-2-store-the-key-in-a-kubernetes-secret" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>gcp-eso-test
+
+kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>generic<span class="w"> </span>gcp-credentials<span class="w"> </span>-n<span class="w"> </span>gcp-eso-test<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--from-file<span class="o">=</span>key.json<span class="o">=</span>eso-sa-key.json
+</code></pre></div>
+<h3 id="key-step-3-create-secretstore">Key: Step 3 — Create SecretStore<a class="headerlink" href="#key-step-3-create-secretstore" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SecretStore</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp-secret-store</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp-eso-test</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">provider</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">gcpsm</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">projectID</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-project</span>
+<span class="w">      </span><span class="nt">auth</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">secretRef</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">secretAccessKeySecretRef</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp-credentials</span>
+<span class="w">            </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">key.json</span>
+</code></pre></div>
+<p>Apply and verify:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>secret-store.yaml
+kubectl<span class="w"> </span>get<span class="w"> </span>secretstore<span class="w"> </span>-n<span class="w"> </span>gcp-eso-test
+</code></pre></div>
+<p>Should show <code>STATUS: Valid</code> and <code>READY: True</code>.</p>
+<p>Now proceed to <a href="#create-externalsecret">Create ExternalSecret</a>.</p>
+<hr>
+<h2 id="common-configuration">Common Configuration<a class="headerlink" href="#common-configuration" title="Permanent link">#</a></h2>
+<p>The following steps apply to both authentication methods.</p>
+<h2 id="create-externalsecret">Create ExternalSecret<a class="headerlink" href="#create-externalsecret" title="Permanent link">#</a></h2>
+<p>GCP Secret Manager stores secrets as opaque byte strings (not structured key-value pairs). A single secret version holds the entire value.</p>
+<p><strong>If your secret is a JSON object</strong> (as created above), use <code>dataFrom</code> to extract individual keys:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExternalSecret</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp-eso-test</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">refreshInterval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1h</span>
+<span class="w">  </span><span class="nt">secretStoreRef</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp-secret-store</span>
+<span class="w">    </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SecretStore</span>
+<span class="w">  </span><span class="nt">target</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">    </span><span class="nt">creationPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Owner</span>
+<span class="w">    </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">reloader.stakater.com/match</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">  </span><span class="nt">dataFrom</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">extract</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp-database</span>
+</code></pre></div>
+<p><strong>If your secret is a plain string</strong>, use <code>data</code> with a single key:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">data</span><span class="p p-Indicator">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">secretKey</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
+<span class="w">      </span><span class="nt">remoteRef</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp-database</span>
+</code></pre></div>
+<p>Apply and verify:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>external-secret.yaml
+kubectl<span class="w"> </span>get<span class="w"> </span>externalsecret<span class="w"> </span>-n<span class="w"> </span>gcp-eso-test
+</code></pre></div>
+<p>Should show <code>STATUS: SecretSynced</code> and <code>READY: True</code>.</p>
+<h2 id="deploy-application">Deploy Application<a class="headerlink" href="#deploy-application" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp-eso-test-app</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp-eso-test</span>
 <span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">reloader.stakater.com/auto</span><span class="p">:</span><span class="w"> </span><span class="s">"false"</span>
+<span class="w">    </span><span class="nt">reloader.stakater.com/search</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp-eso-test-app</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp-eso-test-app</span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">busybox:latest</span>
+<span class="w">          </span><span class="nt">command</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"sh"</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"-c"</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">              </span><span class="no">while true; do</span>
+<span class="w">                </span><span class="no">echo "Username: $APP_USERNAME"</span>
+<span class="w">                </span><span class="no">echo "Password: $APP_PASSWORD"</span>
+<span class="w">                </span><span class="no">sleep 30</span>
+<span class="w">              </span><span class="no">done</span>
+<span class="w">          </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">APP_USERNAME</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">username</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">APP_PASSWORD</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
+</code></pre></div>
+<p>Apply:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>deployment.yaml
+</code></pre></div>
+<h2 id="verify-the-setup">Verify the Setup<a class="headerlink" href="#verify-the-setup" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># SecretStore</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>secretstore<span class="w"> </span>-n<span class="w"> </span>gcp-eso-test
+
+<span class="c1"># ExternalSecret</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>externalsecret<span class="w"> </span>-n<span class="w"> </span>gcp-eso-test
+
+<span class="c1"># Secret (created by ESO)</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>gcp-eso-test
+
+<span class="c1"># Pod</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>gcp-eso-test
+
+<span class="c1"># Verify secret contents</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>gcp-eso-test<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.password}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
+
+<span class="c1"># Check app logs</span>
+kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>gcp-eso-test<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>gcp-eso-test-app
+</code></pre></div>
+<h2 id="test-secret-rotation">Test Secret Rotation<a class="headerlink" href="#test-secret-rotation" title="Permanent link">#</a></h2>
+<h3 id="add-a-new-version-in-gcp-secret-manager">Add a new version in GCP Secret Manager<a class="headerlink" href="#add-a-new-version-in-gcp-secret-manager" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s1">'{"username":"admin-user","password":"new-rotated-password"}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>gcloud<span class="w"> </span>secrets<span class="w"> </span>versions<span class="w"> </span>add<span class="w"> </span>myapp-database<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--project<span class="o">=</span>my-project<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--data-file<span class="o">=</span>-
+</code></pre></div>
+<p>GCP Secret Manager keeps all previous versions. ESO always reads the <strong>latest</strong> version unless you pin a specific version in the <code>ExternalSecret</code>.</p>
+<h3 id="wait-and-verify">Wait and verify<a class="headerlink" href="#wait-and-verify" title="Permanent link">#</a></h3>
+<p>To force an immediate ESO sync without waiting for <code>refreshInterval</code>:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>annotate<span class="w"> </span>externalsecret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>gcp-eso-test<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>force-sync<span class="o">=</span><span class="k">$(</span>date<span class="w"> </span>+%s<span class="k">)</span><span class="w"> </span>--overwrite
+</code></pre></div>
+<p>Then verify:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check secret was updated</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>gcp-eso-test<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.password}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
+
+<span class="c1"># Check pod was restarted</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>gcp-eso-test<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>gcp-eso-test-app
+
+<span class="c1"># Check app logs show new password</span>
+kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>gcp-eso-test<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>gcp-eso-test-app<span class="w"> </span>--tail<span class="o">=</span><span class="m">5</span>
 </code></pre></div>
 <hr>
-<h3 id="argo-cd-shows-the-app-as-outofsync-after-a-reload">Argo CD shows the app as OutOfSync after a reload<a class="headerlink" href="#argo-cd-shows-the-app-as-outofsync-after-a-reload" title="Permanent link">#</a></h3>
-<p>Reloader's default <code>env-vars</code> reload strategy injects an environment variable into the pod template. Argo CD compares the live state against Git and flags this as drift.</p>
-<p>See the full guide: <a href="use-reloader-with-argocd.html">Use Reloader with Argo CD</a></p>
+<h2 id="configuration-reference">Configuration Reference<a class="headerlink" href="#configuration-reference" title="Permanent link">#</a></h2>
+<h3 id="secretstore-workload-identity">SecretStore — Workload Identity<a class="headerlink" href="#secretstore-workload-identity" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>provider.gcpsm.projectID</code></td>
+<td>GCP project ID</td>
+</tr>
+<tr>
+<td><code>provider.gcpsm.auth.workloadIdentity.clusterLocation</code></td>
+<td>GKE cluster region or zone</td>
+</tr>
+<tr>
+<td><code>provider.gcpsm.auth.workloadIdentity.clusterName</code></td>
+<td>GKE cluster name</td>
+</tr>
+<tr>
+<td><code>provider.gcpsm.auth.workloadIdentity.serviceAccountRef.name</code></td>
+<td>Kubernetes ServiceAccount annotated with the GCP service account</td>
+</tr>
+</tbody>
+</table>
+<h3 id="secretstore-service-account-key">SecretStore — Service Account Key<a class="headerlink" href="#secretstore-service-account-key" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>provider.gcpsm.projectID</code></td>
+<td>GCP project ID</td>
+</tr>
+<tr>
+<td><code>provider.gcpsm.auth.secretRef.secretAccessKeySecretRef.name</code></td>
+<td>K8s Secret containing the JSON key</td>
+</tr>
+<tr>
+<td><code>provider.gcpsm.auth.secretRef.secretAccessKeySecretRef.key</code></td>
+<td>Key within the Secret holding the JSON key content</td>
+</tr>
+</tbody>
+</table>
+<h3 id="externalsecret">ExternalSecret<a class="headerlink" href="#externalsecret" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>refreshInterval</code></td>
+<td>How often ESO polls GCP for changes (e.g. <code>1h</code>, <code>5m</code>)</td>
+</tr>
+<tr>
+<td><code>secretStoreRef</code></td>
+<td>Reference to the SecretStore</td>
+</tr>
+<tr>
+<td><code>target.name</code></td>
+<td>Name of the K8s Secret to create</td>
+</tr>
+<tr>
+<td><code>target.template.metadata.annotations</code></td>
+<td>Annotations to add to the created Secret</td>
+</tr>
+<tr>
+<td><code>dataFrom[].extract.key</code></td>
+<td>GCP secret name — extracts all keys from a JSON-structured secret</td>
+</tr>
+<tr>
+<td><code>data[].remoteRef.key</code></td>
+<td>GCP secret name for plain string secrets</td>
+</tr>
+</tbody>
+</table>
+<h3 id="reloader-annotations">Reloader Annotations<a class="headerlink" href="#reloader-annotations" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Annotation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deployment</td>
+<td><code>reloader.stakater.com/search: "true"</code></td>
+</tr>
+<tr>
+<td>Secret (via ExternalSecret template)</td>
+<td><code>reloader.stakater.com/match: "true"</code></td>
+</tr>
+</tbody>
+</table>
 <hr>
-<h3 id="pod-restarts-are-happening-multiple-times-for-one-change">Pod restarts are happening multiple times for one change<a class="headerlink" href="#pod-restarts-are-happening-multiple-times-for-one-change" title="Permanent link">#</a></h3>
-<p>A single ConfigMap or Secret update should produce exactly one restart per matching workload. If you are seeing repeated restarts, check:</p>
-<ul>
-<li>Whether the ConfigMap or Secret is being updated multiple times in quick succession (for example by an external sync controller with a short refresh interval)</li>
-<li>Use <code>deployment.reloader.stakater.com/pause-period</code> to rate-limit rapid changes:</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">deployment.reloader.stakater.com/pause-period</span><span class="p">:</span><span class="w"> </span><span class="s">"2m"</span>
-</code></pre></div>
-<hr>
-<h3 id="reloader-logs-show-errors">Reloader logs show errors<a class="headerlink" href="#reloader-logs-show-errors" title="Permanent link">#</a></h3>
-<p><strong><code>failed to update deployment</code></strong> — Reloader does not have permission to patch the workload. Verify RBAC:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>clusterrole<span class="w"> </span>reloader-reloader-role<span class="w"> </span>-o<span class="w"> </span>yaml
-kubectl<span class="w"> </span>get<span class="w"> </span>clusterrolebinding<span class="w"> </span>reloader-reloader-role-binding<span class="w"> </span>-o<span class="w"> </span>yaml
-</code></pre></div>
-<p><strong><code>unable to create Kubernetes client</code></strong> — Reloader cannot reach the Kubernetes API. Check the ServiceAccount and network policies.</p>
+<h2 id="comparison-workload-identity-vs-service-account-key">Comparison: Workload Identity vs Service Account Key<a class="headerlink" href="#comparison-workload-identity-vs-service-account-key" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Workload Identity</th>
+<th>Service Account Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Credentials</strong></td>
+<td>No static key — short-lived tokens</td>
+<td>Long-lived JSON key file</td>
+</tr>
+<tr>
+<td><strong>Security</strong></td>
+<td>No credentials to leak or rotate</td>
+<td>Key must be rotated if compromised</td>
+</tr>
+<tr>
+<td><strong>Cluster requirement</strong></td>
+<td>GKE with Workload Identity enabled</td>
+<td>Any Kubernetes cluster</td>
+</tr>
+<tr>
+<td><strong>Setup complexity</strong></td>
+<td>Requires IAM binding + K8s SA annotation</td>
+<td>Just a service account key + K8s Secret</td>
+</tr>
+<tr>
+<td><strong>Best for</strong></td>
+<td>Production on GKE</td>
+<td>Development, non-GKE clusters</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -5099,27 +5835,27 @@ kubectl<span class="w"> </span>get<span class="w"> </span>clusterrolebinding<spa
                 <div class="flex-2">
                     <div class="logo-footer-container">
                         
-                        <img class="md-header__logo_light" src="../assets/images/footer-logo-light.png#only-light" alt="logo">
+                        <img class="md-header__logo_light" src="../../assets/images/footer-logo-light.png#only-light" alt="logo">
                         
                         
-                        <img src="../assets/images/footer-logo-dark.png#only-dark" alt="logo">
+                        <img src="../../assets/images/footer-logo-dark.png#only-dark" alt="logo">
                         
                     </div>
 
                     <div class="collaborations-img-container">
                         <div class="display-flex">
                             
-                            <img class="csa-logo-dark" src="../assets/images/CSA_dark.png#only-dark" alt="CSA">
+                            <img class="csa-logo-dark" src="../../assets/images/CSA_dark.png#only-dark" alt="CSA">
                             
                             
-                            <img class="csa-logo-light" src="../assets/images/CSA_light.png#only-light" alt="CSA">
+                            <img class="csa-logo-light" src="../../assets/images/CSA_light.png#only-light" alt="CSA">
                             
 
                             
-                            <img class="hc-logo-dark" src="../assets/images/HC_dark.png#only-dark" alt="HC">
+                            <img class="hc-logo-dark" src="../../assets/images/HC_dark.png#only-dark" alt="HC">
                             
                             
-                            <img class="hc-logo-light" src="../assets/images/HC_light.png#only-light" alt="HC">
+                            <img class="hc-logo-light" src="../../assets/images/HC_light.png#only-light" alt="HC">
                             
                         </div>
                     </div>
@@ -5511,10 +6247,10 @@ kubectl<span class="w"> </span>get<span class="w"> </span>clusterrolebinding<spa
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.tracking", "toc.follow", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.tracking", "toc.follow", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   

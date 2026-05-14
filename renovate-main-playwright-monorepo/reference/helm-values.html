@@ -5,13 +5,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-playwright-monorepo/how-to-guides/verify-and-troubleshoot.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-playwright-monorepo/reference/helm-values.html">
       
       
-        <link rel="prev" href="alerting-on-reload.html">
+        <link rel="prev" href="annotations.html">
       
       
-        <link rel="next" href="use-reloader-with-argocd.html">
+        <link rel="next" href="../eula.html">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>Verify and Troubleshoot Reloader - Reloader</title>
+        <title>Helm Values &amp; CLI Flags - Reloader</title>
       
     
     
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#verify-and-troubleshoot-reloader" class="md-skip">
+        <a href="#helm-values-cli-flags-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -2788,20 +2788,18 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -2822,7 +2820,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2840,7 +2838,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="restart-pods-when-configmap-changes.html" class="md-nav__link">
+      <a href="../how-to-guides/restart-pods-when-configmap-changes.html" class="md-nav__link">
         
   
   
@@ -2868,7 +2866,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="restart-pods-when-secret-changes.html" class="md-nav__link">
+      <a href="../how-to-guides/restart-pods-when-secret-changes.html" class="md-nav__link">
         
   
   
@@ -2896,7 +2894,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
+      <a href="../how-to-guides/reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
         
   
   
@@ -2924,7 +2922,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="restart-pods-when-external-secrets-change.html" class="md-nav__link">
+      <a href="../how-to-guides/restart-pods-when-external-secrets-change.html" class="md-nav__link">
         
   
   
@@ -2952,7 +2950,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="alerting-on-reload.html" class="md-nav__link">
+      <a href="../how-to-guides/alerting-on-reload.html" class="md-nav__link">
         
   
   
@@ -2977,37 +2975,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Verify and Troubleshoot Reloader
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="verify-and-troubleshoot.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../how-to-guides/verify-and-troubleshoot.html" class="md-nav__link">
         
   
   
@@ -3023,200 +2994,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#verify-reloader-is-running" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verify Reloader is running
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-a-reload-was-triggered" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verify a reload was triggered
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Verify a reload was triggered">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#check-the-logs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check the logs
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-the-pod-age" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check the pod age
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-the-rollout-status" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check the rollout status
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-via-prometheus-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verify via Prometheus metrics
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Verify via Prometheus metrics">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#reload-counters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reload counters
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reloads-broken-down-by-namespace" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reloads broken down by namespace
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-problems" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Common problems
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Common problems">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#reloader-is-not-reacting-to-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reloader is not reacting to changes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reloader-is-restarting-pods-it-shouldnt" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reloader is restarting pods it shouldn't
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#argo-cd-shows-the-app-as-outofsync-after-a-reload" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Argo CD shows the app as OutOfSync after a reload
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pod-restarts-are-happening-multiple-times-for-one-change" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pod restarts are happening multiple times for one change
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reloader-logs-show-errors" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reloader logs show errors
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3229,7 +3006,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="use-reloader-with-argocd.html" class="md-nav__link">
+      <a href="../how-to-guides/use-reloader-with-argocd.html" class="md-nav__link">
         
   
   
@@ -3257,7 +3034,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="use-reloader-with-flux.html" class="md-nav__link">
+      <a href="../how-to-guides/use-reloader-with-flux.html" class="md-nav__link">
         
   
   
@@ -4261,18 +4038,20 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked="">
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -4293,7 +4072,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -4311,7 +4090,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../reference/annotations.html" class="md-nav__link">
+      <a href="annotations.html" class="md-nav__link">
         
   
   
@@ -4336,10 +4115,37 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../reference/helm-values.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Helm Values &amp; CLI Flags
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="helm-values.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -4355,6 +4161,277 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#how-to-apply-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to apply settings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core behavior
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core behavior">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reload-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reload strategies
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#namespace-and-resource-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Namespace and resource filtering
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High availability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metrics-and-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metrics and monitoring
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-annotation-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom annotation keys
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scheduling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scheduling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security context
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-deployment-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other deployment options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rbac-and-service-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RBAC and service account
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pod-disruption-budget" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pod Disruption Budget
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vertical-pod-autoscaler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vertical Pod Autoscaler
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network Policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profiling-pprof" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profiling (pprof)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4477,10 +4554,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#verify-reloader-is-running" class="md-nav__link">
+  <a href="#how-to-apply-settings" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Verify Reloader is running
+        How to apply settings
       
     </span>
   </a>
@@ -4488,44 +4565,22 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#verify-a-reload-was-triggered" class="md-nav__link">
+  <a href="#core-behavior" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Verify a reload was triggered
+        Core behavior
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Verify a reload was triggered">
+    <nav class="md-nav" aria-label="Core behavior">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#check-the-logs" class="md-nav__link">
+  <a href="#reload-strategies" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Check the logs
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-the-pod-age" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check the pod age
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-the-rollout-status" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check the rollout status
+        Reload strategies
       
     </span>
   </a>
@@ -4538,22 +4593,77 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#verify-via-prometheus-metrics" class="md-nav__link">
+  <a href="#namespace-and-resource-filtering" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Verify via Prometheus metrics
+        Namespace and resource filtering
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Verify via Prometheus metrics">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High availability
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#metrics-and-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metrics and monitoring
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-annotation-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom annotation keys
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment configuration">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#reload-counters" class="md-nav__link">
+  <a href="#resources" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reload counters
+        Resources
       
     </span>
   </a>
@@ -4561,10 +4671,43 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#reloads-broken-down-by-namespace" class="md-nav__link">
+  <a href="#scheduling" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reloads broken down by namespace
+        Scheduling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security context
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-deployment-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other deployment options
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment variables
       
     </span>
   </a>
@@ -4577,22 +4720,44 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-problems" class="md-nav__link">
+  <a href="#rbac-and-service-account" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common problems
+        RBAC and service account
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Common problems">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#reloader-is-not-reacting-to-changes" class="md-nav__link">
+  <a href="#pod-disruption-budget" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reloader is not reacting to changes
+        Pod Disruption Budget
       
     </span>
   </a>
@@ -4600,10 +4765,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#reloader-is-restarting-pods-it-shouldnt" class="md-nav__link">
+  <a href="#vertical-pod-autoscaler" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reloader is restarting pods it shouldn't
+        Vertical Pod Autoscaler
       
     </span>
   </a>
@@ -4611,10 +4776,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#argo-cd-shows-the-app-as-outofsync-after-a-reload" class="md-nav__link">
+  <a href="#network-policy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Argo CD shows the app as OutOfSync after a reload
+        Network Policy
       
     </span>
   </a>
@@ -4622,21 +4787,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#pod-restarts-are-happening-multiple-times-for-one-change" class="md-nav__link">
+  <a href="#profiling-pprof" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Pod restarts are happening multiple times for one change
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reloader-logs-show-errors" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reloader logs show errors
+        Profiling (pprof)
       
     </span>
   </a>
@@ -4668,144 +4822,773 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="verify-and-troubleshoot-reloader">Verify and Troubleshoot Reloader<a class="headerlink" href="#verify-and-troubleshoot-reloader" title="Permanent link">#</a></h1>
-<p>This page explains how to confirm that Reloader is working correctly and how to diagnose common problems.</p>
+<h1 id="helm-values-cli-flags-reference">Helm Values &amp; CLI Flags Reference<a class="headerlink" href="#helm-values-cli-flags-reference" title="Permanent link">#</a></h1>
+<p>Reloader is configured through Helm values, which the chart translates into CLI flags on the Reloader process. This page documents every available setting, its CLI flag equivalent, default value, and what it does.</p>
 <hr>
-<h2 id="verify-reloader-is-running">Verify Reloader is running<a class="headerlink" href="#verify-reloader-is-running" title="Permanent link">#</a></h2>
-<p>Check that the Reloader pod is up:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader
+<h2 id="how-to-apply-settings">How to apply settings<a class="headerlink" href="#how-to-apply-settings" title="Permanent link">#</a></h2>
+<p><strong>Values file (recommended for production):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># values.yaml</span>
+<span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">autoReloadAll</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">logLevel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">debug</span>
 </code></pre></div>
-<p>Expected output:</p>
-<div class="highlight"><pre><span></span><code>NAME                        READY   STATUS    RESTARTS   AGE
-reloader-6d8f9b7c4d-xk9zp   1/1     Running   0          5m
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span>-f<span class="w"> </span>values.yaml
+</code></pre></div>
+<p><strong>Inline <code>--set</code>:</strong></p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.autoReloadAll<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.logLevel<span class="o">=</span>debug
 </code></pre></div>
 <hr>
-<h2 id="verify-a-reload-was-triggered">Verify a reload was triggered<a class="headerlink" href="#verify-a-reload-was-triggered" title="Permanent link">#</a></h2>
-<h3 id="check-the-logs">Check the logs<a class="headerlink" href="#check-the-logs" title="Permanent link">#</a></h3>
-<p>After updating a ConfigMap or Secret, check Reloader's logs for confirmation:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader<span class="w"> </span>--tail<span class="o">=</span><span class="m">50</span>
-</code></pre></div>
-<p>A successful reload produces log lines like:</p>
-<div class="highlight"><pre><span></span><code>Changes detected in 'database-secret' of type 'SECRET' in namespace: production
-Updated 'my-app' of type 'Deployment' in namespace: production
-</code></pre></div>
+<h2 id="core-behavior">Core behavior<a class="headerlink" href="#core-behavior" title="Permanent link">#</a></h2>
 <table>
 <thead>
 <tr>
-<th>Log field</th>
-<th>Meaning</th>
+<th>Helm value</th>
+<th>CLI flag</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>database-secret</code></td>
-<td>Name of the ConfigMap or Secret that changed</td>
+<td><code>reloader.autoReloadAll</code></td>
+<td><code>--auto-reload-all</code></td>
+<td>bool</td>
+<td><code>false</code></td>
+<td>Treat every workload as if it has <code>reloader.stakater.com/auto: "true"</code>. Individual workloads can still opt out by setting the annotation to <code>"false"</code>.</td>
 </tr>
 <tr>
-<td><code>SECRET</code></td>
-<td>Type of the changed resource (<code>SECRET</code> or <code>CONFIGMAP</code>)</td>
+<td><code>reloader.reloadOnCreate</code></td>
+<td><code>--reload-on-create</code></td>
+<td>bool</td>
+<td><code>false</code></td>
+<td>Also trigger reloads when a ConfigMap or Secret is <strong>created</strong>, not just updated.</td>
 </tr>
 <tr>
-<td><code>production</code></td>
-<td>Namespace where the change was detected</td>
+<td><code>reloader.reloadOnDelete</code></td>
+<td><code>--reload-on-delete</code></td>
+<td>bool</td>
+<td><code>false</code></td>
+<td>Also trigger reloads when a ConfigMap or Secret is <strong>deleted</strong>.</td>
 </tr>
 <tr>
-<td><code>my-app</code></td>
-<td>Name of the workload that was restarted</td>
+<td><code>reloader.reloadStrategy</code></td>
+<td><code>--reload-strategy</code></td>
+<td>string</td>
+<td><code>env-vars</code></td>
+<td>How Reloader forces a rolling update. See <a href="#reload-strategies">Reload strategies</a>.</td>
 </tr>
 <tr>
-<td><code>Deployment</code></td>
-<td>Workload type (<code>Deployment</code>, <code>StatefulSet</code>, <code>DaemonSet</code>, etc.)</td>
+<td><code>reloader.webhookUrl</code></td>
+<td><code>--webhook-url</code></td>
+<td>string</td>
+<td><code>""</code></td>
+<td>Send an http request to this URL on change instead of restarting workloads. When set, no workloads are restarted.</td>
+</tr>
+<tr>
+<td><code>reloader.isArgoRollouts</code></td>
+<td><code>--is-Argo-Rollouts</code></td>
+<td>bool</td>
+<td><code>false</code></td>
+<td>Enable support for Argo <code>Rollout</code> resources.</td>
+</tr>
+<tr>
+<td><code>reloader.isOpenshift</code></td>
+<td><em>(Helm only)</em></td>
+<td>bool</td>
+<td><code>false</code></td>
+<td>Enable OpenShift <code>DeploymentConfig</code> support. Reloader auto-detects OpenShift at startup; only set this if auto-detection fails.</td>
+</tr>
+<tr>
+<td><code>reloader.enableCSIIntegration</code></td>
+<td><code>--enable-csi-integration</code></td>
+<td>bool</td>
+<td><code>false</code></td>
+<td>Enable watching <code>SecretProviderClass</code> resources via the Secrets Store CSI Driver. Required for file-based CSI secret mounts.</td>
 </tr>
 </tbody>
 </table>
-<p>If you see no log output after a change, see <a href="#reloader-is-not-reacting-to-changes">Reloader is not reacting to changes</a> below.</p>
-<h3 id="check-the-pod-age">Check the pod age<a class="headerlink" href="#check-the-pod-age" title="Permanent link">#</a></h3>
-<p>After a reload, the workload's pods are replaced. Confirm new pods were created:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>-l<span class="w"> </span>&lt;your-app-label&gt;
-</code></pre></div>
-<p>The <code>AGE</code> column should show the pods were created recently, within seconds or minutes of your ConfigMap or Secret update.</p>
-<h3 id="check-the-rollout-status">Check the rollout status<a class="headerlink" href="#check-the-rollout-status" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deployment/&lt;deployment-name&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;
-</code></pre></div>
+<h3 id="reload-strategies">Reload strategies<a class="headerlink" href="#reload-strategies" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>env-vars</code> (default)</td>
+<td>Patches a dummy environment variable onto the pod template to force a rolling update.</td>
+</tr>
+<tr>
+<td><code>annotations</code></td>
+<td>Adds <code>reloader.stakater.com/last-reloaded-from</code> to the pod template. Produces less drift when using GitOps tools (Argo CD, Flux).</td>
+</tr>
+</tbody>
+</table>
 <hr>
-<h2 id="verify-via-prometheus-metrics">Verify via Prometheus metrics<a class="headerlink" href="#verify-via-prometheus-metrics" title="Permanent link">#</a></h2>
-<p>Reloader exposes a Prometheus metrics endpoint at <code>/metrics</code> on port <code>9090</code>.</p>
-<h3 id="reload-counters">Reload counters<a class="headerlink" href="#reload-counters" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>reloader_reload_executed_total{success="true"}   # number of successful reloads
-reloader_reload_executed_total{success="false"}  # number of failed reloads
-</code></pre></div>
-<p>Port-forward to inspect directly:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>port-forward<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>svc/reloader<span class="w"> </span><span class="m">9090</span>:9090
-curl<span class="w"> </span>http://localhost:9090/metrics<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>reloader_reload
-</code></pre></div>
-<h3 id="reloads-broken-down-by-namespace">Reloads broken down by namespace<a class="headerlink" href="#reloads-broken-down-by-namespace" title="Permanent link">#</a></h3>
-<p>This is a <strong>separate metric</strong> (<code>reloader_reload_executed_total_by_namespace</code>) that is disabled by default because it can have high cardinality in large clusters. Enable it with:</p>
+<h2 id="namespace-and-resource-filtering">Namespace and resource filtering<a class="headerlink" href="#namespace-and-resource-filtering" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Helm value</th>
+<th>CLI flag</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>reloader.watchGlobally</code></td>
+<td><em>(Helm only)</em></td>
+<td>bool</td>
+<td><code>true</code></td>
+<td>When <code>false</code>, Reloader only watches the namespace it is deployed in. When <code>true</code>, it watches all namespaces (subject to <code>namespaceSelector</code> and <code>ignoreNamespaces</code>).</td>
+</tr>
+<tr>
+<td><code>reloader.namespaceSelector</code></td>
+<td><code>--namespace-selector</code></td>
+<td>string</td>
+<td><code>""</code></td>
+<td>Comma-separated <code>key=value</code> label selectors. Only namespaces matching all selectors are watched. Example: <code>environment=production</code>.</td>
+</tr>
+<tr>
+<td><code>reloader.ignoreNamespaces</code></td>
+<td><code>--namespaces-to-ignore</code></td>
+<td>string</td>
+<td><code>""</code></td>
+<td>Comma-separated list of namespace names to exclude entirely.</td>
+</tr>
+<tr>
+<td><code>reloader.resourceLabelSelector</code></td>
+<td><code>--resource-label-selector</code></td>
+<td>string</td>
+<td><code>""</code></td>
+<td>Comma-separated <code>key=value</code> label selectors. Only ConfigMaps and Secrets matching all selectors are watched.</td>
+</tr>
+<tr>
+<td><code>reloader.ignoreSecrets</code></td>
+<td><code>--resources-to-ignore=secrets</code></td>
+<td>bool</td>
+<td><code>false</code></td>
+<td>Ignore all Secrets cluster-wide. Reloader will not watch or react to any Secret changes.</td>
+</tr>
+<tr>
+<td><code>reloader.ignoreConfigMaps</code></td>
+<td><code>--resources-to-ignore=configMaps</code></td>
+<td>bool</td>
+<td><code>false</code></td>
+<td>Ignore all ConfigMaps cluster-wide.</td>
+</tr>
+<tr>
+<td><code>reloader.ignoreJobs</code></td>
+<td><code>--ignored-workload-types=jobs</code></td>
+<td>bool</td>
+<td><code>false</code></td>
+<td>Skip <code>Job</code> workloads — changes to referenced ConfigMaps/Secrets will not trigger Job restarts.</td>
+</tr>
+<tr>
+<td><code>reloader.ignoreCronJobs</code></td>
+<td><code>--ignored-workload-types=cronjobs</code></td>
+<td>bool</td>
+<td><code>false</code></td>
+<td>Skip <code>CronJob</code> workloads.</td>
+</tr>
+</tbody>
+</table>
+<p>When both <code>namespaceSelector</code> and <code>resourceLabelSelector</code> are set, both conditions must match for a resource to be watched.</p>
+<hr>
+<h2 id="high-availability">High availability<a class="headerlink" href="#high-availability" title="Permanent link">#</a></h2>
+<p>Running more than one Reloader replica without HA enabled causes duplicate reloads. Enable HA to use leader election so only one replica acts at a time.</p>
+<table>
+<thead>
+<tr>
+<th>Helm value</th>
+<th>CLI flag</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>reloader.enableHA</code></td>
+<td><code>--enable-ha</code></td>
+<td>bool</td>
+<td><code>false</code></td>
+<td>Enable leader election via a Kubernetes <code>Lease</code> lock. Required when running multiple replicas.</td>
+</tr>
+<tr>
+<td><code>reloader.syncAfterRestart</code></td>
+<td><code>--sync-after-restart</code></td>
+<td>bool</td>
+<td><code>false</code></td>
+<td>When a new leader is elected, it re-evaluates all tracked workloads and triggers any missed reloads. Requires <code>reloadOnCreate: true</code>.</td>
+</tr>
+<tr>
+<td><code>reloader.deployment.replicas</code></td>
+<td><em>(Helm only)</em></td>
+<td>int</td>
+<td><code>1</code></td>
+<td>Number of Reloader replicas. Set to <code>2</code> or more only when <code>enableHA: true</code>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Minimum HA configuration:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">enableMetricsByNamespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">enableHA</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">reloadOnCreate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">syncAfterRestart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 </code></pre></div>
-<p>Or via the environment variable <code>METRICS_COUNT_BY_NAMESPACE=enabled</code> on the Reloader container.</p>
-<p>When enabled:</p>
-<div class="highlight"><pre><span></span><code>reloader_reload_executed_total_by_namespace{success="true", namespace="production"}   1
-reloader_reload_executed_total_by_namespace{success="false", namespace="staging"}     2
+<p>HA uses a <code>Lease</code> object named <code>stakater-reloader-lock</code> in the Reloader namespace. The pod must have <code>POD_NAME</code> and <code>POD_NAMESPACE</code> environment variables set (the Helm chart sets these automatically).</p>
+<hr>
+<h2 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Helm value</th>
+<th>CLI flag</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>reloader.logLevel</code></td>
+<td><code>--log-level</code></td>
+<td>string</td>
+<td><code>info</code></td>
+<td>Log verbosity. Valid values: <code>trace</code>, <code>debug</code>, <code>info</code>, <code>warning</code>, <code>error</code>, <code>fatal</code>, <code>panic</code>.</td>
+</tr>
+<tr>
+<td><code>reloader.logFormat</code></td>
+<td><code>--log-format</code></td>
+<td>string</td>
+<td><code>""</code></td>
+<td>Log format. Empty string produces structured text output. Set to <code>json</code> for machine-readable logs.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="metrics-and-monitoring">Metrics and monitoring<a class="headerlink" href="#metrics-and-monitoring" title="Permanent link">#</a></h2>
+<p>Reloader exposes a Prometheus metrics endpoint on <code>:9090/metrics</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Helm value</th>
+<th>CLI flag</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>reloader.enableMetricsByNamespace</code></td>
+<td><em>(Helm only)</em></td>
+<td>bool</td>
+<td><code>false</code></td>
+<td>Expose a per-namespace reload counter. May produce high cardinality in clusters with many namespaces.</td>
+</tr>
+<tr>
+<td><code>reloader.podMonitor.enabled</code></td>
+<td><em>(Helm only)</em></td>
+<td>bool</td>
+<td><code>false</code></td>
+<td>Create a <code>PodMonitor</code> resource for Prometheus Operator scraping (recommended).</td>
+</tr>
+<tr>
+<td><code>reloader.serviceMonitor.enabled</code></td>
+<td><em>(Helm only)</em></td>
+<td>bool</td>
+<td><code>false</code></td>
+<td>Create a <code>ServiceMonitor</code> resource. <strong>Deprecated</strong> — use <code>podMonitor</code> instead. Requires a <code>Service</code> to be configured.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Enable PodMonitor:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">podMonitor</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">release</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prometheus</span><span class="w">  </span><span class="c1"># match your Prometheus Operator selector</span>
 </code></pre></div>
 <hr>
-<h2 id="common-problems">Common problems<a class="headerlink" href="#common-problems" title="Permanent link">#</a></h2>
-<h3 id="reloader-is-not-reacting-to-changes">Reloader is not reacting to changes<a class="headerlink" href="#reloader-is-not-reacting-to-changes" title="Permanent link">#</a></h3>
-<p><strong>Check the annotation is present and correct.</strong></p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>deployment<span class="w"> </span>&lt;name&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.metadata.annotations}'</span>
-</code></pre></div>
-<p>The annotation must be on the <code>Deployment</code> (or other workload) itself, not on the pod template. Common mistakes:</p>
-<ul>
-<li>Typo in the annotation key (compare against the <a href="../reference/annotations.html">Annotation Reference</a>)</li>
-<li>Annotation placed under <code>spec.template.metadata.annotations</code> instead of <code>metadata.annotations</code></li>
-<li>Using <code>reloader.stakater.com/search: "true"</code> without <code>reloader.stakater.com/match: "true"</code> on the Secret/ConfigMap</li>
-</ul>
-<p><strong>Check the ConfigMap or Secret is not ignored.</strong></p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>&lt;name&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.metadata.annotations}'</span>
-</code></pre></div>
-<p>If <code>reloader.stakater.com/ignore: "true"</code> is present, Reloader will skip it entirely.</p>
-<p><strong>Check namespace scope.</strong></p>
-<p>If Reloader is deployed with <code>watchGlobally: false</code>, it only watches its own namespace. Confirm with:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>namespace
-</code></pre></div>
-<p><strong>Check label selectors.</strong></p>
-<p>If <code>namespaceSelector</code> or <code>resourceLabelSelector</code> is configured, the resource or its namespace must match. A resource that matches <code>resourceLabelSelector</code> but not <code>namespaceSelector</code> is silently ignored.</p>
+<h2 id="custom-annotation-keys">Custom annotation keys<a class="headerlink" href="#custom-annotation-keys" title="Permanent link">#</a></h2>
+<p>All annotation key names can be overridden cluster-wide. This is useful when the default <code>reloader.stakater.com/*</code> keys conflict with another tool, or when your organisation enforces a custom annotation domain.</p>
+<table>
+<thead>
+<tr>
+<th>Helm value</th>
+<th>CLI flag</th>
+<th>Default annotation key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>reloader.custom_annotations.auto</code></td>
+<td><code>--auto-annotation</code></td>
+<td><code>reloader.stakater.com/auto</code></td>
+</tr>
+<tr>
+<td><code>reloader.custom_annotations.configmap</code></td>
+<td><code>--configmap-annotation</code></td>
+<td><code>configmap.reloader.stakater.com/reload</code></td>
+</tr>
+<tr>
+<td><code>reloader.custom_annotations.secret</code></td>
+<td><code>--secret-annotation</code></td>
+<td><code>secret.reloader.stakater.com/reload</code></td>
+</tr>
+<tr>
+<td><code>reloader.custom_annotations.configmap_auto</code></td>
+<td><code>--configmap-auto-annotation</code></td>
+<td><code>configmap.reloader.stakater.com/auto</code></td>
+</tr>
+<tr>
+<td><code>reloader.custom_annotations.secret_auto</code></td>
+<td><code>--secret-auto-annotation</code></td>
+<td><code>secret.reloader.stakater.com/auto</code></td>
+</tr>
+<tr>
+<td><code>reloader.custom_annotations.search</code></td>
+<td><code>--auto-search-annotation</code></td>
+<td><code>reloader.stakater.com/search</code></td>
+</tr>
+<tr>
+<td><code>reloader.custom_annotations.match</code></td>
+<td><code>--search-match-annotation</code></td>
+<td><code>reloader.stakater.com/match</code></td>
+</tr>
+<tr>
+<td><code>reloader.custom_annotations.pausePeriod</code></td>
+<td><code>--pause-deployment-annotation</code></td>
+<td><code>deployment.reloader.stakater.com/pause-period</code></td>
+</tr>
+<tr>
+<td><code>reloader.custom_annotations.pauseTime</code></td>
+<td><code>--pause-deployment-time-annotation</code></td>
+<td><code>deployment.reloader.stakater.com/paused-at</code></td>
+</tr>
+</tbody>
+</table>
+<p>When any custom annotation key is configured, only that key is recognised — the default key is no longer active.</p>
 <hr>
-<h3 id="reloader-is-restarting-pods-it-shouldnt">Reloader is restarting pods it shouldn't<a class="headerlink" href="#reloader-is-restarting-pods-it-shouldnt" title="Permanent link">#</a></h3>
-<p><strong>Check <code>auto: "true"</code> scope.</strong></p>
-<p><code>reloader.stakater.com/auto: "true"</code> watches all ConfigMaps and Secrets referenced anywhere in the pod spec. If a shared ConfigMap or Secret changes, every workload referencing it will restart. Use the named annotation instead to limit scope:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">configmap.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"only-this-configmap"</span>
+<h2 id="deployment-configuration">Deployment configuration<a class="headerlink" href="#deployment-configuration" title="Permanent link">#</a></h2>
+<h3 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">#</a></h3>
+<p>No resource requests or limits are set by default. Set them explicitly for production:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">resources</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">requests</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10m</span>
+<span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">128Mi</span>
+<span class="w">      </span><span class="nt">limits</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">150m</span>
+<span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">512Mi</span>
 </code></pre></div>
-<p>Or use the <a href="../reference/annotations.html#search-and-match-pattern">search and match pattern</a> to give resource owners explicit control.</p>
-<p><strong>Check <code>autoReloadAll</code> mode.</strong></p>
-<p>If <code>reloader.autoReloadAll: true</code> is set, all workloads restart on any matching change. To opt a specific workload out:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">reloader.stakater.com/auto</span><span class="p">:</span><span class="w"> </span><span class="s">"false"</span>
+<h3 id="scheduling">Scheduling<a class="headerlink" href="#scheduling" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Helm value</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>reloader.deployment.nodeSelector</code></td>
+<td>object</td>
+<td><code>{}</code></td>
+<td>Node selector labels for pod scheduling.</td>
+</tr>
+<tr>
+<td><code>reloader.deployment.affinity</code></td>
+<td>object</td>
+<td><code>{}</code></td>
+<td>Affinity and anti-affinity rules.</td>
+</tr>
+<tr>
+<td><code>reloader.deployment.tolerations</code></td>
+<td>list</td>
+<td><code>[]</code></td>
+<td>Tolerations for tainted nodes.</td>
+</tr>
+<tr>
+<td><code>reloader.deployment.topologySpreadConstraints</code></td>
+<td>list</td>
+<td><code>[]</code></td>
+<td>Spread pods across zones or nodes.</td>
+</tr>
+<tr>
+<td><code>reloader.deployment.priorityClassName</code></td>
+<td>string</td>
+<td><code>""</code></td>
+<td>PriorityClass name for the pod.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="security-context">Security context<a class="headerlink" href="#security-context" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Helm value</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>reloader.deployment.securityContext</code></td>
+<td>object</td>
+<td><code>runAsNonRoot: true, runAsUser: 65534, seccompProfile: RuntimeDefault</code></td>
+<td>Pod-level security context.</td>
+</tr>
+<tr>
+<td><code>reloader.deployment.containerSecurityContext</code></td>
+<td>object</td>
+<td><code>{}</code></td>
+<td>Container-level security context.</td>
+</tr>
+<tr>
+<td><code>reloader.readOnlyRootFileSystem</code></td>
+<td>bool</td>
+<td><code>false</code></td>
+<td>Mount the container root filesystem as read-only.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>OpenShift note:</strong> On OpenShift 4.13.3+, set <code>reloader.deployment.securityContext.runAsUser: null</code> to allow OpenShift to assign the UID dynamically.</p>
+<h3 id="other-deployment-options">Other deployment options<a class="headerlink" href="#other-deployment-options" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Helm value</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>reloader.deployment.replicas</code></td>
+<td>int</td>
+<td><code>1</code></td>
+<td>Number of replicas. Only increase when <code>enableHA: true</code>.</td>
+</tr>
+<tr>
+<td><code>reloader.deployment.revisionHistoryLimit</code></td>
+<td>int</td>
+<td><code>2</code></td>
+<td>Number of old ReplicaSets to retain.</td>
+</tr>
+<tr>
+<td><code>reloader.deployment.annotations</code></td>
+<td>object</td>
+<td><code>{}</code></td>
+<td>Annotations on the Deployment resource.</td>
+</tr>
+<tr>
+<td><code>reloader.deployment.pod.annotations</code></td>
+<td>object</td>
+<td><code>{}</code></td>
+<td>Annotations on the pod template.</td>
+</tr>
+<tr>
+<td><code>reloader.deployment.dnsConfig</code></td>
+<td>object</td>
+<td><code>{}</code></td>
+<td>Custom DNS configuration for pods.</td>
+</tr>
+<tr>
+<td><code>reloader.deployment.volumeMounts</code></td>
+<td>list</td>
+<td><code>[]</code></td>
+<td>Additional volume mounts.</td>
+</tr>
+<tr>
+<td><code>reloader.deployment.volumes</code></td>
+<td>list</td>
+<td><code>[]</code></td>
+<td>Additional volumes.</td>
+</tr>
+<tr>
+<td><code>reloader.deployment.gomaxprocsOverride</code></td>
+<td>string</td>
+<td><code>""</code></td>
+<td>Override <code>GOMAXPROCS</code>. Set to <code>"0"</code> for Go runtime default.</td>
+</tr>
+<tr>
+<td><code>reloader.deployment.gomemlimitOverride</code></td>
+<td>string</td>
+<td><code>""</code></td>
+<td>Override <code>GOMEMLIMIT</code>. Set to <code>"0"</code> for Go runtime default.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="environment-variables">Environment variables<a class="headerlink" href="#environment-variables" title="Permanent link">#</a></h3>
+<p>Pass additional environment variables to the Reloader container. Used primarily for webhook alerting.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">open</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">ALERT_ON_RELOAD</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">        </span><span class="nt">ALERT_SINK</span><span class="p">:</span><span class="w"> </span><span class="s">"slack"</span>
+<span class="w">        </span><span class="nt">ALERT_WEBHOOK_URL</span><span class="p">:</span><span class="w"> </span><span class="s">"https://hooks.slack.com/..."</span>
+<span class="w">        </span><span class="nt">ALERT_ADDITIONAL_INFO</span><span class="p">:</span><span class="w"> </span><span class="s">"prod-cluster"</span>
+<span class="w">      </span><span class="nt">secret</span><span class="p">:</span>
+<span class="w">        </span><span class="c1"># read from the default reloader Secret by key name</span>
+<span class="w">        </span><span class="nt">ALERT_WEBHOOK_URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alert_webhook_key</span>
+<span class="w">      </span><span class="nt">existing</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">my-existing-secret</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">ALERT_WEBHOOK_URL</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">webhook_url_key</span>
 </code></pre></div>
 <hr>
-<h3 id="argo-cd-shows-the-app-as-outofsync-after-a-reload">Argo CD shows the app as OutOfSync after a reload<a class="headerlink" href="#argo-cd-shows-the-app-as-outofsync-after-a-reload" title="Permanent link">#</a></h3>
-<p>Reloader's default <code>env-vars</code> reload strategy injects an environment variable into the pod template. Argo CD compares the live state against Git and flags this as drift.</p>
-<p>See the full guide: <a href="use-reloader-with-argocd.html">Use Reloader with Argo CD</a></p>
+<h2 id="rbac-and-service-account">RBAC and service account<a class="headerlink" href="#rbac-and-service-account" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Helm value</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>reloader.rbac.enabled</code></td>
+<td>bool</td>
+<td><code>true</code></td>
+<td>Create <code>ClusterRole</code> and <code>ClusterRoleBinding</code> granting Reloader read access to ConfigMaps, Secrets, Deployments, etc.</td>
+</tr>
+<tr>
+<td><code>reloader.serviceAccount.create</code></td>
+<td>bool</td>
+<td><code>true</code></td>
+<td>Create a dedicated <code>ServiceAccount</code> for Reloader.</td>
+</tr>
+<tr>
+<td><code>reloader.serviceAccount.name</code></td>
+<td>string</td>
+<td><code>""</code></td>
+<td>Name of the ServiceAccount. If empty, a name is generated from the Helm release.</td>
+</tr>
+<tr>
+<td><code>reloader.serviceAccount.annotations</code></td>
+<td>object</td>
+<td><code>{}</code></td>
+<td>Annotations on the ServiceAccount — useful for IRSA (AWS) or Workload Identity (GCP).</td>
+</tr>
+</tbody>
+</table>
 <hr>
-<h3 id="pod-restarts-are-happening-multiple-times-for-one-change">Pod restarts are happening multiple times for one change<a class="headerlink" href="#pod-restarts-are-happening-multiple-times-for-one-change" title="Permanent link">#</a></h3>
-<p>A single ConfigMap or Secret update should produce exactly one restart per matching workload. If you are seeing repeated restarts, check:</p>
-<ul>
-<li>Whether the ConfigMap or Secret is being updated multiple times in quick succession (for example by an external sync controller with a short refresh interval)</li>
-<li>Use <code>deployment.reloader.stakater.com/pause-period</code> to rate-limit rapid changes:</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">deployment.reloader.stakater.com/pause-period</span><span class="p">:</span><span class="w"> </span><span class="s">"2m"</span>
-</code></pre></div>
+<h2 id="image">Image<a class="headerlink" href="#image" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Helm value</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>image.repository</code></td>
+<td>string</td>
+<td><code>ghcr.io/stakater/reloader</code></td>
+<td>Container image repository. Override to <code>ghcr.io/stakater/reloader-enterprise</code> for the Enterprise image.</td>
+</tr>
+<tr>
+<td><code>image.tag</code></td>
+<td>string</td>
+<td><code>v1.4.16</code></td>
+<td>Image tag.</td>
+</tr>
+<tr>
+<td><code>image.pullPolicy</code></td>
+<td>string</td>
+<td><code>IfNotPresent</code></td>
+<td>Kubernetes image pull policy.</td>
+</tr>
+<tr>
+<td><code>global.imagePullSecrets</code></td>
+<td>list</td>
+<td><code>[]</code></td>
+<td>Image pull secrets for private registries.</td>
+</tr>
+<tr>
+<td><code>global.imageRegistry</code></td>
+<td>string</td>
+<td><code>""</code></td>
+<td>Global image registry prefix.</td>
+</tr>
+</tbody>
+</table>
 <hr>
-<h3 id="reloader-logs-show-errors">Reloader logs show errors<a class="headerlink" href="#reloader-logs-show-errors" title="Permanent link">#</a></h3>
-<p><strong><code>failed to update deployment</code></strong> — Reloader does not have permission to patch the workload. Verify RBAC:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>clusterrole<span class="w"> </span>reloader-reloader-role<span class="w"> </span>-o<span class="w"> </span>yaml
-kubectl<span class="w"> </span>get<span class="w"> </span>clusterrolebinding<span class="w"> </span>reloader-reloader-role-binding<span class="w"> </span>-o<span class="w"> </span>yaml
+<h2 id="advanced">Advanced<a class="headerlink" href="#advanced" title="Permanent link">#</a></h2>
+<h3 id="pod-disruption-budget">Pod Disruption Budget<a class="headerlink" href="#pod-disruption-budget" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">podDisruptionBudget</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">minAvailable</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 </code></pre></div>
-<p><strong><code>unable to create Kubernetes client</code></strong> — Reloader cannot reach the Kubernetes API. Check the ServiceAccount and network policies.</p>
+<table>
+<thead>
+<tr>
+<th>Helm value</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>reloader.podDisruptionBudget.enabled</code></td>
+<td>bool</td>
+<td><code>false</code></td>
+<td>Create a <code>PodDisruptionBudget</code>.</td>
+</tr>
+<tr>
+<td><code>reloader.podDisruptionBudget.minAvailable</code></td>
+<td>int</td>
+<td>—</td>
+<td>Minimum available replicas during disruption.</td>
+</tr>
+<tr>
+<td><code>reloader.podDisruptionBudget.maxUnavailable</code></td>
+<td>int</td>
+<td>—</td>
+<td>Maximum unavailable replicas. If both are set, only <code>maxUnavailable</code> is used.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="vertical-pod-autoscaler">Vertical Pod Autoscaler<a class="headerlink" href="#vertical-pod-autoscaler" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">verticalPodAutoscaler</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">updatePolicy</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">updateMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Auto</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Helm value</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>reloader.verticalPodAutoscaler.enabled</code></td>
+<td>bool</td>
+<td><code>false</code></td>
+<td>Create a <code>VerticalPodAutoscaler</code> resource. Requires VPA CRDs installed.</td>
+</tr>
+<tr>
+<td><code>reloader.verticalPodAutoscaler.updatePolicy.updateMode</code></td>
+<td>string</td>
+<td><code>Auto</code></td>
+<td>VPA update mode: <code>Off</code>, <code>Initial</code>, <code>Recreate</code>, or <code>Auto</code>.</td>
+</tr>
+<tr>
+<td><code>reloader.verticalPodAutoscaler.controlledResources</code></td>
+<td>list</td>
+<td><code>[]</code></td>
+<td>Resources VPA can adjust. Defaults to CPU and memory.</td>
+</tr>
+<tr>
+<td><code>reloader.verticalPodAutoscaler.minAllowed</code></td>
+<td>object</td>
+<td><code>{}</code></td>
+<td>Minimum resource bounds.</td>
+</tr>
+<tr>
+<td><code>reloader.verticalPodAutoscaler.maxAllowed</code></td>
+<td>object</td>
+<td><code>{}</code></td>
+<td>Maximum resource bounds.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="network-policy">Network Policy<a class="headerlink" href="#network-policy" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">netpol</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">from</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">podSelector</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">app.kubernetes.io/name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prometheus</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Helm value</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>reloader.netpol.enabled</code></td>
+<td>bool</td>
+<td><code>false</code></td>
+<td>Create a <code>NetworkPolicy</code> to restrict traffic to Reloader pods.</td>
+</tr>
+<tr>
+<td><code>reloader.netpol.from</code></td>
+<td>list</td>
+<td><code>[]</code></td>
+<td>Ingress rules — pods/namespaces allowed to reach Reloader (e.g. Prometheus for scraping).</td>
+</tr>
+<tr>
+<td><code>reloader.netpol.to</code></td>
+<td>list</td>
+<td><code>[]</code></td>
+<td>Egress rules.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="profiling-pprof">Profiling (pprof)<a class="headerlink" href="#profiling-pprof" title="Permanent link">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>Helm value</th>
+<th>CLI flag</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>reloader.enablePProf</code></td>
+<td><code>--enable-pprof</code></td>
+<td>bool</td>
+<td><code>false</code></td>
+<td>Start a pprof http server for Go runtime profiling.</td>
+</tr>
+<tr>
+<td><code>reloader.pprofAddr</code></td>
+<td><code>--pprof-addr</code></td>
+<td>string</td>
+<td><code>:6060</code></td>
+<td>Address for the pprof server.</td>
+</tr>
+</tbody>
+</table>
 
 
 
