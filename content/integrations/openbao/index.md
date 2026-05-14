@@ -1,9 +1,5 @@
 # OpenBao Integration
 
-> :green_circle: **Support level**
-> This integration is **validated and supported in Reloader Enterprise**.
-> Community usage is possible, but without continuous validation or SLA
-
 This guide shows how to automatically restart Kubernetes workloads when OpenBao secrets change using Stakater Reloader.
 
 ## What is OpenBao?
@@ -19,40 +15,26 @@ OpenBao is an open-source, community-driven fork of HashiCorp Vault, managed by 
 | **CSI Driver** | CSI mounts files + syncs to K8s Secret | CSI rotation interval | Works with `secretObjects` | [CSI Guide](openbao-csi.md) |
 | **CSI Driver (File-Based)** | CSI mounts files only (no K8s Secret) | CSI rotation interval | Works via SecretProviderClassPodStatus | [CSI File Guide](openbao-csi-file.md) |
 
-## Architecture Overview
+## How It Works
 
-```text
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                     OpenBao + Reloader Architecture                          │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
-│  OpenBao Server (openbao namespace):                                         │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │  OpenBao                                                               │ │
-│  │  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐    │ │
-│  │  │ KV v2 Engine     │  │ Kubernetes Auth  │  │ AppRole Auth     │    │ │
-│  │  │ secret/myapp     │  │ (k8s SA tokens)  │  │ (RoleID/SecretID)│    │ │
-│  │  └──────────────────┘  └──────────────────┘  └──────────────────┘    │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-│                              │                                               │
-│                              ▼                                               │
-│  Application Namespace:                                                      │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │  Secret Sync (ESO / BSO / CSI)                                         │ │
-│  │  ┌──────────────────┐    ┌──────────────────┐                         │ │
-│  │  │  Operator CRDs   │───►│  K8s Secret      │                         │ │
-│  │  │  (SecretStore,   │    │  (app-secrets)   │                         │ │
-│  │  │  VaultAuth, etc.)│    │  match: "true"   │                         │ │
-│  │  └──────────────────┘    └──────────────────┘                         │ │
-│  │                                   │                                    │ │
-│  │                                   ▼                                    │ │
-│  │  ┌──────────────────┐    ┌──────────────────┐                         │ │
-│  │  │ Stakater Reloader│───►│  Application Pod │                         │ │
-│  │  │ Detects change   │    │  Rolling restart  │                         │ │
-│  │  └──────────────────┘    └──────────────────┘                         │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-│                                                                              │
-└─────────────────────────────────────────────────────────────────────────────┘
+```mermaid
+sequenceDiagram
+    actor Ops as Operator
+    participant OB as OpenBao
+    participant Sync as Secret Sync<br/>(ESO / BSO / CSI)
+    participant K8s as Kubernetes Secret
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Ops->>OB: Rotate secret (bao kv put)
+    loop Poll / sync interval
+        Sync->>OB: Fetch latest secret value
+        OB-->>Sync: Updated value
+    end
+    Sync->>K8s: Update Secret data
+    K8s-->>RL: Watch event (Secret changed)
+    RL->>Pod: Trigger rolling restart
+    Note over Pod: New pod starts with updated secret
 ```
 
 ## Prerequisites

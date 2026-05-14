@@ -17,41 +17,29 @@ Choose the authentication method that best fits your security requirements and p
 
 ## Overview
 
-```text
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                           Kubernetes Cluster                                 │
-│                                                                              │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │                    OpenBao Secrets Operator                             │ │
-│  │                                                                         │ │
-│  │  ┌─────────────────┐  ┌────────────┐  ┌────────────────────────────┐  │ │
-│  │  │ VaultConnection │  │ VaultAuth  │  │ VaultStaticSecret          │  │ │
-│  │  │                 │  │            │  │                            │  │ │
-│  │  │ - OpenBao addr  │─►│ - K8s Auth │─►│ - mount: secret            │  │ │
-│  │  │                 │  │   or       │  │ - path: myapp              │  │ │
-│  │  │                 │  │ - AppRole  │  │ - refreshAfter: 30s        │  │ │
-│  │  │                 │  │            │  │ - Reloader annotation      │  │ │
-│  │  └─────────────────┘  └────────────┘  └────────────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-│                                      │                                       │
-│                                      ▼                                       │
-│  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐       │
-│  │   K8s Secret     │    │  Stakater        │    │  Application     │       │
-│  │   (app-secrets)  │───►│  Reloader        │───►│  Pod             │       │
-│  │                  │    │                  │    │                  │       │
-│  │  annotation:     │    │  Watches secret  │    │  Reads secrets   │       │
-│  │  reloader.../    │    │  changes and     │    │  from env vars   │       │
-│  │  match: "true"   │    │  restarts pods   │    │                  │       │
-│  └──────────────────┘    └──────────────────┘    └──────────────────┘       │
-│            ▲                                                                 │
-│            │                                                                 │
-│  ┌──────────────────┐                                                       │
-│  │    OpenBao       │                                                       │
-│  │    Server        │                                                       │
-│  │                  │                                                       │
-│  │  KV v2 engine   │                                                       │
-│  └──────────────────┘                                                       │
-└─────────────────────────────────────────────────────────────────────────────┘
+```mermaid
+sequenceDiagram
+    actor Ops as Operator
+    participant OB as OpenBao
+    participant BSO as OpenBao Secrets Operator
+    participant K8s as Kubernetes Secret
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Note over BSO: VaultConnection + VaultAuth configured
+    BSO->>OB: Authenticate (K8s Auth or AppRole)
+    OB-->>BSO: Auth token / lease
+
+    Ops->>OB: Rotate secret (bao kv put)
+    loop Every refreshAfter interval
+        BSO->>OB: Read VaultStaticSecret path
+        OB-->>BSO: Updated secret value
+    end
+    BSO->>K8s: Update Secret data
+    Note over K8s: annotation: reloader.stakater.com/match: "true"
+    K8s-->>RL: Watch event (Secret changed)
+    RL->>Pod: Trigger rolling restart
+    Note over Pod: New pod starts with updated secret
 ```
 
 ## Prerequisites

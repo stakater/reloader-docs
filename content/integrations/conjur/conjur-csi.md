@@ -4,51 +4,30 @@ This guide explains how to set up CyberArk Conjur with the Secrets Store CSI Dri
 
 ## Overview
 
-```text
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                           Kubernetes Cluster                                 │
-│                                                                              │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │                         Application Pod                                 │ │
-│  │  ┌─────────────────────────────────────────────────────────────────┐   │ │
-│  │  │  App Container                                                   │   │ │
-│  │  │                                                                  │   │ │
-│  │  │  - Reads secrets from env vars (K8s Secret)                     │   │ │
-│  │  │  - Optionally reads secrets from mounted files                  │   │ │
-│  │  │                                                                  │   │ │
-│  │  └─────────────────────────────────────────────────────────────────┘   │ │
-│  │                              │                                          │ │
-│  │                              ▼                                          │ │
-│  │  ┌─────────────────────────────────────────────────────────────────┐   │ │
-│  │  │  CSI Volume Mount (/mnt/secrets)                                │   │ │
-│  │  │  - username.txt                                                  │   │ │
-│  │  │  - password.txt                                                  │   │ │
-│  │  └─────────────────────────────────────────────────────────────────┘   │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-│                                      │                                       │
-│            ┌─────────────────────────┼─────────────────────────┐            │
-│            ▼                         ▼                         ▼            │
-│  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐      │
-│  │  Conjur CSI      │    │   K8s Secret     │    │  Stakater        │      │
-│  │  Provider        │───►│   (app-secrets)  │───►│  Reloader        │      │
-│  │                  │    │                  │    │                  │      │
-│  │  - Authenticates │    │  annotation:     │    │  Watches secret  │      │
-│  │    via JWT       │    │  reloader.../    │    │  changes and     │      │
-│  │  - Fetches from  │    │  match: "true"   │    │  restarts pods   │      │
-│  │    Conjur        │    │                  │    │                  │      │
-│  │  - Syncs via     │    │  (secretObjects) │    │                  │      │
-│  │    secretObjects │    │                  │    │                  │      │
-│  └──────────────────┘    └──────────────────┘    └──────────────────┘      │
-│            │                                                                 │
-│            ▼                                                                 │
-│  ┌──────────────────┐                                                       │
-│  │    Conjur        │                                                       │
-│  │    Server        │                                                       │
-│  │                  │                                                       │
-│  │  Stores secrets  │                                                       │
-│  │  Validates JWT   │                                                       │
-│  └──────────────────┘                                                       │
-└─────────────────────────────────────────────────────────────────────────────┘
+```mermaid
+sequenceDiagram
+    actor Ops as Operator
+    participant C as Conjur Server
+    participant CSI as CSI Driver +<br/>Conjur Provider
+    participant K8s as Kubernetes Secret
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Note over CSI: Authenticates via JWT (authn-jwt)
+    CSI->>C: Authenticate (K8s SA JWT, audience: "conjur")
+    C-->>CSI: Auth token
+
+    Note over Pod: Pod has CSI volume mounted
+    Ops->>C: Update variable (conjur variable set)
+    loop CSI rotation interval
+        CSI->>C: Fetch secrets
+        C-->>CSI: Updated values
+        CSI->>Pod: Refresh mounted files
+        CSI->>K8s: Sync to Secret via secretObjects
+    end
+    K8s-->>RL: Watch event (Secret changed)
+    RL->>Pod: Trigger rolling restart
+    Note over Pod: New pod starts with updated secret
 ```
 
 ## Prerequisites

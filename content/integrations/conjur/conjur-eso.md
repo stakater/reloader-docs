@@ -15,41 +15,29 @@ Choose the authentication method that best fits your security requirements and p
 
 ## Overview
 
-```text
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                           Kubernetes Cluster                                 │
-│                                                                              │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │                    External Secrets Operator                            │ │
-│  │                                                                         │ │
-│  │  ┌─────────────────┐         ┌──────────────────────────────────────┐  │ │
-│  │  │  SecretStore    │         │  ExternalSecret                      │  │ │
-│  │  │                 │         │                                      │  │ │
-│  │  │  - Conjur URL   │         │  - refreshInterval: 30s              │  │ │
-│  │  │  - Auth Method  │────────►│  - Maps Conjur vars to K8s Secret    │  │ │
-│  │  │  - CA Bundle    │         │  - Adds Reloader annotation          │  │ │
-│  │  │                 │         │                                      │  │ │
-│  │  └─────────────────┘         └──────────────────────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-│                                      │                                       │
-│                                      ▼                                       │
-│  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐       │
-│  │   K8s Secret     │    │  Stakater        │    │  Application     │       │
-│  │   (app-secrets)  │───►│  Reloader        │───►│  Pod             │       │
-│  │                  │    │                  │    │                  │       │
-│  │  annotation:     │    │  Watches secret  │    │  Reads secrets   │       │
-│  │  reloader.../    │    │  changes and     │    │  from env vars   │       │
-│  │  match: "true"   │    │  restarts pods   │    │                  │       │
-│  └──────────────────┘    └──────────────────┘    └──────────────────┘       │
-│            ▲                                                                 │
-│            │                                                                 │
-│  ┌──────────────────┐                                                       │
-│  │    Conjur        │                                                       │
-│  │    Server        │                                                       │
-│  │                  │                                                       │
-│  │  Stores secrets  │                                                       │
-│  └──────────────────┘                                                       │
-└─────────────────────────────────────────────────────────────────────────────┘
+```mermaid
+sequenceDiagram
+    actor Ops as Operator
+    participant C as Conjur Server
+    participant ESO as External Secrets Operator
+    participant K8s as Kubernetes Secret
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Note over ESO: Authenticates via API Key or JWT
+    ESO->>C: Authenticate (API Key or K8s SA JWT)
+    C-->>ESO: Auth token / session
+
+    Ops->>C: Update variable (conjur variable set)
+    loop Every refreshInterval
+        ESO->>C: Read variable path
+        C-->>ESO: Updated secret value
+    end
+    ESO->>K8s: Update Secret data
+    Note over K8s: annotation: reloader.stakater.com/match: "true"
+    K8s-->>RL: Watch event (Secret changed)
+    RL->>Pod: Trigger rolling restart
+    Note over Pod: New pod starts with updated secret
 ```
 
 ## Prerequisites

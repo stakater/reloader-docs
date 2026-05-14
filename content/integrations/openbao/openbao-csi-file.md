@@ -6,72 +6,30 @@ This guide demonstrates integrating OpenBao with Stakater Reloader using the Sec
 
 In the file-based CSI pattern, secrets from OpenBao are mounted directly into pods as files. Reloader monitors the `SecretProviderClassPodStatus` resource for version changes and triggers pod restarts when secrets are rotated.
 
-```text
-┌─────────────────────────────────────────────────────────────────────┐
-│                         Kubernetes Cluster                          │
-│  ┌───────────────────────────────────────────────────────────────┐  │
-│  │                    Application Namespace                       │  │
-│  │                                                                │  │
-│  │  ┌─────────────────┐    ┌──────────────────────────────────┐  │  │
-│  │  │ SecretProvider  │    │         Application Pod          │  │  │
-│  │  │     Class       │    │  ┌────────────────────────────┐  │  │  │
-│  │  │                 │    │  │  CSI Volume Mount          │  │  │  │
-│  │  │ - provider:     │    │  │  /mnt/secrets/             │  │  │  │
-│  │  │   openbao       │    │  │    ├── username            │  │  │  │
-│  │  │ - parameters    │    │  │    └── password            │  │  │  │
-│  │  │   (no secret-   │    │  └────────────────────────────┘  │  │  │
-│  │  │    Objects)     │    └──────────────────────────────────┘  │  │
-│  │  └────────┬────────┘                     ▲                    │  │
-│  │           │                              │                    │  │
-│  │           │              ┌───────────────┴───────────────┐    │  │
-│  │           │              │     Secrets Store CSI         │    │  │
-│  │           │              │         Driver                │    │  │
-│  │           │              │                               │    │  │
-│  │           │              │  - Mounts secrets as files    │    │  │
-│  │           │              │  - Updates version in status  │    │  │
-│  │           │              └───────────────┬───────────────┘    │  │
-│  │           │                              │                    │  │
-│  │           ▼                              ▼                    │  │
-│  │  ┌─────────────────────────────────────────────────────────┐  │  │
-│  │  │          SecretProviderClassPodStatus                   │  │  │
-│  │  │                                                         │  │  │
-│  │  │  status:                                                │  │  │
-│  │  │    objects:                                             │  │  │
-│  │  │    - id: username                                       │  │  │
-│  │  │      version: "abc123..."  ◄── Version hash changes     │  │  │
-│  │  │    - id: password               when secret rotates     │  │  │
-│  │  │      version: "def456..."                               │  │  │
-│  │  └──────────────────────┬──────────────────────────────────┘  │  │
-│  │                         │                                     │  │
-│  └─────────────────────────┼─────────────────────────────────────┘  │
-│                            │                                        │
-│                            ▼                                        │
-│             ┌─────────────────────────┐                            │
-│             │    Stakater Reloader    │                            │
-│             │                         │                            │
-│             │  Watches SPCPS for      │                            │
-│             │  version changes        │                            │
-│             │                         │                            │
-│             │  Triggers pod restart   │                            │
-│             │  on version change      │                            │
-│             └─────────────────────────┘                            │
-│                                                                     │
-│             ┌─────────────────────────┐                            │
-│             │    OpenBao CSI          │                            │
-│             │      Provider           │                            │
-│             └───────────┬─────────────┘                            │
-│                         │                                           │
-└─────────────────────────┼───────────────────────────────────────────┘
-                          │
-                          ▼
-               ┌─────────────────────┐
-               │      OpenBao        │
-               │                     │
-               │  KV v2 Secrets      │
-               │  secret/myapp       │
-               │                     │
-               │  Kubernetes Auth    │
-               └─────────────────────┘
+```mermaid
+sequenceDiagram
+    actor Ops as Operator
+    participant OB as OpenBao
+    participant CSI as CSI Driver +<br/>OpenBao Provider
+    participant SPCPS as SecretProviderClass<br/>PodStatus
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Note over CSI: Authenticates via Kubernetes Auth
+    CSI->>OB: Authenticate (K8s SA JWT)
+    OB-->>CSI: Auth token
+
+    Note over Pod: Pod has CSI volume mounted (file-based, no K8s Secret)
+    Ops->>OB: Rotate secret (bao kv put)
+    loop CSI rotation interval
+        CSI->>OB: Fetch secrets
+        OB-->>CSI: Updated values
+        CSI->>Pod: Refresh mounted files
+        CSI->>SPCPS: Update version hash
+    end
+    SPCPS-->>RL: Watch event (version hash changed)
+    RL->>Pod: Trigger rolling restart
+    Note over Pod: New pod reads updated files
 ```
 
 ## When to Use This Pattern

@@ -1,9 +1,5 @@
 # Conjur Integration
 
-> 🟢 **Support level**
-> This integration is **validated and supported in Reloader Enterprise**.
-> Community usage is possible, but without continuous validation or SLA
-
 This guide shows how to automatically restart Kubernetes workloads when CyberArk Conjur secrets change using Stakater Reloader.
 
 ## Integration Patterns
@@ -14,44 +10,26 @@ This guide shows how to automatically restart Kubernetes workloads when CyberArk
 | **Sidecar** | Sidecar updates K8s Secret | Sidecar refresh interval | Best fit | [Sidecar Guide](conjur-sidecar.md) |
 | **CSI Driver** | CSI mounts files + syncs to K8s Secret | CSI rotation interval | Works with `secretObjects` | [CSI Guide](conjur-csi.md) |
 
-## Architecture Overview
+## How It Works
 
-```text
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                        Golden ConfigMap Architecture                         │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                              │
-│  Cluster Level (conjur namespace):                                           │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │  conjur-config-cluster-prep (Helm Chart)                               │ │
-│  │  ┌──────────────────┐                                                  │ │
-│  │  │ Golden ConfigMap │  Contains: CONJUR_ACCOUNT, CONJUR_APPLIANCE_URL, │ │
-│  │  │ (conjur-configmap)│           CONJUR_SSL_CERTIFICATE, etc.          │ │
-│  │  └──────────────────┘                                                  │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-│                              │                                               │
-│                              ▼                                               │
-│  Application Namespace:                                                      │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │  conjur-config-namespace-prep (Helm Chart)                             │ │
-│  │  ┌──────────────────┐                                                  │ │
-│  │  │ conjur-connect   │  Copies connection info from Golden ConfigMap    │ │
-│  │  │ ConfigMap        │                                                  │ │
-│  │  └──────────────────┘                                                  │ │
-│  │           │                                                            │ │
-│  │           ▼                                                            │ │
-│  │  ┌──────────────────────────────────────────────────────────────────┐ │ │
-│  │  │                    Application Pod                                │ │ │
-│  │  │  ┌─────────────┐         ┌────────────────────────────────────┐ │ │ │
-│  │  │  │ App         │         │ Secrets Provider Sidecar           │ │ │ │
-│  │  │  │ Container   │         │ - Reads from conjur-connect        │ │ │ │
-│  │  │  │             │         │ - Authenticates via JWT            │ │ │ │
-│  │  │  │             │         │ - Syncs secrets to K8s Secret      │ │ │ │
-│  │  │  └─────────────┘         └────────────────────────────────────┘ │ │ │
-│  │  └──────────────────────────────────────────────────────────────────┘ │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-│                                                                              │
-└─────────────────────────────────────────────────────────────────────────────┘
+```mermaid
+sequenceDiagram
+    actor Ops as Operator
+    participant C as CyberArk Conjur
+    participant Sync as Secret Sync<br/>(ESO / Sidecar / CSI)
+    participant K8s as Kubernetes Secret
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Ops->>C: Rotate secret
+    loop Poll / refresh interval
+        Sync->>C: Fetch latest secret value
+        C-->>Sync: Updated value
+    end
+    Sync->>K8s: Update Secret data
+    K8s-->>RL: Watch event (Secret changed)
+    RL->>Pod: Trigger rolling restart
+    Note over Pod: New pod starts with updated secret
 ```
 
 ## Prerequisites
