@@ -7,6 +7,7 @@ This guide shows how to automatically restart Kubernetes workloads when AWS Secr
 | Pattern | How Secrets Arrive | Rotation | Reloader Compatibility | Guide |
 |---------|-------------------|----------|------------------------|-------|
 | **External Secrets Operator** | ESO syncs to K8s Secret | ESO refresh interval | Best fit | [ESO Guide](aws-eso.md) |
+| **CSI Driver (ASCP)** | ASCP syncs to K8s Secret via `secretObjects` | CSI rotation poll interval | Best fit | [CSI Guide](aws-csi.md) |
 
 ## How It Works
 
@@ -66,3 +67,4 @@ metadata:
 ## Pattern-Specific Guides
 
 - [External Secrets Operator Pattern](aws-eso.md) — IRSA (recommended) or static credentials
+- [CSI Driver Pattern](aws-csi.md) — ASCP with IRSA; mounts secrets as files and syncs to a Kubernetes Secret

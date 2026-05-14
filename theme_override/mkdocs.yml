@@ -31,6 +31,7 @@ nav:
           - concepts/comparisons/reloader-vs-gitops-tools.md
           - concepts/comparisons/reloader-vs-secret-operators.md
           - concepts/comparisons/reloader-vs-cert-manager.md
+          - concepts/comparisons/reloader-vs-app-level-reload.md
   - Install & Upgrade:
       - Reloader OSS: installation/install-oss.md
       - Reloader Enterprise: installation/install.md
@@ -39,6 +40,8 @@ nav:
       - how-to-guides/restart-pods-when-secret-changes.md
       - how-to-guides/reload-pods-on-tls-certificate-rotation.md
       - how-to-guides/restart-pods-when-external-secrets-change.md
+      - how-to-guides/namespace-scoping.md
+      - how-to-guides/monitor-reloader.md
       - how-to-guides/alerting-on-reload.md
       - how-to-guides/verify-and-troubleshoot.md
       - how-to-guides/use-reloader-with-argocd.md
@@ -65,15 +68,19 @@ nav:
       - AWS Secrets Manager:
           - Overview: integrations/aws/index.md
           - External Secrets Operator: integrations/aws/aws-eso.md
+          - CSI Driver: integrations/aws/aws-csi.md
       - GCP Secret Manager:
           - Overview: integrations/gcp/index.md
           - External Secrets Operator: integrations/gcp/gcp-eso.md
       - Azure Key Vault:
           - Overview: integrations/azure/index.md
           - External Secrets Operator: integrations/azure/azure-eso.md
+          - CSI Driver: integrations/azure/azure-csi.md
   - Reference:
       - Annotations: reference/annotations.md
       - Helm Values & CLI Flags: reference/helm-values.md
+      - RBAC & Security: reference/rbac.md
+  - faq.md
   - eula.md
   - 'Support': help.md
   - 'Versions': versions.md

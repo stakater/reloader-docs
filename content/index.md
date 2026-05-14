@@ -1,43 +1,218 @@
-# What is Reloader?
+# Reloader
 
-> Configuration changes, applied safely — every time.
+> Automatically restart Kubernetes workloads when ConfigMaps or Secrets change.
 
-Reloader ensures that configuration and secret changes in Kubernetes are applied to running workloads in a **safe, automatic, and consistent** way.
+Kubernetes does not restart pods when a ConfigMap or Secret is updated. Reloader closes that gap. It watches for changes to ConfigMaps and Secrets and triggers a rolling restart of every Deployment, StatefulSet, or DaemonSet that depends on them — automatically, without modifying your application.
 
-In Kubernetes, updating a ConfigMap or Secret does not automatically update running Pods. Without additional controls, this often leads to manual restarts, stale configuration, and operational risk.
+---
 
-Reloader closes this gap by observing configuration changes and triggering workload updates based on explicit and predictable rules.
+## Quick start
 
-## Why Reloader Exists
+Install Reloader via Helm:
 
-In many Kubernetes environments, configuration changes rely on manual intervention or best-effort operational practices.
+```bash
+helm repo add stakater https://stakater.github.io/stakater-charts
+helm repo update
+helm install reloader stakater/reloader \
+  --namespace reloader \
+  --create-namespace
+```
 
-Common challenges include:
+Add one annotation to any Deployment:
 
-- Workloads running with outdated configuration or secrets
-- Manual restarts causing downtime or errors
-- Inconsistent behavior across environments
-- Platform teams becoming operational bottlenecks
+```yaml
+metadata:
+  annotations:
+    reloader.stakater.com/auto: "true"
+```
 
-Reloader was created to make configuration changes **deterministic operational events**, rather than ad-hoc procedures.
+From this point on, whenever a ConfigMap or Secret referenced by that Deployment changes, Reloader triggers a rolling restart. No application changes required.
 
-## Reloader’s Operational Model
+---
 
-Reloader introduces a consistent operational model for handling configuration and secret changes in Kubernetes.
+## The problem Reloader solves
 
-At a high level:
+In Kubernetes, updating a ConfigMap or Secret does not automatically update running pods. Environment variables set at pod start time do not change while the pod is running. This creates a gap between the desired configuration and what is actually running:
 
-1. Configuration or secrets are updated
-1. Reloader detects the change
-1. A controlled workload update is triggered
-1. The updated configuration is applied at runtime
+- A database password rotates in Vault or AWS Secrets Manager
+- The sync controller (ESO, CSI Driver) updates the Kubernetes Secret
+- The running pods continue using the **old password** until manually restarted
 
-This model ensures that approved configuration changes are actually reflected in running workloads, without requiring application changes or manual intervention.
+This gap causes stale configuration, broken secret rotation workflows, and operational incidents that are hard to diagnose. Reloader eliminates the manual step.
 
-### Deterministic Change Propagation
+---
 
-Reloader ensures that configuration changes are not silently ignored. Once a change is detected, the corresponding workload update follows a predictable and observable path.
+## How it works
 
-### Reduced Operational Risk
+Reloader uses the Kubernetes watch API to receive real-time events when a ConfigMap or Secret is updated. It checks whether the data actually changed (not just metadata). If it did, Reloader finds all workloads with matching annotations and patches their pod template — either injecting an environment variable with the resource's SHA1 hash, or updating an annotation. Kubernetes detects the pod template change and initiates a rolling update, respecting the workload's own `RollingUpdate` strategy.
 
-By removing ad-hoc restarts and manual procedures, Reloader reduces human error and improves platform reliability.
+```
+ConfigMap or Secret updated
+  ↓
+Reloader detects data change (watch API)
+  ↓
+Finds workloads with matching annotations
+  ↓
+Patches pod template
+  ↓
+Kubernetes rolling restart
+  ↓
+Pods start with updated configuration
+```
+
+See [How Reloader Works](architecture/how-it-works.md) for the full mechanics.
+
+---
+
+## Supported workloads
+
+| Workload | Support |
+|---|---|
+| `Deployment` | ✅ Full support |
+| `StatefulSet` | ✅ Full support |
+| `DaemonSet` | ✅ Full support |
+| `Argo Rollout` | ✅ Requires `reloader.isArgoRollouts: true` |
+| `CronJob` | ✅ Supported |
+| `Job` | ✅ Supported |
+| `DeploymentConfig` | ✅ OpenShift only, auto-detected |
+
+---
+
+## What Reloader watches
+
+| Resource | Notes |
+|---|---|
+| `Secret` | Default; disable with `reloader.ignoreSecrets: true` |
+| `ConfigMap` | Default; disable with `reloader.ignoreConfigMaps: true` |
+| `SecretProviderClass` | Requires `reloader.enableCSIIntegration: true` — for file-based CSI secrets with no Kubernetes Secret |
+
+---
+
+## Works with your secrets stack
+
+Reloader is tool-agnostic. It watches the Kubernetes Secret or ConfigMap, regardless of how it was created or updated. It works with:
+
+**Secret delivery:**
+
+- [External Secrets Operator](integrations/index.md) — Vault, OpenBao, Conjur, AWS Secrets Manager, Azure Key Vault, GCP Secret Manager, Infisical, Doppler, and more
+- [Secrets Store CSI Driver](integrations/vault/vault-csi.md) — Vault, OpenBao, Conjur, AWS ASCP, Azure Key Vault Provider
+- Vault Agent Injector (when `agent-inject-secret` creates a Kubernetes Secret)
+- Any tool that writes to a Kubernetes Secret or ConfigMap
+
+**GitOps and deployment:**
+
+- [Argo CD](how-to-guides/use-reloader-with-argocd.md) — use the `annotations` reload strategy to avoid sync drift
+- [Flux](how-to-guides/use-reloader-with-flux.md)
+- Helm — fully compatible, no chart changes required
+- Kustomize
+
+---
+
+## Annotation patterns
+
+Three patterns for controlling which changes trigger a restart:
+
+**Auto — watch everything referenced in the pod spec:**
+
+```yaml
+metadata:
+  annotations:
+    reloader.stakater.com/auto: "true"
+```
+
+**Named — watch specific resources by name:**
+
+```yaml
+metadata:
+  annotations:
+    secret.reloader.stakater.com/reload: "db-credentials,api-keys"
+    configmap.reloader.stakater.com/reload: "app-config"
+```
+
+**Search and match — resource owners control which Secrets trigger restarts:**
+
+```yaml
+# On the Deployment
+metadata:
+  annotations:
+    reloader.stakater.com/search: "true"
+
+# On the Secret
+metadata:
+  annotations:
+    reloader.stakater.com/match: "true"
+```
+
+See the full [Annotation Reference](reference/annotations.md) for all supported annotations.
+
+---
+
+## Key capabilities
+
+- **No application changes** — reload logic lives in Kubernetes annotations, not in application code
+- **Works with any language or framework** — Python, Go, Java, Node.js, or any containerised workload
+- **Works with third-party and legacy apps** — no source code access required
+- **Respects rolling update strategy** — Reloader delegates restarts to Kubernetes; `maxUnavailable` and PodDisruptionBudgets are respected
+- **Namespace scoping** — watch all namespaces, one namespace, or a label-selected subset
+- **High availability** — run multiple replicas with leader election
+- **Prometheus metrics** — `reloader_reload_executed_total` tracks every reload
+- **Webhook alerts** — Slack, Microsoft Teams, Google Chat, or any HTTP endpoint
+- **GitOps-compatible** — `annotations` reload strategy avoids Argo CD sync drift
+- **OpenShift support** — auto-detects DeploymentConfig resources
+- **CSI Driver integration** — watches `SecretProviderClassPodStatus` for file-based secret rotation
+
+---
+
+## OSS and Enterprise
+
+| | Reloader OSS | Reloader Enterprise |
+|---|---|---|
+| Core reload | ✅ | ✅ |
+| All workload types | ✅ | ✅ |
+| Prometheus metrics and alerting | ✅ | ✅ |
+| Hardened container images (Standard + UBI) | ❌ | ✅ |
+| Validated Vault, OpenBao, Conjur integrations | ❌ | ✅ |
+| Long-term maintenance and backported fixes | ❌ | ✅ |
+| Commercial support and SLA | ❌ | ✅ |
+| Suitable for regulated environments | ❌ | ✅ |
+
+[Compare editions in full →](about/editions.md)
+
+To get Reloader Enterprise, contact Stakater at [support.stakater.com](https://support.stakater.com/).
+
+---
+
+## Where to go next
+
+**Set up Reloader:**
+
+- [Install Reloader OSS](installation/install-oss.md)
+- [Install Reloader Enterprise](installation/install.md)
+
+**Common tasks:**
+
+- [Restart pods when a ConfigMap changes](how-to-guides/restart-pods-when-configmap-changes.md)
+- [Restart pods when a Secret changes](how-to-guides/restart-pods-when-secret-changes.md)
+- [Restart pods when external secrets change](how-to-guides/restart-pods-when-external-secrets-change.md)
+- [Reload pods on TLS certificate rotation](how-to-guides/reload-pods-on-tls-certificate-rotation.md)
+
+**Understand the concepts:**
+
+- [The secret propagation problem in Kubernetes](concepts/secret-propagation-problem-kubernetes.md)
+- [How Reloader works](architecture/how-it-works.md)
+- [Reloader vs other approaches](concepts/comparisons/reloader-vs-checksum-annotations.md)
+
+**Integrate with your secrets stack:**
+
+- [HashiCorp Vault](integrations/vault/index.md)
+- [OpenBao](integrations/openbao/index.md)
+- [CyberArk Conjur](integrations/conjur/index.md)
+- [AWS Secrets Manager](integrations/aws/index.md)
+- [Azure Key Vault](integrations/azure/index.md)
+- [GCP Secret Manager](integrations/gcp/index.md)
+
+**Frequently asked questions:**
+
+- [Does Reloader cause downtime?](faq.md#does-reloader-cause-downtime)
+- [Does it work with StatefulSets?](faq.md#does-reloader-work-with-statefulsets)
+- [What happens if Reloader is down?](faq.md#what-happens-if-reloader-is-down-when-a-configmap-or-secret-changes)
