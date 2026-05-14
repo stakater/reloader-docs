@@ -17,9 +17,7 @@
   {
     "version": "renovate-main-playwright-monorepo",
     "title": "renovate-main-playwright-monorepo",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-main-node-24.x-lockfile",
@@ -49,7 +47,9 @@
   {
     "version": "renovate-main-actions-setup-node-6.x",
     "title": "renovate-main-actions-setup-node-6.x",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "renovate-main-actions-checkout-6.x",
