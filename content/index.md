@@ -2,7 +2,7 @@
 
 > Automatically restart Kubernetes workloads when ConfigMaps or Secrets change.
 
-Kubernetes does not restart pods when a ConfigMap or Secret is updated. Reloader closes that gap. It watches for changes to ConfigMaps and Secrets and triggers a rolling restart of every Deployment, StatefulSet, or DaemonSet that depends on them — automatically, without modifying your application.
+Kubernetes does not restart pods when a ConfigMap or Secret is updated. Reloader closes that gap. It watches for changes to ConfigMaps and Secrets and triggers a rolling restart of every Deployment, StatefulSet, or Daemonset that depends on them — automatically, without modifying your application.
 
 ---
 
@@ -46,7 +46,7 @@ This gap causes stale configuration, broken secret rotation workflows, and opera
 
 Reloader uses the Kubernetes watch API to receive real-time events when a ConfigMap or Secret is updated. It checks whether the data actually changed (not just metadata). If it did, Reloader finds all workloads with matching annotations and patches their pod template — either injecting an environment variable with the resource's SHA1 hash, or updating an annotation. Kubernetes detects the pod template change and initiates a rolling update, respecting the workload's own `RollingUpdate` strategy.
 
-```
+```text
 ConfigMap or Secret updated
   ↓
 Reloader detects data change (watch API)
@@ -156,7 +156,7 @@ See the full [Annotation Reference](reference/annotations.md) for all supported 
 - **Namespace scoping** — watch all namespaces, one namespace, or a label-selected subset
 - **High availability** — run multiple replicas with leader election
 - **Prometheus metrics** — `reloader_reload_executed_total` tracks every reload
-- **Webhook alerts** — Slack, Microsoft Teams, Google Chat, or any HTTP endpoint
+- **Webhook alerts** — Slack, Microsoft Teams, Google Chat, or any https endpoint
 - **GitOps-compatible** — `annotations` reload strategy avoids Argo CD sync drift
 - **OpenShift support** — auto-detects DeploymentConfig resources
 - **CSI Driver integration** — watches `SecretProviderClassPodStatus` for file-based secret rotation
@@ -178,7 +178,7 @@ See the full [Annotation Reference](reference/annotations.md) for all supported 
 
 [Compare editions in full →](about/editions.md)
 
-To get Reloader Enterprise, contact Stakater at [support.stakater.com](https://support.stakater.com/).
+To get Reloader Enterprise, contact Stakater at [support.stakater.com](https://support.stakater.com/) or speak to your Stakater account team.
 
 ---
 

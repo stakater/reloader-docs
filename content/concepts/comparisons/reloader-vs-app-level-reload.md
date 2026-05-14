@@ -17,7 +17,7 @@ Common implementations include:
 
 - **File watchers** — libraries such as Go's `fsnotify`, Viper's `WatchConfig()`, Node.js `chokidar`, or Python's `watchdog` that detect changes to mounted config files
 - **SIGHUP handlers** — the process catches a Unix signal and re-reads its configuration; used by nginx, HAProxy, and many traditional Unix daemons
-- **HTTP refresh endpoints** — an endpoint such as Spring Boot Actuator's `/actuator/refresh` that triggers a configuration reload when called
+- **Refresh endpoints** — an endpoint such as Spring Boot Actuator's `/actuator/refresh` that triggers a configuration reload when called
 - **Polling** — the application re-reads configuration from a file or API on a fixed interval
 
 ---
@@ -32,7 +32,7 @@ Environment variables are set at pod start time. They do not change while the co
 
 This means:
 
-- **Env var-based config** → app-level hot-reload cannot help. A pod restart is the only way to pick up the new value.
+- **env var-based config** → app-level hot-reload cannot help. A pod restart is the only way to pick up the new value.
 - **File-mounted config** → Kubernetes does update mounted ConfigMap and Secret volumes in-place, with a delay of up to twice the kubelet sync period (the default is 60 seconds). An app with file-watching logic can pick up these changes without a restart.
 
 Most 12-factor applications and containerised workloads read configuration from environment variables. For those, app-level hot-reload is not an option regardless of how it is implemented.
@@ -43,7 +43,7 @@ Most 12-factor applications and containerised workloads read configuration from 
 
 For file-mounted configuration, the flow looks like this:
 
-```
+```text
 ConfigMap or Secret updated
 ↓
 Kubernetes updates the mounted volume files
@@ -64,7 +64,7 @@ This is genuinely zero-downtime: existing connections, in-flight requests, and p
 
 Reloader is a Kubernetes controller that watches ConfigMaps and Secrets for data changes. When a change is detected, it patches the workload's pod template. Kubernetes then performs a rolling restart according to the workload's own `RollingUpdate` strategy.
 
-```
+```text
 ConfigMap or Secret updated
 ↓
 Reloader detects the data change

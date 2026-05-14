@@ -15,7 +15,7 @@ The difference is what surrounds the core: hardened images, validated integratio
 | Core reload functionality | ✅ | ✅ |
 | Works with ConfigMaps and Secrets | ✅ | ✅ |
 | Works with any secret delivery mechanism (ESO, CSI, Vault Agent, etc.) | ✅ | ✅ |
-| Supports Deployments, StatefulSets, DaemonSets, Argo Rollouts | ✅ | ✅ |
+| Supports Deployments, StatefulSets, Daemonsets, Argo Rollouts | ✅ | ✅ |
 | OpenShift DeploymentConfig support | ✅ | ✅ |
 | Prometheus metrics | ✅ | ✅ |
 | Webhook alerting (Slack, Teams, Google Chat) | ✅ | ✅ |
@@ -110,4 +110,4 @@ Reloader Enterprise requires an active subscription. Access is granted by Stakat
 
 Once access is granted, you can install via the standard OSS Helm chart with the Enterprise image override. See the [installation guide](../installation/install.md) for the complete procedure.
 
-To get access, open a ticket at [support.stakater.com](https://support.stakater.com/) or contact your Stakater account representative.
+To get access, open a ticket at [support.stakater.com](https://support.stakater.com/) or contact your Stakater account team.

@@ -47,9 +47,9 @@ For production environments, running Reloader with [HA mode](installation/instal
 
 Yes. StatefulSets are fully supported. Reloader patches the StatefulSet's pod template in the same way it does for Deployments. Kubernetes then performs a rolling update according to the StatefulSet's `updateStrategy`.
 
-### Does Reloader work with DaemonSets?
+### Does Reloader work with Daemonsets?
 
-Yes. DaemonSets are fully supported.
+Yes. Daemonsets are fully supported.
 
 ### Does Reloader work with Argo Rollouts?
 
@@ -194,8 +194,8 @@ Yes. Reloader supports OpenShift and auto-detects the cluster type at startup to
 Three ways:
 
 1. **Logs** — check Reloader's pod logs for lines like `Changes detected in 'my-secret'` and `Updated 'my-app' of type 'Deployment'`
-2. **Prometheus metrics** — query `reloader_reload_executed_total` on the metrics endpoint at port `9090`
-3. **Webhook alerts** — configure `ALERT_ON_RELOAD: "true"` to receive a notification to Slack, Teams, Google Chat, or a custom webhook
+1. **Prometheus metrics** — query `reloader_reload_executed_total` on the metrics endpoint at port `9090`
+1. **Webhook alerts** — configure `ALERT_ON_RELOAD: "true"` to receive a notification to Slack, Teams, Google Chat, or a custom webhook
 
 See [Monitoring Reloader](how-to-guides/monitor-reloader.md) and [Alert When Reloader Triggers a Restart](how-to-guides/alerting-on-reload.md) for details.
 
@@ -241,4 +241,4 @@ See the full [edition comparison](about/editions.md) for details.
 
 ### How do I get Reloader Enterprise?
 
-Contact Stakater via [support.stakater.com](https://support.stakater.com/) or speak to your account representative. Once access is granted, installation uses the standard OSS Helm chart with the Enterprise image override — see the [Enterprise installation guide](installation/install.md).
+Contact Stakater via [support.stakater.com](https://support.stakater.com/) or speak to your Stakater account team. Once access is granted, installation uses the standard OSS Helm chart with the Enterprise image override — see the [Enterprise installation guide](installation/install.md).

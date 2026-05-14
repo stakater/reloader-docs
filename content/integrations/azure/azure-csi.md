@@ -137,7 +137,7 @@ export IDENTITY_TENANT="$(az aks show \
 
 ### Assign Key Vault access
 
-Grant the managed identity permission to read secrets from the Key Vault. Use Azure RBAC if the vault has `--enable-rbac-authorization`:
+Grant the managed identity permission to read secrets from the Key Vault. Use Azure RBAC if the Vault has `--enable-rbac-authorization`:
 
 ```bash
 export KEYVAULT_SCOPE="$(az keyvault show --name $KEYVAULT_NAME --query id -o tsv)"
@@ -148,7 +148,7 @@ az role assignment create \
   --scope $KEYVAULT_SCOPE
 ```
 
-If the vault uses access policies instead of Azure RBAC:
+If the Vault uses access policies instead of Azure RBAC:
 
 ```bash
 export IDENTITY_OBJECT_ID="$(az identity show \

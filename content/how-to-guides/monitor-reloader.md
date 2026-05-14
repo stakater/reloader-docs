@@ -62,7 +62,7 @@ reloader_reload_executed_total_by_namespace{success="false", namespace="staging"
 
 ## Scraping metrics with Prometheus Operator
 
-If you use Prometheus Operator (kube-prometheus-stack or similar), enable the built-in `PodMonitor`:
+If you use the Prometheus Operator (`kube-prometheus-stack` or similar), enable the built-in `PodMonitor`:
 
 ```yaml
 reloader:
@@ -236,6 +236,6 @@ kubectl logs -n reloader -l app=reloader | grep -i "error\|failed"
 
 ## Webhook notifications
 
-In addition to metrics and logs, Reloader can send a webhook notification to Slack, Microsoft Teams, Google Chat, or any HTTP endpoint whenever a reload is triggered.
+In addition to metrics and logs, Reloader can send a webhook notification to Slack, Microsoft Teams, Google Chat, or any https endpoint whenever a reload is triggered.
 
 See [Alert When Reloader Triggers a Restart](alerting-on-reload.md) for setup instructions.

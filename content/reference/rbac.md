@@ -240,7 +240,7 @@ reloader:
 When enabled, the policy allows:
 
 - **Ingress** on port `9090` — for Prometheus metrics scraping
-- **Egress** on port `443` — to reach the Kubernetes API server (HTTPS)
+- **Egress** on port `443` — to reach the Kubernetes API server (https)
 
 You can further restrict the ingress source with `netpol.from` and the egress destination with `netpol.to`:
 
