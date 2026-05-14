@@ -110,4 +110,4 @@ Reloader Enterprise requires an active subscription. Access is granted by Stakat
 
 Once access is granted, you can install via the standard OSS Helm chart with the Enterprise image override. See the [installation guide](../installation/install.md) for the complete procedure.
 
-To get access, open a ticket at [support.stakater.com](https://support.stakater.com/) or contact your Stakater account team.
+To get access, open a ticket at the [Stakater support portal](https://support.stakater.com/) or contact your Stakater account team.

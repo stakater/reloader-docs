@@ -241,4 +241,4 @@ See the full [edition comparison](about/editions.md) for details.
 
 ### How do I get Reloader Enterprise?
 
-Contact Stakater via [support.stakater.com](https://support.stakater.com/) or speak to your Stakater account team. Once access is granted, installation uses the standard OSS Helm chart with the Enterprise image override — see the [Enterprise installation guide](installation/install.md).
+Contact Stakater via the [Stakater support portal](https://support.stakater.com/) or speak to your Stakater account team. Once access is granted, installation uses the standard OSS Helm chart with the Enterprise image override — see the [Enterprise installation guide](installation/install.md).

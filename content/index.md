@@ -178,7 +178,7 @@ See the full [Annotation Reference](reference/annotations.md) for all supported 
 
 [Compare editions in full →](about/editions.md)
 
-To get Reloader Enterprise, contact Stakater at [support.stakater.com](https://support.stakater.com/) or speak to your Stakater account team.
+To get Reloader Enterprise, open a ticket at the [Stakater support portal](https://support.stakater.com/) or speak to your Stakater account team.
 
 ---
 
