@@ -4501,7 +4501,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   <a href="#does-reloader-work-with-daemonsets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Does Reloader work with DaemonSets?
+        Does Reloader work with Daemonsets?
       
     </span>
   </a>
@@ -5100,7 +5100,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   <a href="#does-reloader-work-with-daemonsets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Does Reloader work with DaemonSets?
+        Does Reloader work with Daemonsets?
       
     </span>
   </a>
@@ -5508,8 +5508,8 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <h2 id="workload-types">Workload types<a class="headerlink" href="#workload-types" title="Permanent link">#</a></h2>
 <h3 id="does-reloader-work-with-statefulsets">Does Reloader work with StatefulSets?<a class="headerlink" href="#does-reloader-work-with-statefulsets" title="Permanent link">#</a></h3>
 <p>Yes. StatefulSets are fully supported. Reloader patches the StatefulSet's pod template in the same way it does for Deployments. Kubernetes then performs a rolling update according to the StatefulSet's <code>updateStrategy</code>.</p>
-<h3 id="does-reloader-work-with-daemonsets">Does Reloader work with DaemonSets?<a class="headerlink" href="#does-reloader-work-with-daemonsets" title="Permanent link">#</a></h3>
-<p>Yes. DaemonSets are fully supported.</p>
+<h3 id="does-reloader-work-with-daemonsets">Does Reloader work with Daemonsets?<a class="headerlink" href="#does-reloader-work-with-daemonsets" title="Permanent link">#</a></h3>
+<p>Yes. Daemonsets are fully supported.</p>
 <h3 id="does-reloader-work-with-argo-rollouts">Does Reloader work with Argo Rollouts?<a class="headerlink" href="#does-reloader-work-with-argo-rollouts" title="Permanent link">#</a></h3>
 <p>Yes, with one configuration step. Set <code>reloader.isArgoRollouts: true</code> in the Helm values. Reloader then recognises Argo <code>Rollout</code> resources and can trigger restarts via either the <code>rollout</code> strategy (patches the pod template) or the <code>restart</code> strategy (deletes pods directly, avoiding GitOps drift).</p>
 <h3 id="does-reloader-work-with-cronjobs-and-jobs">Does Reloader work with CronJobs and Jobs?<a class="headerlink" href="#does-reloader-work-with-cronjobs-and-jobs" title="Permanent link">#</a></h3>
@@ -5639,7 +5639,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </ul>
 <p>See the full <a href="about/editions.html">edition comparison</a> for details.</p>
 <h3 id="how-do-i-get-reloader-enterprise">How do I get Reloader Enterprise?<a class="headerlink" href="#how-do-i-get-reloader-enterprise" title="Permanent link">#</a></h3>
-<p>Contact Stakater via <a href="https://support.stakater.com/">support.stakater.com</a> or speak to your account representative. Once access is granted, installation uses the standard OSS Helm chart with the Enterprise image override — see the <a href="installation/install.html">Enterprise installation guide</a>.</p>
+<p>Contact Stakater via <a href="https://support.stakater.com/">support.stakater.com</a> or speak to your Stakater account team. Once access is granted, installation uses the standard OSS Helm chart with the Enterprise image override — see the <a href="installation/install.html">Enterprise installation guide</a>.</p>
 
 
 

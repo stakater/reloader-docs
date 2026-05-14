@@ -4977,7 +4977,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <ul>
 <li><strong>File watchers</strong> — libraries such as Go's <code>fsnotify</code>, Viper's <code>WatchConfig()</code>, Node.js <code>chokidar</code>, or Python's <code>watchdog</code> that detect changes to mounted config files</li>
 <li><strong>SIGHUP handlers</strong> — the process catches a Unix signal and re-reads its configuration; used by nginx, HAProxy, and many traditional Unix daemons</li>
-<li><strong>HTTP refresh endpoints</strong> — an endpoint such as Spring Boot Actuator's <code>/actuator/refresh</code> that triggers a configuration reload when called</li>
+<li><strong>Refresh endpoints</strong> — an endpoint such as Spring Boot Actuator's <code>/actuator/refresh</code> that triggers a configuration reload when called</li>
 <li><strong>Polling</strong> — the application re-reads configuration from a file or API on a fixed interval</li>
 </ul>
 <hr>
@@ -4987,7 +4987,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <p>Environment variables are set at pod start time. They do not change while the container is running, regardless of what happens to the ConfigMap or Secret they were sourced from.</p>
 <p>This means:</p>
 <ul>
-<li><strong>Env var-based config</strong> → app-level hot-reload cannot help. A pod restart is the only way to pick up the new value.</li>
+<li><strong>env var-based config</strong> → app-level hot-reload cannot help. A pod restart is the only way to pick up the new value.</li>
 <li><strong>File-mounted config</strong> → Kubernetes does update mounted ConfigMap and Secret volumes in-place, with a delay of up to twice the kubelet sync period (the default is 60 seconds). An app with file-watching logic can pick up these changes without a restart.</li>
 </ul>
 <p>Most 12-factor applications and containerised workloads read configuration from environment variables. For those, app-level hot-reload is not an option regardless of how it is implemented.</p>

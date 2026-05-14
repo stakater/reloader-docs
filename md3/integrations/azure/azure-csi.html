@@ -5045,7 +5045,7 @@ az<span class="w"> </span>identity<span class="w"> </span>create<span class="w">
 <span class="w">  </span>--query<span class="w"> </span>identity.tenantId<span class="w"> </span>-o<span class="w"> </span>tsv<span class="k">)</span><span class="s2">"</span>
 </code></pre></div>
 <h3 id="assign-key-vault-access">Assign Key Vault access<a class="headerlink" href="#assign-key-vault-access" title="Permanent link">#</a></h3>
-<p>Grant the managed identity permission to read secrets from the Key Vault. Use Azure RBAC if the vault has <code>--enable-rbac-authorization</code>:</p>
+<p>Grant the managed identity permission to read secrets from the Key Vault. Use Azure RBAC if the Vault has <code>--enable-rbac-authorization</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">KEYVAULT_SCOPE</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>az<span class="w"> </span>keyvault<span class="w"> </span>show<span class="w"> </span>--name<span class="w"> </span><span class="nv">$KEYVAULT_NAME</span><span class="w"> </span>--query<span class="w"> </span>id<span class="w"> </span>-o<span class="w"> </span>tsv<span class="k">)</span><span class="s2">"</span>
 
 az<span class="w"> </span>role<span class="w"> </span>assignment<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
@@ -5053,7 +5053,7 @@ az<span class="w"> </span>role<span class="w"> </span>assignment<span class="w">
 <span class="w">  </span>--assignee<span class="w"> </span><span class="nv">$USER_ASSIGNED_CLIENT_ID</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--scope<span class="w"> </span><span class="nv">$KEYVAULT_SCOPE</span>
 </code></pre></div>
-<p>If the vault uses access policies instead of Azure RBAC:</p>
+<p>If the Vault uses access policies instead of Azure RBAC:</p>
 <div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">IDENTITY_OBJECT_ID</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>az<span class="w"> </span>identity<span class="w"> </span>show<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--resource-group<span class="w"> </span><span class="nv">$RESOURCE_GROUP</span><span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--name<span class="w"> </span><span class="nv">$UAMI</span><span class="w"> </span><span class="se">\</span>

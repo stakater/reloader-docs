@@ -4741,7 +4741,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <blockquote>
 <p>Automatically restart Kubernetes workloads when ConfigMaps or Secrets change.</p>
 </blockquote>
-<p>Kubernetes does not restart pods when a ConfigMap or Secret is updated. Reloader closes that gap. It watches for changes to ConfigMaps and Secrets and triggers a rolling restart of every Deployment, StatefulSet, or DaemonSet that depends on them — automatically, without modifying your application.</p>
+<p>Kubernetes does not restart pods when a ConfigMap or Secret is updated. Reloader closes that gap. It watches for changes to ConfigMaps and Secrets and triggers a rolling restart of every Deployment, StatefulSet, or Daemonset that depends on them — automatically, without modifying your application.</p>
 <hr>
 <h2 id="quick-start">Quick start<a class="headerlink" href="#quick-start" title="Permanent link">#</a></h2>
 <p>Install Reloader via Helm:</p>
@@ -4899,7 +4899,7 @@ Pods start with updated configuration
 <li><strong>Namespace scoping</strong> — watch all namespaces, one namespace, or a label-selected subset</li>
 <li><strong>High availability</strong> — run multiple replicas with leader election</li>
 <li><strong>Prometheus metrics</strong> — <code>reloader_reload_executed_total</code> tracks every reload</li>
-<li><strong>Webhook alerts</strong> — Slack, Microsoft Teams, Google Chat, or any HTTP endpoint</li>
+<li><strong>Webhook alerts</strong> — Slack, Microsoft Teams, Google Chat, or any https endpoint</li>
 <li><strong>GitOps-compatible</strong> — <code>annotations</code> reload strategy avoids Argo CD sync drift</li>
 <li><strong>OpenShift support</strong> — auto-detects DeploymentConfig resources</li>
 <li><strong>CSI Driver integration</strong> — watches <code>SecretProviderClassPodStatus</code> for file-based secret rotation</li>
@@ -4958,7 +4958,7 @@ Pods start with updated configuration
 </tbody>
 </table>
 <p><a href="about/editions.html">Compare editions in full →</a></p>
-<p>To get Reloader Enterprise, contact Stakater at <a href="https://support.stakater.com/">support.stakater.com</a>.</p>
+<p>To get Reloader Enterprise, contact Stakater at <a href="https://support.stakater.com/">support.stakater.com</a> or speak to your Stakater account team.</p>
 <hr>
 <h2 id="where-to-go-next">Where to go next<a class="headerlink" href="#where-to-go-next" title="Permanent link">#</a></h2>
 <p><strong>Set up Reloader:</strong></p>

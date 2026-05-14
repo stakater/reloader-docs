@@ -5009,7 +5009,7 @@ reloader_reload_executed_total_by_namespace{success="false", namespace="staging"
 </code></pre></div>
 <hr>
 <h2 id="scraping-metrics-with-prometheus-operator">Scraping metrics with Prometheus Operator<a class="headerlink" href="#scraping-metrics-with-prometheus-operator" title="Permanent link">#</a></h2>
-<p>If you use Prometheus Operator (kube-prometheus-stack or similar), enable the built-in <code>PodMonitor</code>:</p>
+<p>If you use the Prometheus Operator (<code>kube-prometheus-stack</code> or similar), enable the built-in <code>PodMonitor</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">podMonitor</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
@@ -5151,7 +5151,7 @@ kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </
 </code></pre></div>
 <hr>
 <h2 id="webhook-notifications">Webhook notifications<a class="headerlink" href="#webhook-notifications" title="Permanent link">#</a></h2>
-<p>In addition to metrics and logs, Reloader can send a webhook notification to Slack, Microsoft Teams, Google Chat, or any HTTP endpoint whenever a reload is triggered.</p>
+<p>In addition to metrics and logs, Reloader can send a webhook notification to Slack, Microsoft Teams, Google Chat, or any https endpoint whenever a reload is triggered.</p>
 <p>See <a href="alerting-on-reload.html">Alert When Reloader Triggers a Restart</a> for setup instructions.</p>
 
 
