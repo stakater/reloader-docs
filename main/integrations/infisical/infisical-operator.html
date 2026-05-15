@@ -5,13 +5,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/main/integrations/azure/azure-eso.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/main/integrations/infisical/infisical-operator.html">
       
       
         <link rel="prev" href="index.html">
       
       
-        <link rel="next" href="azure-csi.html">
+        <link rel="next" href="../../reference/annotations.html">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>External Secrets Operator - Reloader</title>
+        <title>Infisical Operator - Reloader</title>
       
     
     
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-use-reloader-with-azure-key-vault-and-external-secrets-operator" class="md-skip">
+        <a href="#how-to-use-reloader-with-the-infisical-kubernetes-operator" class="md-skip">
           Skip to content
         </a>
       
@@ -4089,20 +4089,18 @@ This documentation is either for an old version, or for the unreleased 'main' ve
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7">
         
           
           <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
@@ -4123,12 +4121,153 @@ This documentation is either for an old version, or for the unreleased 'main' ve
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6_7">
             <span class="md-nav__icon md-icon"></span>
             
   
     Azure Key Vault
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../azure/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../azure/azure-eso.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    External Secrets Operator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../azure/azure-csi.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSI Driver
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_8" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_6_8" id="__nav_6_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infisical
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Infisical
   
 
           </label>
@@ -4185,7 +4324,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   <span class="md-ellipsis">
     
   
-    External Secrets Operator
+    Infisical Operator
   
 
     
@@ -4196,14 +4335,14 @@ This documentation is either for an old version, or for the unreleased 'main' ve
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="azure-eso.html" class="md-nav__link md-nav__link--active">
+      <a href="infisical-operator.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    External Secrets Operator
+    Infisical Operator
   
 
     
@@ -4231,21 +4370,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#authentication-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Authentication Options
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How It Works
+        How it works
       
     </span>
   </a>
@@ -4261,196 +4389,13 @@ This documentation is either for an old version, or for the unreleased 'main' ve
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Prerequisites">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#create-secrets-in-azure-key-vault" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Create secrets in Azure Key Vault
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#install-stakater-reloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Install Stakater Reloader
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#install-external-secrets-operator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Install External Secrets Operator
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#option-1-workload-identity" class="md-nav__link">
+  <a href="#step-1-install-the-infisical-kubernetes-operator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option 1: Workload Identity
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Option 1: Workload Identity">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#workload-identity-step-1-enable-workload-identity-on-your-aks-cluster" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Workload Identity: Step 1 — Enable Workload Identity on your AKS cluster
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#workload-identity-step-2-create-an-azure-managed-identity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Workload Identity: Step 2 — Create an Azure managed identity
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#workload-identity-step-3-grant-key-vault-access-to-the-managed-identity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Workload Identity: Step 3 — Grant Key Vault access to the managed identity
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#workload-identity-step-4-create-namespace-and-kubernetes-serviceaccount" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Workload Identity: Step 4 — Create namespace and Kubernetes ServiceAccount
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#workload-identity-step-5-create-the-federated-identity-credential" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Workload Identity: Step 5 — Create the federated identity credential
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#workload-identity-step-6-create-secretstore" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Workload Identity: Step 6 — Create SecretStore
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#option-2-client-secret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Option 2: Client Secret
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Option 2: Client Secret">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#client-secret-step-1-create-an-app-registration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Client Secret: Step 1 — Create an App Registration
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#client-secret-step-2-grant-key-vault-access-to-the-app-registration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Client Secret: Step 2 — Grant Key Vault access to the App Registration
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#client-secret-step-3-store-credentials-in-a-kubernetes-secret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Client Secret: Step 3 — Store credentials in a Kubernetes Secret
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#client-secret-step-4-create-secretstore" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Client Secret: Step 4 — Create SecretStore
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Common Configuration
+        Step 1 — Install the Infisical Kubernetes operator
       
     </span>
   </a>
@@ -4458,10 +4403,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-externalsecret" class="md-nav__link">
+  <a href="#step-2-install-reloader" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Create ExternalSecret
+        Step 2 — Install Reloader
       
     </span>
   </a>
@@ -4469,10 +4414,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploy-application" class="md-nav__link">
+  <a href="#step-3-create-a-machine-identity-for-the-operator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Deploy Application
+        Step 3 — Create a machine identity for the operator
       
     </span>
   </a>
@@ -4480,10 +4425,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#verify-the-setup" class="md-nav__link">
+  <a href="#step-4-create-the-infisicalsecret-resource" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Verify the Setup
+        Step 4 — Create the InfisicalSecret resource
       
     </span>
   </a>
@@ -4491,110 +4436,76 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#test-secret-rotation" class="md-nav__link">
+  <a href="#step-5-annotate-workloads-for-reloader" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Test Secret Rotation
+        Step 5 — Annotate workloads for Reloader
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Test Secret Rotation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#update-the-secret-in-azure-key-vault" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Update the secret in Azure Key Vault
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wait-and-verify" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wait and verify
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration-reference" class="md-nav__link">
+  <a href="#argo-rollouts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuration Reference
+        Argo Rollouts
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Configuration Reference">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#secretstore-workload-identity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SecretStore — Workload Identity
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#secretstore-client-secret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SecretStore — Client Secret
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#externalsecret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ExternalSecret
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reloader-annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reloader Annotations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#comparison-workload-identity-vs-client-secret" class="md-nav__link">
+  <a href="#step-6-test-the-rotation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Comparison: Workload Identity vs Client Secret
+        Step 6 — Test the rotation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reloader-annotations-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reloader annotations reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable-infisicals-built-in-auto-reload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disable Infisical's built-in auto-reload
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-configmaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using ConfigMaps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cooldown-between-reloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cooldown between reloads
       
     </span>
   </a>
@@ -4605,145 +4516,6 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="azure-csi.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CSI Driver
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_8">
-        
-          
-          <label class="md-nav__link" for="__nav_6_8" id="__nav_6_8_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Infisical
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_6_8">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Infisical
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix="">
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../infisical/index.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../infisical/infisical-operator.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Infisical Operator
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -5012,21 +4784,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#authentication-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Authentication Options
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How It Works
+        How it works
       
     </span>
   </a>
@@ -5042,196 +4803,13 @@ This documentation is either for an old version, or for the unreleased 'main' ve
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Prerequisites">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#create-secrets-in-azure-key-vault" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Create secrets in Azure Key Vault
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#install-stakater-reloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Install Stakater Reloader
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#install-external-secrets-operator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Install External Secrets Operator
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#option-1-workload-identity" class="md-nav__link">
+  <a href="#step-1-install-the-infisical-kubernetes-operator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Option 1: Workload Identity
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Option 1: Workload Identity">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#workload-identity-step-1-enable-workload-identity-on-your-aks-cluster" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Workload Identity: Step 1 — Enable Workload Identity on your AKS cluster
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#workload-identity-step-2-create-an-azure-managed-identity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Workload Identity: Step 2 — Create an Azure managed identity
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#workload-identity-step-3-grant-key-vault-access-to-the-managed-identity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Workload Identity: Step 3 — Grant Key Vault access to the managed identity
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#workload-identity-step-4-create-namespace-and-kubernetes-serviceaccount" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Workload Identity: Step 4 — Create namespace and Kubernetes ServiceAccount
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#workload-identity-step-5-create-the-federated-identity-credential" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Workload Identity: Step 5 — Create the federated identity credential
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#workload-identity-step-6-create-secretstore" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Workload Identity: Step 6 — Create SecretStore
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#option-2-client-secret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Option 2: Client Secret
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Option 2: Client Secret">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#client-secret-step-1-create-an-app-registration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Client Secret: Step 1 — Create an App Registration
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#client-secret-step-2-grant-key-vault-access-to-the-app-registration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Client Secret: Step 2 — Grant Key Vault access to the App Registration
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#client-secret-step-3-store-credentials-in-a-kubernetes-secret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Client Secret: Step 3 — Store credentials in a Kubernetes Secret
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#client-secret-step-4-create-secretstore" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Client Secret: Step 4 — Create SecretStore
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Common Configuration
+        Step 1 — Install the Infisical Kubernetes operator
       
     </span>
   </a>
@@ -5239,10 +4817,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-externalsecret" class="md-nav__link">
+  <a href="#step-2-install-reloader" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Create ExternalSecret
+        Step 2 — Install Reloader
       
     </span>
   </a>
@@ -5250,10 +4828,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploy-application" class="md-nav__link">
+  <a href="#step-3-create-a-machine-identity-for-the-operator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Deploy Application
+        Step 3 — Create a machine identity for the operator
       
     </span>
   </a>
@@ -5261,10 +4839,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#verify-the-setup" class="md-nav__link">
+  <a href="#step-4-create-the-infisicalsecret-resource" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Verify the Setup
+        Step 4 — Create the InfisicalSecret resource
       
     </span>
   </a>
@@ -5272,110 +4850,76 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#test-secret-rotation" class="md-nav__link">
+  <a href="#step-5-annotate-workloads-for-reloader" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Test Secret Rotation
+        Step 5 — Annotate workloads for Reloader
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Test Secret Rotation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#update-the-secret-in-azure-key-vault" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Update the secret in Azure Key Vault
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wait-and-verify" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Wait and verify
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#configuration-reference" class="md-nav__link">
+  <a href="#argo-rollouts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Configuration Reference
+        Argo Rollouts
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Configuration Reference">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#secretstore-workload-identity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SecretStore — Workload Identity
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#secretstore-client-secret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        SecretStore — Client Secret
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#externalsecret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ExternalSecret
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reloader-annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reloader Annotations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#comparison-workload-identity-vs-client-secret" class="md-nav__link">
+  <a href="#step-6-test-the-rotation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Comparison: Workload Identity vs Client Secret
+        Step 6 — Test the rotation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reloader-annotations-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reloader annotations reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable-infisicals-built-in-auto-reload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disable Infisical's built-in auto-reload
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-configmaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using ConfigMaps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cooldown-between-reloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cooldown between reloads
       
     </span>
   </a>
@@ -5402,544 +4946,271 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
 
 
-<h1 id="how-to-use-reloader-with-azure-key-vault-and-external-secrets-operator">How to Use Reloader with Azure Key Vault and External Secrets Operator<a class="headerlink" href="#how-to-use-reloader-with-azure-key-vault-and-external-secrets-operator" title="Permanent link">#</a></h1>
-<p>This guide explains how to sync secrets from Azure Key Vault into Kubernetes using External Secrets Operator (ESO), and use Stakater Reloader to automatically restart pods when those secrets change.</p>
-<h2 id="authentication-options">Authentication Options<a class="headerlink" href="#authentication-options" title="Permanent link">#</a></h2>
-<p>ESO supports two authentication methods for Azure Key Vault:</p>
-<table>
-<thead>
-<tr>
-<th>Method</th>
-<th>Description</th>
-<th>Use Case</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="#option-1-workload-identity"><strong>Workload Identity</strong></a></td>
-<td>Azure managed identity bound to a Kubernetes ServiceAccount</td>
-<td>Recommended for AKS — no static credentials</td>
-</tr>
-<tr>
-<td><a href="#option-2-client-secret"><strong>Client Secret</strong></a></td>
-<td>Azure App Registration client ID and secret stored in a K8s Secret</td>
-<td>Any cluster — simpler but requires secret rotation</td>
-</tr>
-</tbody>
-</table>
-<h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h2>
+<h1 id="how-to-use-reloader-with-the-infisical-kubernetes-operator">How to Use Reloader with the Infisical Kubernetes Operator<a class="headerlink" href="#how-to-use-reloader-with-the-infisical-kubernetes-operator" title="Permanent link">#</a></h1>
+<p>This guide shows how to combine the Infisical Kubernetes operator with Reloader to automatically restart pods when secrets change in Infisical.</p>
+<p>The Infisical operator syncs secrets from Infisical into Kubernetes <code>Secret</code> objects. Reloader watches those Secrets and triggers rolling restarts when their data changes. This pattern supports all Reloader-compatible workload types including Argo Rollouts, which the Infisical operator's built-in reload does not cover.</p>
+<hr>
+<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h2>
 <pre class="mermaid"><code>sequenceDiagram
-    actor Ops as Operator / Azure Function
-    participant AKV as Azure Key Vault
-    participant AAD as Azure AD
-    participant ESO as External Secrets Operator
+    actor Dev as Developer
+    participant INF as Infisical
+    participant OP as Infisical Operator
     participant K8s as Kubernetes Secret
     participant RL as Reloader
     participant Pod as Application Pod
 
-    Note over ESO: Authenticates via Workload Identity or Client Secret
-    ESO-&gt;&gt;AAD: Exchange federated token (Workload Identity)
-    AAD--&gt;&gt;ESO: Access token
-
-    Ops-&gt;&gt;AKV: Update secret
-    loop Every refreshInterval
-        ESO-&gt;&gt;AKV: Get secret (latest version)
-        AKV--&gt;&gt;ESO: Updated secret value
+    Dev-&gt;&gt;INF: Update secret value
+    loop Every resyncInterval (default: 1m)
+        OP-&gt;&gt;INF: Fetch latest secrets
+        INF--&gt;&gt;OP: Updated secret value
+        OP-&gt;&gt;K8s: Update managed Kubernetes Secret
     end
-    ESO-&gt;&gt;K8s: Update Secret data
-    Note over K8s: annotation: reloader.stakater.com/match: "true"
     K8s--&gt;&gt;RL: Watch event (Secret changed)
     RL-&gt;&gt;Pod: Trigger rolling restart
     Note over Pod: New pod starts with updated secret</code></pre>
+<hr>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
 <li>Kubernetes cluster (v1.19+)</li>
 <li>Helm v3+</li>
-<li>Azure subscription with an existing Key Vault</li>
-<li>Azure CLI configured locally</li>
+<li>An Infisical account (cloud at <code>app.infisical.com</code> or self-hosted)</li>
+<li>Infisical project with secrets configured</li>
 <li>Stakater Reloader installed</li>
-<li>External Secrets Operator installed</li>
 </ul>
-<h3 id="create-secrets-in-azure-key-vault">Create secrets in Azure Key Vault<a class="headerlink" href="#create-secrets-in-azure-key-vault" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Set your Key Vault name</span>
-<span class="nv">VAULT_NAME</span><span class="o">=</span>my-key-vault
-
-<span class="c1"># Create individual secrets</span>
-az<span class="w"> </span>keyvault<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--vault-name<span class="w"> </span><span class="nv">$VAULT_NAME</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span>myapp-username<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--value<span class="w"> </span><span class="s2">"admin-user"</span>
-
-az<span class="w"> </span>keyvault<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--vault-name<span class="w"> </span><span class="nv">$VAULT_NAME</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span>myapp-password<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--value<span class="w"> </span><span class="s2">"super-secret-password"</span>
+<hr>
+<h2 id="step-1-install-the-infisical-kubernetes-operator">Step 1 — Install the Infisical Kubernetes operator<a class="headerlink" href="#step-1-install-the-infisical-kubernetes-operator" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>infisical-helm-charts<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">'https://dl.cloudsmith.io/public/infisical/helm-charts/helm/charts/'</span>
+helm<span class="w"> </span>repo<span class="w"> </span>update
+helm<span class="w"> </span>install<span class="w"> </span>infisical-operator<span class="w"> </span>infisical-helm-charts/secrets-operator<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>infisical-operator<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--create-namespace
 </code></pre></div>
-<h3 id="install-stakater-reloader">Install Stakater Reloader<a class="headerlink" href="#install-stakater-reloader" title="Permanent link">#</a></h3>
+<p>Verify the operator is running:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>infisical-operator
+</code></pre></div>
+<hr>
+<h2 id="step-2-install-reloader">Step 2 — Install Reloader<a class="headerlink" href="#step-2-install-reloader" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>stakater<span class="w"> </span>https://stakater.github.io/stakater-charts
 helm<span class="w"> </span>repo<span class="w"> </span>update
-helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span>--namespace<span class="w"> </span>reloader<span class="w"> </span>--create-namespace
-</code></pre></div>
-<h3 id="install-external-secrets-operator">Install External Secrets Operator<a class="headerlink" href="#install-external-secrets-operator" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>external-secrets<span class="w"> </span>https://charts.external-secrets.io
-helm<span class="w"> </span>repo<span class="w"> </span>update
-helm<span class="w"> </span>install<span class="w"> </span>external-secrets<span class="w"> </span>external-secrets/external-secrets<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--namespace<span class="w"> </span>external-secrets<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--create-namespace<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--wait
-</code></pre></div>
-<p>Verify:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>external-secrets
+helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--create-namespace
 </code></pre></div>
 <hr>
-<h2 id="option-1-workload-identity">Option 1: Workload Identity<a class="headerlink" href="#option-1-workload-identity" title="Permanent link">#</a></h2>
-<p>Azure Workload Identity lets a Kubernetes ServiceAccount authenticate to Azure services without storing credentials. It is the recommended approach for AKS clusters.</p>
-<h3 id="workload-identity-step-1-enable-workload-identity-on-your-aks-cluster">Workload Identity: Step 1 — Enable Workload Identity on your AKS cluster<a class="headerlink" href="#workload-identity-step-1-enable-workload-identity-on-your-aks-cluster" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>az<span class="w"> </span>aks<span class="w"> </span>update<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span>my-cluster<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--resource-group<span class="w"> </span>my-rg<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--enable-oidc-issuer<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--enable-workload-identity
-</code></pre></div>
-<p>Get the OIDC issuer URL:</p>
-<div class="highlight"><pre><span></span><code><span class="nv">OIDC_ISSUER</span><span class="o">=</span><span class="k">$(</span>az<span class="w"> </span>aks<span class="w"> </span>show<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span>my-cluster<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--resource-group<span class="w"> </span>my-rg<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--query<span class="w"> </span><span class="s2">"oidcIssuerProfile.issuerUrl"</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--output<span class="w"> </span>tsv<span class="k">)</span>
-</code></pre></div>
-<h3 id="workload-identity-step-2-create-an-azure-managed-identity">Workload Identity: Step 2 — Create an Azure managed identity<a class="headerlink" href="#workload-identity-step-2-create-an-azure-managed-identity" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>az<span class="w"> </span>identity<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span>eso-identity<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--resource-group<span class="w"> </span>my-rg<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--location<span class="w"> </span>eastus
-
-<span class="nv">IDENTITY_CLIENT_ID</span><span class="o">=</span><span class="k">$(</span>az<span class="w"> </span>identity<span class="w"> </span>show<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span>eso-identity<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--resource-group<span class="w"> </span>my-rg<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--query<span class="w"> </span>clientId<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--output<span class="w"> </span>tsv<span class="k">)</span>
-
-<span class="nv">IDENTITY_OBJECT_ID</span><span class="o">=</span><span class="k">$(</span>az<span class="w"> </span>identity<span class="w"> </span>show<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span>eso-identity<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--resource-group<span class="w"> </span>my-rg<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--query<span class="w"> </span>principalId<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--output<span class="w"> </span>tsv<span class="k">)</span>
-</code></pre></div>
-<h3 id="workload-identity-step-3-grant-key-vault-access-to-the-managed-identity">Workload Identity: Step 3 — Grant Key Vault access to the managed identity<a class="headerlink" href="#workload-identity-step-3-grant-key-vault-access-to-the-managed-identity" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nv">VAULT_ID</span><span class="o">=</span><span class="k">$(</span>az<span class="w"> </span>keyvault<span class="w"> </span>show<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span><span class="nv">$VAULT_NAME</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--query<span class="w"> </span>id<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--output<span class="w"> </span>tsv<span class="k">)</span>
-
-<span class="c1"># Assign the Key Vault Secrets User role (read-only access to secret values)</span>
-az<span class="w"> </span>role<span class="w"> </span>assignment<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--assignee-object-id<span class="w"> </span><span class="nv">$IDENTITY_OBJECT_ID</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--assignee-principal-type<span class="w"> </span>ServicePrincipal<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--role<span class="w"> </span><span class="s2">"Key Vault Secrets User"</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--scope<span class="w"> </span><span class="nv">$VAULT_ID</span>
-</code></pre></div>
-<blockquote>
-<p>If your Key Vault still uses the legacy access policy model instead of Azure RBAC, use:</p>
-<div class="highlight"><pre><span></span><code>az<span class="w"> </span>keyvault<span class="w"> </span>set-policy<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span><span class="nv">$VAULT_NAME</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--object-id<span class="w"> </span><span class="nv">$IDENTITY_OBJECT_ID</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--secret-permissions<span class="w"> </span>get<span class="w"> </span>list
-</code></pre></div>
-</blockquote>
-<h3 id="workload-identity-step-4-create-namespace-and-kubernetes-serviceaccount">Workload Identity: Step 4 — Create namespace and Kubernetes ServiceAccount<a class="headerlink" href="#workload-identity-step-4-create-namespace-and-kubernetes-serviceaccount" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>azure-eso-test
-
-kubectl<span class="w"> </span>create<span class="w"> </span>serviceaccount<span class="w"> </span>eso-sa<span class="w"> </span>-n<span class="w"> </span>azure-eso-test<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--dry-run<span class="o">=</span>client<span class="w"> </span>-o<span class="w"> </span>yaml<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>kubectl<span class="w"> </span>annotate<span class="w"> </span>--local<span class="w"> </span>-f<span class="w"> </span>-<span class="w"> </span><span class="se">\</span>
-<span class="w">    </span><span class="s2">"azure.workload.identity/client-id=</span><span class="si">${</span><span class="nv">IDENTITY_CLIENT_ID</span><span class="si">}</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>--dry-run<span class="o">=</span>client<span class="w"> </span>-o<span class="w"> </span>yaml<span class="w"> </span><span class="p">|</span><span class="w"> </span>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>-
-</code></pre></div>
-<p>Or create the manifest directly:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServiceAccount</span>
+<h2 id="step-3-create-a-machine-identity-for-the-operator">Step 3 — Create a machine identity for the operator<a class="headerlink" href="#step-3-create-a-machine-identity-for-the-operator" title="Permanent link">#</a></h2>
+<p>The Infisical operator authenticates to Infisical using a machine identity. Kubernetes auth is the recommended method for clusters — it uses the operator's ServiceAccount token with no static credentials stored in the cluster.</p>
+<p>In the Infisical dashboard:</p>
+<ol>
+<li>Navigate to <strong>Access Control</strong> → <strong>Machine Identities</strong></li>
+<li>Create a new identity and note the <strong>Identity ID</strong></li>
+<li>Add the identity to your project with at least <strong>Viewer</strong> access</li>
+<li>Under the identity's auth methods, enable <strong>Kubernetes Auth</strong> and set the allowed service account name and namespace</li>
+</ol>
+<hr>
+<h2 id="step-4-create-the-infisicalsecret-resource">Step 4 — Create the InfisicalSecret resource<a class="headerlink" href="#step-4-create-the-infisicalsecret-resource" title="Permanent link">#</a></h2>
+<p>The <code>InfisicalSecret</code> CRD tells the operator which secrets to sync and where to write them.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets.infisical.com/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">InfisicalSecret</span>
 <span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eso-sa</span>
-<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azure-eso-test</span>
-<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">azure.workload.identity/client-id</span><span class="p">:</span><span class="w"> </span><span class="s">"&lt;IDENTITY_CLIENT_ID&gt;"</span>
-</code></pre></div>
-<h3 id="workload-identity-step-5-create-the-federated-identity-credential">Workload Identity: Step 5 — Create the federated identity credential<a class="headerlink" href="#workload-identity-step-5-create-the-federated-identity-credential" title="Permanent link">#</a></h3>
-<p>This binds the Kubernetes ServiceAccount to the Azure managed identity:</p>
-<div class="highlight"><pre><span></span><code>az<span class="w"> </span>identity<span class="w"> </span>federated-credential<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span>eso-federated-credential<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--identity-name<span class="w"> </span>eso-identity<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--resource-group<span class="w"> </span>my-rg<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--issuer<span class="w"> </span><span class="s2">"</span><span class="nv">$OIDC_ISSUER</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--subject<span class="w"> </span><span class="s2">"system:serviceaccount:azure-eso-test:eso-sa"</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--audience<span class="w"> </span>api://AzureADTokenExchange
-</code></pre></div>
-<h3 id="workload-identity-step-6-create-secretstore">Workload Identity: Step 6 — Create SecretStore<a class="headerlink" href="#workload-identity-step-6-create-secretstore" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SecretStore</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azure-secret-store</span>
-<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azure-eso-test</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-infisical-secret</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
 <span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">provider</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">azurekv</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">authType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WorkloadIdentity</span>
-<span class="w">      </span><span class="nt">vaultUrl</span><span class="p">:</span><span class="w"> </span><span class="s">"https://my-key-vault.vault.azure.net"</span>
+<span class="w">  </span><span class="nt">hostAPI</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.infisical.com/api</span>
+<span class="w">  </span><span class="nt">syncConfig</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">resyncInterval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1m</span>
+<span class="w">  </span><span class="nt">authentication</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">kubernetesAuth</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">identityId</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;your-machine-identity-id&gt;</span>
 <span class="w">      </span><span class="nt">serviceAccountRef</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eso-sa</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">infisical-operator</span>
+<span class="w">        </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">infisical-operator</span>
+<span class="w">  </span><span class="nt">managedKubeSecretReferences</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">secretName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">      </span><span class="nt">secretNamespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">      </span><span class="nt">creationPolicy</span><span class="p">:</span><span class="w"> </span><span class="s">"Owner"</span>
+<span class="w">      </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">includeAllSecrets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
-<p>Apply and verify:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>secret-store.yaml
-kubectl<span class="w"> </span>get<span class="w"> </span>secretstore<span class="w"> </span>-n<span class="w"> </span>azure-eso-test
+<p>Apply:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>infisical-secret.yaml
 </code></pre></div>
-<p>Should show <code>STATUS: Valid</code> and <code>READY: True</code>.</p>
-<p>Now proceed to <a href="#create-externalsecret">Create ExternalSecret</a>.</p>
+<p><strong>Key fields:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hostAPI</code></td>
+<td>Infisical API endpoint. Use <code>https://app.infisical.com/api</code> for cloud; replace with your self-hosted URL</td>
+</tr>
+<tr>
+<td><code>resyncInterval</code></td>
+<td>How often the operator polls Infisical for changes. Default is <code>1m</code></td>
+</tr>
+<tr>
+<td><code>identityId</code></td>
+<td>The machine identity ID from your Infisical dashboard</td>
+</tr>
+<tr>
+<td><code>secretName</code></td>
+<td>Name of the Kubernetes Secret the operator creates</td>
+</tr>
+<tr>
+<td><code>creationPolicy</code></td>
+<td><code>Owner</code> (operator manages the Secret lifecycle) or <code>Orphan</code> (Secret persists after <code>InfisicalSecret</code> is deleted)</td>
+</tr>
+<tr>
+<td><code>includeAllSecrets</code></td>
+<td>Sync all secrets from the project to this Kubernetes Secret</td>
+</tr>
+</tbody>
+</table>
+<p>The operator creates the Kubernetes Secret <code>app-secrets</code> in the <code>default</code> namespace and keeps it in sync.</p>
+<p>Verify the Secret was created:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>default
+kubectl<span class="w"> </span>describe<span class="w"> </span>infisicalsecret<span class="w"> </span>app-infisical-secret<span class="w"> </span>-n<span class="w"> </span>default
+</code></pre></div>
 <hr>
-<h2 id="option-2-client-secret">Option 2: Client Secret<a class="headerlink" href="#option-2-client-secret" title="Permanent link">#</a></h2>
-<p>Use an Azure App Registration client secret stored in a Kubernetes Secret. Works with any Kubernetes cluster, not just AKS.</p>
-<h3 id="client-secret-step-1-create-an-app-registration">Client Secret: Step 1 — Create an App Registration<a class="headerlink" href="#client-secret-step-1-create-an-app-registration" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nv">APP_ID</span><span class="o">=</span><span class="k">$(</span>az<span class="w"> </span>ad<span class="w"> </span>app<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--display-name<span class="w"> </span>eso-app<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--query<span class="w"> </span>appId<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--output<span class="w"> </span>tsv<span class="k">)</span>
-
-<span class="c1"># Create a service principal for the app</span>
-az<span class="w"> </span>ad<span class="w"> </span>sp<span class="w"> </span>create<span class="w"> </span>--id<span class="w"> </span><span class="nv">$APP_ID</span>
-
-<span class="nv">TENANT_ID</span><span class="o">=</span><span class="k">$(</span>az<span class="w"> </span>account<span class="w"> </span>show<span class="w"> </span>--query<span class="w"> </span>tenantId<span class="w"> </span>--output<span class="w"> </span>tsv<span class="k">)</span>
-
-<span class="c1"># Create a client secret (note the value — it is shown only once)</span>
-<span class="nv">CLIENT_SECRET</span><span class="o">=</span><span class="k">$(</span>az<span class="w"> </span>ad<span class="w"> </span>app<span class="w"> </span>credential<span class="w"> </span>reset<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--id<span class="w"> </span><span class="nv">$APP_ID</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--query<span class="w"> </span>password<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--output<span class="w"> </span>tsv<span class="k">)</span>
-</code></pre></div>
-<h3 id="client-secret-step-2-grant-key-vault-access-to-the-app-registration">Client Secret: Step 2 — Grant Key Vault access to the App Registration<a class="headerlink" href="#client-secret-step-2-grant-key-vault-access-to-the-app-registration" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nv">SP_OBJECT_ID</span><span class="o">=</span><span class="k">$(</span>az<span class="w"> </span>ad<span class="w"> </span>sp<span class="w"> </span>show<span class="w"> </span>--id<span class="w"> </span><span class="nv">$APP_ID</span><span class="w"> </span>--query<span class="w"> </span>id<span class="w"> </span>--output<span class="w"> </span>tsv<span class="k">)</span>
-
-<span class="nv">VAULT_ID</span><span class="o">=</span><span class="k">$(</span>az<span class="w"> </span>keyvault<span class="w"> </span>show<span class="w"> </span>--name<span class="w"> </span><span class="nv">$VAULT_NAME</span><span class="w"> </span>--query<span class="w"> </span>id<span class="w"> </span>--output<span class="w"> </span>tsv<span class="k">)</span>
-
-az<span class="w"> </span>role<span class="w"> </span>assignment<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--assignee-object-id<span class="w"> </span><span class="nv">$SP_OBJECT_ID</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--assignee-principal-type<span class="w"> </span>ServicePrincipal<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--role<span class="w"> </span><span class="s2">"Key Vault Secrets User"</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--scope<span class="w"> </span><span class="nv">$VAULT_ID</span>
-</code></pre></div>
-<blockquote>
-<p>For Key Vaults using access policies:</p>
-<div class="highlight"><pre><span></span><code>az<span class="w"> </span>keyvault<span class="w"> </span>set-policy<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span><span class="nv">$VAULT_NAME</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--spn<span class="w"> </span><span class="nv">$APP_ID</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--secret-permissions<span class="w"> </span>get<span class="w"> </span>list
-</code></pre></div>
-</blockquote>
-<h3 id="client-secret-step-3-store-credentials-in-a-kubernetes-secret">Client Secret: Step 3 — Store credentials in a Kubernetes Secret<a class="headerlink" href="#client-secret-step-3-store-credentials-in-a-kubernetes-secret" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>namespace<span class="w"> </span>azure-eso-test
-
-kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>generic<span class="w"> </span>azure-credentials<span class="w"> </span>-n<span class="w"> </span>azure-eso-test<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--from-literal<span class="o">=</span>client-id<span class="o">=</span><span class="s2">"</span><span class="nv">$APP_ID</span><span class="s2">"</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--from-literal<span class="o">=</span>client-secret<span class="o">=</span><span class="s2">"</span><span class="nv">$CLIENT_SECRET</span><span class="s2">"</span>
-</code></pre></div>
-<h3 id="client-secret-step-4-create-secretstore">Client Secret: Step 4 — Create SecretStore<a class="headerlink" href="#client-secret-step-4-create-secretstore" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SecretStore</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azure-secret-store</span>
-<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azure-eso-test</span>
-<span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">provider</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">azurekv</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">authType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ServicePrincipal</span>
-<span class="w">      </span><span class="nt">vaultUrl</span><span class="p">:</span><span class="w"> </span><span class="s">"https://my-key-vault.vault.azure.net"</span>
-<span class="w">      </span><span class="nt">tenantId</span><span class="p">:</span><span class="w"> </span><span class="s">"&lt;TENANT_ID&gt;"</span>
-<span class="w">      </span><span class="nt">authSecretRef</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">clientId</span><span class="p">:</span>
-<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azure-credentials</span>
-<span class="w">          </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">client-id</span>
-<span class="w">        </span><span class="nt">clientSecret</span><span class="p">:</span>
-<span class="w">          </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azure-credentials</span>
-<span class="w">          </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">client-secret</span>
-</code></pre></div>
-<p>Apply and verify:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>secret-store.yaml
-kubectl<span class="w"> </span>get<span class="w"> </span>secretstore<span class="w"> </span>-n<span class="w"> </span>azure-eso-test
-</code></pre></div>
-<p>Should show <code>STATUS: Valid</code> and <code>READY: True</code>.</p>
-<p>Now proceed to <a href="#create-externalsecret">Create ExternalSecret</a>.</p>
-<hr>
-<h2 id="common-configuration">Common Configuration<a class="headerlink" href="#common-configuration" title="Permanent link">#</a></h2>
-<p>The following steps apply to both authentication methods.</p>
-<h2 id="create-externalsecret">Create ExternalSecret<a class="headerlink" href="#create-externalsecret" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">external-secrets.io/v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ExternalSecret</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
-<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azure-eso-test</span>
-<span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">refreshInterval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1h</span>
-<span class="w">  </span><span class="nt">secretStoreRef</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azure-secret-store</span>
-<span class="w">    </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SecretStore</span>
-<span class="w">  </span><span class="nt">target</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
-<span class="w">    </span><span class="nt">creationPolicy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Owner</span>
-<span class="w">    </span><span class="nt">template</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">metadata</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">          </span><span class="nt">reloader.stakater.com/match</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
-<span class="w">  </span><span class="nt">data</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">secretKey</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">username</span>
-<span class="w">      </span><span class="nt">remoteRef</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp-username</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">secretKey</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
-<span class="w">      </span><span class="nt">remoteRef</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp-password</span>
-</code></pre></div>
-<p>Apply and verify:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>external-secret.yaml
-kubectl<span class="w"> </span>get<span class="w"> </span>externalsecret<span class="w"> </span>-n<span class="w"> </span>azure-eso-test
-</code></pre></div>
-<p>Should show <code>STATUS: SecretSynced</code> and <code>READY: True</code>.</p>
-<h2 id="deploy-application">Deploy Application<a class="headerlink" href="#deploy-application" title="Permanent link">#</a></h2>
+<h2 id="step-5-annotate-workloads-for-reloader">Step 5 — Annotate workloads for Reloader<a class="headerlink" href="#step-5-annotate-workloads-for-reloader" title="Permanent link">#</a></h2>
+<p>Add the Reloader annotation to each workload that should restart when the Secret changes.</p>
+<p><strong>Recommended pattern — watch the specific Secret by name:</strong></p>
 <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
 <span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azure-eso-test-app</span>
-<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azure-eso-test</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
 <span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">reloader.stakater.com/search</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">    </span><span class="nt">secret.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"app-secrets"</span>
 <span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 <span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azure-eso-test-app</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
 <span class="w">  </span><span class="nt">template</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azure-eso-test-app</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
 <span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
-<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">busybox:latest</span>
-<span class="w">          </span><span class="nt">command</span><span class="p">:</span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"sh"</span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"-c"</span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">|</span>
-<span class="w">              </span><span class="no">while true; do</span>
-<span class="w">                </span><span class="no">echo "Username: $APP_USERNAME"</span>
-<span class="w">                </span><span class="no">echo "Password: $APP_PASSWORD"</span>
-<span class="w">                </span><span class="no">sleep 30</span>
-<span class="w">              </span><span class="no">done</span>
+<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp:latest</span>
 <span class="w">          </span><span class="nt">env</span><span class="p">:</span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">APP_USERNAME</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
 <span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
 <span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
 <span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
-<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">username</span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">APP_PASSWORD</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API_KEY</span>
 <span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
 <span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
 <span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
-<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API_KEY</span>
 </code></pre></div>
 <p>Apply:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>deployment.yaml
 </code></pre></div>
-<h2 id="verify-the-setup">Verify the Setup<a class="headerlink" href="#verify-the-setup" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># SecretStore</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>secretstore<span class="w"> </span>-n<span class="w"> </span>azure-eso-test
-
-<span class="c1"># ExternalSecret</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>externalsecret<span class="w"> </span>-n<span class="w"> </span>azure-eso-test
-
-<span class="c1"># Secret (created by ESO)</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>azure-eso-test
-
-<span class="c1"># Pod</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>azure-eso-test
-
-<span class="c1"># Verify secret contents</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>azure-eso-test<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.password}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
-
-<span class="c1"># Check app logs</span>
-kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>azure-eso-test<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>azure-eso-test-app
+<hr>
+<h2 id="argo-rollouts">Argo Rollouts<a class="headerlink" href="#argo-rollouts" title="Permanent link">#</a></h2>
+<p>For Argo Rollouts, the annotation is the same. The Infisical operator's built-in <code>secrets.infisical.com/auto-reload</code> does not support Argo Rollouts; Reloader does.</p>
+<p>Enable Argo Rollouts support in Reloader's Helm values:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">isArgoRollouts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
-<h2 id="test-secret-rotation">Test Secret Rotation<a class="headerlink" href="#test-secret-rotation" title="Permanent link">#</a></h2>
-<h3 id="update-the-secret-in-azure-key-vault">Update the secret in Azure Key Vault<a class="headerlink" href="#update-the-secret-in-azure-key-vault" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>az<span class="w"> </span>keyvault<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--vault-name<span class="w"> </span><span class="nv">$VAULT_NAME</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span>myapp-password<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--value<span class="w"> </span><span class="s2">"new-rotated-password"</span>
-</code></pre></div>
-<p>Azure Key Vault retains all previous versions. ESO always reads the <strong>latest enabled version</strong> unless a specific version is pinned in the <code>ExternalSecret</code>.</p>
-<h3 id="wait-and-verify">Wait and verify<a class="headerlink" href="#wait-and-verify" title="Permanent link">#</a></h3>
-<p>To force an immediate ESO sync without waiting for <code>refreshInterval</code>:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>annotate<span class="w"> </span>externalsecret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>azure-eso-test<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>force-sync<span class="o">=</span><span class="k">$(</span>date<span class="w"> </span>+%s<span class="k">)</span><span class="w"> </span>--overwrite
-</code></pre></div>
-<p>Then verify:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Check secret was updated</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>azure-eso-test<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.password}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
-
-<span class="c1"># Check pod was restarted</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>azure-eso-test<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>azure-eso-test-app
-
-<span class="c1"># Check app logs show new password</span>
-kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>azure-eso-test<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>azure-eso-test-app<span class="w"> </span>--tail<span class="o">=</span><span class="m">5</span>
+<p>Then annotate the Rollout:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">argoproj.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rollout</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">secret.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"app-secrets"</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp:latest</span>
+<span class="w">          </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
 </code></pre></div>
 <hr>
-<h2 id="configuration-reference">Configuration Reference<a class="headerlink" href="#configuration-reference" title="Permanent link">#</a></h2>
-<h3 id="secretstore-workload-identity">SecretStore — Workload Identity<a class="headerlink" href="#secretstore-workload-identity" title="Permanent link">#</a></h3>
+<h2 id="step-6-test-the-rotation">Step 6 — Test the rotation<a class="headerlink" href="#step-6-test-the-rotation" title="Permanent link">#</a></h2>
+<p>Update a secret value in the Infisical dashboard, then wait for the next sync interval (default: 1 minute).</p>
+<p>Confirm the Kubernetes Secret was updated:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>default<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.DB_PASSWORD}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
+</code></pre></div>
+<p>Confirm pods were restarted:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deployment/myapp<span class="w"> </span>-n<span class="w"> </span>default
+kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>default<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>myapp
+</code></pre></div>
+<p>Check Reloader logs to confirm the reload was triggered:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader-reloader<span class="w"> </span>--tail<span class="o">=</span><span class="m">20</span>
+</code></pre></div>
+<p>Expected log output:</p>
+<div class="highlight"><pre><span></span><code>Changes detected in 'app-secrets' of type 'Secret' in namespace 'default'
+Updated 'myapp' of type 'Deployment' in namespace 'default'
+</code></pre></div>
+<hr>
+<h2 id="reloader-annotations-reference">Reloader annotations reference<a class="headerlink" href="#reloader-annotations-reference" title="Permanent link">#</a></h2>
 <table>
 <thead>
 <tr>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>provider.azurekv.authType</code></td>
-<td><code>WorkloadIdentity</code></td>
-</tr>
-<tr>
-<td><code>provider.azurekv.vaultUrl</code></td>
-<td>Full URL of the Azure Key Vault (e.g. <code>https://my-vault.vault.azure.net</code>)</td>
-</tr>
-<tr>
-<td><code>provider.azurekv.serviceAccountRef.name</code></td>
-<td>Kubernetes ServiceAccount annotated with the managed identity client ID</td>
-</tr>
-</tbody>
-</table>
-<h3 id="secretstore-client-secret">SecretStore — Client Secret<a class="headerlink" href="#secretstore-client-secret" title="Permanent link">#</a></h3>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>provider.azurekv.authType</code></td>
-<td><code>ServicePrincipal</code></td>
-</tr>
-<tr>
-<td><code>provider.azurekv.vaultUrl</code></td>
-<td>Full URL of the Azure Key Vault</td>
-</tr>
-<tr>
-<td><code>provider.azurekv.tenantId</code></td>
-<td>Azure Active Directory tenant ID</td>
-</tr>
-<tr>
-<td><code>provider.azurekv.authSecretRef.clientId</code></td>
-<td>K8s Secret and key containing the App Registration client ID</td>
-</tr>
-<tr>
-<td><code>provider.azurekv.authSecretRef.clientSecret</code></td>
-<td>K8s Secret and key containing the client secret value</td>
-</tr>
-</tbody>
-</table>
-<h3 id="externalsecret">ExternalSecret<a class="headerlink" href="#externalsecret" title="Permanent link">#</a></h3>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>refreshInterval</code></td>
-<td>How often ESO polls Azure for changes (e.g. <code>1h</code>, <code>5m</code>)</td>
-</tr>
-<tr>
-<td><code>secretStoreRef</code></td>
-<td>Reference to the SecretStore</td>
-</tr>
-<tr>
-<td><code>target.name</code></td>
-<td>Name of the K8s Secret to create</td>
-</tr>
-<tr>
-<td><code>target.template.metadata.annotations</code></td>
-<td>Annotations to add to the created Secret</td>
-</tr>
-<tr>
-<td><code>data[].secretKey</code></td>
-<td>Key name in the K8s Secret</td>
-</tr>
-<tr>
-<td><code>data[].remoteRef.key</code></td>
-<td>Azure Key Vault secret name</td>
-</tr>
-<tr>
-<td><code>data[].remoteRef.version</code></td>
-<td>(Optional) Specific secret version. Omit to use the latest.</td>
-</tr>
-</tbody>
-</table>
-<h3 id="reloader-annotations">Reloader Annotations<a class="headerlink" href="#reloader-annotations" title="Permanent link">#</a></h3>
-<table>
-<thead>
-<tr>
-<th>Resource</th>
 <th>Annotation</th>
+<th>Placed on</th>
+<th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Deployment</td>
-<td><code>reloader.stakater.com/search: "true"</code></td>
+<td><code>secret.reloader.stakater.com/reload: "app-secrets"</code></td>
+<td>Deployment / StatefulSet / Daemonset / Rollout</td>
+<td>Restart when the named Secret changes</td>
 </tr>
 <tr>
-<td>Secret (via ExternalSecret template)</td>
-<td><code>reloader.stakater.com/match: "true"</code></td>
+<td><code>reloader.stakater.com/auto: "true"</code></td>
+<td>Deployment / StatefulSet / Daemonset / Rollout</td>
+<td>Restart when any Secret or ConfigMap referenced in the pod spec changes</td>
+</tr>
+<tr>
+<td><code>reloader.stakater.com/search: "true"</code></td>
+<td>Deployment</td>
+<td>Restart when any Secret annotated with <code>reloader.stakater.com/match: "true"</code> changes</td>
 </tr>
 </tbody>
 </table>
 <hr>
-<h2 id="comparison-workload-identity-vs-client-secret">Comparison: Workload Identity vs Client Secret<a class="headerlink" href="#comparison-workload-identity-vs-client-secret" title="Permanent link">#</a></h2>
-<table>
-<thead>
-<tr>
-<th>Aspect</th>
-<th>Workload Identity</th>
-<th>Client Secret</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Credentials</strong></td>
-<td>No static secret — short-lived federated tokens</td>
-<td>Long-lived client secret</td>
-</tr>
-<tr>
-<td><strong>Security</strong></td>
-<td>No credentials to leak or rotate</td>
-<td>Client secret must be rotated before expiry</td>
-</tr>
-<tr>
-<td><strong>Cluster requirement</strong></td>
-<td>AKS with OIDC issuer + Workload Identity enabled</td>
-<td>Any Kubernetes cluster</td>
-</tr>
-<tr>
-<td><strong>Setup complexity</strong></td>
-<td>Requires managed identity + federated credential binding</td>
-<td>Just an App Registration + K8s Secret</td>
-</tr>
-<tr>
-<td><strong>Best for</strong></td>
-<td>Production on AKS</td>
-<td>Development, non-AKS clusters</td>
-</tr>
-</tbody>
-</table>
+<h2 id="disable-infisicals-built-in-auto-reload">Disable Infisical's built-in auto-reload<a class="headerlink" href="#disable-infisicals-built-in-auto-reload" title="Permanent link">#</a></h2>
+<p>If you are using Reloader, do not also set <code>secrets.infisical.com/auto-reload: "true"</code> on the same workload. Both mechanisms would fire on the same Secret update, causing two successive restarts. Use one or the other.</p>
+<hr>
+<h2 id="using-configmaps">Using ConfigMaps<a class="headerlink" href="#using-configmaps" title="Permanent link">#</a></h2>
+<p>The Infisical operator supports syncing non-sensitive values into Kubernetes ConfigMaps via the same <code>managedKubeSecretReferences</code> mechanism. Reloader watches ConfigMaps as well as Secrets, so the same annotation pattern applies:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">configmap.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"app-config"</span>
+</code></pre></div>
+<hr>
+<h2 id="cooldown-between-reloads">Cooldown between reloads<a class="headerlink" href="#cooldown-between-reloads" title="Permanent link">#</a></h2>
+<p>To prevent rapid successive restarts when multiple secrets are updated in quick succession:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">secret.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"app-secrets"</span>
+<span class="w">    </span><span class="nt">deployment.reloader.stakater.com/pause-period</span><span class="p">:</span><span class="w"> </span><span class="s">"2m"</span>
+</code></pre></div>
+<p>During the pause period, additional Secret changes do not trigger another restart.</p>
 
 
 
