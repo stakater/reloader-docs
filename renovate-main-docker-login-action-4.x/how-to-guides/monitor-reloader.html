@@ -5,13 +5,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-docker-login-action-4.x/integrations/index.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-docker-login-action-4.x/how-to-guides/monitor-reloader.html">
       
       
-        <link rel="prev" href="../how-to-guides/use-reloader-with-flux.html">
+        <link rel="prev" href="namespace-scoping.html">
       
       
-        <link rel="next" href="conjur/index.html">
+        <link rel="next" href="alerting-on-reload.html">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>Overview - Reloader</title>
+        <title>Monitor Reloader - Reloader</title>
       
     
     
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#integrations-overview" class="md-skip">
+        <a href="#monitor-reloader" class="md-skip">
           Skip to content
         </a>
       
@@ -2872,18 +2872,20 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -2904,7 +2906,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2922,7 +2924,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../how-to-guides/restart-pods-when-configmap-changes.html" class="md-nav__link">
+      <a href="restart-pods-when-configmap-changes.html" class="md-nav__link">
         
   
   
@@ -2950,7 +2952,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../how-to-guides/restart-pods-when-secret-changes.html" class="md-nav__link">
+      <a href="restart-pods-when-secret-changes.html" class="md-nav__link">
         
   
   
@@ -2978,7 +2980,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../how-to-guides/reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
+      <a href="reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
         
   
   
@@ -3006,7 +3008,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../how-to-guides/restart-pods-when-external-secrets-change.html" class="md-nav__link">
+      <a href="restart-pods-when-external-secrets-change.html" class="md-nav__link">
         
   
   
@@ -3034,7 +3036,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../how-to-guides/namespace-scoping.html" class="md-nav__link">
+      <a href="namespace-scoping.html" class="md-nav__link">
         
   
   
@@ -3059,10 +3061,37 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../how-to-guides/monitor-reloader.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monitor Reloader
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="monitor-reloader.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3078,6 +3107,255 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#metrics-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metrics endpoint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Available metrics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Available metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reloader_reload_executed_total" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reloader_reload_executed_total
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reloader_reload_executed_total_by_namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reloader_reload_executed_total_by_namespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scraping-metrics-with-prometheus-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scraping metrics with Prometheus Operator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scraping-metrics-without-prometheus-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scraping metrics without Prometheus Operator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-grafana-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Grafana queries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Grafana queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#total-successful-reloads-all-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Total successful reloads (all time)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reload-rate-per-minute-5m-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reload rate (per minute, 5m window)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failed-reload-rate-alert-candidate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Failed reload rate (alert candidate)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reloads-by-namespace-requires-enablemetricsbynamespace-true" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reloads by namespace (requires enableMetricsByNamespace: true)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-prometheus-alerting-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Prometheus alerting rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structured-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structured logs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structured logs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enable-json-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable JSON logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Log levels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-log-events-to-watch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key log events to watch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-logs-with-kubectl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query logs with kubectl
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-logs-with-loki-logql-if-using-grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query logs with Loki / LogQL (if using Grafana)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhook-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhook notifications
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3090,7 +3368,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../how-to-guides/alerting-on-reload.html" class="md-nav__link">
+      <a href="alerting-on-reload.html" class="md-nav__link">
         
   
   
@@ -3118,7 +3396,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../how-to-guides/verify-and-troubleshoot.html" class="md-nav__link">
+      <a href="verify-and-troubleshoot.html" class="md-nav__link">
         
   
   
@@ -3146,7 +3424,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../how-to-guides/use-reloader-with-argocd.html" class="md-nav__link">
+      <a href="use-reloader-with-argocd.html" class="md-nav__link">
         
   
   
@@ -3174,7 +3452,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../how-to-guides/use-reloader-with-flux.html" class="md-nav__link">
+      <a href="use-reloader-with-flux.html" class="md-nav__link">
         
   
   
@@ -3206,20 +3484,18 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -3240,7 +3516,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3255,37 +3531,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../integrations/index.html" class="md-nav__link">
         
   
   
@@ -3301,50 +3550,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#how-integrations-work-with-reloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How integrations work with Reloader
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integrations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integrations
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3404,7 +3609,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="conjur/index.html" class="md-nav__link">
+      <a href="../integrations/conjur/index.html" class="md-nav__link">
         
   
   
@@ -3432,7 +3637,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="conjur/conjur-eso.html" class="md-nav__link">
+      <a href="../integrations/conjur/conjur-eso.html" class="md-nav__link">
         
   
   
@@ -3460,7 +3665,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="conjur/conjur-sidecar.html" class="md-nav__link">
+      <a href="../integrations/conjur/conjur-sidecar.html" class="md-nav__link">
         
   
   
@@ -3488,7 +3693,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="conjur/conjur-csi.html" class="md-nav__link">
+      <a href="../integrations/conjur/conjur-csi.html" class="md-nav__link">
         
   
   
@@ -3571,7 +3776,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="vault/index.html" class="md-nav__link">
+      <a href="../integrations/vault/index.html" class="md-nav__link">
         
   
   
@@ -3599,7 +3804,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="vault/vault-eso.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-eso.html" class="md-nav__link">
         
   
   
@@ -3627,7 +3832,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="vault/vault-vso.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-vso.html" class="md-nav__link">
         
   
   
@@ -3655,7 +3860,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="vault/vault-csi.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-csi.html" class="md-nav__link">
         
   
   
@@ -3683,7 +3888,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="vault/vault-csi-file.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-csi-file.html" class="md-nav__link">
         
   
   
@@ -3766,7 +3971,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="openbao/index.html" class="md-nav__link">
+      <a href="../integrations/openbao/index.html" class="md-nav__link">
         
   
   
@@ -3794,7 +3999,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="openbao/openbao-eso.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-eso.html" class="md-nav__link">
         
   
   
@@ -3822,7 +4027,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="openbao/openbao-bso.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-bso.html" class="md-nav__link">
         
   
   
@@ -3850,7 +4055,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="openbao/openbao-csi.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-csi.html" class="md-nav__link">
         
   
   
@@ -3878,7 +4083,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="openbao/openbao-csi-file.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-csi-file.html" class="md-nav__link">
         
   
   
@@ -3961,7 +4166,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="aws/index.html" class="md-nav__link">
+      <a href="../integrations/aws/index.html" class="md-nav__link">
         
   
   
@@ -3989,7 +4194,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="aws/aws-eso.html" class="md-nav__link">
+      <a href="../integrations/aws/aws-eso.html" class="md-nav__link">
         
   
   
@@ -4017,7 +4222,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="aws/aws-csi.html" class="md-nav__link">
+      <a href="../integrations/aws/aws-csi.html" class="md-nav__link">
         
   
   
@@ -4100,7 +4305,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="gcp/index.html" class="md-nav__link">
+      <a href="../integrations/gcp/index.html" class="md-nav__link">
         
   
   
@@ -4128,7 +4333,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="gcp/gcp-eso.html" class="md-nav__link">
+      <a href="../integrations/gcp/gcp-eso.html" class="md-nav__link">
         
   
   
@@ -4211,7 +4416,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="azure/index.html" class="md-nav__link">
+      <a href="../integrations/azure/index.html" class="md-nav__link">
         
   
   
@@ -4239,7 +4444,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="azure/azure-eso.html" class="md-nav__link">
+      <a href="../integrations/azure/azure-eso.html" class="md-nav__link">
         
   
   
@@ -4267,7 +4472,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="azure/azure-csi.html" class="md-nav__link">
+      <a href="../integrations/azure/azure-csi.html" class="md-nav__link">
         
   
   
@@ -4350,7 +4555,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="infisical/index.html" class="md-nav__link">
+      <a href="../integrations/infisical/index.html" class="md-nav__link">
         
   
   
@@ -4378,7 +4583,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="infisical/infisical-operator.html" class="md-nav__link">
+      <a href="../integrations/infisical/infisical-operator.html" class="md-nav__link">
         
   
   
@@ -4662,10 +4867,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#how-integrations-work-with-reloader" class="md-nav__link">
+  <a href="#metrics-endpoint" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How integrations work with Reloader
+        Metrics endpoint
       
     </span>
   </a>
@@ -4673,10 +4878,215 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#integrations" class="md-nav__link">
+  <a href="#available-metrics" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Integrations
+        Available metrics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Available metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reloader_reload_executed_total" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reloader_reload_executed_total
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reloader_reload_executed_total_by_namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reloader_reload_executed_total_by_namespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scraping-metrics-with-prometheus-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scraping metrics with Prometheus Operator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scraping-metrics-without-prometheus-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scraping metrics without Prometheus Operator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-grafana-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Grafana queries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Grafana queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#total-successful-reloads-all-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Total successful reloads (all time)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reload-rate-per-minute-5m-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reload rate (per minute, 5m window)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failed-reload-rate-alert-candidate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Failed reload rate (alert candidate)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reloads-by-namespace-requires-enablemetricsbynamespace-true" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reloads by namespace (requires enableMetricsByNamespace: true)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-prometheus-alerting-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Prometheus alerting rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structured-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structured logs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structured logs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enable-json-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable JSON logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Log levels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-log-events-to-watch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key log events to watch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-logs-with-kubectl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query logs with kubectl
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-logs-with-loki-logql-if-using-grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query logs with Loki / LogQL (if using Grafana)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhook-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhook notifications
       
     </span>
   </a>
@@ -4703,76 +5113,186 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="integrations-overview">Integrations Overview<a class="headerlink" href="#integrations-overview" title="Permanent link">#</a></h1>
-<p>Reloader integrates with a wide range of Kubernetes-native tools for secrets management, certificate automation, and configuration delivery.</p>
-<p>This section provides an overview of:</p>
-<ul>
-<li>How integrations work with Reloader</li>
-<li>The different <strong>support and validation levels</strong></li>
-<li>Which integrations are <strong>validated and supported in Reloader Enterprise</strong></li>
-<li>What community users can expect</li>
-</ul>
-<p>Each integration has its own dedicated section with architecture notes, step-by-step examples, and operational considerations.</p>
-<p>All integrations work with both <strong>Reloader OSS</strong> and <strong>Reloader Enterprise</strong>. Enterprise customers receive commercial support and SLA coverage.</p>
+<h1 id="monitor-reloader">Monitor Reloader<a class="headerlink" href="#monitor-reloader" title="Permanent link">#</a></h1>
+<p>Reloader exposes a Prometheus-compatible metrics endpoint and structured logs, giving platform teams visibility into reload activity, failure rates, and operational health.</p>
 <hr>
-<h2 id="how-integrations-work-with-reloader">How integrations work with Reloader<a class="headerlink" href="#how-integrations-work-with-reloader" title="Permanent link">#</a></h2>
-<p>Reloader itself is <strong>tool-agnostic</strong>.</p>
-<p>It watches Kubernetes resources such as:</p>
-<ul>
-<li><code>Secrets</code></li>
-<li><code>ConfigMaps</code></li>
-</ul>
-<p>When these change, Reloader can trigger safe rollouts of supported workloads (e.g. Deployments, StatefulSets, Rollouts), regardless of <strong>how</strong> those resources were created or updated.</p>
-<p>Integrations typically follow this flow:</p>
-<div class="highlight"><pre><span></span><code>External<span class="w"> </span>system
-↓
-Kubernetes<span class="w"> </span>Secret<span class="w"> </span>/<span class="w"> </span>ConfigMap
-↓
-Reloader<span class="w"> </span>detects<span class="w"> </span>change
-↓
-Controlled<span class="w"> </span>workload<span class="w"> </span>rollout
+<h2 id="metrics-endpoint">Metrics endpoint<a class="headerlink" href="#metrics-endpoint" title="Permanent link">#</a></h2>
+<p>Reloader exposes metrics at <code>/metrics</code> on <strong>port <code>9090</code></strong>.</p>
+<p>To inspect metrics manually:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>port-forward<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>svc/reloader<span class="w"> </span><span class="m">9090</span>:9090
+curl<span class="w"> </span>-s<span class="w"> </span>http://localhost:9090/metrics<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>reloader_
 </code></pre></div>
-<p>Because the integration point is Kubernetes-native, many tools <em>can</em> work with Reloader. The difference lies in <strong>validation, guarantees, and support</strong>.</p>
 <hr>
-<h2 id="integrations">Integrations<a class="headerlink" href="#integrations" title="Permanent link">#</a></h2>
+<h2 id="available-metrics">Available metrics<a class="headerlink" href="#available-metrics" title="Permanent link">#</a></h2>
+<h3 id="reloader_reload_executed_total"><code>reloader_reload_executed_total</code><a class="headerlink" href="#reloader_reload_executed_total" title="Permanent link">#</a></h3>
+<p>Counts every reload Reloader has attempted, labelled by success or failure.</p>
+<div class="highlight"><pre><span></span><code>reloader_reload_executed_total{success="true"}    # successful reloads
+reloader_reload_executed_total{success="false"}   # failed reloads
+</code></pre></div>
+<p>This is the primary operational metric. A non-zero <code>success="false"</code> count indicates that Reloader is detecting changes but failing to patch the workload — usually an RBAC problem.</p>
+<h3 id="reloader_reload_executed_total_by_namespace"><code>reloader_reload_executed_total_by_namespace</code><a class="headerlink" href="#reloader_reload_executed_total_by_namespace" title="Permanent link">#</a></h3>
+<p>The same counter broken down by namespace. <strong>Disabled by default</strong> because it has unbounded cardinality in large clusters.</p>
+<p>Enable via Helm:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">enableMetricsByNamespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p>Or via environment variable on the Reloader container:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">field</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">METRICS_COUNT_BY_NAMESPACE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">enabled</span>
+</code></pre></div>
+<p>When enabled:</p>
+<div class="highlight"><pre><span></span><code>reloader_reload_executed_total_by_namespace{success="true",  namespace="production"}   12
+reloader_reload_executed_total_by_namespace{success="false", namespace="staging"}       1
+</code></pre></div>
+<hr>
+<h2 id="scraping-metrics-with-prometheus-operator">Scraping metrics with Prometheus Operator<a class="headerlink" href="#scraping-metrics-with-prometheus-operator" title="Permanent link">#</a></h2>
+<p>If you use the Prometheus Operator (<code>kube-prometheus-stack</code> or similar), enable the built-in <code>PodMonitor</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">podMonitor</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p>This creates a <code>PodMonitor</code> resource in the same namespace as Reloader. Prometheus Operator will discover it automatically if your Prometheus instance watches <code>PodMonitor</code> resources cluster-wide.</p>
+<p>To verify the monitor was created:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>podmonitor<span class="w"> </span>-n<span class="w"> </span>reloader
+</code></pre></div>
+<p>To confirm Prometheus is scraping it, open the Prometheus targets page (<code>/targets</code>) and search for <code>reloader</code>.</p>
+<hr>
+<h2 id="scraping-metrics-without-prometheus-operator">Scraping metrics without Prometheus Operator<a class="headerlink" href="#scraping-metrics-without-prometheus-operator" title="Permanent link">#</a></h2>
+<p>If you manage Prometheus configuration directly (without Prometheus Operator), add a scrape job to your Prometheus config:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">scrape_configs</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">job_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reloader</span>
+<span class="w">    </span><span class="nt">kubernetes_sd_configs</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pod</span>
+<span class="w">        </span><span class="nt">namespaces</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">names</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reloader</span>
+<span class="w">    </span><span class="nt">relabel_configs</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">source_labels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">__meta_kubernetes_pod_label_app</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="nt">regex</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reloader</span>
+<span class="w">        </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">keep</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">source_labels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">__address__</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="nt">regex</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(.+):\d+</span>
+<span class="w">        </span><span class="nt">replacement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$1:9090</span>
+<span class="w">        </span><span class="nt">target_label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">__address__</span>
+</code></pre></div>
+<hr>
+<h2 id="example-grafana-queries">Example Grafana queries<a class="headerlink" href="#example-grafana-queries" title="Permanent link">#</a></h2>
+<p>Use these PromQL queries as the basis for Grafana panels.</p>
+<h3 id="total-successful-reloads-all-time">Total successful reloads (all time)<a class="headerlink" href="#total-successful-reloads-all-time" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">sum</span><span class="o">(</span><span class="nv">reloader_reload_executed_total</span><span class="p">{</span><span class="nl">success</span><span class="o">=</span><span class="p">"</span><span class="s">true</span><span class="p">"}</span><span class="o">)</span>
+</code></pre></div>
+<h3 id="reload-rate-per-minute-5m-window">Reload rate (per minute, 5m window)<a class="headerlink" href="#reload-rate-per-minute-5m-window" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">sum</span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">reloader_reload_executed_total</span><span class="p">{</span><span class="nl">success</span><span class="o">=</span><span class="p">"</span><span class="s">true</span><span class="p">"}[</span><span class="s">5m</span><span class="p">]</span><span class="o">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span>
+</code></pre></div>
+<h3 id="failed-reload-rate-alert-candidate">Failed reload rate (alert candidate)<a class="headerlink" href="#failed-reload-rate-alert-candidate" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">sum</span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">reloader_reload_executed_total</span><span class="p">{</span><span class="nl">success</span><span class="o">=</span><span class="p">"</span><span class="s">false</span><span class="p">"}[</span><span class="s">5m</span><span class="p">]</span><span class="o">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span>
+</code></pre></div>
+<h3 id="reloads-by-namespace-requires-enablemetricsbynamespace-true">Reloads by namespace (requires <code>enableMetricsByNamespace: true</code>)<a class="headerlink" href="#reloads-by-namespace-requires-enablemetricsbynamespace-true" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">sort_desc</span><span class="o">(</span>
+<span class="w">  </span><span class="k">sum</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="o">(</span><span class="nv">namespace</span><span class="o">)</span><span class="w"> </span><span class="o">(</span>
+<span class="w">    </span><span class="kr">increase</span><span class="o">(</span><span class="nv">reloader_reload_executed_total_by_namespace</span><span class="p">{</span><span class="nl">success</span><span class="o">=</span><span class="p">"</span><span class="s">true</span><span class="p">"}[</span><span class="s">1h</span><span class="p">]</span><span class="o">)</span>
+<span class="w">  </span><span class="o">)</span>
+<span class="o">)</span>
+</code></pre></div>
+<hr>
+<h2 id="example-prometheus-alerting-rules">Example Prometheus alerting rules<a class="headerlink" href="#example-prometheus-alerting-rules" title="Permanent link">#</a></h2>
+<p>Save as a <code>PrometheusRule</code> resource or add to your Prometheus rules file.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">monitoring.coreos.com/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PrometheusRule</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reloader-alerts</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reloader</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">groups</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reloader</span>
+<span class="w">      </span><span class="nt">rules</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">alert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReloaderFailingToRestart</span>
+<span class="w">          </span><span class="nt">expr</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">            </span><span class="no">increase(reloader_reload_executed_total{success="false"}[5m]) &gt; 0</span>
+<span class="w">          </span><span class="nt">for</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2m</span>
+<span class="w">          </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">severity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">warning</span>
+<span class="w">          </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">"Reloader</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">failing</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">restart</span><span class="nv"> </span><span class="s">workloads"</span>
+<span class="w">            </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span>
+<span class="w">              </span><span class="no">Reloader detected a ConfigMap or Secret change but failed to</span>
+<span class="w">              </span><span class="no">patch the workload. This is usually an RBAC issue.</span>
+<span class="w">              </span><span class="no">Check Reloader logs: kubectl logs -n reloader -l app=reloader</span>
+
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">alert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReloaderDown</span>
+<span class="w">          </span><span class="nt">expr</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">            </span><span class="no">absent(up{job="reloader"} == 1)</span>
+<span class="w">          </span><span class="nt">for</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span>
+<span class="w">          </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">severity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">critical</span>
+<span class="w">          </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">"Reloader</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">running"</span>
+<span class="w">            </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span>
+<span class="w">              </span><span class="no">No Reloader pod is reachable. Configuration changes will not</span>
+<span class="w">              </span><span class="no">trigger workload restarts until Reloader is healthy.</span>
+</code></pre></div>
+<hr>
+<h2 id="structured-logs">Structured logs<a class="headerlink" href="#structured-logs" title="Permanent link">#</a></h2>
+<p>Reloader emits structured logs for every reload event and error.</p>
+<h3 id="enable-json-logging">Enable JSON logging<a class="headerlink" href="#enable-json-logging" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">logFormat</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">json</span>
+</code></pre></div>
+<p>JSON logs are easier to ingest into Loki, Elasticsearch, or CloudWatch.</p>
+<h3 id="log-levels">Log levels<a class="headerlink" href="#log-levels" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">logLevel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">info</span><span class="w">   </span><span class="c1"># trace | debug | info | warning | error | fatal | panic</span>
+</code></pre></div>
+<h3 id="key-log-events-to-watch">Key log events to watch<a class="headerlink" href="#key-log-events-to-watch" title="Permanent link">#</a></h3>
 <table>
 <thead>
 <tr>
-<th>Integration</th>
-<th>Guides</th>
+<th>Event</th>
+<th>What it means</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="vault/index.html">HashiCorp Vault</a></td>
-<td><a href="vault/vault-eso.html">ESO</a>, <a href="vault/vault-vso.html">VSO</a>, <a href="vault/vault-csi.html">CSI Driver</a>, <a href="vault/vault-csi-file.html">CSI Driver (File-Based)</a></td>
+<td><code>Changes detected in '&lt;name&gt;' of type 'SECRET'</code></td>
+<td>Reloader detected a data change in a Secret</td>
 </tr>
 <tr>
-<td><a href="openbao/index.html">OpenBao</a></td>
-<td><a href="openbao/openbao-eso.html">ESO</a>, <a href="openbao/openbao-bso.html">BSO</a>, <a href="openbao/openbao-csi.html">CSI Driver</a>, <a href="openbao/openbao-csi-file.html">CSI Driver (File-Based)</a></td>
+<td><code>Changes detected in '&lt;name&gt;' of type 'CONFIGMAP'</code></td>
+<td>Reloader detected a data change in a ConfigMap</td>
 </tr>
 <tr>
-<td><a href="conjur/index.html">Conjur</a></td>
-<td><a href="conjur/conjur-eso.html">ESO</a>, <a href="conjur/conjur-sidecar.html">Sidecar</a>, <a href="conjur/conjur-csi.html">CSI Driver</a></td>
+<td><code>Updated '&lt;workload&gt;' of type 'Deployment'</code></td>
+<td>Reloader successfully patched a workload</td>
 </tr>
 <tr>
-<td><a href="aws/index.html">AWS Secrets Manager</a></td>
-<td><a href="aws/aws-eso.html">ESO</a>, <a href="aws/aws-csi.html">CSI Driver</a></td>
+<td><code>failed to update deployment</code></td>
+<td>Reloader could not patch the workload — check RBAC</td>
 </tr>
 <tr>
-<td><a href="gcp/index.html">GCP Secret Manager</a></td>
-<td><a href="gcp/gcp-eso.html">ESO</a></td>
-</tr>
-<tr>
-<td><a href="azure/index.html">Azure Key Vault</a></td>
-<td><a href="azure/azure-eso.html">ESO</a>, <a href="azure/azure-csi.html">CSI Driver</a></td>
-</tr>
-<tr>
-<td><a href="infisical/index.html">Infisical</a></td>
-<td><a href="infisical/infisical-operator.html">Infisical Operator</a></td>
+<td><code>unable to create Kubernetes client</code></td>
+<td>Reloader cannot reach the API server</td>
 </tr>
 </tbody>
 </table>
+<h3 id="query-logs-with-kubectl">Query logs with kubectl<a class="headerlink" href="#query-logs-with-kubectl" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Watch live reload events</span>
+kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader<span class="w"> </span>-f<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">"Changes detected|Updated"</span>
+
+<span class="c1"># Show only errors</span>
+kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"error\|failed"</span>
+</code></pre></div>
+<h3 id="query-logs-with-loki-logql-if-using-grafana">Query logs with Loki / LogQL (if using Grafana)<a class="headerlink" href="#query-logs-with-loki-logql-if-using-grafana" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>{namespace="reloader"} |= "Changes detected"
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>{namespace="reloader"} |= "failed"
+</code></pre></div>
+<hr>
+<h2 id="webhook-notifications">Webhook notifications<a class="headerlink" href="#webhook-notifications" title="Permanent link">#</a></h2>
+<p>In addition to metrics and logs, Reloader can send a webhook notification to Slack, Microsoft Teams, Google Chat, or any https endpoint whenever a reload is triggered.</p>
+<p>See <a href="alerting-on-reload.html">Alert When Reloader Triggers a Restart</a> for setup instructions.</p>
 
 
 

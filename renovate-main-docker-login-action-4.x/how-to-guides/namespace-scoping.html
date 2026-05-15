@@ -5,13 +5,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-docker-login-action-4.x/integrations/index.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-docker-login-action-4.x/how-to-guides/namespace-scoping.html">
       
       
-        <link rel="prev" href="../how-to-guides/use-reloader-with-flux.html">
+        <link rel="prev" href="restart-pods-when-external-secrets-change.html">
       
       
-        <link rel="next" href="conjur/index.html">
+        <link rel="next" href="monitor-reloader.html">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>Overview - Reloader</title>
+        <title>Scope Reloader to Specific Namespaces - Reloader</title>
       
     
     
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#integrations-overview" class="md-skip">
+        <a href="#scope-reloader-to-specific-namespaces" class="md-skip">
           Skip to content
         </a>
       
@@ -2872,18 +2872,20 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -2904,7 +2906,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2922,7 +2924,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../how-to-guides/restart-pods-when-configmap-changes.html" class="md-nav__link">
+      <a href="restart-pods-when-configmap-changes.html" class="md-nav__link">
         
   
   
@@ -2950,7 +2952,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../how-to-guides/restart-pods-when-secret-changes.html" class="md-nav__link">
+      <a href="restart-pods-when-secret-changes.html" class="md-nav__link">
         
   
   
@@ -2978,7 +2980,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../how-to-guides/reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
+      <a href="reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
         
   
   
@@ -3006,7 +3008,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../how-to-guides/restart-pods-when-external-secrets-change.html" class="md-nav__link">
+      <a href="restart-pods-when-external-secrets-change.html" class="md-nav__link">
         
   
   
@@ -3031,10 +3033,37 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../how-to-guides/namespace-scoping.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope Reloader to Specific Namespaces
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="namespace-scoping.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3050,6 +3079,166 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#default-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default behavior
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-1-restrict-to-the-deployment-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 1 — Restrict to the deployment namespace
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-2-watch-namespaces-matching-a-label-selector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 2 — Watch namespaces matching a label selector
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-3-exclude-specific-namespaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 3 — Exclude specific namespaces
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-4-filter-by-resource-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 4 — Filter by resource labels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interaction-between-selectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interaction between selectors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rbac-implications-per-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RBAC implications per mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-reloader-per-team-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One Reloader per team namespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-reloader-watching-production-namespaces-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One Reloader watching production namespaces only
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-wide-with-system-namespaces-excluded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cluster-wide with system namespaces excluded
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifying-scope-in-a-running-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verifying scope in a running cluster
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3062,7 +3251,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../how-to-guides/monitor-reloader.html" class="md-nav__link">
+      <a href="monitor-reloader.html" class="md-nav__link">
         
   
   
@@ -3090,7 +3279,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../how-to-guides/alerting-on-reload.html" class="md-nav__link">
+      <a href="alerting-on-reload.html" class="md-nav__link">
         
   
   
@@ -3118,7 +3307,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../how-to-guides/verify-and-troubleshoot.html" class="md-nav__link">
+      <a href="verify-and-troubleshoot.html" class="md-nav__link">
         
   
   
@@ -3146,7 +3335,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../how-to-guides/use-reloader-with-argocd.html" class="md-nav__link">
+      <a href="use-reloader-with-argocd.html" class="md-nav__link">
         
   
   
@@ -3174,7 +3363,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../how-to-guides/use-reloader-with-flux.html" class="md-nav__link">
+      <a href="use-reloader-with-flux.html" class="md-nav__link">
         
   
   
@@ -3206,20 +3395,18 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -3240,7 +3427,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3255,37 +3442,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../integrations/index.html" class="md-nav__link">
         
   
   
@@ -3301,50 +3461,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#how-integrations-work-with-reloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How integrations work with Reloader
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integrations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integrations
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3404,7 +3520,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="conjur/index.html" class="md-nav__link">
+      <a href="../integrations/conjur/index.html" class="md-nav__link">
         
   
   
@@ -3432,7 +3548,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="conjur/conjur-eso.html" class="md-nav__link">
+      <a href="../integrations/conjur/conjur-eso.html" class="md-nav__link">
         
   
   
@@ -3460,7 +3576,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="conjur/conjur-sidecar.html" class="md-nav__link">
+      <a href="../integrations/conjur/conjur-sidecar.html" class="md-nav__link">
         
   
   
@@ -3488,7 +3604,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="conjur/conjur-csi.html" class="md-nav__link">
+      <a href="../integrations/conjur/conjur-csi.html" class="md-nav__link">
         
   
   
@@ -3571,7 +3687,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="vault/index.html" class="md-nav__link">
+      <a href="../integrations/vault/index.html" class="md-nav__link">
         
   
   
@@ -3599,7 +3715,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="vault/vault-eso.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-eso.html" class="md-nav__link">
         
   
   
@@ -3627,7 +3743,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="vault/vault-vso.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-vso.html" class="md-nav__link">
         
   
   
@@ -3655,7 +3771,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="vault/vault-csi.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-csi.html" class="md-nav__link">
         
   
   
@@ -3683,7 +3799,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="vault/vault-csi-file.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-csi-file.html" class="md-nav__link">
         
   
   
@@ -3766,7 +3882,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="openbao/index.html" class="md-nav__link">
+      <a href="../integrations/openbao/index.html" class="md-nav__link">
         
   
   
@@ -3794,7 +3910,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="openbao/openbao-eso.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-eso.html" class="md-nav__link">
         
   
   
@@ -3822,7 +3938,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="openbao/openbao-bso.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-bso.html" class="md-nav__link">
         
   
   
@@ -3850,7 +3966,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="openbao/openbao-csi.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-csi.html" class="md-nav__link">
         
   
   
@@ -3878,7 +3994,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="openbao/openbao-csi-file.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-csi-file.html" class="md-nav__link">
         
   
   
@@ -3961,7 +4077,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="aws/index.html" class="md-nav__link">
+      <a href="../integrations/aws/index.html" class="md-nav__link">
         
   
   
@@ -3989,7 +4105,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="aws/aws-eso.html" class="md-nav__link">
+      <a href="../integrations/aws/aws-eso.html" class="md-nav__link">
         
   
   
@@ -4017,7 +4133,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="aws/aws-csi.html" class="md-nav__link">
+      <a href="../integrations/aws/aws-csi.html" class="md-nav__link">
         
   
   
@@ -4100,7 +4216,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="gcp/index.html" class="md-nav__link">
+      <a href="../integrations/gcp/index.html" class="md-nav__link">
         
   
   
@@ -4128,7 +4244,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="gcp/gcp-eso.html" class="md-nav__link">
+      <a href="../integrations/gcp/gcp-eso.html" class="md-nav__link">
         
   
   
@@ -4211,7 +4327,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="azure/index.html" class="md-nav__link">
+      <a href="../integrations/azure/index.html" class="md-nav__link">
         
   
   
@@ -4239,7 +4355,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="azure/azure-eso.html" class="md-nav__link">
+      <a href="../integrations/azure/azure-eso.html" class="md-nav__link">
         
   
   
@@ -4267,7 +4383,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="azure/azure-csi.html" class="md-nav__link">
+      <a href="../integrations/azure/azure-csi.html" class="md-nav__link">
         
   
   
@@ -4350,7 +4466,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="infisical/index.html" class="md-nav__link">
+      <a href="../integrations/infisical/index.html" class="md-nav__link">
         
   
   
@@ -4378,7 +4494,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="infisical/infisical-operator.html" class="md-nav__link">
+      <a href="../integrations/infisical/infisical-operator.html" class="md-nav__link">
         
   
   
@@ -4662,10 +4778,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#how-integrations-work-with-reloader" class="md-nav__link">
+  <a href="#default-behavior" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How integrations work with Reloader
+        Default behavior
       
     </span>
   </a>
@@ -4673,10 +4789,126 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#integrations" class="md-nav__link">
+  <a href="#option-1-restrict-to-the-deployment-namespace" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Integrations
+        Option 1 — Restrict to the deployment namespace
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-2-watch-namespaces-matching-a-label-selector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 2 — Watch namespaces matching a label selector
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-3-exclude-specific-namespaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 3 — Exclude specific namespaces
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-4-filter-by-resource-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 4 — Filter by resource labels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interaction-between-selectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interaction between selectors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rbac-implications-per-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RBAC implications per mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-reloader-per-team-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One Reloader per team namespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-reloader-watching-production-namespaces-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One Reloader watching production namespaces only
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-wide-with-system-namespaces-excluded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cluster-wide with system namespaces excluded
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifying-scope-in-a-running-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verifying scope in a running cluster
       
     </span>
   </a>
@@ -4703,76 +4935,169 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="integrations-overview">Integrations Overview<a class="headerlink" href="#integrations-overview" title="Permanent link">#</a></h1>
-<p>Reloader integrates with a wide range of Kubernetes-native tools for secrets management, certificate automation, and configuration delivery.</p>
-<p>This section provides an overview of:</p>
-<ul>
-<li>How integrations work with Reloader</li>
-<li>The different <strong>support and validation levels</strong></li>
-<li>Which integrations are <strong>validated and supported in Reloader Enterprise</strong></li>
-<li>What community users can expect</li>
-</ul>
-<p>Each integration has its own dedicated section with architecture notes, step-by-step examples, and operational considerations.</p>
-<p>All integrations work with both <strong>Reloader OSS</strong> and <strong>Reloader Enterprise</strong>. Enterprise customers receive commercial support and SLA coverage.</p>
+<h1 id="scope-reloader-to-specific-namespaces">Scope Reloader to Specific Namespaces<a class="headerlink" href="#scope-reloader-to-specific-namespaces" title="Permanent link">#</a></h1>
+<p>By default Reloader watches every namespace in the cluster. This guide shows how to restrict that scope — to a single namespace, to namespaces matching a label selector, or by excluding specific namespaces — and explains the RBAC implications of each mode.</p>
 <hr>
-<h2 id="how-integrations-work-with-reloader">How integrations work with Reloader<a class="headerlink" href="#how-integrations-work-with-reloader" title="Permanent link">#</a></h2>
-<p>Reloader itself is <strong>tool-agnostic</strong>.</p>
-<p>It watches Kubernetes resources such as:</p>
-<ul>
-<li><code>Secrets</code></li>
-<li><code>ConfigMaps</code></li>
-</ul>
-<p>When these change, Reloader can trigger safe rollouts of supported workloads (e.g. Deployments, StatefulSets, Rollouts), regardless of <strong>how</strong> those resources were created or updated.</p>
-<p>Integrations typically follow this flow:</p>
-<div class="highlight"><pre><span></span><code>External<span class="w"> </span>system
-↓
-Kubernetes<span class="w"> </span>Secret<span class="w"> </span>/<span class="w"> </span>ConfigMap
-↓
-Reloader<span class="w"> </span>detects<span class="w"> </span>change
-↓
-Controlled<span class="w"> </span>workload<span class="w"> </span>rollout
+<h2 id="default-behavior">Default behavior<a class="headerlink" href="#default-behavior" title="Permanent link">#</a></h2>
+<p>Out of the box, Reloader runs with <code>watchGlobally: true</code>. It uses the Kubernetes watch API to observe <code>ConfigMaps</code> and <code>Secrets</code> across all namespaces, and patches workloads wherever it finds matching annotations.</p>
+<p>This is appropriate for platform-wide deployments where a single Reloader instance serves the whole cluster.</p>
+<hr>
+<h2 id="option-1-restrict-to-the-deployment-namespace">Option 1 — Restrict to the deployment namespace<a class="headerlink" href="#option-1-restrict-to-the-deployment-namespace" title="Permanent link">#</a></h2>
+<p>Set <code>watchGlobally: false</code> to limit Reloader to the single namespace it is deployed in.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">watchGlobally</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 </code></pre></div>
-<p>Because the integration point is Kubernetes-native, many tools <em>can</em> work with Reloader. The difference lies in <strong>validation, guarantees, and support</strong>.</p>
+<p>What changes:</p>
+<ul>
+<li>Reloader sets the <code>KUBERNETES_NAMESPACE</code> environment variable to its own pod namespace.</li>
+<li>It only watches resources and workloads in that namespace.</li>
+<li>The chart creates a <strong><code>Role</code></strong> and <strong><code>RoleBinding</code></strong> instead of a <code>ClusterRole</code> and <code>ClusterRoleBinding</code>.</li>
+</ul>
+<p>This is the most restrictive option and the right choice when you want one Reloader instance per team namespace, or when cluster-wide RBAC is not permitted.</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>my-team<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--create-namespace<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.watchGlobally<span class="o">=</span><span class="nb">false</span>
+</code></pre></div>
 <hr>
-<h2 id="integrations">Integrations<a class="headerlink" href="#integrations" title="Permanent link">#</a></h2>
+<h2 id="option-2-watch-namespaces-matching-a-label-selector">Option 2 — Watch namespaces matching a label selector<a class="headerlink" href="#option-2-watch-namespaces-matching-a-label-selector" title="Permanent link">#</a></h2>
+<p>To watch a subset of namespaces rather than all of them, use <code>namespaceSelector</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">namespaceSelector</span><span class="p">:</span><span class="w"> </span><span class="s">"environment=production"</span>
+</code></pre></div>
+<p>Reloader passes this value to the <code>--namespace-selector</code> flag at startup and evaluates it against namespace labels.</p>
+<p>Multiple label requirements can be combined using comma-separated expressions (AND logic):</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">namespaceSelector</span><span class="p">:</span><span class="w"> </span><span class="s">"environment=production,team=platform"</span>
+</code></pre></div>
+<p>This configuration still uses <code>watchGlobally: true</code> under the hood, so the chart creates a <strong><code>ClusterRole</code></strong>. The ClusterRole also gains a <code>namespaces: get, list, watch</code> rule so Reloader can read namespace labels to evaluate the selector.</p>
+<p>Label the namespaces you want Reloader to watch:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>label<span class="w"> </span>namespace<span class="w"> </span>production<span class="w"> </span><span class="nv">environment</span><span class="o">=</span>production
+kubectl<span class="w"> </span>label<span class="w"> </span>namespace<span class="w"> </span>staging<span class="w"> </span><span class="nv">environment</span><span class="o">=</span>staging
+</code></pre></div>
+<p>With <code>namespaceSelector: "environment=production"</code>, only <code>production</code> is watched; <code>staging</code> is ignored.</p>
+<hr>
+<h2 id="option-3-exclude-specific-namespaces">Option 3 — Exclude specific namespaces<a class="headerlink" href="#option-3-exclude-specific-namespaces" title="Permanent link">#</a></h2>
+<p>To watch all namespaces except a named list, use <code>ignoreNamespaces</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ignoreNamespaces</span><span class="p">:</span><span class="w"> </span><span class="s">"kube-system,kube-public,cert-manager"</span>
+</code></pre></div>
+<p>This is a comma-separated list of exact namespace names. Reloader passes it to the <code>--namespaces-to-ignore</code> flag.</p>
+<p><code>ignoreNamespaces</code> and <code>namespaceSelector</code> can be combined. When both are set:</p>
+<ul>
+<li><code>namespaceSelector</code> restricts Reloader to namespaces matching the label selector.</li>
+<li><code>ignoreNamespaces</code> then excludes specific names from that already-filtered set.</li>
+</ul>
+<hr>
+<h2 id="option-4-filter-by-resource-labels">Option 4 — Filter by resource labels<a class="headerlink" href="#option-4-filter-by-resource-labels" title="Permanent link">#</a></h2>
+<p><code>resourceLabelSelector</code> restricts which <code>ConfigMaps</code> and <code>Secrets</code> Reloader watches, regardless of namespace scope. Only resources whose labels match the selector can trigger a reload.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">resourceLabelSelector</span><span class="p">:</span><span class="w"> </span><span class="s">"reloader-managed=true"</span>
+</code></pre></div>
+<p>This is orthogonal to namespace filtering — it filters resources, not namespaces.</p>
+<p>Use it to limit Reloader's blast radius in clusters where many ConfigMaps and Secrets exist but only a subset should ever trigger a restart.</p>
+<p>Label the resources you want Reloader to watch:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">reloader-managed</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+</code></pre></div>
+<hr>
+<h2 id="interaction-between-selectors">Interaction between selectors<a class="headerlink" href="#interaction-between-selectors" title="Permanent link">#</a></h2>
+<p>The selectors narrow scope independently:</p>
 <table>
 <thead>
 <tr>
-<th>Integration</th>
-<th>Guides</th>
+<th>Setting</th>
+<th>What it filters</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="vault/index.html">HashiCorp Vault</a></td>
-<td><a href="vault/vault-eso.html">ESO</a>, <a href="vault/vault-vso.html">VSO</a>, <a href="vault/vault-csi.html">CSI Driver</a>, <a href="vault/vault-csi-file.html">CSI Driver (File-Based)</a></td>
+<td><code>watchGlobally: false</code></td>
+<td>Only the deployment namespace; uses Role instead of ClusterRole</td>
 </tr>
 <tr>
-<td><a href="openbao/index.html">OpenBao</a></td>
-<td><a href="openbao/openbao-eso.html">ESO</a>, <a href="openbao/openbao-bso.html">BSO</a>, <a href="openbao/openbao-csi.html">CSI Driver</a>, <a href="openbao/openbao-csi-file.html">CSI Driver (File-Based)</a></td>
+<td><code>namespaceSelector</code></td>
+<td>Namespaces whose labels match the selector</td>
 </tr>
 <tr>
-<td><a href="conjur/index.html">Conjur</a></td>
-<td><a href="conjur/conjur-eso.html">ESO</a>, <a href="conjur/conjur-sidecar.html">Sidecar</a>, <a href="conjur/conjur-csi.html">CSI Driver</a></td>
+<td><code>ignoreNamespaces</code></td>
+<td>Named namespaces excluded from watching</td>
 </tr>
 <tr>
-<td><a href="aws/index.html">AWS Secrets Manager</a></td>
-<td><a href="aws/aws-eso.html">ESO</a>, <a href="aws/aws-csi.html">CSI Driver</a></td>
-</tr>
-<tr>
-<td><a href="gcp/index.html">GCP Secret Manager</a></td>
-<td><a href="gcp/gcp-eso.html">ESO</a></td>
-</tr>
-<tr>
-<td><a href="azure/index.html">Azure Key Vault</a></td>
-<td><a href="azure/azure-eso.html">ESO</a>, <a href="azure/azure-csi.html">CSI Driver</a></td>
-</tr>
-<tr>
-<td><a href="infisical/index.html">Infisical</a></td>
-<td><a href="infisical/infisical-operator.html">Infisical Operator</a></td>
+<td><code>resourceLabelSelector</code></td>
+<td>ConfigMaps/Secrets whose labels match the selector</td>
 </tr>
 </tbody>
 </table>
+<p>A resource triggers a reload only if it passes <strong>all</strong> active filters. For example, if <code>namespaceSelector: "team=platform"</code> is set and a namespace does not have that label, no ConfigMap or Secret in that namespace will ever trigger a reload, regardless of workload annotations.</p>
+<hr>
+<h2 id="rbac-implications-per-mode">RBAC implications per mode<a class="headerlink" href="#rbac-implications-per-mode" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Role type</th>
+<th><code>namespaces</code> rule added</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>watchGlobally: true</code> (default)</td>
+<td><code>ClusterRole</code> + <code>ClusterRoleBinding</code></td>
+<td>Only when <code>namespaceSelector</code> is set</td>
+</tr>
+<tr>
+<td><code>watchGlobally: false</code></td>
+<td><code>Role</code> + <code>RoleBinding</code></td>
+<td>Never</td>
+</tr>
+</tbody>
+</table>
+<p>See the <a href="../reference/rbac.html">RBAC reference</a> for the full list of rules in each mode.</p>
+<hr>
+<h2 id="practical-patterns">Practical patterns<a class="headerlink" href="#practical-patterns" title="Permanent link">#</a></h2>
+<h3 id="one-reloader-per-team-namespace">One Reloader per team namespace<a class="headerlink" href="#one-reloader-per-team-namespace" title="Permanent link">#</a></h3>
+<p>Each team installs their own Reloader instance scoped to their namespace:</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>team-alpha<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.watchGlobally<span class="o">=</span><span class="nb">false</span>
+
+helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>team-beta<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.watchGlobally<span class="o">=</span><span class="nb">false</span>
+</code></pre></div>
+<p>Each instance only needs a <code>Role</code> in its own namespace, which is useful when cluster-admin cannot grant <code>ClusterRole</code> permissions.</p>
+<h3 id="one-reloader-watching-production-namespaces-only">One Reloader watching production namespaces only<a class="headerlink" href="#one-reloader-watching-production-namespaces-only" title="Permanent link">#</a></h3>
+<p>A single Reloader instance watches only namespaces labelled for production:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>label<span class="w"> </span>namespace<span class="w"> </span>prod-app-1<span class="w"> </span><span class="nv">environment</span><span class="o">=</span>production
+kubectl<span class="w"> </span>label<span class="w"> </span>namespace<span class="w"> </span>prod-app-2<span class="w"> </span><span class="nv">environment</span><span class="o">=</span>production
+
+helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--create-namespace<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.namespaceSelector<span class="o">=</span><span class="s2">"environment=production"</span>
+</code></pre></div>
+<h3 id="cluster-wide-with-system-namespaces-excluded">Cluster-wide with system namespaces excluded<a class="headerlink" href="#cluster-wide-with-system-namespaces-excluded" title="Permanent link">#</a></h3>
+<p>Watch everything except namespaces that should never trigger reloads:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ignoreNamespaces</span><span class="p">:</span><span class="w"> </span><span class="s">"kube-system,kube-public,kube-node-lease,cert-manager,reloader"</span>
+</code></pre></div>
+<hr>
+<h2 id="verifying-scope-in-a-running-cluster">Verifying scope in a running cluster<a class="headerlink" href="#verifying-scope-in-a-running-cluster" title="Permanent link">#</a></h2>
+<p>Check which namespace selector and ignore list are active:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>deployment<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>reloader-reloader<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.spec.template.spec.containers[0].args}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="s1">','</span><span class="w"> </span><span class="s1">'\n'</span>
+</code></pre></div>
+<p>Check whether a specific namespace is being watched:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"namespace"</span>
+</code></pre></div>
+<p>Confirm the RBAC mode:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Returns output in global mode</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>clusterrole<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader-reloader
+
+<span class="c1"># Returns output in namespace-scoped mode</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>role<span class="w"> </span>-n<span class="w"> </span>&lt;deployment-namespace&gt;<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader-reloader
+</code></pre></div>
 
 
 
