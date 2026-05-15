@@ -213,6 +213,6 @@ To get Reloader Enterprise, open a ticket at the [Stakater support portal](https
 
 **Frequently asked questions:**
 
-- [Does Reloader cause downtime?](faq.md#does-reloader-cause-downtime)
-- [Does it work with StatefulSets?](faq.md#does-reloader-work-with-statefulsets)
-- [What happens if Reloader is down?](faq.md#what-happens-if-reloader-is-down-when-a-configmap-or-secret-changes)
+- [Does Reloader cause downtime?](about/faq.md#does-reloader-cause-downtime)
+- [Does it work with StatefulSets?](about/faq.md#does-reloader-work-with-statefulsets)
+- [What happens if Reloader is down?](about/faq.md#what-happens-if-reloader-is-down-when-a-configmap-or-secret-changes)

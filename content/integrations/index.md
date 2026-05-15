@@ -49,6 +49,7 @@ Because the integration point is Kubernetes-native, many tools *can* work with R
 | [HashiCorp Vault](./vault/index.md) | [ESO](./vault/vault-eso.md), [VSO](./vault/vault-vso.md), [CSI Driver](./vault/vault-csi.md), [CSI Driver (File-Based)](./vault/vault-csi-file.md) |
 | [OpenBao](./openbao/index.md) | [ESO](./openbao/openbao-eso.md), [BSO](./openbao/openbao-bso.md), [CSI Driver](./openbao/openbao-csi.md), [CSI Driver (File-Based)](./openbao/openbao-csi-file.md) |
 | [Conjur](./conjur/index.md) | [ESO](./conjur/conjur-eso.md), [Sidecar](./conjur/conjur-sidecar.md), [CSI Driver](./conjur/conjur-csi.md) |
-| [AWS Secrets Manager](./aws/index.md) | [ESO](./aws/aws-eso.md) |
+| [AWS Secrets Manager](./aws/index.md) | [ESO](./aws/aws-eso.md), [CSI Driver](./aws/aws-csi.md) |
 | [GCP Secret Manager](./gcp/index.md) | [ESO](./gcp/gcp-eso.md) |
-| [Azure Key Vault](./azure/index.md) | [ESO](./azure/azure-eso.md) |
+| [Azure Key Vault](./azure/index.md) | [ESO](./azure/azure-eso.md), [CSI Driver](./azure/azure-csi.md) |
+| [Infisical](./infisical/index.md) | [Infisical Operator](./infisical/infisical-operator.md) |

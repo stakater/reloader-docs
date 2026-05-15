@@ -11,11 +11,12 @@ theme:
   logo_dark: assets/images/logo.svg
   favicon: assets/images/favicon.png
 nav:
-  - Overview: 
+  - Overview:
       - index.md
       - about/why-reloader-matters.md
       - about/value-by-role.md
       - OSS vs Enterprise: about/editions.md
+      - FAQ: about/faq.md
   - Architecture:
       - architecture/how-it-works.md
   - Concepts:
@@ -32,6 +33,7 @@ nav:
           - concepts/comparisons/reloader-vs-secret-operators.md
           - concepts/comparisons/reloader-vs-cert-manager.md
           - concepts/comparisons/reloader-vs-app-level-reload.md
+          - concepts/comparisons/reloader-vs-infisical-reload.md
   - Install & Upgrade:
       - Reloader OSS: installation/install-oss.md
       - Reloader Enterprise: installation/install.md
@@ -76,11 +78,13 @@ nav:
           - Overview: integrations/azure/index.md
           - External Secrets Operator: integrations/azure/azure-eso.md
           - CSI Driver: integrations/azure/azure-csi.md
+      - Infisical:
+          - Overview: integrations/infisical/index.md
+          - Infisical Operator: integrations/infisical/infisical-operator.md
   - Reference:
       - Annotations: reference/annotations.md
       - Helm Values & CLI Flags: reference/helm-values.md
       - RBAC & Security: reference/rbac.md
-  - faq.md
   - eula.md
   - 'Support': help.md
   - 'Versions': versions.md
