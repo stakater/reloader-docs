@@ -35,9 +35,9 @@ Yes. Because Reloader delegates restarts to Kubernetes rolling updates, PodDisru
 
 ### What happens if Reloader is down when a ConfigMap or Secret changes?
 
-The change will not trigger a reload while Reloader is unavailable. When Reloader comes back up, it does not automatically replay missed changes. If your cluster uses `syncAfterRestart: true` and `reloadOnCreate: true`, a newly elected leader will re-sync tracked workloads — see the [installation guide](installation/install-oss.md) for the HA configuration.
+The change will not trigger a reload while Reloader is unavailable. When Reloader comes back up, it does not automatically replay missed changes. If your cluster uses `syncAfterRestart: true` and `reloadOnCreate: true`, a newly elected leader will re-sync tracked workloads — see the [installation guide](../installation/install-oss.md) for the HA configuration.
 
-For production environments, running Reloader with [HA mode](installation/install-oss.md#enable-high-availability) (multiple replicas with leader election) reduces the risk of availability gaps.
+For production environments, running Reloader with [HA mode](../installation/install-oss.md#enable-high-availability) (multiple replicas with leader election) reduces the risk of availability gaps.
 
 ---
 
@@ -139,7 +139,7 @@ Yes. Set `reloader.ignoreNamespaces` to a comma-separated list of namespace name
 
 ### What Kubernetes versions does Reloader support?
 
-Reloader OSS requires Kubernetes 1.19 or later. The Reloader Enterprise compatibility matrix is published in the [Versions](versions.md) section and specifies the tested Kubernetes version range for each release.
+Reloader OSS requires Kubernetes 1.19 or later. The Reloader Enterprise compatibility matrix is published in the [Versions](../versions.md) section and specifies the tested Kubernetes version range for each release.
 
 ### Does Reloader work with Helm-managed workloads?
 
@@ -154,7 +154,7 @@ reloader:
   reloadStrategy: annotations
 ```
 
-See the [Argo CD guide](how-to-guides/use-reloader-with-argocd.md) and the [Flux guide](how-to-guides/use-reloader-with-flux.md) for details.
+See the [Argo CD guide](../how-to-guides/use-reloader-with-argocd.md) and the [Flux guide](../how-to-guides/use-reloader-with-flux.md) for details.
 
 ### Does Reloader work with External Secrets Operator?
 
@@ -183,7 +183,7 @@ Yes. Sealed Secrets decrypts the `SealedSecret` into a standard Kubernetes `Secr
 
 ### Does Reloader work on OpenShift?
 
-Yes. Reloader supports OpenShift and auto-detects the cluster type at startup to enable `DeploymentConfig` support. The [Reloader Enterprise](about/editions.md) UBI image variant is recommended for OpenShift environments with Red Hat certification requirements.
+Yes. Reloader supports OpenShift and auto-detects the cluster type at startup to enable `DeploymentConfig` support. The [Reloader Enterprise](editions.md) UBI image variant is recommended for OpenShift environments with Red Hat certification requirements.
 
 ---
 
@@ -197,7 +197,7 @@ Three ways:
 1. **Prometheus metrics** — query `reloader_reload_executed_total` on the metrics endpoint at port `9090`
 1. **Webhook alerts** — configure `ALERT_ON_RELOAD: "true"` to receive a notification to Slack, Teams, Google Chat, or a custom webhook
 
-See [Monitoring Reloader](how-to-guides/monitor-reloader.md) and [Alert When Reloader Triggers a Restart](how-to-guides/alerting-on-reload.md) for details.
+See [Monitoring Reloader](../how-to-guides/monitor-reloader.md) and [Alert When Reloader Triggers a Restart](../how-to-guides/alerting-on-reload.md) for details.
 
 ### What is the performance impact of running Reloader?
 
@@ -206,7 +206,7 @@ Reloader is a lightweight controller. It maintains a watch connection to the Kub
 - **CPU**: ~10–20m during normal operation; brief spikes during reload events
 - **Memory**: ~64–128 MB depending on cluster size and number of watched resources
 
-Set explicit resource requests and limits using the Helm values. See the [installation guide](installation/install-oss.md#resource-requests-and-limits) for recommended values.
+Set explicit resource requests and limits using the Helm values. See the [installation guide](../installation/install-oss.md#resource-requests-and-limits) for recommended values.
 
 ### Can I run multiple instances of Reloader?
 
@@ -237,8 +237,8 @@ Both share the same core reload functionality. Enterprise adds:
 - **Commercial support and SLA** — a support path for production incidents
 - **Production onboarding** — guided setup and compatibility guarantees across upgrades
 
-See the full [edition comparison](about/editions.md) for details.
+See the full [edition comparison](editions.md) for details.
 
 ### How do I get Reloader Enterprise?
 
-Contact Stakater via the [Stakater support portal](https://support.stakater.com/) or speak to your Stakater account team. Once access is granted, installation uses the standard OSS Helm chart with the Enterprise image override — see the [Enterprise installation guide](installation/install.md).
+Contact Stakater via the [Stakater support portal](https://support.stakater.com/) or speak to your Stakater account team. Once access is granted, installation uses the standard OSS Helm chart with the Enterprise image override — see the [Enterprise installation guide](../installation/install.md).
