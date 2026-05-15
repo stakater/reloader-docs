@@ -7,6 +7,7 @@ This guide shows how to automatically restart Kubernetes workloads when Azure Ke
 | Pattern | How Secrets Arrive | Rotation | Reloader Compatibility | Guide |
 |---------|-------------------|----------|------------------------|-------|
 | **External Secrets Operator** | ESO syncs to K8s Secret | ESO refresh interval | Best fit | [ESO Guide](azure-eso.md) |
+| **CSI Driver (Azure KV Provider)** | Azure provider syncs to K8s Secret via `secretObjects` | CSI rotation poll interval | Best fit | [CSI Guide](azure-csi.md) |
 
 ## How It Works
 
@@ -66,3 +67,4 @@ metadata:
 ## Pattern-Specific Guides
 
 - [External Secrets Operator Pattern](azure-eso.md) — Workload Identity (recommended) or Client Secret
+- [CSI Driver Pattern](azure-csi.md) — Azure Key Vault Provider with Workload Identity; mounts secrets as files and syncs to a Kubernetes Secret
