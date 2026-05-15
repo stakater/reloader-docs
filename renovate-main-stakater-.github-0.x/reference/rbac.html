@@ -5,13 +5,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-stakater-.github-0.x/how-to-guides/use-reloader-with-flux.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-stakater-.github-0.x/reference/rbac.html">
       
       
-        <link rel="prev" href="use-reloader-with-argocd.html">
+        <link rel="prev" href="helm-values.html">
       
       
-        <link rel="next" href="../integrations/index.html">
+        <link rel="next" href="../eula.html">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>Use Reloader with Flux - Reloader</title>
+        <title>RBAC &amp; Security - Reloader</title>
       
     
     
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#use-reloader-with-flux" class="md-skip">
+        <a href="#rbac-and-security-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -2872,20 +2872,18 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -2906,7 +2904,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2924,7 +2922,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="restart-pods-when-configmap-changes.html" class="md-nav__link">
+      <a href="../how-to-guides/restart-pods-when-configmap-changes.html" class="md-nav__link">
         
   
   
@@ -2952,7 +2950,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="restart-pods-when-secret-changes.html" class="md-nav__link">
+      <a href="../how-to-guides/restart-pods-when-secret-changes.html" class="md-nav__link">
         
   
   
@@ -2980,7 +2978,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
+      <a href="../how-to-guides/reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
         
   
   
@@ -3008,7 +3006,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="restart-pods-when-external-secrets-change.html" class="md-nav__link">
+      <a href="../how-to-guides/restart-pods-when-external-secrets-change.html" class="md-nav__link">
         
   
   
@@ -3036,7 +3034,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="namespace-scoping.html" class="md-nav__link">
+      <a href="../how-to-guides/namespace-scoping.html" class="md-nav__link">
         
   
   
@@ -3064,7 +3062,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="monitor-reloader.html" class="md-nav__link">
+      <a href="../how-to-guides/monitor-reloader.html" class="md-nav__link">
         
   
   
@@ -3092,7 +3090,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="alerting-on-reload.html" class="md-nav__link">
+      <a href="../how-to-guides/alerting-on-reload.html" class="md-nav__link">
         
   
   
@@ -3120,7 +3118,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="verify-and-troubleshoot.html" class="md-nav__link">
+      <a href="../how-to-guides/verify-and-troubleshoot.html" class="md-nav__link">
         
   
   
@@ -3148,7 +3146,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="use-reloader-with-argocd.html" class="md-nav__link">
+      <a href="../how-to-guides/use-reloader-with-argocd.html" class="md-nav__link">
         
   
   
@@ -3173,37 +3171,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Use Reloader with Flux
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="use-reloader-with-flux.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../how-to-guides/use-reloader-with-flux.html" class="md-nav__link">
         
   
   
@@ -3219,166 +3190,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#the-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-solution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Solution
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-switch-reloader-to-the-annotations-strategy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1 — Switch Reloader to the annotations strategy
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-annotate-your-workload" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2 — Annotate your workload
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-verify-it-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3 — Verify it works
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3 — Verify it works">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#trigger-a-reload" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Trigger a reload
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-flux-is-not-reverting-the-annotation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check Flux is not reverting the annotation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-reloaders-logs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check Reloader's logs
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-pod-age" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check pod age
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#if-you-cannot-use-flux-v2-ssa" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        If you cannot use Flux v2 SSA
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-ssa-field-ownership-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How SSA field ownership works
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4534,18 +4345,20 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked="">
         
           
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
@@ -4566,7 +4379,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -4584,7 +4397,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../reference/annotations.html" class="md-nav__link">
+      <a href="annotations.html" class="md-nav__link">
         
   
   
@@ -4612,7 +4425,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../reference/helm-values.html" class="md-nav__link">
+      <a href="helm-values.html" class="md-nav__link">
         
   
   
@@ -4637,10 +4450,37 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../reference/rbac.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RBAC &amp; Security
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="rbac.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -4656,6 +4496,221 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#how-rbac-is-provisioned" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How RBAC is provisioned
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clusterrole-rules-default-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ClusterRole rules (default mode)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ClusterRole rules (default mode)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-resources-read" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core resources (read)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#namespaces-read-only-when-namespaceselector-is-set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Namespaces (read) — only when namespaceSelector is set
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workloads-patch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Workloads (patch)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cronjobs-and-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CronJobs and Jobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leader-election-only-when-enableha-true" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leader election — only when enableHA: true
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#argo-rollouts-only-when-isargorollouts-true" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Argo Rollouts — only when isArgoRollouts: true
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openshift-deploymentconfigs-only-when-isopenshift-true" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenShift DeploymentConfigs — only when isOpenshift: true
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#role-rules-namespace-scoped-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role rules (namespace-scoped mode)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disabling-rbac-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disabling RBAC creation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceaccount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ServiceAccount
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pod-security-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pod security context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#container-security-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Container security context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network policy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifying-rbac-in-a-running-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verifying RBAC in a running cluster
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4778,10 +4833,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#the-problem" class="md-nav__link">
+  <a href="#how-rbac-is-provisioned" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Problem
+        How RBAC is provisioned
       
     </span>
   </a>
@@ -4789,55 +4844,22 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-solution" class="md-nav__link">
+  <a href="#clusterrole-rules-default-mode" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Solution
+        ClusterRole rules (default mode)
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-switch-reloader-to-the-annotations-strategy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1 — Switch Reloader to the annotations strategy
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-annotate-your-workload" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2 — Annotate your workload
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-verify-it-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3 — Verify it works
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3 — Verify it works">
+    <nav class="md-nav" aria-label="ClusterRole rules (default mode)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#trigger-a-reload" class="md-nav__link">
+  <a href="#core-resources-read" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Trigger a reload
+        Core resources (read)
       
     </span>
   </a>
@@ -4845,10 +4867,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#check-flux-is-not-reverting-the-annotation" class="md-nav__link">
+  <a href="#namespaces-read-only-when-namespaceselector-is-set" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Check Flux is not reverting the annotation
+        Namespaces (read) — only when namespaceSelector is set
       
     </span>
   </a>
@@ -4856,10 +4878,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#check-reloaders-logs" class="md-nav__link">
+  <a href="#workloads-patch" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Check Reloader's logs
+        Workloads (patch)
       
     </span>
   </a>
@@ -4867,10 +4889,54 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#check-pod-age" class="md-nav__link">
+  <a href="#cronjobs-and-jobs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Check pod age
+        CronJobs and Jobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leader-election-only-when-enableha-true" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Leader election — only when enableHA: true
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#argo-rollouts-only-when-isargorollouts-true" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Argo Rollouts — only when isArgoRollouts: true
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openshift-deploymentconfigs-only-when-isopenshift-true" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OpenShift DeploymentConfigs — only when isOpenshift: true
       
     </span>
   </a>
@@ -4883,10 +4949,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#if-you-cannot-use-flux-v2-ssa" class="md-nav__link">
+  <a href="#role-rules-namespace-scoped-mode" class="md-nav__link">
     <span class="md-ellipsis">
       
-        If you cannot use Flux v2 SSA
+        Role rules (namespace-scoped mode)
       
     </span>
   </a>
@@ -4894,10 +4960,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-ssa-field-ownership-works" class="md-nav__link">
+  <a href="#disabling-rbac-creation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How SSA field ownership works
+        Disabling RBAC creation
       
     </span>
   </a>
@@ -4905,10 +4971,54 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#serviceaccount" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Summary
+        ServiceAccount
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pod-security-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pod security context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#container-security-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Container security context
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network policy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifying-rbac-in-a-running-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verifying RBAC in a running cluster
       
     </span>
   </a>
@@ -4935,157 +5045,216 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="use-reloader-with-flux">Use Reloader with Flux<a class="headerlink" href="#use-reloader-with-flux" title="Permanent link">#</a></h1>
-<p>Reloader and Flux can conflict when Reloader patches a workload and Flux's reconciliation loop reverts the change. This guide explains why this happens and how to configure both tools to work together reliably.</p>
+<h1 id="rbac-and-security-reference">RBAC and Security Reference<a class="headerlink" href="#rbac-and-security-reference" title="Permanent link">#</a></h1>
+<p>This page documents the exact Kubernetes permissions Reloader requires, the pod security context it runs with, and the options available for hardening the deployment.</p>
+<p>All information on this page is derived from the <a href="https://github.com/stakater/Reloader/tree/master/deployments/kubernetes">Reloader Helm chart</a>.</p>
 <hr>
-<h2 id="the-problem">The Problem<a class="headerlink" href="#the-problem" title="Permanent link">#</a></h2>
-<p>Reloader's default reload strategy (<code>env-vars</code>) injects an environment variable into the pod template when a ConfigMap or Secret changes:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># What Reloader injects into the live Deployment</span>
-<span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">env</span><span class="p">:</span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">STAKATER_DATABASE_SECRET</span>
-<span class="w">              </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">"a3f1c9b2..."</span><span class="w">  </span><span class="c1"># SHA1 hash of the secret data</span>
-</code></pre></div>
-<p>This change is not in Git. When Flux reconciles on its next cycle, it compares the live cluster state against Git and reverts the env var — undoing Reloader's restart trigger:</p>
-<div class="highlight"><pre><span></span><code>Applied revision: main/abc1234
-Deployment/my-app configured  ← Flux just reverted Reloader's patch
-</code></pre></div>
-<p>The pod never picks up the rotated secret because the rolling restart is cancelled before it completes.</p>
-<hr>
-<h2 id="the-solution">The Solution<a class="headerlink" href="#the-solution" title="Permanent link">#</a></h2>
-<p>Switch Reloader to the <strong><code>annotations</code></strong> reload strategy. Flux v2 uses Kubernetes <strong>server-side apply (SSA)</strong>, which tracks field ownership per manager. When Reloader writes the annotation using its own field manager, Flux does not own that field and will not remove it during reconciliation.</p>
-<p>No additional Flux configuration is needed for this to work.</p>
-<hr>
-<h2 id="step-1-switch-reloader-to-the-annotations-strategy">Step 1 — Switch Reloader to the annotations strategy<a class="headerlink" href="#step-1-switch-reloader-to-the-annotations-strategy" title="Permanent link">#</a></h2>
-<p>Update your Reloader Helm values:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">reloadStrategy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">annotations</span>
-</code></pre></div>
-<p>If you manage Reloader with Flux, update the <code>HelmRelease</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">helm.toolkit.fluxcd.io/v2</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HelmRelease</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reloader</span>
-<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reloader</span>
-<span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">chart</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reloader</span>
-<span class="w">      </span><span class="nt">sourceRef</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HelmRepository</span>
-<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stakater</span>
-<span class="w">  </span><span class="nt">values</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">reloader</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">reloadStrategy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">annotations</span>
-</code></pre></div>
-<p>With this strategy, Reloader adds <code>reloader.stakater.com/last-reloaded-from</code> to the pod template metadata instead of injecting an env var:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">reloader.stakater.com/last-reloaded-from</span><span class="p">:</span><span class="w"> </span><span class="s">"database-secret"</span>
-</code></pre></div>
-<p>Because this annotation is not in the Git manifest, Flux does not claim ownership of it via SSA. Reloader owns it, and Flux leaves it alone.</p>
-<hr>
-<h2 id="step-2-annotate-your-workload">Step 2 — Annotate your workload<a class="headerlink" href="#step-2-annotate-your-workload" title="Permanent link">#</a></h2>
-<p>Add the Reloader annotation to the Deployment in Git as normal:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-app</span>
-<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">reloader.stakater.com/auto</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
-<span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
-</code></pre></div>
-<p>Commit and push. Flux syncs it. Reloader watches it.</p>
-<hr>
-<h2 id="step-3-verify-it-works">Step 3 — Verify it works<a class="headerlink" href="#step-3-verify-it-works" title="Permanent link">#</a></h2>
-<h3 id="trigger-a-reload">Trigger a reload<a class="headerlink" href="#trigger-a-reload" title="Permanent link">#</a></h3>
-<p>Update the Secret or ConfigMap that the workload references, then wait for the change to propagate.</p>
-<h3 id="check-flux-is-not-reverting-the-annotation">Check Flux is not reverting the annotation<a class="headerlink" href="#check-flux-is-not-reverting-the-annotation" title="Permanent link">#</a></h3>
-<p>Watch Flux's reconciliation output:</p>
-<div class="highlight"><pre><span></span><code>flux<span class="w"> </span>get<span class="w"> </span>kustomizations<span class="w"> </span>--watch
-</code></pre></div>
-<p>After a Reloader-triggered restart, the Kustomization should remain <code>Ready</code> and <code>Applied</code> with no further changes on the next reconcile.</p>
-<h3 id="check-reloaders-logs">Check Reloader's logs<a class="headerlink" href="#check-reloaders-logs" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader<span class="w"> </span>--tail<span class="o">=</span><span class="m">20</span>
-</code></pre></div>
-<p>You should see:</p>
-<div class="highlight"><pre><span></span><code>Changes detected in 'database-secret' of type 'SECRET' in namespace: production
-Updated 'my-app' of type 'Deployment' in namespace: production
-</code></pre></div>
-<h3 id="check-pod-age">Check pod age<a class="headerlink" href="#check-pod-age" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>production<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>my-app
-</code></pre></div>
-<p>Pods should be recently restarted after a secret rotation, and Flux should not re-apply and revert them.</p>
-<hr>
-<h2 id="if-you-cannot-use-flux-v2-ssa">If you cannot use Flux v2 SSA<a class="headerlink" href="#if-you-cannot-use-flux-v2-ssa" title="Permanent link">#</a></h2>
-<p>If you are on an older Flux setup that uses <strong>client-side apply</strong> instead of SSA, the annotation will still be reverted. In that case, you can tell Flux to ignore specific fields using a Kustomize patch in your <code>Kustomization</code>.</p>
-<p>Add a strategic merge patch that pre-declares the annotation with a placeholder value. Flux will then manage the field and Reloader can update it between reconciliations:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># kustomization.yaml (applied by Flux)</span>
-<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kustomize.config.k8s.io/v1beta1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kustomization</span>
-<span class="nt">resources</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deployment.yaml</span>
-<span class="nt">patches</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">patch</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
-<span class="w">      </span><span class="no">apiVersion: apps/v1</span>
-<span class="w">      </span><span class="no">kind: Deployment</span>
-<span class="w">      </span><span class="no">metadata:</span>
-<span class="w">        </span><span class="no">name: my-app</span>
-<span class="w">      </span><span class="no">spec:</span>
-<span class="w">        </span><span class="no">template:</span>
-<span class="w">          </span><span class="no">metadata:</span>
-<span class="w">            </span><span class="no">annotations:</span>
-<span class="w">              </span><span class="no">reloader.stakater.com/last-reloaded-from: ""</span>
-<span class="w">    </span><span class="nt">target</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
-<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-app</span>
-</code></pre></div>
-<p>This approach has a tradeoff: Flux will reset the annotation to <code>""</code> on every reconciliation, and Reloader will re-set it on the next reload. The pods will still restart correctly because the annotation value changing from <code>""</code> to the secret name counts as a pod template diff.</p>
-<p>For most teams, upgrading to Flux v2 with SSA is the cleaner path.</p>
-<hr>
-<h2 id="how-ssa-field-ownership-works">How SSA field ownership works<a class="headerlink" href="#how-ssa-field-ownership-works" title="Permanent link">#</a></h2>
-<p>For context, Kubernetes server-side apply tracks which manager last wrote each field. When Flux applies a Deployment manifest using SSA:</p>
-<ul>
-<li>Fields declared in the manifest are owned by <code>flux-kustomize-controller</code></li>
-<li>Fields <strong>not</strong> declared in the manifest are not claimed by Flux</li>
-<li>Reloader patches the pod template annotation using a <code>Patch</code> API call, claiming ownership of that field</li>
-</ul>
-<p>On the next Flux reconciliation, Flux re-applies the manifest. Since Flux does not own <code>reloader.stakater.com/last-reloaded-from</code> (it was never in the Git manifest), SSA does not remove it.</p>
-<p>This is why the <code>annotations</code> strategy works with Flux v2 without any additional configuration — and why the <code>env-vars</code> strategy is problematic: environment variable list entries are more likely to conflict with fields Flux does own.</p>
-<hr>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
+<h2 id="how-rbac-is-provisioned">How RBAC is provisioned<a class="headerlink" href="#how-rbac-is-provisioned" title="Permanent link">#</a></h2>
+<p>The Helm chart creates RBAC resources automatically. The type depends on <code>reloader.watchGlobally</code>:</p>
 <table>
 <thead>
 <tr>
-<th>Step</th>
-<th>What to do</th>
+<th><code>watchGlobally</code></th>
+<th>RBAC resources created</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Reloader</td>
-<td>Set <code>reloadStrategy: annotations</code></td>
+<td><code>true</code> (default)</td>
+<td><code>ClusterRole</code> + <code>ClusterRoleBinding</code></td>
 </tr>
 <tr>
-<td>Flux <code>HelmRelease</code></td>
-<td>Set <code>values.reloader.reloadStrategy: annotations</code></td>
-</tr>
-<tr>
-<td>Workload</td>
-<td>Annotate with <code>reloader.stakater.com/auto: "true"</code> as normal</td>
-</tr>
-<tr>
-<td>Flux v1 / no SSA</td>
-<td>Add a Kustomize patch to pre-declare the annotation field</td>
+<td><code>false</code></td>
+<td><code>Role</code> + <code>RoleBinding</code> (scoped to the deployment namespace)</td>
 </tr>
 </tbody>
 </table>
+<p>RBAC creation is controlled by <code>reloader.rbac.enabled</code> (default: <code>true</code>). To bring your own RBAC and skip chart-managed resources, set it to <code>false</code> — but you must then create the Role/ClusterRole manually using the rules below.</p>
+<hr>
+<h2 id="clusterrole-rules-default-mode">ClusterRole rules (default mode)<a class="headerlink" href="#clusterrole-rules-default-mode" title="Permanent link">#</a></h2>
+<p>These are the exact rules the chart creates when <code>watchGlobally: true</code>.</p>
+<h3 id="core-resources-read">Core resources (read)<a class="headerlink" href="#core-resources-read" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">""</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"secrets"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"configmaps"</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"list"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"get"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"watch"</span><span class="p p-Indicator">]</span>
+</code></pre></div>
+<p>Reloader watches Secrets and ConfigMaps for data changes. These are read-only permissions.</p>
+<ul>
+<li>The <code>secrets</code> rule is <strong>omitted</strong> when <code>reloader.ignoreSecrets: true</code>.</li>
+<li>The <code>configmaps</code> rule is <strong>omitted</strong> when <code>reloader.ignoreConfigMaps: true</code>.</li>
+</ul>
+<h3 id="namespaces-read-only-when-namespaceselector-is-set">Namespaces (read) — only when <code>namespaceSelector</code> is set<a class="headerlink" href="#namespaces-read-only-when-namespaceselector-is-set" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">""</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"namespaces"</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"get"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"list"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"watch"</span><span class="p p-Indicator">]</span>
+</code></pre></div>
+<p>Required so Reloader can evaluate namespace labels when filtering with <code>namespaceSelector</code>. Not added to the ClusterRole when <code>namespaceSelector</code> is unset.</p>
+<h3 id="workloads-patch">Workloads (patch)<a class="headerlink" href="#workloads-patch" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"apps"</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"deployments"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"daemonsets"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"statefulsets"</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"list"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"get"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"update"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"patch"</span><span class="p p-Indicator">]</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"extensions"</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"deployments"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"daemonsets"</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"list"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"get"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"update"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"patch"</span><span class="p p-Indicator">]</span>
+</code></pre></div>
+<p>Reloader patches the pod template of matching workloads to trigger a rolling restart. The <code>extensions</code> rules are retained for compatibility with older Kubernetes versions where these resources existed under the <code>extensions</code> API group.</p>
+<h3 id="cronjobs-and-jobs">CronJobs and Jobs<a class="headerlink" href="#cronjobs-and-jobs" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"batch"</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"cronjobs"</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"list"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"get"</span><span class="p p-Indicator">]</span>
+
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"batch"</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"jobs"</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"create"</span><span class="p p-Indicator">]</span>
+</code></pre></div>
+<p><code>list</code>/<code>get</code> on CronJobs allows Reloader to find and evaluate CronJob workloads. <code>create</code> on Jobs is required for the CronJob restart mechanism.</p>
+<h3 id="leader-election-only-when-enableha-true">Leader election — only when <code>enableHA: true</code><a class="headerlink" href="#leader-election-only-when-enableha-true" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"coordination.k8s.io"</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"leases"</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"create"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"get"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"update"</span><span class="p p-Indicator">]</span>
+</code></pre></div>
+<p>Required when running multiple replicas with HA mode. The active leader holds a Lease; standby replicas poll it. Not added to the ClusterRole when <code>enableHA: false</code>.</p>
+<h3 id="events">Events<a class="headerlink" href="#events" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">""</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"events"</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"create"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"patch"</span><span class="p p-Indicator">]</span>
+</code></pre></div>
+<p>Reloader emits Kubernetes Events when it triggers a restart. These appear in <code>kubectl describe</code> output for the workload.</p>
+<h3 id="argo-rollouts-only-when-isargorollouts-true">Argo Rollouts — only when <code>isArgoRollouts: true</code><a class="headerlink" href="#argo-rollouts-only-when-isargorollouts-true" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"argoproj.io"</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"rollouts"</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"list"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"get"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"update"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"patch"</span><span class="p p-Indicator">]</span>
+</code></pre></div>
+<p>Only added when <code>isArgoRollouts: true</code> <strong>and</strong> the Argo Rollouts CRD (<code>argoproj.io/v1alpha1</code>) is detected in the cluster.</p>
+<h3 id="openshift-deploymentconfigs-only-when-isopenshift-true">OpenShift DeploymentConfigs — only when <code>isOpenshift: true</code><a class="headerlink" href="#openshift-deploymentconfigs-only-when-isopenshift-true" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"apps.openshift.io"</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"deploymentconfigs"</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"list"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"get"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"update"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"patch"</span><span class="p p-Indicator">]</span>
+</code></pre></div>
+<p>Only added when <code>isOpenshift: true</code> <strong>and</strong> the OpenShift API (<code>apps.openshift.io/v1</code>) is detected.</p>
+<hr>
+<h2 id="role-rules-namespace-scoped-mode">Role rules (namespace-scoped mode)<a class="headerlink" href="#role-rules-namespace-scoped-mode" title="Permanent link">#</a></h2>
+<p>When <code>watchGlobally: false</code>, the chart creates a <code>Role</code> in the deployment namespace instead of a <code>ClusterRole</code>. The rules are identical to the ClusterRole above, <strong>except</strong>:</p>
+<ul>
+<li>The <code>namespaces</code> rule is <strong>never added</strong> (not applicable to a Role).</li>
+</ul>
+<p>This mode restricts Reloader to watching only the namespace it is deployed in.</p>
+<hr>
+<h2 id="disabling-rbac-creation">Disabling RBAC creation<a class="headerlink" href="#disabling-rbac-creation" title="Permanent link">#</a></h2>
+<p>If your organisation manages RBAC outside of Helm (for example via OPA/Gatekeeper, a centralised RBAC controller, or a GitOps pipeline), disable chart-managed RBAC:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">rbac</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</code></pre></div>
+<p>You must then create the Role or ClusterRole manually with the rules listed above, and bind it to the ServiceAccount Reloader uses.</p>
+<hr>
+<h2 id="serviceaccount">ServiceAccount<a class="headerlink" href="#serviceaccount" title="Permanent link">#</a></h2>
+<p>The chart creates a <code>ServiceAccount</code> in the deployment namespace by default.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">serviceAccount</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">create</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="s">""</span><span class="w">           </span><span class="c1"># auto-generated if empty</span>
+<span class="w">    </span><span class="nt">annotations</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w">    </span><span class="c1"># use for IRSA, Workload Identity, etc.</span>
+</code></pre></div>
+<p>To disable ServiceAccount creation and supply your own:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">serviceAccount</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">create</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-existing-sa</span>
+</code></pre></div>
+<p>To control whether the token is auto-mounted:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">automountServiceAccountToken</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</code></pre></div>
+<hr>
+<h2 id="pod-security-context">Pod security context<a class="headerlink" href="#pod-security-context" title="Permanent link">#</a></h2>
+<p>The chart sets the following pod-level security context by default:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">securityContext</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">runAsNonRoot</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">runAsUser</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">65534</span>
+<span class="w">  </span><span class="nt">seccompProfile</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RuntimeDefault</span>
+</code></pre></div>
+<ul>
+<li><code>runAsNonRoot: true</code> — the container must not run as root; Kubernetes enforces this.</li>
+<li><code>runAsUser: 65534</code> — the <code>nobody</code> user; no special privileges.</li>
+<li><code>seccompProfile: RuntimeDefault</code> — uses the node's default seccomp profile, which restricts syscalls to the safe default set.</li>
+</ul>
+<p>On OpenShift 4.13.3 and later, the platform assigns UIDs dynamically. Set <code>runAsUser</code> to null to allow this:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">securityContext</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">runAsUser</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<span class="w">      </span><span class="nt">runAsNonRoot</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">seccompProfile</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RuntimeDefault</span>
+</code></pre></div>
+<hr>
+<h2 id="container-security-context">Container security context<a class="headerlink" href="#container-security-context" title="Permanent link">#</a></h2>
+<p>The container-level security context is empty by default. To harden it:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">containerSecurityContext</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">allowPrivilegeEscalation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">      </span><span class="nt">capabilities</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">drop</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ALL</span>
+<span class="w">      </span><span class="nt">readOnlyRootFilesystem</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p><code>readOnlyRootFilesystem: true</code> can also be set via the top-level shorthand:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">readOnlyRootFileSystem</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p>When <code>readOnlyRootFileSystem: true</code> is set (either way), the chart automatically mounts an <code>emptyDir</code> volume at <code>/tmp/</code> so Reloader can write temporary files.</p>
+<hr>
+<h2 id="network-policy">Network policy<a class="headerlink" href="#network-policy" title="Permanent link">#</a></h2>
+<p>The chart includes an optional <code>NetworkPolicy</code> that restricts ingress and egress for the Reloader pod. Disabled by default.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">netpol</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p>When enabled, the policy allows:</p>
+<ul>
+<li><strong>Ingress</strong> on port <code>9090</code> — for Prometheus metrics scraping</li>
+<li><strong>Egress</strong> on port <code>443</code> — to reach the Kubernetes API server (https)</li>
+</ul>
+<p>You can further restrict the ingress source with <code>netpol.from</code> and the egress destination with <code>netpol.to</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">netpol</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">    </span><span class="nt">from</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">namespaceSelector</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">kubernetes.io/metadata.name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">monitoring</span>
+<span class="w">    </span><span class="nt">to</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">ipBlock</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">cidr</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.96.0.1/32</span><span class="w">   </span><span class="c1"># cluster API server IP</span>
+</code></pre></div>
+<hr>
+<h2 id="verifying-rbac-in-a-running-cluster">Verifying RBAC in a running cluster<a class="headerlink" href="#verifying-rbac-in-a-running-cluster" title="Permanent link">#</a></h2>
+<p>Check what ClusterRole or Role was created:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Global mode</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>clusterrole<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader-reloader
+kubectl<span class="w"> </span>describe<span class="w"> </span>clusterrole<span class="w"> </span>reloader-reloader-role
+
+<span class="c1"># Namespace-scoped mode</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>role<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader-reloader
+kubectl<span class="w"> </span>describe<span class="w"> </span>role<span class="w"> </span>reloader-reloader-role<span class="w"> </span>-n<span class="w"> </span>reloader
+</code></pre></div>
+<p>Check the binding:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>clusterrolebinding<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader-reloader
+kubectl<span class="w"> </span>describe<span class="w"> </span>clusterrolebinding<span class="w"> </span>reloader-reloader-role-binding
+</code></pre></div>
+<p>Confirm the ServiceAccount:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>serviceaccount<span class="w"> </span>-n<span class="w"> </span>reloader
+</code></pre></div>
+<p>If Reloader logs show <code>failed to update deployment</code>, check that its ServiceAccount has <code>update</code> and <code>patch</code> on <code>apps/deployments</code>:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>auth<span class="w"> </span>can-i<span class="w"> </span>patch<span class="w"> </span>deployments<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--as<span class="o">=</span>system:serviceaccount:reloader:reloader-reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--all-namespaces
+</code></pre></div>
 
 
 

@@ -5,13 +5,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-stakater-.github-0.x/how-to-guides/use-reloader-with-flux.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-stakater-.github-0.x/how-to-guides/namespace-scoping.html">
       
       
-        <link rel="prev" href="use-reloader-with-argocd.html">
+        <link rel="prev" href="restart-pods-when-external-secrets-change.html">
       
       
-        <link rel="next" href="../integrations/index.html">
+        <link rel="next" href="monitor-reloader.html">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>Use Reloader with Flux - Reloader</title>
+        <title>Scope Reloader to Specific Namespaces - Reloader</title>
       
     
     
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#use-reloader-with-flux" class="md-skip">
+        <a href="#scope-reloader-to-specific-namespaces" class="md-skip">
           Skip to content
         </a>
       
@@ -3033,10 +3033,37 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="namespace-scoping.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope Reloader to Specific Namespaces
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="namespace-scoping.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3052,6 +3079,166 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#default-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default behavior
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-1-restrict-to-the-deployment-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 1 — Restrict to the deployment namespace
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-2-watch-namespaces-matching-a-label-selector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 2 — Watch namespaces matching a label selector
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-3-exclude-specific-namespaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 3 — Exclude specific namespaces
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-4-filter-by-resource-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 4 — Filter by resource labels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interaction-between-selectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interaction between selectors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rbac-implications-per-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RBAC implications per mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-reloader-per-team-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One Reloader per team namespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-reloader-watching-production-namespaces-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One Reloader watching production namespaces only
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-wide-with-system-namespaces-excluded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cluster-wide with system namespaces excluded
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifying-scope-in-a-running-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verifying scope in a running cluster
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3173,37 +3360,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Use Reloader with Flux
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="use-reloader-with-flux.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="use-reloader-with-flux.html" class="md-nav__link">
         
   
   
@@ -3219,166 +3379,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#the-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-solution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Solution
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-switch-reloader-to-the-annotations-strategy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1 — Switch Reloader to the annotations strategy
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-annotate-your-workload" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2 — Annotate your workload
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-verify-it-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3 — Verify it works
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3 — Verify it works">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#trigger-a-reload" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Trigger a reload
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-flux-is-not-reverting-the-annotation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check Flux is not reverting the annotation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-reloaders-logs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check Reloader's logs
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-pod-age" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check pod age
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#if-you-cannot-use-flux-v2-ssa" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        If you cannot use Flux v2 SSA
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-ssa-field-ownership-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How SSA field ownership works
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4778,10 +4778,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#the-problem" class="md-nav__link">
+  <a href="#default-behavior" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Problem
+        Default behavior
       
     </span>
   </a>
@@ -4789,10 +4789,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-solution" class="md-nav__link">
+  <a href="#option-1-restrict-to-the-deployment-namespace" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Solution
+        Option 1 — Restrict to the deployment namespace
       
     </span>
   </a>
@@ -4800,10 +4800,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-switch-reloader-to-the-annotations-strategy" class="md-nav__link">
+  <a href="#option-2-watch-namespaces-matching-a-label-selector" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1 — Switch Reloader to the annotations strategy
+        Option 2 — Watch namespaces matching a label selector
       
     </span>
   </a>
@@ -4811,10 +4811,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-annotate-your-workload" class="md-nav__link">
+  <a href="#option-3-exclude-specific-namespaces" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 2 — Annotate your workload
+        Option 3 — Exclude specific namespaces
       
     </span>
   </a>
@@ -4822,22 +4822,55 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-verify-it-works" class="md-nav__link">
+  <a href="#option-4-filter-by-resource-labels" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3 — Verify it works
+        Option 4 — Filter by resource labels
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step 3 — Verify it works">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interaction-between-selectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interaction between selectors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rbac-implications-per-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RBAC implications per mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical patterns">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#trigger-a-reload" class="md-nav__link">
+  <a href="#one-reloader-per-team-namespace" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Trigger a reload
+        One Reloader per team namespace
       
     </span>
   </a>
@@ -4845,10 +4878,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#check-flux-is-not-reverting-the-annotation" class="md-nav__link">
+  <a href="#one-reloader-watching-production-namespaces-only" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Check Flux is not reverting the annotation
+        One Reloader watching production namespaces only
       
     </span>
   </a>
@@ -4856,21 +4889,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#check-reloaders-logs" class="md-nav__link">
+  <a href="#cluster-wide-with-system-namespaces-excluded" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Check Reloader's logs
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-pod-age" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check pod age
+        Cluster-wide with system namespaces excluded
       
     </span>
   </a>
@@ -4883,32 +4905,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#if-you-cannot-use-flux-v2-ssa" class="md-nav__link">
+  <a href="#verifying-scope-in-a-running-cluster" class="md-nav__link">
     <span class="md-ellipsis">
       
-        If you cannot use Flux v2 SSA
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-ssa-field-ownership-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How SSA field ownership works
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
+        Verifying scope in a running cluster
       
     </span>
   </a>
@@ -4935,157 +4935,169 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="use-reloader-with-flux">Use Reloader with Flux<a class="headerlink" href="#use-reloader-with-flux" title="Permanent link">#</a></h1>
-<p>Reloader and Flux can conflict when Reloader patches a workload and Flux's reconciliation loop reverts the change. This guide explains why this happens and how to configure both tools to work together reliably.</p>
+<h1 id="scope-reloader-to-specific-namespaces">Scope Reloader to Specific Namespaces<a class="headerlink" href="#scope-reloader-to-specific-namespaces" title="Permanent link">#</a></h1>
+<p>By default Reloader watches every namespace in the cluster. This guide shows how to restrict that scope — to a single namespace, to namespaces matching a label selector, or by excluding specific namespaces — and explains the RBAC implications of each mode.</p>
 <hr>
-<h2 id="the-problem">The Problem<a class="headerlink" href="#the-problem" title="Permanent link">#</a></h2>
-<p>Reloader's default reload strategy (<code>env-vars</code>) injects an environment variable into the pod template when a ConfigMap or Secret changes:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># What Reloader injects into the live Deployment</span>
-<span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">env</span><span class="p">:</span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">STAKATER_DATABASE_SECRET</span>
-<span class="w">              </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">"a3f1c9b2..."</span><span class="w">  </span><span class="c1"># SHA1 hash of the secret data</span>
-</code></pre></div>
-<p>This change is not in Git. When Flux reconciles on its next cycle, it compares the live cluster state against Git and reverts the env var — undoing Reloader's restart trigger:</p>
-<div class="highlight"><pre><span></span><code>Applied revision: main/abc1234
-Deployment/my-app configured  ← Flux just reverted Reloader's patch
-</code></pre></div>
-<p>The pod never picks up the rotated secret because the rolling restart is cancelled before it completes.</p>
+<h2 id="default-behavior">Default behavior<a class="headerlink" href="#default-behavior" title="Permanent link">#</a></h2>
+<p>Out of the box, Reloader runs with <code>watchGlobally: true</code>. It uses the Kubernetes watch API to observe <code>ConfigMaps</code> and <code>Secrets</code> across all namespaces, and patches workloads wherever it finds matching annotations.</p>
+<p>This is appropriate for platform-wide deployments where a single Reloader instance serves the whole cluster.</p>
 <hr>
-<h2 id="the-solution">The Solution<a class="headerlink" href="#the-solution" title="Permanent link">#</a></h2>
-<p>Switch Reloader to the <strong><code>annotations</code></strong> reload strategy. Flux v2 uses Kubernetes <strong>server-side apply (SSA)</strong>, which tracks field ownership per manager. When Reloader writes the annotation using its own field manager, Flux does not own that field and will not remove it during reconciliation.</p>
-<p>No additional Flux configuration is needed for this to work.</p>
-<hr>
-<h2 id="step-1-switch-reloader-to-the-annotations-strategy">Step 1 — Switch Reloader to the annotations strategy<a class="headerlink" href="#step-1-switch-reloader-to-the-annotations-strategy" title="Permanent link">#</a></h2>
-<p>Update your Reloader Helm values:</p>
+<h2 id="option-1-restrict-to-the-deployment-namespace">Option 1 — Restrict to the deployment namespace<a class="headerlink" href="#option-1-restrict-to-the-deployment-namespace" title="Permanent link">#</a></h2>
+<p>Set <code>watchGlobally: false</code> to limit Reloader to the single namespace it is deployed in.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">reloadStrategy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">annotations</span>
+<span class="w">  </span><span class="nt">watchGlobally</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 </code></pre></div>
-<p>If you manage Reloader with Flux, update the <code>HelmRelease</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">helm.toolkit.fluxcd.io/v2</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HelmRelease</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reloader</span>
-<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reloader</span>
-<span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">chart</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reloader</span>
-<span class="w">      </span><span class="nt">sourceRef</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HelmRepository</span>
-<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stakater</span>
-<span class="w">  </span><span class="nt">values</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">reloader</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">reloadStrategy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">annotations</span>
-</code></pre></div>
-<p>With this strategy, Reloader adds <code>reloader.stakater.com/last-reloaded-from</code> to the pod template metadata instead of injecting an env var:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">reloader.stakater.com/last-reloaded-from</span><span class="p">:</span><span class="w"> </span><span class="s">"database-secret"</span>
-</code></pre></div>
-<p>Because this annotation is not in the Git manifest, Flux does not claim ownership of it via SSA. Reloader owns it, and Flux leaves it alone.</p>
-<hr>
-<h2 id="step-2-annotate-your-workload">Step 2 — Annotate your workload<a class="headerlink" href="#step-2-annotate-your-workload" title="Permanent link">#</a></h2>
-<p>Add the Reloader annotation to the Deployment in Git as normal:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-app</span>
-<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">reloader.stakater.com/auto</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
-<span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
-</code></pre></div>
-<p>Commit and push. Flux syncs it. Reloader watches it.</p>
-<hr>
-<h2 id="step-3-verify-it-works">Step 3 — Verify it works<a class="headerlink" href="#step-3-verify-it-works" title="Permanent link">#</a></h2>
-<h3 id="trigger-a-reload">Trigger a reload<a class="headerlink" href="#trigger-a-reload" title="Permanent link">#</a></h3>
-<p>Update the Secret or ConfigMap that the workload references, then wait for the change to propagate.</p>
-<h3 id="check-flux-is-not-reverting-the-annotation">Check Flux is not reverting the annotation<a class="headerlink" href="#check-flux-is-not-reverting-the-annotation" title="Permanent link">#</a></h3>
-<p>Watch Flux's reconciliation output:</p>
-<div class="highlight"><pre><span></span><code>flux<span class="w"> </span>get<span class="w"> </span>kustomizations<span class="w"> </span>--watch
-</code></pre></div>
-<p>After a Reloader-triggered restart, the Kustomization should remain <code>Ready</code> and <code>Applied</code> with no further changes on the next reconcile.</p>
-<h3 id="check-reloaders-logs">Check Reloader's logs<a class="headerlink" href="#check-reloaders-logs" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader<span class="w"> </span>--tail<span class="o">=</span><span class="m">20</span>
-</code></pre></div>
-<p>You should see:</p>
-<div class="highlight"><pre><span></span><code>Changes detected in 'database-secret' of type 'SECRET' in namespace: production
-Updated 'my-app' of type 'Deployment' in namespace: production
-</code></pre></div>
-<h3 id="check-pod-age">Check pod age<a class="headerlink" href="#check-pod-age" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>production<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>my-app
-</code></pre></div>
-<p>Pods should be recently restarted after a secret rotation, and Flux should not re-apply and revert them.</p>
-<hr>
-<h2 id="if-you-cannot-use-flux-v2-ssa">If you cannot use Flux v2 SSA<a class="headerlink" href="#if-you-cannot-use-flux-v2-ssa" title="Permanent link">#</a></h2>
-<p>If you are on an older Flux setup that uses <strong>client-side apply</strong> instead of SSA, the annotation will still be reverted. In that case, you can tell Flux to ignore specific fields using a Kustomize patch in your <code>Kustomization</code>.</p>
-<p>Add a strategic merge patch that pre-declares the annotation with a placeholder value. Flux will then manage the field and Reloader can update it between reconciliations:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># kustomization.yaml (applied by Flux)</span>
-<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kustomize.config.k8s.io/v1beta1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kustomization</span>
-<span class="nt">resources</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deployment.yaml</span>
-<span class="nt">patches</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">patch</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
-<span class="w">      </span><span class="no">apiVersion: apps/v1</span>
-<span class="w">      </span><span class="no">kind: Deployment</span>
-<span class="w">      </span><span class="no">metadata:</span>
-<span class="w">        </span><span class="no">name: my-app</span>
-<span class="w">      </span><span class="no">spec:</span>
-<span class="w">        </span><span class="no">template:</span>
-<span class="w">          </span><span class="no">metadata:</span>
-<span class="w">            </span><span class="no">annotations:</span>
-<span class="w">              </span><span class="no">reloader.stakater.com/last-reloaded-from: ""</span>
-<span class="w">    </span><span class="nt">target</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
-<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-app</span>
-</code></pre></div>
-<p>This approach has a tradeoff: Flux will reset the annotation to <code>""</code> on every reconciliation, and Reloader will re-set it on the next reload. The pods will still restart correctly because the annotation value changing from <code>""</code> to the secret name counts as a pod template diff.</p>
-<p>For most teams, upgrading to Flux v2 with SSA is the cleaner path.</p>
-<hr>
-<h2 id="how-ssa-field-ownership-works">How SSA field ownership works<a class="headerlink" href="#how-ssa-field-ownership-works" title="Permanent link">#</a></h2>
-<p>For context, Kubernetes server-side apply tracks which manager last wrote each field. When Flux applies a Deployment manifest using SSA:</p>
+<p>What changes:</p>
 <ul>
-<li>Fields declared in the manifest are owned by <code>flux-kustomize-controller</code></li>
-<li>Fields <strong>not</strong> declared in the manifest are not claimed by Flux</li>
-<li>Reloader patches the pod template annotation using a <code>Patch</code> API call, claiming ownership of that field</li>
+<li>Reloader sets the <code>KUBERNETES_NAMESPACE</code> environment variable to its own pod namespace.</li>
+<li>It only watches resources and workloads in that namespace.</li>
+<li>The chart creates a <strong><code>Role</code></strong> and <strong><code>RoleBinding</code></strong> instead of a <code>ClusterRole</code> and <code>ClusterRoleBinding</code>.</li>
 </ul>
-<p>On the next Flux reconciliation, Flux re-applies the manifest. Since Flux does not own <code>reloader.stakater.com/last-reloaded-from</code> (it was never in the Git manifest), SSA does not remove it.</p>
-<p>This is why the <code>annotations</code> strategy works with Flux v2 without any additional configuration — and why the <code>env-vars</code> strategy is problematic: environment variable list entries are more likely to conflict with fields Flux does own.</p>
+<p>This is the most restrictive option and the right choice when you want one Reloader instance per team namespace, or when cluster-wide RBAC is not permitted.</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>my-team<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--create-namespace<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.watchGlobally<span class="o">=</span><span class="nb">false</span>
+</code></pre></div>
 <hr>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
+<h2 id="option-2-watch-namespaces-matching-a-label-selector">Option 2 — Watch namespaces matching a label selector<a class="headerlink" href="#option-2-watch-namespaces-matching-a-label-selector" title="Permanent link">#</a></h2>
+<p>To watch a subset of namespaces rather than all of them, use <code>namespaceSelector</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">namespaceSelector</span><span class="p">:</span><span class="w"> </span><span class="s">"environment=production"</span>
+</code></pre></div>
+<p>Reloader passes this value to the <code>--namespace-selector</code> flag at startup and evaluates it against namespace labels.</p>
+<p>Multiple label requirements can be combined using comma-separated expressions (AND logic):</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">namespaceSelector</span><span class="p">:</span><span class="w"> </span><span class="s">"environment=production,team=platform"</span>
+</code></pre></div>
+<p>This configuration still uses <code>watchGlobally: true</code> under the hood, so the chart creates a <strong><code>ClusterRole</code></strong>. The ClusterRole also gains a <code>namespaces: get, list, watch</code> rule so Reloader can read namespace labels to evaluate the selector.</p>
+<p>Label the namespaces you want Reloader to watch:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>label<span class="w"> </span>namespace<span class="w"> </span>production<span class="w"> </span><span class="nv">environment</span><span class="o">=</span>production
+kubectl<span class="w"> </span>label<span class="w"> </span>namespace<span class="w"> </span>staging<span class="w"> </span><span class="nv">environment</span><span class="o">=</span>staging
+</code></pre></div>
+<p>With <code>namespaceSelector: "environment=production"</code>, only <code>production</code> is watched; <code>staging</code> is ignored.</p>
+<hr>
+<h2 id="option-3-exclude-specific-namespaces">Option 3 — Exclude specific namespaces<a class="headerlink" href="#option-3-exclude-specific-namespaces" title="Permanent link">#</a></h2>
+<p>To watch all namespaces except a named list, use <code>ignoreNamespaces</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ignoreNamespaces</span><span class="p">:</span><span class="w"> </span><span class="s">"kube-system,kube-public,cert-manager"</span>
+</code></pre></div>
+<p>This is a comma-separated list of exact namespace names. Reloader passes it to the <code>--namespaces-to-ignore</code> flag.</p>
+<p><code>ignoreNamespaces</code> and <code>namespaceSelector</code> can be combined. When both are set:</p>
+<ul>
+<li><code>namespaceSelector</code> restricts Reloader to namespaces matching the label selector.</li>
+<li><code>ignoreNamespaces</code> then excludes specific names from that already-filtered set.</li>
+</ul>
+<hr>
+<h2 id="option-4-filter-by-resource-labels">Option 4 — Filter by resource labels<a class="headerlink" href="#option-4-filter-by-resource-labels" title="Permanent link">#</a></h2>
+<p><code>resourceLabelSelector</code> restricts which <code>ConfigMaps</code> and <code>Secrets</code> Reloader watches, regardless of namespace scope. Only resources whose labels match the selector can trigger a reload.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">resourceLabelSelector</span><span class="p">:</span><span class="w"> </span><span class="s">"reloader-managed=true"</span>
+</code></pre></div>
+<p>This is orthogonal to namespace filtering — it filters resources, not namespaces.</p>
+<p>Use it to limit Reloader's blast radius in clusters where many ConfigMaps and Secrets exist but only a subset should ever trigger a restart.</p>
+<p>Label the resources you want Reloader to watch:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">reloader-managed</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+</code></pre></div>
+<hr>
+<h2 id="interaction-between-selectors">Interaction between selectors<a class="headerlink" href="#interaction-between-selectors" title="Permanent link">#</a></h2>
+<p>The selectors narrow scope independently:</p>
 <table>
 <thead>
 <tr>
-<th>Step</th>
-<th>What to do</th>
+<th>Setting</th>
+<th>What it filters</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Reloader</td>
-<td>Set <code>reloadStrategy: annotations</code></td>
+<td><code>watchGlobally: false</code></td>
+<td>Only the deployment namespace; uses Role instead of ClusterRole</td>
 </tr>
 <tr>
-<td>Flux <code>HelmRelease</code></td>
-<td>Set <code>values.reloader.reloadStrategy: annotations</code></td>
+<td><code>namespaceSelector</code></td>
+<td>Namespaces whose labels match the selector</td>
 </tr>
 <tr>
-<td>Workload</td>
-<td>Annotate with <code>reloader.stakater.com/auto: "true"</code> as normal</td>
+<td><code>ignoreNamespaces</code></td>
+<td>Named namespaces excluded from watching</td>
 </tr>
 <tr>
-<td>Flux v1 / no SSA</td>
-<td>Add a Kustomize patch to pre-declare the annotation field</td>
+<td><code>resourceLabelSelector</code></td>
+<td>ConfigMaps/Secrets whose labels match the selector</td>
 </tr>
 </tbody>
 </table>
+<p>A resource triggers a reload only if it passes <strong>all</strong> active filters. For example, if <code>namespaceSelector: "team=platform"</code> is set and a namespace does not have that label, no ConfigMap or Secret in that namespace will ever trigger a reload, regardless of workload annotations.</p>
+<hr>
+<h2 id="rbac-implications-per-mode">RBAC implications per mode<a class="headerlink" href="#rbac-implications-per-mode" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Role type</th>
+<th><code>namespaces</code> rule added</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>watchGlobally: true</code> (default)</td>
+<td><code>ClusterRole</code> + <code>ClusterRoleBinding</code></td>
+<td>Only when <code>namespaceSelector</code> is set</td>
+</tr>
+<tr>
+<td><code>watchGlobally: false</code></td>
+<td><code>Role</code> + <code>RoleBinding</code></td>
+<td>Never</td>
+</tr>
+</tbody>
+</table>
+<p>See the <a href="../reference/rbac.html">RBAC reference</a> for the full list of rules in each mode.</p>
+<hr>
+<h2 id="practical-patterns">Practical patterns<a class="headerlink" href="#practical-patterns" title="Permanent link">#</a></h2>
+<h3 id="one-reloader-per-team-namespace">One Reloader per team namespace<a class="headerlink" href="#one-reloader-per-team-namespace" title="Permanent link">#</a></h3>
+<p>Each team installs their own Reloader instance scoped to their namespace:</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>team-alpha<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.watchGlobally<span class="o">=</span><span class="nb">false</span>
+
+helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>team-beta<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.watchGlobally<span class="o">=</span><span class="nb">false</span>
+</code></pre></div>
+<p>Each instance only needs a <code>Role</code> in its own namespace, which is useful when cluster-admin cannot grant <code>ClusterRole</code> permissions.</p>
+<h3 id="one-reloader-watching-production-namespaces-only">One Reloader watching production namespaces only<a class="headerlink" href="#one-reloader-watching-production-namespaces-only" title="Permanent link">#</a></h3>
+<p>A single Reloader instance watches only namespaces labelled for production:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>label<span class="w"> </span>namespace<span class="w"> </span>prod-app-1<span class="w"> </span><span class="nv">environment</span><span class="o">=</span>production
+kubectl<span class="w"> </span>label<span class="w"> </span>namespace<span class="w"> </span>prod-app-2<span class="w"> </span><span class="nv">environment</span><span class="o">=</span>production
+
+helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--create-namespace<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.namespaceSelector<span class="o">=</span><span class="s2">"environment=production"</span>
+</code></pre></div>
+<h3 id="cluster-wide-with-system-namespaces-excluded">Cluster-wide with system namespaces excluded<a class="headerlink" href="#cluster-wide-with-system-namespaces-excluded" title="Permanent link">#</a></h3>
+<p>Watch everything except namespaces that should never trigger reloads:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ignoreNamespaces</span><span class="p">:</span><span class="w"> </span><span class="s">"kube-system,kube-public,kube-node-lease,cert-manager,reloader"</span>
+</code></pre></div>
+<hr>
+<h2 id="verifying-scope-in-a-running-cluster">Verifying scope in a running cluster<a class="headerlink" href="#verifying-scope-in-a-running-cluster" title="Permanent link">#</a></h2>
+<p>Check which namespace selector and ignore list are active:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>deployment<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>reloader-reloader<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.spec.template.spec.containers[0].args}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="s1">','</span><span class="w"> </span><span class="s1">'\n'</span>
+</code></pre></div>
+<p>Check whether a specific namespace is being watched:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"namespace"</span>
+</code></pre></div>
+<p>Confirm the RBAC mode:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Returns output in global mode</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>clusterrole<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader-reloader
+
+<span class="c1"># Returns output in namespace-scoped mode</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>role<span class="w"> </span>-n<span class="w"> </span>&lt;deployment-namespace&gt;<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader-reloader
+</code></pre></div>
 
 
 

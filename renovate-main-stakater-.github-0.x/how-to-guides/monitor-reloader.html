@@ -5,13 +5,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-stakater-.github-0.x/how-to-guides/use-reloader-with-flux.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-stakater-.github-0.x/how-to-guides/monitor-reloader.html">
       
       
-        <link rel="prev" href="use-reloader-with-argocd.html">
+        <link rel="prev" href="namespace-scoping.html">
       
       
-        <link rel="next" href="../integrations/index.html">
+        <link rel="next" href="alerting-on-reload.html">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>Use Reloader with Flux - Reloader</title>
+        <title>Monitor Reloader - Reloader</title>
       
     
     
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#use-reloader-with-flux" class="md-skip">
+        <a href="#monitor-reloader" class="md-skip">
           Skip to content
         </a>
       
@@ -3061,10 +3061,37 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="monitor-reloader.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monitor Reloader
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="monitor-reloader.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3080,6 +3107,255 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#metrics-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metrics endpoint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Available metrics
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Available metrics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reloader_reload_executed_total" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reloader_reload_executed_total
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reloader_reload_executed_total_by_namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reloader_reload_executed_total_by_namespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scraping-metrics-with-prometheus-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scraping metrics with Prometheus Operator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scraping-metrics-without-prometheus-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scraping metrics without Prometheus Operator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-grafana-queries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Grafana queries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Grafana queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#total-successful-reloads-all-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Total successful reloads (all time)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reload-rate-per-minute-5m-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reload rate (per minute, 5m window)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failed-reload-rate-alert-candidate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Failed reload rate (alert candidate)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reloads-by-namespace-requires-enablemetricsbynamespace-true" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reloads by namespace (requires enableMetricsByNamespace: true)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-prometheus-alerting-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Prometheus alerting rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structured-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structured logs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structured logs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enable-json-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable JSON logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Log levels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-log-events-to-watch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key log events to watch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-logs-with-kubectl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query logs with kubectl
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-logs-with-loki-logql-if-using-grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query logs with Loki / LogQL (if using Grafana)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhook-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhook notifications
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3173,37 +3449,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Use Reloader with Flux
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="use-reloader-with-flux.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="use-reloader-with-flux.html" class="md-nav__link">
         
   
   
@@ -3219,166 +3468,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#the-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#the-solution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Solution
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-switch-reloader-to-the-annotations-strategy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1 — Switch Reloader to the annotations strategy
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-annotate-your-workload" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2 — Annotate your workload
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-verify-it-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3 — Verify it works
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3 — Verify it works">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#trigger-a-reload" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Trigger a reload
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-flux-is-not-reverting-the-annotation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check Flux is not reverting the annotation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-reloaders-logs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check Reloader's logs
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-pod-age" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check pod age
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#if-you-cannot-use-flux-v2-ssa" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        If you cannot use Flux v2 SSA
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-ssa-field-ownership-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How SSA field ownership works
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4778,10 +4867,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#the-problem" class="md-nav__link">
+  <a href="#metrics-endpoint" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Problem
+        Metrics endpoint
       
     </span>
   </a>
@@ -4789,55 +4878,22 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-solution" class="md-nav__link">
+  <a href="#available-metrics" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Solution
+        Available metrics
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-switch-reloader-to-the-annotations-strategy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1 — Switch Reloader to the annotations strategy
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-annotate-your-workload" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2 — Annotate your workload
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-verify-it-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3 — Verify it works
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3 — Verify it works">
+    <nav class="md-nav" aria-label="Available metrics">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#trigger-a-reload" class="md-nav__link">
+  <a href="#reloader_reload_executed_total" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Trigger a reload
+        reloader_reload_executed_total
       
     </span>
   </a>
@@ -4845,32 +4901,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#check-flux-is-not-reverting-the-annotation" class="md-nav__link">
+  <a href="#reloader_reload_executed_total_by_namespace" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Check Flux is not reverting the annotation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-reloaders-logs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check Reloader's logs
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#check-pod-age" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Check pod age
+        reloader_reload_executed_total_by_namespace
       
     </span>
   </a>
@@ -4883,10 +4917,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#if-you-cannot-use-flux-v2-ssa" class="md-nav__link">
+  <a href="#scraping-metrics-with-prometheus-operator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        If you cannot use Flux v2 SSA
+        Scraping metrics with Prometheus Operator
       
     </span>
   </a>
@@ -4894,10 +4928,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-ssa-field-ownership-works" class="md-nav__link">
+  <a href="#scraping-metrics-without-prometheus-operator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How SSA field ownership works
+        Scraping metrics without Prometheus Operator
       
     </span>
   </a>
@@ -4905,10 +4939,154 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#example-grafana-queries" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Summary
+        Example Grafana queries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Grafana queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#total-successful-reloads-all-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Total successful reloads (all time)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reload-rate-per-minute-5m-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reload rate (per minute, 5m window)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failed-reload-rate-alert-candidate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Failed reload rate (alert candidate)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reloads-by-namespace-requires-enablemetricsbynamespace-true" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reloads by namespace (requires enableMetricsByNamespace: true)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-prometheus-alerting-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Prometheus alerting rules
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structured-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Structured logs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structured logs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enable-json-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable JSON logging
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log-levels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Log levels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-log-events-to-watch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key log events to watch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-logs-with-kubectl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query logs with kubectl
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query-logs-with-loki-logql-if-using-grafana" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query logs with Loki / LogQL (if using Grafana)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#webhook-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Webhook notifications
       
     </span>
   </a>
@@ -4935,157 +5113,186 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="use-reloader-with-flux">Use Reloader with Flux<a class="headerlink" href="#use-reloader-with-flux" title="Permanent link">#</a></h1>
-<p>Reloader and Flux can conflict when Reloader patches a workload and Flux's reconciliation loop reverts the change. This guide explains why this happens and how to configure both tools to work together reliably.</p>
+<h1 id="monitor-reloader">Monitor Reloader<a class="headerlink" href="#monitor-reloader" title="Permanent link">#</a></h1>
+<p>Reloader exposes a Prometheus-compatible metrics endpoint and structured logs, giving platform teams visibility into reload activity, failure rates, and operational health.</p>
 <hr>
-<h2 id="the-problem">The Problem<a class="headerlink" href="#the-problem" title="Permanent link">#</a></h2>
-<p>Reloader's default reload strategy (<code>env-vars</code>) injects an environment variable into the pod template when a ConfigMap or Secret changes:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># What Reloader injects into the live Deployment</span>
-<span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">env</span><span class="p">:</span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">STAKATER_DATABASE_SECRET</span>
-<span class="w">              </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="s">"a3f1c9b2..."</span><span class="w">  </span><span class="c1"># SHA1 hash of the secret data</span>
+<h2 id="metrics-endpoint">Metrics endpoint<a class="headerlink" href="#metrics-endpoint" title="Permanent link">#</a></h2>
+<p>Reloader exposes metrics at <code>/metrics</code> on <strong>port <code>9090</code></strong>.</p>
+<p>To inspect metrics manually:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>port-forward<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>svc/reloader<span class="w"> </span><span class="m">9090</span>:9090
+curl<span class="w"> </span>-s<span class="w"> </span>http://localhost:9090/metrics<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>reloader_
 </code></pre></div>
-<p>This change is not in Git. When Flux reconciles on its next cycle, it compares the live cluster state against Git and reverts the env var — undoing Reloader's restart trigger:</p>
-<div class="highlight"><pre><span></span><code>Applied revision: main/abc1234
-Deployment/my-app configured  ← Flux just reverted Reloader's patch
+<hr>
+<h2 id="available-metrics">Available metrics<a class="headerlink" href="#available-metrics" title="Permanent link">#</a></h2>
+<h3 id="reloader_reload_executed_total"><code>reloader_reload_executed_total</code><a class="headerlink" href="#reloader_reload_executed_total" title="Permanent link">#</a></h3>
+<p>Counts every reload Reloader has attempted, labelled by success or failure.</p>
+<div class="highlight"><pre><span></span><code>reloader_reload_executed_total{success="true"}    # successful reloads
+reloader_reload_executed_total{success="false"}   # failed reloads
 </code></pre></div>
-<p>The pod never picks up the rotated secret because the rolling restart is cancelled before it completes.</p>
-<hr>
-<h2 id="the-solution">The Solution<a class="headerlink" href="#the-solution" title="Permanent link">#</a></h2>
-<p>Switch Reloader to the <strong><code>annotations</code></strong> reload strategy. Flux v2 uses Kubernetes <strong>server-side apply (SSA)</strong>, which tracks field ownership per manager. When Reloader writes the annotation using its own field manager, Flux does not own that field and will not remove it during reconciliation.</p>
-<p>No additional Flux configuration is needed for this to work.</p>
-<hr>
-<h2 id="step-1-switch-reloader-to-the-annotations-strategy">Step 1 — Switch Reloader to the annotations strategy<a class="headerlink" href="#step-1-switch-reloader-to-the-annotations-strategy" title="Permanent link">#</a></h2>
-<p>Update your Reloader Helm values:</p>
+<p>This is the primary operational metric. A non-zero <code>success="false"</code> count indicates that Reloader is detecting changes but failing to patch the workload — usually an RBAC problem.</p>
+<h3 id="reloader_reload_executed_total_by_namespace"><code>reloader_reload_executed_total_by_namespace</code><a class="headerlink" href="#reloader_reload_executed_total_by_namespace" title="Permanent link">#</a></h3>
+<p>The same counter broken down by namespace. <strong>Disabled by default</strong> because it has unbounded cardinality in large clusters.</p>
+<p>Enable via Helm:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">reloadStrategy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">annotations</span>
+<span class="w">  </span><span class="nt">enableMetricsByNamespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
-<p>If you manage Reloader with Flux, update the <code>HelmRelease</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">helm.toolkit.fluxcd.io/v2</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HelmRelease</span>
+<p>Or via environment variable on the Reloader container:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">field</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">METRICS_COUNT_BY_NAMESPACE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">enabled</span>
+</code></pre></div>
+<p>When enabled:</p>
+<div class="highlight"><pre><span></span><code>reloader_reload_executed_total_by_namespace{success="true",  namespace="production"}   12
+reloader_reload_executed_total_by_namespace{success="false", namespace="staging"}       1
+</code></pre></div>
+<hr>
+<h2 id="scraping-metrics-with-prometheus-operator">Scraping metrics with Prometheus Operator<a class="headerlink" href="#scraping-metrics-with-prometheus-operator" title="Permanent link">#</a></h2>
+<p>If you use the Prometheus Operator (<code>kube-prometheus-stack</code> or similar), enable the built-in <code>PodMonitor</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">podMonitor</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p>This creates a <code>PodMonitor</code> resource in the same namespace as Reloader. Prometheus Operator will discover it automatically if your Prometheus instance watches <code>PodMonitor</code> resources cluster-wide.</p>
+<p>To verify the monitor was created:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>podmonitor<span class="w"> </span>-n<span class="w"> </span>reloader
+</code></pre></div>
+<p>To confirm Prometheus is scraping it, open the Prometheus targets page (<code>/targets</code>) and search for <code>reloader</code>.</p>
+<hr>
+<h2 id="scraping-metrics-without-prometheus-operator">Scraping metrics without Prometheus Operator<a class="headerlink" href="#scraping-metrics-without-prometheus-operator" title="Permanent link">#</a></h2>
+<p>If you manage Prometheus configuration directly (without Prometheus Operator), add a scrape job to your Prometheus config:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">scrape_configs</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">job_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reloader</span>
+<span class="w">    </span><span class="nt">kubernetes_sd_configs</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pod</span>
+<span class="w">        </span><span class="nt">namespaces</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">names</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reloader</span>
+<span class="w">    </span><span class="nt">relabel_configs</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">source_labels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">__meta_kubernetes_pod_label_app</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="nt">regex</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reloader</span>
+<span class="w">        </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">keep</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">source_labels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">__address__</span><span class="p p-Indicator">]</span>
+<span class="w">        </span><span class="nt">regex</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(.+):\d+</span>
+<span class="w">        </span><span class="nt">replacement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$1:9090</span>
+<span class="w">        </span><span class="nt">target_label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">__address__</span>
+</code></pre></div>
+<hr>
+<h2 id="example-grafana-queries">Example Grafana queries<a class="headerlink" href="#example-grafana-queries" title="Permanent link">#</a></h2>
+<p>Use these PromQL queries as the basis for Grafana panels.</p>
+<h3 id="total-successful-reloads-all-time">Total successful reloads (all time)<a class="headerlink" href="#total-successful-reloads-all-time" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">sum</span><span class="o">(</span><span class="nv">reloader_reload_executed_total</span><span class="p">{</span><span class="nl">success</span><span class="o">=</span><span class="p">"</span><span class="s">true</span><span class="p">"}</span><span class="o">)</span>
+</code></pre></div>
+<h3 id="reload-rate-per-minute-5m-window">Reload rate (per minute, 5m window)<a class="headerlink" href="#reload-rate-per-minute-5m-window" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">sum</span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">reloader_reload_executed_total</span><span class="p">{</span><span class="nl">success</span><span class="o">=</span><span class="p">"</span><span class="s">true</span><span class="p">"}[</span><span class="s">5m</span><span class="p">]</span><span class="o">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span>
+</code></pre></div>
+<h3 id="failed-reload-rate-alert-candidate">Failed reload rate (alert candidate)<a class="headerlink" href="#failed-reload-rate-alert-candidate" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">sum</span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">reloader_reload_executed_total</span><span class="p">{</span><span class="nl">success</span><span class="o">=</span><span class="p">"</span><span class="s">false</span><span class="p">"}[</span><span class="s">5m</span><span class="p">]</span><span class="o">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span>
+</code></pre></div>
+<h3 id="reloads-by-namespace-requires-enablemetricsbynamespace-true">Reloads by namespace (requires <code>enableMetricsByNamespace: true</code>)<a class="headerlink" href="#reloads-by-namespace-requires-enablemetricsbynamespace-true" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">sort_desc</span><span class="o">(</span>
+<span class="w">  </span><span class="k">sum</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="o">(</span><span class="nv">namespace</span><span class="o">)</span><span class="w"> </span><span class="o">(</span>
+<span class="w">    </span><span class="kr">increase</span><span class="o">(</span><span class="nv">reloader_reload_executed_total_by_namespace</span><span class="p">{</span><span class="nl">success</span><span class="o">=</span><span class="p">"</span><span class="s">true</span><span class="p">"}[</span><span class="s">1h</span><span class="p">]</span><span class="o">)</span>
+<span class="w">  </span><span class="o">)</span>
+<span class="o">)</span>
+</code></pre></div>
+<hr>
+<h2 id="example-prometheus-alerting-rules">Example Prometheus alerting rules<a class="headerlink" href="#example-prometheus-alerting-rules" title="Permanent link">#</a></h2>
+<p>Save as a <code>PrometheusRule</code> resource or add to your Prometheus rules file.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">monitoring.coreos.com/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PrometheusRule</span>
 <span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reloader</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reloader-alerts</span>
 <span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reloader</span>
 <span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">chart</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reloader</span>
-<span class="w">      </span><span class="nt">sourceRef</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">HelmRepository</span>
-<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stakater</span>
-<span class="w">  </span><span class="nt">values</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">reloader</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">reloadStrategy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">annotations</span>
+<span class="w">  </span><span class="nt">groups</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reloader</span>
+<span class="w">      </span><span class="nt">rules</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">alert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReloaderFailingToRestart</span>
+<span class="w">          </span><span class="nt">expr</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">            </span><span class="no">increase(reloader_reload_executed_total{success="false"}[5m]) &gt; 0</span>
+<span class="w">          </span><span class="nt">for</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2m</span>
+<span class="w">          </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">severity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">warning</span>
+<span class="w">          </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">"Reloader</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">failing</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">restart</span><span class="nv"> </span><span class="s">workloads"</span>
+<span class="w">            </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span>
+<span class="w">              </span><span class="no">Reloader detected a ConfigMap or Secret change but failed to</span>
+<span class="w">              </span><span class="no">patch the workload. This is usually an RBAC issue.</span>
+<span class="w">              </span><span class="no">Check Reloader logs: kubectl logs -n reloader -l app=reloader</span>
+
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">alert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReloaderDown</span>
+<span class="w">          </span><span class="nt">expr</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">            </span><span class="no">absent(up{job="reloader"} == 1)</span>
+<span class="w">          </span><span class="nt">for</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span>
+<span class="w">          </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">severity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">critical</span>
+<span class="w">          </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">"Reloader</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">running"</span>
+<span class="w">            </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span>
+<span class="w">              </span><span class="no">No Reloader pod is reachable. Configuration changes will not</span>
+<span class="w">              </span><span class="no">trigger workload restarts until Reloader is healthy.</span>
 </code></pre></div>
-<p>With this strategy, Reloader adds <code>reloader.stakater.com/last-reloaded-from</code> to the pod template metadata instead of injecting an env var:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">reloader.stakater.com/last-reloaded-from</span><span class="p">:</span><span class="w"> </span><span class="s">"database-secret"</span>
-</code></pre></div>
-<p>Because this annotation is not in the Git manifest, Flux does not claim ownership of it via SSA. Reloader owns it, and Flux leaves it alone.</p>
 <hr>
-<h2 id="step-2-annotate-your-workload">Step 2 — Annotate your workload<a class="headerlink" href="#step-2-annotate-your-workload" title="Permanent link">#</a></h2>
-<p>Add the Reloader annotation to the Deployment in Git as normal:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-app</span>
-<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">reloader.stakater.com/auto</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
-<span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<h2 id="structured-logs">Structured logs<a class="headerlink" href="#structured-logs" title="Permanent link">#</a></h2>
+<p>Reloader emits structured logs for every reload event and error.</p>
+<h3 id="enable-json-logging">Enable JSON logging<a class="headerlink" href="#enable-json-logging" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">logFormat</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">json</span>
 </code></pre></div>
-<p>Commit and push. Flux syncs it. Reloader watches it.</p>
-<hr>
-<h2 id="step-3-verify-it-works">Step 3 — Verify it works<a class="headerlink" href="#step-3-verify-it-works" title="Permanent link">#</a></h2>
-<h3 id="trigger-a-reload">Trigger a reload<a class="headerlink" href="#trigger-a-reload" title="Permanent link">#</a></h3>
-<p>Update the Secret or ConfigMap that the workload references, then wait for the change to propagate.</p>
-<h3 id="check-flux-is-not-reverting-the-annotation">Check Flux is not reverting the annotation<a class="headerlink" href="#check-flux-is-not-reverting-the-annotation" title="Permanent link">#</a></h3>
-<p>Watch Flux's reconciliation output:</p>
-<div class="highlight"><pre><span></span><code>flux<span class="w"> </span>get<span class="w"> </span>kustomizations<span class="w"> </span>--watch
+<p>JSON logs are easier to ingest into Loki, Elasticsearch, or CloudWatch.</p>
+<h3 id="log-levels">Log levels<a class="headerlink" href="#log-levels" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">logLevel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">info</span><span class="w">   </span><span class="c1"># trace | debug | info | warning | error | fatal | panic</span>
 </code></pre></div>
-<p>After a Reloader-triggered restart, the Kustomization should remain <code>Ready</code> and <code>Applied</code> with no further changes on the next reconcile.</p>
-<h3 id="check-reloaders-logs">Check Reloader's logs<a class="headerlink" href="#check-reloaders-logs" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader<span class="w"> </span>--tail<span class="o">=</span><span class="m">20</span>
-</code></pre></div>
-<p>You should see:</p>
-<div class="highlight"><pre><span></span><code>Changes detected in 'database-secret' of type 'SECRET' in namespace: production
-Updated 'my-app' of type 'Deployment' in namespace: production
-</code></pre></div>
-<h3 id="check-pod-age">Check pod age<a class="headerlink" href="#check-pod-age" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>production<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>my-app
-</code></pre></div>
-<p>Pods should be recently restarted after a secret rotation, and Flux should not re-apply and revert them.</p>
-<hr>
-<h2 id="if-you-cannot-use-flux-v2-ssa">If you cannot use Flux v2 SSA<a class="headerlink" href="#if-you-cannot-use-flux-v2-ssa" title="Permanent link">#</a></h2>
-<p>If you are on an older Flux setup that uses <strong>client-side apply</strong> instead of SSA, the annotation will still be reverted. In that case, you can tell Flux to ignore specific fields using a Kustomize patch in your <code>Kustomization</code>.</p>
-<p>Add a strategic merge patch that pre-declares the annotation with a placeholder value. Flux will then manage the field and Reloader can update it between reconciliations:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># kustomization.yaml (applied by Flux)</span>
-<span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kustomize.config.k8s.io/v1beta1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Kustomization</span>
-<span class="nt">resources</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deployment.yaml</span>
-<span class="nt">patches</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">patch</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
-<span class="w">      </span><span class="no">apiVersion: apps/v1</span>
-<span class="w">      </span><span class="no">kind: Deployment</span>
-<span class="w">      </span><span class="no">metadata:</span>
-<span class="w">        </span><span class="no">name: my-app</span>
-<span class="w">      </span><span class="no">spec:</span>
-<span class="w">        </span><span class="no">template:</span>
-<span class="w">          </span><span class="no">metadata:</span>
-<span class="w">            </span><span class="no">annotations:</span>
-<span class="w">              </span><span class="no">reloader.stakater.com/last-reloaded-from: ""</span>
-<span class="w">    </span><span class="nt">target</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
-<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-app</span>
-</code></pre></div>
-<p>This approach has a tradeoff: Flux will reset the annotation to <code>""</code> on every reconciliation, and Reloader will re-set it on the next reload. The pods will still restart correctly because the annotation value changing from <code>""</code> to the secret name counts as a pod template diff.</p>
-<p>For most teams, upgrading to Flux v2 with SSA is the cleaner path.</p>
-<hr>
-<h2 id="how-ssa-field-ownership-works">How SSA field ownership works<a class="headerlink" href="#how-ssa-field-ownership-works" title="Permanent link">#</a></h2>
-<p>For context, Kubernetes server-side apply tracks which manager last wrote each field. When Flux applies a Deployment manifest using SSA:</p>
-<ul>
-<li>Fields declared in the manifest are owned by <code>flux-kustomize-controller</code></li>
-<li>Fields <strong>not</strong> declared in the manifest are not claimed by Flux</li>
-<li>Reloader patches the pod template annotation using a <code>Patch</code> API call, claiming ownership of that field</li>
-</ul>
-<p>On the next Flux reconciliation, Flux re-applies the manifest. Since Flux does not own <code>reloader.stakater.com/last-reloaded-from</code> (it was never in the Git manifest), SSA does not remove it.</p>
-<p>This is why the <code>annotations</code> strategy works with Flux v2 without any additional configuration — and why the <code>env-vars</code> strategy is problematic: environment variable list entries are more likely to conflict with fields Flux does own.</p>
-<hr>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
+<h3 id="key-log-events-to-watch">Key log events to watch<a class="headerlink" href="#key-log-events-to-watch" title="Permanent link">#</a></h3>
 <table>
 <thead>
 <tr>
-<th>Step</th>
-<th>What to do</th>
+<th>Event</th>
+<th>What it means</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Reloader</td>
-<td>Set <code>reloadStrategy: annotations</code></td>
+<td><code>Changes detected in '&lt;name&gt;' of type 'SECRET'</code></td>
+<td>Reloader detected a data change in a Secret</td>
 </tr>
 <tr>
-<td>Flux <code>HelmRelease</code></td>
-<td>Set <code>values.reloader.reloadStrategy: annotations</code></td>
+<td><code>Changes detected in '&lt;name&gt;' of type 'CONFIGMAP'</code></td>
+<td>Reloader detected a data change in a ConfigMap</td>
 </tr>
 <tr>
-<td>Workload</td>
-<td>Annotate with <code>reloader.stakater.com/auto: "true"</code> as normal</td>
+<td><code>Updated '&lt;workload&gt;' of type 'Deployment'</code></td>
+<td>Reloader successfully patched a workload</td>
 </tr>
 <tr>
-<td>Flux v1 / no SSA</td>
-<td>Add a Kustomize patch to pre-declare the annotation field</td>
+<td><code>failed to update deployment</code></td>
+<td>Reloader could not patch the workload — check RBAC</td>
+</tr>
+<tr>
+<td><code>unable to create Kubernetes client</code></td>
+<td>Reloader cannot reach the API server</td>
 </tr>
 </tbody>
 </table>
+<h3 id="query-logs-with-kubectl">Query logs with kubectl<a class="headerlink" href="#query-logs-with-kubectl" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Watch live reload events</span>
+kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader<span class="w"> </span>-f<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">"Changes detected|Updated"</span>
+
+<span class="c1"># Show only errors</span>
+kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"error\|failed"</span>
+</code></pre></div>
+<h3 id="query-logs-with-loki-logql-if-using-grafana">Query logs with Loki / LogQL (if using Grafana)<a class="headerlink" href="#query-logs-with-loki-logql-if-using-grafana" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>{namespace="reloader"} |= "Changes detected"
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>{namespace="reloader"} |= "failed"
+</code></pre></div>
+<hr>
+<h2 id="webhook-notifications">Webhook notifications<a class="headerlink" href="#webhook-notifications" title="Permanent link">#</a></h2>
+<p>In addition to metrics and logs, Reloader can send a webhook notification to Slack, Microsoft Teams, Google Chat, or any https endpoint whenever a reload is triggered.</p>
+<p>See <a href="alerting-on-reload.html">Alert When Reloader Triggers a Restart</a> for setup instructions.</p>
 
 
 
