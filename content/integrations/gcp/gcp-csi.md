@@ -86,7 +86,7 @@ The GCP provider does not have a public Helm repository. Install it directly fro
 kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/secrets-store-csi-driver-provider-gcp/main/deploy/provider-gcp-plugin.yaml
 ```
 
-This deploys the provider as a DaemonSet in the `kube-system` namespace.
+This deploys the provider as a Daemonset in the `kube-system` namespace.
 
 Verify it is running:
 

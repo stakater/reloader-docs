@@ -304,7 +304,7 @@ Updated 'myapp' of type 'Deployment' in namespace 'default'
 
 ---
 
-## Faster sync with resyncSeconds
+## Faster sync with `resyncSeconds`
 
 To reduce the delay between a Doppler change and a pod restart, lower `resyncSeconds`:
 
