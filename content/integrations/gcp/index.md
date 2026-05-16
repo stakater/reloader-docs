@@ -7,6 +7,7 @@ This guide shows how to automatically restart Kubernetes workloads when GCP Secr
 | Pattern | How Secrets Arrive | Rotation | Reloader Compatibility | Guide |
 |---------|-------------------|----------|------------------------|-------|
 | **External Secrets Operator** | ESO syncs to K8s Secret | ESO refresh interval | Best fit | [ESO Guide](gcp-eso.md) |
+| **CSI Driver (provider-gcp)** | GCP provider syncs to K8s Secret via `secretObjects` | CSI rotation poll interval | Best fit | [CSI Guide](gcp-csi.md) |
 
 ## How It Works
 
@@ -66,3 +67,4 @@ metadata:
 ## Pattern-Specific Guides
 
 - [External Secrets Operator Pattern](gcp-eso.md) — Workload Identity (recommended) or Service Account Key
+- [CSI Driver Pattern](gcp-csi.md) — open-source provider-gcp with Workload Identity; supports file-based and Kubernetes Secret sync
