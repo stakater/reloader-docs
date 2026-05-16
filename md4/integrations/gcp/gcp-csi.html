@@ -5357,7 +5357,7 @@ helm<span class="w"> </span>install<span class="w"> </span>csi-secrets-store<spa
 <p>The GCP provider does not have a public Helm repository. Install it directly from the official GitHub source:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/GoogleCloudPlatform/secrets-store-csi-driver-provider-gcp/main/deploy/provider-gcp-plugin.yaml
 </code></pre></div>
-<p>This deploys the provider as a DaemonSet in the <code>kube-system</code> namespace.</p>
+<p>This deploys the provider as a Daemonset in the <code>kube-system</code> namespace.</p>
 <p>Verify it is running:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>kube-system<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>csi-secrets-store-provider-gcp
 </code></pre></div>
