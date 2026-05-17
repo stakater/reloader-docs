@@ -15,41 +15,29 @@ Choose the authentication method that best fits your security requirements and p
 
 ## Overview
 
-```text
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                           Kubernetes Cluster                                 │
-│                                                                              │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │                    External Secrets Operator                            │ │
-│  │                                                                         │ │
-│  │  ┌─────────────────┐         ┌──────────────────────────────────────┐  │ │
-│  │  │  SecretStore    │         │  ExternalSecret                      │  │ │
-│  │  │                 │         │                                      │  │ │
-│  │  │  - Vault URL    │         │  - refreshInterval: 30s              │  │ │
-│  │  │  - Auth Method  │────────►│  - Maps Vault KV to K8s Secret       │  │ │
-│  │  │  - KV v2 path   │         │  - Adds Reloader annotation          │  │ │
-│  │  │                 │         │                                      │  │ │
-│  │  └─────────────────┘         └──────────────────────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-│                                      │                                       │
-│                                      ▼                                       │
-│  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐       │
-│  │   K8s Secret     │    │  Stakater        │    │  Application     │       │
-│  │   (app-secrets)  │───►│  Reloader        │───►│  Pod             │       │
-│  │                  │    │                  │    │                  │       │
-│  │  annotation:     │    │  Watches secret  │    │  Reads secrets   │       │
-│  │  reloader.../    │    │  changes and     │    │  from env vars   │       │
-│  │  match: "true"   │    │  restarts pods   │    │                  │       │
-│  └──────────────────┘    └──────────────────┘    └──────────────────┘       │
-│            ▲                                                                 │
-│            │                                                                 │
-│  ┌──────────────────┐                                                       │
-│  │    Vault         │                                                       │
-│  │    Server        │                                                       │
-│  │                  │                                                       │
-│  │  KV v2 engine   │                                                       │
-│  └──────────────────┘                                                       │
-└─────────────────────────────────────────────────────────────────────────────┘
+```mermaid
+sequenceDiagram
+    actor Ops as Operator
+    participant V as HashiCorp Vault
+    participant ESO as External Secrets Operator
+    participant K8s as Kubernetes Secret
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Note over ESO: Authenticates via Token or Kubernetes Auth
+    ESO->>V: Authenticate (K8s SA JWT or token)
+    V-->>ESO: Auth token / lease
+
+    Ops->>V: Rotate secret (vault kv put)
+    loop Every refreshInterval
+        ESO->>V: Read secret path
+        V-->>ESO: Updated secret value
+    end
+    ESO->>K8s: Update Secret data
+    Note over K8s: annotation: reloader.stakater.com/match: "true"
+    K8s-->>RL: Watch event (Secret changed)
+    RL->>Pod: Trigger rolling restart
+    Note over Pod: New pod starts with updated secret
 ```
 
 ## Prerequisites

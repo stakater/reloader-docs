@@ -15,41 +15,29 @@ Choose the authentication method that best fits your security requirements and p
 
 ## Overview
 
-```text
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                           Kubernetes Cluster                                 │
-│                                                                              │
-│  ┌────────────────────────────────────────────────────────────────────────┐ │
-│  │                    Vault Secrets Operator                               │ │
-│  │                                                                         │ │
-│  │  ┌─────────────────┐  ┌────────────┐  ┌────────────────────────────┐  │ │
-│  │  │ VaultConnection │  │ VaultAuth  │  │ VaultStaticSecret          │  │ │
-│  │  │                 │  │            │  │                            │  │ │
-│  │  │ - Vault address │─►│ - K8s Auth │─►│ - mount: secret            │  │ │
-│  │  │                 │  │   or       │  │ - path: myapp              │  │ │
-│  │  │                 │  │ - AppRole  │  │ - refreshAfter: 30s        │  │ │
-│  │  │                 │  │            │  │ - Reloader annotation      │  │ │
-│  │  └─────────────────┘  └────────────┘  └────────────────────────────┘  │ │
-│  └────────────────────────────────────────────────────────────────────────┘ │
-│                                      │                                       │
-│                                      ▼                                       │
-│  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐       │
-│  │   K8s Secret     │    │  Stakater        │    │  Application     │       │
-│  │   (app-secrets)  │───►│  Reloader        │───►│  Pod             │       │
-│  │                  │    │                  │    │                  │       │
-│  │  annotation:     │    │  Watches secret  │    │  Reads secrets   │       │
-│  │  reloader.../    │    │  changes and     │    │  from env vars   │       │
-│  │  match: "true"   │    │  restarts pods   │    │                  │       │
-│  └──────────────────┘    └──────────────────┘    └──────────────────┘       │
-│            ▲                                                                 │
-│            │                                                                 │
-│  ┌──────────────────┐                                                       │
-│  │    Vault         │                                                       │
-│  │    Server        │                                                       │
-│  │                  │                                                       │
-│  │  KV v2 engine   │                                                       │
-│  └──────────────────┘                                                       │
-└─────────────────────────────────────────────────────────────────────────────┘
+```mermaid
+sequenceDiagram
+    actor Ops as Operator
+    participant V as HashiCorp Vault
+    participant VSO as Vault Secrets Operator
+    participant K8s as Kubernetes Secret
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Note over VSO: VaultConnection + VaultAuth configured
+    VSO->>V: Authenticate (K8s Auth or AppRole)
+    V-->>VSO: Auth token / lease
+
+    Ops->>V: Rotate secret (vault kv put)
+    loop Every refreshAfter interval
+        VSO->>V: Read VaultStaticSecret path
+        V-->>VSO: Updated secret value
+    end
+    VSO->>K8s: Update Secret data
+    Note over K8s: annotation: reloader.stakater.com/match: "true"
+    K8s-->>RL: Watch event (Secret changed)
+    RL->>Pod: Trigger rolling restart
+    Note over Pod: New pod starts with updated secret
 ```
 
 > **Note:** VSO has a built-in `rolloutRestartTargets` field on `VaultStaticSecret` that can trigger workload restarts natively. However, using Stakater Reloader provides a **uniform restart mechanism across all secret operators** (ESO, VSO, CSI), which is valuable when running multiple patterns in the same cluster.
