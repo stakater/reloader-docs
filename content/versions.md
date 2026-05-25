@@ -21,7 +21,18 @@ _**May 25, 2026**_
 <summary>Click to expand SBOM JSON</summary>
 
 ```json
-
+{
+  "artifacts": [
+    {
+      "name": "ghcr.io/stakater/reloader-enterprise:v1.4.17",
+      "digest": "sha256:6346ad857388731950498be1c34caab931cbb8ae05330081c66f38ff551c5f21"
+    },
+    {
+      "name": "ghcr.io/stakater/reloader-enterprise:v1.4.17-ubi",
+      "digest": "sha256:1f0f93d4fdcaef340147466ecc934f3f3a2df91f087892ea5521d3b47e274034"
+    }
+  ]
+}
 ```
 
 </details>
