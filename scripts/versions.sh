@@ -65,6 +65,9 @@ fi
 # Build release URL
 RELEASE_URL="${RELEASE_BASE}/${TAG}"
 
+# Release date (human-readable, UTC), e.g. "May 8, 2026"
+RELEASE_DATE=$(date -u +"%B %-d, %Y")
+
 # Compute UBI image handling:
 # If user provided --image-ubi, use that as base for the UBI image; otherwise we'll append the '-ubi' suffix to the tag.
 if [ -n "$IMAGE_UBI" ]; then
@@ -92,7 +95,7 @@ if [ -n "$SBOM" ]; then
   fi
 fi
 if [ -f "$TEMPLATE" ]; then
-  export IMAGE="$IMAGE" IMAGE_WITH_TAG="$IMAGE_WITH_TAG" IMAGE_UBI_BASE="$IMAGE_UBI_BASE" IMAGE_UBI_WITH_TAG="$IMAGE_UBI_WITH_TAG" VERSION="$TAG" SBOM RELEASE_URL
+  export IMAGE="$IMAGE" IMAGE_WITH_TAG="$IMAGE_WITH_TAG" IMAGE_UBI_BASE="$IMAGE_UBI_BASE" IMAGE_UBI_WITH_TAG="$IMAGE_UBI_WITH_TAG" VERSION="$TAG" SBOM RELEASE_URL RELEASE_DATE
   if command -v envsubst >/dev/null 2>&1; then
     envsubst < "$TEMPLATE" > "$ENTRY_TMP"
   else
@@ -105,6 +108,7 @@ if [ -f "$TEMPLATE" ]; then
   ubi_iwt_esc=$(esc "$IMAGE_UBI_WITH_TAG")
     ver_esc=$(esc "$TAG")
     rel_esc=$(esc "$RELEASE_URL")
+    date_esc=$(esc "$RELEASE_DATE")
 
   SED_SCRIPT=$(mktemp)
   cat > "$SED_SCRIPT" <<EOF
@@ -114,6 +118,7 @@ s|\${IMAGE_UBI_WITH_TAG}|$ubi_iwt_esc|g
 s|\${IMAGE_UBI_BASE}|$ubi_base_esc|g
 s|\\${VERSION}|$ver_esc|g
 s|\\${RELEASE_URL}|$rel_esc|g
+s|\\${RELEASE_DATE}|$date_esc|g
 /\\${SBOM}/ {
 r $SBOM_FILE
 d
