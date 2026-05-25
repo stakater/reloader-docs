@@ -5,13 +5,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-nginxinc-nginx-unprivileged-1.x/concepts/comparisons/reloader-vs-manual-rollouts.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-nginxinc-nginx-unprivileged-1.x/concepts/comparisons/reloader-vs-app-level-reload.html">
       
       
-        <link rel="prev" href="reloader-vs-init-containers.html">
+        <link rel="prev" href="reloader-vs-cert-manager.html">
       
       
-        <link rel="next" href="reloader-vs-gitops-tools.html">
+        <link rel="next" href="reloader-vs-infisical-reload.html">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>Reloader vs Manual Rollouts - Reloader</title>
+        <title>Reloader vs Application-Level Hot-Reload - Reloader</title>
       
     
     
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reloader-vs-manual-rollouts" class="md-skip">
+        <a href="#reloader-vs-application-level-hot-reload" class="md-skip">
           Skip to content
         </a>
       
@@ -2583,37 +2583,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reloader vs Manual Rollouts
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="reloader-vs-manual-rollouts.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="reloader-vs-manual-rollouts.html" class="md-nav__link">
         
   
   
@@ -2629,266 +2602,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#the-configuration-reload-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Configuration Reload Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#manual-rollouts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Manual Rollouts
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advantages-of-manual-rollouts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Advantages of Manual Rollouts
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Advantages of Manual Rollouts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#built-into-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Built Into Kubernetes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#useful-for-occasional-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Useful for Occasional Changes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#no-additional-controllers-required" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        No Additional Controllers Required
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#limitations-of-manual-rollouts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Limitations of Manual Rollouts
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Limitations of Manual Rollouts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#requires-human-intervention" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Requires Human Intervention
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#operational-overhead" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Operational Overhead
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#difficult-to-scale" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Difficult to Scale
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#error-prone" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Error-Prone
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-reloader-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How Reloader Works
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-differences" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key Differences
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-manual-rollouts-make-sense" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When Manual Rollouts Make Sense
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-reloader-is-a-better-fit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When Reloader Is a Better Fit
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FAQ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="FAQ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#do-configmap-changes-automatically-restart-pods-in-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Do ConfigMap changes automatically restart pods in Kubernetes?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-can-i-restart-pods-after-configuration-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How can I restart pods after configuration changes?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#can-manual-rollouts-and-reloader-be-used-together" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Can manual rollouts and Reloader be used together?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2982,10 +2695,37 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="reloader-vs-app-level-reload.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reloader vs Application-Level Hot-Reload
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="reloader-vs-app-level-reload.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3001,6 +2741,249 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#what-application-level-hot-reload-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What application-level hot-reload means
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-critical-kubernetes-constraint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A critical Kubernetes constraint
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-app-level-hot-reload-works-in-kubernetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How app-level hot-reload works in Kubernetes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-reloader-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Reloader works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations-of-app-level-hot-reload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations of app-level hot-reload
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Limitations of app-level hot-reload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#only-works-for-file-mounted-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Only works for file-mounted configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#every-application-must-implement-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Every application must implement it
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#third-party-and-legacy-applications-are-excluded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Third-party and legacy applications are excluded
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partial-reload-can-leave-inconsistent-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Partial reload can leave inconsistent state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-platform-level-visibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No platform-level visibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mounted-volume-propagation-delay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mounted volume propagation delay
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-app-level-hot-reload-makes-sense" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When app-level hot-reload makes sense
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-reloader-is-the-better-choice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When Reloader is the better choice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-both-approaches-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using both approaches together
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FAQ
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQ">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#can-my-app-hot-reload-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Can my app hot-reload environment variables?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#does-reloader-cause-downtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Does Reloader cause downtime?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-reloader-and-app-level-hot-reload-be-used-in-the-same-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Can Reloader and app-level hot-reload be used in the same cluster?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4880,10 +4863,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#the-configuration-reload-problem" class="md-nav__link">
+  <a href="#what-application-level-hot-reload-means" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Configuration Reload Problem
+        What application-level hot-reload means
       
     </span>
   </a>
@@ -4891,10 +4874,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#manual-rollouts" class="md-nav__link">
+  <a href="#a-critical-kubernetes-constraint" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Manual Rollouts
+        A critical Kubernetes constraint
       
     </span>
   </a>
@@ -4902,113 +4885,13 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#advantages-of-manual-rollouts" class="md-nav__link">
+  <a href="#how-app-level-hot-reload-works-in-kubernetes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Advantages of Manual Rollouts
+        How app-level hot-reload works in Kubernetes
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Advantages of Manual Rollouts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#built-into-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Built Into Kubernetes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#useful-for-occasional-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Useful for Occasional Changes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#no-additional-controllers-required" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        No Additional Controllers Required
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#limitations-of-manual-rollouts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Limitations of Manual Rollouts
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Limitations of Manual Rollouts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#requires-human-intervention" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Requires Human Intervention
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#operational-overhead" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Operational Overhead
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#difficult-to-scale" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Difficult to Scale
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#error-prone" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Error-Prone
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -5016,7 +4899,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   <a href="#how-reloader-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How Reloader Works
+        How Reloader works
       
     </span>
   </a>
@@ -5024,10 +4907,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-differences" class="md-nav__link">
+  <a href="#comparison" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key Differences
+        Comparison
       
     </span>
   </a>
@@ -5035,10 +4918,93 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#when-manual-rollouts-make-sense" class="md-nav__link">
+  <a href="#limitations-of-app-level-hot-reload" class="md-nav__link">
     <span class="md-ellipsis">
       
-        When Manual Rollouts Make Sense
+        Limitations of app-level hot-reload
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Limitations of app-level hot-reload">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#only-works-for-file-mounted-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Only works for file-mounted configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#every-application-must-implement-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Every application must implement it
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#third-party-and-legacy-applications-are-excluded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Third-party and legacy applications are excluded
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partial-reload-can-leave-inconsistent-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Partial reload can leave inconsistent state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#no-platform-level-visibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No platform-level visibility
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mounted-volume-propagation-delay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mounted volume propagation delay
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-app-level-hot-reload-makes-sense" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When app-level hot-reload makes sense
       
     </span>
   </a>
@@ -5046,10 +5012,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#when-reloader-is-a-better-fit" class="md-nav__link">
+  <a href="#when-reloader-is-the-better-choice" class="md-nav__link">
     <span class="md-ellipsis">
       
-        When Reloader Is a Better Fit
+        When Reloader is the better choice
       
     </span>
   </a>
@@ -5057,10 +5023,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#using-both-approaches-together" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Summary
+        Using both approaches together
       
     </span>
   </a>
@@ -5080,10 +5046,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#do-configmap-changes-automatically-restart-pods-in-kubernetes" class="md-nav__link">
+  <a href="#can-my-app-hot-reload-environment-variables" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Do ConfigMap changes automatically restart pods in Kubernetes?
+        Can my app hot-reload environment variables?
       
     </span>
   </a>
@@ -5091,10 +5057,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#how-can-i-restart-pods-after-configuration-changes" class="md-nav__link">
+  <a href="#does-reloader-cause-downtime" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How can I restart pods after configuration changes?
+        Does Reloader cause downtime?
       
     </span>
   </a>
@@ -5102,10 +5068,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#can-manual-rollouts-and-reloader-be-used-together" class="md-nav__link">
+  <a href="#can-reloader-and-app-level-hot-reload-be-used-in-the-same-cluster" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Can manual rollouts and Reloader be used together?
+        Can Reloader and app-level hot-reload be used in the same cluster?
       
     </span>
   </a>
@@ -5137,148 +5103,185 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="reloader-vs-manual-rollouts">Reloader vs Manual Rollouts<a class="headerlink" href="#reloader-vs-manual-rollouts" title="Permanent link">#</a></h1>
-<p>In Kubernetes, applications often rely on configuration stored in <strong>ConfigMaps</strong> and <strong>Secrets</strong>.</p>
-<p>When those resources change, running pods do not automatically reload the updated values. Platform teams therefore need a way to ensure applications pick up configuration updates.</p>
-<p>One simple approach is to manually restart workloads. Another approach is to use an automated controller such as <strong>Reloader</strong>.</p>
-<p>Both approaches solve the same problem but differ significantly in operational complexity and scalability.</p>
+<h1 id="reloader-vs-application-level-hot-reload">Reloader vs Application-Level Hot-Reload<a class="headerlink" href="#reloader-vs-application-level-hot-reload" title="Permanent link">#</a></h1>
+<p>Applications running in Kubernetes need to pick up configuration and secret changes. There are two fundamentally different approaches to this problem:</p>
+<ol>
+<li><strong>Application-level hot-reload</strong> — the application itself watches for changes and reloads its own configuration without restarting</li>
+<li><strong>Reloader</strong> — a Kubernetes controller that detects changes and triggers a rolling restart of the workload</li>
+</ol>
+<p>Both can work, but they operate under different assumptions, apply to different scenarios, and carry different operational tradeoffs.</p>
 <hr>
-<h2 id="the-configuration-reload-problem">The Configuration Reload Problem<a class="headerlink" href="#the-configuration-reload-problem" title="Permanent link">#</a></h2>
-<p>Updating a ConfigMap or Secret in Kubernetes does <strong>not automatically restart pods</strong>.</p>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code>ConfigMap<span class="w"> </span>updated
-↓
-Pods<span class="w"> </span><span class="k">continue</span><span class="w"> </span>running
-↓
-Application<span class="w"> </span>still<span class="w"> </span>uses<span class="w"> </span>old<span class="w"> </span>configuration
-</code></pre></div>
-<p>This happens because Kubernetes only triggers a rollout when the <strong>Pod specification changes</strong>, not when referenced resources change.</p>
-<p>Because of this behavior, operators must either manually restart workloads or introduce automation.</p>
-<hr>
-<h2 id="manual-rollouts">Manual Rollouts<a class="headerlink" href="#manual-rollouts" title="Permanent link">#</a></h2>
-<p>A common way to reload configuration is to manually restart workloads.</p>
-<p>Example command:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>restart<span class="w"> </span>deployment<span class="w"> </span>my-app
-</code></pre></div>
-<p>Typical workflow:</p>
-<div class="highlight"><pre><span></span><code>ConfigMap<span class="w"> </span>updated
-↓
-Operator<span class="w"> </span>runs<span class="w"> </span>rollout<span class="w"> </span>restart
-↓
-Deployment<span class="w"> </span>updated
-↓
-Pods<span class="w"> </span>restart
-</code></pre></div>
-<p>This approach works because restarting pods forces applications to reload configuration.</p>
-<hr>
-<h2 id="advantages-of-manual-rollouts">Advantages of Manual Rollouts<a class="headerlink" href="#advantages-of-manual-rollouts" title="Permanent link">#</a></h2>
-<p>Manual rollouts are simple and require no additional tooling.</p>
-<h3 id="built-into-kubernetes">Built Into Kubernetes<a class="headerlink" href="#built-into-kubernetes" title="Permanent link">#</a></h3>
-<p>The rollout command is part of standard Kubernetes tooling and works with Deployments, StatefulSets, and Daemonsets.</p>
-<h3 id="useful-for-occasional-changes">Useful for Occasional Changes<a class="headerlink" href="#useful-for-occasional-changes" title="Permanent link">#</a></h3>
-<p>For small environments or infrequent configuration updates, manually restarting workloads may be sufficient.</p>
-<h3 id="no-additional-controllers-required">No Additional Controllers Required<a class="headerlink" href="#no-additional-controllers-required" title="Permanent link">#</a></h3>
-<p>Manual restarts do not require installing additional components in the cluster.</p>
-<hr>
-<h2 id="limitations-of-manual-rollouts">Limitations of Manual Rollouts<a class="headerlink" href="#limitations-of-manual-rollouts" title="Permanent link">#</a></h2>
-<p>Manual restarts can become difficult to manage as systems grow.</p>
-<h3 id="requires-human-intervention">Requires Human Intervention<a class="headerlink" href="#requires-human-intervention" title="Permanent link">#</a></h3>
-<p>Someone must remember to restart workloads after configuration changes.</p>
-<p>In busy environments, this step can easily be missed.</p>
-<h3 id="operational-overhead">Operational Overhead<a class="headerlink" href="#operational-overhead" title="Permanent link">#</a></h3>
-<p>If multiple applications depend on the same configuration resource, each workload may need to be restarted individually.</p>
-<h3 id="difficult-to-scale">Difficult to Scale<a class="headerlink" href="#difficult-to-scale" title="Permanent link">#</a></h3>
-<p>In clusters with many applications, manually tracking configuration dependencies and restarting affected workloads becomes operationally expensive.</p>
-<h3 id="error-prone">Error-Prone<a class="headerlink" href="#error-prone" title="Permanent link">#</a></h3>
-<p>Manual processes increase the risk of mistakes, such as restarting the wrong workloads or forgetting to restart some applications.</p>
-<hr>
-<h2 id="how-reloader-works">How Reloader Works<a class="headerlink" href="#how-reloader-works" title="Permanent link">#</a></h2>
-<p>Reloader is a Kubernetes controller that watches for changes in:</p>
+<h2 id="what-application-level-hot-reload-means">What application-level hot-reload means<a class="headerlink" href="#what-application-level-hot-reload-means" title="Permanent link">#</a></h2>
+<p>Application-level hot-reload refers to logic built directly into the application process to detect and apply configuration changes at runtime, without a pod restart.</p>
+<p>Common implementations include:</p>
 <ul>
-<li>ConfigMaps</li>
-<li>Secrets</li>
+<li><strong>File watchers</strong> — libraries such as Go's <code>fsnotify</code>, Viper's <code>WatchConfig()</code>, Node.js <code>chokidar</code>, or Python's <code>watchdog</code> that detect changes to mounted config files</li>
+<li><strong>SIGHUP handlers</strong> — the process catches a Unix signal and re-reads its configuration; used by nginx, HAProxy, and many traditional Unix daemons</li>
+<li><strong>Refresh endpoints</strong> — an endpoint such as Spring Boot Actuator's <code>/actuator/refresh</code> that triggers a configuration reload when called</li>
+<li><strong>Polling</strong> — the application re-reads configuration from a file or API on a fixed interval</li>
 </ul>
-<p>When those resources change, Reloader automatically triggers a rolling restart of workloads that reference them.</p>
-<p>Example workflow:</p>
-<div class="highlight"><pre><span></span><code>ConfigMap<span class="w"> </span>or<span class="w"> </span>Secret<span class="w"> </span>updated
-↓
-Reloader<span class="w"> </span>detects<span class="w"> </span>change
-↓
-Deployment<span class="w"> </span>patched
-↓
-Kubernetes<span class="w"> </span>rolling<span class="w"> </span>restart<span class="w"> </span>triggered
-</code></pre></div>
-<p>This ensures applications restart and pick up the latest configuration automatically.</p>
 <hr>
-<h2 id="key-differences">Key Differences<a class="headerlink" href="#key-differences" title="Permanent link">#</a></h2>
+<h2 id="a-critical-kubernetes-constraint">A critical Kubernetes constraint<a class="headerlink" href="#a-critical-kubernetes-constraint" title="Permanent link">#</a></h2>
+<p>Before comparing the two approaches, there is a hard platform constraint to understand:</p>
+<p><strong>Kubernetes does not update environment variables in running pods when a ConfigMap or Secret changes.</strong></p>
+<p>Environment variables are set at pod start time. They do not change while the container is running, regardless of what happens to the ConfigMap or Secret they were sourced from.</p>
+<p>This means:</p>
+<ul>
+<li><strong>env var-based config</strong> → app-level hot-reload cannot help. A pod restart is the only way to pick up the new value.</li>
+<li><strong>File-mounted config</strong> → Kubernetes does update mounted ConfigMap and Secret volumes in-place, with a delay of up to twice the kubelet sync period (the default is 60 seconds). An app with file-watching logic can pick up these changes without a restart.</li>
+</ul>
+<p>Most 12-factor applications and containerised workloads read configuration from environment variables. For those, app-level hot-reload is not an option regardless of how it is implemented.</p>
+<hr>
+<h2 id="how-app-level-hot-reload-works-in-kubernetes">How app-level hot-reload works in Kubernetes<a class="headerlink" href="#how-app-level-hot-reload-works-in-kubernetes" title="Permanent link">#</a></h2>
+<p>For file-mounted configuration, the flow looks like this:</p>
+<div class="highlight"><pre><span></span><code>ConfigMap or Secret updated
+↓
+Kubernetes updates the mounted volume files
+(delay: up to 2× kubelet sync period, default ~60s)
+↓
+App's file watcher detects the change
+↓
+App re-reads and applies new configuration
+↓
+Running process continues — no restart
+</code></pre></div>
+<p>This is genuinely zero-downtime: existing connections, in-flight requests, and process state are all preserved.</p>
+<hr>
+<h2 id="how-reloader-works">How Reloader works<a class="headerlink" href="#how-reloader-works" title="Permanent link">#</a></h2>
+<p>Reloader is a Kubernetes controller that watches ConfigMaps and Secrets for data changes. When a change is detected, it patches the workload's pod template. Kubernetes then performs a rolling restart according to the workload's own <code>RollingUpdate</code> strategy.</p>
+<div class="highlight"><pre><span></span><code>ConfigMap or Secret updated
+↓
+Reloader detects the data change
+↓
+Reloader patches the pod template
+↓
+Kubernetes rolling restart
+↓
+New pods start with updated configuration
+</code></pre></div>
+<p>Reloader works for both env var-based and file-based configuration, and requires no changes to the application.</p>
+<hr>
+<h2 id="comparison">Comparison<a class="headerlink" href="#comparison" title="Permanent link">#</a></h2>
 <table>
 <thead>
 <tr>
 <th>Aspect</th>
+<th>App-Level Hot-Reload</th>
 <th>Reloader</th>
-<th>Manual Rollouts</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Automation</td>
-<td>Automatic</td>
-<td>Manual</td>
+<td>Works with env var config</td>
+<td>❌ No — env vars cannot change in a running pod</td>
+<td>✅ Yes — pod restart picks up new env vars</td>
 </tr>
 <tr>
-<td>Operational effort</td>
-<td>Minimal after installation</td>
-<td>Requires repeated intervention</td>
+<td>Works with file-mounted config</td>
+<td>✅ Yes</td>
+<td>✅ Yes</td>
 </tr>
 <tr>
-<td>Scalability</td>
-<td>Works across many workloads</td>
-<td>Difficult to manage at scale</td>
+<td>Pod restart required</td>
+<td>❌ No</td>
+<td>✅ Yes (rolling restart)</td>
 </tr>
 <tr>
-<td>Risk of missed restarts</td>
-<td>Low</td>
-<td>Higher</td>
+<td>True zero-downtime</td>
+<td>✅ Yes</td>
+<td>Depends on replica count and <code>maxUnavailable</code></td>
+</tr>
+<tr>
+<td>Requires changes to application code</td>
+<td>✅ Yes</td>
+<td>❌ No</td>
+</tr>
+<tr>
+<td>Works with third-party or legacy apps</td>
+<td>❌ No</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td>Works across all languages and frameworks</td>
+<td>❌ No — per-language implementation</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td>Platform-wide visibility of reload events</td>
+<td>❌ No</td>
+<td>✅ Yes — logs, metrics, Kubernetes Events</td>
+</tr>
+<tr>
+<td>Consistent behavior across all workloads</td>
+<td>❌ No — each app implements differently</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td>Responds to externally rotated secrets (ESO, Vault)</td>
+<td>Partially — only if mounted as files</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td>Clean process state after reload</td>
+<td>❌ No — old state may persist in memory</td>
+<td>✅ Yes — fresh process start</td>
 </tr>
 </tbody>
 </table>
-<p>Manual rollouts rely on operators to trigger restarts, while Reloader provides <strong>automatic configuration change handling</strong>.</p>
 <hr>
-<h2 id="when-manual-rollouts-make-sense">When Manual Rollouts Make Sense<a class="headerlink" href="#when-manual-rollouts-make-sense" title="Permanent link">#</a></h2>
-<p>Manual restarts may be appropriate when:</p>
+<h2 id="limitations-of-app-level-hot-reload">Limitations of app-level hot-reload<a class="headerlink" href="#limitations-of-app-level-hot-reload" title="Permanent link">#</a></h2>
+<h3 id="only-works-for-file-mounted-configuration">Only works for file-mounted configuration<a class="headerlink" href="#only-works-for-file-mounted-configuration" title="Permanent link">#</a></h3>
+<p>App-level hot-reload is limited to configuration delivered as mounted files. It cannot handle environment variable-based configuration, which is the default pattern for most containerised applications.</p>
+<h3 id="every-application-must-implement-it">Every application must implement it<a class="headerlink" href="#every-application-must-implement-it" title="Permanent link">#</a></h3>
+<p>Each service needs its own reload logic. In a platform with many services across multiple languages and frameworks, this results in:</p>
 <ul>
-<li>configuration changes are rare</li>
-<li>clusters are small</li>
-<li>operational simplicity is preferred</li>
+<li>inconsistent implementations</li>
+<li>varying levels of testing (reload paths are often less tested than startup paths)</li>
+<li>maintenance overhead for each application team</li>
 </ul>
-<p>In these cases, running a restart command occasionally may be sufficient.</p>
+<h3 id="third-party-and-legacy-applications-are-excluded">Third-party and legacy applications are excluded<a class="headerlink" href="#third-party-and-legacy-applications-are-excluded" title="Permanent link">#</a></h3>
+<p>If you do not control the application source — a database, a message broker, a commercial tool — you cannot add reload logic. Reloader handles these without any modification.</p>
+<h3 id="partial-reload-can-leave-inconsistent-state">Partial reload can leave inconsistent state<a class="headerlink" href="#partial-reload-can-leave-inconsistent-state" title="Permanent link">#</a></h3>
+<p>When an application hot-reloads, only the parts explicitly wired to the reload path are updated. If a configuration change affects multiple subsystems and one reload step fails, the application may be left in a partially updated state. A pod restart produces a clean process with the full updated configuration applied from the start.</p>
+<h3 id="no-platform-level-visibility">No platform-level visibility<a class="headerlink" href="#no-platform-level-visibility" title="Permanent link">#</a></h3>
+<p>Each application reloads silently from the platform's perspective. Platform teams have no standard way to know when a reload happened, whether it succeeded, or which configuration changed. Reloader emits Kubernetes Events, structured logs, and Prometheus metrics for every reload it triggers.</p>
+<h3 id="mounted-volume-propagation-delay">Mounted volume propagation delay<a class="headerlink" href="#mounted-volume-propagation-delay" title="Permanent link">#</a></h3>
+<p>Kubernetes updates mounted ConfigMap and Secret volumes with a delay (up to twice the kubelet sync period). This is typically around 60 seconds but can be longer depending on kubelet configuration. App-level hot-reload is therefore not instantaneous — Reloader's event-driven approach reacts as soon as the watch event arrives, which is typically faster.</p>
 <hr>
-<h2 id="when-reloader-is-a-better-fit">When Reloader Is a Better Fit<a class="headerlink" href="#when-reloader-is-a-better-fit" title="Permanent link">#</a></h2>
-<p>Reloader is often a better solution when:</p>
+<h2 id="when-app-level-hot-reload-makes-sense">When app-level hot-reload makes sense<a class="headerlink" href="#when-app-level-hot-reload-makes-sense" title="Permanent link">#</a></h2>
+<p>App-level hot-reload is a valid choice when:</p>
 <ul>
-<li>configuration changes happen frequently</li>
-<li>multiple workloads depend on the same configuration</li>
-<li>teams want reliable automation</li>
-<li>minimizing operational overhead is important</li>
+<li>The application has <strong>long-lived connections</strong> (WebSockets, gRPC streaming) where a pod restart would disrupt active clients and zero-downtime is non-negotiable</li>
+<li>Configuration is <strong>file-based only</strong> and never sourced from environment variables</li>
+<li>The team <strong>controls the application source</strong> and is willing to implement, test, and maintain reload paths</li>
+<li>The configuration changes <strong>very frequently</strong> (such as feature flags or rate limits updated many times per day), and rolling restarts at that frequency would be too slow or too disruptive</li>
 </ul>
-<p>These conditions are common in modern Kubernetes environments.</p>
 <hr>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
-<p>Manual rollouts and Reloader both ensure applications pick up configuration updates.</p>
-<p>Manual rollouts rely on operators to restart workloads after configuration changes.</p>
-<p>Reloader automates this process by watching ConfigMaps and Secrets and triggering rolling restarts when they change.</p>
-<p>Automation can help reduce operational overhead and improve reliability as systems scale.</p>
+<h2 id="when-reloader-is-the-better-choice">When Reloader is the better choice<a class="headerlink" href="#when-reloader-is-the-better-choice" title="Permanent link">#</a></h2>
+<p>Reloader is the right choice when:</p>
+<ul>
+<li>Configuration is <strong>sourced from environment variables</strong>, in whole or in part</li>
+<li>The application is <strong>third-party, legacy, or otherwise unmodifiable</strong></li>
+<li>A <strong>platform team</strong> is responsible for configuration reload behavior across many services and wants consistent, observable behavior without requiring each application team to implement their own logic</li>
+<li><strong>Secrets are rotated externally</strong> — by ESO, Vault, Conjur, or a cloud secret manager — and the platform needs to ensure workloads pick up the new value reliably</li>
+<li><strong>Compliance or security requirements</strong> favor a fresh process start on secret rotation, guaranteeing no residual state from the old secret remains in memory</li>
+</ul>
+<hr>
+<h2 id="using-both-approaches-together">Using both approaches together<a class="headerlink" href="#using-both-approaches-together" title="Permanent link">#</a></h2>
+<p>Some platforms use both:</p>
+<ul>
+<li><strong>App-level hot-reload</strong> for high-frequency, low-stakes configuration (feature flags, rate limits) that changes file-mounted values and where zero-downtime matters</li>
+<li><strong>Reloader</strong> for secrets, env var-based configuration, and all workloads that do not implement reload logic</li>
+</ul>
+<p>This combination avoids unnecessary restarts for configuration that changes frequently while ensuring secrets and env var-based config are always applied correctly.</p>
 <hr>
 <h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">#</a></h2>
-<h3 id="do-configmap-changes-automatically-restart-pods-in-kubernetes">Do ConfigMap changes automatically restart pods in Kubernetes?<a class="headerlink" href="#do-configmap-changes-automatically-restart-pods-in-kubernetes" title="Permanent link">#</a></h3>
-<p>No. Updating a ConfigMap does not restart pods automatically.</p>
-<h3 id="how-can-i-restart-pods-after-configuration-changes">How can I restart pods after configuration changes?<a class="headerlink" href="#how-can-i-restart-pods-after-configuration-changes" title="Permanent link">#</a></h3>
-<p>You can manually restart workloads using:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>restart<span class="w"> </span>deployment<span class="w"> </span>&lt;deployment-name&gt;
-</code></pre></div>
-<p>Alternatively, automation tools like Reloader can trigger rolling restarts automatically when configuration changes.</p>
-<h3 id="can-manual-rollouts-and-reloader-be-used-together">Can manual rollouts and Reloader be used together?<a class="headerlink" href="#can-manual-rollouts-and-reloader-be-used-together" title="Permanent link">#</a></h3>
-<p>Yes. Manual restarts can still be used when needed, even if Reloader is installed.</p>
+<h3 id="can-my-app-hot-reload-environment-variables">Can my app hot-reload environment variables?<a class="headerlink" href="#can-my-app-hot-reload-environment-variables" title="Permanent link">#</a></h3>
+<p>No. Kubernetes sets environment variables when the container starts and does not update them while the container is running. An application cannot observe or respond to changes in the original ConfigMap or Secret that env vars were sourced from. A pod restart is required.</p>
+<h3 id="does-reloader-cause-downtime">Does Reloader cause downtime?<a class="headerlink" href="#does-reloader-cause-downtime" title="Permanent link">#</a></h3>
+<p>Not with multiple replicas and a proper <code>RollingUpdate</code> strategy. With <code>maxUnavailable: 0</code> and at least two replicas, Reloader triggers a rolling restart where new pods are started before old ones are terminated. Single-replica deployments experience a brief pod replacement gap.</p>
+<h3 id="can-reloader-and-app-level-hot-reload-be-used-in-the-same-cluster">Can Reloader and app-level hot-reload be used in the same cluster?<a class="headerlink" href="#can-reloader-and-app-level-hot-reload-be-used-in-the-same-cluster" title="Permanent link">#</a></h3>
+<p>Yes. They operate independently. Reloader triggers a restart when it detects a change; if the application also has a file watcher, the file watcher will run during the pod's lifetime but the pod will be replaced by Reloader when a relevant change occurs.</p>
 
 
 

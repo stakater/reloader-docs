@@ -5,13 +5,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-nginxinc-nginx-unprivileged-1.x/concepts/comparisons/reloader-vs-manual-rollouts.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-nginxinc-nginx-unprivileged-1.x/integrations/infisical/infisical-operator.html">
       
       
-        <link rel="prev" href="reloader-vs-init-containers.html">
+        <link rel="prev" href="index.html">
       
       
-        <link rel="next" href="reloader-vs-gitops-tools.html">
+        <link rel="next" href="../../reference/annotations.html">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>Reloader vs Manual Rollouts - Reloader</title>
+        <title>Infisical Operator - Reloader</title>
       
     
     
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reloader-vs-manual-rollouts" class="md-skip">
+        <a href="#how-to-use-reloader-with-the-infisical-kubernetes-operator" class="md-skip">
           Skip to content
         </a>
       
@@ -2289,20 +2289,18 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -2323,7 +2321,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2341,7 +2339,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../why-configuration-reloading-matters.html" class="md-nav__link">
+      <a href="../../concepts/why-configuration-reloading-matters.html" class="md-nav__link">
         
   
   
@@ -2369,7 +2367,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../secret-propagation-problem-kubernetes.html" class="md-nav__link">
+      <a href="../../concepts/secret-propagation-problem-kubernetes.html" class="md-nav__link">
         
   
   
@@ -2394,20 +2392,18 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3">
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
@@ -2428,7 +2424,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2446,7 +2442,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-helm.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-helm.html" class="md-nav__link">
         
   
   
@@ -2474,7 +2470,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-checksum-annotations.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-checksum-annotations.html" class="md-nav__link">
         
   
   
@@ -2502,7 +2498,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-kyverno.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-kyverno.html" class="md-nav__link">
         
   
   
@@ -2530,7 +2526,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-sidecar-config-watchers.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-sidecar-config-watchers.html" class="md-nav__link">
         
   
   
@@ -2558,7 +2554,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-init-containers.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-init-containers.html" class="md-nav__link">
         
   
   
@@ -2583,37 +2579,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reloader vs Manual Rollouts
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="reloader-vs-manual-rollouts.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../concepts/comparisons/reloader-vs-manual-rollouts.html" class="md-nav__link">
         
   
   
@@ -2629,266 +2598,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#the-configuration-reload-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Configuration Reload Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#manual-rollouts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Manual Rollouts
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advantages-of-manual-rollouts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Advantages of Manual Rollouts
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Advantages of Manual Rollouts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#built-into-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Built Into Kubernetes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#useful-for-occasional-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Useful for Occasional Changes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#no-additional-controllers-required" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        No Additional Controllers Required
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#limitations-of-manual-rollouts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Limitations of Manual Rollouts
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Limitations of Manual Rollouts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#requires-human-intervention" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Requires Human Intervention
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#operational-overhead" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Operational Overhead
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#difficult-to-scale" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Difficult to Scale
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#error-prone" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Error-Prone
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-reloader-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How Reloader Works
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-differences" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key Differences
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-manual-rollouts-make-sense" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When Manual Rollouts Make Sense
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-reloader-is-a-better-fit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When Reloader Is a Better Fit
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FAQ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="FAQ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#do-configmap-changes-automatically-restart-pods-in-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Do ConfigMap changes automatically restart pods in Kubernetes?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-can-i-restart-pods-after-configuration-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How can I restart pods after configuration changes?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#can-manual-rollouts-and-reloader-be-used-together" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Can manual rollouts and Reloader be used together?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2901,7 +2610,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-gitops-tools.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-gitops-tools.html" class="md-nav__link">
         
   
   
@@ -2929,7 +2638,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-secret-operators.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-secret-operators.html" class="md-nav__link">
         
   
   
@@ -2957,7 +2666,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-cert-manager.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-cert-manager.html" class="md-nav__link">
         
   
   
@@ -2985,7 +2694,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-app-level-reload.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-app-level-reload.html" class="md-nav__link">
         
   
   
@@ -3013,7 +2722,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-infisical-reload.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-infisical-reload.html" class="md-nav__link">
         
   
   
@@ -3497,18 +3206,20 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked="">
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -3529,7 +3240,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3547,7 +3258,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/index.html" class="md-nav__link">
+      <a href="../index.html" class="md-nav__link">
         
   
   
@@ -3622,7 +3333,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/conjur/index.html" class="md-nav__link">
+      <a href="../conjur/index.html" class="md-nav__link">
         
   
   
@@ -3650,7 +3361,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/conjur/conjur-eso.html" class="md-nav__link">
+      <a href="../conjur/conjur-eso.html" class="md-nav__link">
         
   
   
@@ -3678,7 +3389,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/conjur/conjur-sidecar.html" class="md-nav__link">
+      <a href="../conjur/conjur-sidecar.html" class="md-nav__link">
         
   
   
@@ -3706,7 +3417,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/conjur/conjur-csi.html" class="md-nav__link">
+      <a href="../conjur/conjur-csi.html" class="md-nav__link">
         
   
   
@@ -3789,7 +3500,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/index.html" class="md-nav__link">
+      <a href="../vault/index.html" class="md-nav__link">
         
   
   
@@ -3817,7 +3528,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/vault-eso.html" class="md-nav__link">
+      <a href="../vault/vault-eso.html" class="md-nav__link">
         
   
   
@@ -3845,7 +3556,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/vault-vso.html" class="md-nav__link">
+      <a href="../vault/vault-vso.html" class="md-nav__link">
         
   
   
@@ -3873,7 +3584,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/vault-csi.html" class="md-nav__link">
+      <a href="../vault/vault-csi.html" class="md-nav__link">
         
   
   
@@ -3901,7 +3612,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/vault-csi-file.html" class="md-nav__link">
+      <a href="../vault/vault-csi-file.html" class="md-nav__link">
         
   
   
@@ -3984,7 +3695,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/index.html" class="md-nav__link">
+      <a href="../openbao/index.html" class="md-nav__link">
         
   
   
@@ -4012,7 +3723,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/openbao-eso.html" class="md-nav__link">
+      <a href="../openbao/openbao-eso.html" class="md-nav__link">
         
   
   
@@ -4040,7 +3751,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/openbao-bso.html" class="md-nav__link">
+      <a href="../openbao/openbao-bso.html" class="md-nav__link">
         
   
   
@@ -4068,7 +3779,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/openbao-csi.html" class="md-nav__link">
+      <a href="../openbao/openbao-csi.html" class="md-nav__link">
         
   
   
@@ -4096,7 +3807,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/openbao-csi-file.html" class="md-nav__link">
+      <a href="../openbao/openbao-csi-file.html" class="md-nav__link">
         
   
   
@@ -4179,7 +3890,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/aws/index.html" class="md-nav__link">
+      <a href="../aws/index.html" class="md-nav__link">
         
   
   
@@ -4207,7 +3918,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/aws/aws-eso.html" class="md-nav__link">
+      <a href="../aws/aws-eso.html" class="md-nav__link">
         
   
   
@@ -4235,7 +3946,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/aws/aws-csi.html" class="md-nav__link">
+      <a href="../aws/aws-csi.html" class="md-nav__link">
         
   
   
@@ -4318,7 +4029,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/gcp/index.html" class="md-nav__link">
+      <a href="../gcp/index.html" class="md-nav__link">
         
   
   
@@ -4346,7 +4057,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/gcp/gcp-eso.html" class="md-nav__link">
+      <a href="../gcp/gcp-eso.html" class="md-nav__link">
         
   
   
@@ -4429,7 +4140,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/azure/index.html" class="md-nav__link">
+      <a href="../azure/index.html" class="md-nav__link">
         
   
   
@@ -4457,7 +4168,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/azure/azure-eso.html" class="md-nav__link">
+      <a href="../azure/azure-eso.html" class="md-nav__link">
         
   
   
@@ -4485,7 +4196,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/azure/azure-csi.html" class="md-nav__link">
+      <a href="../azure/azure-csi.html" class="md-nav__link">
         
   
   
@@ -4518,18 +4229,20 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_8">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_8" checked="">
         
           
           <label class="md-nav__link" for="__nav_6_8" id="__nav_6_8_label" tabindex="0">
@@ -4550,7 +4263,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_8">
             <span class="md-nav__icon md-icon"></span>
             
@@ -4568,7 +4281,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/infisical/index.html" class="md-nav__link">
+      <a href="index.html" class="md-nav__link">
         
   
   
@@ -4593,10 +4306,37 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../integrations/infisical/infisical-operator.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Infisical Operator
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="infisical-operator.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -4612,6 +4352,171 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-install-the-infisical-kubernetes-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Install the Infisical Kubernetes operator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-install-reloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Install Reloader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-create-a-machine-identity-for-the-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Create a machine identity for the operator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-create-the-infisicalsecret-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Create the InfisicalSecret resource
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-annotate-workloads-for-reloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 — Annotate workloads for Reloader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#argo-rollouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Argo Rollouts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-test-the-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 — Test the rotation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reloader-annotations-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reloader annotations reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disable-infisicals-built-in-auto-reload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disable Infisical's built-in auto-reload
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-configmaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using ConfigMaps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cooldown-between-reloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cooldown between reloads
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4880,10 +4785,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#the-configuration-reload-problem" class="md-nav__link">
+  <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Configuration Reload Problem
+        How it works
       
     </span>
   </a>
@@ -4891,10 +4796,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#manual-rollouts" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Manual Rollouts
+        Prerequisites
       
     </span>
   </a>
@@ -4902,121 +4807,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#advantages-of-manual-rollouts" class="md-nav__link">
+  <a href="#step-1-install-the-infisical-kubernetes-operator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Advantages of Manual Rollouts
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Advantages of Manual Rollouts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#built-into-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Built Into Kubernetes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#useful-for-occasional-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Useful for Occasional Changes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#no-additional-controllers-required" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        No Additional Controllers Required
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#limitations-of-manual-rollouts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Limitations of Manual Rollouts
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Limitations of Manual Rollouts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#requires-human-intervention" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Requires Human Intervention
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#operational-overhead" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Operational Overhead
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#difficult-to-scale" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Difficult to Scale
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#error-prone" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Error-Prone
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-reloader-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How Reloader Works
+        Step 1 — Install the Infisical Kubernetes operator
       
     </span>
   </a>
@@ -5024,10 +4818,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-differences" class="md-nav__link">
+  <a href="#step-2-install-reloader" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key Differences
+        Step 2 — Install Reloader
       
     </span>
   </a>
@@ -5035,10 +4829,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#when-manual-rollouts-make-sense" class="md-nav__link">
+  <a href="#step-3-create-a-machine-identity-for-the-operator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        When Manual Rollouts Make Sense
+        Step 3 — Create a machine identity for the operator
       
     </span>
   </a>
@@ -5046,10 +4840,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#when-reloader-is-a-better-fit" class="md-nav__link">
+  <a href="#step-4-create-the-infisicalsecret-resource" class="md-nav__link">
     <span class="md-ellipsis">
       
-        When Reloader Is a Better Fit
+        Step 4 — Create the InfisicalSecret resource
       
     </span>
   </a>
@@ -5057,10 +4851,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#step-5-annotate-workloads-for-reloader" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Summary
+        Step 5 — Annotate workloads for Reloader
       
     </span>
   </a>
@@ -5068,52 +4862,68 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
+  <a href="#argo-rollouts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        FAQ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="FAQ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#do-configmap-changes-automatically-restart-pods-in-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Do ConfigMap changes automatically restart pods in Kubernetes?
+        Argo Rollouts
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#how-can-i-restart-pods-after-configuration-changes" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#step-6-test-the-rotation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How can I restart pods after configuration changes?
+        Step 6 — Test the rotation
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#can-manual-rollouts-and-reloader-be-used-together" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#reloader-annotations-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Can manual rollouts and Reloader be used together?
+        Reloader annotations reference
       
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#disable-infisicals-built-in-auto-reload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Disable Infisical's built-in auto-reload
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-configmaps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using ConfigMaps
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cooldown-between-reloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cooldown between reloads
+      
+    </span>
+  </a>
   
 </li>
       
@@ -5137,148 +4947,271 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="reloader-vs-manual-rollouts">Reloader vs Manual Rollouts<a class="headerlink" href="#reloader-vs-manual-rollouts" title="Permanent link">#</a></h1>
-<p>In Kubernetes, applications often rely on configuration stored in <strong>ConfigMaps</strong> and <strong>Secrets</strong>.</p>
-<p>When those resources change, running pods do not automatically reload the updated values. Platform teams therefore need a way to ensure applications pick up configuration updates.</p>
-<p>One simple approach is to manually restart workloads. Another approach is to use an automated controller such as <strong>Reloader</strong>.</p>
-<p>Both approaches solve the same problem but differ significantly in operational complexity and scalability.</p>
+<h1 id="how-to-use-reloader-with-the-infisical-kubernetes-operator">How to Use Reloader with the Infisical Kubernetes Operator<a class="headerlink" href="#how-to-use-reloader-with-the-infisical-kubernetes-operator" title="Permanent link">#</a></h1>
+<p>This guide shows how to combine the Infisical Kubernetes operator with Reloader to automatically restart pods when secrets change in Infisical.</p>
+<p>The Infisical operator syncs secrets from Infisical into Kubernetes <code>Secret</code> objects. Reloader watches those Secrets and triggers rolling restarts when their data changes. This pattern supports all Reloader-compatible workload types including Argo Rollouts, which the Infisical operator's built-in reload does not cover.</p>
 <hr>
-<h2 id="the-configuration-reload-problem">The Configuration Reload Problem<a class="headerlink" href="#the-configuration-reload-problem" title="Permanent link">#</a></h2>
-<p>Updating a ConfigMap or Secret in Kubernetes does <strong>not automatically restart pods</strong>.</p>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code>ConfigMap<span class="w"> </span>updated
-↓
-Pods<span class="w"> </span><span class="k">continue</span><span class="w"> </span>running
-↓
-Application<span class="w"> </span>still<span class="w"> </span>uses<span class="w"> </span>old<span class="w"> </span>configuration
-</code></pre></div>
-<p>This happens because Kubernetes only triggers a rollout when the <strong>Pod specification changes</strong>, not when referenced resources change.</p>
-<p>Because of this behavior, operators must either manually restart workloads or introduce automation.</p>
+<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h2>
+<pre class="mermaid"><code>sequenceDiagram
+    actor Dev as Developer
+    participant INF as Infisical
+    participant OP as Infisical Operator
+    participant K8s as Kubernetes Secret
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Dev-&gt;&gt;INF: Update secret value
+    loop Every resyncInterval (default: 1m)
+        OP-&gt;&gt;INF: Fetch latest secrets
+        INF--&gt;&gt;OP: Updated secret value
+        OP-&gt;&gt;K8s: Update managed Kubernetes Secret
+    end
+    K8s--&gt;&gt;RL: Watch event (Secret changed)
+    RL-&gt;&gt;Pod: Trigger rolling restart
+    Note over Pod: New pod starts with updated secret</code></pre>
 <hr>
-<h2 id="manual-rollouts">Manual Rollouts<a class="headerlink" href="#manual-rollouts" title="Permanent link">#</a></h2>
-<p>A common way to reload configuration is to manually restart workloads.</p>
-<p>Example command:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>restart<span class="w"> </span>deployment<span class="w"> </span>my-app
-</code></pre></div>
-<p>Typical workflow:</p>
-<div class="highlight"><pre><span></span><code>ConfigMap<span class="w"> </span>updated
-↓
-Operator<span class="w"> </span>runs<span class="w"> </span>rollout<span class="w"> </span>restart
-↓
-Deployment<span class="w"> </span>updated
-↓
-Pods<span class="w"> </span>restart
-</code></pre></div>
-<p>This approach works because restarting pods forces applications to reload configuration.</p>
-<hr>
-<h2 id="advantages-of-manual-rollouts">Advantages of Manual Rollouts<a class="headerlink" href="#advantages-of-manual-rollouts" title="Permanent link">#</a></h2>
-<p>Manual rollouts are simple and require no additional tooling.</p>
-<h3 id="built-into-kubernetes">Built Into Kubernetes<a class="headerlink" href="#built-into-kubernetes" title="Permanent link">#</a></h3>
-<p>The rollout command is part of standard Kubernetes tooling and works with Deployments, StatefulSets, and Daemonsets.</p>
-<h3 id="useful-for-occasional-changes">Useful for Occasional Changes<a class="headerlink" href="#useful-for-occasional-changes" title="Permanent link">#</a></h3>
-<p>For small environments or infrequent configuration updates, manually restarting workloads may be sufficient.</p>
-<h3 id="no-additional-controllers-required">No Additional Controllers Required<a class="headerlink" href="#no-additional-controllers-required" title="Permanent link">#</a></h3>
-<p>Manual restarts do not require installing additional components in the cluster.</p>
-<hr>
-<h2 id="limitations-of-manual-rollouts">Limitations of Manual Rollouts<a class="headerlink" href="#limitations-of-manual-rollouts" title="Permanent link">#</a></h2>
-<p>Manual restarts can become difficult to manage as systems grow.</p>
-<h3 id="requires-human-intervention">Requires Human Intervention<a class="headerlink" href="#requires-human-intervention" title="Permanent link">#</a></h3>
-<p>Someone must remember to restart workloads after configuration changes.</p>
-<p>In busy environments, this step can easily be missed.</p>
-<h3 id="operational-overhead">Operational Overhead<a class="headerlink" href="#operational-overhead" title="Permanent link">#</a></h3>
-<p>If multiple applications depend on the same configuration resource, each workload may need to be restarted individually.</p>
-<h3 id="difficult-to-scale">Difficult to Scale<a class="headerlink" href="#difficult-to-scale" title="Permanent link">#</a></h3>
-<p>In clusters with many applications, manually tracking configuration dependencies and restarting affected workloads becomes operationally expensive.</p>
-<h3 id="error-prone">Error-Prone<a class="headerlink" href="#error-prone" title="Permanent link">#</a></h3>
-<p>Manual processes increase the risk of mistakes, such as restarting the wrong workloads or forgetting to restart some applications.</p>
-<hr>
-<h2 id="how-reloader-works">How Reloader Works<a class="headerlink" href="#how-reloader-works" title="Permanent link">#</a></h2>
-<p>Reloader is a Kubernetes controller that watches for changes in:</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
-<li>ConfigMaps</li>
-<li>Secrets</li>
+<li>Kubernetes cluster (v1.19+)</li>
+<li>Helm v3+</li>
+<li>An Infisical account (cloud at <code>app.infisical.com</code> or self-hosted)</li>
+<li>Infisical project with secrets configured</li>
+<li>Stakater Reloader installed</li>
 </ul>
-<p>When those resources change, Reloader automatically triggers a rolling restart of workloads that reference them.</p>
-<p>Example workflow:</p>
-<div class="highlight"><pre><span></span><code>ConfigMap<span class="w"> </span>or<span class="w"> </span>Secret<span class="w"> </span>updated
-↓
-Reloader<span class="w"> </span>detects<span class="w"> </span>change
-↓
-Deployment<span class="w"> </span>patched
-↓
-Kubernetes<span class="w"> </span>rolling<span class="w"> </span>restart<span class="w"> </span>triggered
-</code></pre></div>
-<p>This ensures applications restart and pick up the latest configuration automatically.</p>
 <hr>
-<h2 id="key-differences">Key Differences<a class="headerlink" href="#key-differences" title="Permanent link">#</a></h2>
+<h2 id="step-1-install-the-infisical-kubernetes-operator">Step 1 — Install the Infisical Kubernetes operator<a class="headerlink" href="#step-1-install-the-infisical-kubernetes-operator" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>infisical-helm-charts<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">'https://dl.cloudsmith.io/public/infisical/helm-charts/helm/charts/'</span>
+helm<span class="w"> </span>repo<span class="w"> </span>update
+helm<span class="w"> </span>install<span class="w"> </span>infisical-operator<span class="w"> </span>infisical-helm-charts/secrets-operator<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>infisical-operator<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--create-namespace
+</code></pre></div>
+<p>Verify the operator is running:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>infisical-operator
+</code></pre></div>
+<hr>
+<h2 id="step-2-install-reloader">Step 2 — Install Reloader<a class="headerlink" href="#step-2-install-reloader" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>stakater<span class="w"> </span>https://stakater.github.io/stakater-charts
+helm<span class="w"> </span>repo<span class="w"> </span>update
+helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--create-namespace
+</code></pre></div>
+<hr>
+<h2 id="step-3-create-a-machine-identity-for-the-operator">Step 3 — Create a machine identity for the operator<a class="headerlink" href="#step-3-create-a-machine-identity-for-the-operator" title="Permanent link">#</a></h2>
+<p>The Infisical operator authenticates to Infisical using a machine identity. Kubernetes auth is the recommended method for clusters — it uses the operator's ServiceAccount token with no static credentials stored in the cluster.</p>
+<p>In the Infisical dashboard:</p>
+<ol>
+<li>Navigate to <strong>Access Control</strong> → <strong>Machine Identities</strong></li>
+<li>Create a new identity and note the <strong>Identity ID</strong></li>
+<li>Add the identity to your project with at least <strong>Viewer</strong> access</li>
+<li>Under the identity's auth methods, enable <strong>Kubernetes Auth</strong> and set the allowed service account name and namespace</li>
+</ol>
+<hr>
+<h2 id="step-4-create-the-infisicalsecret-resource">Step 4 — Create the InfisicalSecret resource<a class="headerlink" href="#step-4-create-the-infisicalsecret-resource" title="Permanent link">#</a></h2>
+<p>The <code>InfisicalSecret</code> CRD tells the operator which secrets to sync and where to write them.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets.infisical.com/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">InfisicalSecret</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-infisical-secret</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">hostAPI</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://app.infisical.com/api</span>
+<span class="w">  </span><span class="nt">syncConfig</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">resyncInterval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1m</span>
+<span class="w">  </span><span class="nt">authentication</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">kubernetesAuth</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">identityId</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;your-machine-identity-id&gt;</span>
+<span class="w">      </span><span class="nt">serviceAccountRef</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">infisical-operator</span>
+<span class="w">        </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">infisical-operator</span>
+<span class="w">  </span><span class="nt">managedKubeSecretReferences</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">secretName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">      </span><span class="nt">secretNamespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">      </span><span class="nt">creationPolicy</span><span class="p">:</span><span class="w"> </span><span class="s">"Owner"</span>
+<span class="w">      </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">includeAllSecrets</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p>Apply:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>infisical-secret.yaml
+</code></pre></div>
+<p><strong>Key fields:</strong></p>
 <table>
 <thead>
 <tr>
-<th>Aspect</th>
-<th>Reloader</th>
-<th>Manual Rollouts</th>
+<th>Field</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Automation</td>
-<td>Automatic</td>
-<td>Manual</td>
+<td><code>hostAPI</code></td>
+<td>Infisical API endpoint. Use <code>https://app.infisical.com/api</code> for cloud; replace with your self-hosted URL</td>
 </tr>
 <tr>
-<td>Operational effort</td>
-<td>Minimal after installation</td>
-<td>Requires repeated intervention</td>
+<td><code>resyncInterval</code></td>
+<td>How often the operator polls Infisical for changes. Default is <code>1m</code></td>
 </tr>
 <tr>
-<td>Scalability</td>
-<td>Works across many workloads</td>
-<td>Difficult to manage at scale</td>
+<td><code>identityId</code></td>
+<td>The machine identity ID from your Infisical dashboard</td>
 </tr>
 <tr>
-<td>Risk of missed restarts</td>
-<td>Low</td>
-<td>Higher</td>
+<td><code>secretName</code></td>
+<td>Name of the Kubernetes Secret the operator creates</td>
+</tr>
+<tr>
+<td><code>creationPolicy</code></td>
+<td><code>Owner</code> (operator manages the Secret lifecycle) or <code>Orphan</code> (Secret persists after <code>InfisicalSecret</code> is deleted)</td>
+</tr>
+<tr>
+<td><code>includeAllSecrets</code></td>
+<td>Sync all secrets from the project to this Kubernetes Secret</td>
 </tr>
 </tbody>
 </table>
-<p>Manual rollouts rely on operators to trigger restarts, while Reloader provides <strong>automatic configuration change handling</strong>.</p>
-<hr>
-<h2 id="when-manual-rollouts-make-sense">When Manual Rollouts Make Sense<a class="headerlink" href="#when-manual-rollouts-make-sense" title="Permanent link">#</a></h2>
-<p>Manual restarts may be appropriate when:</p>
-<ul>
-<li>configuration changes are rare</li>
-<li>clusters are small</li>
-<li>operational simplicity is preferred</li>
-</ul>
-<p>In these cases, running a restart command occasionally may be sufficient.</p>
-<hr>
-<h2 id="when-reloader-is-a-better-fit">When Reloader Is a Better Fit<a class="headerlink" href="#when-reloader-is-a-better-fit" title="Permanent link">#</a></h2>
-<p>Reloader is often a better solution when:</p>
-<ul>
-<li>configuration changes happen frequently</li>
-<li>multiple workloads depend on the same configuration</li>
-<li>teams want reliable automation</li>
-<li>minimizing operational overhead is important</li>
-</ul>
-<p>These conditions are common in modern Kubernetes environments.</p>
-<hr>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
-<p>Manual rollouts and Reloader both ensure applications pick up configuration updates.</p>
-<p>Manual rollouts rely on operators to restart workloads after configuration changes.</p>
-<p>Reloader automates this process by watching ConfigMaps and Secrets and triggering rolling restarts when they change.</p>
-<p>Automation can help reduce operational overhead and improve reliability as systems scale.</p>
-<hr>
-<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">#</a></h2>
-<h3 id="do-configmap-changes-automatically-restart-pods-in-kubernetes">Do ConfigMap changes automatically restart pods in Kubernetes?<a class="headerlink" href="#do-configmap-changes-automatically-restart-pods-in-kubernetes" title="Permanent link">#</a></h3>
-<p>No. Updating a ConfigMap does not restart pods automatically.</p>
-<h3 id="how-can-i-restart-pods-after-configuration-changes">How can I restart pods after configuration changes?<a class="headerlink" href="#how-can-i-restart-pods-after-configuration-changes" title="Permanent link">#</a></h3>
-<p>You can manually restart workloads using:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>restart<span class="w"> </span>deployment<span class="w"> </span>&lt;deployment-name&gt;
+<p>The operator creates the Kubernetes Secret <code>app-secrets</code> in the <code>default</code> namespace and keeps it in sync.</p>
+<p>Verify the Secret was created:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>default
+kubectl<span class="w"> </span>describe<span class="w"> </span>infisicalsecret<span class="w"> </span>app-infisical-secret<span class="w"> </span>-n<span class="w"> </span>default
 </code></pre></div>
-<p>Alternatively, automation tools like Reloader can trigger rolling restarts automatically when configuration changes.</p>
-<h3 id="can-manual-rollouts-and-reloader-be-used-together">Can manual rollouts and Reloader be used together?<a class="headerlink" href="#can-manual-rollouts-and-reloader-be-used-together" title="Permanent link">#</a></h3>
-<p>Yes. Manual restarts can still be used when needed, even if Reloader is installed.</p>
+<hr>
+<h2 id="step-5-annotate-workloads-for-reloader">Step 5 — Annotate workloads for Reloader<a class="headerlink" href="#step-5-annotate-workloads-for-reloader" title="Permanent link">#</a></h2>
+<p>Add the Reloader annotation to each workload that should restart when the Secret changes.</p>
+<p><strong>Recommended pattern — watch the specific Secret by name:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">secret.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"app-secrets"</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp:latest</span>
+<span class="w">          </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API_KEY</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API_KEY</span>
+</code></pre></div>
+<p>Apply:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>deployment.yaml
+</code></pre></div>
+<hr>
+<h2 id="argo-rollouts">Argo Rollouts<a class="headerlink" href="#argo-rollouts" title="Permanent link">#</a></h2>
+<p>For Argo Rollouts, the annotation is the same. The Infisical operator's built-in <code>secrets.infisical.com/auto-reload</code> does not support Argo Rollouts; Reloader does.</p>
+<p>Enable Argo Rollouts support in Reloader's Helm values:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">isArgoRollouts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p>Then annotate the Rollout:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">argoproj.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rollout</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">secret.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"app-secrets"</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp:latest</span>
+<span class="w">          </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
+</code></pre></div>
+<hr>
+<h2 id="step-6-test-the-rotation">Step 6 — Test the rotation<a class="headerlink" href="#step-6-test-the-rotation" title="Permanent link">#</a></h2>
+<p>Update a secret value in the Infisical dashboard, then wait for the next sync interval (default: 1 minute).</p>
+<p>Confirm the Kubernetes Secret was updated:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>default<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.DB_PASSWORD}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
+</code></pre></div>
+<p>Confirm pods were restarted:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deployment/myapp<span class="w"> </span>-n<span class="w"> </span>default
+kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>default<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>myapp
+</code></pre></div>
+<p>Check Reloader logs to confirm the reload was triggered:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader-reloader<span class="w"> </span>--tail<span class="o">=</span><span class="m">20</span>
+</code></pre></div>
+<p>Expected log output:</p>
+<div class="highlight"><pre><span></span><code>Changes detected in 'app-secrets' of type 'Secret' in namespace 'default'
+Updated 'myapp' of type 'Deployment' in namespace 'default'
+</code></pre></div>
+<hr>
+<h2 id="reloader-annotations-reference">Reloader annotations reference<a class="headerlink" href="#reloader-annotations-reference" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Annotation</th>
+<th>Placed on</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>secret.reloader.stakater.com/reload: "app-secrets"</code></td>
+<td>Deployment / StatefulSet / Daemonset / Rollout</td>
+<td>Restart when the named Secret changes</td>
+</tr>
+<tr>
+<td><code>reloader.stakater.com/auto: "true"</code></td>
+<td>Deployment / StatefulSet / Daemonset / Rollout</td>
+<td>Restart when any Secret or ConfigMap referenced in the pod spec changes</td>
+</tr>
+<tr>
+<td><code>reloader.stakater.com/search: "true"</code></td>
+<td>Deployment</td>
+<td>Restart when any Secret annotated with <code>reloader.stakater.com/match: "true"</code> changes</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="disable-infisicals-built-in-auto-reload">Disable Infisical's built-in auto-reload<a class="headerlink" href="#disable-infisicals-built-in-auto-reload" title="Permanent link">#</a></h2>
+<p>If you are using Reloader, do not also set <code>secrets.infisical.com/auto-reload: "true"</code> on the same workload. Both mechanisms would fire on the same Secret update, causing two successive restarts. Use one or the other.</p>
+<hr>
+<h2 id="using-configmaps">Using ConfigMaps<a class="headerlink" href="#using-configmaps" title="Permanent link">#</a></h2>
+<p>The Infisical operator supports syncing non-sensitive values into Kubernetes ConfigMaps via the same <code>managedKubeSecretReferences</code> mechanism. Reloader watches ConfigMaps as well as Secrets, so the same annotation pattern applies:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">configmap.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"app-config"</span>
+</code></pre></div>
+<hr>
+<h2 id="cooldown-between-reloads">Cooldown between reloads<a class="headerlink" href="#cooldown-between-reloads" title="Permanent link">#</a></h2>
+<p>To prevent rapid successive restarts when multiple secrets are updated in quick succession:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">secret.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"app-secrets"</span>
+<span class="w">    </span><span class="nt">deployment.reloader.stakater.com/pause-period</span><span class="p">:</span><span class="w"> </span><span class="s">"2m"</span>
+</code></pre></div>
+<p>During the pause period, additional Secret changes do not trigger another restart.</p>
 
 
 

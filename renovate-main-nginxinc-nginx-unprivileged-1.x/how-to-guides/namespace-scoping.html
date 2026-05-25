@@ -5,31 +5,31 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-nginxinc-nginx-unprivileged-1.x/concepts/comparisons/reloader-vs-manual-rollouts.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-nginxinc-nginx-unprivileged-1.x/how-to-guides/namespace-scoping.html">
       
       
-        <link rel="prev" href="reloader-vs-init-containers.html">
+        <link rel="prev" href="restart-pods-when-external-secrets-change.html">
       
       
-        <link rel="next" href="reloader-vs-gitops-tools.html">
+        <link rel="next" href="monitor-reloader.html">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Reloader vs Manual Rollouts - Reloader</title>
+        <title>Scope Reloader to Specific Namespaces - Reloader</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -48,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -66,7 +66,7 @@
 
     
     
-  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reloader-vs-manual-rollouts" class="md-skip">
+        <a href="#scope-reloader-to-specific-namespaces" class="md-skip">
           Skip to content
         </a>
       
@@ -340,9 +340,9 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   <nav class="md-header__inner md-grid" aria-label="Header">
 
     <!-- Link to home -->
-    <a href="../.." title="Reloader" class="md-header__button md-logo" aria-label="Reloader" data-md-component="logo">
+    <a href=".." title="Reloader" class="md-header__button md-logo" aria-label="Reloader" data-md-component="logo">
       <!-- 
-  <img src="../../assets/images/logo.svg" alt="logo">
+  <img src="../assets/images/logo.svg" alt="logo">
  -->
     </a>
 
@@ -360,10 +360,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
         <!-- Logo -->
         <div class="md-header__topic">
           
-          <img class="md-header__logo_light" src="../../assets/images/logo.svg#only-light" alt="logo">
+          <img class="md-header__logo_light" src="../assets/images/logo.svg#only-light" alt="logo">
           
           
-          <img class="md-header__logo_dark" src="../../assets/images/logo.svg#only-dark" alt="logo">
+          <img class="md-header__logo_dark" src="../assets/images/logo.svg#only-dark" alt="logo">
           
           
           <div class="header-site-name">
@@ -1987,9 +1987,9 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Reloader" class="md-nav__button md-logo" aria-label="Reloader" data-md-component="logo">
+    <a href=".." title="Reloader" class="md-nav__button md-logo" aria-label="Reloader" data-md-component="logo">
       
-  <img src="../../assets/images/logo.svg" alt="logo">
+  <img src="../assets/images/logo.svg" alt="logo">
 
     </a>
     Reloader
@@ -2063,7 +2063,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../index.html" class="md-nav__link">
+      <a href="../index.html" class="md-nav__link">
         
   
   
@@ -2091,7 +2091,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../about/why-reloader-matters.html" class="md-nav__link">
+      <a href="../about/why-reloader-matters.html" class="md-nav__link">
         
   
   
@@ -2119,7 +2119,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../about/value-by-role.html" class="md-nav__link">
+      <a href="../about/value-by-role.html" class="md-nav__link">
         
   
   
@@ -2147,7 +2147,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../about/editions.html" class="md-nav__link">
+      <a href="../about/editions.html" class="md-nav__link">
         
   
   
@@ -2175,7 +2175,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../about/faq.html" class="md-nav__link">
+      <a href="../about/faq.html" class="md-nav__link">
         
   
   
@@ -2257,7 +2257,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../architecture/how-it-works.html" class="md-nav__link">
+      <a href="../architecture/how-it-works.html" class="md-nav__link">
         
   
   
@@ -2289,20 +2289,18 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -2323,7 +2321,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2341,7 +2339,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../why-configuration-reloading-matters.html" class="md-nav__link">
+      <a href="../concepts/why-configuration-reloading-matters.html" class="md-nav__link">
         
   
   
@@ -2369,7 +2367,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../secret-propagation-problem-kubernetes.html" class="md-nav__link">
+      <a href="../concepts/secret-propagation-problem-kubernetes.html" class="md-nav__link">
         
   
   
@@ -2394,20 +2392,18 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3">
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
@@ -2428,7 +2424,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2446,7 +2442,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-helm.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-helm.html" class="md-nav__link">
         
   
   
@@ -2474,7 +2470,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-checksum-annotations.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-checksum-annotations.html" class="md-nav__link">
         
   
   
@@ -2502,7 +2498,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-kyverno.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-kyverno.html" class="md-nav__link">
         
   
   
@@ -2530,7 +2526,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-sidecar-config-watchers.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-sidecar-config-watchers.html" class="md-nav__link">
         
   
   
@@ -2558,7 +2554,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-init-containers.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-init-containers.html" class="md-nav__link">
         
   
   
@@ -2583,37 +2579,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reloader vs Manual Rollouts
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="reloader-vs-manual-rollouts.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../concepts/comparisons/reloader-vs-manual-rollouts.html" class="md-nav__link">
         
   
   
@@ -2629,266 +2598,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#the-configuration-reload-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Configuration Reload Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#manual-rollouts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Manual Rollouts
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advantages-of-manual-rollouts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Advantages of Manual Rollouts
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Advantages of Manual Rollouts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#built-into-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Built Into Kubernetes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#useful-for-occasional-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Useful for Occasional Changes
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#no-additional-controllers-required" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        No Additional Controllers Required
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#limitations-of-manual-rollouts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Limitations of Manual Rollouts
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Limitations of Manual Rollouts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#requires-human-intervention" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Requires Human Intervention
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#operational-overhead" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Operational Overhead
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#difficult-to-scale" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Difficult to Scale
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#error-prone" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Error-Prone
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-reloader-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How Reloader Works
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-differences" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key Differences
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-manual-rollouts-make-sense" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When Manual Rollouts Make Sense
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-reloader-is-a-better-fit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When Reloader Is a Better Fit
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FAQ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="FAQ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#do-configmap-changes-automatically-restart-pods-in-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Do ConfigMap changes automatically restart pods in Kubernetes?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-can-i-restart-pods-after-configuration-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How can I restart pods after configuration changes?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#can-manual-rollouts-and-reloader-be-used-together" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Can manual rollouts and Reloader be used together?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2901,7 +2610,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-gitops-tools.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-gitops-tools.html" class="md-nav__link">
         
   
   
@@ -2929,7 +2638,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-secret-operators.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-secret-operators.html" class="md-nav__link">
         
   
   
@@ -2957,7 +2666,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-cert-manager.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-cert-manager.html" class="md-nav__link">
         
   
   
@@ -2985,7 +2694,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-app-level-reload.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-app-level-reload.html" class="md-nav__link">
         
   
   
@@ -3013,7 +2722,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-infisical-reload.html" class="md-nav__link">
+      <a href="../concepts/comparisons/reloader-vs-infisical-reload.html" class="md-nav__link">
         
   
   
@@ -3103,7 +2812,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../installation/install-oss.html" class="md-nav__link">
+      <a href="../installation/install-oss.html" class="md-nav__link">
         
   
   
@@ -3131,7 +2840,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../installation/install.html" class="md-nav__link">
+      <a href="../installation/install.html" class="md-nav__link">
         
   
   
@@ -3163,18 +2872,20 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -3195,7 +2906,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3213,7 +2924,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../how-to-guides/restart-pods-when-configmap-changes.html" class="md-nav__link">
+      <a href="restart-pods-when-configmap-changes.html" class="md-nav__link">
         
   
   
@@ -3241,7 +2952,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../how-to-guides/restart-pods-when-secret-changes.html" class="md-nav__link">
+      <a href="restart-pods-when-secret-changes.html" class="md-nav__link">
         
   
   
@@ -3269,7 +2980,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../how-to-guides/reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
+      <a href="reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
         
   
   
@@ -3297,7 +3008,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../how-to-guides/restart-pods-when-external-secrets-change.html" class="md-nav__link">
+      <a href="restart-pods-when-external-secrets-change.html" class="md-nav__link">
         
   
   
@@ -3322,10 +3033,37 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../how-to-guides/namespace-scoping.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope Reloader to Specific Namespaces
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="namespace-scoping.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3341,6 +3079,166 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#default-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default behavior
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-1-restrict-to-the-deployment-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 1 — Restrict to the deployment namespace
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-2-watch-namespaces-matching-a-label-selector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 2 — Watch namespaces matching a label selector
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-3-exclude-specific-namespaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 3 — Exclude specific namespaces
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-4-filter-by-resource-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 4 — Filter by resource labels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interaction-between-selectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interaction between selectors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rbac-implications-per-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RBAC implications per mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-reloader-per-team-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One Reloader per team namespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-reloader-watching-production-namespaces-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One Reloader watching production namespaces only
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-wide-with-system-namespaces-excluded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cluster-wide with system namespaces excluded
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifying-scope-in-a-running-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verifying scope in a running cluster
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -3353,7 +3251,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../how-to-guides/monitor-reloader.html" class="md-nav__link">
+      <a href="monitor-reloader.html" class="md-nav__link">
         
   
   
@@ -3381,7 +3279,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../how-to-guides/alerting-on-reload.html" class="md-nav__link">
+      <a href="alerting-on-reload.html" class="md-nav__link">
         
   
   
@@ -3409,7 +3307,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../how-to-guides/verify-and-troubleshoot.html" class="md-nav__link">
+      <a href="verify-and-troubleshoot.html" class="md-nav__link">
         
   
   
@@ -3437,7 +3335,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../how-to-guides/use-reloader-with-argocd.html" class="md-nav__link">
+      <a href="use-reloader-with-argocd.html" class="md-nav__link">
         
   
   
@@ -3465,7 +3363,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../how-to-guides/use-reloader-with-flux.html" class="md-nav__link">
+      <a href="use-reloader-with-flux.html" class="md-nav__link">
         
   
   
@@ -3547,7 +3445,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/index.html" class="md-nav__link">
+      <a href="../integrations/index.html" class="md-nav__link">
         
   
   
@@ -3622,7 +3520,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/conjur/index.html" class="md-nav__link">
+      <a href="../integrations/conjur/index.html" class="md-nav__link">
         
   
   
@@ -3650,7 +3548,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/conjur/conjur-eso.html" class="md-nav__link">
+      <a href="../integrations/conjur/conjur-eso.html" class="md-nav__link">
         
   
   
@@ -3678,7 +3576,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/conjur/conjur-sidecar.html" class="md-nav__link">
+      <a href="../integrations/conjur/conjur-sidecar.html" class="md-nav__link">
         
   
   
@@ -3706,7 +3604,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/conjur/conjur-csi.html" class="md-nav__link">
+      <a href="../integrations/conjur/conjur-csi.html" class="md-nav__link">
         
   
   
@@ -3789,7 +3687,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/index.html" class="md-nav__link">
+      <a href="../integrations/vault/index.html" class="md-nav__link">
         
   
   
@@ -3817,7 +3715,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/vault-eso.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-eso.html" class="md-nav__link">
         
   
   
@@ -3845,7 +3743,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/vault-vso.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-vso.html" class="md-nav__link">
         
   
   
@@ -3873,7 +3771,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/vault-csi.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-csi.html" class="md-nav__link">
         
   
   
@@ -3901,7 +3799,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/vault-csi-file.html" class="md-nav__link">
+      <a href="../integrations/vault/vault-csi-file.html" class="md-nav__link">
         
   
   
@@ -3984,7 +3882,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/index.html" class="md-nav__link">
+      <a href="../integrations/openbao/index.html" class="md-nav__link">
         
   
   
@@ -4012,7 +3910,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/openbao-eso.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-eso.html" class="md-nav__link">
         
   
   
@@ -4040,7 +3938,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/openbao-bso.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-bso.html" class="md-nav__link">
         
   
   
@@ -4068,7 +3966,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/openbao-csi.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-csi.html" class="md-nav__link">
         
   
   
@@ -4096,7 +3994,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/openbao-csi-file.html" class="md-nav__link">
+      <a href="../integrations/openbao/openbao-csi-file.html" class="md-nav__link">
         
   
   
@@ -4179,7 +4077,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/aws/index.html" class="md-nav__link">
+      <a href="../integrations/aws/index.html" class="md-nav__link">
         
   
   
@@ -4207,7 +4105,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/aws/aws-eso.html" class="md-nav__link">
+      <a href="../integrations/aws/aws-eso.html" class="md-nav__link">
         
   
   
@@ -4235,7 +4133,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/aws/aws-csi.html" class="md-nav__link">
+      <a href="../integrations/aws/aws-csi.html" class="md-nav__link">
         
   
   
@@ -4318,7 +4216,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/gcp/index.html" class="md-nav__link">
+      <a href="../integrations/gcp/index.html" class="md-nav__link">
         
   
   
@@ -4346,7 +4244,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/gcp/gcp-eso.html" class="md-nav__link">
+      <a href="../integrations/gcp/gcp-eso.html" class="md-nav__link">
         
   
   
@@ -4429,7 +4327,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/azure/index.html" class="md-nav__link">
+      <a href="../integrations/azure/index.html" class="md-nav__link">
         
   
   
@@ -4457,7 +4355,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/azure/azure-eso.html" class="md-nav__link">
+      <a href="../integrations/azure/azure-eso.html" class="md-nav__link">
         
   
   
@@ -4485,7 +4383,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/azure/azure-csi.html" class="md-nav__link">
+      <a href="../integrations/azure/azure-csi.html" class="md-nav__link">
         
   
   
@@ -4568,7 +4466,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/infisical/index.html" class="md-nav__link">
+      <a href="../integrations/infisical/index.html" class="md-nav__link">
         
   
   
@@ -4596,7 +4494,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/infisical/infisical-operator.html" class="md-nav__link">
+      <a href="../integrations/infisical/infisical-operator.html" class="md-nav__link">
         
   
   
@@ -4686,7 +4584,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../reference/annotations.html" class="md-nav__link">
+      <a href="../reference/annotations.html" class="md-nav__link">
         
   
   
@@ -4714,7 +4612,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../reference/helm-values.html" class="md-nav__link">
+      <a href="../reference/helm-values.html" class="md-nav__link">
         
   
   
@@ -4742,7 +4640,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../reference/rbac.html" class="md-nav__link">
+      <a href="../reference/rbac.html" class="md-nav__link">
         
   
   
@@ -4777,7 +4675,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../eula.html" class="md-nav__link">
+      <a href="../eula.html" class="md-nav__link">
         
   
   
@@ -4804,7 +4702,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../help.html" class="md-nav__link">
+      <a href="../help.html" class="md-nav__link">
         
   
   
@@ -4831,7 +4729,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../versions.html" class="md-nav__link">
+      <a href="../versions.html" class="md-nav__link">
         
   
   
@@ -4880,10 +4778,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#the-configuration-reload-problem" class="md-nav__link">
+  <a href="#default-behavior" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Configuration Reload Problem
+        Default behavior
       
     </span>
   </a>
@@ -4891,10 +4789,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#manual-rollouts" class="md-nav__link">
+  <a href="#option-1-restrict-to-the-deployment-namespace" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Manual Rollouts
+        Option 1 — Restrict to the deployment namespace
       
     </span>
   </a>
@@ -4902,22 +4800,77 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#advantages-of-manual-rollouts" class="md-nav__link">
+  <a href="#option-2-watch-namespaces-matching-a-label-selector" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Advantages of Manual Rollouts
+        Option 2 — Watch namespaces matching a label selector
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Advantages of Manual Rollouts">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-3-exclude-specific-namespaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 3 — Exclude specific namespaces
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-4-filter-by-resource-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 4 — Filter by resource labels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interaction-between-selectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interaction between selectors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rbac-implications-per-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RBAC implications per mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical patterns">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#built-into-kubernetes" class="md-nav__link">
+  <a href="#one-reloader-per-team-namespace" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Built Into Kubernetes
+        One Reloader per team namespace
       
     </span>
   </a>
@@ -4925,10 +4878,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#useful-for-occasional-changes" class="md-nav__link">
+  <a href="#one-reloader-watching-production-namespaces-only" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Useful for Occasional Changes
+        One Reloader watching production namespaces only
       
     </span>
   </a>
@@ -4936,10 +4889,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#no-additional-controllers-required" class="md-nav__link">
+  <a href="#cluster-wide-with-system-namespaces-excluded" class="md-nav__link">
     <span class="md-ellipsis">
       
-        No Additional Controllers Required
+        Cluster-wide with system namespaces excluded
       
     </span>
   </a>
@@ -4952,168 +4905,13 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#limitations-of-manual-rollouts" class="md-nav__link">
+  <a href="#verifying-scope-in-a-running-cluster" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Limitations of Manual Rollouts
+        Verifying scope in a running cluster
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Limitations of Manual Rollouts">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#requires-human-intervention" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Requires Human Intervention
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#operational-overhead" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Operational Overhead
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#difficult-to-scale" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Difficult to Scale
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#error-prone" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Error-Prone
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-reloader-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How Reloader Works
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-differences" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key Differences
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-manual-rollouts-make-sense" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When Manual Rollouts Make Sense
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-reloader-is-a-better-fit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When Reloader Is a Better Fit
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FAQ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="FAQ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#do-configmap-changes-automatically-restart-pods-in-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Do ConfigMap changes automatically restart pods in Kubernetes?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-can-i-restart-pods-after-configuration-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How can I restart pods after configuration changes?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#can-manual-rollouts-and-reloader-be-used-together" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Can manual rollouts and Reloader be used together?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -5137,148 +4935,169 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="reloader-vs-manual-rollouts">Reloader vs Manual Rollouts<a class="headerlink" href="#reloader-vs-manual-rollouts" title="Permanent link">#</a></h1>
-<p>In Kubernetes, applications often rely on configuration stored in <strong>ConfigMaps</strong> and <strong>Secrets</strong>.</p>
-<p>When those resources change, running pods do not automatically reload the updated values. Platform teams therefore need a way to ensure applications pick up configuration updates.</p>
-<p>One simple approach is to manually restart workloads. Another approach is to use an automated controller such as <strong>Reloader</strong>.</p>
-<p>Both approaches solve the same problem but differ significantly in operational complexity and scalability.</p>
+<h1 id="scope-reloader-to-specific-namespaces">Scope Reloader to Specific Namespaces<a class="headerlink" href="#scope-reloader-to-specific-namespaces" title="Permanent link">#</a></h1>
+<p>By default Reloader watches every namespace in the cluster. This guide shows how to restrict that scope — to a single namespace, to namespaces matching a label selector, or by excluding specific namespaces — and explains the RBAC implications of each mode.</p>
 <hr>
-<h2 id="the-configuration-reload-problem">The Configuration Reload Problem<a class="headerlink" href="#the-configuration-reload-problem" title="Permanent link">#</a></h2>
-<p>Updating a ConfigMap or Secret in Kubernetes does <strong>not automatically restart pods</strong>.</p>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code>ConfigMap<span class="w"> </span>updated
-↓
-Pods<span class="w"> </span><span class="k">continue</span><span class="w"> </span>running
-↓
-Application<span class="w"> </span>still<span class="w"> </span>uses<span class="w"> </span>old<span class="w"> </span>configuration
+<h2 id="default-behavior">Default behavior<a class="headerlink" href="#default-behavior" title="Permanent link">#</a></h2>
+<p>Out of the box, Reloader runs with <code>watchGlobally: true</code>. It uses the Kubernetes watch API to observe <code>ConfigMaps</code> and <code>Secrets</code> across all namespaces, and patches workloads wherever it finds matching annotations.</p>
+<p>This is appropriate for platform-wide deployments where a single Reloader instance serves the whole cluster.</p>
+<hr>
+<h2 id="option-1-restrict-to-the-deployment-namespace">Option 1 — Restrict to the deployment namespace<a class="headerlink" href="#option-1-restrict-to-the-deployment-namespace" title="Permanent link">#</a></h2>
+<p>Set <code>watchGlobally: false</code> to limit Reloader to the single namespace it is deployed in.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">watchGlobally</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 </code></pre></div>
-<p>This happens because Kubernetes only triggers a rollout when the <strong>Pod specification changes</strong>, not when referenced resources change.</p>
-<p>Because of this behavior, operators must either manually restart workloads or introduce automation.</p>
-<hr>
-<h2 id="manual-rollouts">Manual Rollouts<a class="headerlink" href="#manual-rollouts" title="Permanent link">#</a></h2>
-<p>A common way to reload configuration is to manually restart workloads.</p>
-<p>Example command:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>restart<span class="w"> </span>deployment<span class="w"> </span>my-app
-</code></pre></div>
-<p>Typical workflow:</p>
-<div class="highlight"><pre><span></span><code>ConfigMap<span class="w"> </span>updated
-↓
-Operator<span class="w"> </span>runs<span class="w"> </span>rollout<span class="w"> </span>restart
-↓
-Deployment<span class="w"> </span>updated
-↓
-Pods<span class="w"> </span>restart
-</code></pre></div>
-<p>This approach works because restarting pods forces applications to reload configuration.</p>
-<hr>
-<h2 id="advantages-of-manual-rollouts">Advantages of Manual Rollouts<a class="headerlink" href="#advantages-of-manual-rollouts" title="Permanent link">#</a></h2>
-<p>Manual rollouts are simple and require no additional tooling.</p>
-<h3 id="built-into-kubernetes">Built Into Kubernetes<a class="headerlink" href="#built-into-kubernetes" title="Permanent link">#</a></h3>
-<p>The rollout command is part of standard Kubernetes tooling and works with Deployments, StatefulSets, and Daemonsets.</p>
-<h3 id="useful-for-occasional-changes">Useful for Occasional Changes<a class="headerlink" href="#useful-for-occasional-changes" title="Permanent link">#</a></h3>
-<p>For small environments or infrequent configuration updates, manually restarting workloads may be sufficient.</p>
-<h3 id="no-additional-controllers-required">No Additional Controllers Required<a class="headerlink" href="#no-additional-controllers-required" title="Permanent link">#</a></h3>
-<p>Manual restarts do not require installing additional components in the cluster.</p>
-<hr>
-<h2 id="limitations-of-manual-rollouts">Limitations of Manual Rollouts<a class="headerlink" href="#limitations-of-manual-rollouts" title="Permanent link">#</a></h2>
-<p>Manual restarts can become difficult to manage as systems grow.</p>
-<h3 id="requires-human-intervention">Requires Human Intervention<a class="headerlink" href="#requires-human-intervention" title="Permanent link">#</a></h3>
-<p>Someone must remember to restart workloads after configuration changes.</p>
-<p>In busy environments, this step can easily be missed.</p>
-<h3 id="operational-overhead">Operational Overhead<a class="headerlink" href="#operational-overhead" title="Permanent link">#</a></h3>
-<p>If multiple applications depend on the same configuration resource, each workload may need to be restarted individually.</p>
-<h3 id="difficult-to-scale">Difficult to Scale<a class="headerlink" href="#difficult-to-scale" title="Permanent link">#</a></h3>
-<p>In clusters with many applications, manually tracking configuration dependencies and restarting affected workloads becomes operationally expensive.</p>
-<h3 id="error-prone">Error-Prone<a class="headerlink" href="#error-prone" title="Permanent link">#</a></h3>
-<p>Manual processes increase the risk of mistakes, such as restarting the wrong workloads or forgetting to restart some applications.</p>
-<hr>
-<h2 id="how-reloader-works">How Reloader Works<a class="headerlink" href="#how-reloader-works" title="Permanent link">#</a></h2>
-<p>Reloader is a Kubernetes controller that watches for changes in:</p>
+<p>What changes:</p>
 <ul>
-<li>ConfigMaps</li>
-<li>Secrets</li>
+<li>Reloader sets the <code>KUBERNETES_NAMESPACE</code> environment variable to its own pod namespace.</li>
+<li>It only watches resources and workloads in that namespace.</li>
+<li>The chart creates a <strong><code>Role</code></strong> and <strong><code>RoleBinding</code></strong> instead of a <code>ClusterRole</code> and <code>ClusterRoleBinding</code>.</li>
 </ul>
-<p>When those resources change, Reloader automatically triggers a rolling restart of workloads that reference them.</p>
-<p>Example workflow:</p>
-<div class="highlight"><pre><span></span><code>ConfigMap<span class="w"> </span>or<span class="w"> </span>Secret<span class="w"> </span>updated
-↓
-Reloader<span class="w"> </span>detects<span class="w"> </span>change
-↓
-Deployment<span class="w"> </span>patched
-↓
-Kubernetes<span class="w"> </span>rolling<span class="w"> </span>restart<span class="w"> </span>triggered
+<p>This is the most restrictive option and the right choice when you want one Reloader instance per team namespace, or when cluster-wide RBAC is not permitted.</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>my-team<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--create-namespace<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.watchGlobally<span class="o">=</span><span class="nb">false</span>
 </code></pre></div>
-<p>This ensures applications restart and pick up the latest configuration automatically.</p>
 <hr>
-<h2 id="key-differences">Key Differences<a class="headerlink" href="#key-differences" title="Permanent link">#</a></h2>
+<h2 id="option-2-watch-namespaces-matching-a-label-selector">Option 2 — Watch namespaces matching a label selector<a class="headerlink" href="#option-2-watch-namespaces-matching-a-label-selector" title="Permanent link">#</a></h2>
+<p>To watch a subset of namespaces rather than all of them, use <code>namespaceSelector</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">namespaceSelector</span><span class="p">:</span><span class="w"> </span><span class="s">"environment=production"</span>
+</code></pre></div>
+<p>Reloader passes this value to the <code>--namespace-selector</code> flag at startup and evaluates it against namespace labels.</p>
+<p>Multiple label requirements can be combined using comma-separated expressions (AND logic):</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">namespaceSelector</span><span class="p">:</span><span class="w"> </span><span class="s">"environment=production,team=platform"</span>
+</code></pre></div>
+<p>This configuration still uses <code>watchGlobally: true</code> under the hood, so the chart creates a <strong><code>ClusterRole</code></strong>. The ClusterRole also gains a <code>namespaces: get, list, watch</code> rule so Reloader can read namespace labels to evaluate the selector.</p>
+<p>Label the namespaces you want Reloader to watch:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>label<span class="w"> </span>namespace<span class="w"> </span>production<span class="w"> </span><span class="nv">environment</span><span class="o">=</span>production
+kubectl<span class="w"> </span>label<span class="w"> </span>namespace<span class="w"> </span>staging<span class="w"> </span><span class="nv">environment</span><span class="o">=</span>staging
+</code></pre></div>
+<p>With <code>namespaceSelector: "environment=production"</code>, only <code>production</code> is watched; <code>staging</code> is ignored.</p>
+<hr>
+<h2 id="option-3-exclude-specific-namespaces">Option 3 — Exclude specific namespaces<a class="headerlink" href="#option-3-exclude-specific-namespaces" title="Permanent link">#</a></h2>
+<p>To watch all namespaces except a named list, use <code>ignoreNamespaces</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ignoreNamespaces</span><span class="p">:</span><span class="w"> </span><span class="s">"kube-system,kube-public,cert-manager"</span>
+</code></pre></div>
+<p>This is a comma-separated list of exact namespace names. Reloader passes it to the <code>--namespaces-to-ignore</code> flag.</p>
+<p><code>ignoreNamespaces</code> and <code>namespaceSelector</code> can be combined. When both are set:</p>
+<ul>
+<li><code>namespaceSelector</code> restricts Reloader to namespaces matching the label selector.</li>
+<li><code>ignoreNamespaces</code> then excludes specific names from that already-filtered set.</li>
+</ul>
+<hr>
+<h2 id="option-4-filter-by-resource-labels">Option 4 — Filter by resource labels<a class="headerlink" href="#option-4-filter-by-resource-labels" title="Permanent link">#</a></h2>
+<p><code>resourceLabelSelector</code> restricts which <code>ConfigMaps</code> and <code>Secrets</code> Reloader watches, regardless of namespace scope. Only resources whose labels match the selector can trigger a reload.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">resourceLabelSelector</span><span class="p">:</span><span class="w"> </span><span class="s">"reloader-managed=true"</span>
+</code></pre></div>
+<p>This is orthogonal to namespace filtering — it filters resources, not namespaces.</p>
+<p>Use it to limit Reloader's blast radius in clusters where many ConfigMaps and Secrets exist but only a subset should ever trigger a restart.</p>
+<p>Label the resources you want Reloader to watch:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">reloader-managed</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+</code></pre></div>
+<hr>
+<h2 id="interaction-between-selectors">Interaction between selectors<a class="headerlink" href="#interaction-between-selectors" title="Permanent link">#</a></h2>
+<p>The selectors narrow scope independently:</p>
 <table>
 <thead>
 <tr>
-<th>Aspect</th>
-<th>Reloader</th>
-<th>Manual Rollouts</th>
+<th>Setting</th>
+<th>What it filters</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Automation</td>
-<td>Automatic</td>
-<td>Manual</td>
+<td><code>watchGlobally: false</code></td>
+<td>Only the deployment namespace; uses Role instead of ClusterRole</td>
 </tr>
 <tr>
-<td>Operational effort</td>
-<td>Minimal after installation</td>
-<td>Requires repeated intervention</td>
+<td><code>namespaceSelector</code></td>
+<td>Namespaces whose labels match the selector</td>
 </tr>
 <tr>
-<td>Scalability</td>
-<td>Works across many workloads</td>
-<td>Difficult to manage at scale</td>
+<td><code>ignoreNamespaces</code></td>
+<td>Named namespaces excluded from watching</td>
 </tr>
 <tr>
-<td>Risk of missed restarts</td>
-<td>Low</td>
-<td>Higher</td>
+<td><code>resourceLabelSelector</code></td>
+<td>ConfigMaps/Secrets whose labels match the selector</td>
 </tr>
 </tbody>
 </table>
-<p>Manual rollouts rely on operators to trigger restarts, while Reloader provides <strong>automatic configuration change handling</strong>.</p>
+<p>A resource triggers a reload only if it passes <strong>all</strong> active filters. For example, if <code>namespaceSelector: "team=platform"</code> is set and a namespace does not have that label, no ConfigMap or Secret in that namespace will ever trigger a reload, regardless of workload annotations.</p>
 <hr>
-<h2 id="when-manual-rollouts-make-sense">When Manual Rollouts Make Sense<a class="headerlink" href="#when-manual-rollouts-make-sense" title="Permanent link">#</a></h2>
-<p>Manual restarts may be appropriate when:</p>
-<ul>
-<li>configuration changes are rare</li>
-<li>clusters are small</li>
-<li>operational simplicity is preferred</li>
-</ul>
-<p>In these cases, running a restart command occasionally may be sufficient.</p>
+<h2 id="rbac-implications-per-mode">RBAC implications per mode<a class="headerlink" href="#rbac-implications-per-mode" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Role type</th>
+<th><code>namespaces</code> rule added</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>watchGlobally: true</code> (default)</td>
+<td><code>ClusterRole</code> + <code>ClusterRoleBinding</code></td>
+<td>Only when <code>namespaceSelector</code> is set</td>
+</tr>
+<tr>
+<td><code>watchGlobally: false</code></td>
+<td><code>Role</code> + <code>RoleBinding</code></td>
+<td>Never</td>
+</tr>
+</tbody>
+</table>
+<p>See the <a href="../reference/rbac.html">RBAC reference</a> for the full list of rules in each mode.</p>
 <hr>
-<h2 id="when-reloader-is-a-better-fit">When Reloader Is a Better Fit<a class="headerlink" href="#when-reloader-is-a-better-fit" title="Permanent link">#</a></h2>
-<p>Reloader is often a better solution when:</p>
-<ul>
-<li>configuration changes happen frequently</li>
-<li>multiple workloads depend on the same configuration</li>
-<li>teams want reliable automation</li>
-<li>minimizing operational overhead is important</li>
-</ul>
-<p>These conditions are common in modern Kubernetes environments.</p>
-<hr>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
-<p>Manual rollouts and Reloader both ensure applications pick up configuration updates.</p>
-<p>Manual rollouts rely on operators to restart workloads after configuration changes.</p>
-<p>Reloader automates this process by watching ConfigMaps and Secrets and triggering rolling restarts when they change.</p>
-<p>Automation can help reduce operational overhead and improve reliability as systems scale.</p>
-<hr>
-<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">#</a></h2>
-<h3 id="do-configmap-changes-automatically-restart-pods-in-kubernetes">Do ConfigMap changes automatically restart pods in Kubernetes?<a class="headerlink" href="#do-configmap-changes-automatically-restart-pods-in-kubernetes" title="Permanent link">#</a></h3>
-<p>No. Updating a ConfigMap does not restart pods automatically.</p>
-<h3 id="how-can-i-restart-pods-after-configuration-changes">How can I restart pods after configuration changes?<a class="headerlink" href="#how-can-i-restart-pods-after-configuration-changes" title="Permanent link">#</a></h3>
-<p>You can manually restart workloads using:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>restart<span class="w"> </span>deployment<span class="w"> </span>&lt;deployment-name&gt;
+<h2 id="practical-patterns">Practical patterns<a class="headerlink" href="#practical-patterns" title="Permanent link">#</a></h2>
+<h3 id="one-reloader-per-team-namespace">One Reloader per team namespace<a class="headerlink" href="#one-reloader-per-team-namespace" title="Permanent link">#</a></h3>
+<p>Each team installs their own Reloader instance scoped to their namespace:</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>team-alpha<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.watchGlobally<span class="o">=</span><span class="nb">false</span>
+
+helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>team-beta<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.watchGlobally<span class="o">=</span><span class="nb">false</span>
 </code></pre></div>
-<p>Alternatively, automation tools like Reloader can trigger rolling restarts automatically when configuration changes.</p>
-<h3 id="can-manual-rollouts-and-reloader-be-used-together">Can manual rollouts and Reloader be used together?<a class="headerlink" href="#can-manual-rollouts-and-reloader-be-used-together" title="Permanent link">#</a></h3>
-<p>Yes. Manual restarts can still be used when needed, even if Reloader is installed.</p>
+<p>Each instance only needs a <code>Role</code> in its own namespace, which is useful when cluster-admin cannot grant <code>ClusterRole</code> permissions.</p>
+<h3 id="one-reloader-watching-production-namespaces-only">One Reloader watching production namespaces only<a class="headerlink" href="#one-reloader-watching-production-namespaces-only" title="Permanent link">#</a></h3>
+<p>A single Reloader instance watches only namespaces labelled for production:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>label<span class="w"> </span>namespace<span class="w"> </span>prod-app-1<span class="w"> </span><span class="nv">environment</span><span class="o">=</span>production
+kubectl<span class="w"> </span>label<span class="w"> </span>namespace<span class="w"> </span>prod-app-2<span class="w"> </span><span class="nv">environment</span><span class="o">=</span>production
+
+helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--create-namespace<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.namespaceSelector<span class="o">=</span><span class="s2">"environment=production"</span>
+</code></pre></div>
+<h3 id="cluster-wide-with-system-namespaces-excluded">Cluster-wide with system namespaces excluded<a class="headerlink" href="#cluster-wide-with-system-namespaces-excluded" title="Permanent link">#</a></h3>
+<p>Watch everything except namespaces that should never trigger reloads:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ignoreNamespaces</span><span class="p">:</span><span class="w"> </span><span class="s">"kube-system,kube-public,kube-node-lease,cert-manager,reloader"</span>
+</code></pre></div>
+<hr>
+<h2 id="verifying-scope-in-a-running-cluster">Verifying scope in a running cluster<a class="headerlink" href="#verifying-scope-in-a-running-cluster" title="Permanent link">#</a></h2>
+<p>Check which namespace selector and ignore list are active:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>deployment<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>reloader-reloader<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.spec.template.spec.containers[0].args}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="s1">','</span><span class="w"> </span><span class="s1">'\n'</span>
+</code></pre></div>
+<p>Check whether a specific namespace is being watched:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"namespace"</span>
+</code></pre></div>
+<p>Confirm the RBAC mode:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Returns output in global mode</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>clusterrole<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader-reloader
+
+<span class="c1"># Returns output in namespace-scoped mode</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>role<span class="w"> </span>-n<span class="w"> </span>&lt;deployment-namespace&gt;<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader-reloader
+</code></pre></div>
 
 
 
@@ -5572,27 +5391,27 @@ Kubernetes<span class="w"> </span>rolling<span class="w"> </span>restart<span cl
                 <div class="flex-2">
                     <div class="logo-footer-container">
                         
-                        <img class="md-header__logo_light" src="../../assets/images/footer-logo-light.png#only-light" alt="logo">
+                        <img class="md-header__logo_light" src="../assets/images/footer-logo-light.png#only-light" alt="logo">
                         
                         
-                        <img src="../../assets/images/footer-logo-dark.png#only-dark" alt="logo">
+                        <img src="../assets/images/footer-logo-dark.png#only-dark" alt="logo">
                         
                     </div>
 
                     <div class="collaborations-img-container">
                         <div class="display-flex">
                             
-                            <img class="csa-logo-dark" src="../../assets/images/CSA_dark.png#only-dark" alt="CSA">
+                            <img class="csa-logo-dark" src="../assets/images/CSA_dark.png#only-dark" alt="CSA">
                             
                             
-                            <img class="csa-logo-light" src="../../assets/images/CSA_light.png#only-light" alt="CSA">
+                            <img class="csa-logo-light" src="../assets/images/CSA_light.png#only-light" alt="CSA">
                             
 
                             
-                            <img class="hc-logo-dark" src="../../assets/images/HC_dark.png#only-dark" alt="HC">
+                            <img class="hc-logo-dark" src="../assets/images/HC_dark.png#only-dark" alt="HC">
                             
                             
-                            <img class="hc-logo-light" src="../../assets/images/HC_light.png#only-light" alt="HC">
+                            <img class="hc-logo-light" src="../assets/images/HC_light.png#only-light" alt="HC">
                             
                         </div>
                     </div>
@@ -5984,10 +5803,10 @@ Kubernetes<span class="w"> </span>rolling<span class="w"> </span>restart<span cl
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.tracking", "toc.follow", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.tracking", "toc.follow", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   
