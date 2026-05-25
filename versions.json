@@ -17,9 +17,7 @@
   {
     "version": "renovate-main-playwright-monorepo",
     "title": "renovate-main-playwright-monorepo",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-main-node-24.x-lockfile",
@@ -34,7 +32,9 @@
   {
     "version": "renovate-main-nginxinc-nginx-unprivileged-1.x",
     "title": "renovate-main-nginxinc-nginx-unprivileged-1.x",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "renovate-main-dotenv-17.x-lockfile",
