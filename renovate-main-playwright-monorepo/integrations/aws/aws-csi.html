@@ -5,31 +5,31 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-playwright-monorepo/how-to-guides/restart-pods-when-secret-changes.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-playwright-monorepo/integrations/aws/aws-csi.html">
       
       
-        <link rel="prev" href="restart-pods-when-configmap-changes.html">
+        <link rel="prev" href="aws-eso.html">
       
       
-        <link rel="next" href="reload-pods-on-tls-certificate-rotation.html">
+        <link rel="next" href="../gcp/index.html">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Restart Pods When Secret Changes in Kubernetes - Reloader</title>
+        <title>CSI Driver - Reloader</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -48,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -66,7 +66,7 @@
 
     
     
-  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#restart-pods-when-secret-changes-in-kubernetes" class="md-skip">
+        <a href="#how-to-use-reloader-with-aws-secrets-manager-and-csi-driver" class="md-skip">
           Skip to content
         </a>
       
@@ -340,9 +340,9 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   <nav class="md-header__inner md-grid" aria-label="Header">
 
     <!-- Link to home -->
-    <a href=".." title="Reloader" class="md-header__button md-logo" aria-label="Reloader" data-md-component="logo">
+    <a href="../.." title="Reloader" class="md-header__button md-logo" aria-label="Reloader" data-md-component="logo">
       <!-- 
-  <img src="../assets/images/logo.svg" alt="logo">
+  <img src="../../assets/images/logo.svg" alt="logo">
  -->
     </a>
 
@@ -360,10 +360,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
         <!-- Logo -->
         <div class="md-header__topic">
           
-          <img class="md-header__logo_light" src="../assets/images/logo.svg#only-light" alt="logo">
+          <img class="md-header__logo_light" src="../../assets/images/logo.svg#only-light" alt="logo">
           
           
-          <img class="md-header__logo_dark" src="../assets/images/logo.svg#only-dark" alt="logo">
+          <img class="md-header__logo_dark" src="../../assets/images/logo.svg#only-dark" alt="logo">
           
           
           <div class="header-site-name">
@@ -1987,9 +1987,9 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Reloader" class="md-nav__button md-logo" aria-label="Reloader" data-md-component="logo">
+    <a href="../.." title="Reloader" class="md-nav__button md-logo" aria-label="Reloader" data-md-component="logo">
       
-  <img src="../assets/images/logo.svg" alt="logo">
+  <img src="../../assets/images/logo.svg" alt="logo">
 
     </a>
     Reloader
@@ -2063,7 +2063,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="../../index.html" class="md-nav__link">
         
   
   
@@ -2091,7 +2091,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../about/why-reloader-matters.html" class="md-nav__link">
+      <a href="../../about/why-reloader-matters.html" class="md-nav__link">
         
   
   
@@ -2119,7 +2119,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../about/value-by-role.html" class="md-nav__link">
+      <a href="../../about/value-by-role.html" class="md-nav__link">
         
   
   
@@ -2147,7 +2147,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../about/editions.html" class="md-nav__link">
+      <a href="../../about/editions.html" class="md-nav__link">
         
   
   
@@ -2175,7 +2175,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../about/faq.html" class="md-nav__link">
+      <a href="../../about/faq.html" class="md-nav__link">
         
   
   
@@ -2257,7 +2257,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../architecture/how-it-works.html" class="md-nav__link">
+      <a href="../../architecture/how-it-works.html" class="md-nav__link">
         
   
   
@@ -2339,7 +2339,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/why-configuration-reloading-matters.html" class="md-nav__link">
+      <a href="../../concepts/why-configuration-reloading-matters.html" class="md-nav__link">
         
   
   
@@ -2367,7 +2367,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/secret-propagation-problem-kubernetes.html" class="md-nav__link">
+      <a href="../../concepts/secret-propagation-problem-kubernetes.html" class="md-nav__link">
         
   
   
@@ -2442,7 +2442,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-helm.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-helm.html" class="md-nav__link">
         
   
   
@@ -2470,7 +2470,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-checksum-annotations.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-checksum-annotations.html" class="md-nav__link">
         
   
   
@@ -2498,7 +2498,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-kyverno.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-kyverno.html" class="md-nav__link">
         
   
   
@@ -2526,7 +2526,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-sidecar-config-watchers.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-sidecar-config-watchers.html" class="md-nav__link">
         
   
   
@@ -2554,7 +2554,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-init-containers.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-init-containers.html" class="md-nav__link">
         
   
   
@@ -2582,7 +2582,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-manual-rollouts.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-manual-rollouts.html" class="md-nav__link">
         
   
   
@@ -2610,7 +2610,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-gitops-tools.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-gitops-tools.html" class="md-nav__link">
         
   
   
@@ -2638,7 +2638,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-secret-operators.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-secret-operators.html" class="md-nav__link">
         
   
   
@@ -2666,7 +2666,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-cert-manager.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-cert-manager.html" class="md-nav__link">
         
   
   
@@ -2694,7 +2694,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-app-level-reload.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-app-level-reload.html" class="md-nav__link">
         
   
   
@@ -2722,7 +2722,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-infisical-reload.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-infisical-reload.html" class="md-nav__link">
         
   
   
@@ -2812,7 +2812,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../installation/install-oss.html" class="md-nav__link">
+      <a href="../../installation/install-oss.html" class="md-nav__link">
         
   
   
@@ -2840,7 +2840,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../installation/install.html" class="md-nav__link">
+      <a href="../../installation/install.html" class="md-nav__link">
         
   
   
@@ -2848,6 +2848,340 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     
   
     Reloader Enterprise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How-To Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    How-To Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/restart-pods-when-configmap-changes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Restart Pods When ConfigMap Changes in Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/restart-pods-when-secret-changes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Restart Pods When Secret Changes in Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Automatically Reload Pods When TLS Certificates Rotate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/restart-pods-when-external-secrets-change.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Restart Pods When External Secrets Change in Kubernetes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/namespace-scoping.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope Reloader to Specific Namespaces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/monitor-reloader.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monitor Reloader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/alerting-on-reload.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Alert When Reloader Triggers a Restart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/verify-and-troubleshoot.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verify and Troubleshoot Reloader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/use-reloader-with-argocd.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use Reloader with Argo CD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/use-reloader-with-flux.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Use Reloader with Flux
   
 
     
@@ -2885,640 +3219,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    How-To Guides
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    How-To Guides
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix="">
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="restart-pods-when-configmap-changes.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Restart Pods When ConfigMap Changes in Kubernetes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Restart Pods When Secret Changes in Kubernetes
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="restart-pods-when-secret-changes.html" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Restart Pods When Secret Changes in Kubernetes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#the-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-this-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why This Matters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-approaches" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Common Approaches
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Common Approaches">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-manual-restart" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Manual Restart
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Manual Restart">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#limitations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Limitations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-helm-checksum-annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Helm Checksum Annotations
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Helm Checksum Annotations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#limitations_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Limitations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#automatic-restart-with-reloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Automatic Restart with Reloader
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-by-step-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step-by-Step Example
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step-by-Step Example">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-create-a-secret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Create a Secret
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-create-a-deployment-using-the-secret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Create a Deployment Using the Secret
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-enable-reloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Enable Reloader
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-update-the-secret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Update the Secret
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verifying-the-restart" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verifying the Restart
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-this-pattern-is-useful" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When This Pattern Is Useful
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FAQ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="FAQ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#do-secret-changes-automatically-restart-pods-in-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Do Secret changes automatically restart pods in Kubernetes?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-doesnt-kubernetes-restart-pods-when-secrets-update" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why doesn't Kubernetes restart pods when Secrets update?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-can-i-automatically-restart-pods-when-secrets-change" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How can I automatically restart pods when Secrets change?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Automatically Reload Pods When TLS Certificates Rotate
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="restart-pods-when-external-secrets-change.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Restart Pods When External Secrets Change in Kubernetes
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="namespace-scoping.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Scope Reloader to Specific Namespaces
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="monitor-reloader.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Monitor Reloader
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="alerting-on-reload.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Alert When Reloader Triggers a Restart
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="verify-and-troubleshoot.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Verify and Troubleshoot Reloader
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="use-reloader-with-argocd.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Use Reloader with Argo CD
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="use-reloader-with-flux.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Use Reloader with Flux
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked="">
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -3539,7 +3240,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3557,7 +3258,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/index.html" class="md-nav__link">
+      <a href="../index.html" class="md-nav__link">
         
   
   
@@ -3632,7 +3333,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/conjur/index.html" class="md-nav__link">
+      <a href="../conjur/index.html" class="md-nav__link">
         
   
   
@@ -3660,7 +3361,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/conjur/conjur-eso.html" class="md-nav__link">
+      <a href="../conjur/conjur-eso.html" class="md-nav__link">
         
   
   
@@ -3688,7 +3389,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/conjur/conjur-sidecar.html" class="md-nav__link">
+      <a href="../conjur/conjur-sidecar.html" class="md-nav__link">
         
   
   
@@ -3716,7 +3417,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/conjur/conjur-csi.html" class="md-nav__link">
+      <a href="../conjur/conjur-csi.html" class="md-nav__link">
         
   
   
@@ -3799,7 +3500,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/vault/index.html" class="md-nav__link">
+      <a href="../vault/index.html" class="md-nav__link">
         
   
   
@@ -3827,7 +3528,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/vault/vault-eso.html" class="md-nav__link">
+      <a href="../vault/vault-eso.html" class="md-nav__link">
         
   
   
@@ -3855,7 +3556,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/vault/vault-vso.html" class="md-nav__link">
+      <a href="../vault/vault-vso.html" class="md-nav__link">
         
   
   
@@ -3883,7 +3584,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/vault/vault-csi.html" class="md-nav__link">
+      <a href="../vault/vault-csi.html" class="md-nav__link">
         
   
   
@@ -3911,7 +3612,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/vault/vault-csi-file.html" class="md-nav__link">
+      <a href="../vault/vault-csi-file.html" class="md-nav__link">
         
   
   
@@ -3994,7 +3695,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/openbao/index.html" class="md-nav__link">
+      <a href="../openbao/index.html" class="md-nav__link">
         
   
   
@@ -4022,7 +3723,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/openbao/openbao-eso.html" class="md-nav__link">
+      <a href="../openbao/openbao-eso.html" class="md-nav__link">
         
   
   
@@ -4050,7 +3751,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/openbao/openbao-bso.html" class="md-nav__link">
+      <a href="../openbao/openbao-bso.html" class="md-nav__link">
         
   
   
@@ -4078,7 +3779,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/openbao/openbao-csi.html" class="md-nav__link">
+      <a href="../openbao/openbao-csi.html" class="md-nav__link">
         
   
   
@@ -4106,7 +3807,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/openbao/openbao-csi-file.html" class="md-nav__link">
+      <a href="../openbao/openbao-csi-file.html" class="md-nav__link">
         
   
   
@@ -4139,18 +3840,20 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" checked="">
         
           
           <label class="md-nav__link" for="__nav_6_5" id="__nav_6_5_label" tabindex="0">
@@ -4171,7 +3874,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -4189,7 +3892,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/aws/index.html" class="md-nav__link">
+      <a href="index.html" class="md-nav__link">
         
   
   
@@ -4217,7 +3920,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/aws/aws-eso.html" class="md-nav__link">
+      <a href="aws-eso.html" class="md-nav__link">
         
   
   
@@ -4242,10 +3945,37 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../integrations/aws/aws-csi.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSI Driver
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="aws-csi.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -4261,6 +3991,227 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-install-the-secrets-store-csi-driver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Install the Secrets Store CSI Driver
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-install-the-aws-secrets-and-configuration-provider-ascp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Install the AWS Secrets and Configuration Provider (ASCP)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-install-reloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Install Reloader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-create-an-iam-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Create an IAM policy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-set-up-irsa-iam-roles-for-service-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 — Set up IRSA (IAM Roles for Service Accounts)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5 — Set up IRSA (IAM Roles for Service Accounts)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#associate-the-oidc-provider-with-your-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Associate the OIDC provider with your cluster
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-an-iam-role-for-the-service-account" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create an IAM role for the service account
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-create-the-secretproviderclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 — Create the SecretProviderClass
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 6 — Create the SecretProviderClass">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-json-secret-use-jmespath-to-extract-individual-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option A — JSON secret (use jmesPath to extract individual fields)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-simple-string-secrets-one-value-per-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option B — Simple string secrets (one value per secret)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-deploy-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7 — Deploy the application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-8-verify-the-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8 — Verify the setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-9-test-secret-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 9 — Test secret rotation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reloader-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reloader annotations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-based-pattern-no-kubernetes-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File-based pattern (no Kubernetes Secret)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4328,7 +4279,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/gcp/index.html" class="md-nav__link">
+      <a href="../gcp/index.html" class="md-nav__link">
         
   
   
@@ -4356,7 +4307,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/gcp/gcp-eso.html" class="md-nav__link">
+      <a href="../gcp/gcp-eso.html" class="md-nav__link">
         
   
   
@@ -4439,7 +4390,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/azure/index.html" class="md-nav__link">
+      <a href="../azure/index.html" class="md-nav__link">
         
   
   
@@ -4467,7 +4418,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/azure/azure-eso.html" class="md-nav__link">
+      <a href="../azure/azure-eso.html" class="md-nav__link">
         
   
   
@@ -4495,7 +4446,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/azure/azure-csi.html" class="md-nav__link">
+      <a href="../azure/azure-csi.html" class="md-nav__link">
         
   
   
@@ -4578,7 +4529,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/infisical/index.html" class="md-nav__link">
+      <a href="../infisical/index.html" class="md-nav__link">
         
   
   
@@ -4606,7 +4557,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/infisical/infisical-operator.html" class="md-nav__link">
+      <a href="../infisical/infisical-operator.html" class="md-nav__link">
         
   
   
@@ -4696,7 +4647,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../reference/annotations.html" class="md-nav__link">
+      <a href="../../reference/annotations.html" class="md-nav__link">
         
   
   
@@ -4724,7 +4675,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../reference/helm-values.html" class="md-nav__link">
+      <a href="../../reference/helm-values.html" class="md-nav__link">
         
   
   
@@ -4752,7 +4703,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../reference/rbac.html" class="md-nav__link">
+      <a href="../../reference/rbac.html" class="md-nav__link">
         
   
   
@@ -4787,7 +4738,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../eula.html" class="md-nav__link">
+      <a href="../../eula.html" class="md-nav__link">
         
   
   
@@ -4814,7 +4765,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../help.html" class="md-nav__link">
+      <a href="../../help.html" class="md-nav__link">
         
   
   
@@ -4841,7 +4792,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../versions.html" class="md-nav__link">
+      <a href="../../versions.html" class="md-nav__link">
         
   
   
@@ -4890,10 +4841,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#the-problem" class="md-nav__link">
+  <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Problem
+        How It Works
       
     </span>
   </a>
@@ -4901,10 +4852,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-this-matters" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why This Matters
+        Prerequisites
       
     </span>
   </a>
@@ -4912,83 +4863,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-approaches" class="md-nav__link">
+  <a href="#step-1-install-the-secrets-store-csi-driver" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common Approaches
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Common Approaches">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-manual-restart" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Manual Restart
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Manual Restart">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#limitations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Limitations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-helm-checksum-annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Helm Checksum Annotations
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Helm Checksum Annotations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#limitations_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Limitations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#automatic-restart-with-reloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Automatic Restart with Reloader
+        Step 1 — Install the Secrets Store CSI Driver
       
     </span>
   </a>
@@ -4996,22 +4874,55 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-by-step-example" class="md-nav__link">
+  <a href="#step-2-install-the-aws-secrets-and-configuration-provider-ascp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step-by-Step Example
+        Step 2 — Install the AWS Secrets and Configuration Provider (ASCP)
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step-by-Step Example">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-install-reloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Install Reloader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-create-an-iam-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Create an IAM policy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-set-up-irsa-iam-roles-for-service-accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 — Set up IRSA (IAM Roles for Service Accounts)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5 — Set up IRSA (IAM Roles for Service Accounts)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-create-a-secret" class="md-nav__link">
+  <a href="#associate-the-oidc-provider-with-your-cluster" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Create a Secret
+        Associate the OIDC provider with your cluster
       
     </span>
   </a>
@@ -5019,32 +4930,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-create-a-deployment-using-the-secret" class="md-nav__link">
+  <a href="#create-an-iam-role-for-the-service-account" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Create a Deployment Using the Secret
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-enable-reloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Enable Reloader
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-update-the-secret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Update the Secret
+        Create an IAM role for the service account
       
     </span>
   </a>
@@ -5057,55 +4946,22 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#verifying-the-restart" class="md-nav__link">
+  <a href="#step-6-create-the-secretproviderclass" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Verifying the Restart
+        Step 6 — Create the SecretProviderClass
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-this-pattern-is-useful" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When This Pattern Is Useful
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FAQ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="FAQ">
+    <nav class="md-nav" aria-label="Step 6 — Create the SecretProviderClass">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#do-secret-changes-automatically-restart-pods-in-kubernetes" class="md-nav__link">
+  <a href="#option-a-json-secret-use-jmespath-to-extract-individual-fields" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Do Secret changes automatically restart pods in Kubernetes?
+        Option A — JSON secret (use jmesPath to extract individual fields)
       
     </span>
   </a>
@@ -5113,21 +4969,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#why-doesnt-kubernetes-restart-pods-when-secrets-update" class="md-nav__link">
+  <a href="#option-b-simple-string-secrets-one-value-per-secret" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why doesn't Kubernetes restart pods when Secrets update?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-can-i-automatically-restart-pods-when-secrets-change" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How can I automatically restart pods when Secrets change?
+        Option B — Simple string secrets (one value per secret)
       
     </span>
   </a>
@@ -5136,6 +4981,61 @@ This documentation is for a pull request deployment and is unreleased, it is onl
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-deploy-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7 — Deploy the application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-8-verify-the-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8 — Verify the setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-9-test-secret-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 9 — Test secret rotation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reloader-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reloader annotations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-based-pattern-no-kubernetes-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File-based pattern (no Kubernetes Secret)
+      
+    </span>
+  </a>
   
 </li>
       
@@ -5159,187 +5059,323 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="restart-pods-when-secret-changes-in-kubernetes">Restart Pods When Secret Changes in Kubernetes<a class="headerlink" href="#restart-pods-when-secret-changes-in-kubernetes" title="Permanent link">#</a></h1>
-<p>Applications running in Kubernetes often depend on <strong>Secrets</strong> for sensitive configuration such as database credentials, API tokens, or encryption keys.</p>
-<p>When a Secret is updated, running pods <strong>do not automatically restart</strong>. This means applications may continue using outdated credentials until the pods are restarted.</p>
-<p>This guide explains how to ensure pods automatically restart when Secrets change.</p>
+<h1 id="how-to-use-reloader-with-aws-secrets-manager-and-csi-driver">How to Use Reloader with AWS Secrets Manager and CSI Driver<a class="headerlink" href="#how-to-use-reloader-with-aws-secrets-manager-and-csi-driver" title="Permanent link">#</a></h1>
+<p>This guide shows how to mount secrets from AWS Secrets Manager into Kubernetes pods using the AWS Secrets and Configuration Provider (ASCP) and the Secrets Store CSI Driver, then use Reloader to automatically restart pods when those secrets change.</p>
+<p>The ASCP syncs secrets into a Kubernetes <code>Secret</code> via <code>secretObjects</code>. Reloader watches that Kubernetes Secret and triggers a rolling restart whenever it is updated.</p>
+<blockquote>
+<p><strong>See also:</strong> <a href="aws-eso.html">ESO Pattern</a> — if you are already using External Secrets Operator, that pattern requires no CSI Driver.</p>
+</blockquote>
 <hr>
-<h2 id="the-problem">The Problem<a class="headerlink" href="#the-problem" title="Permanent link">#</a></h2>
-<p>Updating a Secret does not trigger a rollout of workloads that reference it.</p>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>secret.yaml
-</code></pre></div>
-<p>Result:</p>
-<div class="highlight"><pre><span></span><code>Secret<span class="w"> </span>updated
-↓
-Pods<span class="w"> </span><span class="k">continue</span><span class="w"> </span>running
-↓
-Application<span class="w"> </span>still<span class="w"> </span>uses<span class="w"> </span>old<span class="w"> </span>credentials
-</code></pre></div>
-<p>This behavior exists because Kubernetes only performs a rollout when the <strong>Pod specification changes</strong>, not when referenced Secrets are modified.</p>
+<h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h2>
+<pre class="mermaid"><code>sequenceDiagram
+    actor Ops as Operator / Rotation Job
+    participant SM as AWS Secrets Manager
+    participant ASCP as ASCP + CSI Driver
+    participant K8s as Kubernetes Secret
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Ops-&gt;&gt;SM: Rotate secret
+    loop Every rotationPollInterval
+        ASCP-&gt;&gt;SM: GetSecretValue
+        SM--&gt;&gt;ASCP: Updated secret value
+        ASCP-&gt;&gt;Pod: Refresh mounted files
+        ASCP-&gt;&gt;K8s: Sync via secretObjects
+    end
+    K8s--&gt;&gt;RL: Watch event (Secret changed)
+    RL-&gt;&gt;Pod: Trigger rolling restart
+    Note over Pod: New pod starts with updated secret</code></pre>
 <hr>
-<h2 id="why-this-matters">Why This Matters<a class="headerlink" href="#why-this-matters" title="Permanent link">#</a></h2>
-<p>Secrets often change during normal operations.</p>
-<p>Examples include:</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
-<li>database password rotation</li>
-<li>API key updates</li>
-<li>token refresh</li>
-<li>TLS certificate updates</li>
-</ul>
-<p>If pods are not restarted, applications may continue using <strong>expired or invalid credentials</strong>, which can lead to service outages.</p>
-<hr>
-<h2 id="common-approaches">Common Approaches<a class="headerlink" href="#common-approaches" title="Permanent link">#</a></h2>
-<h3 id="1-manual-restart">1. Manual Restart<a class="headerlink" href="#1-manual-restart" title="Permanent link">#</a></h3>
-<p>A common solution is to manually restart the workload.</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>restart<span class="w"> </span>deployment<span class="w"> </span>my-app
-</code></pre></div>
-<p>Result:</p>
-<div class="highlight"><pre><span></span><code>Secret<span class="w"> </span>updated
-↓
-Operator<span class="w"> </span>restarts<span class="w"> </span>deployment
-↓
-New<span class="w"> </span>pods<span class="w"> </span>created
-↓
-Application<span class="w"> </span>loads<span class="w"> </span>new<span class="w"> </span>secret
-</code></pre></div>
-<h4 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">#</a></h4>
-<ul>
-<li>Requires manual intervention</li>
-<li>Easy to forget</li>
-<li>Difficult to manage across many workloads</li>
+<li>Amazon EKS cluster (Kubernetes 1.17+)</li>
+<li>AWS CLI configured locally</li>
+<li>Helm v3+</li>
+<li>An existing secret in AWS Secrets Manager</li>
+<li>Stakater Reloader installed</li>
+<li>OIDC provider associated with the cluster (for IRSA authentication)</li>
 </ul>
 <hr>
-<h3 id="2-helm-checksum-annotations">2. Helm Checksum Annotations<a class="headerlink" href="#2-helm-checksum-annotations" title="Permanent link">#</a></h3>
-<p>Helm charts sometimes include checksum annotations that trigger restarts when secrets change.</p>
-<p>Example:</p>
+<h2 id="step-1-install-the-secrets-store-csi-driver">Step 1 — Install the Secrets Store CSI Driver<a class="headerlink" href="#step-1-install-the-secrets-store-csi-driver" title="Permanent link">#</a></h2>
+<p>The CSI Driver must have <code>syncSecret.enabled=true</code> so that the ASCP can sync secrets into Kubernetes Secret objects.</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>secrets-store-csi-driver<span class="w"> </span>https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts
+helm<span class="w"> </span>repo<span class="w"> </span>update
+helm<span class="w"> </span>install<span class="w"> </span>csi-secrets-store<span class="w"> </span>secrets-store-csi-driver/secrets-store-csi-driver<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>kube-system<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>syncSecret.enabled<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span><span class="nv">enableSecretRotation</span><span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span><span class="nv">rotationPollInterval</span><span class="o">=</span>3600s
+</code></pre></div>
+<p><code>rotationPollInterval=3600s</code> is a recommended starting point. AWS charges per API call to Secrets Manager; shorter intervals increase cost.</p>
+<hr>
+<h2 id="step-2-install-the-aws-secrets-and-configuration-provider-ascp">Step 2 — Install the AWS Secrets and Configuration Provider (ASCP)<a class="headerlink" href="#step-2-install-the-aws-secrets-and-configuration-provider-ascp" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>aws-secrets-manager<span class="w"> </span>https://aws.github.io/secrets-store-csi-driver-provider-aws
+helm<span class="w"> </span>repo<span class="w"> </span>update
+helm<span class="w"> </span>install<span class="w"> </span>-n<span class="w"> </span>kube-system<span class="w"> </span>secrets-provider-aws<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>aws-secrets-manager/secrets-store-csi-driver-provider-aws
+</code></pre></div>
+<hr>
+<h2 id="step-3-install-reloader">Step 3 — Install Reloader<a class="headerlink" href="#step-3-install-reloader" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>stakater<span class="w"> </span>https://stakater.github.io/stakater-charts
+helm<span class="w"> </span>repo<span class="w"> </span>update
+helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--create-namespace
+</code></pre></div>
+<hr>
+<h2 id="step-4-create-an-iam-policy">Step 4 — Create an IAM policy<a class="headerlink" href="#step-4-create-an-iam-policy" title="Permanent link">#</a></h2>
+<p>Create an IAM policy that allows the pod to read secrets from Secrets Manager.</p>
+<div class="highlight"><pre><span></span><code>aws<span class="w"> </span>iam<span class="w"> </span>create-policy<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--policy-name<span class="w"> </span>ReloaderASCPPolicy<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--policy-document<span class="w"> </span><span class="s1">'{</span>
+<span class="s1">    "Version": "2012-10-17",</span>
+<span class="s1">    "Statement": [{</span>
+<span class="s1">      "Effect": "Allow",</span>
+<span class="s1">      "Action": [</span>
+<span class="s1">        "secretsmanager:GetSecretValue",</span>
+<span class="s1">        "secretsmanager:DescribeSecret"</span>
+<span class="s1">      ],</span>
+<span class="s1">      "Resource": "arn:aws:secretsmanager:&lt;region&gt;:&lt;account-id&gt;:secret:&lt;secret-name&gt;-*"</span>
+<span class="s1">    }]</span>
+<span class="s1">  }'</span>
+</code></pre></div>
+<p>Replace <code>&lt;region&gt;</code>, <code>&lt;account-id&gt;</code>, and <code>&lt;secret-name&gt;</code> with your values. The trailing <code>-*</code> accounts for the random suffix AWS appends to secret ARNs.</p>
+<hr>
+<h2 id="step-5-set-up-irsa-iam-roles-for-service-accounts">Step 5 — Set up IRSA (IAM Roles for Service Accounts)<a class="headerlink" href="#step-5-set-up-irsa-iam-roles-for-service-accounts" title="Permanent link">#</a></h2>
+<p>IRSA is the recommended authentication method for EKS. It binds an IAM role to a Kubernetes ServiceAccount using OIDC federation, so no static credentials are stored in the cluster.</p>
+<h3 id="associate-the-oidc-provider-with-your-cluster">Associate the OIDC provider with your cluster<a class="headerlink" href="#associate-the-oidc-provider-with-your-cluster" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>eksctl<span class="w"> </span>utils<span class="w"> </span>associate-iam-oidc-provider<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--cluster<span class="w"> </span>&lt;cluster-name&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--approve
+</code></pre></div>
+<h3 id="create-an-iam-role-for-the-service-account">Create an IAM role for the service account<a class="headerlink" href="#create-an-iam-role-for-the-service-account" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>eksctl<span class="w"> </span>create<span class="w"> </span>iamserviceaccount<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--name<span class="w"> </span>ascp-sa<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>default<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--cluster<span class="w"> </span>&lt;cluster-name&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--attach-policy-arn<span class="w"> </span>arn:aws:iam::&lt;account-id&gt;:policy/ReloaderASCPPolicy<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--approve<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--override-existing-serviceaccounts
+</code></pre></div>
+<p>This creates the <code>ascp-sa</code> ServiceAccount in the <code>default</code> namespace, annotated with the IAM role ARN:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">checksum/secret</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">include (print $.Template.BasePath "/secret.yaml") . | sha256sum</span><span class="w"> </span><span class="p p-Indicator">}}</span>
+<span class="w">    </span><span class="nt">eks.amazonaws.com/role-arn</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arn:aws:iam::&lt;account-id&gt;:role/eksctl-&lt;cluster&gt;-addon-iamserviceaccount-Role</span>
 </code></pre></div>
-<p>When the secret changes and Helm runs again, the checksum changes and the deployment rolls out.</p>
-<h4 id="limitations_1">Limitations<a class="headerlink" href="#limitations_1" title="Permanent link">#</a></h4>
-<ul>
-<li>Requires modifying Helm charts</li>
-<li>Only works when Helm upgrades occur</li>
-<li>Does not react to runtime secret updates</li>
-</ul>
 <hr>
-<h2 id="automatic-restart-with-reloader">Automatic Restart with Reloader<a class="headerlink" href="#automatic-restart-with-reloader" title="Permanent link">#</a></h2>
-<p>A more reliable solution is to use <strong>Reloader</strong>, a Kubernetes controller that watches for changes in:</p>
-<ul>
-<li>Secrets</li>
-<li>ConfigMaps</li>
-</ul>
-<p>When one of these resources changes, Reloader automatically triggers a rolling restart of workloads that reference them.</p>
-<p>Workflow:</p>
-<div class="highlight"><pre><span></span><code>Secret<span class="w"> </span>updated
-↓
-Reloader<span class="w"> </span>detects<span class="w"> </span>change
-↓
-Deployment<span class="w"> </span>patched
-↓
-Kubernetes<span class="w"> </span>rolling<span class="w"> </span>restart<span class="w"> </span>triggered
-</code></pre></div>
-<p>This ensures applications restart and load the latest credentials.</p>
-<hr>
-<h2 id="step-by-step-example">Step-by-Step Example<a class="headerlink" href="#step-by-step-example" title="Permanent link">#</a></h2>
-<h3 id="1-create-a-secret">1. Create a Secret<a class="headerlink" href="#1-create-a-secret" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Secret</span>
+<h2 id="step-6-create-the-secretproviderclass">Step 6 — Create the SecretProviderClass<a class="headerlink" href="#step-6-create-the-secretproviderclass" title="Permanent link">#</a></h2>
+<p>The <code>SecretProviderClass</code> defines which secrets to fetch from Secrets Manager and how to sync them into a Kubernetes Secret via <code>secretObjects</code>.</p>
+<h3 id="option-a-json-secret-use-jmespath-to-extract-individual-fields">Option A — JSON secret (use <code>jmesPath</code> to extract individual fields)<a class="headerlink" href="#option-a-json-secret-use-jmespath-to-extract-individual-fields" title="Permanent link">#</a></h3>
+<p>If your secret is stored as a JSON string (for example, <code>{"username":"admin","password":"secret123"}</code>):</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets-store.csi.x-k8s.io/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SecretProviderClass</span>
 <span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">database-secret</span>
-<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Opaque</span>
-<span class="nt">stringData</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">DB_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">supersecret</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws-app-secrets</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws</span>
+<span class="w">  </span><span class="nt">parameters</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">objects</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">      </span><span class="no">- objectName: "myapp/database"</span>
+<span class="w">        </span><span class="no">objectType: "secretsmanager"</span>
+<span class="w">        </span><span class="no">jmesPath:</span>
+<span class="w">          </span><span class="no">- path: username</span>
+<span class="w">            </span><span class="no">objectAlias: db-username</span>
+<span class="w">          </span><span class="no">- path: password</span>
+<span class="w">            </span><span class="no">objectAlias: db-password</span>
+<span class="w">  </span><span class="nt">secretObjects</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">secretName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Opaque</span>
+<span class="w">      </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">reloader.stakater.com/match</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">      </span><span class="nt">data</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">username</span>
+<span class="w">          </span><span class="nt">objectName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db-username</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
+<span class="w">          </span><span class="nt">objectName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db-password</span>
 </code></pre></div>
-<p>Apply the secret:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>secret.yaml
+<p>Apply:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>secret-provider-class.yaml
 </code></pre></div>
+<h3 id="option-b-simple-string-secrets-one-value-per-secret">Option B — Simple string secrets (one value per secret)<a class="headerlink" href="#option-b-simple-string-secrets-one-value-per-secret" title="Permanent link">#</a></h3>
+<p>If each secret contains a single string value:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets-store.csi.x-k8s.io/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SecretProviderClass</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws-app-secrets</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws</span>
+<span class="w">  </span><span class="nt">parameters</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">objects</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">      </span><span class="no">- objectName: "myapp/db-username"</span>
+<span class="w">        </span><span class="no">objectType: "secretsmanager"</span>
+<span class="w">        </span><span class="no">objectAlias: db-username</span>
+<span class="w">      </span><span class="no">- objectName: "myapp/db-password"</span>
+<span class="w">        </span><span class="no">objectType: "secretsmanager"</span>
+<span class="w">        </span><span class="no">objectAlias: db-password</span>
+<span class="w">  </span><span class="nt">secretObjects</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">secretName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Opaque</span>
+<span class="w">      </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">reloader.stakater.com/match</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">      </span><span class="nt">data</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">username</span>
+<span class="w">          </span><span class="nt">objectName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db-username</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
+<span class="w">          </span><span class="nt">objectName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db-password</span>
+</code></pre></div>
+<p><strong>Key configuration points:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>objectName</code></td>
+<td>Name or full ARN of the secret in Secrets Manager</td>
+</tr>
+<tr>
+<td><code>objectType</code></td>
+<td><code>secretsmanager</code> for Secrets Manager; <code>ssmparameter</code> for Parameter Store</td>
+</tr>
+<tr>
+<td><code>objectAlias</code></td>
+<td>Filename on the CSI volume mount, and reference key in <code>secretObjects</code></td>
+</tr>
+<tr>
+<td><code>jmesPath[].path</code></td>
+<td>Key to extract from a JSON-formatted secret value</td>
+</tr>
+<tr>
+<td><code>jmesPath[].objectAlias</code></td>
+<td>Filename and <code>objectName</code> reference for the extracted field</td>
+</tr>
+<tr>
+<td><code>secretObjects[].secretName</code></td>
+<td>Name of the Kubernetes Secret to create</td>
+</tr>
+<tr>
+<td><code>secretObjects[].data[].objectName</code></td>
+<td>Must match <code>objectAlias</code> from the <code>objects</code> list</td>
+</tr>
+</tbody>
+</table>
 <hr>
-<h3 id="2-create-a-deployment-using-the-secret">2. Create a Deployment Using the Secret<a class="headerlink" href="#2-create-a-deployment-using-the-secret" title="Permanent link">#</a></h3>
+<h2 id="step-7-deploy-the-application">Step 7 — Deploy the application<a class="headerlink" href="#step-7-deploy-the-application" title="Permanent link">#</a></h2>
+<p>The CSI volume mount is required even when your application reads secrets from environment variables. Without the mount, the ASCP does not sync the <code>secretObjects</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
 <span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo-app</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">reloader.stakater.com/search</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
 <span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 <span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
 <span class="w">  </span><span class="nt">template</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
 <span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">serviceAccountName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ascp-sa</span>
 <span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
-<span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
-<span class="w">        </span><span class="nt">env</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
-<span class="w">          </span><span class="nt">valueFrom</span><span class="p">:</span>
-<span class="w">            </span><span class="nt">secretKeyRef</span><span class="p">:</span>
-<span class="w">              </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">database-secret</span>
-<span class="w">              </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">busybox:latest</span>
+<span class="w">          </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"sh"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"-c"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"while</span><span class="nv"> </span><span class="s">true;</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">echo</span><span class="nv"> </span><span class="s">\"user=$DB_USERNAME\";</span><span class="nv"> </span><span class="s">sleep</span><span class="nv"> </span><span class="s">30;</span><span class="nv"> </span><span class="s">done"</span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_USERNAME</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">username</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
+<span class="w">          </span><span class="nt">volumeMounts</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws-secrets</span>
+<span class="w">              </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/mnt/secrets</span>
+<span class="w">              </span><span class="nt">readOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws-secrets</span>
+<span class="w">          </span><span class="nt">csi</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets-store.csi.k8s.io</span>
+<span class="w">            </span><span class="nt">readOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">            </span><span class="nt">volumeAttributes</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">secretProviderClass</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws-app-secrets</span>
+</code></pre></div>
+<p>Apply:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>deployment.yaml
 </code></pre></div>
 <hr>
-<h3 id="3-enable-reloader">3. Enable Reloader<a class="headerlink" href="#3-enable-reloader" title="Permanent link">#</a></h3>
-<p>Add the following annotation to the Deployment:</p>
+<h2 id="step-8-verify-the-setup">Step 8 — Verify the setup<a class="headerlink" href="#step-8-verify-the-setup" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check the pod is running</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>default<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>myapp
+
+<span class="c1"># Confirm the Kubernetes Secret was created and contains data</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>default
+kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>default<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.username}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
+
+<span class="c1"># Confirm the CSI volume is mounted</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>secretproviderclasspodstatuses<span class="w"> </span>-n<span class="w"> </span>default
+</code></pre></div>
+<hr>
+<h2 id="step-9-test-secret-rotation">Step 9 — Test secret rotation<a class="headerlink" href="#step-9-test-secret-rotation" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Rotate the secret in Secrets Manager</span>
+aws<span class="w"> </span>secretsmanager<span class="w"> </span>put-secret-value<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--secret-id<span class="w"> </span>myapp/database<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--secret-string<span class="w"> </span><span class="s1">'{"username":"admin","password":"new-rotated-password"}'</span>
+</code></pre></div>
+<p>Wait for the next <code>rotationPollInterval</code> cycle. The CSI driver polls Secrets Manager, updates the mounted files, and syncs the new value into the Kubernetes Secret. Reloader detects the Secret change and triggers a rolling restart.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Confirm the K8s Secret was updated</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>default<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.password}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
+
+<span class="c1"># Confirm pods were restarted (check pod age)</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>default<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>myapp
+</code></pre></div>
+<hr>
+<h2 id="reloader-annotations">Reloader annotations<a class="headerlink" href="#reloader-annotations" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Annotation</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deployment</td>
+<td><code>reloader.stakater.com/search: "true"</code></td>
+<td>Restart when any referenced Secret with <code>match: "true"</code> changes</td>
+</tr>
+<tr>
+<td>Kubernetes Secret (via <code>secretObjects</code>)</td>
+<td><code>reloader.stakater.com/match: "true"</code></td>
+<td>Mark this Secret as eligible to trigger a restart</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="file-based-pattern-no-kubernetes-secret">File-based pattern (no Kubernetes Secret)<a class="headerlink" href="#file-based-pattern-no-kubernetes-secret" title="Permanent link">#</a></h2>
+<p>If you want to mount secrets as files only, without creating a Kubernetes Secret, omit the <code>secretObjects</code> block and enable Reloader's CSI integration:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">enableCSIIntegration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p>Then annotate the Deployment with the <code>SecretProviderClass</code> name:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">reloader.stakater.com/auto</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">    </span><span class="nt">secretproviderclass.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"aws-app-secrets"</span>
 </code></pre></div>
-<p>This enables automatic restarts when referenced configuration resources change.</p>
-<hr>
-<h3 id="4-update-the-secret">4. Update the Secret<a class="headerlink" href="#4-update-the-secret" title="Permanent link">#</a></h3>
-<p>Modify the secret:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">DB_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">newpassword</span>
-</code></pre></div>
-<p>Apply the update:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>secret.yaml
-</code></pre></div>
-<p>Result:</p>
-<div class="highlight"><pre><span></span><code>Secret<span class="w"> </span>updated
-↓
-Reloader<span class="w"> </span>detects<span class="w"> </span>change
-↓
-Deployment<span class="w"> </span>patched
-↓
-New<span class="w"> </span>pod<span class="w"> </span>created
-↓
-Application<span class="w"> </span>loads<span class="w"> </span>new<span class="w"> </span>credentials
-</code></pre></div>
-<hr>
-<h2 id="verifying-the-restart">Verifying the Restart<a class="headerlink" href="#verifying-the-restart" title="Permanent link">#</a></h2>
-<p>You can observe the rollout with:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deployment<span class="w"> </span>demo-app
-</code></pre></div>
-<p>Or monitor pods:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-w
-</code></pre></div>
-<p>You will see a new pod created automatically when the Secret changes.</p>
-<hr>
-<h2 id="when-this-pattern-is-useful">When This Pattern Is Useful<a class="headerlink" href="#when-this-pattern-is-useful" title="Permanent link">#</a></h2>
-<p>Automatically restarting pods when Secrets change is useful when:</p>
-<ul>
-<li>credentials rotate regularly</li>
-<li>tokens or API keys expire</li>
-<li>certificate secrets are updated</li>
-<li>external secret managers synchronize secrets</li>
-</ul>
-<hr>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
-<p>Updating a Secret in Kubernetes does not automatically restart pods that use it.</p>
-<p>Manual restarts and Helm-based checksums can help, but they require additional operational steps.</p>
-<p>Using Reloader allows workloads to <strong>automatically restart when Secrets change</strong>, ensuring applications always run with the latest credentials.</p>
-<hr>
-<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">#</a></h2>
-<h3 id="do-secret-changes-automatically-restart-pods-in-kubernetes">Do Secret changes automatically restart pods in Kubernetes?<a class="headerlink" href="#do-secret-changes-automatically-restart-pods-in-kubernetes" title="Permanent link">#</a></h3>
-<p>No. Kubernetes does not automatically restart pods when Secrets change.</p>
-<h3 id="why-doesnt-kubernetes-restart-pods-when-secrets-update">Why doesn't Kubernetes restart pods when Secrets update?<a class="headerlink" href="#why-doesnt-kubernetes-restart-pods-when-secrets-update" title="Permanent link">#</a></h3>
-<p>Kubernetes only triggers rollouts when the Pod specification changes, not when referenced resources change.</p>
-<h3 id="how-can-i-automatically-restart-pods-when-secrets-change">How can I automatically restart pods when Secrets change?<a class="headerlink" href="#how-can-i-automatically-restart-pods-when-secrets-change" title="Permanent link">#</a></h3>
-<p>You can use a controller such as Reloader to watch for Secret updates and trigger rolling restarts automatically.</p>
+<p>In this mode, Reloader watches <code>SecretProviderClassPodStatus</code> resources for version hash changes instead of watching a Kubernetes Secret. This approach avoids creating intermediate Secret objects but requires <code>enableCSIIntegration: true</code> in Reloader.</p>
 
 
 
@@ -5633,27 +5669,27 @@ Application<span class="w"> </span>loads<span class="w"> </span>new<span class="
                 <div class="flex-2">
                     <div class="logo-footer-container">
                         
-                        <img class="md-header__logo_light" src="../assets/images/footer-logo-light.png#only-light" alt="logo">
+                        <img class="md-header__logo_light" src="../../assets/images/footer-logo-light.png#only-light" alt="logo">
                         
                         
-                        <img src="../assets/images/footer-logo-dark.png#only-dark" alt="logo">
+                        <img src="../../assets/images/footer-logo-dark.png#only-dark" alt="logo">
                         
                     </div>
 
                     <div class="collaborations-img-container">
                         <div class="display-flex">
                             
-                            <img class="csa-logo-dark" src="../assets/images/CSA_dark.png#only-dark" alt="CSA">
+                            <img class="csa-logo-dark" src="../../assets/images/CSA_dark.png#only-dark" alt="CSA">
                             
                             
-                            <img class="csa-logo-light" src="../assets/images/CSA_light.png#only-light" alt="CSA">
+                            <img class="csa-logo-light" src="../../assets/images/CSA_light.png#only-light" alt="CSA">
                             
 
                             
-                            <img class="hc-logo-dark" src="../assets/images/HC_dark.png#only-dark" alt="HC">
+                            <img class="hc-logo-dark" src="../../assets/images/HC_dark.png#only-dark" alt="HC">
                             
                             
-                            <img class="hc-logo-light" src="../assets/images/HC_light.png#only-light" alt="HC">
+                            <img class="hc-logo-light" src="../../assets/images/HC_light.png#only-light" alt="HC">
                             
                         </div>
                     </div>
@@ -6045,10 +6081,10 @@ Application<span class="w"> </span>loads<span class="w"> </span>new<span class="
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.tracking", "toc.follow", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.tracking", "toc.follow", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   

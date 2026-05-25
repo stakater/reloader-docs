@@ -5,13 +5,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-playwright-monorepo/how-to-guides/restart-pods-when-secret-changes.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-playwright-monorepo/how-to-guides/namespace-scoping.html">
       
       
-        <link rel="prev" href="restart-pods-when-configmap-changes.html">
+        <link rel="prev" href="restart-pods-when-external-secrets-change.html">
       
       
-        <link rel="next" href="reload-pods-on-tls-certificate-rotation.html">
+        <link rel="next" href="monitor-reloader.html">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>Restart Pods When Secret Changes in Kubernetes - Reloader</title>
+        <title>Scope Reloader to Specific Namespaces - Reloader</title>
       
     
     
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#restart-pods-when-secret-changes-in-kubernetes" class="md-skip">
+        <a href="#scope-reloader-to-specific-namespaces" class="md-skip">
           Skip to content
         </a>
       
@@ -2949,37 +2949,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Restart Pods When Secret Changes in Kubernetes
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="restart-pods-when-secret-changes.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="restart-pods-when-secret-changes.html" class="md-nav__link">
         
   
   
@@ -2995,278 +2968,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#the-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-this-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why This Matters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-approaches" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Common Approaches
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Common Approaches">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-manual-restart" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Manual Restart
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Manual Restart">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#limitations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Limitations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-helm-checksum-annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Helm Checksum Annotations
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Helm Checksum Annotations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#limitations_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Limitations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#automatic-restart-with-reloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Automatic Restart with Reloader
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-by-step-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step-by-Step Example
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step-by-Step Example">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-create-a-secret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Create a Secret
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-create-a-deployment-using-the-secret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Create a Deployment Using the Secret
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-enable-reloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Enable Reloader
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-update-the-secret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Update the Secret
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verifying-the-restart" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verifying the Restart
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-this-pattern-is-useful" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When This Pattern Is Useful
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FAQ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="FAQ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#do-secret-changes-automatically-restart-pods-in-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Do Secret changes automatically restart pods in Kubernetes?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-doesnt-kubernetes-restart-pods-when-secrets-update" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why doesn't Kubernetes restart pods when Secrets update?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-can-i-automatically-restart-pods-when-secrets-change" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How can I automatically restart pods when Secrets change?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3332,10 +3033,37 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="namespace-scoping.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Scope Reloader to Specific Namespaces
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="namespace-scoping.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3351,6 +3079,166 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#default-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default behavior
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-1-restrict-to-the-deployment-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 1 — Restrict to the deployment namespace
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-2-watch-namespaces-matching-a-label-selector" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 2 — Watch namespaces matching a label selector
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-3-exclude-specific-namespaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 3 — Exclude specific namespaces
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-4-filter-by-resource-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 4 — Filter by resource labels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interaction-between-selectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interaction between selectors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rbac-implications-per-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RBAC implications per mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-reloader-per-team-namespace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One Reloader per team namespace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one-reloader-watching-production-namespaces-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One Reloader watching production namespaces only
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-wide-with-system-namespaces-excluded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cluster-wide with system namespaces excluded
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifying-scope-in-a-running-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verifying scope in a running cluster
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4890,10 +4778,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#the-problem" class="md-nav__link">
+  <a href="#default-behavior" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Problem
+        Default behavior
       
     </span>
   </a>
@@ -4901,10 +4789,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-this-matters" class="md-nav__link">
+  <a href="#option-1-restrict-to-the-deployment-namespace" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why This Matters
+        Option 1 — Restrict to the deployment namespace
       
     </span>
   </a>
@@ -4912,83 +4800,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-approaches" class="md-nav__link">
+  <a href="#option-2-watch-namespaces-matching-a-label-selector" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common Approaches
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Common Approaches">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-manual-restart" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Manual Restart
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Manual Restart">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#limitations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Limitations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-helm-checksum-annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Helm Checksum Annotations
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Helm Checksum Annotations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#limitations_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Limitations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#automatic-restart-with-reloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Automatic Restart with Reloader
+        Option 2 — Watch namespaces matching a label selector
       
     </span>
   </a>
@@ -4996,22 +4811,66 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-by-step-example" class="md-nav__link">
+  <a href="#option-3-exclude-specific-namespaces" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step-by-Step Example
+        Option 3 — Exclude specific namespaces
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Step-by-Step Example">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#option-4-filter-by-resource-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Option 4 — Filter by resource labels
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interaction-between-selectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interaction between selectors
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rbac-implications-per-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RBAC implications per mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Practical patterns">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#1-create-a-secret" class="md-nav__link">
+  <a href="#one-reloader-per-team-namespace" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Create a Secret
+        One Reloader per team namespace
       
     </span>
   </a>
@@ -5019,10 +4878,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-create-a-deployment-using-the-secret" class="md-nav__link">
+  <a href="#one-reloader-watching-production-namespaces-only" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Create a Deployment Using the Secret
+        One Reloader watching production namespaces only
       
     </span>
   </a>
@@ -5030,21 +4889,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-enable-reloader" class="md-nav__link">
+  <a href="#cluster-wide-with-system-namespaces-excluded" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Enable Reloader
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-update-the-secret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Update the Secret
+        Cluster-wide with system namespaces excluded
       
     </span>
   </a>
@@ -5057,85 +4905,13 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#verifying-the-restart" class="md-nav__link">
+  <a href="#verifying-scope-in-a-running-cluster" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Verifying the Restart
+        Verifying scope in a running cluster
       
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-this-pattern-is-useful" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When This Pattern Is Useful
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FAQ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="FAQ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#do-secret-changes-automatically-restart-pods-in-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Do Secret changes automatically restart pods in Kubernetes?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-doesnt-kubernetes-restart-pods-when-secrets-update" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why doesn't Kubernetes restart pods when Secrets update?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-can-i-automatically-restart-pods-when-secrets-change" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How can I automatically restart pods when Secrets change?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -5159,187 +4935,169 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="restart-pods-when-secret-changes-in-kubernetes">Restart Pods When Secret Changes in Kubernetes<a class="headerlink" href="#restart-pods-when-secret-changes-in-kubernetes" title="Permanent link">#</a></h1>
-<p>Applications running in Kubernetes often depend on <strong>Secrets</strong> for sensitive configuration such as database credentials, API tokens, or encryption keys.</p>
-<p>When a Secret is updated, running pods <strong>do not automatically restart</strong>. This means applications may continue using outdated credentials until the pods are restarted.</p>
-<p>This guide explains how to ensure pods automatically restart when Secrets change.</p>
+<h1 id="scope-reloader-to-specific-namespaces">Scope Reloader to Specific Namespaces<a class="headerlink" href="#scope-reloader-to-specific-namespaces" title="Permanent link">#</a></h1>
+<p>By default Reloader watches every namespace in the cluster. This guide shows how to restrict that scope — to a single namespace, to namespaces matching a label selector, or by excluding specific namespaces — and explains the RBAC implications of each mode.</p>
 <hr>
-<h2 id="the-problem">The Problem<a class="headerlink" href="#the-problem" title="Permanent link">#</a></h2>
-<p>Updating a Secret does not trigger a rollout of workloads that reference it.</p>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>secret.yaml
-</code></pre></div>
-<p>Result:</p>
-<div class="highlight"><pre><span></span><code>Secret<span class="w"> </span>updated
-↓
-Pods<span class="w"> </span><span class="k">continue</span><span class="w"> </span>running
-↓
-Application<span class="w"> </span>still<span class="w"> </span>uses<span class="w"> </span>old<span class="w"> </span>credentials
-</code></pre></div>
-<p>This behavior exists because Kubernetes only performs a rollout when the <strong>Pod specification changes</strong>, not when referenced Secrets are modified.</p>
+<h2 id="default-behavior">Default behavior<a class="headerlink" href="#default-behavior" title="Permanent link">#</a></h2>
+<p>Out of the box, Reloader runs with <code>watchGlobally: true</code>. It uses the Kubernetes watch API to observe <code>ConfigMaps</code> and <code>Secrets</code> across all namespaces, and patches workloads wherever it finds matching annotations.</p>
+<p>This is appropriate for platform-wide deployments where a single Reloader instance serves the whole cluster.</p>
 <hr>
-<h2 id="why-this-matters">Why This Matters<a class="headerlink" href="#why-this-matters" title="Permanent link">#</a></h2>
-<p>Secrets often change during normal operations.</p>
-<p>Examples include:</p>
+<h2 id="option-1-restrict-to-the-deployment-namespace">Option 1 — Restrict to the deployment namespace<a class="headerlink" href="#option-1-restrict-to-the-deployment-namespace" title="Permanent link">#</a></h2>
+<p>Set <code>watchGlobally: false</code> to limit Reloader to the single namespace it is deployed in.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">watchGlobally</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</code></pre></div>
+<p>What changes:</p>
 <ul>
-<li>database password rotation</li>
-<li>API key updates</li>
-<li>token refresh</li>
-<li>TLS certificate updates</li>
+<li>Reloader sets the <code>KUBERNETES_NAMESPACE</code> environment variable to its own pod namespace.</li>
+<li>It only watches resources and workloads in that namespace.</li>
+<li>The chart creates a <strong><code>Role</code></strong> and <strong><code>RoleBinding</code></strong> instead of a <code>ClusterRole</code> and <code>ClusterRoleBinding</code>.</li>
 </ul>
-<p>If pods are not restarted, applications may continue using <strong>expired or invalid credentials</strong>, which can lead to service outages.</p>
+<p>This is the most restrictive option and the right choice when you want one Reloader instance per team namespace, or when cluster-wide RBAC is not permitted.</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>my-team<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--create-namespace<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.watchGlobally<span class="o">=</span><span class="nb">false</span>
+</code></pre></div>
 <hr>
-<h2 id="common-approaches">Common Approaches<a class="headerlink" href="#common-approaches" title="Permanent link">#</a></h2>
-<h3 id="1-manual-restart">1. Manual Restart<a class="headerlink" href="#1-manual-restart" title="Permanent link">#</a></h3>
-<p>A common solution is to manually restart the workload.</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>restart<span class="w"> </span>deployment<span class="w"> </span>my-app
+<h2 id="option-2-watch-namespaces-matching-a-label-selector">Option 2 — Watch namespaces matching a label selector<a class="headerlink" href="#option-2-watch-namespaces-matching-a-label-selector" title="Permanent link">#</a></h2>
+<p>To watch a subset of namespaces rather than all of them, use <code>namespaceSelector</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">namespaceSelector</span><span class="p">:</span><span class="w"> </span><span class="s">"environment=production"</span>
 </code></pre></div>
-<p>Result:</p>
-<div class="highlight"><pre><span></span><code>Secret<span class="w"> </span>updated
-↓
-Operator<span class="w"> </span>restarts<span class="w"> </span>deployment
-↓
-New<span class="w"> </span>pods<span class="w"> </span>created
-↓
-Application<span class="w"> </span>loads<span class="w"> </span>new<span class="w"> </span>secret
+<p>Reloader passes this value to the <code>--namespace-selector</code> flag at startup and evaluates it against namespace labels.</p>
+<p>Multiple label requirements can be combined using comma-separated expressions (AND logic):</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">namespaceSelector</span><span class="p">:</span><span class="w"> </span><span class="s">"environment=production,team=platform"</span>
 </code></pre></div>
-<h4 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">#</a></h4>
+<p>This configuration still uses <code>watchGlobally: true</code> under the hood, so the chart creates a <strong><code>ClusterRole</code></strong>. The ClusterRole also gains a <code>namespaces: get, list, watch</code> rule so Reloader can read namespace labels to evaluate the selector.</p>
+<p>Label the namespaces you want Reloader to watch:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>label<span class="w"> </span>namespace<span class="w"> </span>production<span class="w"> </span><span class="nv">environment</span><span class="o">=</span>production
+kubectl<span class="w"> </span>label<span class="w"> </span>namespace<span class="w"> </span>staging<span class="w"> </span><span class="nv">environment</span><span class="o">=</span>staging
+</code></pre></div>
+<p>With <code>namespaceSelector: "environment=production"</code>, only <code>production</code> is watched; <code>staging</code> is ignored.</p>
+<hr>
+<h2 id="option-3-exclude-specific-namespaces">Option 3 — Exclude specific namespaces<a class="headerlink" href="#option-3-exclude-specific-namespaces" title="Permanent link">#</a></h2>
+<p>To watch all namespaces except a named list, use <code>ignoreNamespaces</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ignoreNamespaces</span><span class="p">:</span><span class="w"> </span><span class="s">"kube-system,kube-public,cert-manager"</span>
+</code></pre></div>
+<p>This is a comma-separated list of exact namespace names. Reloader passes it to the <code>--namespaces-to-ignore</code> flag.</p>
+<p><code>ignoreNamespaces</code> and <code>namespaceSelector</code> can be combined. When both are set:</p>
 <ul>
-<li>Requires manual intervention</li>
-<li>Easy to forget</li>
-<li>Difficult to manage across many workloads</li>
+<li><code>namespaceSelector</code> restricts Reloader to namespaces matching the label selector.</li>
+<li><code>ignoreNamespaces</code> then excludes specific names from that already-filtered set.</li>
 </ul>
 <hr>
-<h3 id="2-helm-checksum-annotations">2. Helm Checksum Annotations<a class="headerlink" href="#2-helm-checksum-annotations" title="Permanent link">#</a></h3>
-<p>Helm charts sometimes include checksum annotations that trigger restarts when secrets change.</p>
-<p>Example:</p>
+<h2 id="option-4-filter-by-resource-labels">Option 4 — Filter by resource labels<a class="headerlink" href="#option-4-filter-by-resource-labels" title="Permanent link">#</a></h2>
+<p><code>resourceLabelSelector</code> restricts which <code>ConfigMaps</code> and <code>Secrets</code> Reloader watches, regardless of namespace scope. Only resources whose labels match the selector can trigger a reload.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">resourceLabelSelector</span><span class="p">:</span><span class="w"> </span><span class="s">"reloader-managed=true"</span>
+</code></pre></div>
+<p>This is orthogonal to namespace filtering — it filters resources, not namespaces.</p>
+<p>Use it to limit Reloader's blast radius in clusters where many ConfigMaps and Secrets exist but only a subset should ever trigger a restart.</p>
+<p>Label the resources you want Reloader to watch:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">checksum/secret</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">include (print $.Template.BasePath "/secret.yaml") . | sha256sum</span><span class="w"> </span><span class="p p-Indicator">}}</span>
-</code></pre></div>
-<p>When the secret changes and Helm runs again, the checksum changes and the deployment rolls out.</p>
-<h4 id="limitations_1">Limitations<a class="headerlink" href="#limitations_1" title="Permanent link">#</a></h4>
-<ul>
-<li>Requires modifying Helm charts</li>
-<li>Only works when Helm upgrades occur</li>
-<li>Does not react to runtime secret updates</li>
-</ul>
-<hr>
-<h2 id="automatic-restart-with-reloader">Automatic Restart with Reloader<a class="headerlink" href="#automatic-restart-with-reloader" title="Permanent link">#</a></h2>
-<p>A more reliable solution is to use <strong>Reloader</strong>, a Kubernetes controller that watches for changes in:</p>
-<ul>
-<li>Secrets</li>
-<li>ConfigMaps</li>
-</ul>
-<p>When one of these resources changes, Reloader automatically triggers a rolling restart of workloads that reference them.</p>
-<p>Workflow:</p>
-<div class="highlight"><pre><span></span><code>Secret<span class="w"> </span>updated
-↓
-Reloader<span class="w"> </span>detects<span class="w"> </span>change
-↓
-Deployment<span class="w"> </span>patched
-↓
-Kubernetes<span class="w"> </span>rolling<span class="w"> </span>restart<span class="w"> </span>triggered
-</code></pre></div>
-<p>This ensures applications restart and load the latest credentials.</p>
-<hr>
-<h2 id="step-by-step-example">Step-by-Step Example<a class="headerlink" href="#step-by-step-example" title="Permanent link">#</a></h2>
-<h3 id="1-create-a-secret">1. Create a Secret<a class="headerlink" href="#1-create-a-secret" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Secret</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">database-secret</span>
-<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Opaque</span>
-<span class="nt">stringData</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">DB_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">supersecret</span>
-</code></pre></div>
-<p>Apply the secret:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>secret.yaml
+<span class="w">  </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">reloader-managed</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
 </code></pre></div>
 <hr>
-<h3 id="2-create-a-deployment-using-the-secret">2. Create a Deployment Using the Secret<a class="headerlink" href="#2-create-a-deployment-using-the-secret" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo-app</span>
-<span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
-<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span>
-<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span>
-<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
-<span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
-<span class="w">        </span><span class="nt">env</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
-<span class="w">          </span><span class="nt">valueFrom</span><span class="p">:</span>
-<span class="w">            </span><span class="nt">secretKeyRef</span><span class="p">:</span>
-<span class="w">              </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">database-secret</span>
-<span class="w">              </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
+<h2 id="interaction-between-selectors">Interaction between selectors<a class="headerlink" href="#interaction-between-selectors" title="Permanent link">#</a></h2>
+<p>The selectors narrow scope independently:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it filters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>watchGlobally: false</code></td>
+<td>Only the deployment namespace; uses Role instead of ClusterRole</td>
+</tr>
+<tr>
+<td><code>namespaceSelector</code></td>
+<td>Namespaces whose labels match the selector</td>
+</tr>
+<tr>
+<td><code>ignoreNamespaces</code></td>
+<td>Named namespaces excluded from watching</td>
+</tr>
+<tr>
+<td><code>resourceLabelSelector</code></td>
+<td>ConfigMaps/Secrets whose labels match the selector</td>
+</tr>
+</tbody>
+</table>
+<p>A resource triggers a reload only if it passes <strong>all</strong> active filters. For example, if <code>namespaceSelector: "team=platform"</code> is set and a namespace does not have that label, no ConfigMap or Secret in that namespace will ever trigger a reload, regardless of workload annotations.</p>
+<hr>
+<h2 id="rbac-implications-per-mode">RBAC implications per mode<a class="headerlink" href="#rbac-implications-per-mode" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Role type</th>
+<th><code>namespaces</code> rule added</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>watchGlobally: true</code> (default)</td>
+<td><code>ClusterRole</code> + <code>ClusterRoleBinding</code></td>
+<td>Only when <code>namespaceSelector</code> is set</td>
+</tr>
+<tr>
+<td><code>watchGlobally: false</code></td>
+<td><code>Role</code> + <code>RoleBinding</code></td>
+<td>Never</td>
+</tr>
+</tbody>
+</table>
+<p>See the <a href="../reference/rbac.html">RBAC reference</a> for the full list of rules in each mode.</p>
+<hr>
+<h2 id="practical-patterns">Practical patterns<a class="headerlink" href="#practical-patterns" title="Permanent link">#</a></h2>
+<h3 id="one-reloader-per-team-namespace">One Reloader per team namespace<a class="headerlink" href="#one-reloader-per-team-namespace" title="Permanent link">#</a></h3>
+<p>Each team installs their own Reloader instance scoped to their namespace:</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>team-alpha<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.watchGlobally<span class="o">=</span><span class="nb">false</span>
+
+helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>team-beta<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.watchGlobally<span class="o">=</span><span class="nb">false</span>
+</code></pre></div>
+<p>Each instance only needs a <code>Role</code> in its own namespace, which is useful when cluster-admin cannot grant <code>ClusterRole</code> permissions.</p>
+<h3 id="one-reloader-watching-production-namespaces-only">One Reloader watching production namespaces only<a class="headerlink" href="#one-reloader-watching-production-namespaces-only" title="Permanent link">#</a></h3>
+<p>A single Reloader instance watches only namespaces labelled for production:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>label<span class="w"> </span>namespace<span class="w"> </span>prod-app-1<span class="w"> </span><span class="nv">environment</span><span class="o">=</span>production
+kubectl<span class="w"> </span>label<span class="w"> </span>namespace<span class="w"> </span>prod-app-2<span class="w"> </span><span class="nv">environment</span><span class="o">=</span>production
+
+helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--create-namespace<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.namespaceSelector<span class="o">=</span><span class="s2">"environment=production"</span>
+</code></pre></div>
+<h3 id="cluster-wide-with-system-namespaces-excluded">Cluster-wide with system namespaces excluded<a class="headerlink" href="#cluster-wide-with-system-namespaces-excluded" title="Permanent link">#</a></h3>
+<p>Watch everything except namespaces that should never trigger reloads:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ignoreNamespaces</span><span class="p">:</span><span class="w"> </span><span class="s">"kube-system,kube-public,kube-node-lease,cert-manager,reloader"</span>
 </code></pre></div>
 <hr>
-<h3 id="3-enable-reloader">3. Enable Reloader<a class="headerlink" href="#3-enable-reloader" title="Permanent link">#</a></h3>
-<p>Add the following annotation to the Deployment:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">reloader.stakater.com/auto</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<h2 id="verifying-scope-in-a-running-cluster">Verifying scope in a running cluster<a class="headerlink" href="#verifying-scope-in-a-running-cluster" title="Permanent link">#</a></h2>
+<p>Check which namespace selector and ignore list are active:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>deployment<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>reloader-reloader<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.spec.template.spec.containers[0].args}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>tr<span class="w"> </span><span class="s1">','</span><span class="w"> </span><span class="s1">'\n'</span>
 </code></pre></div>
-<p>This enables automatic restarts when referenced configuration resources change.</p>
-<hr>
-<h3 id="4-update-the-secret">4. Update the Secret<a class="headerlink" href="#4-update-the-secret" title="Permanent link">#</a></h3>
-<p>Modify the secret:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">DB_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">newpassword</span>
+<p>Check whether a specific namespace is being watched:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"namespace"</span>
 </code></pre></div>
-<p>Apply the update:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>secret.yaml
+<p>Confirm the RBAC mode:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Returns output in global mode</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>clusterrole<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader-reloader
+
+<span class="c1"># Returns output in namespace-scoped mode</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>role<span class="w"> </span>-n<span class="w"> </span>&lt;deployment-namespace&gt;<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader-reloader
 </code></pre></div>
-<p>Result:</p>
-<div class="highlight"><pre><span></span><code>Secret<span class="w"> </span>updated
-↓
-Reloader<span class="w"> </span>detects<span class="w"> </span>change
-↓
-Deployment<span class="w"> </span>patched
-↓
-New<span class="w"> </span>pod<span class="w"> </span>created
-↓
-Application<span class="w"> </span>loads<span class="w"> </span>new<span class="w"> </span>credentials
-</code></pre></div>
-<hr>
-<h2 id="verifying-the-restart">Verifying the Restart<a class="headerlink" href="#verifying-the-restart" title="Permanent link">#</a></h2>
-<p>You can observe the rollout with:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deployment<span class="w"> </span>demo-app
-</code></pre></div>
-<p>Or monitor pods:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-w
-</code></pre></div>
-<p>You will see a new pod created automatically when the Secret changes.</p>
-<hr>
-<h2 id="when-this-pattern-is-useful">When This Pattern Is Useful<a class="headerlink" href="#when-this-pattern-is-useful" title="Permanent link">#</a></h2>
-<p>Automatically restarting pods when Secrets change is useful when:</p>
-<ul>
-<li>credentials rotate regularly</li>
-<li>tokens or API keys expire</li>
-<li>certificate secrets are updated</li>
-<li>external secret managers synchronize secrets</li>
-</ul>
-<hr>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
-<p>Updating a Secret in Kubernetes does not automatically restart pods that use it.</p>
-<p>Manual restarts and Helm-based checksums can help, but they require additional operational steps.</p>
-<p>Using Reloader allows workloads to <strong>automatically restart when Secrets change</strong>, ensuring applications always run with the latest credentials.</p>
-<hr>
-<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">#</a></h2>
-<h3 id="do-secret-changes-automatically-restart-pods-in-kubernetes">Do Secret changes automatically restart pods in Kubernetes?<a class="headerlink" href="#do-secret-changes-automatically-restart-pods-in-kubernetes" title="Permanent link">#</a></h3>
-<p>No. Kubernetes does not automatically restart pods when Secrets change.</p>
-<h3 id="why-doesnt-kubernetes-restart-pods-when-secrets-update">Why doesn't Kubernetes restart pods when Secrets update?<a class="headerlink" href="#why-doesnt-kubernetes-restart-pods-when-secrets-update" title="Permanent link">#</a></h3>
-<p>Kubernetes only triggers rollouts when the Pod specification changes, not when referenced resources change.</p>
-<h3 id="how-can-i-automatically-restart-pods-when-secrets-change">How can I automatically restart pods when Secrets change?<a class="headerlink" href="#how-can-i-automatically-restart-pods-when-secrets-change" title="Permanent link">#</a></h3>
-<p>You can use a controller such as Reloader to watch for Secret updates and trigger rolling restarts automatically.</p>
 
 
 

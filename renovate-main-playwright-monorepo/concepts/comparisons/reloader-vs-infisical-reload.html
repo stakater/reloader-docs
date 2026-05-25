@@ -5,31 +5,31 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-playwright-monorepo/how-to-guides/restart-pods-when-secret-changes.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-playwright-monorepo/concepts/comparisons/reloader-vs-infisical-reload.html">
       
       
-        <link rel="prev" href="restart-pods-when-configmap-changes.html">
+        <link rel="prev" href="reloader-vs-app-level-reload.html">
       
       
-        <link rel="next" href="reload-pods-on-tls-certificate-rotation.html">
+        <link rel="next" href="../../installation/install-oss.html">
       
       
         
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Restart Pods When Secret Changes in Kubernetes - Reloader</title>
+        <title>Reloader vs Infisical Built-In Reload - Reloader</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -48,9 +48,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -66,7 +66,7 @@
 
     
     
-  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#restart-pods-when-secret-changes-in-kubernetes" class="md-skip">
+        <a href="#reloader-vs-infisical-built-in-reload" class="md-skip">
           Skip to content
         </a>
       
@@ -340,9 +340,9 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   <nav class="md-header__inner md-grid" aria-label="Header">
 
     <!-- Link to home -->
-    <a href=".." title="Reloader" class="md-header__button md-logo" aria-label="Reloader" data-md-component="logo">
+    <a href="../.." title="Reloader" class="md-header__button md-logo" aria-label="Reloader" data-md-component="logo">
       <!-- 
-  <img src="../assets/images/logo.svg" alt="logo">
+  <img src="../../assets/images/logo.svg" alt="logo">
  -->
     </a>
 
@@ -360,10 +360,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
         <!-- Logo -->
         <div class="md-header__topic">
           
-          <img class="md-header__logo_light" src="../assets/images/logo.svg#only-light" alt="logo">
+          <img class="md-header__logo_light" src="../../assets/images/logo.svg#only-light" alt="logo">
           
           
-          <img class="md-header__logo_dark" src="../assets/images/logo.svg#only-dark" alt="logo">
+          <img class="md-header__logo_dark" src="../../assets/images/logo.svg#only-dark" alt="logo">
           
           
           <div class="header-site-name">
@@ -1987,9 +1987,9 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Reloader" class="md-nav__button md-logo" aria-label="Reloader" data-md-component="logo">
+    <a href="../.." title="Reloader" class="md-nav__button md-logo" aria-label="Reloader" data-md-component="logo">
       
-  <img src="../assets/images/logo.svg" alt="logo">
+  <img src="../../assets/images/logo.svg" alt="logo">
 
     </a>
     Reloader
@@ -2063,7 +2063,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../index.html" class="md-nav__link">
+      <a href="../../index.html" class="md-nav__link">
         
   
   
@@ -2091,7 +2091,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../about/why-reloader-matters.html" class="md-nav__link">
+      <a href="../../about/why-reloader-matters.html" class="md-nav__link">
         
   
   
@@ -2119,7 +2119,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../about/value-by-role.html" class="md-nav__link">
+      <a href="../../about/value-by-role.html" class="md-nav__link">
         
   
   
@@ -2147,7 +2147,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../about/editions.html" class="md-nav__link">
+      <a href="../../about/editions.html" class="md-nav__link">
         
   
   
@@ -2175,7 +2175,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../about/faq.html" class="md-nav__link">
+      <a href="../../about/faq.html" class="md-nav__link">
         
   
   
@@ -2257,7 +2257,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../architecture/how-it-works.html" class="md-nav__link">
+      <a href="../../architecture/how-it-works.html" class="md-nav__link">
         
   
   
@@ -2289,18 +2289,20 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked="">
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -2321,7 +2323,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2339,7 +2341,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/why-configuration-reloading-matters.html" class="md-nav__link">
+      <a href="../why-configuration-reloading-matters.html" class="md-nav__link">
         
   
   
@@ -2367,7 +2369,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/secret-propagation-problem-kubernetes.html" class="md-nav__link">
+      <a href="../secret-propagation-problem-kubernetes.html" class="md-nav__link">
         
   
   
@@ -2392,18 +2394,20 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked="">
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
@@ -2424,7 +2428,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2442,7 +2446,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-helm.html" class="md-nav__link">
+      <a href="reloader-vs-helm.html" class="md-nav__link">
         
   
   
@@ -2470,7 +2474,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-checksum-annotations.html" class="md-nav__link">
+      <a href="reloader-vs-checksum-annotations.html" class="md-nav__link">
         
   
   
@@ -2498,7 +2502,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-kyverno.html" class="md-nav__link">
+      <a href="reloader-vs-kyverno.html" class="md-nav__link">
         
   
   
@@ -2526,7 +2530,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-sidecar-config-watchers.html" class="md-nav__link">
+      <a href="reloader-vs-sidecar-config-watchers.html" class="md-nav__link">
         
   
   
@@ -2554,7 +2558,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-init-containers.html" class="md-nav__link">
+      <a href="reloader-vs-init-containers.html" class="md-nav__link">
         
   
   
@@ -2582,7 +2586,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-manual-rollouts.html" class="md-nav__link">
+      <a href="reloader-vs-manual-rollouts.html" class="md-nav__link">
         
   
   
@@ -2610,7 +2614,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-gitops-tools.html" class="md-nav__link">
+      <a href="reloader-vs-gitops-tools.html" class="md-nav__link">
         
   
   
@@ -2638,7 +2642,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-secret-operators.html" class="md-nav__link">
+      <a href="reloader-vs-secret-operators.html" class="md-nav__link">
         
   
   
@@ -2666,7 +2670,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-cert-manager.html" class="md-nav__link">
+      <a href="reloader-vs-cert-manager.html" class="md-nav__link">
         
   
   
@@ -2694,7 +2698,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-app-level-reload.html" class="md-nav__link">
+      <a href="reloader-vs-app-level-reload.html" class="md-nav__link">
         
   
   
@@ -2719,10 +2723,37 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../concepts/comparisons/reloader-vs-infisical-reload.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reloader vs Infisical Built-In Reload
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="reloader-vs-infisical-reload.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2738,6 +2769,94 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#what-infisicals-built-in-reload-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Infisical's built-in reload does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feature comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-infisicals-built-in-reload-is-enough" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When Infisical's built-in reload is enough
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use-reloader-instead" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to use Reloader instead
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-both-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using both together
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2812,7 +2931,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../installation/install-oss.html" class="md-nav__link">
+      <a href="../../installation/install-oss.html" class="md-nav__link">
         
   
   
@@ -2840,7 +2959,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../installation/install.html" class="md-nav__link">
+      <a href="../../installation/install.html" class="md-nav__link">
         
   
   
@@ -2872,20 +2991,18 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -2906,7 +3023,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2924,7 +3041,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="restart-pods-when-configmap-changes.html" class="md-nav__link">
+      <a href="../../how-to-guides/restart-pods-when-configmap-changes.html" class="md-nav__link">
         
   
   
@@ -2949,37 +3066,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Restart Pods When Secret Changes in Kubernetes
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="restart-pods-when-secret-changes.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/restart-pods-when-secret-changes.html" class="md-nav__link">
         
   
   
@@ -2995,278 +3085,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#the-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#why-this-matters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why This Matters
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-approaches" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Common Approaches
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Common Approaches">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-manual-restart" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Manual Restart
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Manual Restart">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#limitations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Limitations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-helm-checksum-annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Helm Checksum Annotations
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Helm Checksum Annotations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#limitations_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Limitations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#automatic-restart-with-reloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Automatic Restart with Reloader
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-by-step-example" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step-by-Step Example
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step-by-Step Example">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-create-a-secret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Create a Secret
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-create-a-deployment-using-the-secret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Create a Deployment Using the Secret
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-enable-reloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Enable Reloader
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-update-the-secret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Update the Secret
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verifying-the-restart" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verifying the Restart
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-this-pattern-is-useful" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When This Pattern Is Useful
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FAQ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="FAQ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#do-secret-changes-automatically-restart-pods-in-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Do Secret changes automatically restart pods in Kubernetes?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-doesnt-kubernetes-restart-pods-when-secrets-update" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why doesn't Kubernetes restart pods when Secrets update?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-can-i-automatically-restart-pods-when-secrets-change" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How can I automatically restart pods when Secrets change?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3279,7 +3097,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
+      <a href="../../how-to-guides/reload-pods-on-tls-certificate-rotation.html" class="md-nav__link">
         
   
   
@@ -3307,7 +3125,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="restart-pods-when-external-secrets-change.html" class="md-nav__link">
+      <a href="../../how-to-guides/restart-pods-when-external-secrets-change.html" class="md-nav__link">
         
   
   
@@ -3335,7 +3153,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="namespace-scoping.html" class="md-nav__link">
+      <a href="../../how-to-guides/namespace-scoping.html" class="md-nav__link">
         
   
   
@@ -3363,7 +3181,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="monitor-reloader.html" class="md-nav__link">
+      <a href="../../how-to-guides/monitor-reloader.html" class="md-nav__link">
         
   
   
@@ -3391,7 +3209,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="alerting-on-reload.html" class="md-nav__link">
+      <a href="../../how-to-guides/alerting-on-reload.html" class="md-nav__link">
         
   
   
@@ -3419,7 +3237,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="verify-and-troubleshoot.html" class="md-nav__link">
+      <a href="../../how-to-guides/verify-and-troubleshoot.html" class="md-nav__link">
         
   
   
@@ -3447,7 +3265,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="use-reloader-with-argocd.html" class="md-nav__link">
+      <a href="../../how-to-guides/use-reloader-with-argocd.html" class="md-nav__link">
         
   
   
@@ -3475,7 +3293,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="use-reloader-with-flux.html" class="md-nav__link">
+      <a href="../../how-to-guides/use-reloader-with-flux.html" class="md-nav__link">
         
   
   
@@ -3557,7 +3375,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/index.html" class="md-nav__link">
+      <a href="../../integrations/index.html" class="md-nav__link">
         
   
   
@@ -3632,7 +3450,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/conjur/index.html" class="md-nav__link">
+      <a href="../../integrations/conjur/index.html" class="md-nav__link">
         
   
   
@@ -3660,7 +3478,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/conjur/conjur-eso.html" class="md-nav__link">
+      <a href="../../integrations/conjur/conjur-eso.html" class="md-nav__link">
         
   
   
@@ -3688,7 +3506,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/conjur/conjur-sidecar.html" class="md-nav__link">
+      <a href="../../integrations/conjur/conjur-sidecar.html" class="md-nav__link">
         
   
   
@@ -3716,7 +3534,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/conjur/conjur-csi.html" class="md-nav__link">
+      <a href="../../integrations/conjur/conjur-csi.html" class="md-nav__link">
         
   
   
@@ -3799,7 +3617,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/vault/index.html" class="md-nav__link">
+      <a href="../../integrations/vault/index.html" class="md-nav__link">
         
   
   
@@ -3827,7 +3645,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/vault/vault-eso.html" class="md-nav__link">
+      <a href="../../integrations/vault/vault-eso.html" class="md-nav__link">
         
   
   
@@ -3855,7 +3673,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/vault/vault-vso.html" class="md-nav__link">
+      <a href="../../integrations/vault/vault-vso.html" class="md-nav__link">
         
   
   
@@ -3883,7 +3701,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/vault/vault-csi.html" class="md-nav__link">
+      <a href="../../integrations/vault/vault-csi.html" class="md-nav__link">
         
   
   
@@ -3911,7 +3729,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/vault/vault-csi-file.html" class="md-nav__link">
+      <a href="../../integrations/vault/vault-csi-file.html" class="md-nav__link">
         
   
   
@@ -3994,7 +3812,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/openbao/index.html" class="md-nav__link">
+      <a href="../../integrations/openbao/index.html" class="md-nav__link">
         
   
   
@@ -4022,7 +3840,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/openbao/openbao-eso.html" class="md-nav__link">
+      <a href="../../integrations/openbao/openbao-eso.html" class="md-nav__link">
         
   
   
@@ -4050,7 +3868,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/openbao/openbao-bso.html" class="md-nav__link">
+      <a href="../../integrations/openbao/openbao-bso.html" class="md-nav__link">
         
   
   
@@ -4078,7 +3896,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/openbao/openbao-csi.html" class="md-nav__link">
+      <a href="../../integrations/openbao/openbao-csi.html" class="md-nav__link">
         
   
   
@@ -4106,7 +3924,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/openbao/openbao-csi-file.html" class="md-nav__link">
+      <a href="../../integrations/openbao/openbao-csi-file.html" class="md-nav__link">
         
   
   
@@ -4189,7 +4007,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/aws/index.html" class="md-nav__link">
+      <a href="../../integrations/aws/index.html" class="md-nav__link">
         
   
   
@@ -4217,7 +4035,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/aws/aws-eso.html" class="md-nav__link">
+      <a href="../../integrations/aws/aws-eso.html" class="md-nav__link">
         
   
   
@@ -4245,7 +4063,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/aws/aws-csi.html" class="md-nav__link">
+      <a href="../../integrations/aws/aws-csi.html" class="md-nav__link">
         
   
   
@@ -4328,7 +4146,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/gcp/index.html" class="md-nav__link">
+      <a href="../../integrations/gcp/index.html" class="md-nav__link">
         
   
   
@@ -4356,7 +4174,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/gcp/gcp-eso.html" class="md-nav__link">
+      <a href="../../integrations/gcp/gcp-eso.html" class="md-nav__link">
         
   
   
@@ -4439,7 +4257,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/azure/index.html" class="md-nav__link">
+      <a href="../../integrations/azure/index.html" class="md-nav__link">
         
   
   
@@ -4467,7 +4285,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/azure/azure-eso.html" class="md-nav__link">
+      <a href="../../integrations/azure/azure-eso.html" class="md-nav__link">
         
   
   
@@ -4495,7 +4313,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/azure/azure-csi.html" class="md-nav__link">
+      <a href="../../integrations/azure/azure-csi.html" class="md-nav__link">
         
   
   
@@ -4578,7 +4396,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/infisical/index.html" class="md-nav__link">
+      <a href="../../integrations/infisical/index.html" class="md-nav__link">
         
   
   
@@ -4606,7 +4424,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../integrations/infisical/infisical-operator.html" class="md-nav__link">
+      <a href="../../integrations/infisical/infisical-operator.html" class="md-nav__link">
         
   
   
@@ -4696,7 +4514,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../reference/annotations.html" class="md-nav__link">
+      <a href="../../reference/annotations.html" class="md-nav__link">
         
   
   
@@ -4724,7 +4542,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../reference/helm-values.html" class="md-nav__link">
+      <a href="../../reference/helm-values.html" class="md-nav__link">
         
   
   
@@ -4752,7 +4570,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../reference/rbac.html" class="md-nav__link">
+      <a href="../../reference/rbac.html" class="md-nav__link">
         
   
   
@@ -4787,7 +4605,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../eula.html" class="md-nav__link">
+      <a href="../../eula.html" class="md-nav__link">
         
   
   
@@ -4814,7 +4632,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../help.html" class="md-nav__link">
+      <a href="../../help.html" class="md-nav__link">
         
   
   
@@ -4841,7 +4659,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../versions.html" class="md-nav__link">
+      <a href="../../versions.html" class="md-nav__link">
         
   
   
@@ -4890,10 +4708,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#the-problem" class="md-nav__link">
+  <a href="#what-infisicals-built-in-reload-does" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Problem
+        What Infisical's built-in reload does
       
     </span>
   </a>
@@ -4901,10 +4719,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-this-matters" class="md-nav__link">
+  <a href="#feature-comparison" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why This Matters
+        Feature comparison
       
     </span>
   </a>
@@ -4912,83 +4730,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-approaches" class="md-nav__link">
+  <a href="#when-infisicals-built-in-reload-is-enough" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common Approaches
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Common Approaches">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-manual-restart" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Manual Restart
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. Manual Restart">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#limitations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Limitations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-helm-checksum-annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Helm Checksum Annotations
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Helm Checksum Annotations">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#limitations_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Limitations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#automatic-restart-with-reloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Automatic Restart with Reloader
+        When Infisical's built-in reload is enough
       
     </span>
   </a>
@@ -4996,71 +4741,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-by-step-example" class="md-nav__link">
+  <a href="#when-to-use-reloader-instead" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step-by-Step Example
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step-by-Step Example">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-create-a-secret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Create a Secret
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-create-a-deployment-using-the-secret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Create a Deployment Using the Secret
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-enable-reloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Enable Reloader
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-update-the-secret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4. Update the Secret
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verifying-the-restart" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verifying the Restart
+        When to use Reloader instead
       
     </span>
   </a>
@@ -5068,10 +4752,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#when-this-pattern-is-useful" class="md-nav__link">
+  <a href="#using-both-together" class="md-nav__link">
     <span class="md-ellipsis">
       
-        When This Pattern Is Useful
+        Using both together
       
     </span>
   </a>
@@ -5086,56 +4770,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FAQ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="FAQ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#do-secret-changes-automatically-restart-pods-in-kubernetes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Do Secret changes automatically restart pods in Kubernetes?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#why-doesnt-kubernetes-restart-pods-when-secrets-update" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Why doesn't Kubernetes restart pods when Secrets update?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#how-can-i-automatically-restart-pods-when-secrets-change" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How can I automatically restart pods when Secrets change?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -5159,187 +4793,170 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="restart-pods-when-secret-changes-in-kubernetes">Restart Pods When Secret Changes in Kubernetes<a class="headerlink" href="#restart-pods-when-secret-changes-in-kubernetes" title="Permanent link">#</a></h1>
-<p>Applications running in Kubernetes often depend on <strong>Secrets</strong> for sensitive configuration such as database credentials, API tokens, or encryption keys.</p>
-<p>When a Secret is updated, running pods <strong>do not automatically restart</strong>. This means applications may continue using outdated credentials until the pods are restarted.</p>
-<p>This guide explains how to ensure pods automatically restart when Secrets change.</p>
+<h1 id="reloader-vs-infisical-built-in-reload">Reloader vs Infisical Built-In Reload<a class="headerlink" href="#reloader-vs-infisical-built-in-reload" title="Permanent link">#</a></h1>
+<p>The Infisical Kubernetes operator includes a built-in auto-reload feature. When a managed Kubernetes Secret is updated by the operator, it can automatically restart workloads that carry the annotation <code>secrets.infisical.com/auto-reload: "true"</code>.</p>
+<p>This page compares that built-in mechanism to using Stakater Reloader for the same job.</p>
 <hr>
-<h2 id="the-problem">The Problem<a class="headerlink" href="#the-problem" title="Permanent link">#</a></h2>
-<p>Updating a Secret does not trigger a rollout of workloads that reference it.</p>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>secret.yaml
-</code></pre></div>
-<p>Result:</p>
-<div class="highlight"><pre><span></span><code>Secret<span class="w"> </span>updated
+<h2 id="what-infisicals-built-in-reload-does">What Infisical's built-in reload does<a class="headerlink" href="#what-infisicals-built-in-reload-does" title="Permanent link">#</a></h2>
+<p>The Infisical operator polls the Infisical API on a configurable <code>resyncInterval</code> (default: 1 minute). When it detects a change, it updates the managed Kubernetes Secret. If a Deployment, StatefulSet, or Daemonset carries <code>secrets.infisical.com/auto-reload: "true"</code>, the operator triggers a restart on that workload.</p>
+<div class="highlight"><pre><span></span><code>Infisical secret changes
 ↓
-Pods<span class="w"> </span><span class="k">continue</span><span class="w"> </span>running
+Infisical operator syncs Kubernetes Secret (every resyncInterval)
 ↓
-Application<span class="w"> </span>still<span class="w"> </span>uses<span class="w"> </span>old<span class="w"> </span>credentials
+Operator checks for annotated workloads
+↓
+Operator triggers restart
 </code></pre></div>
-<p>This behavior exists because Kubernetes only performs a rollout when the <strong>Pod specification changes</strong>, not when referenced Secrets are modified.</p>
 <hr>
-<h2 id="why-this-matters">Why This Matters<a class="headerlink" href="#why-this-matters" title="Permanent link">#</a></h2>
-<p>Secrets often change during normal operations.</p>
-<p>Examples include:</p>
+<h2 id="feature-comparison">Feature comparison<a class="headerlink" href="#feature-comparison" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Infisical built-in reload</th>
+<th>Reloader</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deployments</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>StatefulSets</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Daemonsets</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Argo Rollouts</td>
+<td>❌</td>
+<td>✅ (requires <code>isArgoRollouts: true</code>)</td>
+</tr>
+<tr>
+<td>CronJobs</td>
+<td>❌ Not documented</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Watches ConfigMaps</td>
+<td>❌ Secrets only</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Works with non-Infisical secrets (ESO, CSI, plain Secrets)</td>
+<td>❌ Infisical-managed Secrets only</td>
+<td>✅ Any Kubernetes Secret or ConfigMap</td>
+</tr>
+<tr>
+<td>Named-resource reload annotation</td>
+<td>❌</td>
+<td>✅ <code>secret.reloader.stakater.com/reload</code></td>
+</tr>
+<tr>
+<td>Cooldown between reloads</td>
+<td>❌</td>
+<td>✅ <code>pause-period</code> annotation</td>
+</tr>
+<tr>
+<td>Namespace scoping</td>
+<td>❌</td>
+<td>✅ <code>namespaceSelector</code>, <code>ignoreNamespaces</code></td>
+</tr>
+<tr>
+<td>Prometheus metrics</td>
+<td>❌</td>
+<td>✅ <code>reloader_reload_executed_total</code></td>
+</tr>
+<tr>
+<td>Webhook alerts (Slack, Teams, Google Chat)</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>High availability with leader election</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Commercial support and SLA</td>
+<td>❌</td>
+<td>✅ Reloader Enterprise</td>
+</tr>
+<tr>
+<td>Hardened container images</td>
+<td>❌</td>
+<td>✅ Reloader Enterprise</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="when-infisicals-built-in-reload-is-enough">When Infisical's built-in reload is enough<a class="headerlink" href="#when-infisicals-built-in-reload-is-enough" title="Permanent link">#</a></h2>
+<p>If all of the following are true, the Infisical operator's built-in reload covers your use case without adding Reloader:</p>
 <ul>
-<li>database password rotation</li>
-<li>API key updates</li>
-<li>token refresh</li>
-<li>TLS certificate updates</li>
+<li>You run only <strong>Deployments, StatefulSets, and Daemonsets</strong> — no Argo Rollouts</li>
+<li>All your secrets come from <strong>Infisical</strong> — you are not mixing in ESO, CSI Driver, or plain ConfigMaps</li>
+<li>You do not need reload metrics, webhook alerts, or cooldown periods</li>
+<li>You have no compliance or SLA requirements for the reload mechanism itself</li>
 </ul>
-<p>If pods are not restarted, applications may continue using <strong>expired or invalid credentials</strong>, which can lead to service outages.</p>
 <hr>
-<h2 id="common-approaches">Common Approaches<a class="headerlink" href="#common-approaches" title="Permanent link">#</a></h2>
-<h3 id="1-manual-restart">1. Manual Restart<a class="headerlink" href="#1-manual-restart" title="Permanent link">#</a></h3>
-<p>A common solution is to manually restart the workload.</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>restart<span class="w"> </span>deployment<span class="w"> </span>my-app
-</code></pre></div>
-<p>Result:</p>
-<div class="highlight"><pre><span></span><code>Secret<span class="w"> </span>updated
-↓
-Operator<span class="w"> </span>restarts<span class="w"> </span>deployment
-↓
-New<span class="w"> </span>pods<span class="w"> </span>created
-↓
-Application<span class="w"> </span>loads<span class="w"> </span>new<span class="w"> </span>secret
-</code></pre></div>
-<h4 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">#</a></h4>
+<h2 id="when-to-use-reloader-instead">When to use Reloader instead<a class="headerlink" href="#when-to-use-reloader-instead" title="Permanent link">#</a></h2>
+<p><strong>Argo Rollouts</strong> — the Infisical operator does not support them. If any workload in your cluster uses Argo Rollouts, Reloader is required to reload those workloads on secret changes.</p>
+<p><strong>Multiple secret backends</strong> — if the same application consumes secrets from both Infisical and AWS Secrets Manager (via ESO), or Infisical and a plain ConfigMap, you need Reloader. The Infisical operator only watches its own managed Secrets.</p>
+<p><strong>ConfigMap reload</strong> — the Infisical operator does not trigger restarts when ConfigMaps change. Reloader does.</p>
+<p><strong>Granular control</strong> — Reloader's <code>pause-period</code>, <code>search/match</code> pattern, and namespace scoping give finer control over when and where restarts happen.</p>
+<p><strong>Platform-wide consistency</strong> — if multiple teams in the same cluster use different secret tools, Reloader gives a single reload mechanism that works regardless of how secrets arrive.</p>
+<p><strong>Regulated environments</strong> — Reloader Enterprise provides hardened images, commercial support, and SLA coverage that the Infisical operator does not.</p>
+<hr>
+<h2 id="using-both-together">Using both together<a class="headerlink" href="#using-both-together" title="Permanent link">#</a></h2>
+<p>You can run both the Infisical operator and Reloader in the same cluster, but do not enable both reload mechanisms on the same workload. If a workload has both <code>secrets.infisical.com/auto-reload: "true"</code> and a Reloader annotation, both fire on the same Secret update and the workload restarts twice.</p>
+<p>Pick one per workload:</p>
 <ul>
-<li>Requires manual intervention</li>
-<li>Easy to forget</li>
-<li>Difficult to manage across many workloads</li>
-</ul>
-<hr>
-<h3 id="2-helm-checksum-annotations">2. Helm Checksum Annotations<a class="headerlink" href="#2-helm-checksum-annotations" title="Permanent link">#</a></h3>
-<p>Helm charts sometimes include checksum annotations that trigger restarts when secrets change.</p>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">checksum/secret</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">include (print $.Template.BasePath "/secret.yaml") . | sha256sum</span><span class="w"> </span><span class="p p-Indicator">}}</span>
-</code></pre></div>
-<p>When the secret changes and Helm runs again, the checksum changes and the deployment rolls out.</p>
-<h4 id="limitations_1">Limitations<a class="headerlink" href="#limitations_1" title="Permanent link">#</a></h4>
-<ul>
-<li>Requires modifying Helm charts</li>
-<li>Only works when Helm upgrades occur</li>
-<li>Does not react to runtime secret updates</li>
-</ul>
-<hr>
-<h2 id="automatic-restart-with-reloader">Automatic Restart with Reloader<a class="headerlink" href="#automatic-restart-with-reloader" title="Permanent link">#</a></h2>
-<p>A more reliable solution is to use <strong>Reloader</strong>, a Kubernetes controller that watches for changes in:</p>
-<ul>
-<li>Secrets</li>
-<li>ConfigMaps</li>
-</ul>
-<p>When one of these resources changes, Reloader automatically triggers a rolling restart of workloads that reference them.</p>
-<p>Workflow:</p>
-<div class="highlight"><pre><span></span><code>Secret<span class="w"> </span>updated
-↓
-Reloader<span class="w"> </span>detects<span class="w"> </span>change
-↓
-Deployment<span class="w"> </span>patched
-↓
-Kubernetes<span class="w"> </span>rolling<span class="w"> </span>restart<span class="w"> </span>triggered
-</code></pre></div>
-<p>This ensures applications restart and load the latest credentials.</p>
-<hr>
-<h2 id="step-by-step-example">Step-by-Step Example<a class="headerlink" href="#step-by-step-example" title="Permanent link">#</a></h2>
-<h3 id="1-create-a-secret">1. Create a Secret<a class="headerlink" href="#1-create-a-secret" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Secret</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">database-secret</span>
-<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Opaque</span>
-<span class="nt">stringData</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">DB_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">supersecret</span>
-</code></pre></div>
-<p>Apply the secret:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>secret.yaml
-</code></pre></div>
-<hr>
-<h3 id="2-create-a-deployment-using-the-secret">2. Create a Deployment Using the Secret<a class="headerlink" href="#2-create-a-deployment-using-the-secret" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo-app</span>
-<span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
-<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span>
-<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">demo</span>
-<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
-<span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx</span>
-<span class="w">        </span><span class="nt">env</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
-<span class="w">          </span><span class="nt">valueFrom</span><span class="p">:</span>
-<span class="w">            </span><span class="nt">secretKeyRef</span><span class="p">:</span>
-<span class="w">              </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">database-secret</span>
-<span class="w">              </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
-</code></pre></div>
-<hr>
-<h3 id="3-enable-reloader">3. Enable Reloader<a class="headerlink" href="#3-enable-reloader" title="Permanent link">#</a></h3>
-<p>Add the following annotation to the Deployment:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">reloader.stakater.com/auto</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
-</code></pre></div>
-<p>This enables automatic restarts when referenced configuration resources change.</p>
-<hr>
-<h3 id="4-update-the-secret">4. Update the Secret<a class="headerlink" href="#4-update-the-secret" title="Permanent link">#</a></h3>
-<p>Modify the secret:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">DB_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">newpassword</span>
-</code></pre></div>
-<p>Apply the update:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>secret.yaml
-</code></pre></div>
-<p>Result:</p>
-<div class="highlight"><pre><span></span><code>Secret<span class="w"> </span>updated
-↓
-Reloader<span class="w"> </span>detects<span class="w"> </span>change
-↓
-Deployment<span class="w"> </span>patched
-↓
-New<span class="w"> </span>pod<span class="w"> </span>created
-↓
-Application<span class="w"> </span>loads<span class="w"> </span>new<span class="w"> </span>credentials
-</code></pre></div>
-<hr>
-<h2 id="verifying-the-restart">Verifying the Restart<a class="headerlink" href="#verifying-the-restart" title="Permanent link">#</a></h2>
-<p>You can observe the rollout with:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deployment<span class="w"> </span>demo-app
-</code></pre></div>
-<p>Or monitor pods:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-w
-</code></pre></div>
-<p>You will see a new pod created automatically when the Secret changes.</p>
-<hr>
-<h2 id="when-this-pattern-is-useful">When This Pattern Is Useful<a class="headerlink" href="#when-this-pattern-is-useful" title="Permanent link">#</a></h2>
-<p>Automatically restarting pods when Secrets change is useful when:</p>
-<ul>
-<li>credentials rotate regularly</li>
-<li>tokens or API keys expire</li>
-<li>certificate secrets are updated</li>
-<li>external secret managers synchronize secrets</li>
+<li>Use Infisical's built-in reload on workloads where you want operator-managed simplicity and no additional tools</li>
+<li>Use Reloader on workloads that need Argo Rollouts support, multi-backend reload, or Enterprise features</li>
 </ul>
 <hr>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
-<p>Updating a Secret in Kubernetes does not automatically restart pods that use it.</p>
-<p>Manual restarts and Helm-based checksums can help, but they require additional operational steps.</p>
-<p>Using Reloader allows workloads to <strong>automatically restart when Secrets change</strong>, ensuring applications always run with the latest credentials.</p>
-<hr>
-<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">#</a></h2>
-<h3 id="do-secret-changes-automatically-restart-pods-in-kubernetes">Do Secret changes automatically restart pods in Kubernetes?<a class="headerlink" href="#do-secret-changes-automatically-restart-pods-in-kubernetes" title="Permanent link">#</a></h3>
-<p>No. Kubernetes does not automatically restart pods when Secrets change.</p>
-<h3 id="why-doesnt-kubernetes-restart-pods-when-secrets-update">Why doesn't Kubernetes restart pods when Secrets update?<a class="headerlink" href="#why-doesnt-kubernetes-restart-pods-when-secrets-update" title="Permanent link">#</a></h3>
-<p>Kubernetes only triggers rollouts when the Pod specification changes, not when referenced resources change.</p>
-<h3 id="how-can-i-automatically-restart-pods-when-secrets-change">How can I automatically restart pods when Secrets change?<a class="headerlink" href="#how-can-i-automatically-restart-pods-when-secrets-change" title="Permanent link">#</a></h3>
-<p>You can use a controller such as Reloader to watch for Secret updates and trigger rolling restarts automatically.</p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Recommendation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deployments, StatefulSets, Daemonsets — Infisical only</td>
+<td>Either works; Infisical built-in is simpler</td>
+</tr>
+<tr>
+<td>Argo Rollouts</td>
+<td>Reloader required</td>
+</tr>
+<tr>
+<td>Mixed secret backends (Infisical + ESO, CSI, or plain Secrets)</td>
+<td>Reloader</td>
+</tr>
+<tr>
+<td>ConfigMap reload</td>
+<td>Reloader</td>
+</tr>
+<tr>
+<td>Platform-wide unified reload mechanism</td>
+<td>Reloader</td>
+</tr>
+<tr>
+<td>Regulated environment, SLA, hardened images</td>
+<td>Reloader Enterprise</td>
+</tr>
+</tbody>
+</table>
+<p>See the <a href="../../integrations/infisical/infisical-operator.html">Infisical Operator Guide</a> for the complete setup walkthrough.</p>
 
 
 
@@ -5633,27 +5250,27 @@ Application<span class="w"> </span>loads<span class="w"> </span>new<span class="
                 <div class="flex-2">
                     <div class="logo-footer-container">
                         
-                        <img class="md-header__logo_light" src="../assets/images/footer-logo-light.png#only-light" alt="logo">
+                        <img class="md-header__logo_light" src="../../assets/images/footer-logo-light.png#only-light" alt="logo">
                         
                         
-                        <img src="../assets/images/footer-logo-dark.png#only-dark" alt="logo">
+                        <img src="../../assets/images/footer-logo-dark.png#only-dark" alt="logo">
                         
                     </div>
 
                     <div class="collaborations-img-container">
                         <div class="display-flex">
                             
-                            <img class="csa-logo-dark" src="../assets/images/CSA_dark.png#only-dark" alt="CSA">
+                            <img class="csa-logo-dark" src="../../assets/images/CSA_dark.png#only-dark" alt="CSA">
                             
                             
-                            <img class="csa-logo-light" src="../assets/images/CSA_light.png#only-light" alt="CSA">
+                            <img class="csa-logo-light" src="../../assets/images/CSA_light.png#only-light" alt="CSA">
                             
 
                             
-                            <img class="hc-logo-dark" src="../assets/images/HC_dark.png#only-dark" alt="HC">
+                            <img class="hc-logo-dark" src="../../assets/images/HC_dark.png#only-dark" alt="HC">
                             
                             
-                            <img class="hc-logo-light" src="../assets/images/HC_light.png#only-light" alt="HC">
+                            <img class="hc-logo-light" src="../../assets/images/HC_light.png#only-light" alt="HC">
                             
                         </div>
                     </div>
@@ -6045,10 +5662,10 @@ Application<span class="w"> </span>loads<span class="w"> </span>new<span class="
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "navigation.tracking", "toc.follow", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.tracking", "toc.follow", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   
