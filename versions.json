@@ -22,7 +22,9 @@
   {
     "version": "renovate-main-node-24.x-lockfile",
     "title": "renovate-main-node-24.x-lockfile",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "renovate-main-node-24.x",
@@ -57,9 +59,7 @@
   {
     "version": "md4",
     "title": "md4",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "abaziz-patch-1",
