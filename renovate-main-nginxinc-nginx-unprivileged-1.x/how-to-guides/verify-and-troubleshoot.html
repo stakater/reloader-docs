@@ -2743,6 +2743,34 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../concepts/comparisons/reloader-vs-doppler-reload.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reloader vs Doppler Built-In Reload
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3193,6 +3221,67 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
+  <a href="#end-to-end-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        End-to-end test
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="End-to-end test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-a-test-secret-and-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Create a test Secret and Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-trigger-a-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Trigger a change
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-confirm-the-restart-happened" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Confirm the restart happened
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-clean-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Clean up
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#verify-a-reload-was-triggered" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3216,6 +3305,17 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
+  <a href="#check-kubernetes-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Kubernetes Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#check-the-pod-age" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3227,38 +3327,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#check-the-rollout-status" class="md-nav__link">
+  <a href="#check-rollout-status" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Check the rollout status
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-via-prometheus-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verify via Prometheus metrics
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Verify via Prometheus metrics">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#reload-counters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reload counters
+        Check rollout status
       
     </span>
   </a>
@@ -3266,10 +3338,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#reloads-broken-down-by-namespace" class="md-nav__link">
+  <a href="#check-prometheus-metrics" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reloads broken down by namespace
+        Check Prometheus metrics
       
     </span>
   </a>
@@ -3305,10 +3377,21 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#reloader-is-restarting-pods-it-shouldnt" class="md-nav__link">
+  <a href="#pod-is-running-but-still-using-the-old-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reloader is restarting pods it shouldn't
+        Pod is running but still using the old configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reloader-is-restarting-pods-it-should-not" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reloader is restarting pods it should not
       
     </span>
   </a>
@@ -3338,10 +3421,32 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#reloader-logs-show-errors" class="md-nav__link">
+  <a href="#rbac-errors-reloader-cannot-patch-workloads" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reloader logs show errors
+        RBAC errors — Reloader cannot patch workloads
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csi-driver-secrets-not-triggering-a-restart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSI Driver secrets not triggering a restart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reloader-is-not-reacting-after-being-restarted-or-upgraded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reloader is not reacting after being restarted or upgraded
       
     </span>
   </a>
@@ -3350,6 +3455,17 @@ This documentation is for a pull request deployment and is unreleased, it is onl
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-diagnostics-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick diagnostics checklist
+      
+    </span>
+  </a>
   
 </li>
       
@@ -3405,6 +3521,34 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     
   
     Use Reloader with Flux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="use-reloader-with-openshift.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to Use Reloader on OpenShift
   
 
     
@@ -4299,6 +4443,34 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integrations/gcp/gcp-csi.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSI Driver
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -4536,6 +4708,117 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     
   
     Infisical Operator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_9">
+        
+          
+          <label class="md-nav__link" for="__nav_6_9" id="__nav_6_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Doppler
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Doppler
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integrations/doppler/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integrations/doppler/doppler-operator.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Doppler Operator
   
 
     
@@ -4823,6 +5106,67 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
+  <a href="#end-to-end-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        End-to-end test
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="End-to-end test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-a-test-secret-and-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Create a test Secret and Deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-trigger-a-change" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Trigger a change
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-confirm-the-restart-happened" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Confirm the restart happened
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-clean-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Clean up
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#verify-a-reload-was-triggered" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4846,6 +5190,17 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
+  <a href="#check-kubernetes-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check Kubernetes Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#check-the-pod-age" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4857,38 +5212,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#check-the-rollout-status" class="md-nav__link">
+  <a href="#check-rollout-status" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Check the rollout status
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-via-prometheus-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Verify via Prometheus metrics
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Verify via Prometheus metrics">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#reload-counters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reload counters
+        Check rollout status
       
     </span>
   </a>
@@ -4896,10 +5223,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#reloads-broken-down-by-namespace" class="md-nav__link">
+  <a href="#check-prometheus-metrics" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reloads broken down by namespace
+        Check Prometheus metrics
       
     </span>
   </a>
@@ -4935,10 +5262,21 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#reloader-is-restarting-pods-it-shouldnt" class="md-nav__link">
+  <a href="#pod-is-running-but-still-using-the-old-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reloader is restarting pods it shouldn't
+        Pod is running but still using the old configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reloader-is-restarting-pods-it-should-not" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reloader is restarting pods it should not
       
     </span>
   </a>
@@ -4968,10 +5306,32 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#reloader-logs-show-errors" class="md-nav__link">
+  <a href="#rbac-errors-reloader-cannot-patch-workloads" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reloader logs show errors
+        RBAC errors — Reloader cannot patch workloads
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csi-driver-secrets-not-triggering-a-restart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSI Driver secrets not triggering a restart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reloader-is-not-reacting-after-being-restarted-or-upgraded" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reloader is not reacting after being restarted or upgraded
       
     </span>
   </a>
@@ -4980,6 +5340,17 @@ This documentation is for a pull request deployment and is unreleased, it is onl
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-diagnostics-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick diagnostics checklist
+      
+    </span>
+  </a>
   
 </li>
       
@@ -5007,140 +5378,262 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <p>This page explains how to confirm that Reloader is working correctly and how to diagnose common problems.</p>
 <hr>
 <h2 id="verify-reloader-is-running">Verify Reloader is running<a class="headerlink" href="#verify-reloader-is-running" title="Permanent link">#</a></h2>
-<p>Check that the Reloader pod is up:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader-reloader
 </code></pre></div>
 <p>Expected output:</p>
-<div class="highlight"><pre><span></span><code>NAME                        READY   STATUS    RESTARTS   AGE
-reloader-6d8f9b7c4d-xk9zp   1/1     Running   0          5m
+<div class="highlight"><pre><span></span><code>NAME                                 READY   STATUS    RESTARTS   AGE
+reloader-reloader-6d8f9b7c4d-xk9zp   1/1     Running   0          5m
+</code></pre></div>
+<p>Check for startup errors:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader-reloader<span class="w"> </span>--tail<span class="o">=</span><span class="m">30</span>
+</code></pre></div>
+<p>Reloader logs its configuration at startup. Look for lines confirming which namespaces it is watching and which features are enabled.</p>
+<hr>
+<h2 id="end-to-end-test">End-to-end test<a class="headerlink" href="#end-to-end-test" title="Permanent link">#</a></h2>
+<p>The fastest way to confirm the full chain is working is to trigger a known change and watch the result.</p>
+<h3 id="step-1-create-a-test-secret-and-deployment">Step 1 — Create a test Secret and Deployment<a class="headerlink" href="#step-1-create-a-test-secret-and-deployment" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>generic<span class="w"> </span>reloader-test<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--from-literal<span class="o">=</span><span class="nv">value</span><span class="o">=</span>v1<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>default
+
+kubectl<span class="w"> </span>create<span class="w"> </span>deployment<span class="w"> </span>reloader-test<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--image<span class="o">=</span>busybox:latest<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>default<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">'while true; do sleep 30; done'</span>
+
+kubectl<span class="w"> </span>annotate<span class="w"> </span>deployment<span class="w"> </span>reloader-test<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>secret.reloader.stakater.com/reload<span class="o">=</span>reloader-test<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>default
+</code></pre></div>
+<h3 id="step-2-trigger-a-change">Step 2 — Trigger a change<a class="headerlink" href="#step-2-trigger-a-change" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>patch<span class="w"> </span>secret<span class="w"> </span>reloader-test<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>default<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--type<span class="o">=</span><span class="s1">'json'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="o">=</span><span class="s1">'[{"op":"replace","path":"/data/value","value":"djI="}]'</span>
+</code></pre></div>
+<p>(<code>djI=</code> is <code>v2</code> base64-encoded.)</p>
+<h3 id="step-3-confirm-the-restart-happened">Step 3 — Confirm the restart happened<a class="headerlink" href="#step-3-confirm-the-restart-happened" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check Reloader logs for the event</span>
+kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader-reloader<span class="w"> </span>--tail<span class="o">=</span><span class="m">10</span>
+
+<span class="c1"># Check the pod was replaced (AGE should be recent)</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>default<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader-test
+</code></pre></div>
+<p>Expected log output:</p>
+<div class="highlight"><pre><span></span><code>Changes detected in 'reloader-test' of type 'Secret' in namespace 'default'
+Updated 'reloader-test' of type 'Deployment' in namespace 'default'
+</code></pre></div>
+<h3 id="step-4-clean-up">Step 4 — Clean up<a class="headerlink" href="#step-4-clean-up" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>delete<span class="w"> </span>deployment<span class="w"> </span>reloader-test<span class="w"> </span>-n<span class="w"> </span>default
+kubectl<span class="w"> </span>delete<span class="w"> </span>secret<span class="w"> </span>reloader-test<span class="w"> </span>-n<span class="w"> </span>default
 </code></pre></div>
 <hr>
 <h2 id="verify-a-reload-was-triggered">Verify a reload was triggered<a class="headerlink" href="#verify-a-reload-was-triggered" title="Permanent link">#</a></h2>
 <h3 id="check-the-logs">Check the logs<a class="headerlink" href="#check-the-logs" title="Permanent link">#</a></h3>
-<p>After updating a ConfigMap or Secret, check Reloader's logs for confirmation:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader<span class="w"> </span>--tail<span class="o">=</span><span class="m">50</span>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader-reloader<span class="w"> </span>--tail<span class="o">=</span><span class="m">50</span>
 </code></pre></div>
-<p>A successful reload produces log lines like:</p>
-<div class="highlight"><pre><span></span><code>Changes detected in 'database-secret' of type 'SECRET' in namespace: production
-Updated 'my-app' of type 'Deployment' in namespace: production
+<p>A successful reload produces:</p>
+<div class="highlight"><pre><span></span><code>Changes detected in 'database-secret' of type 'Secret' in namespace 'production'
+Updated 'my-app' of type 'Deployment' in namespace 'production'
 </code></pre></div>
-<table>
-<thead>
-<tr>
-<th>Log field</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>database-secret</code></td>
-<td>Name of the ConfigMap or Secret that changed</td>
-</tr>
-<tr>
-<td><code>SECRET</code></td>
-<td>Type of the changed resource (<code>SECRET</code> or <code>CONFIGMAP</code>)</td>
-</tr>
-<tr>
-<td><code>production</code></td>
-<td>Namespace where the change was detected</td>
-</tr>
-<tr>
-<td><code>my-app</code></td>
-<td>Name of the workload that was restarted</td>
-</tr>
-<tr>
-<td><code>Deployment</code></td>
-<td>Workload type (<code>Deployment</code>, <code>StatefulSet</code>, <code>DaemonSet</code>, etc.)</td>
-</tr>
-</tbody>
-</table>
 <p>If you see no log output after a change, see <a href="#reloader-is-not-reacting-to-changes">Reloader is not reacting to changes</a> below.</p>
+<h3 id="check-kubernetes-events">Check Kubernetes Events<a class="headerlink" href="#check-kubernetes-events" title="Permanent link">#</a></h3>
+<p>Reloader emits a Kubernetes Event on the workload when it triggers a restart. These appear in <code>kubectl describe</code> output:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>describe<span class="w"> </span>deployment<span class="w"> </span>&lt;name&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;
+</code></pre></div>
+<p>Look for events from the <code>reloader</code> source:</p>
+<div class="highlight"><pre><span></span><code>Events:
+  Type    Reason   Age   From      Message
+  ----    ------   ----  ----      -------
+  Normal  Reloader  5s   reloader  Updated 'my-app' of type 'Deployment' because of changes in Secret 'database-secret'
+</code></pre></div>
 <h3 id="check-the-pod-age">Check the pod age<a class="headerlink" href="#check-the-pod-age" title="Permanent link">#</a></h3>
-<p>After a reload, the workload's pods are replaced. Confirm new pods were created:</p>
+<p>After a reload, pods are replaced. The <code>AGE</code> column should reflect a recent restart:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>-l<span class="w"> </span>&lt;your-app-label&gt;
 </code></pre></div>
-<p>The <code>AGE</code> column should show the pods were created recently, within seconds or minutes of your ConfigMap or Secret update.</p>
-<h3 id="check-the-rollout-status">Check the rollout status<a class="headerlink" href="#check-the-rollout-status" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deployment/&lt;deployment-name&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;
+<h3 id="check-rollout-status">Check rollout status<a class="headerlink" href="#check-rollout-status" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deployment/&lt;name&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;
 </code></pre></div>
-<hr>
-<h2 id="verify-via-prometheus-metrics">Verify via Prometheus metrics<a class="headerlink" href="#verify-via-prometheus-metrics" title="Permanent link">#</a></h2>
-<p>Reloader exposes a Prometheus metrics endpoint at <code>/metrics</code> on port <code>9090</code>.</p>
-<h3 id="reload-counters">Reload counters<a class="headerlink" href="#reload-counters" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>reloader_reload_executed_total{success="true"}   # number of successful reloads
-reloader_reload_executed_total{success="false"}  # number of failed reloads
-</code></pre></div>
-<p>Port-forward to inspect directly:</p>
+<h3 id="check-prometheus-metrics">Check Prometheus metrics<a class="headerlink" href="#check-prometheus-metrics" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>port-forward<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>svc/reloader<span class="w"> </span><span class="m">9090</span>:9090
-curl<span class="w"> </span>http://localhost:9090/metrics<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>reloader_reload
+curl<span class="w"> </span>-s<span class="w"> </span>http://localhost:9090/metrics<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>reloader_reload
 </code></pre></div>
-<h3 id="reloads-broken-down-by-namespace">Reloads broken down by namespace<a class="headerlink" href="#reloads-broken-down-by-namespace" title="Permanent link">#</a></h3>
-<p>This is a <strong>separate metric</strong> (<code>reloader_reload_executed_total_by_namespace</code>) that is disabled by default because it can have high cardinality in large clusters. Enable it with:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">enableMetricsByNamespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</code></pre></div>
-<p>Or via the environment variable <code>METRICS_COUNT_BY_NAMESPACE=enabled</code> on the Reloader container.</p>
-<p>When enabled:</p>
-<div class="highlight"><pre><span></span><code>reloader_reload_executed_total_by_namespace{success="true", namespace="production"}   1
-reloader_reload_executed_total_by_namespace{success="false", namespace="staging"}     2
+<div class="highlight"><pre><span></span><code>reloader_reload_executed_total{success="true"}    4
+reloader_reload_executed_total{success="false"}   0
 </code></pre></div>
 <hr>
 <h2 id="common-problems">Common problems<a class="headerlink" href="#common-problems" title="Permanent link">#</a></h2>
 <h3 id="reloader-is-not-reacting-to-changes">Reloader is not reacting to changes<a class="headerlink" href="#reloader-is-not-reacting-to-changes" title="Permanent link">#</a></h3>
-<p><strong>Check the annotation is present and correct.</strong></p>
+<p><strong>1. Check the annotation is on the right resource and correct.</strong></p>
+<p>The annotation must be on the workload's <code>metadata.annotations</code>, not on the pod template (<code>spec.template.metadata.annotations</code>).</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>deployment<span class="w"> </span>&lt;name&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.metadata.annotations}'</span>
 </code></pre></div>
-<p>The annotation must be on the <code>Deployment</code> (or other workload) itself, not on the pod template. Common mistakes:</p>
-<ul>
-<li>Typo in the annotation key (compare against the <a href="../reference/annotations.html">Annotation Reference</a>)</li>
-<li>Annotation placed under <code>spec.template.metadata.annotations</code> instead of <code>metadata.annotations</code></li>
-<li>Using <code>reloader.stakater.com/search: "true"</code> without <code>reloader.stakater.com/match: "true"</code> on the Secret/ConfigMap</li>
-</ul>
-<p><strong>Check the ConfigMap or Secret is not ignored.</strong></p>
+<p>Compare the annotation key exactly against the <a href="../reference/annotations.html">Annotation Reference</a>. A single character typo silently disables the watch.</p>
+<p><strong>2. Check that the data actually changed.</strong></p>
+<p>Reloader compares the <code>data</code> field of the Secret or ConfigMap. If only labels or annotations on the Secret changed — with no change to the data content — Reloader will not fire. Confirm the data changed:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>&lt;name&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sha1sum
+<span class="c1"># update the secret, then run again and compare</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>&lt;name&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sha1sum
+</code></pre></div>
+<p><strong>3. Check the search/match pattern is complete.</strong></p>
+<p>If using <code>reloader.stakater.com/search: "true"</code> on the Deployment, the Secret or ConfigMap must also have <code>reloader.stakater.com/match: "true"</code>. Both sides of the pair are required.</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>&lt;name&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.metadata.annotations}'</span>
 </code></pre></div>
-<p>If <code>reloader.stakater.com/ignore: "true"</code> is present, Reloader will skip it entirely.</p>
-<p><strong>Check namespace scope.</strong></p>
-<p>If Reloader is deployed with <code>watchGlobally: false</code>, it only watches its own namespace. Confirm with:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>namespace
+<p><strong>4. Check namespace scope.</strong></p>
+<p>If Reloader is deployed with <code>watchGlobally: false</code>, it only watches its own namespace. If <code>namespaceSelector</code> is set, the target namespace must match the selector.</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader-reloader<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"namespace\|watch"</span>
 </code></pre></div>
-<p><strong>Check label selectors.</strong></p>
-<p>If <code>namespaceSelector</code> or <code>resourceLabelSelector</code> is configured, the resource or its namespace must match. A resource that matches <code>resourceLabelSelector</code> but not <code>namespaceSelector</code> is silently ignored.</p>
+<p><strong>5. Check label selectors.</strong></p>
+<p>If <code>resourceLabelSelector</code> is configured, the Secret or ConfigMap must carry matching labels. Resources that do not match are silently ignored.</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>&lt;name&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>--show-labels
+</code></pre></div>
+<p><strong>6. Check the resource is not excluded.</strong></p>
+<p>If <code>reloader.stakater.com/ignore: "true"</code> is on the Secret or ConfigMap, Reloader skips it entirely:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>&lt;name&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.metadata.annotations}'</span>
+</code></pre></div>
 <hr>
-<h3 id="reloader-is-restarting-pods-it-shouldnt">Reloader is restarting pods it shouldn't<a class="headerlink" href="#reloader-is-restarting-pods-it-shouldnt" title="Permanent link">#</a></h3>
+<h3 id="pod-is-running-but-still-using-the-old-configuration">Pod is running but still using the old configuration<a class="headerlink" href="#pod-is-running-but-still-using-the-old-configuration" title="Permanent link">#</a></h3>
+<p>This is expected behaviour for environment variables.</p>
+<p><strong>Kubernetes does not update environment variables in running pods.</strong> Environment variables are read at pod start time. A change to a Secret or ConfigMap does not change the values inside a running container — the pod must be restarted to pick up the new values. This is exactly what Reloader does.</p>
+<p>If your pods are being restarted by Reloader but still show old values, check:</p>
+<ul>
+<li>Whether the pod actually restarted (compare the <code>AGE</code> of the pod to when the Secret was updated)</li>
+<li>Whether the application is caching config values internally and needs a longer startup delay to re-read them</li>
+<li>Whether the Secret key your application reads matches the key that changed</li>
+</ul>
+<p>File-mounted secrets behave differently: Kubernetes updates mounted ConfigMap and Secret volumes in-place within roughly two kubelet sync periods (~60 seconds by default), without a pod restart. If your application watches the mounted file, it may pick up the new value automatically. Reloader's rolling restart still ensures a clean pod start.</p>
+<hr>
+<h3 id="reloader-is-restarting-pods-it-should-not">Reloader is restarting pods it should not<a class="headerlink" href="#reloader-is-restarting-pods-it-should-not" title="Permanent link">#</a></h3>
 <p><strong>Check <code>auto: "true"</code> scope.</strong></p>
-<p><code>reloader.stakater.com/auto: "true"</code> watches all ConfigMaps and Secrets referenced anywhere in the pod spec. If a shared ConfigMap or Secret changes, every workload referencing it will restart. Use the named annotation instead to limit scope:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">configmap.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"only-this-configmap"</span>
+<p><code>reloader.stakater.com/auto: "true"</code> watches every ConfigMap and Secret referenced anywhere in the pod spec — including those injected by sidecar containers or service mesh components. If a shared resource changes, all workloads referencing it restart.</p>
+<p>Switch to the named annotation to limit scope:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">secret.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"only-this-secret"</span>
 </code></pre></div>
-<p>Or use the <a href="../reference/annotations.html#search-and-match-pattern">search and match pattern</a> to give resource owners explicit control.</p>
+<p>Or use the <a href="../reference/annotations.html">search and match pattern</a> so that resource owners explicitly opt their Secret into triggering restarts.</p>
 <p><strong>Check <code>autoReloadAll</code> mode.</strong></p>
-<p>If <code>reloader.autoReloadAll: true</code> is set, all workloads restart on any matching change. To opt a specific workload out:</p>
+<p>If <code>reloader.autoReloadAll: true</code> is set globally, every workload in the watched scope restarts on any matching change. To exempt a specific workload:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">reloader.stakater.com/auto</span><span class="p">:</span><span class="w"> </span><span class="s">"false"</span>
 </code></pre></div>
 <hr>
 <h3 id="argo-cd-shows-the-app-as-outofsync-after-a-reload">Argo CD shows the app as OutOfSync after a reload<a class="headerlink" href="#argo-cd-shows-the-app-as-outofsync-after-a-reload" title="Permanent link">#</a></h3>
-<p>Reloader's default <code>env-vars</code> reload strategy injects an environment variable into the pod template. Argo CD compares the live state against Git and flags this as drift.</p>
-<p>See the full guide: <a href="use-reloader-with-argocd.html">Use Reloader with Argo CD</a></p>
+<p>Reloader's default <code>env-vars</code> strategy injects an environment variable into the pod template. Argo CD compares the live state against Git and flags this as drift.</p>
+<p>Switch to the <code>annotations</code> reload strategy:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">reloadStrategy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">annotations</span>
+</code></pre></div>
+<p>See <a href="use-reloader-with-argocd.html">Use Reloader with Argo CD</a> for the full configuration.</p>
 <hr>
 <h3 id="pod-restarts-are-happening-multiple-times-for-one-change">Pod restarts are happening multiple times for one change<a class="headerlink" href="#pod-restarts-are-happening-multiple-times-for-one-change" title="Permanent link">#</a></h3>
-<p>A single ConfigMap or Secret update should produce exactly one restart per matching workload. If you are seeing repeated restarts, check:</p>
+<p>A single Secret or ConfigMap update should produce exactly one restart per matching workload. If restarts are happening repeatedly:</p>
 <ul>
-<li>Whether the ConfigMap or Secret is being updated multiple times in quick succession (for example by an external sync controller with a short refresh interval)</li>
-<li>Use <code>deployment.reloader.stakater.com/pause-period</code> to rate-limit rapid changes:</li>
+<li>Check whether the Secret is being updated multiple times in quick succession (for example by an external sync controller running on a short refresh interval)</li>
+<li>Use <code>pause-period</code> to add a cooldown:</li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">deployment.reloader.stakater.com/pause-period</span><span class="p">:</span><span class="w"> </span><span class="s">"2m"</span>
 </code></pre></div>
-<hr>
-<h3 id="reloader-logs-show-errors">Reloader logs show errors<a class="headerlink" href="#reloader-logs-show-errors" title="Permanent link">#</a></h3>
-<p><strong><code>failed to update deployment</code></strong> — Reloader does not have permission to patch the workload. Verify RBAC:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>clusterrole<span class="w"> </span>reloader-reloader-role<span class="w"> </span>-o<span class="w"> </span>yaml
-kubectl<span class="w"> </span>get<span class="w"> </span>clusterrolebinding<span class="w"> </span>reloader-reloader-role-binding<span class="w"> </span>-o<span class="w"> </span>yaml
+<p>If you are running multiple Reloader replicas <strong>without</strong> HA mode (<code>enableHA: false</code>), each replica independently processes the same event and each triggers a restart. Run either a single replica, or enable HA mode:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">enableHA</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 </code></pre></div>
-<p><strong><code>unable to create Kubernetes client</code></strong> — Reloader cannot reach the Kubernetes API. Check the ServiceAccount and network policies.</p>
+<hr>
+<h3 id="rbac-errors-reloader-cannot-patch-workloads">RBAC errors — Reloader cannot patch workloads<a class="headerlink" href="#rbac-errors-reloader-cannot-patch-workloads" title="Permanent link">#</a></h3>
+<p><strong>Symptom:</strong> Reloader logs show <code>failed to update deployment</code> or similar.</p>
+<p>Verify the ClusterRole was created:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>describe<span class="w"> </span>clusterrole<span class="w"> </span>reloader-reloader-role
+</code></pre></div>
+<p>Check that Reloader's ServiceAccount has patch permission on deployments:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>auth<span class="w"> </span>can-i<span class="w"> </span>patch<span class="w"> </span>deployments<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--as<span class="o">=</span>system:serviceaccount:reloader:reloader-reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--all-namespaces
+</code></pre></div>
+<p>Check for StatefulSets and Daemonsets:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>auth<span class="w"> </span>can-i<span class="w"> </span>patch<span class="w"> </span>statefulsets<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--as<span class="o">=</span>system:serviceaccount:reloader:reloader-reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--all-namespaces
+
+kubectl<span class="w"> </span>auth<span class="w"> </span>can-i<span class="w"> </span>patch<span class="w"> </span>daemonsets<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--as<span class="o">=</span>system:serviceaccount:reloader:reloader-reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--all-namespaces
+</code></pre></div>
+<p>If any of these return <code>no</code>, the ClusterRole is missing rules. See the <a href="../reference/rbac.html">RBAC reference</a> for the full rule set and instructions for recreating it.</p>
+<hr>
+<h3 id="csi-driver-secrets-not-triggering-a-restart">CSI Driver secrets not triggering a restart<a class="headerlink" href="#csi-driver-secrets-not-triggering-a-restart" title="Permanent link">#</a></h3>
+<p>If you are using the Secrets Store CSI Driver with <code>secretObjects</code> and Reloader is not firing on rotation:</p>
+<p><strong>1. Confirm the Kubernetes Secret is actually being updated.</strong></p>
+<p>The CSI Driver only syncs the Secret after a pod mounts the volume. If no pod is currently mounting the CSI volume, the Secret is not updated.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Confirm the secret exists and check when it was last modified</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>&lt;name&gt;<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.metadata.resourceVersion}'</span>
+<span class="c1"># Rotate the upstream secret, wait for the poll interval, then compare resourceVersion</span>
+</code></pre></div>
+<p><strong>2. Confirm the pod is running with the CSI volume mount.</strong></p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>secretproviderclasspodstatuses<span class="w"> </span>-n<span class="w"> </span>&lt;namespace&gt;
+</code></pre></div>
+<p>If no <code>SecretProviderClassPodStatus</code> entries exist, no pod is actively mounting the volume.</p>
+<p><strong>3. For file-based CSI (no <code>secretObjects</code>) — confirm CSI integration is enabled.</strong></p>
+<p>If you are using the file-based pattern with <code>secretproviderclass.reloader.stakater.com/reload</code>, Reloader must be installed with:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">enableCSIIntegration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p>Without this flag, Reloader does not watch <code>SecretProviderClassPodStatus</code> resources.</p>
+<hr>
+<h3 id="reloader-is-not-reacting-after-being-restarted-or-upgraded">Reloader is not reacting after being restarted or upgraded<a class="headerlink" href="#reloader-is-not-reacting-after-being-restarted-or-upgraded" title="Permanent link">#</a></h3>
+<p>By default, Reloader only reacts to changes that happen while it is running. It does not replay events that occurred while it was unavailable.</p>
+<p>To trigger a re-sync of all tracked workloads after Reloader starts:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">reloadOnCreate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">syncAfterRestart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p><code>syncAfterRestart: true</code> requires <code>reloadOnCreate: true</code> to function. With both set, the newly elected leader re-evaluates all watched resources on startup.</p>
+<hr>
+<h2 id="quick-diagnostics-checklist">Quick diagnostics checklist<a class="headerlink" href="#quick-diagnostics-checklist" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reloader pod is running</td>
+<td><code>kubectl get pods -n reloader -l app=reloader-reloader</code></td>
+</tr>
+<tr>
+<td>Reloader logs show the change</td>
+<td><code>kubectl logs -n reloader -l app=reloader-reloader --tail=50</code></td>
+</tr>
+<tr>
+<td>Kubernetes Event was emitted</td>
+<td><code>kubectl describe deployment &lt;name&gt; -n &lt;namespace&gt;</code></td>
+</tr>
+<tr>
+<td>Annotation is on the workload (not pod template)</td>
+<td><code>kubectl get deployment &lt;name&gt; -n &lt;namespace&gt; -o jsonpath='{.metadata.annotations}'</code></td>
+</tr>
+<tr>
+<td>Secret data actually changed</td>
+<td>Compare <code>sha1sum</code> of <code>.data</code> before and after</td>
+</tr>
+<tr>
+<td>RBAC allows patching</td>
+<td><code>kubectl auth can-i patch deployments --as=system:serviceaccount:reloader:reloader-reloader --all-namespaces</code></td>
+</tr>
+<tr>
+<td>Namespace is in scope</td>
+<td><code>kubectl logs -n reloader -l app=reloader-reloader \| grep -i namespace</code></td>
+</tr>
+<tr>
+<td>Prometheus reload counter increased</td>
+<td><code>curl http://localhost:9090/metrics \| grep reloader_reload_executed_total</code></td>
+</tr>
+</tbody>
+</table>
 
 
 
