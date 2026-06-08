@@ -5,13 +5,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-stakater-.github-0.x/concepts/comparisons/reloader-vs-infisical-reload.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-stakater-.github-0.x/integrations/gcp/gcp-csi.html">
       
       
-        <link rel="prev" href="reloader-vs-app-level-reload.html">
+        <link rel="prev" href="gcp-eso.html">
       
       
-        <link rel="next" href="reloader-vs-doppler-reload.html">
+        <link rel="next" href="../azure/index.html">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>Reloader vs Infisical Built-In Reload - Reloader</title>
+        <title>CSI Driver - Reloader</title>
       
     
     
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reloader-vs-infisical-built-in-reload" class="md-skip">
+        <a href="#how-to-use-reloader-with-gcp-secret-manager-and-csi-driver" class="md-skip">
           Skip to content
         </a>
       
@@ -2289,20 +2289,18 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -2323,7 +2321,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2341,7 +2339,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../why-configuration-reloading-matters.html" class="md-nav__link">
+      <a href="../../concepts/why-configuration-reloading-matters.html" class="md-nav__link">
         
   
   
@@ -2369,7 +2367,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../secret-propagation-problem-kubernetes.html" class="md-nav__link">
+      <a href="../../concepts/secret-propagation-problem-kubernetes.html" class="md-nav__link">
         
   
   
@@ -2394,20 +2392,18 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3">
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
@@ -2428,7 +2424,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2446,7 +2442,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-helm.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-helm.html" class="md-nav__link">
         
   
   
@@ -2474,7 +2470,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-checksum-annotations.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-checksum-annotations.html" class="md-nav__link">
         
   
   
@@ -2502,7 +2498,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-kyverno.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-kyverno.html" class="md-nav__link">
         
   
   
@@ -2530,7 +2526,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-sidecar-config-watchers.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-sidecar-config-watchers.html" class="md-nav__link">
         
   
   
@@ -2558,7 +2554,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-init-containers.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-init-containers.html" class="md-nav__link">
         
   
   
@@ -2586,7 +2582,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-manual-rollouts.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-manual-rollouts.html" class="md-nav__link">
         
   
   
@@ -2614,7 +2610,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-gitops-tools.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-gitops-tools.html" class="md-nav__link">
         
   
   
@@ -2642,7 +2638,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-secret-operators.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-secret-operators.html" class="md-nav__link">
         
   
   
@@ -2670,7 +2666,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-cert-manager.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-cert-manager.html" class="md-nav__link">
         
   
   
@@ -2698,7 +2694,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-app-level-reload.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-app-level-reload.html" class="md-nav__link">
         
   
   
@@ -2723,37 +2719,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reloader vs Infisical Built-In Reload
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="reloader-vs-infisical-reload.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../concepts/comparisons/reloader-vs-infisical-reload.html" class="md-nav__link">
         
   
   
@@ -2769,94 +2738,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#what-infisicals-built-in-reload-does" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What Infisical's built-in reload does
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#feature-comparison" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Feature comparison
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-infisicals-built-in-reload-is-enough" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When Infisical's built-in reload is enough
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-to-use-reloader-instead" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When to use Reloader instead
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-both-together" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using both together
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2869,7 +2750,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-doppler-reload.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-doppler-reload.html" class="md-nav__link">
         
   
   
@@ -3381,18 +3262,20 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked="">
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -3413,7 +3296,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3431,7 +3314,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/index.html" class="md-nav__link">
+      <a href="../index.html" class="md-nav__link">
         
   
   
@@ -3506,7 +3389,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/conjur/index.html" class="md-nav__link">
+      <a href="../conjur/index.html" class="md-nav__link">
         
   
   
@@ -3534,7 +3417,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/conjur/conjur-eso.html" class="md-nav__link">
+      <a href="../conjur/conjur-eso.html" class="md-nav__link">
         
   
   
@@ -3562,7 +3445,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/conjur/conjur-sidecar.html" class="md-nav__link">
+      <a href="../conjur/conjur-sidecar.html" class="md-nav__link">
         
   
   
@@ -3590,7 +3473,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/conjur/conjur-csi.html" class="md-nav__link">
+      <a href="../conjur/conjur-csi.html" class="md-nav__link">
         
   
   
@@ -3673,7 +3556,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/index.html" class="md-nav__link">
+      <a href="../vault/index.html" class="md-nav__link">
         
   
   
@@ -3701,7 +3584,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/vault-eso.html" class="md-nav__link">
+      <a href="../vault/vault-eso.html" class="md-nav__link">
         
   
   
@@ -3729,7 +3612,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/vault-vso.html" class="md-nav__link">
+      <a href="../vault/vault-vso.html" class="md-nav__link">
         
   
   
@@ -3757,7 +3640,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/vault-csi.html" class="md-nav__link">
+      <a href="../vault/vault-csi.html" class="md-nav__link">
         
   
   
@@ -3785,7 +3668,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/vault-csi-file.html" class="md-nav__link">
+      <a href="../vault/vault-csi-file.html" class="md-nav__link">
         
   
   
@@ -3868,7 +3751,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/index.html" class="md-nav__link">
+      <a href="../openbao/index.html" class="md-nav__link">
         
   
   
@@ -3896,7 +3779,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/openbao-eso.html" class="md-nav__link">
+      <a href="../openbao/openbao-eso.html" class="md-nav__link">
         
   
   
@@ -3924,7 +3807,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/openbao-bso.html" class="md-nav__link">
+      <a href="../openbao/openbao-bso.html" class="md-nav__link">
         
   
   
@@ -3952,7 +3835,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/openbao-csi.html" class="md-nav__link">
+      <a href="../openbao/openbao-csi.html" class="md-nav__link">
         
   
   
@@ -3980,7 +3863,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/openbao-csi-file.html" class="md-nav__link">
+      <a href="../openbao/openbao-csi-file.html" class="md-nav__link">
         
   
   
@@ -4063,7 +3946,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/aws/index.html" class="md-nav__link">
+      <a href="../aws/index.html" class="md-nav__link">
         
   
   
@@ -4091,7 +3974,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/aws/aws-eso.html" class="md-nav__link">
+      <a href="../aws/aws-eso.html" class="md-nav__link">
         
   
   
@@ -4119,7 +4002,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/aws/aws-csi.html" class="md-nav__link">
+      <a href="../aws/aws-csi.html" class="md-nav__link">
         
   
   
@@ -4152,18 +4035,20 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" checked="">
         
           
           <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
@@ -4184,7 +4069,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -4202,7 +4087,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/gcp/index.html" class="md-nav__link">
+      <a href="index.html" class="md-nav__link">
         
   
   
@@ -4230,7 +4115,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/gcp/gcp-eso.html" class="md-nav__link">
+      <a href="gcp-eso.html" class="md-nav__link">
         
   
   
@@ -4255,10 +4140,37 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../integrations/gcp/gcp-csi.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSI Driver
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="gcp-csi.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -4274,6 +4186,232 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#provider-options-on-gcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provider options on GCP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-install-the-secrets-store-csi-driver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Install the Secrets Store CSI Driver
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-install-the-gcp-secret-manager-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Install the GCP Secret Manager provider
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-install-reloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Install Reloader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-grant-workload-identity-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Grant Workload Identity access
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4 — Grant Workload Identity access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enable-secret-manager-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable Secret Manager API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grant-the-kubernetes-serviceaccount-access-to-the-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grant the Kubernetes ServiceAccount access to the secret
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-kubernetes-serviceaccount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create the Kubernetes ServiceAccount
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-create-a-secret-in-gcp-secret-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 — Create a secret in GCP Secret Manager
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-create-the-secretproviderclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 — Create the SecretProviderClass
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-deploy-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7 — Deploy the application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-8-verify-the-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8 — Verify the setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-9-test-secret-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 9 — Test secret rotation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reloader-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reloader annotations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-based-pattern-no-kubernetes-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File-based pattern (no Kubernetes Secret)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eso-vs-csi-driver-for-gcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESO vs CSI Driver for GCP
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4341,7 +4479,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/azure/index.html" class="md-nav__link">
+      <a href="../azure/index.html" class="md-nav__link">
         
   
   
@@ -4369,7 +4507,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/azure/azure-eso.html" class="md-nav__link">
+      <a href="../azure/azure-eso.html" class="md-nav__link">
         
   
   
@@ -4397,7 +4535,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/azure/azure-csi.html" class="md-nav__link">
+      <a href="../azure/azure-csi.html" class="md-nav__link">
         
   
   
@@ -4480,7 +4618,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/infisical/index.html" class="md-nav__link">
+      <a href="../infisical/index.html" class="md-nav__link">
         
   
   
@@ -4508,7 +4646,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/infisical/infisical-operator.html" class="md-nav__link">
+      <a href="../infisical/infisical-operator.html" class="md-nav__link">
         
   
   
@@ -4591,7 +4729,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/doppler/index.html" class="md-nav__link">
+      <a href="../doppler/index.html" class="md-nav__link">
         
   
   
@@ -4619,7 +4757,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/doppler/doppler-operator.html" class="md-nav__link">
+      <a href="../doppler/doppler-operator.html" class="md-nav__link">
         
   
   
@@ -4903,10 +5041,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#what-infisicals-built-in-reload-does" class="md-nav__link">
+  <a href="#provider-options-on-gcp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What Infisical's built-in reload does
+        Provider options on GCP
       
     </span>
   </a>
@@ -4914,10 +5052,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#feature-comparison" class="md-nav__link">
+  <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Feature comparison
+        How it works
       
     </span>
   </a>
@@ -4925,10 +5063,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#when-infisicals-built-in-reload-is-enough" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
-        When Infisical's built-in reload is enough
+        Prerequisites
       
     </span>
   </a>
@@ -4936,10 +5074,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#when-to-use-reloader-instead" class="md-nav__link">
+  <a href="#step-1-install-the-secrets-store-csi-driver" class="md-nav__link">
     <span class="md-ellipsis">
       
-        When to use Reloader instead
+        Step 1 — Install the Secrets Store CSI Driver
       
     </span>
   </a>
@@ -4947,10 +5085,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-both-together" class="md-nav__link">
+  <a href="#step-2-install-the-gcp-secret-manager-provider" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using both together
+        Step 2 — Install the GCP Secret Manager provider
       
     </span>
   </a>
@@ -4958,10 +5096,148 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#step-3-install-reloader" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Summary
+        Step 3 — Install Reloader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-grant-workload-identity-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Grant Workload Identity access
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4 — Grant Workload Identity access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enable-secret-manager-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable Secret Manager API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grant-the-kubernetes-serviceaccount-access-to-the-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grant the Kubernetes ServiceAccount access to the secret
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-kubernetes-serviceaccount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create the Kubernetes ServiceAccount
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-create-a-secret-in-gcp-secret-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 — Create a secret in GCP Secret Manager
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-create-the-secretproviderclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 — Create the SecretProviderClass
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-deploy-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7 — Deploy the application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-8-verify-the-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8 — Verify the setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-9-test-secret-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 9 — Test secret rotation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reloader-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reloader annotations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-based-pattern-no-kubernetes-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File-based pattern (no Kubernetes Secret)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eso-vs-csi-driver-for-gcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESO vs CSI Driver for GCP
       
     </span>
   </a>
@@ -4988,170 +5264,358 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="reloader-vs-infisical-built-in-reload">Reloader vs Infisical Built-In Reload<a class="headerlink" href="#reloader-vs-infisical-built-in-reload" title="Permanent link">#</a></h1>
-<p>The Infisical Kubernetes operator includes a built-in auto-reload feature. When a managed Kubernetes Secret is updated by the operator, it can automatically restart workloads that carry the annotation <code>secrets.infisical.com/auto-reload: "true"</code>.</p>
-<p>This page compares that built-in mechanism to using Stakater Reloader for the same job.</p>
+<h1 id="how-to-use-reloader-with-gcp-secret-manager-and-csi-driver">How to Use Reloader with GCP Secret Manager and CSI Driver<a class="headerlink" href="#how-to-use-reloader-with-gcp-secret-manager-and-csi-driver" title="Permanent link">#</a></h1>
+<p>This guide shows how to mount secrets from GCP Secret Manager into Kubernetes pods using the Secrets Store CSI Driver with the GCP Secret Manager provider, then use Reloader to automatically restart pods when those secrets change.</p>
+<p>The GCP provider syncs secrets into a Kubernetes <code>Secret</code> via <code>secretObjects</code>. Reloader watches that Kubernetes Secret and triggers a rolling restart whenever it is updated.</p>
+<blockquote>
+<p><strong>See also:</strong> <a href="gcp-eso.html">ESO Pattern</a> — if you are already using External Secrets Operator, that pattern is simpler and does not require the CSI Driver.</p>
+</blockquote>
 <hr>
-<h2 id="what-infisicals-built-in-reload-does">What Infisical's built-in reload does<a class="headerlink" href="#what-infisicals-built-in-reload-does" title="Permanent link">#</a></h2>
-<p>The Infisical operator polls the Infisical API on a configurable <code>resyncInterval</code> (default: 1 minute). When it detects a change, it updates the managed Kubernetes Secret. If a Deployment, StatefulSet, or Daemonset carries <code>secrets.infisical.com/auto-reload: "true"</code>, the operator triggers a restart on that workload.</p>
-<div class="highlight"><pre><span></span><code>Infisical secret changes
-↓
-Infisical operator syncs Kubernetes Secret (every resyncInterval)
-↓
-Operator checks for annotated workloads
-↓
-Operator triggers restart
+<h2 id="provider-options-on-gcp">Provider options on GCP<a class="headerlink" href="#provider-options-on-gcp" title="Permanent link">#</a></h2>
+<p>There are two CSI paths for GCP Secret Manager. They are not interchangeable:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Open-source provider</th>
+<th>GKE managed add-on</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>spec.provider</code> value</td>
+<td><code>gcp</code></td>
+<td><code>gke</code></td>
+</tr>
+<tr>
+<td>Install method</td>
+<td><code>kubectl apply</code> from GitHub</td>
+<td><code>gcloud</code> / Cloud Console</td>
+</tr>
+<tr>
+<td><code>secretObjects</code> sync to Kubernetes Secret</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Secret rotation polling</td>
+<td>✅ Alpha</td>
+<td>✅ GKE 1.32.2+</td>
+</tr>
+<tr>
+<td>Officially supported by Google</td>
+<td>❌ Community project</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<p><strong>This guide uses the open-source provider</strong> (<code>spec.provider: gcp</code>), because it is the only path that supports <code>secretObjects</code> — which is required to create the Kubernetes Secret that Reloader watches. The GKE managed add-on mounts secrets as files only and cannot be used with this pattern.</p>
+<hr>
+<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h2>
+<pre class="mermaid"><code>sequenceDiagram
+    actor Ops as Operator
+    participant GSM as GCP Secret Manager
+    participant CSI as CSI Driver +&lt;br/&gt;GCP Provider
+    participant K8s as Kubernetes Secret
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Ops-&gt;&gt;GSM: Add new secret version
+    loop Every rotationPollInterval (default: 2m)
+        CSI-&gt;&gt;GSM: Get secret (latest version)
+        GSM--&gt;&gt;CSI: Updated secret value
+        CSI-&gt;&gt;Pod: Refresh mounted files
+        CSI-&gt;&gt;K8s: Sync via secretObjects
+    end
+    K8s--&gt;&gt;RL: Watch event (Secret changed)
+    RL-&gt;&gt;Pod: Trigger rolling restart
+    Note over Pod: New pod starts with updated secret</code></pre>
+<hr>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
+<ul>
+<li>GKE cluster with Workload Identity enabled (<code>--workload-pool=&lt;project-id&gt;.svc.id.goog</code>)</li>
+<li><code>gcloud</code> CLI configured locally</li>
+<li>Helm v3+</li>
+<li>GCP project with Secret Manager API enabled</li>
+<li>Stakater Reloader installed</li>
+</ul>
+<hr>
+<h2 id="step-1-install-the-secrets-store-csi-driver">Step 1 — Install the Secrets Store CSI Driver<a class="headerlink" href="#step-1-install-the-secrets-store-csi-driver" title="Permanent link">#</a></h2>
+<p>Install the CSI Driver with secret sync and rotation enabled:</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>secrets-store-csi-driver<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts
+helm<span class="w"> </span>repo<span class="w"> </span>update
+helm<span class="w"> </span>install<span class="w"> </span>csi-secrets-store<span class="w"> </span>secrets-store-csi-driver/secrets-store-csi-driver<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>kube-system<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>syncSecret.enabled<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span><span class="nv">enableSecretRotation</span><span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span><span class="nv">rotationPollInterval</span><span class="o">=</span>2m
+</code></pre></div>
+<p><code>syncSecret.enabled=true</code> is required — without it, <code>secretObjects</code> does not create a Kubernetes Secret and Reloader has nothing to watch.</p>
+<hr>
+<h2 id="step-2-install-the-gcp-secret-manager-provider">Step 2 — Install the GCP Secret Manager provider<a class="headerlink" href="#step-2-install-the-gcp-secret-manager-provider" title="Permanent link">#</a></h2>
+<p>The GCP provider does not have a public Helm repository. Install it directly from the official GitHub source:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/GoogleCloudPlatform/secrets-store-csi-driver-provider-gcp/main/deploy/provider-gcp-plugin.yaml
+</code></pre></div>
+<p>This deploys the provider as a Daemonset in the <code>kube-system</code> namespace.</p>
+<p>Verify it is running:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>kube-system<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>csi-secrets-store-provider-gcp
 </code></pre></div>
 <hr>
-<h2 id="feature-comparison">Feature comparison<a class="headerlink" href="#feature-comparison" title="Permanent link">#</a></h2>
+<h2 id="step-3-install-reloader">Step 3 — Install Reloader<a class="headerlink" href="#step-3-install-reloader" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>stakater<span class="w"> </span>https://stakater.github.io/stakater-charts
+helm<span class="w"> </span>repo<span class="w"> </span>update
+helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--create-namespace
+</code></pre></div>
+<hr>
+<h2 id="step-4-grant-workload-identity-access">Step 4 — Grant Workload Identity access<a class="headerlink" href="#step-4-grant-workload-identity-access" title="Permanent link">#</a></h2>
+<p>Workload Identity allows a Kubernetes ServiceAccount to access GCP APIs without a service account key file. This is the recommended authentication method on GKE.</p>
+<h3 id="enable-secret-manager-api">Enable Secret Manager API<a class="headerlink" href="#enable-secret-manager-api" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>gcloud<span class="w"> </span>services<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>secretmanager.googleapis.com<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--project<span class="o">=</span>&lt;PROJECT_ID&gt;
+</code></pre></div>
+<h3 id="grant-the-kubernetes-serviceaccount-access-to-the-secret">Grant the Kubernetes ServiceAccount access to the secret<a class="headerlink" href="#grant-the-kubernetes-serviceaccount-access-to-the-secret" title="Permanent link">#</a></h3>
+<p>The preferred approach binds IAM permissions directly to the Kubernetes identity — no GCP Service Account is required:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PROJECT_ID</span><span class="o">=</span>&lt;your-project-id&gt;
+<span class="nb">export</span><span class="w"> </span><span class="nv">PROJECT_NUMBER</span><span class="o">=</span><span class="k">$(</span>gcloud<span class="w"> </span>projects<span class="w"> </span>describe<span class="w"> </span><span class="nv">$PROJECT_ID</span><span class="w"> </span>--format<span class="o">=</span><span class="s2">"value(projectNumber)"</span><span class="k">)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">NAMESPACE</span><span class="o">=</span>default
+<span class="nb">export</span><span class="w"> </span><span class="nv">KSA_NAME</span><span class="o">=</span>app-sa
+<span class="nb">export</span><span class="w"> </span><span class="nv">SECRET_NAME</span><span class="o">=</span>db-password
+
+gcloud<span class="w"> </span>secrets<span class="w"> </span>add-iam-policy-binding<span class="w"> </span><span class="nv">$SECRET_NAME</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--project<span class="o">=</span><span class="nv">$PROJECT_ID</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--role<span class="o">=</span>roles/secretmanager.secretAccessor<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--member<span class="o">=</span><span class="s2">"principal://iam.googleapis.com/projects/</span><span class="si">${</span><span class="nv">PROJECT_NUMBER</span><span class="si">}</span><span class="s2">/locations/global/workloadIdentityPools/</span><span class="si">${</span><span class="nv">PROJECT_ID</span><span class="si">}</span><span class="s2">.svc.id.goog/subject/ns/</span><span class="si">${</span><span class="nv">NAMESPACE</span><span class="si">}</span><span class="s2">/sa/</span><span class="si">${</span><span class="nv">KSA_NAME</span><span class="si">}</span><span class="s2">"</span>
+</code></pre></div>
+<h3 id="create-the-kubernetes-serviceaccount">Create the Kubernetes ServiceAccount<a class="headerlink" href="#create-the-kubernetes-serviceaccount" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>serviceaccount<span class="w"> </span><span class="nv">$KSA_NAME</span><span class="w"> </span>--namespace<span class="w"> </span><span class="nv">$NAMESPACE</span>
+</code></pre></div>
+<p>No annotation is needed on the ServiceAccount when using direct IAM binding to the Kubernetes identity.</p>
+<hr>
+<h2 id="step-5-create-a-secret-in-gcp-secret-manager">Step 5 — Create a secret in GCP Secret Manager<a class="headerlink" href="#step-5-create-a-secret-in-gcp-secret-manager" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">"initial-password"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>gcloud<span class="w"> </span>secrets<span class="w"> </span>create<span class="w"> </span>db-password<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--data-file<span class="o">=</span>-<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--project<span class="o">=</span><span class="nv">$PROJECT_ID</span>
+</code></pre></div>
+<p>Note the full resource name — you will need it in the <code>SecretProviderClass</code>:</p>
+<div class="highlight"><pre><span></span><code>gcloud<span class="w"> </span>secrets<span class="w"> </span>describe<span class="w"> </span>db-password<span class="w"> </span>--project<span class="o">=</span><span class="nv">$PROJECT_ID</span><span class="w"> </span>--format<span class="o">=</span><span class="s2">"value(name)"</span>
+</code></pre></div>
+<p>Output format: <code>projects/&lt;PROJECT_NUMBER&gt;/secrets/db-password</code></p>
+<hr>
+<h2 id="step-6-create-the-secretproviderclass">Step 6 — Create the SecretProviderClass<a class="headerlink" href="#step-6-create-the-secretproviderclass" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets-store.csi.x-k8s.io/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SecretProviderClass</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp-app-secrets</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp</span>
+<span class="w">  </span><span class="nt">parameters</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">secrets</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">      </span><span class="no">- resourceName: "projects/&lt;PROJECT_ID&gt;/secrets/db-password/versions/latest"</span>
+<span class="w">        </span><span class="no">path: "db-password"</span>
+<span class="w">      </span><span class="no">- resourceName: "projects/&lt;PROJECT_ID&gt;/secrets/api-key/versions/latest"</span>
+<span class="w">        </span><span class="no">path: "api-key"</span>
+<span class="w">  </span><span class="nt">secretObjects</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">secretName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Opaque</span>
+<span class="w">      </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">reloader.stakater.com/match</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">      </span><span class="nt">data</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">objectName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db-password</span>
+<span class="w">          </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db-password</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">objectName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api-key</span>
+<span class="w">          </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api-key</span>
+</code></pre></div>
+<p>Apply:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>secret-provider-class.yaml
+</code></pre></div>
+<p><strong>Key configuration points:</strong></p>
 <table>
 <thead>
 <tr>
-<th>Capability</th>
-<th>Infisical built-in reload</th>
-<th>Reloader</th>
+<th>Field</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Deployments</td>
-<td>✅</td>
-<td>✅</td>
+<td><code>spec.provider</code></td>
+<td>Must be <code>gcp</code> (not <code>gke</code>, not <code>google</code>)</td>
 </tr>
 <tr>
-<td>StatefulSets</td>
-<td>✅</td>
-<td>✅</td>
+<td><code>parameters.secrets</code></td>
+<td>YAML list as a string; each entry needs <code>resourceName</code> and <code>path</code></td>
 </tr>
 <tr>
-<td>Daemonsets</td>
-<td>✅</td>
-<td>✅</td>
+<td><code>resourceName</code></td>
+<td>Full GCP resource path: <code>projects/&lt;id&gt;/secrets/&lt;name&gt;/versions/&lt;version-or-latest&gt;</code></td>
 </tr>
 <tr>
-<td>Argo Rollouts</td>
-<td>❌</td>
-<td>✅ (requires <code>isArgoRollouts: true</code>)</td>
+<td><code>path</code></td>
+<td>Filename in the mounted volume; must match <code>objectName</code> in <code>secretObjects</code></td>
 </tr>
 <tr>
-<td>CronJobs</td>
-<td>❌ Not documented</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>Watches ConfigMaps</td>
-<td>❌ Secrets only</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>Works with non-Infisical secrets (ESO, CSI, plain Secrets)</td>
-<td>❌ Infisical-managed Secrets only</td>
-<td>✅ Any Kubernetes Secret or ConfigMap</td>
-</tr>
-<tr>
-<td>Named-resource reload annotation</td>
-<td>❌</td>
-<td>✅ <code>secret.reloader.stakater.com/reload</code></td>
-</tr>
-<tr>
-<td>Cooldown between reloads</td>
-<td>❌</td>
-<td>✅ <code>pause-period</code> annotation</td>
-</tr>
-<tr>
-<td>Namespace scoping</td>
-<td>❌</td>
-<td>✅ <code>namespaceSelector</code>, <code>ignoreNamespaces</code></td>
-</tr>
-<tr>
-<td>Prometheus metrics</td>
-<td>❌</td>
-<td>✅ <code>reloader_reload_executed_total</code></td>
-</tr>
-<tr>
-<td>Webhook alerts (Slack, Teams, Google Chat)</td>
-<td>❌</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>High availability with leader election</td>
-<td>❌</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>Commercial support and SLA</td>
-<td>❌</td>
-<td>✅ Reloader Enterprise</td>
-</tr>
-<tr>
-<td>Hardened container images</td>
-<td>❌</td>
-<td>✅ Reloader Enterprise</td>
+<td><code>secretObjects[].data[].objectName</code></td>
+<td>Must match the <code>path</code> value from the <code>parameters.secrets</code> entry</td>
 </tr>
 </tbody>
 </table>
 <hr>
-<h2 id="when-infisicals-built-in-reload-is-enough">When Infisical's built-in reload is enough<a class="headerlink" href="#when-infisicals-built-in-reload-is-enough" title="Permanent link">#</a></h2>
-<p>If all of the following are true, the Infisical operator's built-in reload covers your use case without adding Reloader:</p>
-<ul>
-<li>You run only <strong>Deployments, StatefulSets, and Daemonsets</strong> — no Argo Rollouts</li>
-<li>All your secrets come from <strong>Infisical</strong> — you are not mixing in ESO, CSI Driver, or plain ConfigMaps</li>
-<li>You do not need reload metrics, webhook alerts, or cooldown periods</li>
-<li>You have no compliance or SLA requirements for the reload mechanism itself</li>
-</ul>
+<h2 id="step-7-deploy-the-application">Step 7 — Deploy the application<a class="headerlink" href="#step-7-deploy-the-application" title="Permanent link">#</a></h2>
+<p>The CSI volume mount is required even when your application reads secrets as environment variables. Without it, the GCP provider does not create the Kubernetes Secret via <code>secretObjects</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">reloader.stakater.com/search</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">serviceAccountName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-sa</span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">busybox:latest</span>
+<span class="w">          </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"sh"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"-c"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"while</span><span class="nv"> </span><span class="s">true;</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">echo</span><span class="nv"> </span><span class="s">\"password=$DB_PASSWORD\";</span><span class="nv"> </span><span class="s">sleep</span><span class="nv"> </span><span class="s">30;</span><span class="nv"> </span><span class="s">done"</span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db-password</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API_KEY</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api-key</span>
+<span class="w">          </span><span class="nt">volumeMounts</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp-secrets</span>
+<span class="w">              </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/mnt/secrets</span>
+<span class="w">              </span><span class="nt">readOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp-secrets</span>
+<span class="w">          </span><span class="nt">csi</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets-store.csi.k8s.io</span>
+<span class="w">            </span><span class="nt">readOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">            </span><span class="nt">volumeAttributes</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">secretProviderClass</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp-app-secrets</span>
+</code></pre></div>
+<p>Apply:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>deployment.yaml
+</code></pre></div>
 <hr>
-<h2 id="when-to-use-reloader-instead">When to use Reloader instead<a class="headerlink" href="#when-to-use-reloader-instead" title="Permanent link">#</a></h2>
-<p><strong>Argo Rollouts</strong> — the Infisical operator does not support them. If any workload in your cluster uses Argo Rollouts, Reloader is required to reload those workloads on secret changes.</p>
-<p><strong>Multiple secret backends</strong> — if the same application consumes secrets from both Infisical and AWS Secrets Manager (via ESO), or Infisical and a plain ConfigMap, you need Reloader. The Infisical operator only watches its own managed Secrets.</p>
-<p><strong>ConfigMap reload</strong> — the Infisical operator does not trigger restarts when ConfigMaps change. Reloader does.</p>
-<p><strong>Granular control</strong> — Reloader's <code>pause-period</code>, <code>search/match</code> pattern, and namespace scoping give finer control over when and where restarts happen.</p>
-<p><strong>Platform-wide consistency</strong> — if multiple teams in the same cluster use different secret tools, Reloader gives a single reload mechanism that works regardless of how secrets arrive.</p>
-<p><strong>Regulated environments</strong> — Reloader Enterprise provides hardened images, commercial support, and SLA coverage that the Infisical operator does not.</p>
+<h2 id="step-8-verify-the-setup">Step 8 — Verify the setup<a class="headerlink" href="#step-8-verify-the-setup" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check the pod is running</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>default<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>myapp
+
+<span class="c1"># Confirm the Kubernetes Secret was created</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>default
+kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>default<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.db-password}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
+
+<span class="c1"># Check the CSI mount status</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>secretproviderclasspodstatuses<span class="w"> </span>-n<span class="w"> </span>default
+</code></pre></div>
 <hr>
-<h2 id="using-both-together">Using both together<a class="headerlink" href="#using-both-together" title="Permanent link">#</a></h2>
-<p>You can run both the Infisical operator and Reloader in the same cluster, but do not enable both reload mechanisms on the same workload. If a workload has both <code>secrets.infisical.com/auto-reload: "true"</code> and a Reloader annotation, both fire on the same Secret update and the workload restarts twice.</p>
-<p>Pick one per workload:</p>
-<ul>
-<li>Use Infisical's built-in reload on workloads where you want operator-managed simplicity and no additional tools</li>
-<li>Use Reloader on workloads that need Argo Rollouts support, multi-backend reload, or Enterprise features</li>
-</ul>
+<h2 id="step-9-test-secret-rotation">Step 9 — Test secret rotation<a class="headerlink" href="#step-9-test-secret-rotation" title="Permanent link">#</a></h2>
+<p>Add a new version to the secret in GCP Secret Manager:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">"rotated-password"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>gcloud<span class="w"> </span>secrets<span class="w"> </span>versions<span class="w"> </span>add<span class="w"> </span>db-password<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--data-file<span class="o">=</span>-<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--project<span class="o">=</span><span class="nv">$PROJECT_ID</span>
+</code></pre></div>
+<p>Wait for the next rotation poll (default: 2 minutes). The CSI driver fetches the new version, updates the mounted files, and syncs the new value into the Kubernetes Secret. Reloader detects the Secret update and triggers a rolling restart.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Confirm the Kubernetes Secret was updated</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>default<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.db-password}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
+
+<span class="c1"># Confirm pods were restarted</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>default<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>myapp
+</code></pre></div>
 <hr>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
+<h2 id="reloader-annotations">Reloader annotations<a class="headerlink" href="#reloader-annotations" title="Permanent link">#</a></h2>
 <table>
 <thead>
 <tr>
-<th>Scenario</th>
-<th>Recommendation</th>
+<th>Resource</th>
+<th>Annotation</th>
+<th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Deployments, StatefulSets, Daemonsets — Infisical only</td>
-<td>Either works; Infisical built-in is simpler</td>
+<td>Deployment</td>
+<td><code>reloader.stakater.com/search: "true"</code></td>
+<td>Restart when any referenced Secret with <code>match: "true"</code> changes</td>
 </tr>
 <tr>
-<td>Argo Rollouts</td>
-<td>Reloader required</td>
-</tr>
-<tr>
-<td>Mixed secret backends (Infisical + ESO, CSI, or plain Secrets)</td>
-<td>Reloader</td>
-</tr>
-<tr>
-<td>ConfigMap reload</td>
-<td>Reloader</td>
-</tr>
-<tr>
-<td>Platform-wide unified reload mechanism</td>
-<td>Reloader</td>
-</tr>
-<tr>
-<td>Regulated environment, SLA, hardened images</td>
-<td>Reloader Enterprise</td>
+<td>Kubernetes Secret (via <code>secretObjects</code>)</td>
+<td><code>reloader.stakater.com/match: "true"</code></td>
+<td>Mark this Secret as eligible to trigger a restart</td>
 </tr>
 </tbody>
 </table>
-<p>See the <a href="../../integrations/infisical/infisical-operator.html">Infisical Operator Guide</a> for the complete setup walkthrough.</p>
+<hr>
+<h2 id="file-based-pattern-no-kubernetes-secret">File-based pattern (no Kubernetes Secret)<a class="headerlink" href="#file-based-pattern-no-kubernetes-secret" title="Permanent link">#</a></h2>
+<p>If you want to mount secrets as files only, without creating a Kubernetes Secret, omit the <code>secretObjects</code> block and enable Reloader's CSI integration:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">enableCSIIntegration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p>Then annotate the Deployment with the <code>SecretProviderClass</code> name:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">secretproviderclass.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"gcp-app-secrets"</span>
+</code></pre></div>
+<p>In this mode, Reloader watches <code>SecretProviderClassPodStatus</code> resources for version hash changes instead of watching a Kubernetes Secret.</p>
+<hr>
+<h2 id="eso-vs-csi-driver-for-gcp">ESO vs CSI Driver for GCP<a class="headerlink" href="#eso-vs-csi-driver-for-gcp" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>ESO</th>
+<th>CSI Driver (provider-gcp)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kubernetes Secret created</td>
+<td>✅ Always</td>
+<td>✅ With <code>secretObjects</code></td>
+</tr>
+<tr>
+<td>Requires pod volume mount</td>
+<td>❌</td>
+<td>✅ Required even for env var usage</td>
+</tr>
+<tr>
+<td>Secret rotation</td>
+<td>ESO refresh interval</td>
+<td>CSI rotation poll interval</td>
+</tr>
+<tr>
+<td>Officially supported</td>
+<td>ESO is CNCF-graduated</td>
+<td>Community project (not Google-supported)</td>
+</tr>
+<tr>
+<td>Complexity</td>
+<td>Lower</td>
+<td>Higher</td>
+</tr>
+</tbody>
+</table>
+<p>For most GCP users, the <a href="gcp-eso.html">ESO pattern</a> is simpler and better supported. Use the CSI Driver pattern when you need file-based secret mounting or when your organisation already uses the Secrets Store CSI Driver across multiple cloud providers.</p>
 
 
 

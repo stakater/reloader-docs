@@ -5,13 +5,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-stakater-.github-0.x/concepts/comparisons/reloader-vs-infisical-reload.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-stakater-.github-0.x/concepts/comparisons/reloader-vs-doppler-reload.html">
       
       
-        <link rel="prev" href="reloader-vs-app-level-reload.html">
+        <link rel="prev" href="reloader-vs-infisical-reload.html">
       
       
-        <link rel="next" href="reloader-vs-doppler-reload.html">
+        <link rel="next" href="../../installation/install-oss.html">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>Reloader vs Infisical Built-In Reload - Reloader</title>
+        <title>Reloader vs Doppler Built-In Reload - Reloader</title>
       
     
     
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reloader-vs-infisical-built-in-reload" class="md-skip">
+        <a href="#reloader-vs-doppler-built-in-reload" class="md-skip">
           Skip to content
         </a>
       
@@ -2723,6 +2723,34 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="reloader-vs-infisical-reload.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reloader vs Infisical Built-In Reload
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -2742,7 +2770,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   <span class="md-ellipsis">
     
   
-    Reloader vs Infisical Built-In Reload
+    Reloader vs Doppler Built-In Reload
   
 
     
@@ -2753,14 +2781,14 @@ This documentation is for a pull request deployment and is unreleased, it is onl
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="reloader-vs-infisical-reload.html" class="md-nav__link md-nav__link--active">
+      <a href="reloader-vs-doppler-reload.html" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    Reloader vs Infisical Built-In Reload
+    Reloader vs Doppler Built-In Reload
   
 
     
@@ -2788,10 +2816,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#what-infisicals-built-in-reload-does" class="md-nav__link">
+  <a href="#what-dopplers-built-in-reload-does" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What Infisical's built-in reload does
+        What Doppler's built-in reload does
       
     </span>
   </a>
@@ -2810,10 +2838,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#when-infisicals-built-in-reload-is-enough" class="md-nav__link">
+  <a href="#when-dopplers-built-in-reload-is-enough" class="md-nav__link">
     <span class="md-ellipsis">
       
-        When Infisical's built-in reload is enough
+        When Doppler's built-in reload is enough
       
     </span>
   </a>
@@ -2857,34 +2885,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="reloader-vs-doppler-reload.html" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reloader vs Doppler Built-In Reload
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -4903,10 +4903,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#what-infisicals-built-in-reload-does" class="md-nav__link">
+  <a href="#what-dopplers-built-in-reload-does" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What Infisical's built-in reload does
+        What Doppler's built-in reload does
       
     </span>
   </a>
@@ -4925,10 +4925,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#when-infisicals-built-in-reload-is-enough" class="md-nav__link">
+  <a href="#when-dopplers-built-in-reload-is-enough" class="md-nav__link">
     <span class="md-ellipsis">
       
-        When Infisical's built-in reload is enough
+        When Doppler's built-in reload is enough
       
     </span>
   </a>
@@ -4988,27 +4988,36 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="reloader-vs-infisical-built-in-reload">Reloader vs Infisical Built-In Reload<a class="headerlink" href="#reloader-vs-infisical-built-in-reload" title="Permanent link">#</a></h1>
-<p>The Infisical Kubernetes operator includes a built-in auto-reload feature. When a managed Kubernetes Secret is updated by the operator, it can automatically restart workloads that carry the annotation <code>secrets.infisical.com/auto-reload: "true"</code>.</p>
+<h1 id="reloader-vs-doppler-built-in-reload">Reloader vs Doppler Built-In Reload<a class="headerlink" href="#reloader-vs-doppler-built-in-reload" title="Permanent link">#</a></h1>
+<p>The Doppler Kubernetes operator includes a built-in reload feature for <code>Deployment</code> resources. When a managed Kubernetes Secret is updated by the operator, it can automatically trigger a rolling restart of Deployments that reference that Secret and carry the <code>secrets.doppler.com/reload: "true"</code> annotation.</p>
 <p>This page compares that built-in mechanism to using Stakater Reloader for the same job.</p>
+<blockquote>
+<p>The Doppler documentation explicitly recommends Stakater Reloader for workload types beyond Deployments.</p>
+</blockquote>
 <hr>
-<h2 id="what-infisicals-built-in-reload-does">What Infisical's built-in reload does<a class="headerlink" href="#what-infisicals-built-in-reload-does" title="Permanent link">#</a></h2>
-<p>The Infisical operator polls the Infisical API on a configurable <code>resyncInterval</code> (default: 1 minute). When it detects a change, it updates the managed Kubernetes Secret. If a Deployment, StatefulSet, or Daemonset carries <code>secrets.infisical.com/auto-reload: "true"</code>, the operator triggers a restart on that workload.</p>
-<div class="highlight"><pre><span></span><code>Infisical secret changes
+<h2 id="what-dopplers-built-in-reload-does">What Doppler's built-in reload does<a class="headerlink" href="#what-dopplers-built-in-reload-does" title="Permanent link">#</a></h2>
+<p>The Doppler operator polls the Doppler API every 60 seconds (configurable via <code>spec.resyncSeconds</code>). When it detects a change, it updates the managed Kubernetes Secret. If a Deployment in the same namespace references that Secret and carries <code>secrets.doppler.com/reload: "true"</code> on the pod template, the operator triggers a rolling restart by patching an annotation on the Deployment.</p>
+<div class="highlight"><pre><span></span><code>Doppler secret changes
 ↓
-Infisical operator syncs Kubernetes Secret (every resyncInterval)
+Doppler operator syncs Kubernetes Secret (every resyncSeconds)
 ↓
-Operator checks for annotated workloads
+Operator checks for annotated Deployments in the same namespace
 ↓
-Operator triggers restart
+Operator patches Deployment annotation → rolling restart
 </code></pre></div>
+<p>Three conditions must all be met for the built-in reload to fire:</p>
+<ol>
+<li>The Deployment is in the <strong>same namespace</strong> as the managed Secret</li>
+<li>The Deployment has <code>secrets.doppler.com/reload: "true"</code> on <code>spec.template.metadata.annotations</code></li>
+<li>The Deployment references the managed Secret</li>
+</ol>
 <hr>
 <h2 id="feature-comparison">Feature comparison<a class="headerlink" href="#feature-comparison" title="Permanent link">#</a></h2>
 <table>
 <thead>
 <tr>
 <th>Capability</th>
-<th>Infisical built-in reload</th>
+<th>Doppler built-in reload</th>
 <th>Reloader</th>
 </tr>
 </thead>
@@ -5020,12 +5029,12 @@ Operator triggers restart
 </tr>
 <tr>
 <td>StatefulSets</td>
-<td>✅</td>
+<td>❌</td>
 <td>✅</td>
 </tr>
 <tr>
 <td>Daemonsets</td>
-<td>✅</td>
+<td>❌</td>
 <td>✅</td>
 </tr>
 <tr>
@@ -5040,13 +5049,18 @@ Operator triggers restart
 </tr>
 <tr>
 <td>Watches ConfigMaps</td>
-<td>❌ Secrets only</td>
+<td>❌ Operator does not sync to ConfigMaps</td>
 <td>✅</td>
 </tr>
 <tr>
-<td>Works with non-Infisical secrets (ESO, CSI, plain Secrets)</td>
-<td>❌ Infisical-managed Secrets only</td>
+<td>Works with non-Doppler secrets (ESO, CSI, plain Secrets)</td>
+<td>❌ Doppler-managed Secrets only</td>
 <td>✅ Any Kubernetes Secret or ConfigMap</td>
+</tr>
+<tr>
+<td>Cross-namespace reload</td>
+<td>❌ Deployment must be in the same namespace as the Secret</td>
+<td>✅</td>
 </tr>
 <tr>
 <td>Named-resource reload annotation</td>
@@ -5091,29 +5105,31 @@ Operator triggers restart
 </tbody>
 </table>
 <hr>
-<h2 id="when-infisicals-built-in-reload-is-enough">When Infisical's built-in reload is enough<a class="headerlink" href="#when-infisicals-built-in-reload-is-enough" title="Permanent link">#</a></h2>
-<p>If all of the following are true, the Infisical operator's built-in reload covers your use case without adding Reloader:</p>
+<h2 id="when-dopplers-built-in-reload-is-enough">When Doppler's built-in reload is enough<a class="headerlink" href="#when-dopplers-built-in-reload-is-enough" title="Permanent link">#</a></h2>
+<p>If all of the following are true, the Doppler operator's built-in reload covers your use case without adding Reloader:</p>
 <ul>
-<li>You run only <strong>Deployments, StatefulSets, and Daemonsets</strong> — no Argo Rollouts</li>
-<li>All your secrets come from <strong>Infisical</strong> — you are not mixing in ESO, CSI Driver, or plain ConfigMaps</li>
+<li>You run only <strong>Deployments</strong> — no StatefulSets, Daemonsets, or Argo Rollouts</li>
+<li>All secrets come from <strong>Doppler</strong> — you are not mixing in ESO, CSI Driver, plain Secrets, or ConfigMaps</li>
+<li>The Deployment is in the <strong>same namespace</strong> as the managed Secret</li>
 <li>You do not need reload metrics, webhook alerts, or cooldown periods</li>
 <li>You have no compliance or SLA requirements for the reload mechanism itself</li>
 </ul>
 <hr>
 <h2 id="when-to-use-reloader-instead">When to use Reloader instead<a class="headerlink" href="#when-to-use-reloader-instead" title="Permanent link">#</a></h2>
-<p><strong>Argo Rollouts</strong> — the Infisical operator does not support them. If any workload in your cluster uses Argo Rollouts, Reloader is required to reload those workloads on secret changes.</p>
-<p><strong>Multiple secret backends</strong> — if the same application consumes secrets from both Infisical and AWS Secrets Manager (via ESO), or Infisical and a plain ConfigMap, you need Reloader. The Infisical operator only watches its own managed Secrets.</p>
-<p><strong>ConfigMap reload</strong> — the Infisical operator does not trigger restarts when ConfigMaps change. Reloader does.</p>
-<p><strong>Granular control</strong> — Reloader's <code>pause-period</code>, <code>search/match</code> pattern, and namespace scoping give finer control over when and where restarts happen.</p>
-<p><strong>Platform-wide consistency</strong> — if multiple teams in the same cluster use different secret tools, Reloader gives a single reload mechanism that works regardless of how secrets arrive.</p>
-<p><strong>Regulated environments</strong> — Reloader Enterprise provides hardened images, commercial support, and SLA coverage that the Infisical operator does not.</p>
+<p><strong>StatefulSets and Daemonsets</strong> — the Doppler operator explicitly does not support them. If any workload in your cluster is a StatefulSet or Daemonset that consumes Doppler-managed secrets, Reloader is required.</p>
+<p><strong>Argo Rollouts</strong> — not supported by the Doppler operator. Reloader handles Argo Rollouts natively with <code>isArgoRollouts: true</code>.</p>
+<p><strong>Cross-namespace secrets</strong> — the Doppler operator's built-in reload only fires when the Deployment and the managed Secret are in the same namespace. Reloader has no such restriction.</p>
+<p><strong>Multiple secret backends</strong> — if the same application consumes secrets from both Doppler and AWS Secrets Manager (via ESO), or Doppler alongside a plain ConfigMap, you need Reloader. The Doppler operator only watches its own managed Secrets.</p>
+<p><strong>ConfigMap reload</strong> — the Doppler operator does not sync to ConfigMaps and does not trigger restarts on ConfigMap changes. Reloader does both.</p>
+<p><strong>Platform-wide consistency</strong> — if multiple teams in the same cluster use different secret tools, Reloader provides a single reload mechanism that works regardless of how secrets arrive.</p>
+<p><strong>Regulated environments</strong> — Reloader Enterprise provides hardened images, commercial support, and SLA coverage that the Doppler operator does not offer.</p>
 <hr>
 <h2 id="using-both-together">Using both together<a class="headerlink" href="#using-both-together" title="Permanent link">#</a></h2>
-<p>You can run both the Infisical operator and Reloader in the same cluster, but do not enable both reload mechanisms on the same workload. If a workload has both <code>secrets.infisical.com/auto-reload: "true"</code> and a Reloader annotation, both fire on the same Secret update and the workload restarts twice.</p>
+<p>You can run both the Doppler operator and Reloader in the same cluster, but do not enable both reload mechanisms on the same workload. If a Deployment has both <code>secrets.doppler.com/reload: "true"</code> and a Reloader annotation, both fire on the same Secret update and the workload restarts twice.</p>
 <p>Pick one per workload:</p>
 <ul>
-<li>Use Infisical's built-in reload on workloads where you want operator-managed simplicity and no additional tools</li>
-<li>Use Reloader on workloads that need Argo Rollouts support, multi-backend reload, or Enterprise features</li>
+<li>Use Doppler's built-in reload on Deployments where you want operator-managed simplicity and no additional tools</li>
+<li>Use Reloader on all other workload types, and on any workload that needs cross-namespace support, multi-backend reload, or Enterprise features</li>
 </ul>
 <hr>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
@@ -5126,15 +5142,23 @@ Operator triggers restart
 </thead>
 <tbody>
 <tr>
-<td>Deployments, StatefulSets, Daemonsets — Infisical only</td>
-<td>Either works; Infisical built-in is simpler</td>
+<td>Deployments only, Doppler secrets only, same namespace</td>
+<td>Either works; Doppler built-in is simpler</td>
+</tr>
+<tr>
+<td>StatefulSets or Daemonsets</td>
+<td>Reloader required</td>
 </tr>
 <tr>
 <td>Argo Rollouts</td>
 <td>Reloader required</td>
 </tr>
 <tr>
-<td>Mixed secret backends (Infisical + ESO, CSI, or plain Secrets)</td>
+<td>Cross-namespace secrets</td>
+<td>Reloader required</td>
+</tr>
+<tr>
+<td>Mixed secret backends (Doppler + ESO, CSI, or plain Secrets)</td>
 <td>Reloader</td>
 </tr>
 <tr>
@@ -5151,7 +5175,7 @@ Operator triggers restart
 </tr>
 </tbody>
 </table>
-<p>See the <a href="../../integrations/infisical/infisical-operator.html">Infisical Operator Guide</a> for the complete setup walkthrough.</p>
+<p>See the <a href="../../integrations/doppler/doppler-operator.html">Doppler Operator Guide</a> for the complete setup walkthrough.</p>
 
 
 

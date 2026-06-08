@@ -5,13 +5,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-stakater-.github-0.x/concepts/comparisons/reloader-vs-infisical-reload.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-stakater-.github-0.x/integrations/doppler/doppler-operator.html">
       
       
-        <link rel="prev" href="reloader-vs-app-level-reload.html">
+        <link rel="prev" href="index.html">
       
       
-        <link rel="next" href="reloader-vs-doppler-reload.html">
+        <link rel="next" href="../../reference/annotations.html">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>Reloader vs Infisical Built-In Reload - Reloader</title>
+        <title>Doppler Operator - Reloader</title>
       
     
     
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reloader-vs-infisical-built-in-reload" class="md-skip">
+        <a href="#how-to-use-reloader-with-the-doppler-kubernetes-operator" class="md-skip">
           Skip to content
         </a>
       
@@ -2289,20 +2289,18 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -2323,7 +2321,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2341,7 +2339,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../why-configuration-reloading-matters.html" class="md-nav__link">
+      <a href="../../concepts/why-configuration-reloading-matters.html" class="md-nav__link">
         
   
   
@@ -2369,7 +2367,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../secret-propagation-problem-kubernetes.html" class="md-nav__link">
+      <a href="../../concepts/secret-propagation-problem-kubernetes.html" class="md-nav__link">
         
   
   
@@ -2394,20 +2392,18 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3">
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
@@ -2428,7 +2424,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2446,7 +2442,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-helm.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-helm.html" class="md-nav__link">
         
   
   
@@ -2474,7 +2470,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-checksum-annotations.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-checksum-annotations.html" class="md-nav__link">
         
   
   
@@ -2502,7 +2498,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-kyverno.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-kyverno.html" class="md-nav__link">
         
   
   
@@ -2530,7 +2526,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-sidecar-config-watchers.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-sidecar-config-watchers.html" class="md-nav__link">
         
   
   
@@ -2558,7 +2554,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-init-containers.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-init-containers.html" class="md-nav__link">
         
   
   
@@ -2586,7 +2582,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-manual-rollouts.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-manual-rollouts.html" class="md-nav__link">
         
   
   
@@ -2614,7 +2610,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-gitops-tools.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-gitops-tools.html" class="md-nav__link">
         
   
   
@@ -2642,7 +2638,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-secret-operators.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-secret-operators.html" class="md-nav__link">
         
   
   
@@ -2670,7 +2666,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-cert-manager.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-cert-manager.html" class="md-nav__link">
         
   
   
@@ -2698,7 +2694,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-app-level-reload.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-app-level-reload.html" class="md-nav__link">
         
   
   
@@ -2723,37 +2719,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reloader vs Infisical Built-In Reload
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="reloader-vs-infisical-reload.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../concepts/comparisons/reloader-vs-infisical-reload.html" class="md-nav__link">
         
   
   
@@ -2769,94 +2738,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#what-infisicals-built-in-reload-does" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What Infisical's built-in reload does
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#feature-comparison" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Feature comparison
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-infisicals-built-in-reload-is-enough" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When Infisical's built-in reload is enough
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-to-use-reloader-instead" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When to use Reloader instead
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-both-together" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Using both together
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2869,7 +2750,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-doppler-reload.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-doppler-reload.html" class="md-nav__link">
         
   
   
@@ -3381,18 +3262,20 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked="">
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -3413,7 +3296,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3431,7 +3314,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/index.html" class="md-nav__link">
+      <a href="../index.html" class="md-nav__link">
         
   
   
@@ -3506,7 +3389,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/conjur/index.html" class="md-nav__link">
+      <a href="../conjur/index.html" class="md-nav__link">
         
   
   
@@ -3534,7 +3417,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/conjur/conjur-eso.html" class="md-nav__link">
+      <a href="../conjur/conjur-eso.html" class="md-nav__link">
         
   
   
@@ -3562,7 +3445,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/conjur/conjur-sidecar.html" class="md-nav__link">
+      <a href="../conjur/conjur-sidecar.html" class="md-nav__link">
         
   
   
@@ -3590,7 +3473,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/conjur/conjur-csi.html" class="md-nav__link">
+      <a href="../conjur/conjur-csi.html" class="md-nav__link">
         
   
   
@@ -3673,7 +3556,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/index.html" class="md-nav__link">
+      <a href="../vault/index.html" class="md-nav__link">
         
   
   
@@ -3701,7 +3584,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/vault-eso.html" class="md-nav__link">
+      <a href="../vault/vault-eso.html" class="md-nav__link">
         
   
   
@@ -3729,7 +3612,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/vault-vso.html" class="md-nav__link">
+      <a href="../vault/vault-vso.html" class="md-nav__link">
         
   
   
@@ -3757,7 +3640,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/vault-csi.html" class="md-nav__link">
+      <a href="../vault/vault-csi.html" class="md-nav__link">
         
   
   
@@ -3785,7 +3668,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/vault-csi-file.html" class="md-nav__link">
+      <a href="../vault/vault-csi-file.html" class="md-nav__link">
         
   
   
@@ -3868,7 +3751,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/index.html" class="md-nav__link">
+      <a href="../openbao/index.html" class="md-nav__link">
         
   
   
@@ -3896,7 +3779,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/openbao-eso.html" class="md-nav__link">
+      <a href="../openbao/openbao-eso.html" class="md-nav__link">
         
   
   
@@ -3924,7 +3807,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/openbao-bso.html" class="md-nav__link">
+      <a href="../openbao/openbao-bso.html" class="md-nav__link">
         
   
   
@@ -3952,7 +3835,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/openbao-csi.html" class="md-nav__link">
+      <a href="../openbao/openbao-csi.html" class="md-nav__link">
         
   
   
@@ -3980,7 +3863,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/openbao-csi-file.html" class="md-nav__link">
+      <a href="../openbao/openbao-csi-file.html" class="md-nav__link">
         
   
   
@@ -4063,7 +3946,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/aws/index.html" class="md-nav__link">
+      <a href="../aws/index.html" class="md-nav__link">
         
   
   
@@ -4091,7 +3974,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/aws/aws-eso.html" class="md-nav__link">
+      <a href="../aws/aws-eso.html" class="md-nav__link">
         
   
   
@@ -4119,7 +4002,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/aws/aws-csi.html" class="md-nav__link">
+      <a href="../aws/aws-csi.html" class="md-nav__link">
         
   
   
@@ -4202,7 +4085,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/gcp/index.html" class="md-nav__link">
+      <a href="../gcp/index.html" class="md-nav__link">
         
   
   
@@ -4230,7 +4113,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/gcp/gcp-eso.html" class="md-nav__link">
+      <a href="../gcp/gcp-eso.html" class="md-nav__link">
         
   
   
@@ -4258,7 +4141,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/gcp/gcp-csi.html" class="md-nav__link">
+      <a href="../gcp/gcp-csi.html" class="md-nav__link">
         
   
   
@@ -4341,7 +4224,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/azure/index.html" class="md-nav__link">
+      <a href="../azure/index.html" class="md-nav__link">
         
   
   
@@ -4369,7 +4252,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/azure/azure-eso.html" class="md-nav__link">
+      <a href="../azure/azure-eso.html" class="md-nav__link">
         
   
   
@@ -4397,7 +4280,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/azure/azure-csi.html" class="md-nav__link">
+      <a href="../azure/azure-csi.html" class="md-nav__link">
         
   
   
@@ -4480,7 +4363,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/infisical/index.html" class="md-nav__link">
+      <a href="../infisical/index.html" class="md-nav__link">
         
   
   
@@ -4508,7 +4391,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/infisical/infisical-operator.html" class="md-nav__link">
+      <a href="../infisical/infisical-operator.html" class="md-nav__link">
         
   
   
@@ -4541,18 +4424,20 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_9">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_9" checked="">
         
           
           <label class="md-nav__link" for="__nav_6_9" id="__nav_6_9_label" tabindex="0">
@@ -4573,7 +4458,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_9_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_9">
             <span class="md-nav__icon md-icon"></span>
             
@@ -4591,7 +4476,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/doppler/index.html" class="md-nav__link">
+      <a href="index.html" class="md-nav__link">
         
   
   
@@ -4616,10 +4501,37 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../integrations/doppler/doppler-operator.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Doppler Operator
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="doppler-operator.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -4635,6 +4547,171 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-install-the-doppler-kubernetes-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Install the Doppler Kubernetes operator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-install-reloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Install Reloader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-create-the-doppler-service-token-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Create the Doppler service token secret
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-create-the-dopplersecret-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Create the DopplerSecret resource
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-annotate-workloads-for-reloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 — Annotate workloads for Reloader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statefulsets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StatefulSets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#argo-rollouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Argo Rollouts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-test-secret-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 — Test secret rotation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reloader-annotations-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reloader annotations reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faster-sync-with-resyncseconds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Faster sync with resyncSeconds
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cooldown-between-reloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cooldown between reloads
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4903,10 +4980,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#what-infisicals-built-in-reload-does" class="md-nav__link">
+  <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What Infisical's built-in reload does
+        How it works
       
     </span>
   </a>
@@ -4914,10 +4991,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#feature-comparison" class="md-nav__link">
+  <a href="#prerequisites" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Feature comparison
+        Prerequisites
       
     </span>
   </a>
@@ -4925,10 +5002,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#when-infisicals-built-in-reload-is-enough" class="md-nav__link">
+  <a href="#step-1-install-the-doppler-kubernetes-operator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        When Infisical's built-in reload is enough
+        Step 1 — Install the Doppler Kubernetes operator
       
     </span>
   </a>
@@ -4936,10 +5013,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#when-to-use-reloader-instead" class="md-nav__link">
+  <a href="#step-2-install-reloader" class="md-nav__link">
     <span class="md-ellipsis">
       
-        When to use Reloader instead
+        Step 2 — Install Reloader
       
     </span>
   </a>
@@ -4947,10 +5024,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-both-together" class="md-nav__link">
+  <a href="#step-3-create-the-doppler-service-token-secret" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Using both together
+        Step 3 — Create the Doppler service token secret
       
     </span>
   </a>
@@ -4958,10 +5035,87 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#step-4-create-the-dopplersecret-resource" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Summary
+        Step 4 — Create the DopplerSecret resource
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-annotate-workloads-for-reloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 — Annotate workloads for Reloader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statefulsets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StatefulSets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#argo-rollouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Argo Rollouts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-test-secret-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 — Test secret rotation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reloader-annotations-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reloader annotations reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faster-sync-with-resyncseconds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Faster sync with resyncSeconds
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cooldown-between-reloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cooldown between reloads
       
     </span>
   </a>
@@ -4988,170 +5142,292 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="reloader-vs-infisical-built-in-reload">Reloader vs Infisical Built-In Reload<a class="headerlink" href="#reloader-vs-infisical-built-in-reload" title="Permanent link">#</a></h1>
-<p>The Infisical Kubernetes operator includes a built-in auto-reload feature. When a managed Kubernetes Secret is updated by the operator, it can automatically restart workloads that carry the annotation <code>secrets.infisical.com/auto-reload: "true"</code>.</p>
-<p>This page compares that built-in mechanism to using Stakater Reloader for the same job.</p>
+<h1 id="how-to-use-reloader-with-the-doppler-kubernetes-operator">How to Use Reloader with the Doppler Kubernetes Operator<a class="headerlink" href="#how-to-use-reloader-with-the-doppler-kubernetes-operator" title="Permanent link">#</a></h1>
+<p>This guide shows how to combine the Doppler Kubernetes operator with Reloader to automatically restart pods when secrets change in Doppler.</p>
+<p>The Doppler operator syncs secrets from Doppler into Kubernetes <code>Secret</code> objects. Reloader watches those Secrets and triggers rolling restarts when their data changes. This pattern supports all Reloader-compatible workload types — including StatefulSets, Daemonsets, and Argo Rollouts — which the Doppler operator's built-in reload does not cover.</p>
+<blockquote>
+<p>The Doppler documentation recommends Stakater Reloader for workload types beyond Deployments.</p>
+</blockquote>
 <hr>
-<h2 id="what-infisicals-built-in-reload-does">What Infisical's built-in reload does<a class="headerlink" href="#what-infisicals-built-in-reload-does" title="Permanent link">#</a></h2>
-<p>The Infisical operator polls the Infisical API on a configurable <code>resyncInterval</code> (default: 1 minute). When it detects a change, it updates the managed Kubernetes Secret. If a Deployment, StatefulSet, or Daemonset carries <code>secrets.infisical.com/auto-reload: "true"</code>, the operator triggers a restart on that workload.</p>
-<div class="highlight"><pre><span></span><code>Infisical secret changes
-↓
-Infisical operator syncs Kubernetes Secret (every resyncInterval)
-↓
-Operator checks for annotated workloads
-↓
-Operator triggers restart
+<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h2>
+<pre class="mermaid"><code>sequenceDiagram
+    actor Dev as Developer
+    participant DOP as Doppler
+    participant OP as Doppler Operator
+    participant K8s as Kubernetes Secret
+    participant RL as Reloader
+    participant Pod as Application Pod
+
+    Dev-&gt;&gt;DOP: Update secret value
+    loop Every resyncSeconds (default: 60s)
+        OP-&gt;&gt;DOP: Fetch latest secrets
+        DOP--&gt;&gt;OP: Updated secret value
+        OP-&gt;&gt;K8s: Update managed Kubernetes Secret
+    end
+    K8s--&gt;&gt;RL: Watch event (Secret changed)
+    RL-&gt;&gt;Pod: Trigger rolling restart
+    Note over Pod: New pod starts with updated secret</code></pre>
+<hr>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
+<ul>
+<li>Kubernetes cluster (v1.19+)</li>
+<li>Helm v3+</li>
+<li>A Doppler account with a project and config (environment) set up</li>
+<li>A Doppler service token for the target config</li>
+<li>Stakater Reloader installed</li>
+</ul>
+<hr>
+<h2 id="step-1-install-the-doppler-kubernetes-operator">Step 1 — Install the Doppler Kubernetes operator<a class="headerlink" href="#step-1-install-the-doppler-kubernetes-operator" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>doppler<span class="w"> </span>https://helm.doppler.com
+helm<span class="w"> </span>repo<span class="w"> </span>update
+helm<span class="w"> </span>install<span class="w"> </span>--generate-name<span class="w"> </span>doppler/doppler-kubernetes-operator
+</code></pre></div>
+<p>The operator installs into the <code>doppler-operator-system</code> namespace by default.</p>
+<p>Verify it is running:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>doppler-operator-system
 </code></pre></div>
 <hr>
-<h2 id="feature-comparison">Feature comparison<a class="headerlink" href="#feature-comparison" title="Permanent link">#</a></h2>
+<h2 id="step-2-install-reloader">Step 2 — Install Reloader<a class="headerlink" href="#step-2-install-reloader" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>stakater<span class="w"> </span>https://stakater.github.io/stakater-charts
+helm<span class="w"> </span>repo<span class="w"> </span>update
+helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--create-namespace
+</code></pre></div>
+<hr>
+<h2 id="step-3-create-the-doppler-service-token-secret">Step 3 — Create the Doppler service token secret<a class="headerlink" href="#step-3-create-the-doppler-service-token-secret" title="Permanent link">#</a></h2>
+<p>Create a Kubernetes Secret containing the Doppler service token. The operator reads this to authenticate with the Doppler API.</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>generic<span class="w"> </span>doppler-token-secret<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>doppler-operator-system<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--from-literal<span class="o">=</span><span class="nv">serviceToken</span><span class="o">=</span>dp.st.prd.XXXX
+</code></pre></div>
+<p>The service token must have at least read access to the target project and config. Create a dedicated service token in the Doppler dashboard under <strong>Access</strong> → <strong>Service Tokens</strong>.</p>
+<hr>
+<h2 id="step-4-create-the-dopplersecret-resource">Step 4 — Create the DopplerSecret resource<a class="headerlink" href="#step-4-create-the-dopplersecret-resource" title="Permanent link">#</a></h2>
+<p>The <code>DopplerSecret</code> CRD tells the operator which Doppler project and config to sync, and which Kubernetes Secret to write the result into.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets.doppler.com/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DopplerSecret</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-doppler-secret</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">doppler-operator-system</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">tokenSecret</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">doppler-token-secret</span>
+<span class="w">  </span><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-project</span>
+<span class="w">  </span><span class="nt">config</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prd</span>
+<span class="w">  </span><span class="nt">managedSecret</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+</code></pre></div>
+<p>Apply:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>doppler-secret.yaml
+</code></pre></div>
+<p><strong>Key fields:</strong></p>
 <table>
 <thead>
 <tr>
-<th>Capability</th>
-<th>Infisical built-in reload</th>
-<th>Reloader</th>
+<th>Field</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Deployments</td>
-<td>✅</td>
-<td>✅</td>
+<td><code>spec.tokenSecret.name</code></td>
+<td>Name of the Kubernetes Secret holding the Doppler service token</td>
 </tr>
 <tr>
-<td>StatefulSets</td>
-<td>✅</td>
-<td>✅</td>
+<td><code>spec.project</code></td>
+<td>Doppler project name</td>
 </tr>
 <tr>
-<td>Daemonsets</td>
-<td>✅</td>
-<td>✅</td>
+<td><code>spec.config</code></td>
+<td>Doppler config (environment) name — for example, <code>prd</code>, <code>stg</code>, <code>dev</code></td>
 </tr>
 <tr>
-<td>Argo Rollouts</td>
-<td>❌</td>
-<td>✅ (requires <code>isArgoRollouts: true</code>)</td>
+<td><code>spec.managedSecret.name</code></td>
+<td>Name of the Kubernetes Secret the operator creates and keeps in sync</td>
 </tr>
 <tr>
-<td>CronJobs</td>
-<td>❌ Not documented</td>
-<td>✅</td>
+<td><code>spec.managedSecret.namespace</code></td>
+<td>Namespace where the managed Secret is created</td>
 </tr>
 <tr>
-<td>Watches ConfigMaps</td>
-<td>❌ Secrets only</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>Works with non-Infisical secrets (ESO, CSI, plain Secrets)</td>
-<td>❌ Infisical-managed Secrets only</td>
-<td>✅ Any Kubernetes Secret or ConfigMap</td>
-</tr>
-<tr>
-<td>Named-resource reload annotation</td>
-<td>❌</td>
-<td>✅ <code>secret.reloader.stakater.com/reload</code></td>
-</tr>
-<tr>
-<td>Cooldown between reloads</td>
-<td>❌</td>
-<td>✅ <code>pause-period</code> annotation</td>
-</tr>
-<tr>
-<td>Namespace scoping</td>
-<td>❌</td>
-<td>✅ <code>namespaceSelector</code>, <code>ignoreNamespaces</code></td>
-</tr>
-<tr>
-<td>Prometheus metrics</td>
-<td>❌</td>
-<td>✅ <code>reloader_reload_executed_total</code></td>
-</tr>
-<tr>
-<td>Webhook alerts (Slack, Teams, Google Chat)</td>
-<td>❌</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>High availability with leader election</td>
-<td>❌</td>
-<td>✅</td>
-</tr>
-<tr>
-<td>Commercial support and SLA</td>
-<td>❌</td>
-<td>✅ Reloader Enterprise</td>
-</tr>
-<tr>
-<td>Hardened container images</td>
-<td>❌</td>
-<td>✅ Reloader Enterprise</td>
+<td><code>spec.resyncSeconds</code></td>
+<td>How often the operator polls Doppler (default: <code>60</code>)</td>
 </tr>
 </tbody>
 </table>
+<p>The operator creates the Kubernetes Secret <code>app-secrets</code> in the <code>default</code> namespace and syncs all secrets from the Doppler config into it.</p>
+<p>Verify the Secret was created:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>default
+kubectl<span class="w"> </span>describe<span class="w"> </span>dopplersecret<span class="w"> </span>app-doppler-secret<span class="w"> </span>-n<span class="w"> </span>doppler-operator-system
+</code></pre></div>
 <hr>
-<h2 id="when-infisicals-built-in-reload-is-enough">When Infisical's built-in reload is enough<a class="headerlink" href="#when-infisicals-built-in-reload-is-enough" title="Permanent link">#</a></h2>
-<p>If all of the following are true, the Infisical operator's built-in reload covers your use case without adding Reloader:</p>
-<ul>
-<li>You run only <strong>Deployments, StatefulSets, and Daemonsets</strong> — no Argo Rollouts</li>
-<li>All your secrets come from <strong>Infisical</strong> — you are not mixing in ESO, CSI Driver, or plain ConfigMaps</li>
-<li>You do not need reload metrics, webhook alerts, or cooldown periods</li>
-<li>You have no compliance or SLA requirements for the reload mechanism itself</li>
-</ul>
+<h2 id="step-5-annotate-workloads-for-reloader">Step 5 — Annotate workloads for Reloader<a class="headerlink" href="#step-5-annotate-workloads-for-reloader" title="Permanent link">#</a></h2>
+<p>Add the Reloader annotation to each workload that should restart when the Secret changes. Do not use the Doppler operator's built-in <code>secrets.doppler.com/reload: "true"</code> annotation on the same workload — both mechanisms would fire on the same Secret update, causing two successive restarts.</p>
+<p><strong>Watch the specific Secret by name (recommended):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">secret.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"app-secrets"</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp:latest</span>
+<span class="w">          </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API_KEY</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API_KEY</span>
+</code></pre></div>
+<p>Apply:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>deployment.yaml
+</code></pre></div>
 <hr>
-<h2 id="when-to-use-reloader-instead">When to use Reloader instead<a class="headerlink" href="#when-to-use-reloader-instead" title="Permanent link">#</a></h2>
-<p><strong>Argo Rollouts</strong> — the Infisical operator does not support them. If any workload in your cluster uses Argo Rollouts, Reloader is required to reload those workloads on secret changes.</p>
-<p><strong>Multiple secret backends</strong> — if the same application consumes secrets from both Infisical and AWS Secrets Manager (via ESO), or Infisical and a plain ConfigMap, you need Reloader. The Infisical operator only watches its own managed Secrets.</p>
-<p><strong>ConfigMap reload</strong> — the Infisical operator does not trigger restarts when ConfigMaps change. Reloader does.</p>
-<p><strong>Granular control</strong> — Reloader's <code>pause-period</code>, <code>search/match</code> pattern, and namespace scoping give finer control over when and where restarts happen.</p>
-<p><strong>Platform-wide consistency</strong> — if multiple teams in the same cluster use different secret tools, Reloader gives a single reload mechanism that works regardless of how secrets arrive.</p>
-<p><strong>Regulated environments</strong> — Reloader Enterprise provides hardened images, commercial support, and SLA coverage that the Infisical operator does not.</p>
+<h2 id="statefulsets">StatefulSets<a class="headerlink" href="#statefulsets" title="Permanent link">#</a></h2>
+<p>The Doppler operator's built-in reload does not support StatefulSets. Reloader does.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">StatefulSet</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">secret.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"app-secrets"</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">serviceName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp:latest</span>
+<span class="w">          </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
+</code></pre></div>
 <hr>
-<h2 id="using-both-together">Using both together<a class="headerlink" href="#using-both-together" title="Permanent link">#</a></h2>
-<p>You can run both the Infisical operator and Reloader in the same cluster, but do not enable both reload mechanisms on the same workload. If a workload has both <code>secrets.infisical.com/auto-reload: "true"</code> and a Reloader annotation, both fire on the same Secret update and the workload restarts twice.</p>
-<p>Pick one per workload:</p>
-<ul>
-<li>Use Infisical's built-in reload on workloads where you want operator-managed simplicity and no additional tools</li>
-<li>Use Reloader on workloads that need Argo Rollouts support, multi-backend reload, or Enterprise features</li>
-</ul>
+<h2 id="argo-rollouts">Argo Rollouts<a class="headerlink" href="#argo-rollouts" title="Permanent link">#</a></h2>
+<p>The Doppler operator's built-in reload does not support Argo Rollouts. Reloader does, with one extra Helm value.</p>
+<p>Enable Argo Rollouts support in Reloader:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">isArgoRollouts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p>Then annotate the Rollout:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">argoproj.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rollout</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">secret.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"app-secrets"</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp:latest</span>
+<span class="w">          </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API_KEY</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API_KEY</span>
+</code></pre></div>
 <hr>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
+<h2 id="step-6-test-secret-rotation">Step 6 — Test secret rotation<a class="headerlink" href="#step-6-test-secret-rotation" title="Permanent link">#</a></h2>
+<p>Update a secret value in the Doppler dashboard, then wait for the next sync interval (default: 60 seconds).</p>
+<p>Confirm the Kubernetes Secret was updated:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>default<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.DB_PASSWORD}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
+</code></pre></div>
+<p>Confirm pods were restarted:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deployment/myapp<span class="w"> </span>-n<span class="w"> </span>default
+kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>default<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>myapp
+</code></pre></div>
+<p>Check Reloader logs to confirm the reload was triggered:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader-reloader<span class="w"> </span>--tail<span class="o">=</span><span class="m">20</span>
+</code></pre></div>
+<p>Expected output:</p>
+<div class="highlight"><pre><span></span><code>Changes detected in 'app-secrets' of type 'Secret' in namespace 'default'
+Updated 'myapp' of type 'Deployment' in namespace 'default'
+</code></pre></div>
+<hr>
+<h2 id="reloader-annotations-reference">Reloader annotations reference<a class="headerlink" href="#reloader-annotations-reference" title="Permanent link">#</a></h2>
 <table>
 <thead>
 <tr>
-<th>Scenario</th>
-<th>Recommendation</th>
+<th>Annotation</th>
+<th>Placed on</th>
+<th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Deployments, StatefulSets, Daemonsets — Infisical only</td>
-<td>Either works; Infisical built-in is simpler</td>
+<td><code>secret.reloader.stakater.com/reload: "app-secrets"</code></td>
+<td>Any workload</td>
+<td>Restart when the named Secret changes</td>
 </tr>
 <tr>
-<td>Argo Rollouts</td>
-<td>Reloader required</td>
+<td><code>reloader.stakater.com/auto: "true"</code></td>
+<td>Any workload</td>
+<td>Restart when any Secret or ConfigMap referenced in the pod spec changes</td>
 </tr>
 <tr>
-<td>Mixed secret backends (Infisical + ESO, CSI, or plain Secrets)</td>
-<td>Reloader</td>
-</tr>
-<tr>
-<td>ConfigMap reload</td>
-<td>Reloader</td>
-</tr>
-<tr>
-<td>Platform-wide unified reload mechanism</td>
-<td>Reloader</td>
-</tr>
-<tr>
-<td>Regulated environment, SLA, hardened images</td>
-<td>Reloader Enterprise</td>
+<td><code>reloader.stakater.com/search: "true"</code></td>
+<td>Workload</td>
+<td>Restart when any Secret annotated with <code>reloader.stakater.com/match: "true"</code> changes</td>
 </tr>
 </tbody>
 </table>
-<p>See the <a href="../../integrations/infisical/infisical-operator.html">Infisical Operator Guide</a> for the complete setup walkthrough.</p>
+<hr>
+<h2 id="faster-sync-with-resyncseconds">Faster sync with <code>resyncSeconds</code><a class="headerlink" href="#faster-sync-with-resyncseconds" title="Permanent link">#</a></h2>
+<p>To reduce the delay between a Doppler change and a pod restart, lower <code>resyncSeconds</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">resyncSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">15</span>
+</code></pre></div>
+<p>The Doppler documentation recommends the default of 60 seconds for most use cases. Lower values increase API request volume against the Doppler API.</p>
+<hr>
+<h2 id="cooldown-between-reloads">Cooldown between reloads<a class="headerlink" href="#cooldown-between-reloads" title="Permanent link">#</a></h2>
+<p>To prevent rapid successive restarts when multiple secrets are updated at once:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">secret.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"app-secrets"</span>
+<span class="w">    </span><span class="nt">deployment.reloader.stakater.com/pause-period</span><span class="p">:</span><span class="w"> </span><span class="s">"2m"</span>
+</code></pre></div>
+<p>During the pause period, additional Secret changes do not trigger another restart.</p>
 
 
 
