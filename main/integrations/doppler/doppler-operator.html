@@ -5,13 +5,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/main/integrations/azure/azure-csi.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/main/integrations/doppler/doppler-operator.html">
       
       
-        <link rel="prev" href="azure-eso.html">
+        <link rel="prev" href="index.html">
       
       
-        <link rel="next" href="../infisical/index.html">
+        <link rel="next" href="../../reference/annotations.html">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>CSI Driver - Reloader</title>
+        <title>Doppler Operator - Reloader</title>
       
     
     
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#how-to-use-reloader-with-azure-key-vault-and-csi-driver" class="md-skip">
+        <a href="#how-to-use-reloader-with-the-doppler-kubernetes-operator" class="md-skip">
           Skip to content
         </a>
       
@@ -4173,20 +4173,18 @@ This documentation is either for an old version, or for the unreleased 'main' ve
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_7">
         
           
           <label class="md-nav__link" for="__nav_6_7" id="__nav_6_7_label" tabindex="0">
@@ -4207,7 +4205,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -4225,7 +4223,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="index.html" class="md-nav__link">
+      <a href="../azure/index.html" class="md-nav__link">
         
   
   
@@ -4253,7 +4251,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="azure-eso.html" class="md-nav__link">
+      <a href="../azure/azure-eso.html" class="md-nav__link">
         
   
   
@@ -4278,37 +4276,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    CSI Driver
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="azure-csi.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../azure/azure-csi.html" class="md-nav__link">
         
   
   
@@ -4324,238 +4295,6 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How It Works
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Prerequisites
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-1-enable-the-csi-driver" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1 — Enable the CSI Driver
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 1 — Enable the CSI Driver">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#option-a-aks-add-on-recommended-for-aks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Option A — AKS add-on (recommended for AKS)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#option-b-helm-install-non-aks-clusters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Option B — Helm install (non-AKS clusters)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-2-install-reloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2 — Install Reloader
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-3-set-up-workload-identity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3 — Set up workload identity
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3 — Set up workload identity">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#create-a-user-assigned-managed-identity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Create a user-assigned managed identity
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#assign-key-vault-access" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Assign Key Vault access
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-the-kubernetes-serviceaccount" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Create the Kubernetes ServiceAccount
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-the-federated-identity-credential" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Create the federated identity credential
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-create-the-secretproviderclass" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4 — Create the SecretProviderClass
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-5-deploy-the-application" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 5 — Deploy the application
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-6-verify-the-setup" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 6 — Verify the setup
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-7-test-secret-rotation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 7 — Test secret rotation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reloader-annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reloader annotations
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#file-based-pattern-no-kubernetes-secret" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        File-based pattern (no Kubernetes Secret)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#certificates-and-keys" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Certificates and keys
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4684,18 +4423,20 @@ This documentation is either for an old version, or for the unreleased 'main' ve
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_9">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_9" checked="">
         
           
           <label class="md-nav__link" for="__nav_6_9" id="__nav_6_9_label" tabindex="0">
@@ -4716,7 +4457,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_9_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_9">
             <span class="md-nav__icon md-icon"></span>
             
@@ -4734,7 +4475,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
   
     <li class="md-nav__item">
-      <a href="../doppler/index.html" class="md-nav__link">
+      <a href="index.html" class="md-nav__link">
         
   
   
@@ -4759,10 +4500,37 @@ This documentation is either for an old version, or for the unreleased 'main' ve
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../doppler/doppler-operator.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Doppler Operator
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="doppler-operator.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -4778,6 +4546,171 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-install-the-doppler-kubernetes-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Install the Doppler Kubernetes operator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-install-reloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Install Reloader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-create-the-doppler-service-token-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Create the Doppler service token secret
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-create-the-dopplersecret-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Create the DopplerSecret resource
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-annotate-workloads-for-reloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 — Annotate workloads for Reloader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statefulsets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StatefulSets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#argo-rollouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Argo Rollouts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-test-secret-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 — Test secret rotation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reloader-annotations-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reloader annotations reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faster-sync-with-resyncseconds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Faster sync with resyncSeconds
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cooldown-between-reloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cooldown between reloads
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -5049,7 +4982,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How It Works
+        How it works
       
     </span>
   </a>
@@ -5068,41 +5001,13 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-1-enable-the-csi-driver" class="md-nav__link">
+  <a href="#step-1-install-the-doppler-kubernetes-operator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 1 — Enable the CSI Driver
+        Step 1 — Install the Doppler Kubernetes operator
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Step 1 — Enable the CSI Driver">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#option-a-aks-add-on-recommended-for-aks" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Option A — AKS add-on (recommended for AKS)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#option-b-helm-install-non-aks-clusters" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Option B — Helm install (non-AKS clusters)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -5118,71 +5023,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-set-up-workload-identity" class="md-nav__link">
+  <a href="#step-3-create-the-doppler-service-token-secret" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 3 — Set up workload identity
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3 — Set up workload identity">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#create-a-user-assigned-managed-identity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Create a user-assigned managed identity
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#assign-key-vault-access" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Assign Key Vault access
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-the-kubernetes-serviceaccount" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Create the Kubernetes ServiceAccount
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-the-federated-identity-credential" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Create the federated identity credential
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#step-4-create-the-secretproviderclass" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4 — Create the SecretProviderClass
+        Step 3 — Create the Doppler service token secret
       
     </span>
   </a>
@@ -5190,10 +5034,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-deploy-the-application" class="md-nav__link">
+  <a href="#step-4-create-the-dopplersecret-resource" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 5 — Deploy the application
+        Step 4 — Create the DopplerSecret resource
       
     </span>
   </a>
@@ -5201,10 +5045,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-6-verify-the-setup" class="md-nav__link">
+  <a href="#step-5-annotate-workloads-for-reloader" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 6 — Verify the setup
+        Step 5 — Annotate workloads for Reloader
       
     </span>
   </a>
@@ -5212,10 +5056,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-7-test-secret-rotation" class="md-nav__link">
+  <a href="#statefulsets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Step 7 — Test secret rotation
+        StatefulSets
       
     </span>
   </a>
@@ -5223,10 +5067,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#reloader-annotations" class="md-nav__link">
+  <a href="#argo-rollouts" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reloader annotations
+        Argo Rollouts
       
     </span>
   </a>
@@ -5234,10 +5078,10 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#file-based-pattern-no-kubernetes-secret" class="md-nav__link">
+  <a href="#step-6-test-secret-rotation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        File-based pattern (no Kubernetes Secret)
+        Step 6 — Test secret rotation
       
     </span>
   </a>
@@ -5245,10 +5089,32 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 </li>
       
         <li class="md-nav__item">
-  <a href="#certificates-and-keys" class="md-nav__link">
+  <a href="#reloader-annotations-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Certificates and keys
+        Reloader annotations reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faster-sync-with-resyncseconds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Faster sync with resyncSeconds
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cooldown-between-reloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cooldown between reloads
       
     </span>
   </a>
@@ -5275,28 +5141,27 @@ This documentation is either for an old version, or for the unreleased 'main' ve
   
 
 
-<h1 id="how-to-use-reloader-with-azure-key-vault-and-csi-driver">How to Use Reloader with Azure Key Vault and CSI Driver<a class="headerlink" href="#how-to-use-reloader-with-azure-key-vault-and-csi-driver" title="Permanent link">#</a></h1>
-<p>This guide shows how to mount secrets from Azure Key Vault into Kubernetes pods using the Azure Key Vault Provider for Secrets Store CSI Driver, then use Reloader to automatically restart pods when those secrets change.</p>
-<p>The Azure provider syncs secrets into a Kubernetes <code>Secret</code> via <code>secretObjects</code>. Reloader watches that Kubernetes Secret and triggers a rolling restart whenever it is updated.</p>
+<h1 id="how-to-use-reloader-with-the-doppler-kubernetes-operator">How to Use Reloader with the Doppler Kubernetes Operator<a class="headerlink" href="#how-to-use-reloader-with-the-doppler-kubernetes-operator" title="Permanent link">#</a></h1>
+<p>This guide shows how to combine the Doppler Kubernetes operator with Reloader to automatically restart pods when secrets change in Doppler.</p>
+<p>The Doppler operator syncs secrets from Doppler into Kubernetes <code>Secret</code> objects. Reloader watches those Secrets and triggers rolling restarts when their data changes. This pattern supports all Reloader-compatible workload types — including StatefulSets, Daemonsets, and Argo Rollouts — which the Doppler operator's built-in reload does not cover.</p>
 <blockquote>
-<p><strong>See also:</strong> <a href="azure-eso.html">ESO Pattern</a> — if you are already using External Secrets Operator, that pattern requires no CSI Driver.</p>
+<p>The Doppler documentation recommends Stakater Reloader for workload types beyond Deployments.</p>
 </blockquote>
 <hr>
-<h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h2>
+<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h2>
 <pre class="mermaid"><code>sequenceDiagram
-    actor Ops as Operator
-    participant AKV as Azure Key Vault
-    participant CSI as Azure KV Provider +&lt;br/&gt;CSI Driver
+    actor Dev as Developer
+    participant DOP as Doppler
+    participant OP as Doppler Operator
     participant K8s as Kubernetes Secret
     participant RL as Reloader
     participant Pod as Application Pod
 
-    Ops-&gt;&gt;AKV: Rotate secret (new version)
-    loop Every rotationPollInterval
-        CSI-&gt;&gt;AKV: Get secret (latest version)
-        AKV--&gt;&gt;CSI: Updated secret value
-        CSI-&gt;&gt;Pod: Refresh mounted files
-        CSI-&gt;&gt;K8s: Sync via secretObjects
+    Dev-&gt;&gt;DOP: Update secret value
+    loop Every resyncSeconds (default: 60s)
+        OP-&gt;&gt;DOP: Fetch latest secrets
+        DOP--&gt;&gt;OP: Updated secret value
+        OP-&gt;&gt;K8s: Update managed Kubernetes Secret
     end
     K8s--&gt;&gt;RL: Watch event (Secret changed)
     RL-&gt;&gt;Pod: Trigger rolling restart
@@ -5304,48 +5169,21 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 <hr>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
-<li>AKS cluster with workload identity enabled (<code>--enable-oidc-issuer --enable-workload-identity</code>)</li>
-<li>Azure CLI configured locally</li>
+<li>Kubernetes cluster (v1.19+)</li>
 <li>Helm v3+</li>
-<li>An existing Azure Key Vault with secrets</li>
+<li>A Doppler account with a project and config (environment) set up</li>
+<li>A Doppler service token for the target config</li>
 <li>Stakater Reloader installed</li>
 </ul>
 <hr>
-<h2 id="step-1-enable-the-csi-driver">Step 1 — Enable the CSI Driver<a class="headerlink" href="#step-1-enable-the-csi-driver" title="Permanent link">#</a></h2>
-<h3 id="option-a-aks-add-on-recommended-for-aks">Option A — AKS add-on (recommended for AKS)<a class="headerlink" href="#option-a-aks-add-on-recommended-for-aks" title="Permanent link">#</a></h3>
-<p>Enable the Azure Key Vault provider as an AKS add-on. This installs and manages both the Secrets Store CSI Driver and the Azure provider.</p>
-<p>On a new cluster:</p>
-<div class="highlight"><pre><span></span><code>az<span class="w"> </span>aks<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--resource-group<span class="w"> </span>&lt;resource-group&gt;<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span>&lt;cluster-name&gt;<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--enable-addons<span class="w"> </span>azure-keyvault-secrets-provider<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--enable-secret-rotation<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--rotation-poll-interval<span class="w"> </span>2m<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--enable-oidc-issuer<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--enable-workload-identity
-</code></pre></div>
-<p>On an existing cluster:</p>
-<div class="highlight"><pre><span></span><code>az<span class="w"> </span>aks<span class="w"> </span>enable-addons<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--resource-group<span class="w"> </span>&lt;resource-group&gt;<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span>&lt;cluster-name&gt;<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--addons<span class="w"> </span>azure-keyvault-secrets-provider<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--enable-secret-rotation<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--rotation-poll-interval<span class="w"> </span>2m
-</code></pre></div>
-<h3 id="option-b-helm-install-non-aks-clusters">Option B — Helm install (non-AKS clusters)<a class="headerlink" href="#option-b-helm-install-non-aks-clusters" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>csi-secrets-store-provider-azure<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>https://azure.github.io/secrets-store-csi-driver-provider-azure/charts
+<h2 id="step-1-install-the-doppler-kubernetes-operator">Step 1 — Install the Doppler Kubernetes operator<a class="headerlink" href="#step-1-install-the-doppler-kubernetes-operator" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>doppler<span class="w"> </span>https://helm.doppler.com
 helm<span class="w"> </span>repo<span class="w"> </span>update
-helm<span class="w"> </span>install<span class="w"> </span>csi<span class="w"> </span>csi-secrets-store-provider-azure/csi-secrets-store-provider-azure<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--namespace<span class="w"> </span>kube-system
+helm<span class="w"> </span>install<span class="w"> </span>--generate-name<span class="w"> </span>doppler/doppler-kubernetes-operator
 </code></pre></div>
-<p>Then install the Secrets Store CSI Driver separately with rotation enabled:</p>
-<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>secrets-store-csi-driver<span class="w"> </span>https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts
-helm<span class="w"> </span>install<span class="w"> </span>csi-secrets-store<span class="w"> </span>secrets-store-csi-driver/secrets-store-csi-driver<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--namespace<span class="w"> </span>kube-system<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--set<span class="w"> </span>syncSecret.enabled<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--set<span class="w"> </span><span class="nv">enableSecretRotation</span><span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--set<span class="w"> </span><span class="nv">rotationPollInterval</span><span class="o">=</span>2m
+<p>The operator installs into the <code>doppler-operator-system</code> namespace by default.</p>
+<p>Verify it is running:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>doppler-operator-system
 </code></pre></div>
 <hr>
 <h2 id="step-2-install-reloader">Step 2 — Install Reloader<a class="headerlink" href="#step-2-install-reloader" title="Permanent link">#</a></h2>
@@ -5356,112 +5194,34 @@ helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="
 <span class="w">  </span>--create-namespace
 </code></pre></div>
 <hr>
-<h2 id="step-3-set-up-workload-identity">Step 3 — Set up workload identity<a class="headerlink" href="#step-3-set-up-workload-identity" title="Permanent link">#</a></h2>
-<p>Workload identity is the recommended authentication method for AKS. It uses OIDC federation to allow a Kubernetes ServiceAccount to assume an Azure managed identity, with no static credentials stored in the cluster.</p>
-<h3 id="create-a-user-assigned-managed-identity">Create a user-assigned managed identity<a class="headerlink" href="#create-a-user-assigned-managed-identity" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">RESOURCE_GROUP</span><span class="o">=</span>&lt;resource-group&gt;
-<span class="nb">export</span><span class="w"> </span><span class="nv">UAMI</span><span class="o">=</span>reloader-csi-identity
-<span class="nb">export</span><span class="w"> </span><span class="nv">KEYVAULT_NAME</span><span class="o">=</span>&lt;key-vault-name&gt;
-<span class="nb">export</span><span class="w"> </span><span class="nv">CLUSTER_NAME</span><span class="o">=</span>&lt;cluster-name&gt;
-
-az<span class="w"> </span>identity<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span><span class="nv">$UAMI</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--resource-group<span class="w"> </span><span class="nv">$RESOURCE_GROUP</span>
-
-<span class="nb">export</span><span class="w"> </span><span class="nv">USER_ASSIGNED_CLIENT_ID</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>az<span class="w"> </span>identity<span class="w"> </span>show<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--resource-group<span class="w"> </span><span class="nv">$RESOURCE_GROUP</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span><span class="nv">$UAMI</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--query<span class="w"> </span><span class="s1">'clientId'</span><span class="w"> </span>-o<span class="w"> </span>tsv<span class="k">)</span><span class="s2">"</span>
-
-<span class="nb">export</span><span class="w"> </span><span class="nv">IDENTITY_TENANT</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>az<span class="w"> </span>aks<span class="w"> </span>show<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span><span class="nv">$CLUSTER_NAME</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--resource-group<span class="w"> </span><span class="nv">$RESOURCE_GROUP</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--query<span class="w"> </span>identity.tenantId<span class="w"> </span>-o<span class="w"> </span>tsv<span class="k">)</span><span class="s2">"</span>
+<h2 id="step-3-create-the-doppler-service-token-secret">Step 3 — Create the Doppler service token secret<a class="headerlink" href="#step-3-create-the-doppler-service-token-secret" title="Permanent link">#</a></h2>
+<p>Create a Kubernetes Secret containing the Doppler service token. The operator reads this to authenticate with the Doppler API.</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>generic<span class="w"> </span>doppler-token-secret<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>doppler-operator-system<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--from-literal<span class="o">=</span><span class="nv">serviceToken</span><span class="o">=</span>dp.st.prd.XXXX
 </code></pre></div>
-<h3 id="assign-key-vault-access">Assign Key Vault access<a class="headerlink" href="#assign-key-vault-access" title="Permanent link">#</a></h3>
-<p>Grant the managed identity permission to read secrets from the Key Vault. Use Azure RBAC if the Vault has <code>--enable-rbac-authorization</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">KEYVAULT_SCOPE</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>az<span class="w"> </span>keyvault<span class="w"> </span>show<span class="w"> </span>--name<span class="w"> </span><span class="nv">$KEYVAULT_NAME</span><span class="w"> </span>--query<span class="w"> </span>id<span class="w"> </span>-o<span class="w"> </span>tsv<span class="k">)</span><span class="s2">"</span>
-
-az<span class="w"> </span>role<span class="w"> </span>assignment<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--role<span class="w"> </span><span class="s2">"Key Vault Secrets User"</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--assignee<span class="w"> </span><span class="nv">$USER_ASSIGNED_CLIENT_ID</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--scope<span class="w"> </span><span class="nv">$KEYVAULT_SCOPE</span>
-</code></pre></div>
-<p>If the Vault uses access policies instead of Azure RBAC:</p>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">IDENTITY_OBJECT_ID</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>az<span class="w"> </span>identity<span class="w"> </span>show<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--resource-group<span class="w"> </span><span class="nv">$RESOURCE_GROUP</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span><span class="nv">$UAMI</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--query<span class="w"> </span><span class="s1">'principalId'</span><span class="w"> </span>-o<span class="w"> </span>tsv<span class="k">)</span><span class="s2">"</span>
-
-az<span class="w"> </span>keyvault<span class="w"> </span>set-policy<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span><span class="nv">$KEYVAULT_NAME</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--secret-permissions<span class="w"> </span>get<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--object-id<span class="w"> </span><span class="nv">$IDENTITY_OBJECT_ID</span>
-</code></pre></div>
-<h3 id="create-the-kubernetes-serviceaccount">Create the Kubernetes ServiceAccount<a class="headerlink" href="#create-the-kubernetes-serviceaccount" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">SERVICE_ACCOUNT_NAME</span><span class="o">=</span>akv-csi-sa
-<span class="nb">export</span><span class="w"> </span><span class="nv">SERVICE_ACCOUNT_NAMESPACE</span><span class="o">=</span>default
-
-kubectl<span class="w"> </span>create<span class="w"> </span>serviceaccount<span class="w"> </span><span class="nv">$SERVICE_ACCOUNT_NAME</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--namespace<span class="w"> </span><span class="nv">$SERVICE_ACCOUNT_NAMESPACE</span>
-
-kubectl<span class="w"> </span>annotate<span class="w"> </span>serviceaccount<span class="w"> </span><span class="nv">$SERVICE_ACCOUNT_NAME</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--namespace<span class="w"> </span><span class="nv">$SERVICE_ACCOUNT_NAMESPACE</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>azure.workload.identity/client-id<span class="o">=</span><span class="nv">$USER_ASSIGNED_CLIENT_ID</span>
-</code></pre></div>
-<h3 id="create-the-federated-identity-credential">Create the federated identity credential<a class="headerlink" href="#create-the-federated-identity-credential" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">AKS_OIDC_ISSUER</span><span class="o">=</span><span class="s2">"</span><span class="k">$(</span>az<span class="w"> </span>aks<span class="w"> </span>show<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--resource-group<span class="w"> </span><span class="nv">$RESOURCE_GROUP</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span><span class="nv">$CLUSTER_NAME</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--query<span class="w"> </span><span class="s2">"oidcIssuerProfile.issuerUrl"</span><span class="w"> </span>-o<span class="w"> </span>tsv<span class="k">)</span><span class="s2">"</span>
-
-az<span class="w"> </span>identity<span class="w"> </span>federated-credential<span class="w"> </span>create<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span>akv-csi-federated<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--identity-name<span class="w"> </span><span class="nv">$UAMI</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--resource-group<span class="w"> </span><span class="nv">$RESOURCE_GROUP</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--issuer<span class="w"> </span><span class="nv">$AKS_OIDC_ISSUER</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--subject<span class="w"> </span>system:serviceaccount:<span class="si">${</span><span class="nv">SERVICE_ACCOUNT_NAMESPACE</span><span class="si">}</span>:<span class="si">${</span><span class="nv">SERVICE_ACCOUNT_NAME</span><span class="si">}</span>
-</code></pre></div>
+<p>The service token must have at least read access to the target project and config. Create a dedicated service token in the Doppler dashboard under <strong>Access</strong> → <strong>Service Tokens</strong>.</p>
 <hr>
-<h2 id="step-4-create-the-secretproviderclass">Step 4 — Create the SecretProviderClass<a class="headerlink" href="#step-4-create-the-secretproviderclass" title="Permanent link">#</a></h2>
-<p>The <code>SecretProviderClass</code> defines which secrets to fetch from Key Vault and how to sync them into a Kubernetes Secret via <code>secretObjects</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets-store.csi.x-k8s.io/v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SecretProviderClass</span>
+<h2 id="step-4-create-the-dopplersecret-resource">Step 4 — Create the DopplerSecret resource<a class="headerlink" href="#step-4-create-the-dopplersecret-resource" title="Permanent link">#</a></h2>
+<p>The <code>DopplerSecret</code> CRD tells the operator which Doppler project and config to sync, and which Kubernetes Secret to write the result into.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets.doppler.com/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DopplerSecret</span>
 <span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">akv-app-secrets</span>
-<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-doppler-secret</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">doppler-operator-system</span>
 <span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">azure</span>
-<span class="w">  </span><span class="nt">parameters</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">usePodIdentity</span><span class="p">:</span><span class="w"> </span><span class="s">"false"</span>
-<span class="w">    </span><span class="nt">clientID</span><span class="p">:</span><span class="w"> </span><span class="s">"&lt;USER_ASSIGNED_CLIENT_ID&gt;"</span>
-<span class="w">    </span><span class="nt">keyvaultName</span><span class="p">:</span><span class="w"> </span><span class="s">"&lt;KEYVAULT_NAME&gt;"</span>
-<span class="w">    </span><span class="nt">tenantId</span><span class="p">:</span><span class="w"> </span><span class="s">"&lt;IDENTITY_TENANT&gt;"</span>
-<span class="w">    </span><span class="nt">objects</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
-<span class="w">      </span><span class="no">array:</span>
-<span class="w">        </span><span class="no">- |</span>
-<span class="w">          </span><span class="no">objectName: db-username</span>
-<span class="w">          </span><span class="no">objectType: secret</span>
-<span class="w">          </span><span class="no">objectVersion: ""</span>
-<span class="w">        </span><span class="no">- |</span>
-<span class="w">          </span><span class="no">objectName: db-password</span>
-<span class="w">          </span><span class="no">objectType: secret</span>
-<span class="w">          </span><span class="no">objectVersion: ""</span>
-<span class="w">  </span><span class="nt">secretObjects</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">secretName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
-<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Opaque</span>
-<span class="w">      </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">reloader.stakater.com/match</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
-<span class="w">      </span><span class="nt">data</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">username</span>
-<span class="w">          </span><span class="nt">objectName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db-username</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
-<span class="w">          </span><span class="nt">objectName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db-password</span>
+<span class="w">  </span><span class="nt">tokenSecret</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">doppler-token-secret</span>
+<span class="w">  </span><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-project</span>
+<span class="w">  </span><span class="nt">config</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prd</span>
+<span class="w">  </span><span class="nt">managedSecret</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
 </code></pre></div>
 <p>Apply:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>secret-provider-class.yaml
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>doppler-secret.yaml
 </code></pre></div>
-<p><strong>Key configuration points:</strong></p>
+<p><strong>Key fields:</strong></p>
 <table>
 <thead>
 <tr>
@@ -5471,45 +5231,47 @@ az<span class="w"> </span>identity<span class="w"> </span>federated-credential<s
 </thead>
 <tbody>
 <tr>
-<td><code>clientID</code></td>
-<td>Client ID of the user-assigned managed identity</td>
+<td><code>spec.tokenSecret.name</code></td>
+<td>Name of the Kubernetes Secret holding the Doppler service token</td>
 </tr>
 <tr>
-<td><code>keyvaultName</code></td>
-<td>Name of the Azure Key Vault (not the full URI)</td>
+<td><code>spec.project</code></td>
+<td>Doppler project name</td>
 </tr>
 <tr>
-<td><code>tenantId</code></td>
-<td>Azure tenant ID of the Key Vault</td>
+<td><code>spec.config</code></td>
+<td>Doppler config (environment) name — for example, <code>prd</code>, <code>stg</code>, <code>dev</code></td>
 </tr>
 <tr>
-<td><code>objects[].objectName</code></td>
-<td>Name of the secret, key, or certificate in Key Vault</td>
+<td><code>spec.managedSecret.name</code></td>
+<td>Name of the Kubernetes Secret the operator creates and keeps in sync</td>
 </tr>
 <tr>
-<td><code>objects[].objectType</code></td>
-<td><code>secret</code>, <code>key</code>, or <code>cert</code></td>
+<td><code>spec.managedSecret.namespace</code></td>
+<td>Namespace where the managed Secret is created</td>
 </tr>
 <tr>
-<td><code>objects[].objectVersion</code></td>
-<td>Specific version; leave empty to always use the latest</td>
-</tr>
-<tr>
-<td><code>secretObjects[].data[].objectName</code></td>
-<td>Must match <code>objectName</code> (or <code>objectAlias</code>) from the <code>objects</code> list</td>
+<td><code>spec.resyncSeconds</code></td>
+<td>How often the operator polls Doppler (default: <code>60</code>)</td>
 </tr>
 </tbody>
 </table>
+<p>The operator creates the Kubernetes Secret <code>app-secrets</code> in the <code>default</code> namespace and syncs all secrets from the Doppler config into it.</p>
+<p>Verify the Secret was created:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>default
+kubectl<span class="w"> </span>describe<span class="w"> </span>dopplersecret<span class="w"> </span>app-doppler-secret<span class="w"> </span>-n<span class="w"> </span>doppler-operator-system
+</code></pre></div>
 <hr>
-<h2 id="step-5-deploy-the-application">Step 5 — Deploy the application<a class="headerlink" href="#step-5-deploy-the-application" title="Permanent link">#</a></h2>
-<p>The CSI volume mount is required even when your application reads secrets from environment variables. Without the mount, the Azure provider does not create the Kubernetes Secret via <code>secretObjects</code>.</p>
+<h2 id="step-5-annotate-workloads-for-reloader">Step 5 — Annotate workloads for Reloader<a class="headerlink" href="#step-5-annotate-workloads-for-reloader" title="Permanent link">#</a></h2>
+<p>Add the Reloader annotation to each workload that should restart when the Secret changes. Do not use the Doppler operator's built-in <code>secrets.doppler.com/reload: "true"</code> annotation on the same workload — both mechanisms would fire on the same Secret update, causing two successive restarts.</p>
+<p><strong>Watch the specific Secret by name (recommended):</strong></p>
 <div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
 <span class="nt">metadata</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
 <span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
 <span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">reloader.stakater.com/search</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">    </span><span class="nt">secret.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"app-secrets"</span>
 <span class="nt">spec</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 <span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
@@ -5519,128 +5281,152 @@ az<span class="w"> </span>identity<span class="w"> </span>federated-credential<s
 <span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
 <span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
 <span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
-<span class="w">        </span><span class="nt">azure.workload.identity/use</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
 <span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">serviceAccountName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">akv-csi-sa</span>
 <span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
-<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">busybox:latest</span>
-<span class="w">          </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"sh"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"-c"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"while</span><span class="nv"> </span><span class="s">true;</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">echo</span><span class="nv"> </span><span class="s">\"user=$DB_USERNAME\";</span><span class="nv"> </span><span class="s">sleep</span><span class="nv"> </span><span class="s">30;</span><span class="nv"> </span><span class="s">done"</span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp:latest</span>
 <span class="w">          </span><span class="nt">env</span><span class="p">:</span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_USERNAME</span>
-<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
-<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
-<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
-<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">username</span>
 <span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
 <span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
 <span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
 <span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
-<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
-<span class="w">          </span><span class="nt">volumeMounts</span><span class="p">:</span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">akv-secrets</span>
-<span class="w">              </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/mnt/secrets</span>
-<span class="w">              </span><span class="nt">readOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">      </span><span class="nt">volumes</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">akv-secrets</span>
-<span class="w">          </span><span class="nt">csi</span><span class="p">:</span>
-<span class="w">            </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets-store.csi.k8s.io</span>
-<span class="w">            </span><span class="nt">readOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">            </span><span class="nt">volumeAttributes</span><span class="p">:</span>
-<span class="w">              </span><span class="nt">secretProviderClass</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">akv-app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API_KEY</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API_KEY</span>
 </code></pre></div>
 <p>Apply:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>deployment.yaml
 </code></pre></div>
-<p><strong>Important:</strong> The pod template must have the label <code>azure.workload.identity/use: "true"</code> for the workload identity token to be projected into the pod.</p>
 <hr>
-<h2 id="step-6-verify-the-setup">Step 6 — Verify the setup<a class="headerlink" href="#step-6-verify-the-setup" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Check pod is running</span>
+<h2 id="statefulsets">StatefulSets<a class="headerlink" href="#statefulsets" title="Permanent link">#</a></h2>
+<p>The Doppler operator's built-in reload does not support StatefulSets. Reloader does.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">StatefulSet</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">secret.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"app-secrets"</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">serviceName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp:latest</span>
+<span class="w">          </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
+</code></pre></div>
+<hr>
+<h2 id="argo-rollouts">Argo Rollouts<a class="headerlink" href="#argo-rollouts" title="Permanent link">#</a></h2>
+<p>The Doppler operator's built-in reload does not support Argo Rollouts. Reloader does, with one extra Helm value.</p>
+<p>Enable Argo Rollouts support in Reloader:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">isArgoRollouts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p>Then annotate the Rollout:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">argoproj.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rollout</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">secret.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"app-secrets"</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp:latest</span>
+<span class="w">          </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API_KEY</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API_KEY</span>
+</code></pre></div>
+<hr>
+<h2 id="step-6-test-secret-rotation">Step 6 — Test secret rotation<a class="headerlink" href="#step-6-test-secret-rotation" title="Permanent link">#</a></h2>
+<p>Update a secret value in the Doppler dashboard, then wait for the next sync interval (default: 60 seconds).</p>
+<p>Confirm the Kubernetes Secret was updated:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>default<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.DB_PASSWORD}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
+</code></pre></div>
+<p>Confirm pods were restarted:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deployment/myapp<span class="w"> </span>-n<span class="w"> </span>default
 kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>default<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>myapp
-
-<span class="c1"># Confirm the Kubernetes Secret was created</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>default
-kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>default<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.username}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
-
-<span class="c1"># Check the CSI mount status</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>secretproviderclasspodstatuses<span class="w"> </span>-n<span class="w"> </span>default
+</code></pre></div>
+<p>Check Reloader logs to confirm the reload was triggered:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader-reloader<span class="w"> </span>--tail<span class="o">=</span><span class="m">20</span>
+</code></pre></div>
+<p>Expected output:</p>
+<div class="highlight"><pre><span></span><code>Changes detected in 'app-secrets' of type 'Secret' in namespace 'default'
+Updated 'myapp' of type 'Deployment' in namespace 'default'
 </code></pre></div>
 <hr>
-<h2 id="step-7-test-secret-rotation">Step 7 — Test secret rotation<a class="headerlink" href="#step-7-test-secret-rotation" title="Permanent link">#</a></h2>
-<p>Create a new version of the secret in Azure Key Vault:</p>
-<div class="highlight"><pre><span></span><code>az<span class="w"> </span>keyvault<span class="w"> </span>secret<span class="w"> </span><span class="nb">set</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--vault-name<span class="w"> </span><span class="nv">$KEYVAULT_NAME</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--name<span class="w"> </span>db-password<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--value<span class="w"> </span><span class="s2">"new-rotated-password"</span>
-</code></pre></div>
-<p>Wait for the next rotation poll. The CSI driver fetches the new version, updates the mounted files, and syncs the new value into the Kubernetes Secret. Reloader detects the Secret update and triggers a rolling restart.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Confirm the K8s Secret was updated</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>default<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.password}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
-
-<span class="c1"># Confirm pods were restarted (check pod age)</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>default<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>myapp
-</code></pre></div>
-<hr>
-<h2 id="reloader-annotations">Reloader annotations<a class="headerlink" href="#reloader-annotations" title="Permanent link">#</a></h2>
+<h2 id="reloader-annotations-reference">Reloader annotations reference<a class="headerlink" href="#reloader-annotations-reference" title="Permanent link">#</a></h2>
 <table>
 <thead>
 <tr>
-<th>Resource</th>
 <th>Annotation</th>
+<th>Placed on</th>
 <th>Effect</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Deployment</td>
-<td><code>reloader.stakater.com/search: "true"</code></td>
-<td>Restart when any referenced Secret with <code>match: "true"</code> changes</td>
+<td><code>secret.reloader.stakater.com/reload: "app-secrets"</code></td>
+<td>Any workload</td>
+<td>Restart when the named Secret changes</td>
 </tr>
 <tr>
-<td>Kubernetes Secret (via <code>secretObjects</code>)</td>
-<td><code>reloader.stakater.com/match: "true"</code></td>
-<td>Mark this Secret as eligible to trigger a restart</td>
+<td><code>reloader.stakater.com/auto: "true"</code></td>
+<td>Any workload</td>
+<td>Restart when any Secret or ConfigMap referenced in the pod spec changes</td>
+</tr>
+<tr>
+<td><code>reloader.stakater.com/search: "true"</code></td>
+<td>Workload</td>
+<td>Restart when any Secret annotated with <code>reloader.stakater.com/match: "true"</code> changes</td>
 </tr>
 </tbody>
 </table>
 <hr>
-<h2 id="file-based-pattern-no-kubernetes-secret">File-based pattern (no Kubernetes Secret)<a class="headerlink" href="#file-based-pattern-no-kubernetes-secret" title="Permanent link">#</a></h2>
-<p>If you want to mount secrets as files only, without creating a Kubernetes Secret, omit the <code>secretObjects</code> block and enable Reloader's CSI integration:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">enableCSIIntegration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<h2 id="faster-sync-with-resyncseconds">Faster sync with <code>resyncSeconds</code><a class="headerlink" href="#faster-sync-with-resyncseconds" title="Permanent link">#</a></h2>
+<p>To reduce the delay between a Doppler change and a pod restart, lower <code>resyncSeconds</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">resyncSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">15</span>
 </code></pre></div>
-<p>Then annotate the Deployment with the <code>SecretProviderClass</code> name:</p>
+<p>The Doppler documentation recommends the default of 60 seconds for most use cases. Lower values increase API request volume against the Doppler API.</p>
+<hr>
+<h2 id="cooldown-between-reloads">Cooldown between reloads<a class="headerlink" href="#cooldown-between-reloads" title="Permanent link">#</a></h2>
+<p>To prevent rapid successive restarts when multiple secrets are updated at once:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">secretproviderclass.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"akv-app-secrets"</span>
+<span class="w">    </span><span class="nt">secret.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"app-secrets"</span>
+<span class="w">    </span><span class="nt">deployment.reloader.stakater.com/pause-period</span><span class="p">:</span><span class="w"> </span><span class="s">"2m"</span>
 </code></pre></div>
-<p>In this mode, Reloader watches <code>SecretProviderClassPodStatus</code> resources for version hash changes instead of watching a Kubernetes Secret.</p>
-<hr>
-<h2 id="certificates-and-keys">Certificates and keys<a class="headerlink" href="#certificates-and-keys" title="Permanent link">#</a></h2>
-<p>The Azure provider supports fetching certificates and keys in addition to secrets. Set <code>objectType</code> accordingly:</p>
-<table>
-<thead>
-<tr>
-<th><code>objectType</code></th>
-<th>What is mounted</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>secret</code></td>
-<td>The secret value as a plain string</td>
-</tr>
-<tr>
-<td><code>cert</code></td>
-<td>The certificate in PEM format (public cert only)</td>
-</tr>
-<tr>
-<td><code>key</code></td>
-<td>The public key in PEM format</td>
-</tr>
-</tbody>
-</table>
-<p>To fetch the full certificate chain including the private key, use <code>objectType: secret</code> on a Key Vault certificate — Key Vault stores the private key as a secret alongside the certificate.</p>
+<p>During the pause period, additional Secret changes do not trigger another restart.</p>
 
 
 
