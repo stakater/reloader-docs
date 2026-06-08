@@ -5,13 +5,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-docker-login-action-4.x/how-to-guides/monitor-reloader.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-docker-login-action-4.x/how-to-guides/use-reloader-with-openshift.html">
       
       
-        <link rel="prev" href="namespace-scoping.html">
+        <link rel="prev" href="use-reloader-with-flux.html">
       
       
-        <link rel="next" href="alerting-on-reload.html">
+        <link rel="next" href="../integrations/index.html">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>Monitor Reloader - Reloader</title>
+        <title>How to Use Reloader on OpenShift - Reloader</title>
       
     
     
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#monitor-reloader" class="md-skip">
+        <a href="#how-to-use-reloader-on-openshift" class="md-skip">
           Skip to content
         </a>
       
@@ -3089,37 +3089,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Monitor Reloader
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="monitor-reloader.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="monitor-reloader.html" class="md-nav__link">
         
   
   
@@ -3135,255 +3108,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#metrics-endpoint" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Metrics endpoint
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#available-metrics" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Available metrics
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Available metrics">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#reloader_reload_executed_total" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        reloader_reload_executed_total
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reloader_reload_executed_total_by_namespace" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        reloader_reload_executed_total_by_namespace
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scraping-metrics-with-prometheus-operator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Scraping metrics with Prometheus Operator
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scraping-metrics-without-prometheus-operator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Scraping metrics without Prometheus Operator
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-grafana-queries" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example Grafana queries
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Example Grafana queries">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#total-successful-reloads-all-time" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Total successful reloads (all time)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reload-rate-per-minute-5m-window" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reload rate (per minute, 5m window)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#failed-reload-rate-alert-candidate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Failed reload rate (alert candidate)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reloads-by-namespace-requires-enablemetricsbynamespace-true" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reloads by namespace (requires enableMetricsByNamespace: true)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-prometheus-alerting-rules" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example Prometheus alerting rules
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#structured-logs" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Structured logs
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Structured logs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#enable-json-logging" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Enable JSON logging
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#log-levels" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Log levels
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#key-log-events-to-watch" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key log events to watch
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#query-logs-with-kubectl" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Query logs with kubectl
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#query-logs-with-loki-logql-if-using-grafana" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Query logs with Loki / LogQL (if using Grafana)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#webhook-notifications" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Webhook notifications
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3505,10 +3229,37 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="use-reloader-with-openshift.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to Use Reloader on OpenShift
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="use-reloader-with-openshift.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3524,6 +3275,172 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#what-reloader-supports-on-openshift" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Reloader supports on OpenShift
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-reloader-oss-on-openshift" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install Reloader OSS on OpenShift
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Install Reloader OSS on OpenShift">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-add-the-stakater-helm-repo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Add the Stakater Helm repo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-install-with-openshift-compatible-security-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Install with OpenShift-compatible security context
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploymentconfig-auto-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeploymentConfig auto-detection
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-reloader-enterprise-on-openshift" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install Reloader Enterprise on OpenShift
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Install Reloader Enterprise on OpenShift">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-the-image-pull-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Create the image pull secret
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-install-with-the-ubi-image" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Install with the UBI image
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#annotating-deploymentconfigs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Annotating DeploymentConfigs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-context-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security context reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-the-installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verify the installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oss-vs-enterprise-on-openshift" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OSS vs Enterprise on OpenShift
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -5062,10 +4979,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#metrics-endpoint" class="md-nav__link">
+  <a href="#what-reloader-supports-on-openshift" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Metrics endpoint
+        What Reloader supports on OpenShift
       
     </span>
   </a>
@@ -5073,22 +4990,22 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#available-metrics" class="md-nav__link">
+  <a href="#install-reloader-oss-on-openshift" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Available metrics
+        Install Reloader OSS on OpenShift
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Available metrics">
+    <nav class="md-nav" aria-label="Install Reloader OSS on OpenShift">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#reloader_reload_executed_total" class="md-nav__link">
+  <a href="#step-1-add-the-stakater-helm-repo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        reloader_reload_executed_total
+        Step 1 — Add the Stakater Helm repo
       
     </span>
   </a>
@@ -5096,10 +5013,21 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#reloader_reload_executed_total_by_namespace" class="md-nav__link">
+  <a href="#step-2-install-with-openshift-compatible-security-context" class="md-nav__link">
     <span class="md-ellipsis">
       
-        reloader_reload_executed_total_by_namespace
+        Step 2 — Install with OpenShift-compatible security context
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deploymentconfig-auto-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DeploymentConfig auto-detection
       
     </span>
   </a>
@@ -5112,44 +5040,22 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#scraping-metrics-with-prometheus-operator" class="md-nav__link">
+  <a href="#install-reloader-enterprise-on-openshift" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Scraping metrics with Prometheus Operator
+        Install Reloader Enterprise on OpenShift
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#scraping-metrics-without-prometheus-operator" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Scraping metrics without Prometheus Operator
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-grafana-queries" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Example Grafana queries
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Example Grafana queries">
+    <nav class="md-nav" aria-label="Install Reloader Enterprise on OpenShift">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#total-successful-reloads-all-time" class="md-nav__link">
+  <a href="#step-1-create-the-image-pull-secret" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Total successful reloads (all time)
+        Step 1 — Create the image pull secret
       
     </span>
   </a>
@@ -5157,32 +5063,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
         
           <li class="md-nav__item">
-  <a href="#reload-rate-per-minute-5m-window" class="md-nav__link">
+  <a href="#step-2-install-with-the-ubi-image" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reload rate (per minute, 5m window)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#failed-reload-rate-alert-candidate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Failed reload rate (alert candidate)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reloads-by-namespace-requires-enablemetricsbynamespace-true" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reloads by namespace (requires enableMetricsByNamespace: true)
+        Step 2 — Install with the UBI image
       
     </span>
   </a>
@@ -5195,10 +5079,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-prometheus-alerting-rules" class="md-nav__link">
+  <a href="#annotating-deploymentconfigs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Example Prometheus alerting rules
+        Annotating DeploymentConfigs
       
     </span>
   </a>
@@ -5206,82 +5090,32 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#structured-logs" class="md-nav__link">
+  <a href="#security-context-reference" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Structured logs
+        Security context reference
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Structured logs">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#enable-json-logging" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Enable JSON logging
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#log-levels" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Log levels
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#key-log-events-to-watch" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key log events to watch
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#query-logs-with-kubectl" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Query logs with kubectl
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#query-logs-with-loki-logql-if-using-grafana" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Query logs with Loki / LogQL (if using Grafana)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#webhook-notifications" class="md-nav__link">
+  <a href="#verify-the-installation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Webhook notifications
+        Verify the installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oss-vs-enterprise-on-openshift" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OSS vs Enterprise on OpenShift
       
     </span>
   </a>
@@ -5308,186 +5142,280 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="monitor-reloader">Monitor Reloader<a class="headerlink" href="#monitor-reloader" title="Permanent link">#</a></h1>
-<p>Reloader exposes a Prometheus-compatible metrics endpoint and structured logs, giving platform teams visibility into reload activity, failure rates, and operational health.</p>
+<h1 id="how-to-use-reloader-on-openshift">How to Use Reloader on OpenShift<a class="headerlink" href="#how-to-use-reloader-on-openshift" title="Permanent link">#</a></h1>
+<p>Reloader runs on OpenShift without additional configuration in most cases. It auto-detects the cluster type at startup and enables <code>DeploymentConfig</code> support when running on OpenShift. All standard Kubernetes workload types (Deployment, StatefulSet, Daemonset, Argo Rollouts) are supported alongside <code>DeploymentConfig</code>.</p>
+<p>This guide covers:</p>
+<ul>
+<li>What Reloader supports on OpenShift</li>
+<li>Installing Reloader OSS on OpenShift</li>
+<li>Installing Reloader Enterprise with the UBI image</li>
+<li>Security context configuration for OpenShift</li>
+<li>Annotating DeploymentConfigs</li>
+</ul>
 <hr>
-<h2 id="metrics-endpoint">Metrics endpoint<a class="headerlink" href="#metrics-endpoint" title="Permanent link">#</a></h2>
-<p>Reloader exposes metrics at <code>/metrics</code> on <strong>port <code>9090</code></strong>.</p>
-<p>To inspect metrics manually:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>port-forward<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>svc/reloader<span class="w"> </span><span class="m">9090</span>:9090
-curl<span class="w"> </span>-s<span class="w"> </span>http://localhost:9090/metrics<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>reloader_
-</code></pre></div>
-<hr>
-<h2 id="available-metrics">Available metrics<a class="headerlink" href="#available-metrics" title="Permanent link">#</a></h2>
-<h3 id="reloader_reload_executed_total"><code>reloader_reload_executed_total</code><a class="headerlink" href="#reloader_reload_executed_total" title="Permanent link">#</a></h3>
-<p>Counts every reload Reloader has attempted, labelled by success or failure.</p>
-<div class="highlight"><pre><span></span><code>reloader_reload_executed_total{success="true"}    # successful reloads
-reloader_reload_executed_total{success="false"}   # failed reloads
-</code></pre></div>
-<p>This is the primary operational metric. A non-zero <code>success="false"</code> count indicates that Reloader is detecting changes but failing to patch the workload — usually an RBAC problem.</p>
-<h3 id="reloader_reload_executed_total_by_namespace"><code>reloader_reload_executed_total_by_namespace</code><a class="headerlink" href="#reloader_reload_executed_total_by_namespace" title="Permanent link">#</a></h3>
-<p>The same counter broken down by namespace. <strong>Disabled by default</strong> because it has unbounded cardinality in large clusters.</p>
-<p>Enable via Helm:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">enableMetricsByNamespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</code></pre></div>
-<p>Or via environment variable on the Reloader container:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">env</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">field</span><span class="p">:</span>
-<span class="w">        </span><span class="nt">METRICS_COUNT_BY_NAMESPACE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">enabled</span>
-</code></pre></div>
-<p>When enabled:</p>
-<div class="highlight"><pre><span></span><code>reloader_reload_executed_total_by_namespace{success="true",  namespace="production"}   12
-reloader_reload_executed_total_by_namespace{success="false", namespace="staging"}       1
-</code></pre></div>
-<hr>
-<h2 id="scraping-metrics-with-prometheus-operator">Scraping metrics with Prometheus Operator<a class="headerlink" href="#scraping-metrics-with-prometheus-operator" title="Permanent link">#</a></h2>
-<p>If you use the Prometheus Operator (<code>kube-prometheus-stack</code> or similar), enable the built-in <code>PodMonitor</code>:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">podMonitor</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-</code></pre></div>
-<p>This creates a <code>PodMonitor</code> resource in the same namespace as Reloader. Prometheus Operator will discover it automatically if your Prometheus instance watches <code>PodMonitor</code> resources cluster-wide.</p>
-<p>To verify the monitor was created:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>podmonitor<span class="w"> </span>-n<span class="w"> </span>reloader
-</code></pre></div>
-<p>To confirm Prometheus is scraping it, open the Prometheus targets page (<code>/targets</code>) and search for <code>reloader</code>.</p>
-<hr>
-<h2 id="scraping-metrics-without-prometheus-operator">Scraping metrics without Prometheus Operator<a class="headerlink" href="#scraping-metrics-without-prometheus-operator" title="Permanent link">#</a></h2>
-<p>If you manage Prometheus configuration directly (without Prometheus Operator), add a scrape job to your Prometheus config:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">scrape_configs</span><span class="p">:</span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">job_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reloader</span>
-<span class="w">    </span><span class="nt">kubernetes_sd_configs</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">role</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pod</span>
-<span class="w">        </span><span class="nt">namespaces</span><span class="p">:</span>
-<span class="w">          </span><span class="nt">names</span><span class="p">:</span>
-<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reloader</span>
-<span class="w">    </span><span class="nt">relabel_configs</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">source_labels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">__meta_kubernetes_pod_label_app</span><span class="p p-Indicator">]</span>
-<span class="w">        </span><span class="nt">regex</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reloader</span>
-<span class="w">        </span><span class="nt">action</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">keep</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">source_labels</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">__address__</span><span class="p p-Indicator">]</span>
-<span class="w">        </span><span class="nt">regex</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(.+):\d+</span>
-<span class="w">        </span><span class="nt">replacement</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$1:9090</span>
-<span class="w">        </span><span class="nt">target_label</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">__address__</span>
-</code></pre></div>
-<hr>
-<h2 id="example-grafana-queries">Example Grafana queries<a class="headerlink" href="#example-grafana-queries" title="Permanent link">#</a></h2>
-<p>Use these PromQL queries as the basis for Grafana panels.</p>
-<h3 id="total-successful-reloads-all-time">Total successful reloads (all time)<a class="headerlink" href="#total-successful-reloads-all-time" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">sum</span><span class="o">(</span><span class="nv">reloader_reload_executed_total</span><span class="p">{</span><span class="nl">success</span><span class="o">=</span><span class="p">"</span><span class="s">true</span><span class="p">"}</span><span class="o">)</span>
-</code></pre></div>
-<h3 id="reload-rate-per-minute-5m-window">Reload rate (per minute, 5m window)<a class="headerlink" href="#reload-rate-per-minute-5m-window" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">sum</span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">reloader_reload_executed_total</span><span class="p">{</span><span class="nl">success</span><span class="o">=</span><span class="p">"</span><span class="s">true</span><span class="p">"}[</span><span class="s">5m</span><span class="p">]</span><span class="o">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span>
-</code></pre></div>
-<h3 id="failed-reload-rate-alert-candidate">Failed reload rate (alert candidate)<a class="headerlink" href="#failed-reload-rate-alert-candidate" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">sum</span><span class="o">(</span><span class="kr">rate</span><span class="o">(</span><span class="nv">reloader_reload_executed_total</span><span class="p">{</span><span class="nl">success</span><span class="o">=</span><span class="p">"</span><span class="s">false</span><span class="p">"}[</span><span class="s">5m</span><span class="p">]</span><span class="o">))</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">60</span>
-</code></pre></div>
-<h3 id="reloads-by-namespace-requires-enablemetricsbynamespace-true">Reloads by namespace (requires <code>enableMetricsByNamespace: true</code>)<a class="headerlink" href="#reloads-by-namespace-requires-enablemetricsbynamespace-true" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kr">sort_desc</span><span class="o">(</span>
-<span class="w">  </span><span class="k">sum</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="o">(</span><span class="nv">namespace</span><span class="o">)</span><span class="w"> </span><span class="o">(</span>
-<span class="w">    </span><span class="kr">increase</span><span class="o">(</span><span class="nv">reloader_reload_executed_total_by_namespace</span><span class="p">{</span><span class="nl">success</span><span class="o">=</span><span class="p">"</span><span class="s">true</span><span class="p">"}[</span><span class="s">1h</span><span class="p">]</span><span class="o">)</span>
-<span class="w">  </span><span class="o">)</span>
-<span class="o">)</span>
-</code></pre></div>
-<hr>
-<h2 id="example-prometheus-alerting-rules">Example Prometheus alerting rules<a class="headerlink" href="#example-prometheus-alerting-rules" title="Permanent link">#</a></h2>
-<p>Save as a <code>PrometheusRule</code> resource or add to your Prometheus rules file.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">monitoring.coreos.com/v1</span>
-<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PrometheusRule</span>
-<span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reloader-alerts</span>
-<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reloader</span>
-<span class="nt">spec</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">groups</span><span class="p">:</span>
-<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reloader</span>
-<span class="w">      </span><span class="nt">rules</span><span class="p">:</span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">alert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReloaderFailingToRestart</span>
-<span class="w">          </span><span class="nt">expr</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
-<span class="w">            </span><span class="no">increase(reloader_reload_executed_total{success="false"}[5m]) &gt; 0</span>
-<span class="w">          </span><span class="nt">for</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2m</span>
-<span class="w">          </span><span class="nt">labels</span><span class="p">:</span>
-<span class="w">            </span><span class="nt">severity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">warning</span>
-<span class="w">          </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">            </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">"Reloader</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">failing</span><span class="nv"> </span><span class="s">to</span><span class="nv"> </span><span class="s">restart</span><span class="nv"> </span><span class="s">workloads"</span>
-<span class="w">            </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span>
-<span class="w">              </span><span class="no">Reloader detected a ConfigMap or Secret change but failed to</span>
-<span class="w">              </span><span class="no">patch the workload. This is usually an RBAC issue.</span>
-<span class="w">              </span><span class="no">Check Reloader logs: kubectl logs -n reloader -l app=reloader</span>
-
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">alert</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReloaderDown</span>
-<span class="w">          </span><span class="nt">expr</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
-<span class="w">            </span><span class="no">absent(up{job="reloader"} == 1)</span>
-<span class="w">          </span><span class="nt">for</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5m</span>
-<span class="w">          </span><span class="nt">labels</span><span class="p">:</span>
-<span class="w">            </span><span class="nt">severity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">critical</span>
-<span class="w">          </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">            </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">"Reloader</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">running"</span>
-<span class="w">            </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">&gt;</span>
-<span class="w">              </span><span class="no">No Reloader pod is reachable. Configuration changes will not</span>
-<span class="w">              </span><span class="no">trigger workload restarts until Reloader is healthy.</span>
-</code></pre></div>
-<hr>
-<h2 id="structured-logs">Structured logs<a class="headerlink" href="#structured-logs" title="Permanent link">#</a></h2>
-<p>Reloader emits structured logs for every reload event and error.</p>
-<h3 id="enable-json-logging">Enable JSON logging<a class="headerlink" href="#enable-json-logging" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">logFormat</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">json</span>
-</code></pre></div>
-<p>JSON logs are easier to ingest into Loki, Elasticsearch, or CloudWatch.</p>
-<h3 id="log-levels">Log levels<a class="headerlink" href="#log-levels" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">logLevel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">info</span><span class="w">   </span><span class="c1"># trace | debug | info | warning | error | fatal | panic</span>
-</code></pre></div>
-<h3 id="key-log-events-to-watch">Key log events to watch<a class="headerlink" href="#key-log-events-to-watch" title="Permanent link">#</a></h3>
+<h2 id="what-reloader-supports-on-openshift">What Reloader supports on OpenShift<a class="headerlink" href="#what-reloader-supports-on-openshift" title="Permanent link">#</a></h2>
 <table>
 <thead>
 <tr>
-<th>Event</th>
-<th>What it means</th>
+<th>Workload</th>
+<th>Support</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>Changes detected in '&lt;name&gt;' of type 'SECRET'</code></td>
-<td>Reloader detected a data change in a Secret</td>
+<td><code>Deployment</code></td>
+<td>✅ Full support</td>
 </tr>
 <tr>
-<td><code>Changes detected in '&lt;name&gt;' of type 'CONFIGMAP'</code></td>
-<td>Reloader detected a data change in a ConfigMap</td>
+<td><code>StatefulSet</code></td>
+<td>✅ Full support</td>
 </tr>
 <tr>
-<td><code>Updated '&lt;workload&gt;' of type 'Deployment'</code></td>
-<td>Reloader successfully patched a workload</td>
+<td><code>Daemonset</code></td>
+<td>✅ Full support</td>
 </tr>
 <tr>
-<td><code>failed to update deployment</code></td>
-<td>Reloader could not patch the workload — check RBAC</td>
+<td><code>DeploymentConfig</code></td>
+<td>✅ OpenShift only; auto-detected at startup</td>
 </tr>
 <tr>
-<td><code>unable to create Kubernetes client</code></td>
-<td>Reloader cannot reach the API server</td>
+<td><code>Argo Rollout</code></td>
+<td>✅ Requires <code>reloader.isArgoRollouts: true</code></td>
+</tr>
+<tr>
+<td><code>CronJob</code></td>
+<td>✅ Supported</td>
 </tr>
 </tbody>
 </table>
-<h3 id="query-logs-with-kubectl">Query logs with kubectl<a class="headerlink" href="#query-logs-with-kubectl" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Watch live reload events</span>
-kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader<span class="w"> </span>-f<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">"Changes detected|Updated"</span>
-
-<span class="c1"># Show only errors</span>
-kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span><span class="s2">"error\|failed"</span>
+<p>Reloader watches <code>ConfigMaps</code> and <code>Secrets</code> and triggers rolling restarts of matching workloads, regardless of whether they are standard Kubernetes resources or OpenShift-specific ones.</p>
+<hr>
+<h2 id="install-reloader-oss-on-openshift">Install Reloader OSS on OpenShift<a class="headerlink" href="#install-reloader-oss-on-openshift" title="Permanent link">#</a></h2>
+<p>The standard Helm install works on OpenShift. One security context change is required for OpenShift 4.13.3 and later.</p>
+<h3 id="step-1-add-the-stakater-helm-repo">Step 1 — Add the Stakater Helm repo<a class="headerlink" href="#step-1-add-the-stakater-helm-repo" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>stakater<span class="w"> </span>https://stakater.github.io/stakater-charts
+helm<span class="w"> </span>repo<span class="w"> </span>update
 </code></pre></div>
-<h3 id="query-logs-with-loki-logql-if-using-grafana">Query logs with Loki / LogQL (if using Grafana)<a class="headerlink" href="#query-logs-with-loki-logql-if-using-grafana" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>{namespace="reloader"} |= "Changes detected"
+<h3 id="step-2-install-with-openshift-compatible-security-context">Step 2 — Install with OpenShift-compatible security context<a class="headerlink" href="#step-2-install-with-openshift-compatible-security-context" title="Permanent link">#</a></h3>
+<p>On OpenShift 4.13.3 and later, pods must run within dynamically assigned UID ranges. The default Reloader chart sets <code>runAsUser: 65534</code>, which conflicts with OpenShift's dynamic UID assignment. Set it to <code>null</code> to let OpenShift assign the UID:</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--create-namespace<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.deployment.securityContext.runAsUser<span class="o">=</span>null
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>{namespace="reloader"} |= "failed"
+<p>Or in a values file:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">securityContext</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">runAsUser</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<span class="w">      </span><span class="nt">runAsNonRoot</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">seccompProfile</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RuntimeDefault</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--create-namespace<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--values<span class="w"> </span>values.yaml
+</code></pre></div>
+<h3 id="deploymentconfig-auto-detection">DeploymentConfig auto-detection<a class="headerlink" href="#deploymentconfig-auto-detection" title="Permanent link">#</a></h3>
+<p>Reloader probes the cluster API at startup to detect OpenShift. If the <code>apps.openshift.io/v1</code> API is present, it automatically enables <code>DeploymentConfig</code> support and adds the required RBAC rule:</p>
+<div class="highlight"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">apiGroups</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"apps.openshift.io"</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">resources</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"deploymentconfigs"</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"list"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"get"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"update"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"patch"</span><span class="p p-Indicator">]</span>
+</code></pre></div>
+<p>If auto-detection does not work in your environment (for example, if API discovery is restricted), force it on explicitly:</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--create-namespace<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.deployment.securityContext.runAsUser<span class="o">=</span>null<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.isOpenshift<span class="o">=</span><span class="nb">true</span>
 </code></pre></div>
 <hr>
-<h2 id="webhook-notifications">Webhook notifications<a class="headerlink" href="#webhook-notifications" title="Permanent link">#</a></h2>
-<p>In addition to metrics and logs, Reloader can send a webhook notification to Slack, Microsoft Teams, Google Chat, or any https endpoint whenever a reload is triggered.</p>
-<p>See <a href="alerting-on-reload.html">Alert When Reloader Triggers a Restart</a> for setup instructions.</p>
+<h2 id="install-reloader-enterprise-on-openshift">Install Reloader Enterprise on OpenShift<a class="headerlink" href="#install-reloader-enterprise-on-openshift" title="Permanent link">#</a></h2>
+<p>Reloader Enterprise is recommended for OpenShift environments that require Red Hat certified workloads, regulated industries, or commercial SLA coverage. The Enterprise UBI (Red Hat Universal Base Image) variant satisfies Red Hat certification requirements.</p>
+<h3 id="step-1-create-the-image-pull-secret">Step 1 — Create the image pull secret<a class="headerlink" href="#step-1-create-the-image-pull-secret" title="Permanent link">#</a></h3>
+<p>Reloader Enterprise images are hosted on GitHub Container Registry. Authenticate using your GitHub credentials or the token provided by Stakater:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>docker-registry<span class="w"> </span>regcred<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--docker-server<span class="o">=</span>ghcr.io<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--docker-username<span class="o">=</span>&lt;github-username-or-reloader-enterprise&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--docker-password<span class="o">=</span>&lt;github-token-or-stakater-token&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>reloader
+</code></pre></div>
+<h3 id="step-2-install-with-the-ubi-image">Step 2 — Install with the UBI image<a class="headerlink" href="#step-2-install-with-the-ubi-image" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--create-namespace<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>image.repository<span class="o">=</span>ghcr.io/stakater/reloader-enterprise<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>image.tag<span class="o">=</span>&lt;version&gt;-ubi<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span><span class="s2">"global.imagePullSecrets[0].name=regcred"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>reloader.deployment.securityContext.runAsUser<span class="o">=</span>null
+</code></pre></div>
+<p>Or in a values file:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">image</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">repository</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/stakater/reloader-enterprise</span>
+<span class="w">  </span><span class="nt">tag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;version&gt;-ubi</span>
+
+<span class="nt">global</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">imagePullSecrets</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">regcred</span>
+
+<span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">securityContext</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">runAsUser</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<span class="w">      </span><span class="nt">runAsNonRoot</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">seccompProfile</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RuntimeDefault</span>
+</code></pre></div>
+<p>The <code>-ubi</code> suffix selects the UBI variant. The standard variant (<code>ghcr.io/stakater/reloader-enterprise:&lt;version&gt;</code>) is also available if UBI is not required.</p>
+<p>See the <a href="../installation/install.html">Enterprise installation guide</a> for the full access and subscription setup.</p>
+<hr>
+<h2 id="annotating-deploymentconfigs">Annotating DeploymentConfigs<a class="headerlink" href="#annotating-deploymentconfigs" title="Permanent link">#</a></h2>
+<p>Reloader uses the same annotation patterns on <code>DeploymentConfig</code> as on standard Kubernetes workloads.</p>
+<p><strong>Auto — watch all referenced ConfigMaps and Secrets:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps.openshift.io/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DeploymentConfig</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">reloader.stakater.com/auto</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp:latest</span>
+<span class="w">          </span><span class="nt">envFrom</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">secretRef</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+</code></pre></div>
+<p><strong>Named — watch a specific Secret or ConfigMap by name:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">secret.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"app-secrets"</span>
+<span class="w">    </span><span class="nt">configmap.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"app-config"</span>
+</code></pre></div>
+<p><strong>Search and match — resource-owner controlled:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># On the DeploymentConfig</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">reloader.stakater.com/search</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+
+<span class="c1"># On the Secret</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">reloader.stakater.com/match</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+</code></pre></div>
+<p>All three patterns work identically across <code>Deployment</code>, <code>StatefulSet</code>, <code>Daemonset</code>, and <code>DeploymentConfig</code>.</p>
+<hr>
+<h2 id="security-context-reference">Security context reference<a class="headerlink" href="#security-context-reference" title="Permanent link">#</a></h2>
+<p>The default pod security context Reloader sets:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">securityContext</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">runAsNonRoot</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">runAsUser</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">65534</span>
+<span class="w">  </span><span class="nt">seccompProfile</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RuntimeDefault</span>
+</code></pre></div>
+<p>For OpenShift 4.13.3 and later, override <code>runAsUser</code> to <code>null</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">securityContext</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">runAsUser</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">null</span>
+<span class="w">      </span><span class="nt">runAsNonRoot</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">seccompProfile</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RuntimeDefault</span>
+</code></pre></div>
+<p>This allows OpenShift to assign a UID from the namespace's allowed UID range, which is required by the <code>restricted</code> and <code>restricted-v2</code> Security Context Constraints (SCCs). No custom SCC is needed.</p>
+<p>To additionally harden the container:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">containerSecurityContext</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">allowPrivilegeEscalation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">      </span><span class="nt">capabilities</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">drop</span><span class="p">:</span>
+<span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ALL</span>
+<span class="w">      </span><span class="nt">readOnlyRootFilesystem</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p>When <code>readOnlyRootFilesystem: true</code> is set, the chart automatically mounts an <code>emptyDir</code> at <code>/tmp/</code> so Reloader can write temporary files.</p>
+<hr>
+<h2 id="verify-the-installation">Verify the installation<a class="headerlink" href="#verify-the-installation" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check Reloader is running</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>reloader
+
+<span class="c1"># Confirm DeploymentConfig RBAC was added</span>
+kubectl<span class="w"> </span>describe<span class="w"> </span>clusterrole<span class="w"> </span>reloader-reloader-role<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>deploymentconfig
+
+<span class="c1"># Test a reload by patching a Secret</span>
+kubectl<span class="w"> </span>patch<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>default<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--type<span class="o">=</span><span class="s1">'json'</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="o">=</span><span class="s1">'[{"op":"replace","path":"/data/example","value":"bmV3dmFsdWU="}]'</span>
+
+<span class="c1"># Watch for the rollout</span>
+kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>dc/myapp<span class="w"> </span>-n<span class="w"> </span>default
+</code></pre></div>
+<p>Check Reloader logs to confirm the event was processed:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader-reloader<span class="w"> </span>--tail<span class="o">=</span><span class="m">20</span>
+</code></pre></div>
+<p>Expected output:</p>
+<div class="highlight"><pre><span></span><code>Changes detected in 'app-secrets' of type 'Secret' in namespace 'default'
+Updated 'myapp' of type 'DeploymentConfig' in namespace 'default'
+</code></pre></div>
+<hr>
+<h2 id="oss-vs-enterprise-on-openshift">OSS vs Enterprise on OpenShift<a class="headerlink" href="#oss-vs-enterprise-on-openshift" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Reloader OSS</th>
+<th>Reloader Enterprise</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DeploymentConfig support</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Standard workload types</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>UBI image variant</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Red Hat certified image</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Hardened, CVE-scanned image</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Commercial support and SLA</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Suitable for regulated environments</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<p>To get Reloader Enterprise, open a ticket at the <a href="https://support.stakater.com/">Stakater support portal</a> or contact your Stakater account team.</p>
 
 
 
