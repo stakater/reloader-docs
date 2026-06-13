@@ -5,13 +5,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/concepts/comparisons/reloader-vs-init-containers.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/concepts/comparisons/reloader-vs-doppler-reload.html">
       
       
-        <link rel="prev" href="reloader-vs-sidecar-config-watchers.html">
+        <link rel="prev" href="reloader-vs-infisical-reload.html">
       
       
-        <link rel="next" href="reloader-vs-manual-rollouts.html">
+        <link rel="next" href="../../installation/install-oss.html">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>Reloader vs Init Containers - Reloader</title>
+        <title>Reloader vs Doppler Built-In Reload - Reloader</title>
       
     
     
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reloader-vs-init-containers" class="md-skip">
+        <a href="#reloader-vs-doppler-built-in-reload" class="md-skip">
           Skip to content
         </a>
       
@@ -2555,37 +2555,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reloader vs Init Containers
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="reloader-vs-init-containers.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="reloader-vs-init-containers.html" class="md-nav__link">
         
   
   
@@ -2601,216 +2574,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#the-configuration-reload-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Configuration Reload Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-init-containers-are" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What Init Containers Are
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advantages-of-init-containers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Advantages of Init Containers
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Advantages of Init Containers">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pre-processing-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pre-processing Configuration
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#environment-preparation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Environment Preparation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#simple-startup-logic" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Simple Startup Logic
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#limitations-of-init-containers-for-configuration-updates" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Limitations of Init Containers for Configuration Updates
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-reloader-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How Reloader Works
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-differences" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key Differences
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-init-containers-make-sense" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When Init Containers Make Sense
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-reloader-is-a-better-fit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When Reloader Is a Better Fit
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FAQ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="FAQ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#do-init-containers-rerun-when-a-configmap-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Do init containers rerun when a ConfigMap changes?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#can-init-containers-restart-pods-when-configuration-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Can init containers restart pods when configuration changes?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#can-init-containers-and-reloader-be-used-together" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Can init containers and Reloader be used together?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2988,10 +2751,37 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="reloader-vs-doppler-reload.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reloader vs Doppler Built-In Reload
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="reloader-vs-doppler-reload.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -3007,6 +2797,94 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#what-dopplers-built-in-reload-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Doppler's built-in reload does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#feature-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feature comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-dopplers-built-in-reload-is-enough" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When Doppler's built-in reload is enough
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-use-reloader-instead" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to use Reloader instead
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-both-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using both together
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -5025,10 +4903,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#the-configuration-reload-problem" class="md-nav__link">
+  <a href="#what-dopplers-built-in-reload-does" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Configuration Reload Problem
+        What Doppler's built-in reload does
       
     </span>
   </a>
@@ -5036,10 +4914,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-init-containers-are" class="md-nav__link">
+  <a href="#feature-comparison" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What Init Containers Are
+        Feature comparison
       
     </span>
   </a>
@@ -5047,60 +4925,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#advantages-of-init-containers" class="md-nav__link">
+  <a href="#when-dopplers-built-in-reload-is-enough" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Advantages of Init Containers
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Advantages of Init Containers">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pre-processing-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pre-processing Configuration
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#environment-preparation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Environment Preparation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#simple-startup-logic" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Simple Startup Logic
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#limitations-of-init-containers-for-configuration-updates" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Limitations of Init Containers for Configuration Updates
+        When Doppler's built-in reload is enough
       
     </span>
   </a>
@@ -5108,10 +4936,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-reloader-works" class="md-nav__link">
+  <a href="#when-to-use-reloader-instead" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How Reloader Works
+        When to use Reloader instead
       
     </span>
   </a>
@@ -5119,32 +4947,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-differences" class="md-nav__link">
+  <a href="#using-both-together" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Key Differences
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-init-containers-make-sense" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When Init Containers Make Sense
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-reloader-is-a-better-fit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When Reloader Is a Better Fit
+        Using both together
       
     </span>
   </a>
@@ -5159,56 +4965,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FAQ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="FAQ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#do-init-containers-rerun-when-a-configmap-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Do init containers rerun when a ConfigMap changes?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#can-init-containers-restart-pods-when-configuration-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Can init containers restart pods when configuration changes?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#can-init-containers-and-reloader-be-used-together" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Can init containers and Reloader be used together?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -5232,161 +4988,194 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="reloader-vs-init-containers">Reloader vs Init Containers<a class="headerlink" href="#reloader-vs-init-containers" title="Permanent link">#</a></h1>
-<p>In Kubernetes, applications often rely on configuration stored in <strong>ConfigMaps</strong> and <strong>Secrets</strong>.</p>
-<p>When those resources change, running pods do not automatically reload the updated values. Platform teams therefore need a strategy to ensure applications pick up configuration changes.</p>
-<p>Two approaches sometimes discussed are:</p>
+<h1 id="reloader-vs-doppler-built-in-reload">Reloader vs Doppler Built-In Reload<a class="headerlink" href="#reloader-vs-doppler-built-in-reload" title="Permanent link">#</a></h1>
+<p>The Doppler Kubernetes operator includes a built-in reload feature for <code>Deployment</code> resources. When a managed Kubernetes Secret is updated by the operator, it can automatically trigger a rolling restart of Deployments that reference that Secret and carry the <code>secrets.doppler.com/reload: "true"</code> annotation.</p>
+<p>This page compares that built-in mechanism to using Stakater Reloader for the same job.</p>
+<blockquote>
+<p>The Doppler documentation explicitly recommends Stakater Reloader for workload types beyond Deployments.</p>
+</blockquote>
+<hr>
+<h2 id="what-dopplers-built-in-reload-does">What Doppler's built-in reload does<a class="headerlink" href="#what-dopplers-built-in-reload-does" title="Permanent link">#</a></h2>
+<p>The Doppler operator polls the Doppler API every 60 seconds (configurable via <code>spec.resyncSeconds</code>). When it detects a change, it updates the managed Kubernetes Secret. If a Deployment in the same namespace references that Secret and carries <code>secrets.doppler.com/reload: "true"</code> on the pod template, the operator triggers a rolling restart by patching an annotation on the Deployment.</p>
+<div class="highlight"><pre><span></span><code>Doppler secret changes
+↓
+Doppler operator syncs Kubernetes Secret (every resyncSeconds)
+↓
+Operator checks for annotated Deployments in the same namespace
+↓
+Operator patches Deployment annotation → rolling restart
+</code></pre></div>
+<p>Three conditions must all be met for the built-in reload to fire:</p>
 <ol>
-<li>Using <strong>init containers</strong> to prepare configuration</li>
-<li>Using a controller such as <strong>Reloader</strong> to restart workloads when configuration changes</li>
+<li>The Deployment is in the <strong>same namespace</strong> as the managed Secret</li>
+<li>The Deployment has <code>secrets.doppler.com/reload: "true"</code> on <code>spec.template.metadata.annotations</code></li>
+<li>The Deployment references the managed Secret</li>
 </ol>
-<p>While both can be involved in configuration management, they solve <strong>different problems in the pod lifecycle</strong>.</p>
 <hr>
-<h2 id="the-configuration-reload-problem">The Configuration Reload Problem<a class="headerlink" href="#the-configuration-reload-problem" title="Permanent link">#</a></h2>
-<p>In Kubernetes, updating a ConfigMap or Secret does <strong>not automatically restart pods</strong>.</p>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code>ConfigMap<span class="w"> </span>updated
-↓
-Pods<span class="w"> </span><span class="k">continue</span><span class="w"> </span>running
-↓
-Application<span class="w"> </span>still<span class="w"> </span>uses<span class="w"> </span>old<span class="w"> </span>configuration
-</code></pre></div>
-<p>This happens because Kubernetes only triggers a rollout when the <strong>Pod specification changes</strong>, not when referenced resources change.</p>
-<hr>
-<h2 id="what-init-containers-are">What Init Containers Are<a class="headerlink" href="#what-init-containers-are" title="Permanent link">#</a></h2>
-<p>Init containers are special containers that run <strong>before the main application container starts</strong>.</p>
-<p>Their purpose is to prepare the environment required for the application to run.</p>
-<p>Typical tasks performed by init containers include:</p>
-<ul>
-<li>generating configuration files</li>
-<li>downloading dependencies</li>
-<li>preparing directories or volumes</li>
-<li>validating prerequisites</li>
-</ul>
-<p>Example workflow:</p>
-<div class="highlight"><pre><span></span><code>Pod<span class="w"> </span>starts
-↓
-Init<span class="w"> </span>container<span class="w"> </span>runs
-↓
-Configuration<span class="w"> </span>prepared
-↓
-Application<span class="w"> </span>container<span class="w"> </span>starts
-</code></pre></div>
-<p>Init containers run <strong>once per pod startup</strong>.</p>
-<hr>
-<h2 id="advantages-of-init-containers">Advantages of Init Containers<a class="headerlink" href="#advantages-of-init-containers" title="Permanent link">#</a></h2>
-<p>Init containers can be useful in several configuration-related scenarios.</p>
-<h3 id="pre-processing-configuration">Pre-processing Configuration<a class="headerlink" href="#pre-processing-configuration" title="Permanent link">#</a></h3>
-<p>Init containers can generate configuration files before the application starts.</p>
-<p>For example, they can combine multiple sources of configuration into a single file.</p>
-<h3 id="environment-preparation">Environment Preparation<a class="headerlink" href="#environment-preparation" title="Permanent link">#</a></h3>
-<p>They allow applications to start with all required configuration already in place.</p>
-<h3 id="simple-startup-logic">Simple Startup Logic<a class="headerlink" href="#simple-startup-logic" title="Permanent link">#</a></h3>
-<p>Init containers are a built-in Kubernetes feature and do not require additional controllers.</p>
-<hr>
-<h2 id="limitations-of-init-containers-for-configuration-updates">Limitations of Init Containers for Configuration Updates<a class="headerlink" href="#limitations-of-init-containers-for-configuration-updates" title="Permanent link">#</a></h2>
-<p>Init containers run <strong>only during pod startup</strong>.</p>
-<p>Because of this, they cannot react to configuration changes that occur after the pod is already running.</p>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code>Pod<span class="w"> </span>starts
-↓
-Init<span class="w"> </span>container<span class="w"> </span>prepares<span class="w"> </span>configuration
-↓
-Application<span class="w"> </span>runs
-↓
-ConfigMap<span class="w"> </span>updated<span class="w"> </span>later
-↓
-Init<span class="w"> </span>container<span class="w"> </span>does<span class="w"> </span>NOT<span class="w"> </span>run<span class="w"> </span>again
-↓
-Application<span class="w"> </span>keeps<span class="w"> </span>old<span class="w"> </span>configuration
-</code></pre></div>
-<p>This means init containers alone cannot ensure applications reload configuration updates.</p>
-<p>Additional mechanisms are still required to restart pods when configuration changes.</p>
-<hr>
-<h2 id="how-reloader-works">How Reloader Works<a class="headerlink" href="#how-reloader-works" title="Permanent link">#</a></h2>
-<p>Reloader is a Kubernetes controller that watches for changes in:</p>
-<ul>
-<li>ConfigMaps</li>
-<li>Secrets</li>
-</ul>
-<p>When those resources change, Reloader automatically triggers a rolling restart of workloads that reference them.</p>
-<p>Typical workflow:</p>
-<div class="highlight"><pre><span></span><code>ConfigMap<span class="w"> </span>or<span class="w"> </span>Secret<span class="w"> </span>updated
-↓
-Reloader<span class="w"> </span>detects<span class="w"> </span>change
-↓
-Deployment<span class="w"> </span>patched
-↓
-Kubernetes<span class="w"> </span>rolling<span class="w"> </span>restart<span class="w"> </span>triggered
-</code></pre></div>
-<p>This ensures applications restart and load the updated configuration.</p>
-<hr>
-<h2 id="key-differences">Key Differences<a class="headerlink" href="#key-differences" title="Permanent link">#</a></h2>
+<h2 id="feature-comparison">Feature comparison<a class="headerlink" href="#feature-comparison" title="Permanent link">#</a></h2>
 <table>
 <thead>
 <tr>
-<th>Aspect</th>
+<th>Capability</th>
+<th>Doppler built-in reload</th>
 <th>Reloader</th>
-<th>Init Containers</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Purpose</td>
-<td>Restart workloads when configuration changes</td>
-<td>Prepare environment before pod startup</td>
+<td>Deployments</td>
+<td>✅</td>
+<td>✅</td>
 </tr>
 <tr>
-<td>Lifecycle</td>
-<td>Reacts during runtime</td>
-<td>Runs only during pod initialization</td>
+<td>StatefulSets</td>
+<td>❌</td>
+<td>✅</td>
 </tr>
 <tr>
-<td>Automation</td>
-<td>Automatic restart on config change</td>
-<td>No reaction to later changes</td>
+<td>Daemonsets</td>
+<td>❌</td>
+<td>✅</td>
 </tr>
 <tr>
-<td>Operational scope</td>
-<td>Cluster-level controller</td>
-<td>Pod-level container</td>
+<td>Argo Rollouts</td>
+<td>❌</td>
+<td>✅ (requires <code>isArgoRollouts: true</code>)</td>
+</tr>
+<tr>
+<td>CronJobs</td>
+<td>❌ Not documented</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Watches ConfigMaps</td>
+<td>❌ Operator does not sync to ConfigMaps</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Works with non-Doppler secrets (ESO, CSI, plain Secrets)</td>
+<td>❌ Doppler-managed Secrets only</td>
+<td>✅ Any Kubernetes Secret or ConfigMap</td>
+</tr>
+<tr>
+<td>Cross-namespace reload</td>
+<td>❌ Deployment must be in the same namespace as the Secret</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Named-resource reload annotation</td>
+<td>❌</td>
+<td>✅ <code>secret.reloader.stakater.com/reload</code></td>
+</tr>
+<tr>
+<td>Cooldown between reloads</td>
+<td>❌</td>
+<td>✅ <code>pause-period</code> annotation</td>
+</tr>
+<tr>
+<td>Namespace scoping</td>
+<td>❌</td>
+<td>✅ <code>namespaceSelector</code>, <code>ignoreNamespaces</code></td>
+</tr>
+<tr>
+<td>Prometheus metrics</td>
+<td>❌</td>
+<td>✅ <code>reloader_reload_executed_total</code></td>
+</tr>
+<tr>
+<td>Webhook alerts (Slack, Teams, Google Chat)</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>High availability with leader election</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Commercial support and SLA</td>
+<td>❌</td>
+<td>✅ Reloader Enterprise</td>
+</tr>
+<tr>
+<td>Hardened container images</td>
+<td>❌</td>
+<td>✅ Reloader Enterprise</td>
 </tr>
 </tbody>
 </table>
-<p>Init containers focus on <strong>startup preparation</strong>, while Reloader handles <strong>runtime configuration updates</strong>.</p>
 <hr>
-<h2 id="when-init-containers-make-sense">When Init Containers Make Sense<a class="headerlink" href="#when-init-containers-make-sense" title="Permanent link">#</a></h2>
-<p>Init containers are appropriate when:</p>
+<h2 id="when-dopplers-built-in-reload-is-enough">When Doppler's built-in reload is enough<a class="headerlink" href="#when-dopplers-built-in-reload-is-enough" title="Permanent link">#</a></h2>
+<p>If all of the following are true, the Doppler operator's built-in reload covers your use case without adding Reloader:</p>
 <ul>
-<li>configuration must be generated before application startup</li>
-<li>files need to be prepared in shared volumes</li>
-<li>initialization logic must run before the application begins</li>
+<li>You run only <strong>Deployments</strong> — no StatefulSets, Daemonsets, or Argo Rollouts</li>
+<li>All secrets come from <strong>Doppler</strong> — you are not mixing in ESO, CSI Driver, plain Secrets, or ConfigMaps</li>
+<li>The Deployment is in the <strong>same namespace</strong> as the managed Secret</li>
+<li>You do not need reload metrics, webhook alerts, or cooldown periods</li>
+<li>You have no compliance or SLA requirements for the reload mechanism itself</li>
 </ul>
-<p>They are commonly used for <strong>setup and bootstrapping tasks</strong>.</p>
 <hr>
-<h2 id="when-reloader-is-a-better-fit">When Reloader Is a Better Fit<a class="headerlink" href="#when-reloader-is-a-better-fit" title="Permanent link">#</a></h2>
-<p>Reloader is more appropriate when:</p>
+<h2 id="when-to-use-reloader-instead">When to use Reloader instead<a class="headerlink" href="#when-to-use-reloader-instead" title="Permanent link">#</a></h2>
+<p><strong>StatefulSets and Daemonsets</strong> — the Doppler operator explicitly does not support them. If any workload in your cluster is a StatefulSet or Daemonset that consumes Doppler-managed secrets, Reloader is required.</p>
+<p><strong>Argo Rollouts</strong> — not supported by the Doppler operator. Reloader handles Argo Rollouts natively with <code>isArgoRollouts: true</code>.</p>
+<p><strong>Cross-namespace secrets</strong> — the Doppler operator's built-in reload only fires when the Deployment and the managed Secret are in the same namespace. Reloader has no such restriction.</p>
+<p><strong>Multiple secret backends</strong> — if the same application consumes secrets from both Doppler and AWS Secrets Manager (via ESO), or Doppler alongside a plain ConfigMap, you need Reloader. The Doppler operator only watches its own managed Secrets.</p>
+<p><strong>ConfigMap reload</strong> — the Doppler operator does not sync to ConfigMaps and does not trigger restarts on ConfigMap changes. Reloader does both.</p>
+<p><strong>Platform-wide consistency</strong> — if multiple teams in the same cluster use different secret tools, Reloader provides a single reload mechanism that works regardless of how secrets arrive.</p>
+<p><strong>Regulated environments</strong> — Reloader Enterprise provides hardened images, commercial support, and SLA coverage that the Doppler operator does not offer.</p>
+<hr>
+<h2 id="using-both-together">Using both together<a class="headerlink" href="#using-both-together" title="Permanent link">#</a></h2>
+<p>You can run both the Doppler operator and Reloader in the same cluster, but do not enable both reload mechanisms on the same workload. If a Deployment has both <code>secrets.doppler.com/reload: "true"</code> and a Reloader annotation, both fire on the same Secret update and the workload restarts twice.</p>
+<p>Pick one per workload:</p>
 <ul>
-<li>configuration changes after applications are already running</li>
-<li>Secrets or ConfigMaps are updated dynamically</li>
-<li>automated rolling restarts are required</li>
-<li>platform teams want a consistent solution across workloads</li>
+<li>Use Doppler's built-in reload on Deployments where you want operator-managed simplicity and no additional tools</li>
+<li>Use Reloader on all other workload types, and on any workload that needs cross-namespace support, multi-backend reload, or Enterprise features</li>
 </ul>
-<p>These scenarios are common in modern Kubernetes environments.</p>
 <hr>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
-<p>Init containers and Reloader serve different roles in Kubernetes.</p>
-<p>Init containers prepare the application environment <strong>before a pod starts</strong>.</p>
-<p>Reloader ensures applications restart <strong>when configuration changes during runtime</strong>.</p>
-<p>Both can coexist in the same platform, but they solve different stages of the application lifecycle.</p>
-<hr>
-<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">#</a></h2>
-<h3 id="do-init-containers-rerun-when-a-configmap-changes">Do init containers rerun when a ConfigMap changes?<a class="headerlink" href="#do-init-containers-rerun-when-a-configmap-changes" title="Permanent link">#</a></h3>
-<p>No. Init containers only run when a pod starts. They do not rerun when configuration changes later.</p>
-<h3 id="can-init-containers-restart-pods-when-configuration-changes">Can init containers restart pods when configuration changes?<a class="headerlink" href="#can-init-containers-restart-pods-when-configuration-changes" title="Permanent link">#</a></h3>
-<p>No. Init containers cannot trigger restarts automatically.</p>
-<h3 id="can-init-containers-and-reloader-be-used-together">Can init containers and Reloader be used together?<a class="headerlink" href="#can-init-containers-and-reloader-be-used-together" title="Permanent link">#</a></h3>
-<p>Yes. Init containers can prepare configuration during startup, while Reloader ensures applications restart if configuration changes later.</p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Recommendation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deployments only, Doppler secrets only, same namespace</td>
+<td>Either works; Doppler built-in is simpler</td>
+</tr>
+<tr>
+<td>StatefulSets or Daemonsets</td>
+<td>Reloader required</td>
+</tr>
+<tr>
+<td>Argo Rollouts</td>
+<td>Reloader required</td>
+</tr>
+<tr>
+<td>Cross-namespace secrets</td>
+<td>Reloader required</td>
+</tr>
+<tr>
+<td>Mixed secret backends (Doppler + ESO, CSI, or plain Secrets)</td>
+<td>Reloader</td>
+</tr>
+<tr>
+<td>ConfigMap reload</td>
+<td>Reloader</td>
+</tr>
+<tr>
+<td>Platform-wide unified reload mechanism</td>
+<td>Reloader</td>
+</tr>
+<tr>
+<td>Regulated environment, SLA, hardened images</td>
+<td>Reloader Enterprise</td>
+</tr>
+</tbody>
+</table>
+<p>See the <a href="../../integrations/doppler/doppler-operator.html">Doppler Operator Guide</a> for the complete setup walkthrough.</p>
 
 
 

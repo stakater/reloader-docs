@@ -5,13 +5,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/concepts/comparisons/reloader-vs-init-containers.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-node-24.x-lockfile/integrations/doppler/index.html">
       
       
-        <link rel="prev" href="reloader-vs-sidecar-config-watchers.html">
+        <link rel="prev" href="../infisical/infisical-operator.html">
       
       
-        <link rel="next" href="reloader-vs-manual-rollouts.html">
+        <link rel="next" href="doppler-operator.html">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>Reloader vs Init Containers - Reloader</title>
+        <title>Overview - Reloader</title>
       
     
     
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reloader-vs-init-containers" class="md-skip">
+        <a href="#doppler-integration" class="md-skip">
           Skip to content
         </a>
       
@@ -2289,20 +2289,18 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -2323,7 +2321,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2341,7 +2339,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../why-configuration-reloading-matters.html" class="md-nav__link">
+      <a href="../../concepts/why-configuration-reloading-matters.html" class="md-nav__link">
         
   
   
@@ -2369,7 +2367,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../secret-propagation-problem-kubernetes.html" class="md-nav__link">
+      <a href="../../concepts/secret-propagation-problem-kubernetes.html" class="md-nav__link">
         
   
   
@@ -2394,20 +2392,18 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3">
         
           
           <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
@@ -2428,7 +2424,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2446,7 +2442,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-helm.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-helm.html" class="md-nav__link">
         
   
   
@@ -2474,7 +2470,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-checksum-annotations.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-checksum-annotations.html" class="md-nav__link">
         
   
   
@@ -2502,7 +2498,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-kyverno.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-kyverno.html" class="md-nav__link">
         
   
   
@@ -2530,7 +2526,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-sidecar-config-watchers.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-sidecar-config-watchers.html" class="md-nav__link">
         
   
   
@@ -2555,37 +2551,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Reloader vs Init Containers
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="reloader-vs-init-containers.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../concepts/comparisons/reloader-vs-init-containers.html" class="md-nav__link">
         
   
   
@@ -2601,216 +2570,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#the-configuration-reload-problem" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        The Configuration Reload Problem
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-init-containers-are" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What Init Containers Are
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#advantages-of-init-containers" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Advantages of Init Containers
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Advantages of Init Containers">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pre-processing-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pre-processing Configuration
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#environment-preparation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Environment Preparation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#simple-startup-logic" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Simple Startup Logic
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#limitations-of-init-containers-for-configuration-updates" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Limitations of Init Containers for Configuration Updates
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-reloader-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How Reloader Works
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-differences" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key Differences
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-init-containers-make-sense" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When Init Containers Make Sense
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-reloader-is-a-better-fit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When Reloader Is a Better Fit
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FAQ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="FAQ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#do-init-containers-rerun-when-a-configmap-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Do init containers rerun when a ConfigMap changes?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#can-init-containers-restart-pods-when-configuration-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Can init containers restart pods when configuration changes?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#can-init-containers-and-reloader-be-used-together" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Can init containers and Reloader be used together?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2823,7 +2582,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-manual-rollouts.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-manual-rollouts.html" class="md-nav__link">
         
   
   
@@ -2851,7 +2610,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-gitops-tools.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-gitops-tools.html" class="md-nav__link">
         
   
   
@@ -2879,7 +2638,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-secret-operators.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-secret-operators.html" class="md-nav__link">
         
   
   
@@ -2907,7 +2666,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-cert-manager.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-cert-manager.html" class="md-nav__link">
         
   
   
@@ -2935,7 +2694,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-app-level-reload.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-app-level-reload.html" class="md-nav__link">
         
   
   
@@ -2963,7 +2722,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-infisical-reload.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-infisical-reload.html" class="md-nav__link">
         
   
   
@@ -2991,7 +2750,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="reloader-vs-doppler-reload.html" class="md-nav__link">
+      <a href="../../concepts/comparisons/reloader-vs-doppler-reload.html" class="md-nav__link">
         
   
   
@@ -3503,18 +3262,20 @@ This documentation is for a pull request deployment and is unreleased, it is onl
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked="">
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -3535,7 +3296,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3553,7 +3314,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/index.html" class="md-nav__link">
+      <a href="../index.html" class="md-nav__link">
         
   
   
@@ -3628,7 +3389,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/conjur/index.html" class="md-nav__link">
+      <a href="../conjur/index.html" class="md-nav__link">
         
   
   
@@ -3656,7 +3417,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/conjur/conjur-eso.html" class="md-nav__link">
+      <a href="../conjur/conjur-eso.html" class="md-nav__link">
         
   
   
@@ -3684,7 +3445,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/conjur/conjur-sidecar.html" class="md-nav__link">
+      <a href="../conjur/conjur-sidecar.html" class="md-nav__link">
         
   
   
@@ -3712,7 +3473,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/conjur/conjur-csi.html" class="md-nav__link">
+      <a href="../conjur/conjur-csi.html" class="md-nav__link">
         
   
   
@@ -3795,7 +3556,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/index.html" class="md-nav__link">
+      <a href="../vault/index.html" class="md-nav__link">
         
   
   
@@ -3823,7 +3584,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/vault-eso.html" class="md-nav__link">
+      <a href="../vault/vault-eso.html" class="md-nav__link">
         
   
   
@@ -3851,7 +3612,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/vault-vso.html" class="md-nav__link">
+      <a href="../vault/vault-vso.html" class="md-nav__link">
         
   
   
@@ -3879,7 +3640,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/vault-csi.html" class="md-nav__link">
+      <a href="../vault/vault-csi.html" class="md-nav__link">
         
   
   
@@ -3907,7 +3668,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/vault/vault-csi-file.html" class="md-nav__link">
+      <a href="../vault/vault-csi-file.html" class="md-nav__link">
         
   
   
@@ -3990,7 +3751,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/index.html" class="md-nav__link">
+      <a href="../openbao/index.html" class="md-nav__link">
         
   
   
@@ -4018,7 +3779,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/openbao-eso.html" class="md-nav__link">
+      <a href="../openbao/openbao-eso.html" class="md-nav__link">
         
   
   
@@ -4046,7 +3807,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/openbao-bso.html" class="md-nav__link">
+      <a href="../openbao/openbao-bso.html" class="md-nav__link">
         
   
   
@@ -4074,7 +3835,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/openbao-csi.html" class="md-nav__link">
+      <a href="../openbao/openbao-csi.html" class="md-nav__link">
         
   
   
@@ -4102,7 +3863,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/openbao/openbao-csi-file.html" class="md-nav__link">
+      <a href="../openbao/openbao-csi-file.html" class="md-nav__link">
         
   
   
@@ -4185,7 +3946,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/aws/index.html" class="md-nav__link">
+      <a href="../aws/index.html" class="md-nav__link">
         
   
   
@@ -4213,7 +3974,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/aws/aws-eso.html" class="md-nav__link">
+      <a href="../aws/aws-eso.html" class="md-nav__link">
         
   
   
@@ -4241,7 +4002,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/aws/aws-csi.html" class="md-nav__link">
+      <a href="../aws/aws-csi.html" class="md-nav__link">
         
   
   
@@ -4324,7 +4085,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/gcp/index.html" class="md-nav__link">
+      <a href="../gcp/index.html" class="md-nav__link">
         
   
   
@@ -4352,7 +4113,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/gcp/gcp-eso.html" class="md-nav__link">
+      <a href="../gcp/gcp-eso.html" class="md-nav__link">
         
   
   
@@ -4380,7 +4141,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/gcp/gcp-csi.html" class="md-nav__link">
+      <a href="../gcp/gcp-csi.html" class="md-nav__link">
         
   
   
@@ -4463,7 +4224,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/azure/index.html" class="md-nav__link">
+      <a href="../azure/index.html" class="md-nav__link">
         
   
   
@@ -4491,7 +4252,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/azure/azure-eso.html" class="md-nav__link">
+      <a href="../azure/azure-eso.html" class="md-nav__link">
         
   
   
@@ -4519,7 +4280,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/azure/azure-csi.html" class="md-nav__link">
+      <a href="../azure/azure-csi.html" class="md-nav__link">
         
   
   
@@ -4602,7 +4363,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/infisical/index.html" class="md-nav__link">
+      <a href="../infisical/index.html" class="md-nav__link">
         
   
   
@@ -4630,7 +4391,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/infisical/infisical-operator.html" class="md-nav__link">
+      <a href="../infisical/infisical-operator.html" class="md-nav__link">
         
   
   
@@ -4663,18 +4424,20 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_9">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_9" checked="">
         
           
           <label class="md-nav__link" for="__nav_6_9" id="__nav_6_9_label" tabindex="0">
@@ -4695,7 +4458,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_9_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_9">
             <span class="md-nav__icon md-icon"></span>
             
@@ -4710,10 +4473,37 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../integrations/doppler/index.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="index.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -4729,6 +4519,72 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#how-the-integration-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How the integration works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration patterns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#doppler-operators-built-in-reload" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Doppler operator's built-in reload
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guides" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guides
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4741,7 +4597,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../../integrations/doppler/doppler-operator.html" class="md-nav__link">
+      <a href="doppler-operator.html" class="md-nav__link">
         
   
   
@@ -5025,10 +4881,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#the-configuration-reload-problem" class="md-nav__link">
+  <a href="#how-the-integration-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Configuration Reload Problem
+        How the integration works
       
     </span>
   </a>
@@ -5036,10 +4892,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-init-containers-are" class="md-nav__link">
+  <a href="#integration-patterns" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What Init Containers Are
+        Integration patterns
       
     </span>
   </a>
@@ -5047,60 +4903,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#advantages-of-init-containers" class="md-nav__link">
+  <a href="#doppler-operators-built-in-reload" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Advantages of Init Containers
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Advantages of Init Containers">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#pre-processing-configuration" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pre-processing Configuration
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#environment-preparation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Environment Preparation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#simple-startup-logic" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Simple Startup Logic
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#limitations-of-init-containers-for-configuration-updates" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Limitations of Init Containers for Configuration Updates
+        Doppler operator's built-in reload
       
     </span>
   </a>
@@ -5108,107 +4914,13 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-reloader-works" class="md-nav__link">
+  <a href="#guides" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How Reloader Works
+        Guides
       
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#key-differences" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Key Differences
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-init-containers-make-sense" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When Init Containers Make Sense
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#when-reloader-is-a-better-fit" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        When Reloader Is a Better Fit
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Summary
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#faq" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        FAQ
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="FAQ">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#do-init-containers-rerun-when-a-configmap-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Do init containers rerun when a ConfigMap changes?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#can-init-containers-restart-pods-when-configuration-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Can init containers restart pods when configuration changes?
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#can-init-containers-and-reloader-be-used-together" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Can init containers and Reloader be used together?
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -5232,161 +4944,52 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="reloader-vs-init-containers">Reloader vs Init Containers<a class="headerlink" href="#reloader-vs-init-containers" title="Permanent link">#</a></h1>
-<p>In Kubernetes, applications often rely on configuration stored in <strong>ConfigMaps</strong> and <strong>Secrets</strong>.</p>
-<p>When those resources change, running pods do not automatically reload the updated values. Platform teams therefore need a strategy to ensure applications pick up configuration changes.</p>
-<p>Two approaches sometimes discussed are:</p>
-<ol>
-<li>Using <strong>init containers</strong> to prepare configuration</li>
-<li>Using a controller such as <strong>Reloader</strong> to restart workloads when configuration changes</li>
-</ol>
-<p>While both can be involved in configuration management, they solve <strong>different problems in the pod lifecycle</strong>.</p>
-<hr>
-<h2 id="the-configuration-reload-problem">The Configuration Reload Problem<a class="headerlink" href="#the-configuration-reload-problem" title="Permanent link">#</a></h2>
-<p>In Kubernetes, updating a ConfigMap or Secret does <strong>not automatically restart pods</strong>.</p>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code>ConfigMap<span class="w"> </span>updated
+<h1 id="doppler-integration">Doppler Integration<a class="headerlink" href="#doppler-integration" title="Permanent link">#</a></h1>
+<p>This page shows how Reloader works alongside the Doppler Kubernetes operator to trigger rolling restarts when secrets change in Doppler.</p>
+<h2 id="how-the-integration-works">How the integration works<a class="headerlink" href="#how-the-integration-works" title="Permanent link">#</a></h2>
+<p>The Doppler Kubernetes operator syncs secrets from Doppler into standard Kubernetes <code>Secret</code> objects using the <code>DopplerSecret</code> CRD. Reloader watches those Kubernetes Secrets. When the operator updates a Secret after a change in Doppler, Reloader detects the data change and triggers a rolling restart of any annotated workloads.</p>
+<div class="highlight"><pre><span></span><code>Doppler (cloud)
 ↓
-Pods<span class="w"> </span><span class="k">continue</span><span class="w"> </span>running
+Doppler Kubernetes operator syncs secret (every 60s by default)
 ↓
-Application<span class="w"> </span>still<span class="w"> </span>uses<span class="w"> </span>old<span class="w"> </span>configuration
+Kubernetes Secret updated
+↓
+Reloader detects data change
+↓
+Rolling restart of annotated workloads
 </code></pre></div>
-<p>This happens because Kubernetes only triggers a rollout when the <strong>Pod specification changes</strong>, not when referenced resources change.</p>
-<hr>
-<h2 id="what-init-containers-are">What Init Containers Are<a class="headerlink" href="#what-init-containers-are" title="Permanent link">#</a></h2>
-<p>Init containers are special containers that run <strong>before the main application container starts</strong>.</p>
-<p>Their purpose is to prepare the environment required for the application to run.</p>
-<p>Typical tasks performed by init containers include:</p>
-<ul>
-<li>generating configuration files</li>
-<li>downloading dependencies</li>
-<li>preparing directories or volumes</li>
-<li>validating prerequisites</li>
-</ul>
-<p>Example workflow:</p>
-<div class="highlight"><pre><span></span><code>Pod<span class="w"> </span>starts
-↓
-Init<span class="w"> </span>container<span class="w"> </span>runs
-↓
-Configuration<span class="w"> </span>prepared
-↓
-Application<span class="w"> </span>container<span class="w"> </span>starts
-</code></pre></div>
-<p>Init containers run <strong>once per pod startup</strong>.</p>
-<hr>
-<h2 id="advantages-of-init-containers">Advantages of Init Containers<a class="headerlink" href="#advantages-of-init-containers" title="Permanent link">#</a></h2>
-<p>Init containers can be useful in several configuration-related scenarios.</p>
-<h3 id="pre-processing-configuration">Pre-processing Configuration<a class="headerlink" href="#pre-processing-configuration" title="Permanent link">#</a></h3>
-<p>Init containers can generate configuration files before the application starts.</p>
-<p>For example, they can combine multiple sources of configuration into a single file.</p>
-<h3 id="environment-preparation">Environment Preparation<a class="headerlink" href="#environment-preparation" title="Permanent link">#</a></h3>
-<p>They allow applications to start with all required configuration already in place.</p>
-<h3 id="simple-startup-logic">Simple Startup Logic<a class="headerlink" href="#simple-startup-logic" title="Permanent link">#</a></h3>
-<p>Init containers are a built-in Kubernetes feature and do not require additional controllers.</p>
-<hr>
-<h2 id="limitations-of-init-containers-for-configuration-updates">Limitations of Init Containers for Configuration Updates<a class="headerlink" href="#limitations-of-init-containers-for-configuration-updates" title="Permanent link">#</a></h2>
-<p>Init containers run <strong>only during pod startup</strong>.</p>
-<p>Because of this, they cannot react to configuration changes that occur after the pod is already running.</p>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code>Pod<span class="w"> </span>starts
-↓
-Init<span class="w"> </span>container<span class="w"> </span>prepares<span class="w"> </span>configuration
-↓
-Application<span class="w"> </span>runs
-↓
-ConfigMap<span class="w"> </span>updated<span class="w"> </span>later
-↓
-Init<span class="w"> </span>container<span class="w"> </span>does<span class="w"> </span>NOT<span class="w"> </span>run<span class="w"> </span>again
-↓
-Application<span class="w"> </span>keeps<span class="w"> </span>old<span class="w"> </span>configuration
-</code></pre></div>
-<p>This means init containers alone cannot ensure applications reload configuration updates.</p>
-<p>Additional mechanisms are still required to restart pods when configuration changes.</p>
-<hr>
-<h2 id="how-reloader-works">How Reloader Works<a class="headerlink" href="#how-reloader-works" title="Permanent link">#</a></h2>
-<p>Reloader is a Kubernetes controller that watches for changes in:</p>
-<ul>
-<li>ConfigMaps</li>
-<li>Secrets</li>
-</ul>
-<p>When those resources change, Reloader automatically triggers a rolling restart of workloads that reference them.</p>
-<p>Typical workflow:</p>
-<div class="highlight"><pre><span></span><code>ConfigMap<span class="w"> </span>or<span class="w"> </span>Secret<span class="w"> </span>updated
-↓
-Reloader<span class="w"> </span>detects<span class="w"> </span>change
-↓
-Deployment<span class="w"> </span>patched
-↓
-Kubernetes<span class="w"> </span>rolling<span class="w"> </span>restart<span class="w"> </span>triggered
-</code></pre></div>
-<p>This ensures applications restart and load the updated configuration.</p>
-<hr>
-<h2 id="key-differences">Key Differences<a class="headerlink" href="#key-differences" title="Permanent link">#</a></h2>
+<h2 id="integration-patterns">Integration patterns<a class="headerlink" href="#integration-patterns" title="Permanent link">#</a></h2>
 <table>
 <thead>
 <tr>
-<th>Aspect</th>
-<th>Reloader</th>
-<th>Init Containers</th>
+<th>Pattern</th>
+<th>Use case</th>
+<th>Guide</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Purpose</td>
-<td>Restart workloads when configuration changes</td>
-<td>Prepare environment before pod startup</td>
-</tr>
-<tr>
-<td>Lifecycle</td>
-<td>Reacts during runtime</td>
-<td>Runs only during pod initialization</td>
-</tr>
-<tr>
-<td>Automation</td>
-<td>Automatic restart on config change</td>
-<td>No reaction to later changes</td>
-</tr>
-<tr>
-<td>Operational scope</td>
-<td>Cluster-level controller</td>
-<td>Pod-level container</td>
+<td><strong>Reloader with Doppler operator</strong></td>
+<td>All workload types including StatefulSets, Daemonsets, and Argo Rollouts; ConfigMap reload; consistent reload across multiple secret backends</td>
+<td><a href="doppler-operator.html">Doppler Operator Guide</a></td>
 </tr>
 </tbody>
 </table>
-<p>Init containers focus on <strong>startup preparation</strong>, while Reloader handles <strong>runtime configuration updates</strong>.</p>
-<hr>
-<h2 id="when-init-containers-make-sense">When Init Containers Make Sense<a class="headerlink" href="#when-init-containers-make-sense" title="Permanent link">#</a></h2>
-<p>Init containers are appropriate when:</p>
+<h2 id="doppler-operators-built-in-reload">Doppler operator's built-in reload<a class="headerlink" href="#doppler-operators-built-in-reload" title="Permanent link">#</a></h2>
+<p>The Doppler Kubernetes operator includes a built-in reload feature for <code>Deployment</code> resources. When <code>secrets.doppler.com/reload: "true"</code> is set on a Deployment's pod template, the operator triggers a rolling restart after it updates the managed Kubernetes Secret.</p>
+<p>The Doppler documentation explicitly recommends using Stakater Reloader for workloads beyond Deployments. Reloader is the right choice when:</p>
 <ul>
-<li>configuration must be generated before application startup</li>
-<li>files need to be prepared in shared volumes</li>
-<li>initialization logic must run before the application begins</li>
+<li>You use <strong>StatefulSets, Daemonsets, or Argo Rollouts</strong> — the Doppler operator's built-in reload only supports Deployments</li>
+<li>You need <strong>ConfigMap reload</strong> — the Doppler operator does not sync to ConfigMaps; Reloader watches ConfigMaps</li>
+<li>You run <strong>multiple secret backends</strong> (for example, Doppler alongside AWS Secrets Manager via ESO) and want a single consistent reload mechanism across all of them</li>
+<li>You need <strong>per-workload cooldowns</strong>, namespace scoping, Prometheus metrics, or webhook alerts</li>
+<li>You need <strong>Reloader Enterprise</strong> for hardened images, commercial SLA, or regulated environment requirements</li>
 </ul>
-<p>They are commonly used for <strong>setup and bootstrapping tasks</strong>.</p>
-<hr>
-<h2 id="when-reloader-is-a-better-fit">When Reloader Is a Better Fit<a class="headerlink" href="#when-reloader-is-a-better-fit" title="Permanent link">#</a></h2>
-<p>Reloader is more appropriate when:</p>
+<p>See <a href="../../concepts/comparisons/reloader-vs-doppler-reload.html">Reloader vs Doppler Built-In Reload</a> for a detailed comparison.</p>
+<h2 id="guides">Guides<a class="headerlink" href="#guides" title="Permanent link">#</a></h2>
 <ul>
-<li>configuration changes after applications are already running</li>
-<li>Secrets or ConfigMaps are updated dynamically</li>
-<li>automated rolling restarts are required</li>
-<li>platform teams want a consistent solution across workloads</li>
+<li><a href="doppler-operator.html">Reloader with Doppler Operator</a></li>
 </ul>
-<p>These scenarios are common in modern Kubernetes environments.</p>
-<hr>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">#</a></h2>
-<p>Init containers and Reloader serve different roles in Kubernetes.</p>
-<p>Init containers prepare the application environment <strong>before a pod starts</strong>.</p>
-<p>Reloader ensures applications restart <strong>when configuration changes during runtime</strong>.</p>
-<p>Both can coexist in the same platform, but they solve different stages of the application lifecycle.</p>
-<hr>
-<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">#</a></h2>
-<h3 id="do-init-containers-rerun-when-a-configmap-changes">Do init containers rerun when a ConfigMap changes?<a class="headerlink" href="#do-init-containers-rerun-when-a-configmap-changes" title="Permanent link">#</a></h3>
-<p>No. Init containers only run when a pod starts. They do not rerun when configuration changes later.</p>
-<h3 id="can-init-containers-restart-pods-when-configuration-changes">Can init containers restart pods when configuration changes?<a class="headerlink" href="#can-init-containers-restart-pods-when-configuration-changes" title="Permanent link">#</a></h3>
-<p>No. Init containers cannot trigger restarts automatically.</p>
-<h3 id="can-init-containers-and-reloader-be-used-together">Can init containers and Reloader be used together?<a class="headerlink" href="#can-init-containers-and-reloader-be-used-together" title="Permanent link">#</a></h3>
-<p>Yes. Init containers can prepare configuration during startup, while Reloader ensures applications restart if configuration changes later.</p>
 
 
 
