@@ -5,13 +5,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-playwright-monorepo/integrations/openbao/index.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-playwright-monorepo/integrations/gcp/gcp-csi.html">
       
       
-        <link rel="prev" href="../vault/vault-csi-file.html">
+        <link rel="prev" href="gcp-eso.html">
       
       
-        <link rel="next" href="openbao-eso.html">
+        <link rel="next" href="../azure/index.html">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>Overview - Reloader</title>
+        <title>CSI Driver - Reloader</title>
       
     
     
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#openbao-integration" class="md-skip">
+        <a href="#how-to-use-reloader-with-gcp-secret-manager-and-csi-driver" class="md-skip">
           Skip to content
         </a>
       
@@ -3701,20 +3701,18 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4">
         
           
           <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
@@ -3735,7 +3733,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3750,37 +3748,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../openbao/index.html" class="md-nav__link">
         
   
   
@@ -3796,244 +3767,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#what-is-openbao" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What is OpenBao?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-patterns" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration Patterns
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How It Works
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Prerequisites
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Prerequisites">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#install-stakater-reloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Install Stakater Reloader
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-setup-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Common Setup Steps
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Common Setup Steps">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-install-openbao" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1: Install OpenBao
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-initialize-and-unseal-openbao" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: Initialize and Unseal OpenBao
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-configure-openbao-cli" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3: Configure OpenBao CLI
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-enable-kv-v2-secrets-engine" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4: Enable KV v2 Secrets Engine
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-5-write-test-secrets" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 5: Write Test Secrets
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-6-create-openbao-read-policy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 6: Create OpenBao Read Policy
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-7-enable-kubernetes-auth" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 7: Enable Kubernetes Auth
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-8-enable-approle-auth-optional" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 8: Enable AppRole Auth (Optional)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-reloader-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How Reloader Works
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="How Reloader Works">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#reloader-annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reloader Annotations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pattern-specific-guides" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pattern-Specific Guides
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        References
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4046,7 +3779,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="openbao-eso.html" class="md-nav__link">
+      <a href="../openbao/openbao-eso.html" class="md-nav__link">
         
   
   
@@ -4074,7 +3807,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="openbao-bso.html" class="md-nav__link">
+      <a href="../openbao/openbao-bso.html" class="md-nav__link">
         
   
   
@@ -4102,7 +3835,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="openbao-csi.html" class="md-nav__link">
+      <a href="../openbao/openbao-csi.html" class="md-nav__link">
         
   
   
@@ -4130,7 +3863,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="openbao-csi-file.html" class="md-nav__link">
+      <a href="../openbao/openbao-csi-file.html" class="md-nav__link">
         
   
   
@@ -4302,18 +4035,20 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_6" checked="">
         
           
           <label class="md-nav__link" for="__nav_6_6" id="__nav_6_6_label" tabindex="0">
@@ -4334,7 +4069,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -4352,7 +4087,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../gcp/index.html" class="md-nav__link">
+      <a href="index.html" class="md-nav__link">
         
   
   
@@ -4380,7 +4115,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../gcp/gcp-eso.html" class="md-nav__link">
+      <a href="gcp-eso.html" class="md-nav__link">
         
   
   
@@ -4405,10 +4140,37 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../gcp/gcp-csi.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSI Driver
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="gcp-csi.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -4424,6 +4186,232 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#provider-options-on-gcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Provider options on GCP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-install-the-secrets-store-csi-driver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Install the Secrets Store CSI Driver
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-install-the-gcp-secret-manager-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Install the GCP Secret Manager provider
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-install-reloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Install Reloader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-grant-workload-identity-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Grant Workload Identity access
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4 — Grant Workload Identity access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enable-secret-manager-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enable Secret Manager API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grant-the-kubernetes-serviceaccount-access-to-the-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grant the Kubernetes ServiceAccount access to the secret
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-kubernetes-serviceaccount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create the Kubernetes ServiceAccount
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-create-a-secret-in-gcp-secret-manager" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 — Create a secret in GCP Secret Manager
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-create-the-secretproviderclass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 — Create the SecretProviderClass
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-deploy-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7 — Deploy the application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-8-verify-the-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8 — Verify the setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-9-test-secret-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 9 — Test secret rotation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reloader-annotations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reloader annotations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-based-pattern-no-kubernetes-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File-based pattern (no Kubernetes Secret)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eso-vs-csi-driver-for-gcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESO vs CSI Driver for GCP
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -5053,21 +5041,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#what-is-openbao" class="md-nav__link">
+  <a href="#provider-options-on-gcp" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What is OpenBao?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-patterns" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration Patterns
+        Provider options on GCP
       
     </span>
   </a>
@@ -5078,7 +5055,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How It Works
+        How it works
       
     </span>
   </a>
@@ -5094,14 +5071,80 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Prerequisites">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-install-the-secrets-store-csi-driver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Install the Secrets Store CSI Driver
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-install-the-gcp-secret-manager-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Install the GCP Secret Manager provider
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-install-reloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Install Reloader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-grant-workload-identity-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Grant Workload Identity access
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4 — Grant Workload Identity access">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#install-stakater-reloader" class="md-nav__link">
+  <a href="#enable-secret-manager-api" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Install Stakater Reloader
+        Enable Secret Manager API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grant-the-kubernetes-serviceaccount-access-to-the-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grant the Kubernetes ServiceAccount access to the secret
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-the-kubernetes-serviceaccount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Create the Kubernetes ServiceAccount
       
     </span>
   </a>
@@ -5114,143 +5157,65 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-setup-steps" class="md-nav__link">
+  <a href="#step-5-create-a-secret-in-gcp-secret-manager" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common Setup Steps
+        Step 5 — Create a secret in GCP Secret Manager
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Common Setup Steps">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-install-openbao" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1: Install OpenBao
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-initialize-and-unseal-openbao" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: Initialize and Unseal OpenBao
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-configure-openbao-cli" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3: Configure OpenBao CLI
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-enable-kv-v2-secrets-engine" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4: Enable KV v2 Secrets Engine
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-5-write-test-secrets" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 5: Write Test Secrets
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-6-create-openbao-read-policy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 6: Create OpenBao Read Policy
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-7-enable-kubernetes-auth" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 7: Enable Kubernetes Auth
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-8-enable-approle-auth-optional" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 8: Enable AppRole Auth (Optional)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-reloader-works" class="md-nav__link">
+  <a href="#step-6-create-the-secretproviderclass" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How Reloader Works
+        Step 6 — Create the SecretProviderClass
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="How Reloader Works">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-deploy-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7 — Deploy the application
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-8-verify-the-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8 — Verify the setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-9-test-secret-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 9 — Test secret rotation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#reloader-annotations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Reloader Annotations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pattern-specific-guides" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pattern-Specific Guides
+        Reloader annotations
       
     </span>
   </a>
@@ -5258,10 +5223,21 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
+  <a href="#file-based-pattern-no-kubernetes-secret" class="md-nav__link">
     <span class="md-ellipsis">
       
-        References
+        File-based pattern (no Kubernetes Secret)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#eso-vs-csi-driver-for-gcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESO vs CSI Driver for GCP
       
     </span>
   </a>
@@ -5288,206 +5264,358 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="openbao-integration">OpenBao Integration<a class="headerlink" href="#openbao-integration" title="Permanent link">#</a></h1>
-<p>This guide shows how to automatically restart Kubernetes workloads when OpenBao secrets change using Stakater Reloader.</p>
-<h2 id="what-is-openbao">What is OpenBao?<a class="headerlink" href="#what-is-openbao" title="Permanent link">#</a></h2>
-<p>OpenBao is an open-source, community-driven fork of HashiCorp Vault, managed by the Linux Foundation. It was created after HashiCorp changed Vault's license from MPL 2.0 to BSL 1.1. OpenBao maintains API compatibility with Vault, making it a drop-in replacement for most use cases.</p>
-<h2 id="integration-patterns">Integration Patterns<a class="headerlink" href="#integration-patterns" title="Permanent link">#</a></h2>
+<h1 id="how-to-use-reloader-with-gcp-secret-manager-and-csi-driver">How to Use Reloader with GCP Secret Manager and CSI Driver<a class="headerlink" href="#how-to-use-reloader-with-gcp-secret-manager-and-csi-driver" title="Permanent link">#</a></h1>
+<p>This guide shows how to mount secrets from GCP Secret Manager into Kubernetes pods using the Secrets Store CSI Driver with the GCP Secret Manager provider, then use Reloader to automatically restart pods when those secrets change.</p>
+<p>The GCP provider syncs secrets into a Kubernetes <code>Secret</code> via <code>secretObjects</code>. Reloader watches that Kubernetes Secret and triggers a rolling restart whenever it is updated.</p>
+<blockquote>
+<p><strong>See also:</strong> <a href="gcp-eso.html">ESO Pattern</a> — if you are already using External Secrets Operator, that pattern is simpler and does not require the CSI Driver.</p>
+</blockquote>
+<hr>
+<h2 id="provider-options-on-gcp">Provider options on GCP<a class="headerlink" href="#provider-options-on-gcp" title="Permanent link">#</a></h2>
+<p>There are two CSI paths for GCP Secret Manager. They are not interchangeable:</p>
 <table>
 <thead>
 <tr>
-<th>Pattern</th>
-<th>How Secrets Arrive</th>
-<th>Rotation</th>
-<th>Reloader Compatibility</th>
-<th>Guide</th>
+<th></th>
+<th>Open-source provider</th>
+<th>GKE managed add-on</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>External Secrets Operator</strong></td>
-<td>ESO syncs to K8s Secret</td>
-<td>ESO refresh interval</td>
-<td>Best fit</td>
-<td><a href="openbao-eso.html">ESO Guide</a></td>
+<td><code>spec.provider</code> value</td>
+<td><code>gcp</code></td>
+<td><code>gke</code></td>
 </tr>
 <tr>
-<td><strong>OpenBao Secrets Operator</strong></td>
-<td>BSO syncs to K8s Secret</td>
-<td>BSO refresh interval</td>
-<td>Best fit</td>
-<td><a href="openbao-bso.html">BSO Guide</a></td>
+<td>Install method</td>
+<td><code>kubectl apply</code> from GitHub</td>
+<td><code>gcloud</code> / Cloud Console</td>
 </tr>
 <tr>
-<td><strong>CSI Driver</strong></td>
-<td>CSI mounts files + syncs to K8s Secret</td>
-<td>CSI rotation interval</td>
-<td>Works with <code>secretObjects</code></td>
-<td><a href="openbao-csi.html">CSI Guide</a></td>
+<td><code>secretObjects</code> sync to Kubernetes Secret</td>
+<td>✅</td>
+<td>❌</td>
 </tr>
 <tr>
-<td><strong>CSI Driver (File-Based)</strong></td>
-<td>CSI mounts files only (no K8s Secret)</td>
-<td>CSI rotation interval</td>
-<td>Works via SecretProviderClassPodStatus</td>
-<td><a href="openbao-csi-file.html">CSI File Guide</a></td>
+<td>Secret rotation polling</td>
+<td>✅ Alpha</td>
+<td>✅ GKE 1.32.2+</td>
+</tr>
+<tr>
+<td>Officially supported by Google</td>
+<td>❌ Community project</td>
+<td>✅</td>
 </tr>
 </tbody>
 </table>
-<h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h2>
+<p><strong>This guide uses the open-source provider</strong> (<code>spec.provider: gcp</code>), because it is the only path that supports <code>secretObjects</code> — which is required to create the Kubernetes Secret that Reloader watches. The GKE managed add-on mounts secrets as files only and cannot be used with this pattern.</p>
+<hr>
+<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h2>
 <pre class="mermaid"><code>sequenceDiagram
     actor Ops as Operator
-    participant OB as OpenBao
-    participant Sync as Secret Sync&lt;br/&gt;(ESO / BSO / CSI)
+    participant GSM as GCP Secret Manager
+    participant CSI as CSI Driver +&lt;br/&gt;GCP Provider
     participant K8s as Kubernetes Secret
     participant RL as Reloader
     participant Pod as Application Pod
 
-    Ops-&gt;&gt;OB: Rotate secret (bao kv put)
-    loop Poll / sync interval
-        Sync-&gt;&gt;OB: Fetch latest secret value
-        OB--&gt;&gt;Sync: Updated value
+    Ops-&gt;&gt;GSM: Add new secret version
+    loop Every rotationPollInterval (default: 2m)
+        CSI-&gt;&gt;GSM: Get secret (latest version)
+        GSM--&gt;&gt;CSI: Updated secret value
+        CSI-&gt;&gt;Pod: Refresh mounted files
+        CSI-&gt;&gt;K8s: Sync via secretObjects
     end
-    Sync-&gt;&gt;K8s: Update Secret data
     K8s--&gt;&gt;RL: Watch event (Secret changed)
     RL-&gt;&gt;Pod: Trigger rolling restart
     Note over Pod: New pod starts with updated secret</code></pre>
+<hr>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
-<li>Kubernetes cluster (v1.19+)</li>
+<li>GKE cluster with Workload Identity enabled (<code>--workload-pool=&lt;project-id&gt;.svc.id.goog</code>)</li>
+<li><code>gcloud</code> CLI configured locally</li>
 <li>Helm v3+</li>
-<li>OpenBao (OSS)</li>
-<li>OpenBao CLI (<code>bao</code>) installed locally</li>
+<li>GCP project with Secret Manager API enabled</li>
 <li>Stakater Reloader installed</li>
-<li>kubectl configured with cluster access</li>
 </ul>
-<h3 id="install-stakater-reloader">Install Stakater Reloader<a class="headerlink" href="#install-stakater-reloader" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>stakater<span class="w"> </span>https://stakater.github.io/stakater-charts
-helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span>--namespace<span class="w"> </span>reloader<span class="w"> </span>--create-namespace
-</code></pre></div>
-<h2 id="common-setup-steps">Common Setup Steps<a class="headerlink" href="#common-setup-steps" title="Permanent link">#</a></h2>
-<h3 id="step-1-install-openbao">Step 1: Install OpenBao<a class="headerlink" href="#step-1-install-openbao" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Add OpenBao Helm repo</span>
-helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>openbao<span class="w"> </span>https://openbao.github.io/openbao-helm
+<hr>
+<h2 id="step-1-install-the-secrets-store-csi-driver">Step 1 — Install the Secrets Store CSI Driver<a class="headerlink" href="#step-1-install-the-secrets-store-csi-driver" title="Permanent link">#</a></h2>
+<p>Install the CSI Driver with secret sync and rotation enabled:</p>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>secrets-store-csi-driver<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>https://kubernetes-sigs.github.io/secrets-store-csi-driver/charts
 helm<span class="w"> </span>repo<span class="w"> </span>update
+helm<span class="w"> </span>install<span class="w"> </span>csi-secrets-store<span class="w"> </span>secrets-store-csi-driver/secrets-store-csi-driver<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>kube-system<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span>syncSecret.enabled<span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span><span class="nv">enableSecretRotation</span><span class="o">=</span><span class="nb">true</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--set<span class="w"> </span><span class="nv">rotationPollInterval</span><span class="o">=</span>2m
+</code></pre></div>
+<p><code>syncSecret.enabled=true</code> is required — without it, <code>secretObjects</code> does not create a Kubernetes Secret and Reloader has nothing to watch.</p>
+<hr>
+<h2 id="step-2-install-the-gcp-secret-manager-provider">Step 2 — Install the GCP Secret Manager provider<a class="headerlink" href="#step-2-install-the-gcp-secret-manager-provider" title="Permanent link">#</a></h2>
+<p>The GCP provider does not have a public Helm repository. Install it directly from the official GitHub source:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>https://raw.githubusercontent.com/GoogleCloudPlatform/secrets-store-csi-driver-provider-gcp/main/deploy/provider-gcp-plugin.yaml
+</code></pre></div>
+<p>This deploys the provider as a Daemonset in the <code>kube-system</code> namespace.</p>
+<p>Verify it is running:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>kube-system<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>csi-secrets-store-provider-gcp
+</code></pre></div>
+<hr>
+<h2 id="step-3-install-reloader">Step 3 — Install Reloader<a class="headerlink" href="#step-3-install-reloader" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>stakater<span class="w"> </span>https://stakater.github.io/stakater-charts
+helm<span class="w"> </span>repo<span class="w"> </span>update
+helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--create-namespace
+</code></pre></div>
+<hr>
+<h2 id="step-4-grant-workload-identity-access">Step 4 — Grant Workload Identity access<a class="headerlink" href="#step-4-grant-workload-identity-access" title="Permanent link">#</a></h2>
+<p>Workload Identity allows a Kubernetes ServiceAccount to access GCP APIs without a service account key file. This is the recommended authentication method on GKE.</p>
+<h3 id="enable-secret-manager-api">Enable Secret Manager API<a class="headerlink" href="#enable-secret-manager-api" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>gcloud<span class="w"> </span>services<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>secretmanager.googleapis.com<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--project<span class="o">=</span>&lt;PROJECT_ID&gt;
+</code></pre></div>
+<h3 id="grant-the-kubernetes-serviceaccount-access-to-the-secret">Grant the Kubernetes ServiceAccount access to the secret<a class="headerlink" href="#grant-the-kubernetes-serviceaccount-access-to-the-secret" title="Permanent link">#</a></h3>
+<p>The preferred approach binds IAM permissions directly to the Kubernetes identity — no GCP Service Account is required:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">PROJECT_ID</span><span class="o">=</span>&lt;your-project-id&gt;
+<span class="nb">export</span><span class="w"> </span><span class="nv">PROJECT_NUMBER</span><span class="o">=</span><span class="k">$(</span>gcloud<span class="w"> </span>projects<span class="w"> </span>describe<span class="w"> </span><span class="nv">$PROJECT_ID</span><span class="w"> </span>--format<span class="o">=</span><span class="s2">"value(projectNumber)"</span><span class="k">)</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">NAMESPACE</span><span class="o">=</span>default
+<span class="nb">export</span><span class="w"> </span><span class="nv">KSA_NAME</span><span class="o">=</span>app-sa
+<span class="nb">export</span><span class="w"> </span><span class="nv">SECRET_NAME</span><span class="o">=</span>db-password
 
-<span class="c1"># Install OpenBao</span>
-helm<span class="w"> </span>install<span class="w"> </span>openbao<span class="w"> </span>openbao/openbao<span class="w"> </span>-n<span class="w"> </span>openbao<span class="w"> </span>--create-namespace<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--set<span class="w"> </span><span class="s2">"server.dataStorage.size=1Gi"</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--set<span class="w"> </span><span class="s2">"injector.enabled=false"</span>
+gcloud<span class="w"> </span>secrets<span class="w"> </span>add-iam-policy-binding<span class="w"> </span><span class="nv">$SECRET_NAME</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--project<span class="o">=</span><span class="nv">$PROJECT_ID</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--role<span class="o">=</span>roles/secretmanager.secretAccessor<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--member<span class="o">=</span><span class="s2">"principal://iam.googleapis.com/projects/</span><span class="si">${</span><span class="nv">PROJECT_NUMBER</span><span class="si">}</span><span class="s2">/locations/global/workloadIdentityPools/</span><span class="si">${</span><span class="nv">PROJECT_ID</span><span class="si">}</span><span class="s2">.svc.id.goog/subject/ns/</span><span class="si">${</span><span class="nv">NAMESPACE</span><span class="si">}</span><span class="s2">/sa/</span><span class="si">${</span><span class="nv">KSA_NAME</span><span class="si">}</span><span class="s2">"</span>
 </code></pre></div>
-<blockquote>
-<p><strong>Note:</strong> The injector is disabled because this guide uses ESO, BSO, or CSI to sync secrets. Enable it if you also need OpenBao Agent sidecar injection.</p>
-</blockquote>
-<p>Wait for the pod to start (it will be Running but not Ready until unsealed):</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span><span class="nb">wait</span><span class="w"> </span>--for<span class="o">=</span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.status.phase}'</span><span class="o">=</span>Running<span class="w"> </span>pod/openbao-0<span class="w"> </span>-n<span class="w"> </span>openbao<span class="w"> </span>--timeout<span class="o">=</span>180s
+<h3 id="create-the-kubernetes-serviceaccount">Create the Kubernetes ServiceAccount<a class="headerlink" href="#create-the-kubernetes-serviceaccount" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>serviceaccount<span class="w"> </span><span class="nv">$KSA_NAME</span><span class="w"> </span>--namespace<span class="w"> </span><span class="nv">$NAMESPACE</span>
 </code></pre></div>
-<h3 id="step-2-initialize-and-unseal-openbao">Step 2: Initialize and Unseal OpenBao<a class="headerlink" href="#step-2-initialize-and-unseal-openbao" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Initialize OpenBao (using 1 key share for simplicity; use more in production)</span>
-kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-n<span class="w"> </span>openbao<span class="w"> </span>openbao-0<span class="w"> </span>--<span class="w"> </span>bao<span class="w"> </span>operator<span class="w"> </span>init<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-key-shares<span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-key-threshold<span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-format<span class="o">=</span>json<span class="w"> </span>&gt;<span class="w"> </span>openbao-init.json
+<p>No annotation is needed on the ServiceAccount when using direct IAM binding to the Kubernetes identity.</p>
+<hr>
+<h2 id="step-5-create-a-secret-in-gcp-secret-manager">Step 5 — Create a secret in GCP Secret Manager<a class="headerlink" href="#step-5-create-a-secret-in-gcp-secret-manager" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">"initial-password"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>gcloud<span class="w"> </span>secrets<span class="w"> </span>create<span class="w"> </span>db-password<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--data-file<span class="o">=</span>-<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--project<span class="o">=</span><span class="nv">$PROJECT_ID</span>
 </code></pre></div>
-<p><strong>Important:</strong> Save <code>openbao-init.json</code> securely. It contains the unseal key and root token.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Extract unseal key and root token</span>
-<span class="nv">OPENBAO_UNSEAL_KEY</span><span class="o">=</span><span class="k">$(</span>cat<span class="w"> </span>openbao-init.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">'.unseal_keys_b64[0]'</span><span class="k">)</span>
-<span class="nv">OPENBAO_ROOT_TOKEN</span><span class="o">=</span><span class="k">$(</span>cat<span class="w"> </span>openbao-init.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">'.root_token'</span><span class="k">)</span>
-
-<span class="c1"># Unseal OpenBao</span>
-kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-n<span class="w"> </span>openbao<span class="w"> </span>openbao-0<span class="w"> </span>--<span class="w"> </span>bao<span class="w"> </span>operator<span class="w"> </span>unseal<span class="w"> </span><span class="s2">"</span><span class="nv">$OPENBAO_UNSEAL_KEY</span><span class="s2">"</span>
+<p>Note the full resource name — you will need it in the <code>SecretProviderClass</code>:</p>
+<div class="highlight"><pre><span></span><code>gcloud<span class="w"> </span>secrets<span class="w"> </span>describe<span class="w"> </span>db-password<span class="w"> </span>--project<span class="o">=</span><span class="nv">$PROJECT_ID</span><span class="w"> </span>--format<span class="o">=</span><span class="s2">"value(name)"</span>
 </code></pre></div>
-<p>OpenBao should now show <code>Sealed: false</code>. Wait for the pod to become Ready:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span><span class="nb">wait</span><span class="w"> </span>--for<span class="o">=</span><span class="nv">condition</span><span class="o">=</span>ready<span class="w"> </span>pod/openbao-0<span class="w"> </span>-n<span class="w"> </span>openbao<span class="w"> </span>--timeout<span class="o">=</span>30s
+<p>Output format: <code>projects/&lt;PROJECT_NUMBER&gt;/secrets/db-password</code></p>
+<hr>
+<h2 id="step-6-create-the-secretproviderclass">Step 6 — Create the SecretProviderClass<a class="headerlink" href="#step-6-create-the-secretproviderclass" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets-store.csi.x-k8s.io/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SecretProviderClass</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp-app-secrets</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">provider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp</span>
+<span class="w">  </span><span class="nt">parameters</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">secrets</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">      </span><span class="no">- resourceName: "projects/&lt;PROJECT_ID&gt;/secrets/db-password/versions/latest"</span>
+<span class="w">        </span><span class="no">path: "db-password"</span>
+<span class="w">      </span><span class="no">- resourceName: "projects/&lt;PROJECT_ID&gt;/secrets/api-key/versions/latest"</span>
+<span class="w">        </span><span class="no">path: "api-key"</span>
+<span class="w">  </span><span class="nt">secretObjects</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">secretName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Opaque</span>
+<span class="w">      </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">reloader.stakater.com/match</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">      </span><span class="nt">data</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">objectName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db-password</span>
+<span class="w">          </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db-password</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">objectName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api-key</span>
+<span class="w">          </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api-key</span>
 </code></pre></div>
-<h3 id="step-3-configure-openbao-cli">Step 3: Configure OpenBao CLI<a class="headerlink" href="#step-3-configure-openbao-cli" title="Permanent link">#</a></h3>
-<p>Set up the <code>bao</code> CLI locally:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Port-forward for local CLI access</span>
-kubectl<span class="w"> </span>port-forward<span class="w"> </span>-n<span class="w"> </span>openbao<span class="w"> </span>svc/openbao<span class="w"> </span><span class="m">8200</span>:8200<span class="w"> </span><span class="p">&amp;</span>
-
-<span class="c1"># Configure CLI (use the root token from Step 2)</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">BAO_ADDR</span><span class="o">=</span><span class="s2">"http://127.0.0.1:8200"</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">BAO_TOKEN</span><span class="o">=</span><span class="s2">"</span><span class="nv">$OPENBAO_ROOT_TOKEN</span><span class="s2">"</span>
+<p>Apply:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>secret-provider-class.yaml
 </code></pre></div>
-<p>Alternatively, you can run <code>bao</code> commands directly inside the OpenBao pod:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-n<span class="w"> </span>openbao<span class="w"> </span>openbao-0<span class="w"> </span>--<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s2">"BAO_TOKEN=&lt;token&gt; bao &lt;command&gt;"</span>
-</code></pre></div>
-<blockquote>
-<p><strong>Note:</strong> The remaining steps in this guide use the local CLI. If using the in-pod approach, prefix each <code>bao</code> command with the <code>kubectl exec</code> pattern above.</p>
-</blockquote>
-<h3 id="step-4-enable-kv-v2-secrets-engine">Step 4: Enable KV v2 Secrets Engine<a class="headerlink" href="#step-4-enable-kv-v2-secrets-engine" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>bao<span class="w"> </span>secrets<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>-path<span class="o">=</span>secret<span class="w"> </span>kv-v2
-</code></pre></div>
-<p>Verify:</p>
-<div class="highlight"><pre><span></span><code>bao<span class="w"> </span>secrets<span class="w"> </span>list
-</code></pre></div>
-<p>You should see <code>secret/</code> listed as <code>kv</code> version 2.</p>
-<h3 id="step-5-write-test-secrets">Step 5: Write Test Secrets<a class="headerlink" href="#step-5-write-test-secrets" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>bao<span class="w"> </span>kv<span class="w"> </span>put<span class="w"> </span>secret/myapp<span class="w"> </span><span class="nv">username</span><span class="o">=</span><span class="s1">'admin-user'</span><span class="w"> </span><span class="nv">password</span><span class="o">=</span><span class="s1">'super-secret-password'</span>
-</code></pre></div>
-<p>Verify:</p>
-<div class="highlight"><pre><span></span><code>bao<span class="w"> </span>kv<span class="w"> </span>get<span class="w"> </span>secret/myapp
-</code></pre></div>
-<h3 id="step-6-create-openbao-read-policy">Step 6: Create OpenBao Read Policy<a class="headerlink" href="#step-6-create-openbao-read-policy" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>bao<span class="w"> </span>policy<span class="w"> </span>write<span class="w"> </span>myapp-read<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
-<span class="s">path "secret/data/myapp" {</span>
-<span class="s">  capabilities = ["read"]</span>
-<span class="s">}</span>
-<span class="s">path "secret/metadata/myapp" {</span>
-<span class="s">  capabilities = ["read"]</span>
-<span class="s">}</span>
-<span class="s">EOF</span>
-</code></pre></div>
-<h3 id="step-7-enable-kubernetes-auth">Step 7: Enable Kubernetes Auth<a class="headerlink" href="#step-7-enable-kubernetes-auth" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Enable Kubernetes auth method</span>
-bao<span class="w"> </span>auth<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>kubernetes
-
-<span class="c1"># Configure Kubernetes auth</span>
-bao<span class="w"> </span>write<span class="w"> </span>auth/kubernetes/config<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span><span class="nv">kubernetes_host</span><span class="o">=</span><span class="s1">'https://kubernetes.default.svc.cluster.local'</span>
-</code></pre></div>
-<h3 id="step-8-enable-approle-auth-optional">Step 8: Enable AppRole Auth (Optional)<a class="headerlink" href="#step-8-enable-approle-auth-optional" title="Permanent link">#</a></h3>
-<p>Only required for the <a href="openbao-bso.html#option-2-approle-authentication">BSO AppRole pattern</a>.</p>
-<div class="highlight"><pre><span></span><code>bao<span class="w"> </span>auth<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>approle
-</code></pre></div>
-<h2 id="how-reloader-works">How Reloader Works<a class="headerlink" href="#how-reloader-works" title="Permanent link">#</a></h2>
-<ol>
-<li><strong>Secret provider updates K8s Secret</strong> - ESO/BSO/CSI syncs secrets from OpenBao</li>
-<li><strong>Reloader detects change</strong> - Watches for Secret changes via Kubernetes API</li>
-<li><strong>Pod restart triggered</strong> - Rolling restart of pods referencing the changed Secret</li>
-</ol>
-<h3 id="reloader-annotations">Reloader Annotations<a class="headerlink" href="#reloader-annotations" title="Permanent link">#</a></h3>
-<p><strong>On Deployment (for K8s Secret-based patterns: ESO, BSO, CSI with <code>secretObjects</code>):</strong></p>
-<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
+<p><strong>Key configuration points:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>spec.provider</code></td>
+<td>Must be <code>gcp</code> (not <code>gke</code>, not <code>google</code>)</td>
+</tr>
+<tr>
+<td><code>parameters.secrets</code></td>
+<td>YAML list as a string; each entry needs <code>resourceName</code> and <code>path</code></td>
+</tr>
+<tr>
+<td><code>resourceName</code></td>
+<td>Full GCP resource path: <code>projects/&lt;id&gt;/secrets/&lt;name&gt;/versions/&lt;version-or-latest&gt;</code></td>
+</tr>
+<tr>
+<td><code>path</code></td>
+<td>Filename in the mounted volume; must match <code>objectName</code> in <code>secretObjects</code></td>
+</tr>
+<tr>
+<td><code>secretObjects[].data[].objectName</code></td>
+<td>Must match the <code>path</code> value from the <code>parameters.secrets</code> entry</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="step-7-deploy-the-application">Step 7 — Deploy the application<a class="headerlink" href="#step-7-deploy-the-application" title="Permanent link">#</a></h2>
+<p>The CSI volume mount is required even when your application reads secrets as environment variables. Without it, the GCP provider does not create the Kubernetes Secret via <code>secretObjects</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
 <span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">reloader.stakater.com/search</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">serviceAccountName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-sa</span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">busybox:latest</span>
+<span class="w">          </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">"sh"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"-c"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"while</span><span class="nv"> </span><span class="s">true;</span><span class="nv"> </span><span class="s">do</span><span class="nv"> </span><span class="s">echo</span><span class="nv"> </span><span class="s">\"password=$DB_PASSWORD\";</span><span class="nv"> </span><span class="s">sleep</span><span class="nv"> </span><span class="s">30;</span><span class="nv"> </span><span class="s">done"</span><span class="p p-Indicator">]</span>
+<span class="w">          </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db-password</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API_KEY</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">api-key</span>
+<span class="w">          </span><span class="nt">volumeMounts</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp-secrets</span>
+<span class="w">              </span><span class="nt">mountPath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/mnt/secrets</span>
+<span class="w">              </span><span class="nt">readOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp-secrets</span>
+<span class="w">          </span><span class="nt">csi</span><span class="p">:</span>
+<span class="w">            </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets-store.csi.k8s.io</span>
+<span class="w">            </span><span class="nt">readOnly</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">            </span><span class="nt">volumeAttributes</span><span class="p">:</span>
+<span class="w">              </span><span class="nt">secretProviderClass</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcp-app-secrets</span>
 </code></pre></div>
-<p><strong>On Secret (must be annotation, not label):</strong></p>
+<p>Apply:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>deployment.yaml
+</code></pre></div>
+<hr>
+<h2 id="step-8-verify-the-setup">Step 8 — Verify the setup<a class="headerlink" href="#step-8-verify-the-setup" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check the pod is running</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>default<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>myapp
+
+<span class="c1"># Confirm the Kubernetes Secret was created</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>default
+kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>default<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.db-password}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
+
+<span class="c1"># Check the CSI mount status</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>secretproviderclasspodstatuses<span class="w"> </span>-n<span class="w"> </span>default
+</code></pre></div>
+<hr>
+<h2 id="step-9-test-secret-rotation">Step 9 — Test secret rotation<a class="headerlink" href="#step-9-test-secret-rotation" title="Permanent link">#</a></h2>
+<p>Add a new version to the secret in GCP Secret Manager:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">"rotated-password"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>gcloud<span class="w"> </span>secrets<span class="w"> </span>versions<span class="w"> </span>add<span class="w"> </span>db-password<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--data-file<span class="o">=</span>-<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--project<span class="o">=</span><span class="nv">$PROJECT_ID</span>
+</code></pre></div>
+<p>Wait for the next rotation poll (default: 2 minutes). The CSI driver fetches the new version, updates the mounted files, and syncs the new value into the Kubernetes Secret. Reloader detects the Secret update and triggers a rolling restart.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Confirm the Kubernetes Secret was updated</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>default<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.db-password}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
+
+<span class="c1"># Confirm pods were restarted</span>
+kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>default<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>myapp
+</code></pre></div>
+<hr>
+<h2 id="reloader-annotations">Reloader annotations<a class="headerlink" href="#reloader-annotations" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Annotation</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deployment</td>
+<td><code>reloader.stakater.com/search: "true"</code></td>
+<td>Restart when any referenced Secret with <code>match: "true"</code> changes</td>
+</tr>
+<tr>
+<td>Kubernetes Secret (via <code>secretObjects</code>)</td>
+<td><code>reloader.stakater.com/match: "true"</code></td>
+<td>Mark this Secret as eligible to trigger a restart</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="file-based-pattern-no-kubernetes-secret">File-based pattern (no Kubernetes Secret)<a class="headerlink" href="#file-based-pattern-no-kubernetes-secret" title="Permanent link">#</a></h2>
+<p>If you want to mount secrets as files only, without creating a Kubernetes Secret, omit the <code>secretObjects</code> block and enable Reloader's CSI integration:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">enableCSIIntegration</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<p>Then annotate the Deployment with the <code>SecretProviderClass</code> name:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">reloader.stakater.com/match</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">    </span><span class="nt">secretproviderclass.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"gcp-app-secrets"</span>
 </code></pre></div>
-<p><strong>On Deployment (for CSI file-based pattern only):</strong></p>
-<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">secretproviderclass.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"&lt;secretproviderclass-name&gt;"</span>
-</code></pre></div>
-<h2 id="pattern-specific-guides">Pattern-Specific Guides<a class="headerlink" href="#pattern-specific-guides" title="Permanent link">#</a></h2>
-<ul>
-<li><a href="openbao-eso.html">External Secrets Operator Pattern</a> - Token or Kubernetes auth</li>
-<li><a href="openbao-bso.html">OpenBao Secrets Operator Pattern</a> - Kubernetes auth or AppRole</li>
-<li><a href="openbao-csi.html">CSI Driver Pattern</a> - Kubernetes auth (syncs to K8s Secret)</li>
-<li><a href="openbao-csi-file.html">CSI Driver File-Based Pattern</a> - Kubernetes auth (file-only, no K8s Secret)</li>
-</ul>
-<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">#</a></h2>
-<ul>
-<li><a href="https://github.com/stakater/Reloader">Stakater Reloader</a></li>
-<li><a href="https://openbao.org/docs/">OpenBao Documentation</a></li>
-<li><a href="https://github.com/openbao/openbao-helm">OpenBao Helm Chart</a></li>
-<li><a href="https://external-secrets.io/latest/provider/openbao/">External Secrets Operator - OpenBao Provider</a></li>
-<li><a href="https://github.com/openbao/openbao-secrets-operator">OpenBao Secrets Operator</a></li>
-<li><a href="https://github.com/openbao/openbao-csi-provider">OpenBao CSI Provider</a></li>
-</ul>
+<p>In this mode, Reloader watches <code>SecretProviderClassPodStatus</code> resources for version hash changes instead of watching a Kubernetes Secret.</p>
+<hr>
+<h2 id="eso-vs-csi-driver-for-gcp">ESO vs CSI Driver for GCP<a class="headerlink" href="#eso-vs-csi-driver-for-gcp" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>ESO</th>
+<th>CSI Driver (provider-gcp)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kubernetes Secret created</td>
+<td>✅ Always</td>
+<td>✅ With <code>secretObjects</code></td>
+</tr>
+<tr>
+<td>Requires pod volume mount</td>
+<td>❌</td>
+<td>✅ Required even for env var usage</td>
+</tr>
+<tr>
+<td>Secret rotation</td>
+<td>ESO refresh interval</td>
+<td>CSI rotation poll interval</td>
+</tr>
+<tr>
+<td>Officially supported</td>
+<td>ESO is CNCF-graduated</td>
+<td>Community project (not Google-supported)</td>
+</tr>
+<tr>
+<td>Complexity</td>
+<td>Lower</td>
+<td>Higher</td>
+</tr>
+</tbody>
+</table>
+<p>For most GCP users, the <a href="gcp-eso.html">ESO pattern</a> is simpler and better supported. Use the CSI Driver pattern when you need file-based secret mounting or when your organisation already uses the Secrets Store CSI Driver across multiple cloud providers.</p>
 
 
 

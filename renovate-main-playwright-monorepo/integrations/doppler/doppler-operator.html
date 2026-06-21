@@ -5,13 +5,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-playwright-monorepo/integrations/openbao/index.html">
+        <link rel="canonical" href="https://docs.stakater.com/reloader/renovate-main-playwright-monorepo/integrations/doppler/doppler-operator.html">
       
       
-        <link rel="prev" href="../vault/vault-csi-file.html">
+        <link rel="prev" href="index.html">
       
       
-        <link rel="next" href="openbao-eso.html">
+        <link rel="next" href="../../reference/annotations.html">
       
       
         
@@ -22,7 +22,7 @@
     
     
       
-        <title>Overview - Reloader</title>
+        <title>Doppler Operator - Reloader</title>
       
     
     
@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#openbao-integration" class="md-skip">
+        <a href="#how-to-use-reloader-with-the-doppler-kubernetes-operator" class="md-skip">
           Skip to content
         </a>
       
@@ -3701,20 +3701,18 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4">
         
           
           <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
@@ -3735,7 +3733,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3750,37 +3748,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Overview
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../openbao/index.html" class="md-nav__link">
         
   
   
@@ -3796,244 +3767,6 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="On this page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      On this page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#what-is-openbao" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What is OpenBao?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-patterns" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration Patterns
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-it-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How It Works
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Prerequisites
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Prerequisites">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#install-stakater-reloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Install Stakater Reloader
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#common-setup-steps" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Common Setup Steps
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Common Setup Steps">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-install-openbao" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1: Install OpenBao
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-initialize-and-unseal-openbao" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: Initialize and Unseal OpenBao
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-configure-openbao-cli" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3: Configure OpenBao CLI
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-enable-kv-v2-secrets-engine" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4: Enable KV v2 Secrets Engine
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-5-write-test-secrets" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 5: Write Test Secrets
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-6-create-openbao-read-policy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 6: Create OpenBao Read Policy
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-7-enable-kubernetes-auth" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 7: Enable Kubernetes Auth
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-8-enable-approle-auth-optional" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 8: Enable AppRole Auth (Optional)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-reloader-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How Reloader Works
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="How Reloader Works">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#reloader-annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reloader Annotations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pattern-specific-guides" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pattern-Specific Guides
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        References
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -4046,7 +3779,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="openbao-eso.html" class="md-nav__link">
+      <a href="../openbao/openbao-eso.html" class="md-nav__link">
         
   
   
@@ -4074,7 +3807,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="openbao-bso.html" class="md-nav__link">
+      <a href="../openbao/openbao-bso.html" class="md-nav__link">
         
   
   
@@ -4102,7 +3835,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="openbao-csi.html" class="md-nav__link">
+      <a href="../openbao/openbao-csi.html" class="md-nav__link">
         
   
   
@@ -4130,7 +3863,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="openbao-csi-file.html" class="md-nav__link">
+      <a href="../openbao/openbao-csi-file.html" class="md-nav__link">
         
   
   
@@ -4691,18 +4424,20 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_9">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_9" checked="">
         
           
           <label class="md-nav__link" for="__nav_6_9" id="__nav_6_9_label" tabindex="0">
@@ -4723,7 +4458,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_9_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_9">
             <span class="md-nav__icon md-icon"></span>
             
@@ -4741,7 +4476,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
   
     <li class="md-nav__item">
-      <a href="../doppler/index.html" class="md-nav__link">
+      <a href="index.html" class="md-nav__link">
         
   
   
@@ -4766,10 +4501,37 @@ This documentation is for a pull request deployment and is unreleased, it is onl
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../doppler/doppler-operator.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Doppler Operator
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="doppler-operator.html" class="md-nav__link md-nav__link--active">
         
   
   
@@ -4785,6 +4547,171 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-install-the-doppler-kubernetes-operator" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Install the Doppler Kubernetes operator
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-install-reloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Install Reloader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-create-the-doppler-service-token-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Create the Doppler service token secret
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-create-the-dopplersecret-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Create the DopplerSecret resource
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-annotate-workloads-for-reloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 — Annotate workloads for Reloader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statefulsets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StatefulSets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#argo-rollouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Argo Rollouts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-test-secret-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 — Test secret rotation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reloader-annotations-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reloader annotations reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faster-sync-with-resyncseconds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Faster sync with resyncSeconds
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cooldown-between-reloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cooldown between reloads
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -5053,32 +4980,10 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#what-is-openbao" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What is OpenBao?
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#integration-patterns" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Integration Patterns
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#how-it-works" class="md-nav__link">
     <span class="md-ellipsis">
       
-        How It Works
+        How it works
       
     </span>
   </a>
@@ -5094,163 +4999,13 @@ This documentation is for a pull request deployment and is unreleased, it is onl
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Prerequisites">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#install-stakater-reloader" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Install Stakater Reloader
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-setup-steps" class="md-nav__link">
+  <a href="#step-1-install-the-doppler-kubernetes-operator" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Common Setup Steps
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Common Setup Steps">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-install-openbao" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 1: Install OpenBao
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-initialize-and-unseal-openbao" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 2: Initialize and Unseal OpenBao
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-configure-openbao-cli" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 3: Configure OpenBao CLI
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-enable-kv-v2-secrets-engine" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 4: Enable KV v2 Secrets Engine
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-5-write-test-secrets" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 5: Write Test Secrets
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-6-create-openbao-read-policy" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 6: Create OpenBao Read Policy
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-7-enable-kubernetes-auth" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 7: Enable Kubernetes Auth
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-8-enable-approle-auth-optional" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Step 8: Enable AppRole Auth (Optional)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-reloader-works" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        How Reloader Works
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="How Reloader Works">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#reloader-annotations" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reloader Annotations
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pattern-specific-guides" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Pattern-Specific Guides
+        Step 1 — Install the Doppler Kubernetes operator
       
     </span>
   </a>
@@ -5258,10 +5013,109 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </li>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
+  <a href="#step-2-install-reloader" class="md-nav__link">
     <span class="md-ellipsis">
       
-        References
+        Step 2 — Install Reloader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-create-the-doppler-service-token-secret" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Create the Doppler service token secret
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-create-the-dopplersecret-resource" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Create the DopplerSecret resource
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-annotate-workloads-for-reloader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 — Annotate workloads for Reloader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statefulsets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StatefulSets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#argo-rollouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Argo Rollouts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-test-secret-rotation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 — Test secret rotation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reloader-annotations-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reloader annotations reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faster-sync-with-resyncseconds" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Faster sync with resyncSeconds
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cooldown-between-reloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cooldown between reloads
       
     </span>
   </a>
@@ -5288,206 +5142,292 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="openbao-integration">OpenBao Integration<a class="headerlink" href="#openbao-integration" title="Permanent link">#</a></h1>
-<p>This guide shows how to automatically restart Kubernetes workloads when OpenBao secrets change using Stakater Reloader.</p>
-<h2 id="what-is-openbao">What is OpenBao?<a class="headerlink" href="#what-is-openbao" title="Permanent link">#</a></h2>
-<p>OpenBao is an open-source, community-driven fork of HashiCorp Vault, managed by the Linux Foundation. It was created after HashiCorp changed Vault's license from MPL 2.0 to BSL 1.1. OpenBao maintains API compatibility with Vault, making it a drop-in replacement for most use cases.</p>
-<h2 id="integration-patterns">Integration Patterns<a class="headerlink" href="#integration-patterns" title="Permanent link">#</a></h2>
-<table>
-<thead>
-<tr>
-<th>Pattern</th>
-<th>How Secrets Arrive</th>
-<th>Rotation</th>
-<th>Reloader Compatibility</th>
-<th>Guide</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>External Secrets Operator</strong></td>
-<td>ESO syncs to K8s Secret</td>
-<td>ESO refresh interval</td>
-<td>Best fit</td>
-<td><a href="openbao-eso.html">ESO Guide</a></td>
-</tr>
-<tr>
-<td><strong>OpenBao Secrets Operator</strong></td>
-<td>BSO syncs to K8s Secret</td>
-<td>BSO refresh interval</td>
-<td>Best fit</td>
-<td><a href="openbao-bso.html">BSO Guide</a></td>
-</tr>
-<tr>
-<td><strong>CSI Driver</strong></td>
-<td>CSI mounts files + syncs to K8s Secret</td>
-<td>CSI rotation interval</td>
-<td>Works with <code>secretObjects</code></td>
-<td><a href="openbao-csi.html">CSI Guide</a></td>
-</tr>
-<tr>
-<td><strong>CSI Driver (File-Based)</strong></td>
-<td>CSI mounts files only (no K8s Secret)</td>
-<td>CSI rotation interval</td>
-<td>Works via SecretProviderClassPodStatus</td>
-<td><a href="openbao-csi-file.html">CSI File Guide</a></td>
-</tr>
-</tbody>
-</table>
-<h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h2>
+<h1 id="how-to-use-reloader-with-the-doppler-kubernetes-operator">How to Use Reloader with the Doppler Kubernetes Operator<a class="headerlink" href="#how-to-use-reloader-with-the-doppler-kubernetes-operator" title="Permanent link">#</a></h1>
+<p>This guide shows how to combine the Doppler Kubernetes operator with Reloader to automatically restart pods when secrets change in Doppler.</p>
+<p>The Doppler operator syncs secrets from Doppler into Kubernetes <code>Secret</code> objects. Reloader watches those Secrets and triggers rolling restarts when their data changes. This pattern supports all Reloader-compatible workload types — including StatefulSets, Daemonsets, and Argo Rollouts — which the Doppler operator's built-in reload does not cover.</p>
+<blockquote>
+<p>The Doppler documentation recommends Stakater Reloader for workload types beyond Deployments.</p>
+</blockquote>
+<hr>
+<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h2>
 <pre class="mermaid"><code>sequenceDiagram
-    actor Ops as Operator
-    participant OB as OpenBao
-    participant Sync as Secret Sync&lt;br/&gt;(ESO / BSO / CSI)
+    actor Dev as Developer
+    participant DOP as Doppler
+    participant OP as Doppler Operator
     participant K8s as Kubernetes Secret
     participant RL as Reloader
     participant Pod as Application Pod
 
-    Ops-&gt;&gt;OB: Rotate secret (bao kv put)
-    loop Poll / sync interval
-        Sync-&gt;&gt;OB: Fetch latest secret value
-        OB--&gt;&gt;Sync: Updated value
+    Dev-&gt;&gt;DOP: Update secret value
+    loop Every resyncSeconds (default: 60s)
+        OP-&gt;&gt;DOP: Fetch latest secrets
+        DOP--&gt;&gt;OP: Updated secret value
+        OP-&gt;&gt;K8s: Update managed Kubernetes Secret
     end
-    Sync-&gt;&gt;K8s: Update Secret data
     K8s--&gt;&gt;RL: Watch event (Secret changed)
     RL-&gt;&gt;Pod: Trigger rolling restart
     Note over Pod: New pod starts with updated secret</code></pre>
+<hr>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">#</a></h2>
 <ul>
 <li>Kubernetes cluster (v1.19+)</li>
 <li>Helm v3+</li>
-<li>OpenBao (OSS)</li>
-<li>OpenBao CLI (<code>bao</code>) installed locally</li>
+<li>A Doppler account with a project and config (environment) set up</li>
+<li>A Doppler service token for the target config</li>
 <li>Stakater Reloader installed</li>
-<li>kubectl configured with cluster access</li>
 </ul>
-<h3 id="install-stakater-reloader">Install Stakater Reloader<a class="headerlink" href="#install-stakater-reloader" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>stakater<span class="w"> </span>https://stakater.github.io/stakater-charts
-helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span>--namespace<span class="w"> </span>reloader<span class="w"> </span>--create-namespace
-</code></pre></div>
-<h2 id="common-setup-steps">Common Setup Steps<a class="headerlink" href="#common-setup-steps" title="Permanent link">#</a></h2>
-<h3 id="step-1-install-openbao">Step 1: Install OpenBao<a class="headerlink" href="#step-1-install-openbao" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Add OpenBao Helm repo</span>
-helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>openbao<span class="w"> </span>https://openbao.github.io/openbao-helm
+<hr>
+<h2 id="step-1-install-the-doppler-kubernetes-operator">Step 1 — Install the Doppler Kubernetes operator<a class="headerlink" href="#step-1-install-the-doppler-kubernetes-operator" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>doppler<span class="w"> </span>https://helm.doppler.com
 helm<span class="w"> </span>repo<span class="w"> </span>update
-
-<span class="c1"># Install OpenBao</span>
-helm<span class="w"> </span>install<span class="w"> </span>openbao<span class="w"> </span>openbao/openbao<span class="w"> </span>-n<span class="w"> </span>openbao<span class="w"> </span>--create-namespace<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--set<span class="w"> </span><span class="s2">"server.dataStorage.size=1Gi"</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>--set<span class="w"> </span><span class="s2">"injector.enabled=false"</span>
+helm<span class="w"> </span>install<span class="w"> </span>--generate-name<span class="w"> </span>doppler/doppler-kubernetes-operator
 </code></pre></div>
-<blockquote>
-<p><strong>Note:</strong> The injector is disabled because this guide uses ESO, BSO, or CSI to sync secrets. Enable it if you also need OpenBao Agent sidecar injection.</p>
-</blockquote>
-<p>Wait for the pod to start (it will be Running but not Ready until unsealed):</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span><span class="nb">wait</span><span class="w"> </span>--for<span class="o">=</span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.status.phase}'</span><span class="o">=</span>Running<span class="w"> </span>pod/openbao-0<span class="w"> </span>-n<span class="w"> </span>openbao<span class="w"> </span>--timeout<span class="o">=</span>180s
+<p>The operator installs into the <code>doppler-operator-system</code> namespace by default.</p>
+<p>Verify it is running:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>doppler-operator-system
 </code></pre></div>
-<h3 id="step-2-initialize-and-unseal-openbao">Step 2: Initialize and Unseal OpenBao<a class="headerlink" href="#step-2-initialize-and-unseal-openbao" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Initialize OpenBao (using 1 key share for simplicity; use more in production)</span>
-kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-n<span class="w"> </span>openbao<span class="w"> </span>openbao-0<span class="w"> </span>--<span class="w"> </span>bao<span class="w"> </span>operator<span class="w"> </span>init<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-key-shares<span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-key-threshold<span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
-<span class="w">  </span>-format<span class="o">=</span>json<span class="w"> </span>&gt;<span class="w"> </span>openbao-init.json
+<hr>
+<h2 id="step-2-install-reloader">Step 2 — Install Reloader<a class="headerlink" href="#step-2-install-reloader" title="Permanent link">#</a></h2>
+<div class="highlight"><pre><span></span><code>helm<span class="w"> </span>repo<span class="w"> </span>add<span class="w"> </span>stakater<span class="w"> </span>https://stakater.github.io/stakater-charts
+helm<span class="w"> </span>repo<span class="w"> </span>update
+helm<span class="w"> </span>install<span class="w"> </span>reloader<span class="w"> </span>stakater/reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>reloader<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--create-namespace
 </code></pre></div>
-<p><strong>Important:</strong> Save <code>openbao-init.json</code> securely. It contains the unseal key and root token.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Extract unseal key and root token</span>
-<span class="nv">OPENBAO_UNSEAL_KEY</span><span class="o">=</span><span class="k">$(</span>cat<span class="w"> </span>openbao-init.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">'.unseal_keys_b64[0]'</span><span class="k">)</span>
-<span class="nv">OPENBAO_ROOT_TOKEN</span><span class="o">=</span><span class="k">$(</span>cat<span class="w"> </span>openbao-init.json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">'.root_token'</span><span class="k">)</span>
-
-<span class="c1"># Unseal OpenBao</span>
-kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-n<span class="w"> </span>openbao<span class="w"> </span>openbao-0<span class="w"> </span>--<span class="w"> </span>bao<span class="w"> </span>operator<span class="w"> </span>unseal<span class="w"> </span><span class="s2">"</span><span class="nv">$OPENBAO_UNSEAL_KEY</span><span class="s2">"</span>
+<hr>
+<h2 id="step-3-create-the-doppler-service-token-secret">Step 3 — Create the Doppler service token secret<a class="headerlink" href="#step-3-create-the-doppler-service-token-secret" title="Permanent link">#</a></h2>
+<p>Create a Kubernetes Secret containing the Doppler service token. The operator reads this to authenticate with the Doppler API.</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>create<span class="w"> </span>secret<span class="w"> </span>generic<span class="w"> </span>doppler-token-secret<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--namespace<span class="w"> </span>doppler-operator-system<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--from-literal<span class="o">=</span><span class="nv">serviceToken</span><span class="o">=</span>dp.st.prd.XXXX
 </code></pre></div>
-<p>OpenBao should now show <code>Sealed: false</code>. Wait for the pod to become Ready:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span><span class="nb">wait</span><span class="w"> </span>--for<span class="o">=</span><span class="nv">condition</span><span class="o">=</span>ready<span class="w"> </span>pod/openbao-0<span class="w"> </span>-n<span class="w"> </span>openbao<span class="w"> </span>--timeout<span class="o">=</span>30s
+<p>The service token must have at least read access to the target project and config. Create a dedicated service token in the Doppler dashboard under <strong>Access</strong> → <strong>Service Tokens</strong>.</p>
+<hr>
+<h2 id="step-4-create-the-dopplersecret-resource">Step 4 — Create the DopplerSecret resource<a class="headerlink" href="#step-4-create-the-dopplersecret-resource" title="Permanent link">#</a></h2>
+<p>The <code>DopplerSecret</code> CRD tells the operator which Doppler project and config to sync, and which Kubernetes Secret to write the result into.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secrets.doppler.com/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DopplerSecret</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-doppler-secret</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">doppler-operator-system</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">tokenSecret</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">doppler-token-secret</span>
+<span class="w">  </span><span class="nt">project</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-project</span>
+<span class="w">  </span><span class="nt">config</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prd</span>
+<span class="w">  </span><span class="nt">managedSecret</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">    </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
 </code></pre></div>
-<h3 id="step-3-configure-openbao-cli">Step 3: Configure OpenBao CLI<a class="headerlink" href="#step-3-configure-openbao-cli" title="Permanent link">#</a></h3>
-<p>Set up the <code>bao</code> CLI locally:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Port-forward for local CLI access</span>
-kubectl<span class="w"> </span>port-forward<span class="w"> </span>-n<span class="w"> </span>openbao<span class="w"> </span>svc/openbao<span class="w"> </span><span class="m">8200</span>:8200<span class="w"> </span><span class="p">&amp;</span>
-
-<span class="c1"># Configure CLI (use the root token from Step 2)</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">BAO_ADDR</span><span class="o">=</span><span class="s2">"http://127.0.0.1:8200"</span>
-<span class="nb">export</span><span class="w"> </span><span class="nv">BAO_TOKEN</span><span class="o">=</span><span class="s2">"</span><span class="nv">$OPENBAO_ROOT_TOKEN</span><span class="s2">"</span>
+<p>Apply:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>doppler-secret.yaml
 </code></pre></div>
-<p>Alternatively, you can run <code>bao</code> commands directly inside the OpenBao pod:</p>
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-n<span class="w"> </span>openbao<span class="w"> </span>openbao-0<span class="w"> </span>--<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s2">"BAO_TOKEN=&lt;token&gt; bao &lt;command&gt;"</span>
+<p><strong>Key fields:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>spec.tokenSecret.name</code></td>
+<td>Name of the Kubernetes Secret holding the Doppler service token</td>
+</tr>
+<tr>
+<td><code>spec.project</code></td>
+<td>Doppler project name</td>
+</tr>
+<tr>
+<td><code>spec.config</code></td>
+<td>Doppler config (environment) name — for example, <code>prd</code>, <code>stg</code>, <code>dev</code></td>
+</tr>
+<tr>
+<td><code>spec.managedSecret.name</code></td>
+<td>Name of the Kubernetes Secret the operator creates and keeps in sync</td>
+</tr>
+<tr>
+<td><code>spec.managedSecret.namespace</code></td>
+<td>Namespace where the managed Secret is created</td>
+</tr>
+<tr>
+<td><code>spec.resyncSeconds</code></td>
+<td>How often the operator polls Doppler (default: <code>60</code>)</td>
+</tr>
+</tbody>
+</table>
+<p>The operator creates the Kubernetes Secret <code>app-secrets</code> in the <code>default</code> namespace and syncs all secrets from the Doppler config into it.</p>
+<p>Verify the Secret was created:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>default
+kubectl<span class="w"> </span>describe<span class="w"> </span>dopplersecret<span class="w"> </span>app-doppler-secret<span class="w"> </span>-n<span class="w"> </span>doppler-operator-system
 </code></pre></div>
-<blockquote>
-<p><strong>Note:</strong> The remaining steps in this guide use the local CLI. If using the in-pod approach, prefix each <code>bao</code> command with the <code>kubectl exec</code> pattern above.</p>
-</blockquote>
-<h3 id="step-4-enable-kv-v2-secrets-engine">Step 4: Enable KV v2 Secrets Engine<a class="headerlink" href="#step-4-enable-kv-v2-secrets-engine" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>bao<span class="w"> </span>secrets<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>-path<span class="o">=</span>secret<span class="w"> </span>kv-v2
+<hr>
+<h2 id="step-5-annotate-workloads-for-reloader">Step 5 — Annotate workloads for Reloader<a class="headerlink" href="#step-5-annotate-workloads-for-reloader" title="Permanent link">#</a></h2>
+<p>Add the Reloader annotation to each workload that should restart when the Secret changes. Do not use the Doppler operator's built-in <code>secrets.doppler.com/reload: "true"</code> annotation on the same workload — both mechanisms would fire on the same Secret update, causing two successive restarts.</p>
+<p><strong>Watch the specific Secret by name (recommended):</strong></p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">secret.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"app-secrets"</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp:latest</span>
+<span class="w">          </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API_KEY</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API_KEY</span>
 </code></pre></div>
-<p>Verify:</p>
-<div class="highlight"><pre><span></span><code>bao<span class="w"> </span>secrets<span class="w"> </span>list
+<p>Apply:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>apply<span class="w"> </span>-f<span class="w"> </span>deployment.yaml
 </code></pre></div>
-<p>You should see <code>secret/</code> listed as <code>kv</code> version 2.</p>
-<h3 id="step-5-write-test-secrets">Step 5: Write Test Secrets<a class="headerlink" href="#step-5-write-test-secrets" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>bao<span class="w"> </span>kv<span class="w"> </span>put<span class="w"> </span>secret/myapp<span class="w"> </span><span class="nv">username</span><span class="o">=</span><span class="s1">'admin-user'</span><span class="w"> </span><span class="nv">password</span><span class="o">=</span><span class="s1">'super-secret-password'</span>
+<hr>
+<h2 id="statefulsets">StatefulSets<a class="headerlink" href="#statefulsets" title="Permanent link">#</a></h2>
+<p>The Doppler operator's built-in reload does not support StatefulSets. Reloader does.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">StatefulSet</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">secret.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"app-secrets"</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">serviceName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp:latest</span>
+<span class="w">          </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DB_PASSWORD</span>
 </code></pre></div>
-<p>Verify:</p>
-<div class="highlight"><pre><span></span><code>bao<span class="w"> </span>kv<span class="w"> </span>get<span class="w"> </span>secret/myapp
+<hr>
+<h2 id="argo-rollouts">Argo Rollouts<a class="headerlink" href="#argo-rollouts" title="Permanent link">#</a></h2>
+<p>The Doppler operator's built-in reload does not support Argo Rollouts. Reloader does, with one extra Helm value.</p>
+<p>Enable Argo Rollouts support in Reloader:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">isArgoRollouts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
-<h3 id="step-6-create-openbao-read-policy">Step 6: Create OpenBao Read Policy<a class="headerlink" href="#step-6-create-openbao-read-policy" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code>bao<span class="w"> </span>policy<span class="w"> </span>write<span class="w"> </span>myapp-read<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;EOF</span>
-<span class="s">path "secret/data/myapp" {</span>
-<span class="s">  capabilities = ["read"]</span>
-<span class="s">}</span>
-<span class="s">path "secret/metadata/myapp" {</span>
-<span class="s">  capabilities = ["read"]</span>
-<span class="s">}</span>
-<span class="s">EOF</span>
+<p>Then annotate the Rollout:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">argoproj.io/v1alpha1</span>
+<span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Rollout</span>
+<span class="nt">metadata</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">default</span>
+<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">secret.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"app-secrets"</span>
+<span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">  </span><span class="nt">selector</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">matchLabels</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">  </span><span class="nt">template</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">metadata</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">labels</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">app</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span>
+<span class="w">    </span><span class="nt">spec</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">containers</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app</span>
+<span class="w">          </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp:latest</span>
+<span class="w">          </span><span class="nt">env</span><span class="p">:</span>
+<span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API_KEY</span>
+<span class="w">              </span><span class="nt">valueFrom</span><span class="p">:</span>
+<span class="w">                </span><span class="nt">secretKeyRef</span><span class="p">:</span>
+<span class="w">                  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app-secrets</span>
+<span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">API_KEY</span>
 </code></pre></div>
-<h3 id="step-7-enable-kubernetes-auth">Step 7: Enable Kubernetes Auth<a class="headerlink" href="#step-7-enable-kubernetes-auth" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Enable Kubernetes auth method</span>
-bao<span class="w"> </span>auth<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>kubernetes
-
-<span class="c1"># Configure Kubernetes auth</span>
-bao<span class="w"> </span>write<span class="w"> </span>auth/kubernetes/config<span class="w"> </span><span class="se">\</span>
-<span class="w">  </span><span class="nv">kubernetes_host</span><span class="o">=</span><span class="s1">'https://kubernetes.default.svc.cluster.local'</span>
+<hr>
+<h2 id="step-6-test-secret-rotation">Step 6 — Test secret rotation<a class="headerlink" href="#step-6-test-secret-rotation" title="Permanent link">#</a></h2>
+<p>Update a secret value in the Doppler dashboard, then wait for the next sync interval (default: 60 seconds).</p>
+<p>Confirm the Kubernetes Secret was updated:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>app-secrets<span class="w"> </span>-n<span class="w"> </span>default<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">'{.data.DB_PASSWORD}'</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
 </code></pre></div>
-<h3 id="step-8-enable-approle-auth-optional">Step 8: Enable AppRole Auth (Optional)<a class="headerlink" href="#step-8-enable-approle-auth-optional" title="Permanent link">#</a></h3>
-<p>Only required for the <a href="openbao-bso.html#option-2-approle-authentication">BSO AppRole pattern</a>.</p>
-<div class="highlight"><pre><span></span><code>bao<span class="w"> </span>auth<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>approle
+<p>Confirm pods were restarted:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>rollout<span class="w"> </span>status<span class="w"> </span>deployment/myapp<span class="w"> </span>-n<span class="w"> </span>default
+kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>default<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>myapp
 </code></pre></div>
-<h2 id="how-reloader-works">How Reloader Works<a class="headerlink" href="#how-reloader-works" title="Permanent link">#</a></h2>
-<ol>
-<li><strong>Secret provider updates K8s Secret</strong> - ESO/BSO/CSI syncs secrets from OpenBao</li>
-<li><strong>Reloader detects change</strong> - Watches for Secret changes via Kubernetes API</li>
-<li><strong>Pod restart triggered</strong> - Rolling restart of pods referencing the changed Secret</li>
-</ol>
-<h3 id="reloader-annotations">Reloader Annotations<a class="headerlink" href="#reloader-annotations" title="Permanent link">#</a></h3>
-<p><strong>On Deployment (for K8s Secret-based patterns: ESO, BSO, CSI with <code>secretObjects</code>):</strong></p>
+<p>Check Reloader logs to confirm the reload was triggered:</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader-reloader<span class="w"> </span>--tail<span class="o">=</span><span class="m">20</span>
+</code></pre></div>
+<p>Expected output:</p>
+<div class="highlight"><pre><span></span><code>Changes detected in 'app-secrets' of type 'Secret' in namespace 'default'
+Updated 'myapp' of type 'Deployment' in namespace 'default'
+</code></pre></div>
+<hr>
+<h2 id="reloader-annotations-reference">Reloader annotations reference<a class="headerlink" href="#reloader-annotations-reference" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Annotation</th>
+<th>Placed on</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>secret.reloader.stakater.com/reload: "app-secrets"</code></td>
+<td>Any workload</td>
+<td>Restart when the named Secret changes</td>
+</tr>
+<tr>
+<td><code>reloader.stakater.com/auto: "true"</code></td>
+<td>Any workload</td>
+<td>Restart when any Secret or ConfigMap referenced in the pod spec changes</td>
+</tr>
+<tr>
+<td><code>reloader.stakater.com/search: "true"</code></td>
+<td>Workload</td>
+<td>Restart when any Secret annotated with <code>reloader.stakater.com/match: "true"</code> changes</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="faster-sync-with-resyncseconds">Faster sync with <code>resyncSeconds</code><a class="headerlink" href="#faster-sync-with-resyncseconds" title="Permanent link">#</a></h2>
+<p>To reduce the delay between a Doppler change and a pod restart, lower <code>resyncSeconds</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">spec</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">resyncSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">15</span>
+</code></pre></div>
+<p>The Doppler documentation recommends the default of 60 seconds for most use cases. Lower values increase API request volume against the Doppler API.</p>
+<hr>
+<h2 id="cooldown-between-reloads">Cooldown between reloads<a class="headerlink" href="#cooldown-between-reloads" title="Permanent link">#</a></h2>
+<p>To prevent rapid successive restarts when multiple secrets are updated at once:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">reloader.stakater.com/search</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
+<span class="w">    </span><span class="nt">secret.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"app-secrets"</span>
+<span class="w">    </span><span class="nt">deployment.reloader.stakater.com/pause-period</span><span class="p">:</span><span class="w"> </span><span class="s">"2m"</span>
 </code></pre></div>
-<p><strong>On Secret (must be annotation, not label):</strong></p>
-<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">reloader.stakater.com/match</span><span class="p">:</span><span class="w"> </span><span class="s">"true"</span>
-</code></pre></div>
-<p><strong>On Deployment (for CSI file-based pattern only):</strong></p>
-<div class="highlight"><pre><span></span><code><span class="nt">metadata</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">annotations</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">secretproviderclass.reloader.stakater.com/reload</span><span class="p">:</span><span class="w"> </span><span class="s">"&lt;secretproviderclass-name&gt;"</span>
-</code></pre></div>
-<h2 id="pattern-specific-guides">Pattern-Specific Guides<a class="headerlink" href="#pattern-specific-guides" title="Permanent link">#</a></h2>
-<ul>
-<li><a href="openbao-eso.html">External Secrets Operator Pattern</a> - Token or Kubernetes auth</li>
-<li><a href="openbao-bso.html">OpenBao Secrets Operator Pattern</a> - Kubernetes auth or AppRole</li>
-<li><a href="openbao-csi.html">CSI Driver Pattern</a> - Kubernetes auth (syncs to K8s Secret)</li>
-<li><a href="openbao-csi-file.html">CSI Driver File-Based Pattern</a> - Kubernetes auth (file-only, no K8s Secret)</li>
-</ul>
-<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">#</a></h2>
-<ul>
-<li><a href="https://github.com/stakater/Reloader">Stakater Reloader</a></li>
-<li><a href="https://openbao.org/docs/">OpenBao Documentation</a></li>
-<li><a href="https://github.com/openbao/openbao-helm">OpenBao Helm Chart</a></li>
-<li><a href="https://external-secrets.io/latest/provider/openbao/">External Secrets Operator - OpenBao Provider</a></li>
-<li><a href="https://github.com/openbao/openbao-secrets-operator">OpenBao Secrets Operator</a></li>
-<li><a href="https://github.com/openbao/openbao-csi-provider">OpenBao CSI Provider</a></li>
-</ul>
+<p>During the pause period, additional Secret changes do not trigger another restart.</p>
 
 
 
