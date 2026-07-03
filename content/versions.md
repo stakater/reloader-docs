@@ -1,5 +1,79 @@
 # Reloader Enterprise – Release History
 
+## v1.4.19
+
+_**July 1, 2026**_
+
+### **Release Metadata**
+
+<table>
+  <tr><td><strong>Version</strong></td><td><code>v1.4.19</code></td></tr>
+  <tr><td><strong>Container Image</strong></td><td><code>ghcr.io/stakater/reloader-enterprise:v1.4.19</code></td></tr>
+  <tr><td><strong>Container Image UBI</strong></td><td><code>ghcr.io/stakater/reloader-enterprise:v1.4.19-ubi</code></td></tr>
+  <tr><td><strong>Reloader OSS Release Notes</strong></td><td><a href="https://github.com/stakater/Reloader/releases/tag/v1.4.19">Release Notes</a></td></tr>
+</table>
+
+---
+
+### **SBOM**  
+
+<details>
+<summary>Click to expand SBOM JSON</summary>
+
+```json
+{
+  "artifacts": [
+    {
+      "name": "ghcr.io/stakater/reloader-enterprise:v1.4.19",
+      "digest": "sha256:e1ffbd444502114ea99235e6d3fe5650649161fceba5da5263d07f4bf2cf0f1e"
+    },
+    {
+      "name": "ghcr.io/stakater/reloader-enterprise:v1.4.19-ubi",
+      "digest": "sha256:1803070bee91eea34df85aad7e336735889f14827394e1ebb7f3e0376625200b"
+    }
+  ]
+}
+```
+
+</details>
+
+## v1.4.18
+
+_**July 1, 2026**_
+
+### **Release Metadata**
+
+<table>
+  <tr><td><strong>Version</strong></td><td><code>v1.4.18</code></td></tr>
+  <tr><td><strong>Container Image</strong></td><td><code>ghcr.io/stakater/reloader-enterprise:v1.4.18</code></td></tr>
+  <tr><td><strong>Container Image UBI</strong></td><td><code>ghcr.io/stakater/reloader-enterprise:v1.4.18-ubi</code></td></tr>
+  <tr><td><strong>Reloader OSS Release Notes</strong></td><td><a href="https://github.com/stakater/Reloader/releases/tag/v1.4.18">Release Notes</a></td></tr>
+</table>
+
+---
+
+### **SBOM**  
+
+<details>
+<summary>Click to expand SBOM JSON</summary>
+
+```json
+{
+  "artifacts": [
+    {
+      "name": "ghcr.io/stakater/reloader-enterprise:v1.4.18",
+      "digest": "sha256:8ffbad0187bd6ff68b99385ecbe50e3041ce716a4ce3bdf78fb56f9f695659a0"
+    },
+    {
+      "name": "ghcr.io/stakater/reloader-enterprise:v1.4.18-ubi",
+      "digest": "sha256:b4bbc36983085a80d32dd36b125d27d68ab51a1616eb5e1a4f9eec57f318ad61"
+    }
+  ]
+}
+```
+
+</details>
+
 ## v1.4.17
 
 _**May 25, 2026**_
