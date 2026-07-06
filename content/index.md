@@ -188,6 +188,7 @@ To get Reloader Enterprise, open a ticket at the [Stakater support portal](https
 
 - [Install Reloader OSS](installation/install-oss.md)
 - [Install Reloader Enterprise](installation/install.md)
+- [Run Reloader on OpenShift](how-to-guides/use-reloader-with-openshift.md)
 
 **Common tasks:**
 

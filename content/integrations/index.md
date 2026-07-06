@@ -50,6 +50,7 @@ Because the integration point is Kubernetes-native, many tools *can* work with R
 | [OpenBao](./openbao/index.md) | [ESO](./openbao/openbao-eso.md), [BSO](./openbao/openbao-bso.md), [CSI Driver](./openbao/openbao-csi.md), [CSI Driver (File-Based)](./openbao/openbao-csi-file.md) |
 | [Conjur](./conjur/index.md) | [ESO](./conjur/conjur-eso.md), [Sidecar](./conjur/conjur-sidecar.md), [CSI Driver](./conjur/conjur-csi.md) |
 | [AWS Secrets Manager](./aws/index.md) | [ESO](./aws/aws-eso.md), [CSI Driver](./aws/aws-csi.md) |
-| [GCP Secret Manager](./gcp/index.md) | [ESO](./gcp/gcp-eso.md) |
+| [GCP Secret Manager](./gcp/index.md) | [ESO](./gcp/gcp-eso.md), [CSI Driver](./gcp/gcp-csi.md) |
 | [Azure Key Vault](./azure/index.md) | [ESO](./azure/azure-eso.md), [CSI Driver](./azure/azure-csi.md) |
 | [Infisical](./infisical/index.md) | [Infisical Operator](./infisical/infisical-operator.md) |
+| [Doppler](./doppler/index.md) | [Doppler Operator](./doppler/doppler-operator.md) |
