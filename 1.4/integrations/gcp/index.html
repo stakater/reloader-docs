@@ -2742,6 +2742,34 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/comparisons/reloader-vs-doppler-reload.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reloader vs Doppler Built-In Reload
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -3181,6 +3209,34 @@ This documentation is either for an old version, or for the unreleased 'main' ve
     
   
     Use Reloader with Flux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to-guides/use-reloader-with-openshift.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    How to Use Reloader on OpenShift
   
 
     
@@ -4200,6 +4256,34 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="gcp-csi.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CSI Driver
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -4437,6 +4521,117 @@ This documentation is either for an old version, or for the unreleased 'main' ve
     
   
     Infisical Operator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_9">
+        
+          
+          <label class="md-nav__link" for="__nav_6_9" id="__nav_6_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Doppler
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Doppler
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../doppler/index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../doppler/doppler-operator.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Doppler Operator
   
 
     
@@ -4825,6 +5020,13 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 <td>Best fit</td>
 <td><a href="gcp-eso.html">ESO Guide</a></td>
 </tr>
+<tr>
+<td><strong>CSI Driver (provider-gcp)</strong></td>
+<td>GCP provider syncs to K8s Secret via <code>secretObjects</code></td>
+<td>CSI rotation poll interval</td>
+<td>Best fit</td>
+<td><a href="gcp-csi.html">CSI Guide</a></td>
+</tr>
 </tbody>
 </table>
 <h2 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">#</a></h2>
@@ -4874,6 +5076,7 @@ This documentation is either for an old version, or for the unreleased 'main' ve
 <h2 id="pattern-specific-guides">Pattern-Specific Guides<a class="headerlink" href="#pattern-specific-guides" title="Permanent link">#</a></h2>
 <ul>
 <li><a href="gcp-eso.html">External Secrets Operator Pattern</a> — Workload Identity (recommended) or Service Account Key</li>
+<li><a href="gcp-csi.html">CSI Driver Pattern</a> — open-source provider-gcp with Workload Identity; supports file-based and Kubernetes Secret sync</li>
 </ul>
 
 
