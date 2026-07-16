@@ -2,270 +2,270 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/index.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/eula.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/help.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/versions.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/about/editions.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/about/faq.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/about/value-by-role.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/about/why-reloader-matters.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/architecture/how-it-works.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/concepts/secret-propagation-problem-kubernetes.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/concepts/why-configuration-reloading-matters.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/concepts/comparisons/reloader-vs-app-level-reload.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/concepts/comparisons/reloader-vs-cert-manager.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/concepts/comparisons/reloader-vs-checksum-annotations.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/concepts/comparisons/reloader-vs-doppler-reload.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/concepts/comparisons/reloader-vs-gitops-tools.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/concepts/comparisons/reloader-vs-helm.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/concepts/comparisons/reloader-vs-infisical-reload.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/concepts/comparisons/reloader-vs-init-containers.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/concepts/comparisons/reloader-vs-kyverno.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/concepts/comparisons/reloader-vs-manual-rollouts.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/concepts/comparisons/reloader-vs-secret-operators.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/concepts/comparisons/reloader-vs-sidecar-config-watchers.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/how-to-guides/alerting-on-reload.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/how-to-guides/monitor-reloader.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/how-to-guides/namespace-scoping.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/how-to-guides/reload-pods-on-tls-certificate-rotation.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/how-to-guides/restart-pods-when-configmap-changes.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/how-to-guides/restart-pods-when-external-secrets-change.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/how-to-guides/restart-pods-when-secret-changes.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/how-to-guides/use-reloader-with-argocd.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/how-to-guides/use-reloader-with-flux.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/how-to-guides/use-reloader-with-openshift.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/how-to-guides/verify-and-troubleshoot.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/installation/install-oss.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/installation/install.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/index.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/aws/index.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/aws/aws-csi.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/aws/aws-eso.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/azure/index.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/azure/azure-csi.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/azure/azure-eso.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/conjur/index.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/conjur/conjur-csi.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/conjur/conjur-eso.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/conjur/conjur-sidecar.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/doppler/index.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/doppler/doppler-operator.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/gcp/index.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/gcp/gcp-csi.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/gcp/gcp-eso.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/infisical/index.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/infisical/infisical-operator.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/openbao/index.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/openbao/openbao-bso.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/openbao/openbao-csi-file.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/openbao/openbao-csi.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/openbao/openbao-eso.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/vault/index.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/vault/vault-csi-file.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/vault/vault-csi.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/vault/vault-eso.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/integrations/vault/vault-vso.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/reference/annotations.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/reference/helm-values.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
     <url>
          <loc>https://docs.stakater.com/reloader/renovate-main-stakater-vale-package-0.x/reference/rbac.html</loc>
-         <lastmod>2026-07-05</lastmod>
+         <lastmod>2026-07-16</lastmod>
     </url>
 </urlset>
