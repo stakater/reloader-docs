@@ -1,5 +1,42 @@
 # Reloader Enterprise – Release History
 
+## v1.4.21
+
+_**August 10, 2026**_
+
+### **Release Metadata**
+
+<table>
+  <tr><td><strong>Version</strong></td><td><code>v1.4.21</code></td></tr>
+  <tr><td><strong>Container Image</strong></td><td><code>ghcr.io/stakater/reloader-enterprise:v1.4.21</code></td></tr>
+  <tr><td><strong>Container Image UBI</strong></td><td><code>ghcr.io/stakater/reloader-enterprise:v1.4.21-ubi</code></td></tr>
+  <tr><td><strong>Reloader OSS Release Notes</strong></td><td><a href="https://github.com/stakater/Reloader/releases/tag/v1.4.21">Release Notes</a></td></tr>
+</table>
+
+---
+
+### **SBOM**  
+
+<details>
+<summary>Click to expand SBOM JSON</summary>
+
+```json
+{
+  "artifacts": [
+    {
+      "name": "ghcr.io/stakater/reloader-enterprise:v1.4.21",
+      "digest": "sha256:ffc755cf0d7d190f790232858d4258099ad5d3f920e7b294c06f67cf409efb96"
+    },
+    {
+      "name": "ghcr.io/stakater/reloader-enterprise:v1.4.21-ubi",
+      "digest": "sha256:288b8126219254af02cd0b1f62a059a1e9b9c4a54280b9fad5e821f4d2964fbf"
+    }
+  ]
+}
+```
+
+</details>
+
 ## v1.4.19
 
 _**July 1, 2026**_
