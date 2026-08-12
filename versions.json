@@ -52,7 +52,9 @@
   {
     "version": "fix-sync-push-credentials",
     "title": "fix-sync-push-credentials",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "abaziz-patch-1",
