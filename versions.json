@@ -1,12 +1,5 @@
 [
   {
-    "version": "trigger-14-deploy",
-    "title": "trigger-14-deploy",
-    "aliases": [
-      "latest"
-    ]
-  },
-  {
     "version": "renovate-main-stakater-vale-package-0.x",
     "title": "renovate-main-stakater-vale-package-0.x",
     "aliases": []
