@@ -2,7 +2,9 @@
   {
     "version": "update-docs-34354128490-69d5c149ef1f0937db870f2ac688c252949e905d",
     "title": "update-docs-34354128490-69d5c149ef1f0937db870f2ac688c252949e905d",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "renovate-main-stakater-vale-package-0.x",
@@ -12,9 +14,7 @@
   {
     "version": "renovate-main-stakater-.github-0.x",
     "title": "renovate-main-stakater-.github-0.x",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-main-python-3.x",
