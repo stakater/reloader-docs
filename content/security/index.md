@@ -169,9 +169,12 @@ reloader:
 
 With this configuration Reloader runs as a non-root, non-privileged container with all capabilities dropped, a read-only root filesystem (the chart automounts an `emptyDir` at `/tmp` for scratch space), the runtime-default seccomp profile, and a NetworkPolicy restricting traffic to the metrics port and the Kubernetes API.
 
-Reloader also runs cleanly under the Kubernetes `restricted` Pod Security Standard and OpenShift's `restricted-v2` SCC (with `runAsUser: null` so OpenShift assigns the UID — see the [OpenShift guide](../how-to-guides/use-reloader-with-openshift.md)).
+**One caveat on the NetworkPolicy:** the chart's policy allows egress on port 443 only. On clusters where the kube-apiserver *endpoint* listens on a different port (commonly 6443 on self-managed clusters and kind), the policy blocks Reloader's API access entirely. Managed control planes such as EKS, GKE, and AKS expose the API endpoint on 443. Verify your API endpoint port (`kubectl get endpoints kubernetes`) before enabling `netpol`.
 
-<!-- VERIFY (engineering): confirm restricted PSS / restricted-v2 SCC compatibility claim; consider making the hardened baseline the Enterprise chart default. -->
+This hardened baseline is validated under the Kubernetes `restricted` Pod Security Standard: with restricted admission enforced on the namespace, the Reloader pod is admitted without warnings and reload functionality works end-to-end. The same security context satisfies the requirements of OpenShift's `restricted-v2` SCC — drop all capabilities, no privilege escalation, non-root, runtime-default seccomp — with `runAsUser: null` so OpenShift assigns the UID (see the [OpenShift guide](../how-to-guides/use-reloader-with-openshift.md)).
+
+<!-- Validated 2026-09-17 on kind / Kubernetes v1.36.1: restricted PSS enforce+warn+audit labels, chart with the baseline above (netpol off due to the 6443 caveat), pod admitted with no PSS warnings, ConfigMap change triggered rollout. restricted-v2 phrasing is requirements-based; an on-OpenShift smoke test would upgrade it to "validated" too. -->
+<!-- VERIFY (product): consider making the hardened baseline the Enterprise chart default. -->
 
 ---
 

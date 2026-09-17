@@ -275,6 +275,8 @@ When enabled, the policy allows:
 - **Ingress** on port `9090` — for Prometheus metrics scraping
 - **Egress** on port `443` — to reach the Kubernetes API server (https)
 
+**Caveat:** the egress port is fixed at `443` and is not configurable. NetworkPolicy is evaluated against the API server *endpoint* port, which on many self-managed clusters (and kind) is `6443` — there the policy blocks Reloader's API access and the pod fails. Check your endpoint port with `kubectl get endpoints kubernetes` before enabling. Managed control planes (EKS, GKE, AKS) expose the endpoint on `443` and are unaffected.
+
 You can further restrict the ingress source with `netpol.from` and the egress destination with `netpol.to`:
 
 ```yaml
