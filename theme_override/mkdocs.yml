@@ -19,6 +19,8 @@ nav:
       - FAQ: about/faq.md
   - Architecture:
       - architecture/how-it-works.md
+  - Security & Compliance:
+      - security/index.md
   - Concepts:
       - concepts/why-configuration-reloading-matters.md
       - concepts/secret-propagation-problem-kubernetes.md
