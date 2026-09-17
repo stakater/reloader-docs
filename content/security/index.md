@@ -136,7 +136,7 @@ Reloader Enterprise is designed to run in **fully air-gapped and disconnected en
 - **No runtime callbacks.** Because Reloader has no phone-home, telemetry, or license-server dependency, it operates indefinitely without internet access.
 - **Offline upgrades.** Upgrades follow the same mirror-then-install flow; release artifacts, SBOMs, and digests are published per version on the [versions page](../versions.md).
 
-<!-- VERIFY (engineering): confirm supported offline chart delivery (helm pull / OCI chart in registry) and document exact mirroring commands in the install guide. -->
+<!-- Verified: the Enterprise chart is published as an OCI artifact (oci://ghcr.io/stakater/charts), so helm pull + mirror works offline. TODO (docs): add an air-gapped installation how-to with exact mirroring commands and link it here. -->
 
 ---
 
