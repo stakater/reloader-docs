@@ -22,9 +22,9 @@ Everything on this page applies to Reloader Enterprise deployed in your own Kube
 | Uses AI or machine learning? | No |
 | In the application data path? | No |
 | Do workloads stop if Reloader fails? | No |
-| Signed Enterprise images? | Yes |
-| SBOM provided per release? | Yes |
-| Continuous CVE scanning? | Yes |
+| Signed Enterprise images? | Yes — Cosign, publicly verifiable |
+| Per-release artifact digests published? | Yes |
+| Release-gated CVE scanning? | Yes — releases fail on HIGH/CRITICAL findings |
 | Commercial support and SLA? | Yes |
 | High availability supported? | Yes |
 
@@ -67,11 +67,11 @@ See [How Reloader works](../architecture/how-it-works.md) for the full mechanism
 
 Reloader watches Kubernetes Secrets and ConfigMaps **within its configured scope** through the Kubernetes API. This access is required to detect changes and determine which workloads need a rollout.
 
-<!-- VERIFY (engineering): confirm each statement below against current Enterprise code before publishing — especially logging behavior and in-memory hash comparison. -->
+The following statements are verified against the Reloader source code (Enterprise images are built from the same audited source):
 
-- Secret and ConfigMap data is processed **in memory, inside your cluster**, and is **never transmitted to Stakater** or any other external party.
-- Reloader does **not persist** Secret or ConfigMap values to disk or to any datastore. Change detection is based on comparing hashes of resource data.
-- Reloader does **not write Secret values to its logs**. Log output references resource names and namespaces, not contents.
+- Secret and ConfigMap data is processed **in memory, inside your cluster**, and is **never transmitted to Stakater** or any other external party. The only outbound connections in the codebase are to the Kubernetes API and to notification webhooks you explicitly configure.
+- Reloader does **not persist** Secret or ConfigMap values to disk or to any datastore. Change detection computes a hash over resource data and compares hashes; there are no file-write calls in the production code.
+- Reloader does **not write Secret values to its logs or notifications**. Log output and webhook alert messages reference resource names, types, and namespaces — never contents.
 - Reloader does **not store customer application data**. It is stateless; all state it needs lives in the Kubernetes resources themselves.
 
 Access can be narrowed with namespace scoping, namespace and resource label selectors, or by ignoring Secrets or ConfigMaps entirely — see [Namespace scoping](../how-to-guides/namespace-scoping.md) and the [RBAC & Security reference](../reference/rbac.md).
@@ -121,9 +121,7 @@ Reloader's connectivity requirements are minimal and differ by phase:
 | Notifications (optional) | Slack / Teams / webhook endpoints, only if you configure them | Outbound |
 | Support | None — no persistent or standing connection to Stakater | — |
 
-**There is no mandatory runtime connectivity to Stakater infrastructure or the internet.** Reloader does not phone home, and there is no license-activation callback at runtime.
-
-<!-- VERIFY (engineering): confirm there is no license validation callback or telemetry of any kind in the Enterprise build. -->
+**There is no mandatory runtime connectivity to Stakater infrastructure or the internet.** Reloader does not phone home, and there is no license-activation callback or telemetry at runtime. This is verified against the source: Enterprise images are built directly from the tagged open-source Reloader codebase, whose only outbound calls are to the Kubernetes API and customer-configured webhooks. Enterprise licensing is enforced through registry access credentials at install time, not through runtime checks.
 
 The Helm chart ships an optional `NetworkPolicy` that restricts the pod to exactly this profile — ingress on the metrics port, egress to the Kubernetes API only. See [Network policy](../reference/rbac.md#network-policy).
 
@@ -181,22 +179,32 @@ Reloader also runs cleanly under the Kubernetes `restricted` Pod Security Standa
 
 Reloader Enterprise images are built and maintained under a hardened release process:
 
-- **Continuous CVE scanning** of Enterprise images, with remediation as part of the release cadence
-- **SBOM published per release** — see the [versions page](../versions.md) for the SBOM of every Enterprise version
-- **Immutable SHA256 digests** published per release, so deployments can pin and verify by digest
-- **Signed images** for provenance verification
+- **Release-gated CVE scanning** — both the standard and UBI images are scanned with Trivy during the release pipeline, and the release **fails** on HIGH or CRITICAL findings (including unfixed ones); an Enterprise release cannot ship with known critical vulnerabilities
+- **Cosign-signed images** — both image variants are signed with Sigstore Cosign (keyless, GitHub OIDC identity, recorded in the public Rekor transparency log), and signature verification runs as a release gate
+- **Immutable SHA256 digests** published per release on the [versions page](../versions.md), so deployments can pin and verify by digest
 - **UBI variant** (Red Hat Universal Base Image) for environments that mandate Red Hat-certified base images
 - **Backported security fixes** across supported versions — you are not forced to the latest release to receive a fix
 
-<!-- VERIFY (engineering): confirm cosign signing is live for Enterprise images and add the exact `cosign verify` command + public key/identity here. -->
+### Verifying image signatures
+
+```bash
+cosign verify \
+  ghcr.io/stakater/reloader-enterprise:<version> \
+  --certificate-oidc-issuer "https://token.actions.githubusercontent.com" \
+  --certificate-identity-regexp 'https://github\.com/stakater-ab/reloader-enterprise/.*'
+```
+
+The signature is keyless: the certificate identity is the Stakater release workflow, and the signature is recorded in the public Rekor transparency log, so provenance can be verified without distributing keys — including inside air-gapped environments after mirroring.
+
+<!-- VERIFY (product): the per-release "SBOM" on the versions page is currently an artifact digest manifest, not a component-level SBOM. Either add SBOM generation (e.g. syft) to the enterprise release pipeline or keep the softer digest wording here and in the quick-reference table. -->
 
 ---
 
 ## Vulnerability management
 
-<!-- VERIFY (engineering/product): this section describes the intended process — confirm each step and any SLA commitments before publishing. -->
+<!-- VERIFY (product): the advisory/notification/reporting/SLA statements below need business confirmation — the scanning and backport statements are verified. -->
 
-- **Scanning** — Enterprise images are continuously scanned for known CVEs in the base image and all dependencies.
+- **Scanning** — every Enterprise release is scanned with Trivy across OS packages and application dependencies, and the release pipeline blocks on HIGH or CRITICAL findings.
 - **Classification** — findings are triaged by severity (CVSS) and exploitability in the context of how Reloader runs.
 - **Remediation** — fixes ship as patch releases; security and critical fixes are **backported to supported versions**, not only the latest.
 - **Advisories** — customers are notified of security-relevant releases through the Enterprise support channel.
