@@ -54,7 +54,6 @@ flowchart LR
         API --> W[Workload rollout<br/>Deployment / StatefulSet / DaemonSet]
         R -. "optional, if configured" .-> N[Slack / Teams / webhook]
     end
-    R x--x ST[Stakater infrastructure<br/>no runtime connectivity]
 ```
 
 Reloader watches Secrets and ConfigMaps through the Kubernetes API, detects changes, and patches the pod template of workloads that reference them, triggering a standard Kubernetes rolling update. All processing happens inside the cluster.
@@ -167,7 +166,7 @@ reloader:
 
 With this configuration Reloader runs as a non-root, non-privileged container with all capabilities dropped, a read-only root filesystem (the chart automounts an `emptyDir` at `/tmp` for scratch space), the runtime-default seccomp profile, and a NetworkPolicy restricting traffic to the metrics port and the Kubernetes API.
 
-**One caveat on the NetworkPolicy:** the chart's policy allows egress on port 443 only. On clusters where the kube-apiserver *endpoint* listens on a different port (commonly 6443 on self-managed clusters and kind), the policy blocks Reloader's API access entirely. Managed control planes such as EKS, GKE, and AKS expose the API endpoint on 443. Verify your API endpoint port (`kubectl get endpoints kubernetes`) before enabling `netpol`.
+**One caveat on the NetworkPolicy:** the chart's policy allows egress on port 443 only. On clusters where the API server *endpoint* listens on a different port (commonly 6443 on self-managed clusters and kind), the policy blocks Reloader's API access entirely. Managed control planes such as EKS, GKE, and AKS expose the API endpoint on 443. Verify your API endpoint port (`kubectl get endpoints kubernetes`) before enabling `netpol`.
 
 This hardened baseline is validated under the Kubernetes `restricted` Pod Security Standard: with restricted admission enforced on the namespace, the Reloader pod is admitted without warnings and reload functionality works end-to-end. The same security context satisfies the requirements of OpenShift's `restricted-v2` SCC — drop all capabilities, no privilege escalation, non-root, runtime-default seccomp — with `runAsUser: null` so OpenShift assigns the UID (see the [OpenShift guide](../how-to-guides/use-reloader-with-openshift.md)).
 
@@ -246,13 +245,7 @@ Reloader does **not** use artificial intelligence, machine learning, large langu
 
 Stakater personnel do **not** require standing or persistent access to customer clusters or data.
 
-Support is customer-initiated and works on artifacts you choose to share:
-
-```mermaid
-flowchart LR
-    C[Customer] -->|"logs, diagnostics, configuration<br/>(supplied by customer)"| S[Stakater Support]
-    S -->|guidance, fixes, releases| C
-```
+Support is customer-initiated: you open a case and share only the artifacts you choose — logs, diagnostics, configuration — and Stakater responds with guidance, fixes, or releases. Nothing flows out of your environment automatically.
 
 If a support case would ever benefit from interactive access (for example, a screen-share session), it is customer-controlled, time-bounded, and separately authorized — never assumed or standing.
 
