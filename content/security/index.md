@@ -88,17 +88,19 @@ Reloader runs under a dedicated ServiceAccount with an explicitly defined role. 
 | `configmaps` | get, list, watch | Detect changes (read-only) |
 | `deployments`, `statefulsets`, `daemonsets` | get, list, update, patch | Trigger rolling restart |
 | `cronjobs` | get, list | Evaluate CronJob workloads |
-| `jobs` | create | CronJob restart mechanism |
+| `jobs` | create, delete, list, get | CronJob restart mechanism (create the Job, clean it up) |
 | `events` | create, patch | Emit audit-visible Kubernetes Events |
 | `namespaces` | get, list, watch | Only when `namespaceSelector` is used |
-| `leases` | create, get, update | Only in HA mode (leader election) |
+| `secretproviderclasses`, `secretproviderclasspodstatuses` | get, list, watch | Only when Secrets Store CSI integration is enabled (read-only) |
+| `configmaps` (Reloader's own namespace only) | get, list, watch, create, update | Internal operational metadata, confined to the deployment namespace |
+| `leases` (Reloader's own namespace only) | create; get/update on Reloader's lock only | Only in HA mode — leader election, restricted by `resourceNames` |
 | `rollouts` (argoproj.io) | get, list, update, patch | Only when Argo Rollouts support is enabled |
 | `deploymentconfigs` (OpenShift) | get, list, update, patch | Only when OpenShift support is enabled |
 
 Key least-privilege properties:
 
-- **Secret and ConfigMap access is read-only.** Reloader never writes configuration or secret data.
-- **Cluster-wide or namespace-scoped.** With `watchGlobally: false`, Reloader uses a namespace-scoped `Role` instead of a `ClusterRole` and watches only its own namespace.
+- **Watched Secret and ConfigMap access is read-only.** Across all watched namespaces, Reloader never writes configuration or secret data. The only ConfigMap write permission it holds is confined to its own deployment namespace, for internal metadata.
+- **Cluster-wide or namespace-scoped.** With `watchGlobally: false`, Reloader uses namespace-scoped `Role` resources instead of a `ClusterRole` — either its own namespace only, or an explicit list of selected namespaces (one Role per namespace, no cluster-wide permissions).
 - **Scope can be restricted further** to selected namespaces and selected resources via label selectors.
 - **Optional rules are omitted when unused** — HA, Argo Rollouts, OpenShift, and namespace-selector rules are only added when the corresponding feature is enabled.
 - **Chart-managed RBAC can be disabled** entirely if your organization provisions RBAC through its own pipeline.

@@ -52,13 +52,9 @@ Required so Reloader can evaluate namespace labels when filtering with `namespac
 - apiGroups: ["apps"]
   resources: ["deployments", "daemonsets", "statefulsets"]
   verbs: ["list", "get", "update", "patch"]
-
-- apiGroups: ["extensions"]
-  resources: ["deployments", "daemonsets"]
-  verbs: ["list", "get", "update", "patch"]
 ```
 
-Reloader patches the pod template of matching workloads to trigger a rolling restart. The `extensions` rules are retained for compatibility with older Kubernetes versions where these resources existed under the `extensions` API group.
+Reloader patches the pod template of matching workloads to trigger a rolling restart.
 
 ### CronJobs and Jobs
 
@@ -69,20 +65,23 @@ Reloader patches the pod template of matching workloads to trigger a rolling res
 
 - apiGroups: ["batch"]
   resources: ["jobs"]
-  verbs: ["create"]
+  verbs: ["create", "delete", "list", "get"]
 ```
 
-`list`/`get` on CronJobs allows Reloader to find and evaluate CronJob workloads. `create` on Jobs is required for the CronJob restart mechanism.
+`list`/`get` on CronJobs allows Reloader to find and evaluate CronJob workloads. The Jobs verbs support the CronJob restart mechanism: Reloader creates a Job from the CronJob spec and cleans it up afterwards.
 
-### Leader election — only when `enableHA: true`
+- The `cronjobs` rule is **omitted** when `reloader.ignoreCronJobs: true`.
+- The `jobs` rule is **omitted** when `reloader.ignoreJobs: true`.
+
+### Secrets Store CSI — only when `enableCSIIntegration: true`
 
 ```yaml
-- apiGroups: ["coordination.k8s.io"]
-  resources: ["leases"]
-  verbs: ["create", "get", "update"]
+- apiGroups: ["secrets-store.csi.x-k8s.io"]
+  resources: ["secretproviderclasspodstatuses", "secretproviderclasses"]
+  verbs: ["list", "get", "watch"]
 ```
 
-Required when running multiple replicas with HA mode. The active leader holds a Lease; standby replicas poll it. Not added to the ClusterRole when `enableHA: false`.
+Read-only access to Secrets Store CSI Driver resources, used to detect rotation of CSI-mounted secrets. Not added when `enableCSIIntegration: false` (the default).
 
 ### Events
 
@@ -118,11 +117,45 @@ Only added when `isOpenshift: true` **and** the OpenShift API (`apps.openshift.i
 
 ## Role rules (namespace-scoped mode)
 
-When `watchGlobally: false`, the chart creates a `Role` in the deployment namespace instead of a `ClusterRole`. The rules are identical to the ClusterRole above, **except**:
+When `watchGlobally: false`, the chart creates namespace-scoped `Role` resources instead of a `ClusterRole`:
 
-- The `namespaces` rule is **never added** (not applicable to a Role).
+- **Single namespace (default):** with `reloader.namespaces` unset, one `Role` is created in the deployment namespace — Reloader watches only the namespace it is deployed in.
+- **Selected namespaces:** with `reloader.namespaces` set to a list, one `Role` is created **per listed namespace** — Reloader watches exactly those namespaces, still with no cluster-wide permissions.
 
-This mode restricts Reloader to watching only the namespace it is deployed in.
+The rules are identical to the ClusterRole above, **except** that the `namespaces` rule is never added (not applicable to a Role).
+
+Setting `reloader.namespaces` together with `watchGlobally: true` is invalid — the chart fails rendering with an explicit error.
+
+---
+
+## Metadata Role (always created)
+
+In addition to the watch-scope RBAC above, the chart always creates a small `Role` named `<release>-metadata-role` in the deployment namespace (when `rbac.enabled: true`):
+
+```yaml
+- apiGroups: [""]
+  resources: ["configmaps"]
+  verbs: ["list", "get", "watch", "create", "update"]
+```
+
+This is the only write permission Reloader holds on ConfigMaps, and it is confined to Reloader's **own namespace** — it is used for internal operational metadata, never for application namespaces or watched resources.
+
+### Leader election — only when `enableHA: true`
+
+When HA mode is enabled, the metadata Role additionally receives Lease permissions for leader election:
+
+```yaml
+- apiGroups: ["coordination.k8s.io"]
+  resources: ["leases"]
+  verbs: ["create"]
+
+- apiGroups: ["coordination.k8s.io"]
+  resources: ["leases"]
+  resourceNames: ["stakater-reloader-lock"]
+  verbs: ["get", "update"]
+```
+
+`get` and `update` are restricted by `resourceNames` to the single lock Lease — replicas can read and renew only Reloader's own lock, not other Leases in the namespace.
 
 ---
 
