@@ -5423,8 +5423,8 @@ This documentation is for a pull request deployment and is unreleased, it is onl
         C[ConfigMaps] --&gt; R
         R --&gt; API[Kubernetes API]
         API --&gt; W[Workload rollout&lt;br/&gt;Deployment / StatefulSet / DaemonSet]
-        R -. "optional, if configured" .-&gt; N[Slack / Teams / webhook]
-    end</code></pre>
+    end
+    R -. "optional, if configured" .-&gt; N[Slack / Teams / webhook]</code></pre>
 <p>Reloader watches Secrets and ConfigMaps through the Kubernetes API, detects changes, and patches the pod template of workloads that reference them, triggering a standard Kubernetes rolling update. All processing happens inside the cluster.</p>
 <p>See <a href="../architecture/how-it-works.html">How Reloader works</a> for the full mechanism.</p>
 <hr>
