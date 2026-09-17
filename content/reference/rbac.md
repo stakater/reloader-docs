@@ -138,7 +138,7 @@ In addition to the watch-scope RBAC above, the chart always creates a small `Rol
   verbs: ["list", "get", "watch", "create", "update"]
 ```
 
-This is the only write permission Reloader holds on ConfigMaps, and it is confined to Reloader's **own namespace** — it is used for internal operational metadata, never for application namespaces or watched resources.
+This is the only write permission Reloader holds on ConfigMaps, and it is confined to Reloader's **own namespace**. It is used to publish a single fixed-name ConfigMap, `reloader-meta-info`, containing operational metadata (build/version info, active configuration, deployment info) — never application data, and never in watched namespaces.
 
 ### Leader election — only when `enableHA: true`
 
