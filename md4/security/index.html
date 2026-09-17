@@ -5424,8 +5424,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
         R --&gt; API[Kubernetes API]
         API --&gt; W[Workload rollout&lt;br/&gt;Deployment / StatefulSet / DaemonSet]
         R -. "optional, if configured" .-&gt; N[Slack / Teams / webhook]
-    end
-    R x--x ST[Stakater infrastructure&lt;br/&gt;no runtime connectivity]</code></pre>
+    end</code></pre>
 <p>Reloader watches Secrets and ConfigMaps through the Kubernetes API, detects changes, and patches the pod template of workloads that reference them, triggering a standard Kubernetes rolling update. All processing happens inside the cluster.</p>
 <p>See <a href="../architecture/how-it-works.html">How Reloader works</a> for the full mechanism.</p>
 <hr>
@@ -5594,7 +5593,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 <p>With this configuration Reloader runs as a non-root, non-privileged container with all capabilities dropped, a read-only root filesystem (the chart automounts an <code>emptyDir</code> at <code>/tmp</code> for scratch space), the runtime-default seccomp profile, and a NetworkPolicy restricting traffic to the metrics port and the Kubernetes API.</p>
-<p><strong>One caveat on the NetworkPolicy:</strong> the chart's policy allows egress on port 443 only. On clusters where the kube-apiserver <em>endpoint</em> listens on a different port (commonly 6443 on self-managed clusters and kind), the policy blocks Reloader's API access entirely. Managed control planes such as EKS, GKE, and AKS expose the API endpoint on 443. Verify your API endpoint port (<code>kubectl get endpoints kubernetes</code>) before enabling <code>netpol</code>.</p>
+<p><strong>One caveat on the NetworkPolicy:</strong> the chart's policy allows egress on port 443 only. On clusters where the API server <em>endpoint</em> listens on a different port (commonly 6443 on self-managed clusters and kind), the policy blocks Reloader's API access entirely. Managed control planes such as EKS, GKE, and AKS expose the API endpoint on 443. Verify your API endpoint port (<code>kubectl get endpoints kubernetes</code>) before enabling <code>netpol</code>.</p>
 <p>This hardened baseline is validated under the Kubernetes <code>restricted</code> Pod Security Standard: with restricted admission enforced on the namespace, the Reloader pod is admitted without warnings and reload functionality works end-to-end. The same security context satisfies the requirements of OpenShift's <code>restricted-v2</code> SCC — drop all capabilities, no privilege escalation, non-root, runtime-default seccomp — with <code>runAsUser: null</code> so OpenShift assigns the UID (see the <a href="../how-to-guides/use-reloader-with-openshift.html">OpenShift guide</a>).</p>
 <hr>
 <h2 id="software-supply-chain-security">Software supply-chain security<a class="headerlink" href="#software-supply-chain-security" title="Permanent link">#</a></h2>
@@ -5649,10 +5648,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <hr>
 <h2 id="support-access-model">Support access model<a class="headerlink" href="#support-access-model" title="Permanent link">#</a></h2>
 <p>Stakater personnel do <strong>not</strong> require standing or persistent access to customer clusters or data.</p>
-<p>Support is customer-initiated and works on artifacts you choose to share:</p>
-<pre class="mermaid"><code>flowchart LR
-    C[Customer] --&gt;|"logs, diagnostics, configuration&lt;br/&gt;(supplied by customer)"| S[Stakater Support]
-    S --&gt;|guidance, fixes, releases| C</code></pre>
+<p>Support is customer-initiated: you open a case and share only the artifacts you choose — logs, diagnostics, configuration — and Stakater responds with guidance, fixes, or releases. Nothing flows out of your environment automatically.</p>
 <p>If a support case would ever benefit from interactive access (for example, a screen-share session), it is customer-controlled, time-bounded, and separately authorized — never assumed or standing.</p>
 <hr>
 <h2 id="business-continuity">Business continuity<a class="headerlink" href="#business-continuity" title="Permanent link">#</a></h2>
