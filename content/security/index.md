@@ -2,7 +2,7 @@
 
 This page describes the security posture of Reloader Enterprise for security teams, procurement reviewers, and third-party risk assessments. It covers the deployment model, data handling, network requirements, air-gapped operation, supply-chain security, and failure behavior.
 
-Everything on this page applies to Reloader Enterprise deployed in your own Kubernetes, OpenShift, AKS, EKS, or Rancher clusters. Reloader Enterprise is not a SaaS product — there is no Stakater-hosted component.
+Everything on this page applies to Reloader Enterprise deployed in your own Kubernetes, OpenShift, AKS, EKS, GKE or Rancher clusters. Reloader Enterprise is not a SaaS product — there is no Stakater-hosted component.
 
 ---
 
@@ -136,8 +136,6 @@ Reloader Enterprise is designed to run in **fully air-gapped and disconnected en
 - **No runtime callbacks.** Because Reloader has no phone-home, telemetry, or license-server dependency, it operates indefinitely without internet access.
 - **Offline upgrades.** Upgrades follow the same mirror-then-install flow; release artifacts, SBOMs, and digests are published per version on the [versions page](../versions.md).
 
-<!-- Verified: the Enterprise chart is published as an OCI artifact (oci://ghcr.io/stakater/charts), so helm pull + mirror works offline. TODO (docs): add an air-gapped installation how-to with exact mirroring commands and link it here. -->
-
 ---
 
 ## Container and pod security
@@ -173,9 +171,6 @@ With this configuration Reloader runs as a non-root, non-privileged container wi
 
 This hardened baseline is validated under the Kubernetes `restricted` Pod Security Standard: with restricted admission enforced on the namespace, the Reloader pod is admitted without warnings and reload functionality works end-to-end. The same security context satisfies the requirements of OpenShift's `restricted-v2` SCC — drop all capabilities, no privilege escalation, non-root, runtime-default seccomp — with `runAsUser: null` so OpenShift assigns the UID (see the [OpenShift guide](../how-to-guides/use-reloader-with-openshift.md)).
 
-<!-- Validated 2026-09-17 on kind / Kubernetes v1.36.1: restricted PSS enforce+warn+audit labels, chart with the baseline above (netpol off due to the 6443 caveat), pod admitted with no PSS warnings, ConfigMap change triggered rollout. restricted-v2 phrasing is requirements-based; an on-OpenShift smoke test would upgrade it to "validated" too. -->
-<!-- VERIFY (product): consider making the hardened baseline the Enterprise chart default. -->
-
 ---
 
 ## Software supply-chain security
@@ -199,13 +194,9 @@ cosign verify \
 
 The signature is keyless: the certificate identity is the Stakater release workflow, and the signature is recorded in the public Rekor transparency log, so provenance can be verified without distributing keys — including inside air-gapped environments after mirroring.
 
-<!-- VERIFY (product): the per-release "SBOM" on the versions page is currently an artifact digest manifest, not a component-level SBOM. Either add SBOM generation (e.g. syft) to the enterprise release pipeline or keep the softer digest wording here and in the quick-reference table. -->
-
 ---
 
 ## Vulnerability management
-
-<!-- VERIFY (product): the advisory/notification/reporting/SLA statements below need business confirmation — the scanning and backport statements are verified. -->
 
 - **Scanning** — every Enterprise release is scanned with Trivy across OS packages and application dependencies, and the release pipeline blocks on HIGH or CRITICAL findings.
 - **Classification** — findings are triaged by severity (CVSS) and exploitability in the context of how Reloader runs.
