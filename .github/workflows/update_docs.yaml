@@ -153,6 +153,10 @@ jobs:
         fi
 
         git remote set-url origin "https://x-access-token:${PUBLISH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+        # actions/checkout persists GITHUB_TOKEN as an auth header that overrides
+        # the token in the remote URL; drop it so the push authenticates with
+        # PUBLISH_TOKEN and therefore triggers the Push deploy workflow.
+        git config --local --unset-all 'http.https://github.com/.extraheader' || true
 
         git checkout -B "$BRANCH" "origin/$BRANCH"
         if ! git merge --no-edit origin/main; then
