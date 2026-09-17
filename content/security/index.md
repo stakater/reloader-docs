@@ -52,8 +52,8 @@ flowchart LR
         C[ConfigMaps] --> R
         R --> API[Kubernetes API]
         API --> W[Workload rollout<br/>Deployment / StatefulSet / DaemonSet]
-        R -. "optional, if configured" .-> N[Slack / Teams / webhook]
     end
+    R -. "optional, if configured" .-> N[Slack / Teams / webhook]
 ```
 
 Reloader watches Secrets and ConfigMaps through the Kubernetes API, detects changes, and patches the pod template of workloads that reference them, triggering a standard Kubernetes rolling update. All processing happens inside the cluster.
