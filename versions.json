@@ -1,12 +1,5 @@
 [
   {
-    "version": "update-docs-35840550436-2970d02fe0f80f2d6c0af38f3b05923f8eb62fe1",
-    "title": "update-docs-35840550436-2970d02fe0f80f2d6c0af38f3b05923f8eb62fe1",
-    "aliases": [
-      "latest"
-    ]
-  },
-  {
     "version": "renovate-main-stakater-vale-package-0.x",
     "title": "renovate-main-stakater-vale-package-0.x",
     "aliases": []
