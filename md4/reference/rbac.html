@@ -5397,11 +5397,16 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <td><code>ClusterRole</code> + <code>ClusterRoleBinding</code></td>
 </tr>
 <tr>
-<td><code>false</code></td>
-<td><code>Role</code> + <code>RoleBinding</code> (scoped to the deployment namespace)</td>
+<td><code>false</code>, <code>reloader.namespaces</code> unset</td>
+<td><code>Role</code> + <code>RoleBinding</code> in the deployment namespace</td>
+</tr>
+<tr>
+<td><code>false</code>, <code>reloader.namespaces</code> set</td>
+<td><code>Role</code> + <code>RoleBinding</code> in each listed namespace, plus the deployment namespace</td>
 </tr>
 </tbody>
 </table>
+<p>In every case the chart also creates a small <code>Role</code> named <code>&lt;release&gt;-metadata-role</code> in the deployment namespace. See <a href="#metadata-role-always-created">Metadata Role</a>.</p>
 <p>RBAC creation is controlled by <code>reloader.rbac.enabled</code> (default: <code>true</code>). To bring your own RBAC and skip chart-managed resources, set it to <code>false</code> — but you must then create the Role/ClusterRole manually using the rules below.</p>
 <hr>
 <h2 id="clusterrole-rules-default-mode">ClusterRole rules (default mode)<a class="headerlink" href="#clusterrole-rules-default-mode" title="Permanent link">#</a></h2>
@@ -5471,9 +5476,13 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <p>When <code>watchGlobally: false</code>, the chart creates namespace-scoped <code>Role</code> resources instead of a <code>ClusterRole</code>:</p>
 <ul>
 <li><strong>Single namespace (default):</strong> with <code>reloader.namespaces</code> unset, one <code>Role</code> is created in the deployment namespace — Reloader watches only the namespace it is deployed in.</li>
-<li><strong>Selected namespaces:</strong> with <code>reloader.namespaces</code> set to a list, one <code>Role</code> is created <strong>per listed namespace</strong> — Reloader watches exactly those namespaces, still with no cluster-wide permissions.</li>
+<li><strong>Selected namespaces:</strong> with <code>reloader.namespaces</code> set to a list, one <code>Role</code> is created <strong>per listed namespace, plus the deployment namespace</strong> — the chart always adds its own namespace to the watch set, and passes the combined, de-duplicated list to the <code>--namespaces</code> flag. Reloader watches those namespaces with no cluster-wide permissions.</li>
 </ul>
-<p>The rules are identical to the ClusterRole above, <strong>except</strong> that the <code>namespaces</code> rule is never added (not applicable to a Role).</p>
+<p>The rules are identical to the ClusterRole above, <strong>except</strong>:</p>
+<ul>
+<li>The <code>namespaces</code> rule is <strong>never added</strong> (not applicable to a Role).</li>
+<li>The <code>cronjobs</code> and <code>jobs</code> rules are <strong>always added</strong>, regardless of <code>reloader.ignoreCronJobs</code> and <code>reloader.ignoreJobs</code>. Those flags omit the rules from the <code>ClusterRole</code> only; the namespace-scoped <code>Role</code> is not currently gated on them, so Reloader retains <code>jobs: create, delete</code> even when Jobs are ignored.</li>
+</ul>
 <p>Setting <code>reloader.namespaces</code> together with <code>watchGlobally: true</code> is invalid — the chart fails rendering with an explicit error.</p>
 <hr>
 <h2 id="metadata-role-always-created">Metadata Role (always created)<a class="headerlink" href="#metadata-role-always-created" title="Permanent link">#</a></h2>
@@ -5503,6 +5512,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
 </code></pre></div>
 <p>You must then create the Role or ClusterRole manually with the rules listed above, and bind it to the ServiceAccount Reloader uses.</p>
+<p>This also skips the <code>&lt;release&gt;-metadata-role</code>, so remember to recreate it. Without it Reloader cannot publish its <code>reloader-meta-info</code> ConfigMap, and in HA mode leader election has no Lease permissions.</p>
 <hr>
 <h2 id="serviceaccount">ServiceAccount<a class="headerlink" href="#serviceaccount" title="Permanent link">#</a></h2>
 <p>The chart creates a <code>ServiceAccount</code> in the deployment namespace by default.</p>
@@ -5598,6 +5608,9 @@ kubectl<span class="w"> </span>describe<span class="w"> </span>clusterrole<span 
 <span class="c1"># Namespace-scoped mode</span>
 kubectl<span class="w"> </span>get<span class="w"> </span>role<span class="w"> </span>-n<span class="w"> </span>reloader<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader-reloader
 kubectl<span class="w"> </span>describe<span class="w"> </span>role<span class="w"> </span>reloader-reloader-role<span class="w"> </span>-n<span class="w"> </span>reloader
+
+<span class="c1"># Metadata Role, always created in the deployment namespace</span>
+kubectl<span class="w"> </span>describe<span class="w"> </span>role<span class="w"> </span>reloader-reloader-metadata-role<span class="w"> </span>-n<span class="w"> </span>reloader
 </code></pre></div>
 <p>Check the binding:</p>
 <div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>clusterrolebinding<span class="w"> </span>-l<span class="w"> </span><span class="nv">app</span><span class="o">=</span>reloader-reloader

@@ -5561,7 +5561,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 </tbody>
 </table>
 <p><strong>There is no mandatory runtime connectivity to Stakater infrastructure or the internet.</strong> Reloader does not phone home, and there is no license-activation callback or telemetry at runtime. This is verified against the source: Enterprise images are built directly from the tagged open-source Reloader codebase, whose only outbound calls are to the Kubernetes API and customer-configured webhooks. Enterprise licensing is enforced through registry access credentials at install time, not through runtime checks.</p>
-<p>The Helm chart ships an optional <code>NetworkPolicy</code> that restricts the pod to exactly this profile — ingress on the metrics port, egress to the Kubernetes API only. See <a href="../reference/rbac.html#network-policy">Network policy</a>.</p>
+<p>The Helm chart ships an optional <code>NetworkPolicy</code> that narrows the pod to this profile <strong>by port</strong>: ingress on the metrics port, egress on 443. By default it constrains ports only, not peers — set <code>netpol.from</code> and <code>netpol.to</code> to also restrict which sources may scrape the pod and which destinations it may reach. See <a href="../reference/rbac.html#network-policy">Network policy</a>.</p>
 <hr>
 <h2 id="air-gapped-operation">Air-gapped operation<a class="headerlink" href="#air-gapped-operation" title="Permanent link">#</a></h2>
 <p>Reloader Enterprise is designed to run in <strong>fully air-gapped and disconnected environments</strong> — common in energy, defense, finance, and other regulated sectors.</p>
@@ -5574,11 +5574,13 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <hr>
 <h2 id="container-and-pod-security">Container and pod security<a class="headerlink" href="#container-and-pod-security" title="Permanent link">#</a></h2>
 <p>The Helm chart's default pod security context:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">securityContext</span><span class="p">:</span>
-<span class="w">  </span><span class="nt">runAsNonRoot</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<span class="w">  </span><span class="nt">runAsUser</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">65534</span><span class="w">        </span><span class="c1"># 'nobody' — no special privileges</span>
-<span class="w">  </span><span class="nt">seccompProfile</span><span class="p">:</span>
-<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RuntimeDefault</span>
+<div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">deployment</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">securityContext</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">runAsNonRoot</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">runAsUser</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">65534</span><span class="w">        </span><span class="c1"># 'nobody' — no special privileges</span>
+<span class="w">      </span><span class="nt">seccompProfile</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">RuntimeDefault</span>
 </code></pre></div>
 <p>Recommended production hardening baseline on top of the defaults:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">reloader</span><span class="p">:</span>
@@ -5592,7 +5594,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <span class="w">  </span><span class="nt">netpol</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
-<p>With this configuration Reloader runs as a non-root, non-privileged container with all capabilities dropped, a read-only root filesystem (the chart automounts an <code>emptyDir</code> at <code>/tmp</code> for scratch space), the runtime-default seccomp profile, and a NetworkPolicy restricting traffic to the metrics port and the Kubernetes API.</p>
+<p>With this configuration Reloader runs as a non-root, non-privileged container with all capabilities dropped, a read-only root filesystem (the chart automounts an <code>emptyDir</code> at <code>/tmp</code> for scratch space), the runtime-default seccomp profile, and a NetworkPolicy limiting traffic to the metrics port inbound and port 443 outbound.</p>
 <p><strong>One caveat on the NetworkPolicy:</strong> the chart's policy allows egress on port 443 only. On clusters where the API server <em>endpoint</em> listens on a different port (commonly 6443 on self-managed clusters and kind), the policy blocks Reloader's API access entirely. Managed control planes such as EKS, GKE, and AKS expose the API endpoint on 443. Verify your API endpoint port (<code>kubectl get endpoints kubernetes</code>) before enabling <code>netpol</code>.</p>
 <p>This hardened baseline is validated under the Kubernetes <code>restricted</code> Pod Security Standard: with restricted admission enforced on the namespace, the Reloader pod is admitted without warnings and reload functionality works end-to-end. The same security context satisfies the requirements of OpenShift's <code>restricted-v2</code> SCC — drop all capabilities, no privilege escalation, non-root, runtime-default seccomp — with <code>runAsUser: null</code> so OpenShift assigns the UID (see the <a href="../how-to-guides/use-reloader-with-openshift.html">OpenShift guide</a>).</p>
 <hr>
