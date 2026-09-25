@@ -50,13 +50,6 @@
     "aliases": []
   },
   {
-    "version": "main",
-    "title": "main",
-    "aliases": [
-      "latest"
-    ]
-  },
-  {
     "version": "abaziz-patch-1",
     "title": "abaziz-patch-1",
     "aliases": []
