@@ -13,7 +13,10 @@ The Helm chart creates RBAC resources automatically. The type depends on `reload
 | `watchGlobally` | RBAC resources created |
 |---|---|
 | `true` (default) | `ClusterRole` + `ClusterRoleBinding` |
-| `false` | `Role` + `RoleBinding` (scoped to the deployment namespace) |
+| `false`, `reloader.namespaces` unset | `Role` + `RoleBinding` in the deployment namespace |
+| `false`, `reloader.namespaces` set | `Role` + `RoleBinding` in each listed namespace, plus the deployment namespace |
+
+In every case the chart also creates a small `Role` named `<release>-metadata-role` in the deployment namespace. See [Metadata Role](#metadata-role-always-created).
 
 RBAC creation is controlled by `reloader.rbac.enabled` (default: `true`). To bring your own RBAC and skip chart-managed resources, set it to `false` — but you must then create the Role/ClusterRole manually using the rules below.
 
@@ -52,13 +55,9 @@ Required so Reloader can evaluate namespace labels when filtering with `namespac
 - apiGroups: ["apps"]
   resources: ["deployments", "daemonsets", "statefulsets"]
   verbs: ["list", "get", "update", "patch"]
-
-- apiGroups: ["extensions"]
-  resources: ["deployments", "daemonsets"]
-  verbs: ["list", "get", "update", "patch"]
 ```
 
-Reloader patches the pod template of matching workloads to trigger a rolling restart. The `extensions` rules are retained for compatibility with older Kubernetes versions where these resources existed under the `extensions` API group.
+Reloader patches the pod template of matching workloads to trigger a rolling restart.
 
 ### CronJobs and Jobs
 
@@ -69,20 +68,23 @@ Reloader patches the pod template of matching workloads to trigger a rolling res
 
 - apiGroups: ["batch"]
   resources: ["jobs"]
-  verbs: ["create"]
+  verbs: ["create", "delete", "list", "get"]
 ```
 
-`list`/`get` on CronJobs allows Reloader to find and evaluate CronJob workloads. `create` on Jobs is required for the CronJob restart mechanism.
+`list`/`get` on CronJobs allows Reloader to find and evaluate CronJob workloads. The Jobs verbs support the CronJob restart mechanism: Reloader creates a Job from the CronJob spec and cleans it up afterwards.
 
-### Leader election — only when `enableHA: true`
+- The `cronjobs` rule is **omitted** when `reloader.ignoreCronJobs: true`.
+- The `jobs` rule is **omitted** when `reloader.ignoreJobs: true`.
+
+### Secrets Store CSI — only when `enableCSIIntegration: true`
 
 ```yaml
-- apiGroups: ["coordination.k8s.io"]
-  resources: ["leases"]
-  verbs: ["create", "get", "update"]
+- apiGroups: ["secrets-store.csi.x-k8s.io"]
+  resources: ["secretproviderclasspodstatuses", "secretproviderclasses"]
+  verbs: ["list", "get", "watch"]
 ```
 
-Required when running multiple replicas with HA mode. The active leader holds a Lease; standby replicas poll it. Not added to the ClusterRole when `enableHA: false`.
+Read-only access to Secrets Store CSI Driver resources, used to detect rotation of CSI-mounted secrets. Not added when `enableCSIIntegration: false` (the default).
 
 ### Events
 
@@ -118,11 +120,48 @@ Only added when `isOpenshift: true` **and** the OpenShift API (`apps.openshift.i
 
 ## Role rules (namespace-scoped mode)
 
-When `watchGlobally: false`, the chart creates a `Role` in the deployment namespace instead of a `ClusterRole`. The rules are identical to the ClusterRole above, **except**:
+When `watchGlobally: false`, the chart creates namespace-scoped `Role` resources instead of a `ClusterRole`:
+
+- **Single namespace (default):** with `reloader.namespaces` unset, one `Role` is created in the deployment namespace — Reloader watches only the namespace it is deployed in.
+- **Selected namespaces:** with `reloader.namespaces` set to a list, one `Role` is created **per listed namespace, plus the deployment namespace** — the chart always adds its own namespace to the watch set, and passes the combined, de-duplicated list to the `--namespaces` flag. Reloader watches those namespaces with no cluster-wide permissions.
+
+The rules are identical to the ClusterRole above, **except**:
 
 - The `namespaces` rule is **never added** (not applicable to a Role).
+- The `cronjobs` and `jobs` rules are **always added**, regardless of `reloader.ignoreCronJobs` and `reloader.ignoreJobs`. Those flags omit the rules from the `ClusterRole` only; the namespace-scoped `Role` is not currently gated on them, so Reloader retains `jobs: create, delete` even when Jobs are ignored.
 
-This mode restricts Reloader to watching only the namespace it is deployed in.
+Setting `reloader.namespaces` together with `watchGlobally: true` is invalid — the chart fails rendering with an explicit error.
+
+---
+
+## Metadata Role (always created)
+
+In addition to the watch-scope RBAC above, the chart always creates a small `Role` named `<release>-metadata-role` in the deployment namespace (when `rbac.enabled: true`):
+
+```yaml
+- apiGroups: [""]
+  resources: ["configmaps"]
+  verbs: ["list", "get", "watch", "create", "update"]
+```
+
+This is the only write permission Reloader holds on ConfigMaps, and it is confined to Reloader's **own namespace**. It is used to publish a single fixed-name ConfigMap, `reloader-meta-info`, containing operational metadata (build/version info, active configuration, deployment info) — never application data, and never in watched namespaces.
+
+### Leader election — only when `enableHA: true`
+
+When HA mode is enabled, the metadata Role additionally receives Lease permissions for leader election:
+
+```yaml
+- apiGroups: ["coordination.k8s.io"]
+  resources: ["leases"]
+  verbs: ["create"]
+
+- apiGroups: ["coordination.k8s.io"]
+  resources: ["leases"]
+  resourceNames: ["stakater-reloader-lock"]
+  verbs: ["get", "update"]
+```
+
+`get` and `update` are restricted by `resourceNames` to the single lock Lease — replicas can read and renew only Reloader's own lock, not other Leases in the namespace.
 
 ---
 
@@ -137,6 +176,8 @@ reloader:
 ```
 
 You must then create the Role or ClusterRole manually with the rules listed above, and bind it to the ServiceAccount Reloader uses.
+
+This also skips the `<release>-metadata-role`, so remember to recreate it. Without it Reloader cannot publish its `reloader-meta-info` ConfigMap, and in HA mode leader election has no Lease permissions.
 
 ---
 
@@ -242,6 +283,8 @@ When enabled, the policy allows:
 - **Ingress** on port `9090` — for Prometheus metrics scraping
 - **Egress** on port `443` — to reach the Kubernetes API server (https)
 
+**Caveat:** the egress port is fixed at `443` and is not configurable. NetworkPolicy is evaluated against the API server *endpoint* port, which on many self-managed clusters (and kind) is `6443` — there the policy blocks Reloader's API access and the pod fails. Check your endpoint port with `kubectl get endpoints kubernetes` before enabling. Managed control planes (EKS, GKE, AKS) expose the endpoint on `443` and are unaffected.
+
 You can further restrict the ingress source with `netpol.from` and the egress destination with `netpol.to`:
 
 ```yaml
@@ -271,6 +314,9 @@ kubectl describe clusterrole reloader-reloader-role
 # Namespace-scoped mode
 kubectl get role -n reloader -l app=reloader-reloader
 kubectl describe role reloader-reloader-role -n reloader
+
+# Metadata Role, always created in the deployment namespace
+kubectl describe role reloader-reloader-metadata-role -n reloader
 ```
 
 Check the binding:
