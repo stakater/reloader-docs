@@ -122,7 +122,7 @@ Reloader's connectivity requirements are minimal and differ by phase:
 
 **There is no mandatory runtime connectivity to Stakater infrastructure or the internet.** Reloader does not phone home, and there is no license-activation callback or telemetry at runtime. This is verified against the source: Enterprise images are built directly from the tagged open-source Reloader codebase, whose only outbound calls are to the Kubernetes API and customer-configured webhooks. Enterprise licensing is enforced through registry access credentials at install time, not through runtime checks.
 
-The Helm chart ships an optional `NetworkPolicy` that restricts the pod to exactly this profile — ingress on the metrics port, egress to the Kubernetes API only. See [Network policy](../reference/rbac.md#network-policy).
+The Helm chart ships an optional `NetworkPolicy` that narrows the pod to this profile **by port**: ingress on the metrics port, egress on 443. By default it constrains ports only, not peers — set `netpol.from` and `netpol.to` to also restrict which sources may scrape the pod and which destinations it may reach. See [Network policy](../reference/rbac.md#network-policy).
 
 ---
 
@@ -142,11 +142,13 @@ Reloader Enterprise is designed to run in **fully air-gapped and disconnected en
 The Helm chart's default pod security context:
 
 ```yaml
-securityContext:
-  runAsNonRoot: true
-  runAsUser: 65534        # 'nobody' — no special privileges
-  seccompProfile:
-    type: RuntimeDefault
+reloader:
+  deployment:
+    securityContext:
+      runAsNonRoot: true
+      runAsUser: 65534        # 'nobody' — no special privileges
+      seccompProfile:
+        type: RuntimeDefault
 ```
 
 Recommended production hardening baseline on top of the defaults:
@@ -164,7 +166,7 @@ reloader:
     enabled: true
 ```
 
-With this configuration Reloader runs as a non-root, non-privileged container with all capabilities dropped, a read-only root filesystem (the chart automounts an `emptyDir` at `/tmp` for scratch space), the runtime-default seccomp profile, and a NetworkPolicy restricting traffic to the metrics port and the Kubernetes API.
+With this configuration Reloader runs as a non-root, non-privileged container with all capabilities dropped, a read-only root filesystem (the chart automounts an `emptyDir` at `/tmp` for scratch space), the runtime-default seccomp profile, and a NetworkPolicy limiting traffic to the metrics port inbound and port 443 outbound.
 
 **One caveat on the NetworkPolicy:** the chart's policy allows egress on port 443 only. On clusters where the API server *endpoint* listens on a different port (commonly 6443 on self-managed clusters and kind), the policy blocks Reloader's API access entirely. Managed control planes such as EKS, GKE, and AKS expose the API endpoint on 443. Verify your API endpoint port (`kubectl get endpoints kubernetes`) before enabling `netpol`.
 

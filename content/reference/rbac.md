@@ -13,7 +13,10 @@ The Helm chart creates RBAC resources automatically. The type depends on `reload
 | `watchGlobally` | RBAC resources created |
 |---|---|
 | `true` (default) | `ClusterRole` + `ClusterRoleBinding` |
-| `false` | `Role` + `RoleBinding` (scoped to the deployment namespace) |
+| `false`, `reloader.namespaces` unset | `Role` + `RoleBinding` in the deployment namespace |
+| `false`, `reloader.namespaces` set | `Role` + `RoleBinding` in each listed namespace, plus the deployment namespace |
+
+In every case the chart also creates a small `Role` named `<release>-metadata-role` in the deployment namespace. See [Metadata Role](#metadata-role-always-created).
 
 RBAC creation is controlled by `reloader.rbac.enabled` (default: `true`). To bring your own RBAC and skip chart-managed resources, set it to `false` — but you must then create the Role/ClusterRole manually using the rules below.
 
@@ -120,9 +123,12 @@ Only added when `isOpenshift: true` **and** the OpenShift API (`apps.openshift.i
 When `watchGlobally: false`, the chart creates namespace-scoped `Role` resources instead of a `ClusterRole`:
 
 - **Single namespace (default):** with `reloader.namespaces` unset, one `Role` is created in the deployment namespace — Reloader watches only the namespace it is deployed in.
-- **Selected namespaces:** with `reloader.namespaces` set to a list, one `Role` is created **per listed namespace** — Reloader watches exactly those namespaces, still with no cluster-wide permissions.
+- **Selected namespaces:** with `reloader.namespaces` set to a list, one `Role` is created **per listed namespace, plus the deployment namespace** — the chart always adds its own namespace to the watch set, and passes the combined, de-duplicated list to the `--namespaces` flag. Reloader watches those namespaces with no cluster-wide permissions.
 
-The rules are identical to the ClusterRole above, **except** that the `namespaces` rule is never added (not applicable to a Role).
+The rules are identical to the ClusterRole above, **except**:
+
+- The `namespaces` rule is **never added** (not applicable to a Role).
+- The `cronjobs` and `jobs` rules are **always added**, regardless of `reloader.ignoreCronJobs` and `reloader.ignoreJobs`. Those flags omit the rules from the `ClusterRole` only; the namespace-scoped `Role` is not currently gated on them, so Reloader retains `jobs: create, delete` even when Jobs are ignored.
 
 Setting `reloader.namespaces` together with `watchGlobally: true` is invalid — the chart fails rendering with an explicit error.
 
@@ -170,6 +176,8 @@ reloader:
 ```
 
 You must then create the Role or ClusterRole manually with the rules listed above, and bind it to the ServiceAccount Reloader uses.
+
+This also skips the `<release>-metadata-role`, so remember to recreate it. Without it Reloader cannot publish its `reloader-meta-info` ConfigMap, and in HA mode leader election has no Lease permissions.
 
 ---
 
@@ -306,6 +314,9 @@ kubectl describe clusterrole reloader-reloader-role
 # Namespace-scoped mode
 kubectl get role -n reloader -l app=reloader-reloader
 kubectl describe role reloader-reloader-role -n reloader
+
+# Metadata Role, always created in the deployment namespace
+kubectl describe role reloader-reloader-metadata-role -n reloader
 ```
 
 Check the binding:
