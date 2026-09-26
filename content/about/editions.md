@@ -57,7 +57,7 @@ OSS images are built from upstream community infrastructure and are not covered 
 
 Reloader Enterprise includes continuously validated integrations with:
 
-- **HashiCorp Vault** — via External Secrets Operator, Vault Secrets Operator, and CSI Driver
+- **HashiCorp Vault Community Edition** — via External Secrets Operator, Vault Secrets Operator, and CSI Driver
 - **OpenBao** — via External Secrets Operator, OpenBao Secrets Operator, and CSI Driver
 - **CyberArk Conjur** — via External Secrets Operator, Sidecar, and CSI Driver
 

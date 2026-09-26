@@ -46,7 +46,7 @@ Because the integration point is Kubernetes-native, many tools *can* work with R
 
 | Integration | Guides |
 |------------|--------|
-| [HashiCorp Vault](./vault/index.md) | [ESO](./vault/vault-eso.md), [VSO](./vault/vault-vso.md), [CSI Driver](./vault/vault-csi.md), [CSI Driver (File-Based)](./vault/vault-csi-file.md) |
+| [HashiCorp Vault Community Edition](./vault/index.md) | [ESO](./vault/vault-eso.md), [VSO](./vault/vault-vso.md), [CSI Driver](./vault/vault-csi.md), [CSI Driver (File-Based)](./vault/vault-csi-file.md) |
 | [OpenBao](./openbao/index.md) | [ESO](./openbao/openbao-eso.md), [BSO](./openbao/openbao-bso.md), [CSI Driver](./openbao/openbao-csi.md), [CSI Driver (File-Based)](./openbao/openbao-csi-file.md) |
 | [Conjur](./conjur/index.md) | [ESO](./conjur/conjur-eso.md), [Sidecar](./conjur/conjur-sidecar.md), [CSI Driver](./conjur/conjur-csi.md) |
 | [AWS Secrets Manager](./aws/index.md) | [ESO](./aws/aws-eso.md), [CSI Driver](./aws/aws-csi.md) |

@@ -205,7 +205,7 @@ To get Reloader Enterprise, open a ticket at the [Stakater support portal](https
 
 **Integrate with your secrets stack:**
 
-- [HashiCorp Vault](integrations/vault/index.md)
+- [HashiCorp Vault Community Edition](integrations/vault/index.md)
 - [OpenBao](integrations/openbao/index.md)
 - [CyberArk Conjur](integrations/conjur/index.md)
 - [AWS Secrets Manager](integrations/aws/index.md)

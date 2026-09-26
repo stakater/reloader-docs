@@ -59,7 +59,7 @@ nav:
           - External Secrets Operator: integrations/conjur/conjur-eso.md
           - Sidecar: integrations/conjur/conjur-sidecar.md
           - CSI Driver: integrations/conjur/conjur-csi.md
-      - Vault:
+      - Vault Community Edition:
           - Overview: integrations/vault/index.md
           - External Secrets Operator: integrations/vault/vault-eso.md
           - Vault Secrets Operator: integrations/vault/vault-vso.md
