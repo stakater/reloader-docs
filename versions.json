@@ -22,7 +22,9 @@
   {
     "version": "renovate-main-node-24.x-lockfile",
     "title": "renovate-main-node-24.x-lockfile",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "renovate-main-node-24.x",
@@ -52,9 +54,7 @@
   {
     "version": "rename-vault-community-edition",
     "title": "rename-vault-community-edition",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "abaziz-patch-1",
