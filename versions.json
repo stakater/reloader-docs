@@ -52,7 +52,9 @@
   {
     "version": "rename-vault-community-edition",
     "title": "rename-vault-community-edition",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "abaziz-patch-1",
