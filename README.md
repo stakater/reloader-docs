@@ -50,6 +50,19 @@ This repository is fully automated via GitHub Actions:
     https://docs.stakater.com
     ```
 
+### Main vs Latest Docs Branch
+
+`main` is the dev branch. Users see the latest version branch (repo variable `LATEST_DOC_VERSION`, for example `1.4`).
+
+Every PR to `main` gets a bot comment asking where the change goes. The required `docs-target` check stays pending until exactly one box is ticked:
+
+* **Sync to latest docs**: on merge, the PR diff is applied to the latest branch and deployed
+* **Dev only**: stays on `main` until the next version branch is cut
+
+Renovate PRs (`dependencies` label) skip this, since Renovate opens its own PRs against the version branches.
+
+If the sync conflicts, the bot comments on the PR; open a backport PR against the latest branch manually. When a new version ships, update `LATEST_DOC_VERSION`.
+
 ---
 
 ## Git Submodule (Very Important)
