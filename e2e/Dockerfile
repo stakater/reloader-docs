@@ -1,5 +1,5 @@
 # Stage 1: Install Playwright and Chromium
-FROM node:22-bookworm AS playwright-setup
+FROM node:24-bookworm AS playwright-setup
 
 WORKDIR /e2e
 
