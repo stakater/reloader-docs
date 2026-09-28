@@ -95,7 +95,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#vault-integration" class="md-skip">
+        <a href="#vault-community-edition-integration" class="md-skip">
           Skip to content
         </a>
       
@@ -3611,7 +3611,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   <span class="md-ellipsis">
     
   
-    Vault
+    Vault Community Edition
   
 
     
@@ -3627,7 +3627,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
             <span class="md-nav__icon md-icon"></span>
             
   
-    Vault
+    Vault Community Edition
   
 
           </label>
@@ -5492,8 +5492,11 @@ This documentation is for a pull request deployment and is unreleased, it is onl
   
 
 
-<h1 id="vault-integration">Vault Integration<a class="headerlink" href="#vault-integration" title="Permanent link">#</a></h1>
+<h1 id="vault-community-edition-integration">Vault Community Edition Integration<a class="headerlink" href="#vault-community-edition-integration" title="Permanent link">#</a></h1>
 <p>This guide shows how to automatically restart Kubernetes workloads when HashiCorp Vault secrets change using Stakater Reloader.</p>
+<blockquote>
+<p><strong>Note:</strong> All guides in this section are validated against <strong>Vault Community Edition</strong>. Vault Enterprise adds namespaces and licensing, which change secret paths and auth mount configuration; it will be covered in a dedicated section.</p>
+</blockquote>
 <h2 id="integration-patterns">Integration Patterns<a class="headerlink" href="#integration-patterns" title="Permanent link">#</a></h2>
 <table>
 <thead>
@@ -5558,7 +5561,7 @@ This documentation is for a pull request deployment and is unreleased, it is onl
 <ul>
 <li>Kubernetes cluster (v1.19+)</li>
 <li>Helm v3+</li>
-<li>HashiCorp Vault (OSS or Enterprise)</li>
+<li>HashiCorp Vault Community Edition</li>
 <li>Vault CLI installed locally</li>
 <li>Stakater Reloader installed</li>
 <li><code>kubectl</code> configured with cluster access</li>
