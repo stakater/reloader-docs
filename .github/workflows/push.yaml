@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   push:
-    uses: stakater/.github/.github/workflows/push_versioned_doc.yaml@v0.0.131
+    uses: stakater/.github/.github/workflows/push_versioned_doc.yaml@v0.0.199
     with:
       LATEST_DOC_VERSION: "1.4"
     secrets:
