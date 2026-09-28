@@ -1,6 +1,8 @@
-# Vault Integration
+# Vault Community Edition Integration
 
 This guide shows how to automatically restart Kubernetes workloads when HashiCorp Vault secrets change using Stakater Reloader.
+
+> **Note:** All guides in this section are validated against **Vault Community Edition**. Vault Enterprise adds namespaces and licensing, which change secret paths and auth mount configuration; it will be covered in a dedicated section.
 
 ## Integration Patterns
 
@@ -37,7 +39,7 @@ sequenceDiagram
 
 - Kubernetes cluster (v1.19+)
 - Helm v3+
-- HashiCorp Vault (OSS or Enterprise)
+- HashiCorp Vault Community Edition
 - Vault CLI installed locally
 - Stakater Reloader installed
 - `kubectl` configured with cluster access
