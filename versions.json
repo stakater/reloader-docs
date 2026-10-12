@@ -50,13 +50,6 @@
     "aliases": []
   },
   {
-    "version": "docs-target-sync",
-    "title": "docs-target-sync",
-    "aliases": [
-      "latest"
-    ]
-  },
-  {
     "version": "abaziz-patch-1",
     "title": "abaziz-patch-1",
     "aliases": []
