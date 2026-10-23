@@ -50,13 +50,6 @@
     "aliases": []
   },
   {
-    "version": "chore-bump-playwright",
-    "title": "chore-bump-playwright",
-    "aliases": [
-      "latest"
-    ]
-  },
-  {
     "version": "abaziz-patch-1",
     "title": "abaziz-patch-1",
     "aliases": []
