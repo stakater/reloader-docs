@@ -17,11 +17,6 @@
     "aliases": []
   },
   {
-    "version": "renovate-main-playwright-monorepo",
-    "title": "renovate-main-playwright-monorepo",
-    "aliases": []
-  },
-  {
     "version": "renovate-main-node-24.x-lockfile",
     "title": "renovate-main-node-24.x-lockfile",
     "aliases": []
