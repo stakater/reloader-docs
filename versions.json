@@ -12,9 +12,7 @@
   {
     "version": "renovate-main-python-3.x",
     "title": "renovate-main-python-3.x",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-main-playwright-monorepo",
@@ -54,7 +52,9 @@
   {
     "version": "chore-bump-playwright",
     "title": "chore-bump-playwright",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "abaziz-patch-1",
