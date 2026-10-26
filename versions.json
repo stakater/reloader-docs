@@ -37,9 +37,7 @@
   {
     "version": "renovate-main-docker-login-action-4.x",
     "title": "renovate-main-docker-login-action-4.x",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-main-actions-checkout-6.x",
@@ -49,7 +47,9 @@
   {
     "version": "backport-serialize-gh-pages-deploys-1.4",
     "title": "backport-serialize-gh-pages-deploys-1.4",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "abaziz-patch-1",
