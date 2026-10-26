@@ -6,19 +6,15 @@ on:
       - 'main'
       - '[0-9]+.[0-9]+'
 
-# Every branch deploys into the single gh-pages branch via `mike deploy --push`,
-# which neither rebases nor retries. The group must therefore be ref-independent:
-# the collision is between branches, not between runs on one branch. Releases push
-# main and then sync into the release branch seconds later, so without this the
-# second run is rejected with "! [rejected] gh-pages -> gh-pages (fetch first)".
-# Do not set cancel-in-progress: cancelling would drop a deploy instead of queuing it.
+# A newer push to the same branch supersedes the running one. Deploys across
+# branches are queued in the shared workflow, so this must not reuse its group.
 concurrency:
-  group: gh-pages-deploy
-  cancel-in-progress: false
+  group: push-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   push:
-    uses: stakater/.github/.github/workflows/push_versioned_doc.yaml@v0.0.131
+    uses: stakater/.github/.github/workflows/push_versioned_doc.yaml@v0.0.202
     with:
       LATEST_DOC_VERSION: ${{ vars.LATEST_DOC_VERSION }}
     secrets:
