@@ -1,5 +1,10 @@
 [
   {
+    "version": "renovate-1.4-stakater-.github-0.x",
+    "title": "renovate-1.4-stakater-.github-0.x",
+    "aliases": []
+  },
+  {
     "version": "renovate-main-stakater-vale-package-0.x",
     "title": "renovate-main-stakater-vale-package-0.x",
     "aliases": []
