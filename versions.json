@@ -2,9 +2,7 @@
   {
     "version": "update-docs-40493764937-d8e994496483aa79542f9b560a625ef3dc1c684c",
     "title": "update-docs-40493764937-d8e994496483aa79542f9b560a625ef3dc1c684c",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-1.4-stakater-.github-0.x",
@@ -19,7 +17,9 @@
   {
     "version": "renovate-main-stakater-.github-0.x",
     "title": "renovate-main-stakater-.github-0.x",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "renovate-main-python-3.x",
