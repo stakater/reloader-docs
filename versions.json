@@ -57,6 +57,11 @@
     "aliases": []
   },
   {
+    "version": "fix-e2e-index-check",
+    "title": "fix-e2e-index-check",
+    "aliases": []
+  },
+  {
     "version": "abaziz-patch-1",
     "title": "abaziz-patch-1",
     "aliases": []
