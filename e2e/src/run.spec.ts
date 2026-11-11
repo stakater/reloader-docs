@@ -48,16 +48,22 @@ test.describe('Documentation Site Tests', () => {
   });
 
   test('Verify index file exists', async ({ page }) => {
-  await page.goto(`/${CURRENT_BRANCH}/index.html`);
+    const response = await page.goto(`/${CURRENT_BRANCH}/index.html`);
 
-  await page.waitForLoadState('domcontentloaded');
+    await page.waitForLoadState('domcontentloaded');
 
-  // Check that we are inside the branch folder
-  await expect(page.url()).toContain(`${CURRENT_BRANCH}`);
+    // Check that we are inside the branch folder
+    await expect(page.url()).toContain(`${CURRENT_BRANCH}`);
 
-  // Ensure page is not a 404
-  await expect(page.locator('body')).not.toContainText('404');
-});
+    // Ensure page is not a 404. nginx serves a missing path with the branch's
+    // 404.html but keeps the 404 status code, so the status is the reliable
+    // signal. The body text is not: the version selector lists every deployed
+    // branch, and a branch name can contain the digits "404" (for example a
+    // workflow run id), which made this test fail on unrelated pull requests.
+    expect(response, 'navigation returned no response').not.toBeNull();
+    expect(response!.status()).toBe(200);
+    await expect(page).not.toHaveTitle(/404/);
+  });
 
   test('Search for incorrectly rendered fenced code blocks', async ({ page }) => {
     await page.goto(`/${CURRENT_BRANCH}`);
