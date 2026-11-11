@@ -2,7 +2,9 @@
   {
     "version": "update-docs-42975893118-d8e994496483aa79542f9b560a625ef3dc1c684c",
     "title": "update-docs-42975893118-d8e994496483aa79542f9b560a625ef3dc1c684c",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "renovate-1.4-stakater-.github-0.x",
@@ -42,9 +44,7 @@
   {
     "version": "renovate-main-docker-login-action-4.x",
     "title": "renovate-main-docker-login-action-4.x",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-main-actions-checkout-6.x",
