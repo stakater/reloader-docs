@@ -2,9 +2,7 @@
   {
     "version": "update-docs-42975893118-d8e994496483aa79542f9b560a625ef3dc1c684c",
     "title": "update-docs-42975893118-d8e994496483aa79542f9b560a625ef3dc1c684c",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "update-docs-40493764937-d8e994496483aa79542f9b560a625ef3dc1c684c",
@@ -59,7 +57,9 @@
   {
     "version": "fix-e2e-index-check",
     "title": "fix-e2e-index-check",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   },
   {
     "version": "abaziz-patch-1",
