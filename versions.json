@@ -1,12 +1,5 @@
 [
   {
-    "version": "update-docs-44788565865-18ebca75c0c017726b8af31bc3d44508e250e26b",
-    "title": "update-docs-44788565865-18ebca75c0c017726b8af31bc3d44508e250e26b",
-    "aliases": [
-      "latest"
-    ]
-  },
-  {
     "version": "renovate-1.4-stakater-.github-0.x",
     "title": "renovate-1.4-stakater-.github-0.x",
     "aliases": []
