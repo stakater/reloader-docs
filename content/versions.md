@@ -37,6 +37,43 @@ _**November 20, 2026**_
 
 </details>
 
+## v2.0.0-beta.3
+
+_**November 20, 2026**_
+
+### **Release Metadata**
+
+<table>
+  <tr><td><strong>Version</strong></td><td><code>v2.0.0-beta.3</code></td></tr>
+  <tr><td><strong>Container Image</strong></td><td><code>ghcr.io/stakater/reloader-enterprise:v2.0.0-beta.3</code></td></tr>
+  <tr><td><strong>Container Image UBI</strong></td><td><code>ghcr.io/stakater/reloader-enterprise:v2.0.0-beta.3-ubi</code></td></tr>
+  <tr><td><strong>Reloader OSS Release Notes</strong></td><td><a href="https://github.com/stakater/Reloader/releases/tag/v2.0.0-beta.3">Release Notes</a></td></tr>
+</table>
+
+---
+
+### **SBOM**  
+
+<details>
+<summary>Click to expand SBOM JSON</summary>
+
+```json
+{
+  "artifacts": [
+    {
+      "name": "ghcr.io/stakater/reloader-enterprise:v2.0.0-beta.3",
+      "digest": "sha256:d3e871b2e3968330cdc2ea5413c5023975da0fc257ff260841537d0f2412cda4"
+    },
+    {
+      "name": "ghcr.io/stakater/reloader-enterprise:v2.0.0-beta.3-ubi",
+      "digest": "sha256:75214bd2e0a225d41d46871ba981511e1e336ac7441b63f625e6cfbebf6f5393"
+    }
+  ]
+}
+```
+
+</details>
+
 ## v1.4.24
 
 _**November 11, 2026**_
